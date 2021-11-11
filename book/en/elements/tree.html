@@ -1,0 +1,779 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Tree</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/tree.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li selected><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/tree;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="tree">Tree</h1>
+
+            <div class="pandora-code-viewer" id="pid-175">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tree&gt;&lt;/ef-tree&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const tree = document.querySelector(&apos;ef-tree&apos;);
+tree.data = [{
+    label: &apos;Group 1&apos;,
+    expanded: true,
+    items: [{
+        label: &apos;Item 1.1&apos;,
+        value: &apos;1.1&apos;
+      },
+      {
+        label: &apos;Item 1.2&apos;,
+        value: &apos;1.2&apos;
+      },
+      {
+        label: &apos;Item 1.3&apos;,
+        value: &apos;1.3&apos;,
+        selected: true
+      }
+    ]
+  },
+  {
+    label: &apos;Group 2&apos;,
+    items: [{
+        label: &apos;Item 2.1&apos;,
+        value: &apos;2.1&apos;
+      },
+      {
+        label: &apos;Item 2.2&apos;,
+        value: &apos;2.2&apos;
+      },
+      {
+        label: &apos;Item 2.3&apos;,
+        value: &apos;2.3&apos;
+      }
+    ]
+  }
+]</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>Displays a nested data structure as a tree menu. Useful for navigating grouped/categorized data.</p>
+            <h2 id="basic-usage">Basic usage</h2>
+            <p>The data of <code>ef-tree</code> can be set by passing an array of objects to the element&apos;s <code>data</code> property.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tree</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tree</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">const</span> tree = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-tree&apos;</span>);
+tree.data = [{
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Group 1&apos;</span>,
+  <span class="hljs-attr">expanded</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">items</span>: [{
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Item 1.1&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;1.1&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Item 1.2&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;1.2&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Item 1.3&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;1.3&apos;</span>,
+    <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span>
+  }]
+},
+{
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Group 2&apos;</span>,
+  <span class="hljs-attr">items</span>: [{
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Item 2.1&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;2.1&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Item 2.2&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;2.2&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Item 2.3&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;2.3&apos;</span>
+  }]
+}]</code></pre>
+            <h2 id="tree-item-with-icon">Tree item with icon</h2>
+            <p>Icon can be set to show on each node in tree by using icon key in item object. You can pass icon name, url of icon svg file or empty string.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tree</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tree</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">const</span> tree = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-tree&apos;</span>);
+tree.data = [{
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Request 5 Rank 1: custom leage table&apos;</span>,
+  <span class="hljs-attr">icon</span>: <span class="hljs-string">&apos;list&apos;</span>,
+  <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">expanded</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">items</span>: [{
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Req. 5 Rnk. 1 Dr.Req. 1: Goldman Sachs &amp; Co&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;1.1&apos;</span>,
+    <span class="hljs-attr">icon</span>: <span class="hljs-string">&apos;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Req. 5 Rnk. 1 Dr.Req. 2: Allen &amp; Co Inc&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;1.2&apos;</span>,
+    <span class="hljs-attr">icon</span>: <span class="hljs-string">&apos;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&apos;</span>
+  }]
+},
+{
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Session Details&apos;</span>,
+  <span class="hljs-attr">icon</span>: <span class="hljs-string">&apos;sendfeed&apos;</span>,
+}]</code></pre>
+            <div class="pandora-code-viewer" id="pid-176">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-tree id=&quot;basic&quot;&gt;&lt;/ef-tree&gt;
+  &lt;ef-tree multiple id=&quot;multiple&quot;&gt;&lt;/ef-tree&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var basicTree = document.getElementById(&apos;basic&apos;);
+var multipleTree = document.getElementById(&apos;multiple&apos;);
+basicTree.data = [{
+    label: &apos;Request 5 Rank 1: custom leage table&apos;,
+    icon: &apos;list&apos;,
+    selected: true,
+    expanded: true,
+    items: [{
+        label: &apos;Req. 5 Rnk. 1 Dr.Req. 1: Goldman Sachs &amp; Co&apos;,
+        value: &apos;1.1&apos;,
+        icon: &apos;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&apos;
+      },
+      {
+        label: &apos;Req. 5 Rnk. 1 Dr.Req. 2: Allen &amp; Co Inc&apos;,
+        value: &apos;1.2&apos;,
+        icon: &apos;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&apos;
+      }
+    ]
+  },
+  {
+    label: &apos;Session Details&apos;,
+    icon: &apos;sendfeed&apos;,
+  }
+]
+multipleTree.data = [{
+    label: &apos;Request 5 Rank 1: custom leage table&apos;,
+    icon: &apos;list&apos;,
+    selected: true,
+    expanded: true,
+    items: [{
+        label: &apos;Req. 5 Rnk. 1 Dr.Req. 1: Goldman Sachs &amp; Co&apos;,
+        value: &apos;1.1&apos;,
+        icon: &apos;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&apos;
+      },
+      {
+        label: &apos;Req. 5 Rnk. 1 Dr.Req. 2: Allen &amp; Co Inc&apos;,
+        value: &apos;1.2&apos;,
+        icon: &apos;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&apos;
+      }
+    ]
+  },
+  {
+    label: &apos;Session Details&apos;,
+    icon: &apos;sendfeed&apos;,
+  }
+]</pre>
+                  <pre class="pandora-tab-view tab-css">.container {
+  display: flex;
+}
+
+ef-tree {
+  margin-right: 20px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>The <code>data</code> property that passes through the <code>ef-tree</code> uses the <code>TreeData</code> interface for its data items which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>icon</td>
+                  <td>string</td>
+                  <td>Icon of an item</td>
+                </tr>
+                <tr>
+                  <td>selected</td>
+                  <td>boolean</td>
+                  <td>Selection state of the item</td>
+                </tr>
+                <tr>
+                  <td>expanded</td>
+                  <td>boolean</td>
+                  <td>Expanded state of child items</td>
+                </tr>
+                <tr>
+                  <td>items</td>
+                  <td>array</td>
+                  <td>Child items collection</td>
+                </tr>
+                <tr>
+                  <td>readonly</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be readonly</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="multiple-selection">Multiple selection</h2>
+            <p>Tree uses single selection mode by default. Use the <code>multiple</code> attribute if you need multiple selections.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tree</span> <span class="hljs-attr">multiple</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tree</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-177">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tree multiple&gt;&lt;/ef-tree&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const tree = document.querySelector(&apos;ef-tree&apos;);
+tree.data = [{
+    label: &apos;Group 1&apos;,
+    items: [{
+        label: &apos;Item 1.1&apos;,
+        value: &apos;1.1&apos;
+      },
+      {
+        label: &apos;Item 1.2&apos;,
+        value: &apos;1.2&apos;
+      },
+      {
+        label: &apos;Item 1.3&apos;,
+        value: &apos;1.3&apos;,
+        selected: true
+      }
+    ]
+  },
+  {
+    label: &apos;Group 2&apos;,
+    items: [{
+        label: &apos;Item 2.1&apos;,
+        value: &apos;2.1&apos;
+      },
+      {
+        label: &apos;Item 2.2&apos;,
+        value: &apos;2.2&apos;
+      },
+      {
+        label: &apos;Item 2.3&apos;,
+        value: &apos;2.3&apos;
+      }
+    ]
+  }
+]</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="turn-off-parent-child-relationship">Turn off parent/child relationship</h2>
+            <p>For multiple selection mode, Tree manages the relationship between parent and child items. Use the <code>no-relation</code> attribute to turn this feature off.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tree</span> <span class="hljs-attr">multiple</span> <span class="hljs-attr">no-relation</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tree</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-178">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tree multiple no-relation&gt;&lt;/ef-tree&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const tree = document.querySelector(&apos;ef-tree&apos;);
+tree.data = [{
+    label: &apos;Group 1&apos;,
+    items: [{
+        label: &apos;Item 1.1&apos;,
+        value: &apos;1.1&apos;
+      },
+      {
+        label: &apos;Item 1.2&apos;,
+        value: &apos;1.2&apos;
+      },
+      {
+        label: &apos;Item 1.3&apos;,
+        value: &apos;1.3&apos;,
+        selected: true
+      }
+    ]
+  },
+  {
+    label: &apos;Group 2&apos;,
+    items: [{
+        label: &apos;Item 2.1&apos;,
+        value: &apos;2.1&apos;
+      },
+      {
+        label: &apos;Item 2.2&apos;,
+        value: &apos;2.2&apos;
+      },
+      {
+        label: &apos;Item 2.3&apos;,
+        value: &apos;2.3&apos;
+      }
+    ]
+  }
+]</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="tree-value-s-and-events">Tree value(s) and events</h2>
+            <p>Use the <code>value-changed</code> event to know when the user has changed any selection in Tree. Tree provides <code>value</code> and <code>values</code> properties for accessing selected item(s).</p>
+            <p>Typically, you can just use the <code>values</code> property, as it will work for both multiple and single selection mode. With single selection mode, <code>value</code> represents a single value, whereas in multiple selection mode, it will store the first value of the <code>values</code> array.</p>
+            <pre><code><span class="hljs-keyword">const</span> tree = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-tree&apos;</span>);
+
+tree.addEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+  <span class="hljs-built_in">console</span>.log(e.detail); <span class="hljs-comment">// value that users changed</span>
+  <span class="hljs-built_in">console</span>.log(tree.values); <span class="hljs-comment">// access selected items</span>
+});</code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">multiple</div>
+                <div class="desc">Allows multiple items to be selected</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-relation</div>
+                <div class="desc">Breaks the relationship when multiple
+                  selection mode is enabled</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">query</div>
+                <div class="desc">Query string applied to tree</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">stateless</div>
+                <div class="desc">Disable selections</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">multiple</div>
+                <div class="desc">Allows multiple items to be selected</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noRelation</div>
+                <div class="desc">Breaks the relationship when multiple
+                  selection mode is enabled</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">query</div>
+                <div class="desc">Query string applied to tree</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TreeRenderer</div>
+                <div class="name">renderer</div>
+                <div class="desc">Renderer used for generating tree items</div>
+                <div class="value">&quot;new TreeRenderer(this)&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Selected items in tree</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TreeData&lt;T&gt;</div>
+                <div class="name">data</div>
+                <div class="desc">Data object to be used for creating tree</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">stateless</div>
+                <div class="desc">Disable selections</div>
+                <div class="value">false</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">expandAll()</div>
+                <div class="desc">Expands all groups</div>
+              </div>
+              <div class="api-item">
+                <div class="name">collapseAll()</div>
+                <div class="desc">Collapses all groups</div>
+              </div>
+              <div class="api-item">
+                <div class="name">checkAll()</div>
+                <div class="desc">Checks all editable items</div>
+              </div>
+              <div class="api-item">
+                <div class="name">uncheckAll()</div>
+                <div class="desc">Unchecks all editable items</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Fired when the users changed selection item.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">expanded-changed</div>
+                <div class="desc">Fired when an item&apos;s expanded state has changed.</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

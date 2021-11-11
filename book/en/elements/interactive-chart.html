@@ -1,0 +1,1701 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Interactive Chart</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/interactive-chart.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li selected><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/interactive-chart;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="interactive-chart">Interactive Chart</h1>
+
+            <div class="pandora-code-viewer" id="pid-261">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;candle&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var initVal = 20;
+var maxVal = initVal * 2;
+var generateData = function(total, start) {
+  var startDate = start || new Date();
+  var ret = [];
+  total = total &lt; 0 ? 10 : total;
+  for (var i = 0; i &lt; total; i++) {
+    var volatility = (Math.random() * (4.5) - 2) / 100; // random % volatility
+    var date = start || new Date(startDate.setDate(startDate.getDate() + 1));
+    var openVal = initVal + initVal * volatility;
+    var closeVal = openVal + (openVal * volatility * 1.5);
+    var highVal = openVal &gt; closeVal ? openVal + 0.1 : closeVal + 0.5;
+    var lowVal = openVal &lt; closeVal ? openVal - 0.5 : closeVal - 0.2;
+    initVal = closeVal &gt; maxVal ? closeVal - (closeVal * 0.2) : closeVal;
+    var point = {
+      time: date.getTime() / 1000.0,
+      open: parseFloat(openVal.toFixed(2)),
+      high: parseFloat(highVal.toFixed(2)),
+      low: parseFloat(lowVal.toFixed(2)),
+      close: parseFloat(closeVal.toFixed(2))
+    };
+    ret.push(point);
+  }
+  return ret;
+};
+
+var generateCurrent = function(prevDate) {
+  var newPoint = generateData(1, prevDate);
+  return newPoint[0] || {};
+};
+
+const chart = document.getElementById(&apos;candle&apos;);
+chart.config = {
+  series: [{
+    type: &apos;candlestick&apos;,
+    data: generateData(100)
+  }]
+};
+
+setInterval(function() {
+  var lastIndex = chart.config.series[0].data.length - 1;
+  var time = chart.config.series[0].data[lastIndex].time;
+  var latestTime = time || null;
+  latestTime += 86400; // Update time Next day
+  var prevDate = new Date(latestTime * 1000);
+  var current = generateCurrent(prevDate);
+  chart.config.series[0].data.push(current);
+  chart.seriesList[0].update(current);
+}, 1000);</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>Interactive Chart is a lightweight chart component that allows you to create different use cases for financial chart. The component uses the <a href="https://github.com/tradingview/lightweight-charts" target="_blank">lightweight-charts</a> library. You can see a demo of different chart types and the APIs of the lightweight chart library via this <a href="https://www.tradingview.com/lightweight-charts/" target="_blank">documentation</a>.</p>
+            <p>While you can use interactive chart to draw several chart types, such as line, bar and candlestick, the chart doesn&apos;t support adding trendlines or technical analyses.</p>
+            <h3 id="create-chart">Create chart</h3>
+            <p>You can create a chart by passing the configuration and initial dataset using the <code>config</code> property. Interactive chart supports the following chart types. The <code>value</code> must be a number.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>line</code></td>
+                  <td>Line chart</td>
+                </tr>
+                <tr>
+                  <td><code>area</code></td>
+                  <td>Line chart with filled area</td>
+                </tr>
+                <tr>
+                  <td><code>bar</code></td>
+                  <td>OHLC bar chart</td>
+                </tr>
+                <tr>
+                  <td><code>candlestick</code></td>
+                  <td>Candlestick chart</td>
+                </tr>
+                <tr>
+                  <td><code>volume</code></td>
+                  <td>Volume chart</td>
+                </tr>
+              </tbody>
+            </table>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-interactive-chart</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-interactive-chart</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">const</span> chart = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;line&quot;</span>);
+chart.config = {
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;line&quot;</span>,
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-22&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">32.51</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-23&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">31.11</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-24&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">27.02</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-25&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">27.32</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-26&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">25.17</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-27&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">28.89</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-28&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">25.46</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-29&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">23.92</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-30&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">22.68</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-31&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">22.67</span> }
+      ]
+    }
+  ]
+};</code></pre>
+            <p>Bar and candlestick charts need a different dataset.</p>
+            <pre><code>chart.config = {
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&quot;bar&quot;</span>,
+      <span class="hljs-attr">data</span>: [
+        {
+          <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-19&quot;</span>,
+          <span class="hljs-attr">open</span>: <span class="hljs-number">141.77</span>,
+          <span class="hljs-attr">high</span>: <span class="hljs-number">170.39</span>,
+          <span class="hljs-attr">low</span>: <span class="hljs-number">120.25</span>,
+          <span class="hljs-attr">close</span>: <span class="hljs-number">145.72</span>
+        },
+        {
+          <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-20&quot;</span>,
+          <span class="hljs-attr">open</span>: <span class="hljs-number">145.72</span>,
+          <span class="hljs-attr">high</span>: <span class="hljs-number">147.99</span>,
+          <span class="hljs-attr">low</span>: <span class="hljs-number">100.11</span>,
+          <span class="hljs-attr">close</span>: <span class="hljs-number">108.19</span>
+        },
+        {
+          <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-21&quot;</span>,
+          <span class="hljs-attr">open</span>: <span class="hljs-number">108.19</span>,
+          <span class="hljs-attr">high</span>: <span class="hljs-number">118.43</span>,
+          <span class="hljs-attr">low</span>: <span class="hljs-number">74.22</span>,
+          <span class="hljs-attr">close</span>: <span class="hljs-number">75.16</span>
+        },
+        {
+          <span class="hljs-attr">time</span>: <span class="hljs-string">&quot;2018-12-22&quot;</span>,
+          <span class="hljs-attr">open</span>: <span class="hljs-number">75.16</span>,
+          <span class="hljs-attr">high</span>: <span class="hljs-number">82.84</span>,
+          <span class="hljs-attr">low</span>: <span class="hljs-number">36.16</span>,
+          <span class="hljs-attr">close</span>: <span class="hljs-number">45.72</span>
+        }
+      ]
+    }
+  ]
+};</code></pre>
+            <h3 id="intraday-charts">Intraday charts</h3>
+            <p>Interactive chart supports intraday chart using a UNIX timestamp instead of a date string, as mentioned in the <a href="https://github.com/tradingview/lightweight-charts/blob/master/docs/time.md#time" target="_blank">Lightweight Documentation</a>.</p>
+            <p>Also, be sure to enable <code>timeVisible</code> in the configuration. <code>secondVisible</code> is optional.</p>
+
+            <div class="pandora-code-viewer" id="pid-262">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chart = document.getElementById(&apos;price&apos;);
+chart.config = {
+  options: {
+    timeScale: {
+      timeVisible: true,
+      secondsVisible: true
+    }
+  },
+  series: [{
+    symbol: &apos;Price&apos;,
+    type: &apos;area&apos;,
+    data: [
+      { time: Date.parse(&apos;2019-04-10T08:40:10&apos;) / 1000, value: 82.90 },
+      { time: Date.parse(&apos;2019-04-10T09:13:11&apos;) / 1000, value: 83.89 },
+      { time: Date.parse(&apos;2019-04-10T10:21:25&apos;) / 1000, value: 81.81 },
+      { time: Date.parse(&apos;2019-04-10T11:43:13&apos;) / 1000, value: 85.39 },
+      { time: Date.parse(&apos;2019-04-11T12:24:20&apos;) / 1000, value: 81.42 },
+      { time: Date.parse(&apos;2019-04-11T13:52:15&apos;) / 1000, value: 83.71 },
+      { time: Date.parse(&apos;2019-04-11T14:11:45&apos;) / 1000, value: 80.11 },
+      { time: Date.parse(&apos;2019-04-11T15:10:12&apos;) / 1000, value: 83.16 },
+      { time: Date.parse(&apos;2019-04-11T16:05:11&apos;) / 1000, value: 80.78 },
+    ]
+  }]
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>chart.config = {
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">timeScale</span>: {
+      <span class="hljs-attr">timeVisible</span>: <span class="hljs-literal">true</span>,
+      <span class="hljs-attr">secondsVisible</span>: <span class="hljs-literal">true</span>
+    }
+  },
+  <span class="hljs-attr">series</span>: [{
+    <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;Price&apos;</span>,
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;area&apos;</span>,
+    <span class="hljs-attr">data</span>: [
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-10T08:40:10&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">82.90</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-10T09:13:11&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">83.89</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-10T10:21:25&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">81.81</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-10T11:43:13&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">85.39</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-11T12:24:20&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">81.42</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-11T13:52:15&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">83.71</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-11T14:11:45&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">80.11</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-11T15:10:12&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">83.16</span> },
+      { <span class="hljs-attr">time</span>: <span class="hljs-built_in">Date</span>.parse(<span class="hljs-string">&apos;2019-04-11T16:05:11&apos;</span>) / <span class="hljs-number">1000</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">80.78</span> },    
+    ]
+  }]
+};</code></pre>
+            <h3 id="multiple-charts">Multiple charts</h3>
+            <p>Chart can display multiple series by passing an array to <code>config.series</code>. For example, a rebasing chart can be created as poer below.</p>
+
+            <div class="pandora-code-viewer" id="pid-263">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;multi&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var generateData = function(total, start, init) {
+  var initVal = init || 20;
+  var startDate = start || new Date();
+  var ret = [];
+  total = total &lt; 0 ? 10 : total;
+  for (var i = 0; i &lt; total; i++) {
+    var volatility = (Math.random() * (4.5) - 2) / 100; // random % volatility
+    var date = start || new Date(startDate.setDate(startDate.getDate() + 1));
+    var val = initVal + initVal * volatility;
+    initVal = val;
+    var point = {
+      time: date.getTime() / 1000.0,
+      value: parseFloat(val.toFixed(2))
+    };
+    ret.push(point);
+  }
+  return ret;
+};
+
+const chart = document.getElementById(&apos;multi&apos;);
+chart.config = {
+  options: {
+    priceScale: {
+      mode: 2
+    }
+  },
+  series: [{
+      symbol: &apos;GOOGL.O&apos;,
+      type: &apos;area&apos;,
+      data: generateData(100)
+    },
+    {
+      symbol: &apos;AMZN.OQ&apos;,
+      type: &apos;line&apos;,
+      data: generateData(100)
+    },
+    {
+      symbol: &apos;EBAY.OQ&apos;,
+      type: &apos;line&apos;,
+      data: generateData(100)
+    },
+    {
+      symbol: &apos;NFLX.OQ&apos;,
+      type: &apos;line&apos;,
+      data: generateData(100)
+    },
+    {
+      symbol: &apos;BIDU.OQ&apos;,
+      type: &apos;line&apos;,
+      data: generateData(100)
+    },
+    {
+      symbol: &apos;CRTO.OQ&apos;,
+      type: &apos;line&apos;,
+      data: generateData(100)
+    },
+    {
+      symbol: &apos;BABA.N&apos;,
+      type: &apos;line&apos;,
+      data: generateData(100)
+    }
+  ]
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>chart.config = {
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">priceScale</span>: {
+      <span class="hljs-attr">mode</span>: <span class="hljs-number">2</span>
+    }
+  },  
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;GOOGL.O&apos;</span>,
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;area&apos;</span>,
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">180.01</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">156.63</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">166.64</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-14&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">181.89</span> },
+        ...
+      ]
+    },
+    {
+      <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;AMZN.OQ&apos;</span>,
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;line&apos;</span>,
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">20.31</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">30.27</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">70.28</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-14&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">49.29</span> },
+        ...
+      ]
+    }
+  ]
+};</code></pre>
+            <h3 id="volume-chart">Volume chart</h3>
+            <p>To create a chart with volume, add a volume series and set <code>seriesOptions</code> as follows.</p>
+
+            <div class="pandora-code-viewer" id="pid-264">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;volume&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var generateData = function(total, start, init) {
+  var initVal = init || 20;
+  var startDate = start || new Date();
+  var ret = [];
+  total = total &lt; 0 ? 10 : total;
+  for (var i = 0; i &lt; total; i++) {
+    var volatility = (Math.random() * (20) - 6) / 100; // random % volatility
+    var date = start || new Date(startDate.setDate(startDate.getDate() + 1));
+    var val = initVal + initVal * volatility;
+    initVal = val;
+    var point = {
+      time: date.getTime() / 1000.0,
+      value: parseFloat(val.toFixed(2))
+    };
+    ret.push(point);
+  }
+  return ret;
+};
+
+const chart = document.getElementById(&apos;volume&apos;);
+chart.config = {
+  series: [{
+      symbol: &apos;Price&apos;,
+      type: &apos;area&apos;,
+      data: generateData(70)
+    },
+    {
+      symbol: &apos;Vol&apos;,
+      type: &apos;volume&apos;,
+      seriesOptions: {
+        overlay: true,
+        priceFormat: {
+          type: &apos;volume&apos;
+        },
+        scaleMargins: {
+          top: 0.8,
+          bottom: 0
+        },
+        lineWidth: 3,
+      },
+      data: generateData(70, null, 2000000)
+    }
+  ]
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>chart.config = {
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;area&apos;</span>,
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">180.01</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">156.63</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">166.64</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-14&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">181.89</span> },
+        ...
+      ]
+    },
+    {
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;volume&apos;</span>,
+      <span class="hljs-attr">seriesOptions</span> : {
+        <span class="hljs-attr">overlay</span>: <span class="hljs-literal">true</span>,
+        <span class="hljs-attr">priceFormat</span>: {
+          <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;volume&apos;</span>
+        },
+        <span class="hljs-attr">scaleMargins</span>: {
+          <span class="hljs-attr">top</span>: <span class="hljs-number">0.8</span>,
+          <span class="hljs-attr">bottom</span>: <span class="hljs-number">0</span>
+        },
+        <span class="hljs-attr">lineWidth</span>: <span class="hljs-number">3</span>,
+      },
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">204000</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">303000</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">705000</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2019-04-14&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">498700</span> },
+        ...
+      ]
+    }
+  ]
+};</code></pre>
+            <h3 id="seasonality-chart">Seasonality chart</h3>
+            <p>A Seasonality chart can be created using multiple series with the same timespan. You can use the APIs to customize the displayed legend, X-Axis label and cross hair vertical label.</p>
+
+            <div class="pandora-code-viewer" id="pid-265">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;seasonality&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const monthCount = {};
+const months = {
+  1: &quot;January&quot;,
+  2: &quot;February&quot;,
+  3: &quot;March&quot;,
+  4: &quot;April&quot;,
+  5: &quot;May&quot;,
+  6: &quot;June&quot;,
+  7: &quot;July&quot;,
+  8: &quot;August&quot;,
+  9: &quot;September&quot;,
+  10: &quot;October&quot;,
+  11: &quot;November&quot;,
+  12: &quot;December&quot;
+}
+const chart = document.getElementById(&apos;seasonality&apos;);
+chart.config = {
+  lastValueVisible: false,
+  options: {
+    timeScale: {
+      tickMarkFormatter: function(time, tickMarkType, locale) {
+        if (!monthCount[time.month]) {
+          monthCount[time.month] = 1;
+          return months[time.month];
+        }
+        return &quot;&quot;;
+      }
+    },
+    localization: {
+      timeFormatter: function(date) {
+        return date.day + &apos; &apos; + months[date.month];
+      }
+    }
+  },
+  series: [{
+      symbol: &apos;2011-2020&apos;,
+      symbolName: &apos;Avg. 2011-2020&apos;,
+      lastValueVisible: false,
+      type: &apos;line&apos;,
+      data: [
+        { time: &apos;2020-01-11&apos;, value: 20.31 },
+        { time: &apos;2020-02-12&apos;, value: 30.27 },
+        { time: &apos;2020-03-13&apos;, value: 70.28 },
+        { time: &apos;2020-04-11&apos;, value: 20.31 },
+        { time: &apos;2020-05-12&apos;, value: 30.27 },
+        { time: &apos;2020-06-13&apos;, value: 70.28 },
+        { time: &apos;2020-07-11&apos;, value: 49.29 },
+        { time: &apos;2020-08-12&apos;, value: 20.31 },
+        { time: &apos;2020-09-13&apos;, value: 30.27 },
+        { time: &apos;2020-10-11&apos;, value: 70.28 },
+        { time: &apos;2020-11-12&apos;, value: 49.29 },
+        { time: &apos;2020-12-13&apos;, value: 70.28 },
+      ]
+    },
+    {
+      symbol: &apos;2021&apos;,
+      symbolName: &apos;2021&apos;,
+      type: &apos;area&apos;,
+      data: [
+        { time: &apos;2020-01-11&apos;, value: 45.01 },
+        { time: &apos;2020-02-12&apos;, value: 60.63 },
+        { time: &apos;2020-03-13&apos;, value: 166.64 },
+        { time: &apos;2020-04-11&apos;, value: 180.01 },
+        { time: &apos;2020-05-12&apos;, value: 156.63 },
+        { time: &apos;2020-06-13&apos;, value: 166.64 },
+        { time: &apos;2020-07-11&apos;, value: 181.89 }
+      ]
+    },
+  ]
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-keyword">const</span> monthCount = {};
+<span class="hljs-keyword">const</span> months = {
+    <span class="hljs-number">1</span>: <span class="hljs-string">&quot;January&quot;</span>,
+    <span class="hljs-number">2</span>: <span class="hljs-string">&quot;February&quot;</span>,
+    <span class="hljs-number">3</span>: <span class="hljs-string">&quot;March&quot;</span>,
+    <span class="hljs-number">4</span>: <span class="hljs-string">&quot;April&quot;</span>,
+    <span class="hljs-number">5</span>: <span class="hljs-string">&quot;May&quot;</span>,
+    <span class="hljs-number">6</span>: <span class="hljs-string">&quot;June&quot;</span>,
+    <span class="hljs-number">7</span>: <span class="hljs-string">&quot;July&quot;</span>,
+    <span class="hljs-number">8</span>: <span class="hljs-string">&quot;August&quot;</span>,
+    <span class="hljs-number">9</span>: <span class="hljs-string">&quot;September&quot;</span>,
+    <span class="hljs-number">10</span>: <span class="hljs-string">&quot;October&quot;</span>,
+    <span class="hljs-number">11</span>: <span class="hljs-string">&quot;November&quot;</span>,
+    <span class="hljs-number">12</span>: <span class="hljs-string">&quot;December&quot;</span>
+}
+<span class="hljs-keyword">const</span> chart = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;seasonality&apos;</span>);
+chart.config = {
+  <span class="hljs-attr">lastValueVisible</span>: <span class="hljs-literal">false</span>,
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">timeScale</span>: {
+      <span class="hljs-attr">tickMarkFormatter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">time, tickMarkType, locale</span>) </span>{
+        <span class="hljs-keyword">if</span>(!monthCount[time.month]) {
+          monthCount[time.month] = <span class="hljs-number">1</span>;
+          <span class="hljs-keyword">return</span> months[time.month];
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;&quot;</span>;
+      }
+    },
+    <span class="hljs-attr">localization</span>: {
+      <span class="hljs-attr">timeFormatter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">date</span>) </span>{
+        <span class="hljs-keyword">return</span> date.day + <span class="hljs-string">&apos; &apos;</span> + months[date.month];
+      }
+    }
+  },
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;2011-2020&apos;</span>,
+      <span class="hljs-attr">symbolName</span>: <span class="hljs-string">&apos;Avg. 2011-2020&apos;</span>,
+      <span class="hljs-attr">lastValueVisible</span>: <span class="hljs-literal">false</span>,
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;line&apos;</span>,
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-01-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">20.31</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-02-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">30.27</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-03-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">70.28</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-04-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">20.31</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-05-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">30.27</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-06-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">70.28</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-07-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">49.29</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-08-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">20.31</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-09-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">30.27</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-10-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">70.28</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-11-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">49.29</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-12-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">70.28</span> },
+      ]
+    },
+    {
+      <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;2021&apos;</span>,
+      <span class="hljs-attr">symbolName</span>: <span class="hljs-string">&apos;2021&apos;</span>,
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;area&apos;</span>,
+      <span class="hljs-attr">data</span>: [
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-01-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">45.01</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-02-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">60.63</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-03-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">166.64</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-04-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">180.01</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-05-12&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">156.63</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-06-13&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">166.64</span> },
+        { <span class="hljs-attr">time</span>: <span class="hljs-string">&apos;2020-07-11&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">181.89</span> }
+      ]
+    },
+  ]
+};</code></pre>
+            <h3 id="setting-chart-options">Setting chart options</h3>
+            <p>You can customize chart options either at the <strong>chart level</strong> or <strong>series level</strong>.</p>
+            <p>To customize options at the chart level, pass the option to <code>config.options</code>. Learn more about chart options from the <a href="https://github.com/tradingview/lightweight-charts/blob/master/docs" target="_blank">Lightweight Chart Customization</a>.</p>
+            <p>For example, in the <code>lightweight-charts</code> documents, you can learn to pass options to the chart in order to customize the crosshair.</p>
+            <pre><code>{
+  crosshair: {
+    vertLine: {
+      color: <span class="hljs-string">&quot;#4d4d4d&quot;</span>,
+      width: <span class="hljs-number">0.5</span>,
+      style: <span class="hljs-number">1</span>,
+      visible: <span class="hljs-literal">true</span>,
+      labelVisible: <span class="hljs-literal">false</span>,
+    },
+    horzLine: {
+      color: <span class="hljs-string">&quot;#4d4d4d&quot;</span>,
+      width: <span class="hljs-number">1.5</span>,
+      style: <span class="hljs-number">0</span>,
+      visible: <span class="hljs-literal">true</span>,
+      labelVisible: <span class="hljs-literal">true</span>,
+    },
+    mode: <span class="hljs-number">1</span>,
+  },
+}</code></pre>
+            <p>In <code>ef-interactive-chart</code>, you will need to pass those options to <code>config.options</code>.</p>
+            <pre><code>chart.config = {
+  options: {
+    crosshair: {
+      vertLine: {
+        color: <span class="hljs-string">&quot;#4d4d4d&quot;</span>,
+        width: <span class="hljs-number">0.5</span>,
+        style: <span class="hljs-number">1</span>,
+        visible: <span class="hljs-literal">true</span>,
+        labelVisible: <span class="hljs-literal">false</span>,
+      },
+      horzLine: {
+        color: <span class="hljs-string">&quot;#4d4d4d&quot;</span>,
+        width: <span class="hljs-number">1.5</span>,
+        style: <span class="hljs-number">0</span>,
+        visible: <span class="hljs-literal">true</span>,
+        labelVisible: <span class="hljs-literal">true</span>,
+      },
+    },
+  }
+};</code></pre>
+            <div class="pandora-code-viewer" id="pid-266">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chart = document.getElementById(&apos;price&apos;);
+chart.config = {
+  series: [{
+    symbol: &apos;Price&apos;,
+    type: &apos;area&apos;,
+    data: [
+      { time: &apos;2019-04-11&apos;, value: 180.01 },
+      { time: &apos;2019-04-12&apos;, value: 156.63 },
+      { time: &apos;2019-04-13&apos;, value: 166.64 },
+      { time: &apos;2019-04-14&apos;, value: 181.89 },
+      { time: &apos;2019-04-15&apos;, value: 174.43 },
+      { time: &apos;2019-04-16&apos;, value: 180.01 },
+      { time: &apos;2019-04-17&apos;, value: 196.63 },
+      { time: &apos;2019-04-18&apos;, value: 176.64 },
+      { time: &apos;2019-04-20&apos;, value: 181.89 },
+      { time: &apos;2019-04-21&apos;, value: 190.01 },
+      { time: &apos;2019-04-22&apos;, value: 196.63 },
+      { time: &apos;2019-04-23&apos;, value: 178.64 },
+      { time: &apos;2019-04-24&apos;, value: 141.89 },
+      { time: &apos;2019-04-25&apos;, value: 154.43 },
+      { time: &apos;2019-04-26&apos;, value: 170.01 },
+      { time: &apos;2019-04-27&apos;, value: 196.63 },
+      { time: &apos;2019-04-28&apos;, value: 176.64 },
+      { time: &apos;2019-04-29&apos;, value: 181.89 }
+    ]
+  }],
+  options: {
+    crosshair: {
+      vertLine: {
+        color: &apos;#4d4d4d&apos;,
+        width: 0.5,
+        style: 1,
+        visible: true,
+        labelVisible: false,
+      },
+      horzLine: {
+        color: &apos;#4d4d4d&apos;,
+        width: 1.5,
+        style: 0,
+        visible: true,
+        labelVisible: true,
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>To customize options at the series level, pass the options to each series using <code>seriesOptions</code>. Learn more about chart options from <a href="https://github.com/tradingview/lightweight-charts/blob/master/docs" target="_blank">Lightweight Chart Series Basic</a>.</p>
+            <p>For example, in <code>lightweight-chart</code>, you can pass options to set preferred decimal places on the y-axis.</p>
+            <pre><code>{
+  priceFormat: {
+      precision: <span class="hljs-number">3</span>,
+  },
+}</code></pre>
+            <p>In <code>ef-interactive-chart</code>, you pass options to <code>seriesOptions</code> in the <code>series</code>.</p>
+            <pre><code>chart.config = {
+  <span class="hljs-attr">options</span>: { ... },
+  <span class="hljs-attr">series</span>: [
+  {
+    <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;Price&apos;</span>,
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;area&apos;</span>,
+      <span class="hljs-attr">seriesOptions</span>: {
+        <span class="hljs-attr">priceFormat</span>: {
+            <span class="hljs-attr">precision</span>: <span class="hljs-number">3</span>
+        }
+      }
+  }]
+}</code></pre>
+            <div class="pandora-code-viewer" id="pid-267">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chart = document.getElementById(&apos;price&apos;);
+chart.config = {
+  series: [{
+    symbol: &apos;Price&apos;,
+    type: &apos;area&apos;,
+    data: [
+      { time: &apos;2019-04-11&apos;, value: 180.01 },
+      { time: &apos;2019-04-12&apos;, value: 156.63 },
+      { time: &apos;2019-04-13&apos;, value: 166.64 },
+      { time: &apos;2019-04-14&apos;, value: 181.89 },
+      { time: &apos;2019-04-15&apos;, value: 174.43 },
+      { time: &apos;2019-04-16&apos;, value: 180.01 },
+      { time: &apos;2019-04-17&apos;, value: 196.63 },
+      { time: &apos;2019-04-18&apos;, value: 176.64 },
+      { time: &apos;2019-04-20&apos;, value: 181.89 },
+      { time: &apos;2019-04-21&apos;, value: 190.01 },
+      { time: &apos;2019-04-22&apos;, value: 196.63 },
+      { time: &apos;2019-04-23&apos;, value: 178.64 },
+      { time: &apos;2019-04-24&apos;, value: 141.89 },
+      { time: &apos;2019-04-25&apos;, value: 154.43 },
+      { time: &apos;2019-04-26&apos;, value: 170.01 },
+      { time: &apos;2019-04-27&apos;, value: 196.63 },
+      { time: &apos;2019-04-28&apos;, value: 176.64 },
+      { time: &apos;2019-04-29&apos;, value: 181.89 }
+    ],
+    seriesOptions: {
+      priceFormat: {
+        precision: 3
+      }
+    }
+  }]
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="y-axis-placement">Y-Axis placement</h3>
+            <p>By default, chart will not display a left-side y-axis and all series will show on the right y-axis of the chart. However, <code>lightweight-chart</code> also provides the option to configure placement of a series to the left, right or both.</p>
+            <p>Customizing chart to show data on the left y-axis.</p>
+            <pre><code>chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: <span class="hljs-literal">false</span>
+    },
+    leftPriceScale: {
+      visible: <span class="hljs-literal">true</span>
+    },
+  },
+  series: [{
+    symbol: &apos;Price&apos;,
+    type: &apos;area&apos;,
+    seriesOptions: {
+      priceScaleId: &apos;left&apos;
+    },
+    data: [...]
+  }]
+};</code></pre>
+            <div class="pandora-code-viewer" id="pid-268">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chart = document.getElementById(&apos;price&apos;);
+chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: false
+    },
+    leftPriceScale: {
+      visible: true
+    },
+  },
+  series: [{
+    symbol: &apos;Price&apos;,
+    type: &apos;area&apos;,
+    seriesOptions: {
+      priceScaleId: &apos;left&apos;
+    },
+    data: [
+      { time: &apos;2019-04-11&apos;, value: 180.01 },
+      { time: &apos;2019-04-12&apos;, value: 156.63 },
+      { time: &apos;2019-04-13&apos;, value: 166.64 },
+      { time: &apos;2019-04-14&apos;, value: 181.89 },
+      { time: &apos;2019-04-15&apos;, value: 174.43 },
+      { time: &apos;2019-04-16&apos;, value: 180.01 },
+      { time: &apos;2019-04-17&apos;, value: 196.63 },
+      { time: &apos;2019-04-18&apos;, value: 176.64 },
+      { time: &apos;2019-04-20&apos;, value: 181.89 },
+      { time: &apos;2019-04-21&apos;, value: 190.01 },
+      { time: &apos;2019-04-22&apos;, value: 196.63 },
+      { time: &apos;2019-04-23&apos;, value: 178.64 },
+      { time: &apos;2019-04-24&apos;, value: 141.89 },
+      { time: &apos;2019-04-25&apos;, value: 154.43 },
+      { time: &apos;2019-04-26&apos;, value: 170.01 },
+      { time: &apos;2019-04-27&apos;, value: 196.63 },
+      { time: &apos;2019-04-28&apos;, value: 176.64 },
+      { time: &apos;2019-04-29&apos;, value: 181.89 }
+    ]
+  }]
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>Customizing chart to show data on the left and right sides of the y-axis.</p>
+            <pre><code>chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: <span class="hljs-literal">true</span>
+    },
+    leftPriceScale: {
+      visible: <span class="hljs-literal">true</span>
+    },
+  },
+  series: [{
+    symbol: &apos;IBM.N&apos;,
+    type: &apos;area&apos;,
+    seriesOptions: {
+      priceScaleId: &apos;right&apos;
+    },
+    data: [...]
+  },
+  {
+    symbol: &apos;GOOG.O&apos;,
+    type: &apos;area&apos;,
+    seriesOptions: {
+      priceScaleId: &apos;left&apos;
+    },
+    data: [...]
+  }]
+};</code></pre>
+            <div class="pandora-code-viewer" id="pid-269">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chart = document.getElementById(&apos;price&apos;);
+chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: true
+    },
+    leftPriceScale: {
+      visible: true
+    },
+  },
+  series: [{
+      symbol: &apos;IBM.N&apos;,
+      type: &apos;area&apos;,
+      seriesOptions: {
+        priceScaleId: &apos;right&apos;
+      },
+      data: [
+        { time: &apos;2019-04-11&apos;, value: 280.01 },
+        { time: &apos;2019-04-12&apos;, value: 186.63 },
+        { time: &apos;2019-04-13&apos;, value: 366.64 },
+        { time: &apos;2019-04-14&apos;, value: 381.89 },
+        { time: &apos;2019-04-15&apos;, value: 374.43 },
+        { time: &apos;2019-04-16&apos;, value: 240.01 },
+        { time: &apos;2019-04-17&apos;, value: 276.63 },
+        { time: &apos;2019-04-18&apos;, value: 286.64 },
+        { time: &apos;2019-04-20&apos;, value: 301.89 },
+        { time: &apos;2019-04-21&apos;, value: 290.01 },
+        { time: &apos;2019-04-22&apos;, value: 296.63 },
+        { time: &apos;2019-04-23&apos;, value: 278.64 },
+        { time: &apos;2019-04-24&apos;, value: 341.89 },
+        { time: &apos;2019-04-25&apos;, value: 354.43 },
+        { time: &apos;2019-04-26&apos;, value: 370.01 },
+        { time: &apos;2019-04-27&apos;, value: 296.63 },
+        { time: &apos;2019-04-28&apos;, value: 276.64 },
+        { time: &apos;2019-04-29&apos;, value: 181.89 }
+      ]
+    },
+    {
+      symbol: &apos;GOOG.O&apos;,
+      type: &apos;area&apos;,
+      seriesOptions: {
+        priceScaleId: &apos;left&apos;
+      },
+      data: [
+        { time: &apos;2019-04-11&apos;, value: 180.01 },
+        { time: &apos;2019-04-12&apos;, value: 156.63 },
+        { time: &apos;2019-04-13&apos;, value: 166.64 },
+        { time: &apos;2019-04-14&apos;, value: 181.89 },
+        { time: &apos;2019-04-15&apos;, value: 174.43 },
+        { time: &apos;2019-04-16&apos;, value: 180.01 },
+        { time: &apos;2019-04-17&apos;, value: 196.63 },
+        { time: &apos;2019-04-18&apos;, value: 176.64 },
+        { time: &apos;2019-04-20&apos;, value: 181.89 },
+        { time: &apos;2019-04-21&apos;, value: 190.01 },
+        { time: &apos;2019-04-22&apos;, value: 196.63 },
+        { time: &apos;2019-04-23&apos;, value: 178.64 },
+        { time: &apos;2019-04-24&apos;, value: 141.89 },
+        { time: &apos;2019-04-25&apos;, value: 154.43 },
+        { time: &apos;2019-04-26&apos;, value: 170.01 },
+        { time: &apos;2019-04-27&apos;, value: 196.63 },
+        { time: &apos;2019-04-28&apos;, value: 176.64 },
+        { time: &apos;2019-04-29&apos;, value: 181.89 }
+      ]
+    }
+  ]
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="chart-legend">Chart legend</h3>
+            <p>The interactive chart provides a default standard legend which displays price and symbol, if available.</p>
+            <p>In case you want to preserve the value of <code>symbol</code> and show a custom name on the legend, use <code>symbolName</code> alongside <code>symbol</code>. The chart will use <code>symbolName</code> in the legend, instead.</p>
+            <pre><code>line.config = {
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;APPL.O&apos;</span>,
+      <span class="hljs-attr">symbolName</span>: <span class="hljs-string">&apos;Price&apos;</span>,
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;line&apos;</span>,
+      <span class="hljs-attr">data</span>: [...]
+    }
+  ]
+};</code></pre>
+            <p>By default, chart will display a raw value that passes from the data object in the legend. If you want to override the default formatting of the price, you can set your own formatter function to <code>legendPriceFormatter</code> in a series configuration object to override price format on the legend.</p>
+            <p>For example, here&apos;s how you can format price to show three decimal places on the legend.</p>
+            <pre><code>chart.config = {
+  <span class="hljs-attr">series</span>: [
+    {
+      <span class="hljs-attr">symbol</span>: <span class="hljs-string">&apos;AAPL&apos;</span>,
+      <span class="hljs-attr">legendPriceFormatter</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">price</span>) </span>{ <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;$&apos;</span> + price.toFixed(<span class="hljs-number">3</span>); },
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;area&apos;</span>,
+      <span class="hljs-attr">data</span>: [...],
+    }
+  ]
+};</code></pre>
+            <div class="pandora-code-viewer" id="pid-270">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;legend_formatter&quot;&gt;&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chart = document.getElementById(&apos;legend_formatter&apos;);
+chart.config = {
+  series: [{
+    legendPriceFormatter: function(price) { return &apos;$&apos; + price.toFixed(3); },
+    type: &apos;area&apos;,
+    data: [
+      { time: &apos;2018-12-22&apos;, value: 32.51 },
+      { time: &apos;2018-12-23&apos;, value: 31.11 },
+      { time: &apos;2018-12-24&apos;, value: 27.02 },
+      { time: &apos;2018-12-25&apos;, value: 27.32 },
+      { time: &apos;2018-12-26&apos;, value: 25.17 },
+      { time: &apos;2018-12-27&apos;, value: 28.89 },
+      { time: &apos;2018-12-28&apos;, value: 25.46 },
+      { time: &apos;2018-12-29&apos;, value: 23.92 },
+      { time: &apos;2018-12-30&apos;, value: 22.68 },
+      { time: &apos;2018-12-31&apos;, value: 22.67 }
+    ],
+    seriesOptions: {
+      priceFormat: {
+        type: &apos;custom&apos;,
+        formatter: function(price) { return &apos;$&apos; + price.toFixed(3); }
+      }
+    }
+  }]
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="custom-legend">Custom legend</h3>
+            <p>You can implement your own legend using the <code>legend</code> slot.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-interactive-chart</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;line&quot;</span> <span class="hljs-attr">legend</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;legend&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;chart-legend&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-interactive-chart</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;line&apos;</span>);
+<span class="hljs-keyword">const</span> legend = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;chart-legend&apos;</span>);
+
+el.addEventListener(<span class="hljs-string">&apos;initialized&apos;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+  <span class="hljs-keyword">const</span> chart = e.target.chart; <span class="hljs-comment">// lightweight chart instance</span>
+  <span class="hljs-keyword">const</span> seriesList = e.target.seriesList;
+  <span class="hljs-keyword">const</span> data = e.target.config.series[<span class="hljs-number">0</span>].data;
+
+  chart.subscribeCrosshairMove(<span class="hljs-function">(<span class="hljs-params">param</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> price = param.seriesPrices.get(seriesList[<span class="hljs-number">0</span>]); <span class="hljs-comment">// get price at crosshair</span>
+    <span class="hljs-keyword">if</span> (price) {
+      legend.textContent = price; <span class="hljs-comment">// set price to legend</span>
+      <span class="hljs-comment">// more legend customization goes here</span>
+    }
+  });
+  <span class="hljs-comment">// set legend to show latest data when no crosshair</span>
+  legend.textContent = data[data.length - <span class="hljs-number">1</span>].value;
+});</code></pre>
+            <p>Custom legend can also be used to implement a custom tooltip.</p>
+
+            <div class="pandora-code-viewer" id="pid-271">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-interactive-chart id=&quot;line&quot;&gt;
+  &lt;div slot=&quot;legend&quot; id=&quot;custom-legend&quot;&gt;
+  &lt;/div&gt;
+&lt;/ef-interactive-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const chartEl = document.getElementById(&apos;line&apos;);
+chartEl.config = {
+  series: [{
+    symbol: &apos;AAPL&apos;,
+    type: &apos;area&apos;,
+    data: [
+      { time: &apos;2018-12-22&apos;, value: 32.51 },
+      { time: &apos;2018-12-23&apos;, value: 31.11 },
+      { time: &apos;2018-12-24&apos;, value: 27.02 },
+      { time: &apos;2018-12-25&apos;, value: 27.32 },
+      { time: &apos;2018-12-26&apos;, value: 25.17 },
+      { time: &apos;2018-12-27&apos;, value: 28.89 },
+      { time: &apos;2018-12-28&apos;, value: 25.46 },
+      { time: &apos;2018-12-29&apos;, value: 23.92 },
+      { time: &apos;2018-12-30&apos;, value: 22.68 },
+      { time: &apos;2018-12-31&apos;, value: 22.67 }
+    ]
+  }]
+};
+chartEl.addEventListener(&apos;initialized&apos;, function(event) {
+  const chart = event.target.chart;
+  const seriesList = event.target.seriesList;
+  var legend = document.getElementById(&apos;custom-legend&apos;);
+  chart.subscribeCrosshairMove(function(param) {
+    if (param.point === undefined || !param.time || param.point.x &lt; 0 || param.point.x &gt; event.target.clientWidth || param.point.y &lt; 0 || param.point.y &gt; event.target.clientHeight) {
+      legend.style.display = &apos;none&apos;;
+    } else {
+      const legendWidth = 60;
+      const legendHeight = 30;
+      const legendMargin = 10;
+      var y = param.point.y;
+      var left = param.point.x + legendMargin;
+      var top = y + legendMargin;
+
+      if (left &gt; event.target.clientWidth - legendWidth) {
+        left = param.point.x - legendMargin - legendWidth;
+      }
+
+      if (top &gt; event.target.clientHeight - legendHeight) {
+        top = y - legendHeight - legendMargin;
+      }
+
+      legend.style.zIndex = 1000;
+      legend.style.left = left + &apos;px&apos;;
+      legend.style.top = top + &apos;px&apos;;
+      legend.style.display = &apos;flex&apos;;
+      legend.style.alignItems = &apos;center&apos;;
+      legend.style.justifyContent = &apos;center&apos;;
+      legend.style.position = &apos;absolute&apos;;
+      legend.style.width = legendWidth + &apos;px&apos;;
+      legend.style.height = legendHeight + &apos;px&apos;;
+      legend.style.backgroundColor = &apos;rgba(255, 255, 255, 0.9)&apos;;
+      legend.style.border = &apos;solid 1px rgb(0,0,0)&apos;;
+      legend.style.color = &apos;rgb(0,0,0)&apos;;
+      legend.textContent = param.seriesPrices.get(seriesList[0]);
+    }
+  });
+});</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="lightweight-charts-instance">Lightweight Charts instance</h3>
+            <p>An instance of lightweight chart can be accessed using the <code>chart</code> and <code>seriesList</code> properties.</p>
+            <pre><code>  <span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&quot;line&quot;</span>);
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;instance chart&apos;</span>, el.chart); <span class="hljs-comment">// instance of lightweight chart</span>
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;instance series&apos;</span>, el.seriesList); <span class="hljs-comment">// array of series instances</span></code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>Slots</h2>
+              <div class="api-item no-border">
+                <div class="name">legend</div>
+                <div class="desc">Slot to use for implementing custom legend.</div>
+              </div>
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">InteractiveChartConfig</div>
+                <div class="name">config</div>
+                <div class="desc">Chart configurations for init chart</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled-legend</div>
+                <div class="desc">Hide legend</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled-jump-button</div>
+                <div class="desc">Hide jump to latest data button</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;vertical&quot; | &quot;horizontal&quot;</div>
+                <div class="name">legend-style</div>
+                <div class="desc">Set legend style i.e. `horizontal`, `vertical`.
+                  Default is `vertical`.</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">InteractiveChartConfig</div>
+                <div class="name">config</div>
+                <div class="desc">Chart configurations for init chart</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabledLegend</div>
+                <div class="desc">Hide legend</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabledJumpButton</div>
+                <div class="desc">Hide jump to latest data button</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;vertical&quot; | &quot;horizontal&quot;</div>
+                <div class="name">legendStyle</div>
+                <div class="desc">Set legend style i.e. `horizontal`, `vertical`.
+                  Default is `vertical`.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">object</div>
+                <div class="name">seriesList</div>
+                <div class="desc">Array of series instances in chart</div>
+                <div class="value">[]</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">colors()</div>
+                <div class="desc">List of available chart colors from the theme.</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">initialized</div>
+                <div class="desc">Dispatched when chart is initialized</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

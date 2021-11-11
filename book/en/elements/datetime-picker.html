@@ -1,0 +1,1025 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Datetime Picker</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/datetime-picker.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li selected><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/datetime-picker;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="datetime-picker">Datetime Picker</h1>
+
+            <div class="pandora-code-viewer" id="pid-84">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker range duplex timepicker opened&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+
+[range][timepicker] {
+  width: 400px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-datetime-picker</code> allows the user to select a date or date range, and optionally a time, and display the selection in a specific format.</p>
+            <h3 id="basic-usage">Basic usage</h3>
+            <p>By default, Datetime Picker only allows the user to select the date. Use the <code>timepicker</code> attribute to allow the user to select both a date and time.</p>
+            <p>An initial value for the Datetime Picker can be set using the <code>value</code> attribute/property.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <pre><code>datetimePicker.value = <span class="hljs-string">&apos;2019-03-20&apos;</span>;</code></pre>
+            <div class="pandora-code-viewer" id="pid-85">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker value=&quot;2019-03-20&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker timepicker&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">document.querySelector(&apos;[timepicker]&apos;).value = &apos;2019-03-20&apos;;</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 315px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h4 id="setting-the-date">Setting the date</h4>
+            <blockquote>
+              <p>The displayed date is based on <code>format</code> and user language. However, <code>value</code> must be in <code>yyyy-MM-dd</code> format (e.g. &quot;2019-03-20&quot;).</p>
+              <p>If <code>timepicker</code> is on, <code>value</code> must be in <code>yyyy-MM-ddTHH:mm</code> or <code>yyyy-MM-ddTHH:mm:ss</code> format (e.g. &quot;2019-03-20T23:40&quot; or &quot;2019-03-20T23:40:59&quot;).</p>
+            </blockquote>
+            <p><strong><em>&#x2717; Wrong</em></strong></p>
+            <pre><code><span class="hljs-comment">&lt;!-- Value must be in &quot;yyyy-MM-dd&quot; format. `format` is only for displayed date --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;dd-MM-yyyy&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;03-20-2019&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- If `timepicker` is not set you must not pass time information --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20T23:40&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- If `timepicker` is set you must pass time information --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- `value`, `min` and `max` must always follow the same format --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20T09:00&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;2019-03-20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+
+<span class="hljs-comment">&lt;!-- The value must not contain any time-zone information --&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20T23:40:34Z&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <p><strong><em>&#x2713; Correct</em></strong></p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20T23:40&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20T09:00&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;2019-03-20T00:00&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-03-20T23:40:34&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <p><strong><em>&#x2717; Wrong</em></strong></p>
+            <pre><code><span class="hljs-comment">// Date object is an invalid input</span>
+datetimePicker.value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">02</span>, <span class="hljs-number">20</span>);
+<span class="hljs-comment">// `toLocaleString()` is based on current locale and might not give correct results in different regions</span>
+datetimePicker.value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">02</span>, <span class="hljs-number">20</span>).toLocaleString();
+<span class="hljs-comment">// `toISOString()` contains time-zone information and cannot be used</span>
+datetimePicker.value = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>(<span class="hljs-number">2019</span>, <span class="hljs-number">02</span>, <span class="hljs-number">20</span>).toISOString();</code></pre>
+            <p><strong><em>&#x2713; Correct</em></strong></p>
+            <pre><code>datetimePicker.value = <span class="hljs-string">&apos;2019-03-20&apos;</span>; <span class="hljs-comment">/* if `timepicker` is off */</span>
+datetimePicker.value = <span class="hljs-string">&apos;2019-03-20T09:00&apos;</span>; <span class="hljs-comment">/* if `timepicker` is on */</span></code></pre>
+            <h3 id="range-select">Range select</h3>
+            <p>Use <code>range</code> to switch the Datetime Picker to date range selection mode. By default, <code>range</code> provides a single calendar that allows users to choose start and end dates.</p>
+            <p>Datetime Picker provides an optional attribute, <code>duplex</code> and <code>duplex=&quot;split&quot;</code>, where it will popup with 2 calendars.</p>
+            <ul>
+              <li>Use <code>duplex</code> to show two calendars that are automatically shifted together when users navigate to the next month.</li>
+              <li>Use <code>duplex=&quot;split&quot;</code> to show two calendars such that each can be navigated independently.</li>
+            </ul>
+            <p>An initial range value for Datetime Picker can be set using <code>values</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">range</span> <span class="hljs-attr">duplex</span> <span class="hljs-attr">values</span>=<span class="hljs-string">&quot;2019-01-01,2019-01-07&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">range</span> <span class="hljs-attr">duplex</span>=<span class="hljs-string">&quot;split&quot;</span> <span class="hljs-attr">timepicker</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <pre><code>datetimePicker.values = [<span class="hljs-string">&apos;2019-01-01T12:01&apos;</span>, <span class="hljs-string">&apos;2019-01-07T14:54&apos;</span>];</code></pre>
+            <div class="pandora-code-viewer" id="pid-86">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker range duplex values=&quot;2019-01-01,2019-01-07&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker range duplex=&quot;split&quot; timepicker&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">document.querySelector(&apos;[timepicker]&apos;).values = [&apos;2019-01-01T12:01&apos;, &apos;2019-01-07T14:54&apos;];</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+
+[range][timepicker] {
+  width: 400px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="custom-formats">Custom formats</h3>
+            <p>Custom date and time formats can be set using <code>format</code> attribute/property. Use <code>show-seconds</code> to allow the user to select second. Use <code>am-pm</code> to switch time picker into AM/PM time format.</p>
+            <blockquote>
+              <p><strong>Note:</strong> format is based on <a href="https://date-fns.org/docs/format" target="_blank">date-fns</a>.</p>
+            </blockquote>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;do MMMM yyyy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;yyyy-MM-dd HH:mm:ss&quot;</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">show-seconds</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;d MMMM yyyy&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">format</span>=<span class="hljs-string">&quot;dd, yyyy, MMMM, h:mm a&quot;</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">am-pm</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-87">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker format=&quot;do MMMM yyyy&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker format=&quot;yyyy-MM-dd HH:mm:ss&quot; timepicker show-seconds&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker format=&quot;d MMMM yyyy&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker format=&quot;dd, yyyy, MMMM, h:mm a&quot; timepicker am-pm&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+
+ef-datetime-picker {
+  width: 180px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="defining-min-and-max-values">Defining min and max values</h3>
+            <p>You can restrict the available date range by passing in <code>min</code> and <code>max</code> values.</p>
+            <blockquote>
+              <p><strong>Note:</strong> if <code>timepicker</code> is on, <code>min</code> and <code>max</code> must contain time information.</p>
+            </blockquote>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;2015-01-01&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;2022-12-31&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">timepicker</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;2015-01-01T00:00&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;2022-12-31T23:59&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-88">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker min=&quot;2015-01-01&quot; max=&quot;2022-12-31&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker timepicker min=&quot;2015-01-01T00:00&quot; max=&quot;2022-12-31T23:59&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 315px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="setting-locale">Setting locale</h3>
+            <p>Datetime Picker uses system default locale (or US-English if locale is not present). You can change the locale by setting <a href="https://www.w3.org/International/questions/qa-html-language-declarations" target="_blank">lang</a> attribute either globally on <em>document</em> tag or locally.</p>
+            <p>The first day of the week is defined by the locale. You can override it by setting <code>first-day-of-week</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;zh&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-05-21&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">first-day-of-week</span>=<span class="hljs-string">&quot;3&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2019-05-21&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-89">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker lang=&quot;zh&quot; value=&quot;2019-05-21&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker first-day-of-week=&quot;3&quot; value=&quot;2019-05-21&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 290px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="slots">Slots</h3>
+            <p>Use slots to add additional content into the Datetime Picker.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-datetime-picker</span> <span class="hljs-attr">range</span> <span class="hljs-attr">duplex</span>=<span class="hljs-string">&quot;split&quot;</span> <span class="hljs-attr">timepicker</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;left&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;today&quot;</span>&gt;</span>Today<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;1-week&quot;</span>&gt;</span>1 Week<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;1-month&quot;</span>&gt;</span>1 Month<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;3-months&quot;</span>&gt;</span>3 Months<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-datetime-picker</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-90">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-datetime-picker range duplex=&quot;split&quot; timepicker&gt;
+    &lt;div slot=&quot;left&quot; class=&quot;range-nav-bar&quot;&gt;
+      &lt;ef-button id=&quot;today&quot;&gt;Today&lt;/ef-button&gt;
+      &lt;ef-button id=&quot;1-week&quot;&gt;1 Week&lt;/ef-button&gt;
+      &lt;ef-button id=&quot;1-month&quot;&gt;1 Month&lt;/ef-button&gt;
+      &lt;ef-button id=&quot;3-months&quot;&gt;3 Months&lt;/ef-button&gt;
+    &lt;/div&gt;
+  &lt;/ef-datetime-picker&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var pad = function(number, size) {
+  var s = String(Math.abs(number));
+  while (s.length &lt; size) {
+    s = &apos;0&apos; + s;
+  }
+  return (number &lt; 0 ? &apos;-&apos; : &apos;&apos;) + s;
+};
+
+var formatToDateTime = function(value) {
+  value = new Date(value);
+  var year = pad(value.getFullYear(), 4);
+  var month = pad(value.getMonth() + 1, 2);
+  var date = pad(value.getDate(), 2);
+  var hours = pad(value.getHours(), 2);
+  var minutes = pad(value.getMinutes(), 2);
+  var seconds = pad(value.getSeconds(), 2);
+  return year + &apos;-&apos; + month + &apos;-&apos; + date + &apos;T&apos; + hours + &apos;:&apos; + minutes + &apos;:&apos; + seconds;
+};
+
+var toValues = function(from, to) {
+  return [formatToDateTime(from), formatToDateTime(to)];
+};
+var rangePicker = document.querySelector(&apos;ef-datetime-picker&apos;);
+document.getElementById(&apos;today&apos;).addEventListener(&apos;tap&apos;, function() {
+  var to = new Date().setSeconds(0, 0);
+  var from = new Date(to).setHours(0, 0, 0, 0);
+  rangePicker.values = toValues(from, to);
+});
+document.getElementById(&apos;1-week&apos;).addEventListener(&apos;tap&apos;, function() {
+  var to = new Date().setSeconds(0, 0);
+  var from = new Date(to) - 7 * 24 * 60 * 60 * 1000;
+  rangePicker.values = toValues(from, to);
+});
+document.getElementById(&apos;1-month&apos;).addEventListener(&apos;tap&apos;, function() {
+  var now = new Date();
+  var to = now.setSeconds(0, 0);
+  var from = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate(), now.getHours(), now.getMinutes());
+  rangePicker.values = toValues(from, to);
+});
+document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, function() {
+  var now = new Date();
+  var to = now.setSeconds(0, 0);
+  var from = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate(), now.getHours(), now.getMinutes());
+  rangePicker.values = toValues(from, to);
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+
+[range][timepicker] {
+  width: 400px;
+}
+
+.range-nav-bar {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.range-nav-bar ef-button {
+  padding: 5px;
+  margin: 5px 0;
+  height: 25px;
+  min-width: 50px;
+  font-size: 75%;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="slots">Slots</h2>
+            <p>Slot is a placeholder inside a component that you can fill with your own content. This component provides slot as follows.</p>
+            <p><strong>header</strong><br>Header slot.</p>
+            <p><strong>right</strong><br>Right slot.</p>
+            <p><strong>footer</strong><br>Footer slot.</p>
+            <p><strong>left</strong><br>Left slot.</p>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">min</div>
+                <div class="desc">Set minimum date</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">max</div>
+                <div class="desc">Set maximum date</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">weekdays-only</div>
+                <div class="desc">Only enable weekdays</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">weekends-only</div>
+                <div class="desc">Only enable weekends</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | undefined</div>
+                <div class="name">first-day-of-week</div>
+                <div class="desc">Set the first day of the week.
+                  0 - for Sunday, 6 - for Saturday</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">range</div>
+                <div class="desc">Set to switch to range select mode</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Current date time value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Set multiple selected values</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">am-pm</div>
+                <div class="desc">Toggles 12hr time display</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">show-seconds</div>
+                <div class="desc">Flag to show seconds time segment in display.
+                  Seconds are automatically shown when `hh:mm:ss` time format is provided as a value.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder to display when no value is set</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Toggles the opened state of the list</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">input-trigger-disabled</div>
+                <div class="desc">Only open picker panel when calendar icon is clicked.
+                  Clicking on the input will no longer open the picker.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">input-disabled</div>
+                <div class="desc">Disable input part of the picker</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">popup-disabled</div>
+                <div class="desc">Disable the popup</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">format</div>
+                <div class="desc">Set the datetime format
+                  Based on dane-fns datetime formats</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">timepicker</div>
+                <div class="desc">Toggle to display the time picker</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;&quot; | &quot;consecutive&quot; | &quot;split&quot;</div>
+                <div class="name">duplex</div>
+                <div class="desc">Display two calendar pickers.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">view</div>
+                <div class="desc">Set the current calendar view.
+                  Accepted format: &apos;yyyy-MM&apos;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Set readonly state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">min</div>
+                <div class="desc">Set minimum date</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">max</div>
+                <div class="desc">Set maximum date</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">weekdaysOnly</div>
+                <div class="desc">Only enable weekdays</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">weekendsOnly</div>
+                <div class="desc">Only enable weekends</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">DatetimePickerFilter | null</div>
+                <div class="name">filter</div>
+                <div class="desc">Custom filter, used for enabling/disabling certain dates</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | undefined</div>
+                <div class="name">firstDayOfWeek</div>
+                <div class="desc">Set the first day of the week.
+                  0 - for Sunday, 6 - for Saturday</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">range</div>
+                <div class="desc">Set to switch to range select mode</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">multiple</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Current date time value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Set multiple selected values</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">amPm</div>
+                <div class="desc">Toggles 12hr time display</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">showSeconds</div>
+                <div class="desc">Flag to show seconds time segment in display.
+                  Seconds are automatically shown when `hh:mm:ss` time format is provided as a value.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder to display when no value is set</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Toggles the opened state of the list</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">inputTriggerDisabled</div>
+                <div class="desc">Only open picker panel when calendar icon is clicked.
+                  Clicking on the input will no longer open the picker.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">inputDisabled</div>
+                <div class="desc">Disable input part of the picker</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">popupDisabled</div>
+                <div class="desc">Disable the popup</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">format</div>
+                <div class="desc">Set the datetime format
+                  Based on dane-fns datetime formats</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">timepicker</div>
+                <div class="desc">Toggle to display the time picker</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;&quot; | &quot;consecutive&quot; | &quot;split&quot;</div>
+                <div class="name">duplex</div>
+                <div class="desc">Display two calendar pickers.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">view</div>
+                <div class="desc">Set the current calendar view.
+                  Accepted format: &apos;yyyy-MM&apos;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">views</div>
+                <div class="desc">Set the current calendar views for duplex mode
+                  Accepted format: &apos;yyyy-MM&apos;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Set readonly state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">validateInput()</div>
+                <div class="desc">Validates the input, marking the element as invalid if its value does not meet the validation criteria.</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">opened-changed</div>
+                <div class="desc">Dispatched when when opened attribute changes internally</div>
+              </div>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Dispatched when value changes</div>
+              </div>
+              <div class="api-item">
+                <div class="name">error-changed</div>
+                <div class="desc">Dispatched when error state changes</div>
+              </div>
+              <div class="api-item">
+                <div class="name">view-changed</div>
+                <div class="desc">Dispatched when internal view changes</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

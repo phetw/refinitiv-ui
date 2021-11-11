@@ -1,0 +1,1828 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Chart</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/chart.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li selected><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/chart;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="chart">Chart</h1>
+
+            <div class="pandora-code-viewer" id="pid-230">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;combo&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboDatasets = [{
+  type: &apos;line&apos;,
+  label: &apos;Price&apos;,
+  data: [37.40, 36.60, 40.48, 41.13, 42.05, 40.42],
+  yAxisID: &apos;y-axis-1&apos;,
+  fill: true // not fill the area under the line
+}, {
+  type: &apos;bar&apos;,
+  label: &apos;Volume&apos;,
+  data: [8.09, 8.79, 7.77, 6.77, 6.52, 6.77],
+  yAxisID: &apos;y-axis-2&apos;
+}];
+var combo = document.getElementById(&apos;combo&apos;);
+combo.config = {
+  type: &apos;bar&apos;,
+  data: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;],
+    datasets: comboDatasets
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        display: true,
+        position: &apos;left&apos;,
+        id: &apos;y-axis-1&apos;,
+        ticks: {
+          min: 36,
+          max: 43,
+          stepSize: 1
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Price ($)&apos;
+        }
+      }, {
+        display: true,
+        position: &apos;right&apos;,
+        id: &apos;y-axis-2&apos;,
+        gridLines: {
+          drawOnChartArea: false // only want the grid lines for one axis to show up
+        },
+        ticks: {
+          min: 6.0,
+          max: 9.5,
+          stepSize: 0.5,
+          callback: function(label, index) {
+            var val = label.toString();
+            if (val.indexOf(&apos;.&apos;) === -1) {
+              val += &apos;.0&apos;;
+            }
+            return val + &apos;M&apos;;
+          }
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Volume&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItems, data) {
+          return &apos;TRI.N&apos;;
+        },
+        label: function(tooltipItem, data) {
+          var yLabel = tooltipItem.yLabel;
+          if (tooltipItem.datasetIndex === 0) {
+            return &apos;Price: &apos; + yLabel;
+          } else {
+            return &apos;Volume: &apos; + yLabel + &apos;M&apos;;
+          }
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-chart</code> is a charting component that leverages the <a href="http://chartjs.org" target="_blank">Chart.js</a> library. See Chart.js <a href="https://www.chartjs.org/docs/2.9.4/" target="_blank">documentation</a> for full chart configuration.</p>
+            <p>The styling of <code>ef-chart</code> is inherited from the theme, but you can customize styling at the individual chart level.</p>
+            <h3 id="creating-a-chart">Creating a chart</h3>
+            <p>A chart can be created by passing a configuration to the <code>config</code> attribute. The configuration object is identical to the chartjs configuration.</p>
+
+            <div class="pandora-code-viewer" id="pid-231">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;line&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var line = document.getElementById(&apos;line&apos;);
+line.config = {
+  type: &apos;line&apos;,
+  data: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;],
+    datasets: [{
+      label: &apos;Price&apos;,
+      data: [37.4, 36.6, 40.48, 41.13, 42.05, 40.42, 43.09]
+    }]
+  },
+  options: {
+    title: {
+      text: &apos;Line chart&apos;
+    },
+    legend: {
+      display: true
+    },
+    scales: {
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Price ($)&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          return tooltipItem.yLabel + &apos; $&apos;;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-chart</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-chart</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> line = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;line&apos;</span>);
+  line.config = {
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;line&apos;</span>,
+    <span class="hljs-attr">data</span>: {
+      <span class="hljs-attr">labels</span>: [<span class="hljs-string">&apos;January&apos;</span>, <span class="hljs-string">&apos;February&apos;</span>, <span class="hljs-string">&apos;March&apos;</span>, <span class="hljs-string">&apos;April&apos;</span>, <span class="hljs-string">&apos;May&apos;</span>, <span class="hljs-string">&apos;June&apos;</span>, <span class="hljs-string">&apos;July&apos;</span>],
+      <span class="hljs-attr">datasets</span>: [{
+        <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Price&apos;</span>,
+        <span class="hljs-attr">data</span>: [<span class="hljs-number">37.4</span>, <span class="hljs-number">36.6</span>, <span class="hljs-number">40.48</span>, <span class="hljs-number">41.13</span>, <span class="hljs-number">42.05</span>, <span class="hljs-number">40.42</span>, <span class="hljs-number">43.09</span>]
+      }]
+    },
+    <span class="hljs-attr">options</span>: {
+      <span class="hljs-attr">title</span>: {
+        <span class="hljs-attr">text</span>: <span class="hljs-string">&apos;Line chart&apos;</span>
+      },
+      <span class="hljs-attr">legend</span>: {
+        <span class="hljs-attr">display</span>: <span class="hljs-literal">false</span>
+      },
+      <span class="hljs-attr">scales</span>: {
+        <span class="hljs-attr">yAxes</span>: [{
+          <span class="hljs-attr">scaleLabel</span>: {
+            <span class="hljs-attr">display</span>: <span class="hljs-literal">true</span>,
+            <span class="hljs-attr">labelString</span>: <span class="hljs-string">&apos;Price ($)&apos;</span>
+          }
+        }]
+      },
+      <span class="hljs-attr">tooltips</span>: {
+        <span class="hljs-attr">callbacks</span>: {
+          <span class="hljs-attr">label</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">tooltipItem, data</span>) </span>{
+            <span class="hljs-keyword">return</span> tooltipItem.yLabel + <span class="hljs-string">&apos; $&apos;</span>;
+          }
+        }
+      }
+    }
+  };
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <h3 id="update-chart-data-or-configurations">Update chart data or configurations</h3>
+            <p>To update chart datasets or configurations, you can modify the value in the <code>config</code> property and then call <code>updateChart()</code>.</p>
+            <p>However, you do not have to call <code>updateChart()</code> if you set a new <code>config</code> object for the chart.</p>
+
+            <div class="pandora-code-viewer" id="pid-232">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;line&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var random = function(number) {
+  var val = [];
+  for (var i = 0; i &lt; number; i++) {
+    val.push(Math.floor(Math.random() * 101));
+  }
+  return val;
+}
+var line = document.getElementById(&apos;line&apos;);
+line.config = {
+  type: &apos;line&apos;,
+  data: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;],
+    datasets: [{
+      label: &apos;Price&apos;,
+      data: [37.4, 36.6, 40.48, 41.13, 42.05, 40.42, 43.09],
+      lineTension: 0.3
+    }]
+  },
+  options: {
+    legend: {
+      display: false
+    },
+    scales: {
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Price ($)&apos;
+        },
+        ticks: {
+          beginAtZero: true,
+          steps: 10,
+          max: 100
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          return tooltipItem.yLabel + &apos; $&apos;;
+        }
+      }
+    }
+  }
+};
+setInterval(function() {
+  line.config.data.datasets[0].data = random(7)
+  line.updateChart();
+}, 1200);</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-chart</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;line&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-chart</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+<span class="hljs-keyword">var</span> line = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;line&apos;</span>);
+line.config.data.datasets[<span class="hljs-number">0</span>].data = [<span class="hljs-number">31.4</span>, <span class="hljs-number">6.6</span>, <span class="hljs-number">43.48</span>, <span class="hljs-number">40.13</span>, <span class="hljs-number">44.05</span>, <span class="hljs-number">46.42</span>, <span class="hljs-number">47.09</span>]
+line.updateChart();
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <p>You can also control animation on the update process by using additional configurations. You can find more details at <a href="https://www.chartjs.org/docs/2.9.4/developers/api.html#updateconfig" target="_blank">Chart.js API</a>.</p>
+            <pre><code>line.updateChart({
+    <span class="hljs-attr">duration</span>: <span class="hljs-number">800</span>,
+    <span class="hljs-attr">lazy</span>: <span class="hljs-literal">false</span>, <span class="hljs-comment">// If true, the animation can be interrupted by other animation</span>
+    <span class="hljs-attr">easing</span>: <span class="hljs-string">&apos;easeOutBounce&apos;</span>
+});</code></pre>
+            <h3 id="chartjs-instance">Chartjs instance</h3>
+            <p>A chart instance of chartjs or canvas can be accessed using the <code>chart</code> property of <code>ef-chart</code>.</p>
+            <pre><code><span class="hljs-keyword">var</span> line = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;line&apos;</span>);
+<span class="hljs-built_in">console</span>.log(line.chart); <span class="hljs-comment">// instance of chartjs</span>
+<span class="hljs-built_in">console</span>.log(line.chart.canvas) <span class="hljs-comment">// canvas of instance of chartjs</span></code></pre>
+            <h3 id="doughnut-with-center-label">Doughnut with center label</h3>
+            <p>To create a doughnut with a center label, define the <code>plugins.centerLabel</code> property in <code>options</code>.</p>
+            <ul>
+              <li><code>plugins.centerLabel.defaultText</code> is the default center text.</li>
+              <li><code>plugins.centerLabel.onRenderLabel</code> is a callback function to define the center text when hovering and clicking on each segment.</li>
+              <li><code>plugins.centerLabel.selected</code> selects a chart item when chart is initialized. You can set <code>index</code> and <code>datasetIndex</code> to use in the selection.</li>
+            </ul>
+
+            <div class="pandora-code-viewer" id="pid-233">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;doughnut-center-label&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var doughnutDataSets = [{
+  data: [36, 22, 16, 8.2, 5.7, 12],
+}];
+var doughnut = document.getElementById(&apos;doughnut-center-label&apos;);
+doughnut.config = {
+  type: &apos;doughnut&apos;,
+  data: {
+    labels: [&apos;Americas&apos;, &apos;Europe&apos;, &apos;Greater China&apos;, &apos;Japan&apos;, &apos;Asia Pacific&apos;, &apos;Retail&apos;],
+    datasets: doughnutDataSets,
+  },
+  options: {
+    onHover: function(event, chartItem) {
+      // console.log(&apos;hover: &apos;, chartItem);
+    },
+    onClick: function(event, chartItem) {
+      // console.log(&apos;click: &apos;, chartItem);
+    },
+    plugins: {
+      centerLabel: {
+        defaultText: [{
+            label: &apos;AAPL.O&apos;,
+            bold: true
+          },
+          {
+            label: &apos;Segments in 2014&apos;
+          }
+        ],
+        onRenderLabel: function(chart, chartItems) {
+          if (chartItems.length) {
+            const chartItem = chartItems[0];
+            const data = chart.data;
+            const title = data.labels[chartItem._index];
+            const value = data.datasets[chartItem._datasetIndex].data[chartItem._index];
+            const total = data.datasets[chartItem._datasetIndex].data.reduce(function(total, num) { return total + num; });
+            const percent = parseFloat(parseFloat(value) / parseFloat(total)).toFixed(2);
+
+            return [{
+                label: title,
+                bold: true
+              },
+              {
+                label: value
+              }, {
+                label: percent + &apos; %&apos;
+              }
+            ]
+          }
+        },
+        selected: {
+          datasetIndex: 0,
+          index: 4
+        },
+      },
+    },
+    tooltips: {
+      enabled: false
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-keyword">var</span> doughnut = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;doughnut-center-label&apos;</span>);
+doughnut.config = {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;doughnut&apos;</span>,
+  <span class="hljs-attr">data</span>: {
+    ...
+  },
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">plugins</span>: {
+      <span class="hljs-attr">centerLabel</span>: {
+        <span class="hljs-comment">// default center label, pass multiple object to show multiple line</span>
+        <span class="hljs-attr">defaultText</span>: [
+            {
+              <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;AAPL.O&apos;</span>,
+              <span class="hljs-attr">bold</span>: <span class="hljs-literal">true</span>
+            },
+            {
+              <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Segments in 2014&apos;</span>
+            }
+        ],
+        <span class="hljs-comment">// define text to show at center</span>
+        <span class="hljs-attr">onRenderLabel</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">chart, chartItems</span>) </span>{
+          <span class="hljs-keyword">if</span> (chartItems.length) {
+            <span class="hljs-keyword">const</span> chartItem = chartItems[<span class="hljs-number">0</span>];
+            <span class="hljs-keyword">const</span> data = chart.data;
+            <span class="hljs-keyword">const</span> title = data.labels[chartItem._index];
+            <span class="hljs-keyword">const</span> value = data.datasets[chartItem._datasetIndex].data[chartItem._index];
+            <span class="hljs-keyword">const</span> total = data.datasets[chartItem._datasetIndex].data.reduce((total, num) <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">total, num</span>) </span>{ <span class="hljs-keyword">return</span> total + num; });
+            <span class="hljs-keyword">const</span> percent = <span class="hljs-built_in">parseFloat</span>(<span class="hljs-built_in">parseFloat</span>(value) / <span class="hljs-built_in">parseFloat</span>(total)).toFixed(<span class="hljs-number">2</span>);
+
+            <span class="hljs-keyword">return</span> [{
+              <span class="hljs-attr">label</span>: title,
+              <span class="hljs-attr">bold</span>: <span class="hljs-literal">true</span>
+            },
+            {
+              <span class="hljs-attr">label</span>: value
+            }, {
+              <span class="hljs-attr">label</span>: percent + <span class="hljs-string">&apos; %&apos;</span>
+            }];
+          }
+        },
+        <span class="hljs-attr">selected</span>: {
+          <span class="hljs-attr">datasetIndex</span>: <span class="hljs-number">0</span>,
+          <span class="hljs-attr">index</span>: <span class="hljs-number">4</span>
+        },
+      },
+    },
+    ...
+  }
+};</code></pre>
+            <p>You can add <code>onHover</code> and <code>onClick</code> to the chart config to handle when users hover or click on each chart segment.</p>
+            <pre><code>doughnut.config = {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;doughnut&apos;</span>,
+  <span class="hljs-attr">data</span>: {
+    ...
+  },
+  <span class="hljs-attr">options</span>: {
+    <span class="hljs-attr">onHover</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, chartItem</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;hover: &apos;</span>, chartItem);
+    },
+    <span class="hljs-attr">onClick</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event, chartItem</span>) </span>{
+      <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;click: &apos;</span>, chartItem);
+    },
+    <span class="hljs-attr">plugins</span>: {
+      ...
+    }
+  }
+};</code></pre>
+            <h3 id="customize-colors-and-font-size">Customize colors and font size</h3>
+            <p>Colors and font size of the center label can be customized using CSS.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variable Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--doughnut-center-text-color</td>
+                  <td>Custom text color of center label</td>
+                </tr>
+                <tr>
+                  <td>--doughnut-center-background-color</td>
+                  <td>Custom background color of center label</td>
+                </tr>
+                <tr>
+                  <td>--doughnut-center-font-size</td>
+                  <td>Custom font size percentage of center label</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3 id="chart-types">Chart types</h3>
+            <p>You can create various chart types as per chartjs configurations. Samples are on <a href="http://www.chartjs.org/samples/latest/" target="_blank">this page</a>.</p>
+
+            <div class="pandora-code-viewer" id="pid-234">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;multipleLines&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var multipleLines = document.getElementById(&apos;multipleLines&apos;);
+var multipleLinesDatasets = [{
+  label: &apos;.DJI&apos;,
+  data: [16466, 16517, 17685, 17774, 17787, 17930, 18432],
+  fill: false,
+  pointBackgroundColor: &apos;transparent&apos;,
+  pointBorderColor: &apos;transparent&apos;
+}, {
+  label: &apos;.N225&apos;,
+  data: [17518, 16027, 16759, 16666, 17235, 15576, 16569],
+  fill: false,
+  pointBackgroundColor: &apos;transparent&apos;,
+  pointBorderColor: &apos;transparent&apos;
+}, {
+  label: &apos;.FTMIB&apos;,
+  data: [18657, 17623, 18117, 18601, 18025, 16198, 16847],
+  fill: false,
+  pointBackgroundColor: &apos;transparent&apos;,
+  pointBorderColor: &apos;transparent&apos;
+}, {
+  label: &apos;.HSI&apos;,
+  data: [19683, 19112, 20777, 21067, 20815, 20794, 21891],
+  fill: false,
+  pointBackgroundColor: &apos;transparent&apos;,
+  pointBorderColor: &apos;transparent&apos;
+}];
+multipleLines.config = {
+  type: &apos;line&apos;,
+  data: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;],
+    datasets: multipleLinesDatasets
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          stepSize: 1000,
+          callback: function(label, index) {
+            return label.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &apos;,&apos;);
+          }
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItems, data) {
+          return data.datasets[tooltipItems[0].datasetIndex].label;
+        },
+        label: function(tooltipItem, data) {
+          var month = tooltipItem.xLabel;
+          var value = tooltipItem.yLabel;
+          value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &apos;,&apos;);
+          return month + &apos;: &apos; + value;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-235">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;bar&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var bar = document.getElementById(&apos;bar&apos;);
+bar.config = {
+  type: &apos;bar&apos;,
+  data: {
+    labels: [&apos;2010&apos;, &apos;2011&apos;, &apos;2012&apos;, &apos;2013&apos;],
+    datasets: [{
+      label: &apos;GOOGL.O&apos;,
+      data: [29321, 37905, 50175, 59825]
+    }, {
+      label: &apos;AAPL.O&apos;,
+      data: [65225, 108249, 156508, 170910]
+    }, {
+      label: &apos;MSFT.O&apos;,
+      data: [62484, 69943, 73723, 77849]
+    }]
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        ticks: {
+          min: 0,
+          max: 180000,
+          stepSize: 30000,
+          callback: function(label, index) {
+            return label.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &apos;,&apos;);
+          }
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Revenue (in millions $)&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItems, data) {
+          return &apos;Revenue&apos;;
+        },
+        label: function(tooltipItem, data) {
+          var year = tooltipItem.xLabel;
+          var rev = tooltipItem.yLabel;
+          rev = rev.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &apos;,&apos;);
+          return year + &apos;: &apos; + rev;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-236">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;stackedBar&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var stackedBar = document.getElementById(&apos;stackedBar&apos;);
+stackedBar.config = {
+  type: &apos;bar&apos;,
+  data: {
+    labels: [&apos;2010&apos;, &apos;2011&apos;, &apos;2012&apos;, &apos;2013&apos;],
+    datasets: [{
+      label: &apos;GOOGL.O&apos;,
+      data: [29321, 37905, 50175, 59825]
+    }, {
+      label: &apos;AAPL.O&apos;,
+      data: [65225, 108249, 156508, 170910]
+    }, {
+      label: &apos;MSFT.O&apos;,
+      data: [62484, 69943, 73723, 77849]
+    }]
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        stacked: true
+      }],
+      yAxes: [{
+        stacked: true,
+        ticks: {
+          min: 0,
+          stepSize: 50000,
+          callback: function(label, index) {
+            return label.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &apos;,&apos;);
+          }
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Revenue (in millions $)&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItems, data) {
+          return data.datasets[tooltipItems[0].datasetIndex].label;
+        },
+        label: function(tooltipItem, data) {
+          var year = tooltipItem.xLabel;
+          var rev = tooltipItem.yLabel;
+          rev = rev.toString().replace(/\B(?=(\d{3})+(?!\d))/g, &apos;,&apos;);
+          return year + &apos;: &apos; + rev;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-237">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;combo&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboDatasets = [{
+  type: &apos;line&apos;,
+  label: &apos;Price&apos;,
+  data: [37.40, 36.60, 40.48, 41.13, 42.05, 40.42],
+  yAxisID: &apos;y-axis-1&apos;,
+  fill: true // not fill the area under the line
+}, {
+  type: &apos;bar&apos;,
+  label: &apos;Volume&apos;,
+  data: [8.09, 8.79, 7.77, 6.77, 6.52, 6.77],
+  yAxisID: &apos;y-axis-2&apos;
+}];
+var combo = document.getElementById(&apos;combo&apos;);
+combo.config = {
+  type: &apos;bar&apos;,
+  data: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;],
+    datasets: comboDatasets
+  },
+  options: {
+    scales: {
+      yAxes: [{
+        display: true,
+        position: &apos;left&apos;,
+        id: &apos;y-axis-1&apos;,
+        ticks: {
+          min: 36,
+          max: 43,
+          stepSize: 1
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Price ($)&apos;
+        }
+      }, {
+        display: true,
+        position: &apos;right&apos;,
+        id: &apos;y-axis-2&apos;,
+        gridLines: {
+          drawOnChartArea: false // only want the grid lines for one axis to show up
+        },
+        ticks: {
+          min: 6.0,
+          max: 9.5,
+          stepSize: 0.5,
+          callback: function(label, index) {
+            var val = label.toString();
+            if (val.indexOf(&apos;.&apos;) === -1) {
+              val += &apos;.0&apos;;
+            }
+            return val + &apos;M&apos;;
+          }
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Volume&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItems, data) {
+          return &apos;TRI.N&apos;;
+        },
+        label: function(tooltipItem, data) {
+          var yLabel = tooltipItem.yLabel;
+          if (tooltipItem.datasetIndex === 0) {
+            return &apos;Price: &apos; + yLabel;
+          } else {
+            return &apos;Volume: &apos; + yLabel + &apos;M&apos;;
+          }
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-238">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;pie&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var pieDatasets = [{
+  data: [36, 22, 16, 8.2, 5.7, 12]
+}];
+var pie = document.getElementById(&apos;pie&apos;);
+pie.config = {
+  type: &apos;pie&apos;,
+  data: {
+    labels: [&apos;Americas&apos;, &apos;Europe&apos;, &apos;Greater china&apos;, &apos;Japan&apos;, &apos;Asia Pacific&apos;, &apos;Retail&apos;],
+    datasets: pieDatasets
+  },
+  options: {
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var title = data.labels[tooltipItem.index];
+          var result = data.datasets[0].data[tooltipItem.index];
+          return title + &apos;: &apos; + result + &apos;%&apos;;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-239">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;doughnut&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var doughnutDataSets = [{
+  data: [36, 22, 16, 8.2, 5.7, 12]
+}];
+var doughnut = document.getElementById(&apos;doughnut&apos;);
+doughnut.config = {
+  type: &apos;doughnut&apos;,
+  data: {
+    labels: [&apos;Americas&apos;, &apos;Europe&apos;, &apos;Greater China&apos;, &apos;Japan&apos;, &apos;Asia Pacific&apos;, &apos;Retail&apos;],
+    datasets: doughnutDataSets
+  },
+  options: {
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var title = data.labels[tooltipItem.index];
+          var result = data.datasets[0].data[tooltipItem.index];
+          return title + &apos;: &apos; + result + &apos;%&apos;;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-240">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div&gt;
+  &lt;ef-chart id=&quot;doughnut&quot;&gt;&lt;/ef-chart&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var doughnutDataSets = [{
+  data: [36, 22, 16, 8.2, 5.7, 12]
+}];
+var doughnut = document.getElementById(&apos;doughnut&apos;);
+doughnut.config = {
+  type: &apos;doughnut&apos;,
+  data: {
+    datasets: doughnutDataSets
+  },
+  options: {
+    plugins: {
+      centerLabel: {
+        selected: {
+          index: 2
+        },
+        onRenderLabel: function(chart, chartItems) {
+          if (chartItems.length) {
+            const chartItem = chartItems[0];
+            const data = chart.data;
+            const value = data.datasets[chartItem._datasetIndex].data[chartItem._index];
+            const total = data.datasets[chartItem._datasetIndex].data.reduce(
+              function(total, num) {
+                return (total + num);
+              });
+            const percent = parseFloat(parseFloat(value) / parseFloat(total)).toFixed(2);
+
+            return [{
+              label: percent * 100,
+              bold: true
+            }];
+          }
+        }
+      }
+    },
+    tooltips: {
+      enabled: false
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  width: 150px;
+  height: 150px;
+  --doughnut-center-text-color: #ffffff;
+  --doughnut-center-background-color: #4caf50;
+  --doughnut-center-font-size: 70%;
+}
+
+div {
+  display: flex;
+  justify-content: center;
+  width: 500px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-241">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;timeScale&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var timeScale = document.getElementById(&apos;timeScale&apos;);
+timeScale.config = {
+  type: &apos;line&apos;,
+  data: {
+    labels: [
+      new Date(2016, 8, 7, 10, 0, 0),
+      new Date(2016, 8, 7, 11, 0, 0),
+      new Date(2016, 8, 7, 12, 0, 0),
+      new Date(2016, 8, 7, 13, 0, 0),
+      new Date(2016, 8, 7, 14, 0, 0),
+      new Date(2016, 8, 7, 15, 0, 0),
+      new Date(2016, 8, 7, 16, 0, 0),
+      new Date(2016, 8, 7, 17, 0, 0)
+    ],
+    datasets: [{
+      label: &apos;Price&apos;,
+      data: [107.53, 107.32, 107.35, 107.41, 107.56, 107.23, 108.37, 108.36]
+    }]
+  },
+  options: {
+    legend: {
+      display: false // Not display legend
+    },
+    scales: {
+      xAxes: [{
+        type: &apos;time&apos;, // Set type of scale as time
+        time: {
+          displayFormats: {
+            hour: &apos;hA&apos; // Set custom format for hour unit
+          },
+          unit: &apos;hour&apos;,
+          tooltipFormat: &apos;D MMM YYYY - hA&apos;
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Price ($)&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        label: function(tooltipItem, data) {
+          var result = data.datasets[0].data[tooltipItem.index];
+          return &apos;Price: $&apos; + result;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-242">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;scatterplot&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var scatterplot = document.getElementById(&apos;scatterplot&apos;);
+scatterplot.config = {
+  type: &apos;line&apos;,
+  data: {
+    datasets: [{
+      data: [
+        { x: 37.04, y: 72.88 },
+        { x: 33.16, y: 74.59 },
+        { x: 29.42, y: 77.75 },
+        { x: 32.19, y: 78.10 },
+        { x: 33.62, y: 75.46 },
+        { x: 30.89, y: 77.51 },
+        { x: 29.44, y: 78.34 },
+        { x: 29.64, y: 77.02 },
+        { x: 32.78, y: 76.13 },
+        { x: 35.92, y: 71.92 },
+        { x: 38.50, y: 69.86 },
+        { x: 39.44, y: 68.50 },
+        { x: 39.46, y: 68.31 },
+        { x: 36.79, y: 67.64 },
+        { x: 39.72, y: 67.13 },
+        { x: 40.36, y: 66.41 },
+        { x: 43.73, y: 66.37 },
+        { x: 45.92, y: 64.69 },
+        { x: 44.66, y: 65.85 },
+        { x: 46.21, y: 65.53 },
+        { x: 47.75, y: 66.73 },
+        { x: 49.33, y: 65.82 },
+        { x: 48.62, y: 65.61 },
+        { x: 49.07, y: 65.23 },
+        { x: 47.98, y: 64.75 },
+        { x: 47.64, y: 64.74 }
+      ],
+      pointRadius: 1
+    }]
+  },
+  options: {
+    showLines: false,
+    legend: {
+      display: false // not display legend
+    },
+    scales: {
+      xAxes: [{
+        type: &apos;linear&apos;,
+        position: &apos;bottom&apos;,
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Price of Oil ($)&apos;
+        }
+      }],
+      yAxes: [{
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Russian ruble (per $)&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function() {
+          return &apos;&apos;;
+        },
+        label: function(tooltipItem, data) {
+          var x = tooltipItem.xLabel;
+          return &apos;Oil\&apos;s price : &apos; + x + &apos; $&apos;;
+        },
+        afterLabel: function(tooltipItem, data) {
+          var y = tooltipItem.yLabel;
+          return &apos;Ruble : &apos; + y;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-243">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;bubble&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var bubble = document.getElementById(&apos;bubble&apos;);
+
+bubble.config = {
+  type: &apos;bubble&apos;,
+  data: {
+    datasets: [{
+        label: &apos;Zimbabwe&apos;,
+        data: [{ x: 450, y: 46, r: 3 }]
+      },
+      {
+        label: &apos;Ethiopia&apos;,
+        data: [{ x: 950, y: 56, r: 8 }]
+      },
+      {
+        label: &apos;India&apos;,
+        data: [{ x: 3000, y: 64, r: 18 }]
+      },
+      {
+        label: &apos;China&apos;,
+        data: [{ x: 6500, y: 73, r: 26 }]
+      },
+      {
+        label: &apos;Russia&apos;,
+        data: [{ x: 16000, y: 67, r: 8 }]
+      },
+      {
+        label: &apos;UK&apos;,
+        data: [{ x: 35000, y: 79, r: 6 }]
+      },
+      {
+        label: &apos;USA&apos;,
+        data: [{ x: 45000, y: 78, r: 12 }]
+      }
+    ]
+  },
+  options: {
+    scales: {
+      xAxes: [{
+        type: &apos;logarithmic&apos;,
+        position: &apos;bottom&apos;,
+        ticks: {
+          min: 450,
+          max: 50000,
+          maxRotation: 10,
+          callback: function(label, index) {
+            var xLabels = [&apos;500&apos;, &apos;1000&apos;, &apos;2000&apos;, &apos;5000&apos;, &apos;10,000&apos;, &apos;20000&apos;, &apos;50000&apos;];
+            return xLabels.indexOf(label.toString()) &gt; -1 ? label : &apos;&apos;;
+          }
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;GDP per person in US dollars (log scale)&apos;
+        }
+      }],
+      yAxes: [{
+        ticks: {
+          min: 45,
+          max: 85,
+          stepSize: 5
+        },
+        scaleLabel: {
+          display: true,
+          labelString: &apos;Life expectancy at birth (years)&apos;
+        }
+      }]
+    },
+    tooltips: {
+      callbacks: {
+        title: function(tooltipItem, data) {
+          var item = tooltipItem[0];
+          var dataset = data.datasets[item.datasetIndex];
+          return dataset.label;
+        },
+        label: function(tooltipItem, data) {
+          var x = tooltipItem.xLabel;
+          return &apos;GDP per Capita : &apos; + x + &apos;$&apos;;
+        },
+        afterLabel: function(tooltipItem, data) {
+          var y = tooltipItem.yLabel;
+          return &apos;Life expectancy : &apos; + y + &apos; Yrs&apos;;
+        }
+      }
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div class="pandora-code-viewer" id="pid-244">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-chart id=&quot;radar&quot;&gt;&lt;/ef-chart&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var radar = document.getElementById(&apos;radar&apos;);
+
+radar.config = {
+  type: &apos;radar&apos;,
+  data: {
+    labels: [
+      [&apos;Eating&apos;, &apos;Dinner&apos;],
+      [&apos;Drinking&apos;, &apos;Water&apos;], &apos;Sleeping&apos;, [&apos;Designing&apos;, &apos;Graphics&apos;], &apos;Coding&apos;, &apos;Cycling&apos;, &apos;Running&apos;
+    ],
+    datasets: [{
+        label: &apos;Humanoid A&apos;,
+        data: [
+          13,
+          10,
+          9,
+          14,
+          9,
+          5,
+          10
+        ]
+      },
+      {
+        label: &apos;Humanoid B&apos;,
+        data: [
+          8,
+          5,
+          9,
+          7,
+          17,
+          11,
+          4
+        ]
+      }
+    ]
+  },
+  options: {
+    legend: {
+      position: &apos;right&apos;
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-chart {
+  max-width: 600px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">ChartConfig</div>
+                <div class="name">config</div>
+                <div class="desc">Chart configurations. Same configuration as ChartJS</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">ChartConfig</div>
+                <div class="name">config</div>
+                <div class="desc">Chart configurations. Same configuration as ChartJS</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">colors</div>
+                <div class="desc">List of available chart colors</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">updateChart(config)</div>
+                <div class="desc">Update all data, title, scales, legends and re-render the chart based on its config</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">config</div>
+                    <div class="type">ChartUpdateProps</div>
+                    <div class="desc">Additional configuration for control an animation in the update process.</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

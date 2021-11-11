@@ -1,0 +1,1002 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Tooltip</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/tooltip.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li selected><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/tooltip;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="tooltip">Tooltip</h1>
+
+            <div class="pandora-code-viewer" id="pid-220">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div style=&quot;padding: 20px 0;&quot;&gt;
+  &lt;ef-button cta title=&quot;Sweet! Here is tooltip text.&quot;&gt;Hover Me&lt;/ef-button&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>Tooltip displays information when the user hovers over an item.</p>
+            <h3 id="basic-usage">Basic usage</h3>
+            <p>Import the <code>ef-tooltip</code> component and use the <code>title</code> attribute, just like with a standard tooltip.</p>
+
+            <div class="pandora-code-viewer" id="pid-221">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;abbr title=&quot;Don&amp;apos;t Forget To Be Awesome&quot;&gt;DFTBA&lt;/abbr&gt;
+  &lt;abbr title=&quot;May The Force Be With You&quot;&gt;MTFBWY&lt;/abbr&gt;
+  &lt;abbr title=&quot;Element Framework&quot;&gt;ELF&lt;/abbr&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 40px 0;
+  display: flex;
+  align-items: center;
+}
+
+.wrapper&gt;*:not(:last-child) {
+  margin-right: 30px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Don&apos;t Forget To Be Awesome&quot;</span>&gt;</span>DFTBA<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;May The Force Be With You&quot;</span>&gt;</span>MTFBWY<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">abbr</span> <span class="hljs-attr">title</span>=<span class="hljs-string">&quot;Element Framework&quot;</span>&gt;</span>ELF<span class="hljs-tag">&lt;/<span class="hljs-name">abbr</span>&gt;</span></code></pre>
+            <blockquote>
+              <p><code>ef-tooltip</code> overrides the default title attribute behavior of the browser</p>
+            </blockquote>
+            <h3 id="selector">Selector</h3>
+            <p><code>ef-tooltip</code> can be used for advanced use cases, such as specifying a position for tooltips, custom rendering, or displaying a tooltip only when certain conditions are met.</p>
+            <p>To customize the behavior of <code>ef-tooltip</code>, use <code>selector</code> to specify the CSS selector for the elemens and <code>tooltip</code> to specify the text content of the tooltip.</p>
+
+            <div class="pandora-code-viewer" id="pid-222">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;navigation&quot; style=&quot;padding: 40px 0;&quot;&gt;
+  &lt;ef-button tooltip=&quot;Hooray!&quot;&gt;Hover Me&lt;/ef-button&gt;
+  &lt;!-- Tooltip will not show on this button as tooltip nor title is defined --&gt;
+  &lt;ef-button&gt;No Tooltip&lt;/ef-button&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip selector=&quot;.navigation ef-button&quot;&gt;&lt;/ef-tooltip&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navigation&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Hooray!&quot;</span>&gt;</span>Hover Me<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-comment">&lt;!-- Tooltip will not show on this button as tooltip nor title is defined --&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span>&gt;</span>No Tooltip<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation ef-button&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <h3 id="positioning-tooltips">Positioning tooltips</h3>
+            <p>By default, the tooltip position is based on the pointer coordinates (<code>auto</code>). However, the tooltip can be configured to display <code>above</code>, <code>below</code>, <code>left</code>, or <code>right</code> of the element.</p>
+
+            <div class="pandora-code-viewer" id="pid-223">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;navigation&quot; style=&quot;padding: 40px 0;&quot;&gt;
+  &lt;label above tooltip=&quot;Above tooltip&quot;&gt;Above&lt;/label&gt;
+  &lt;label below tooltip=&quot;Below tooltip&quot;&gt;Below&lt;/label&gt;
+  &lt;label left tooltip=&quot;Left tooltip&quot;&gt;Left&lt;/label&gt;
+  &lt;label right tooltip=&quot;Right tooltip&quot;&gt;Right&lt;/label&gt;
+  &lt;label auto tooltip=&quot;Auto tooltip&quot;&gt;Auto&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip position=&quot;above&quot; selector=&quot;.navigation label[above]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;right&quot; selector=&quot;.navigation label[right]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;below&quot; selector=&quot;.navigation label[below]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;left&quot; selector=&quot;.navigation label[left]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip selector=&quot;.navigation label[auto]&quot;&gt;&lt;/ef-tooltip&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.navigation&gt;* {
+  margin-right: 30px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">above</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Above tooltip&quot;</span>&gt;</span>Above<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">below</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Below tooltip&quot;</span>&gt;</span>Below<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">left</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Left tooltip&quot;</span>&gt;</span>Left<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">right</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Right tooltip&quot;</span>&gt;</span>Right<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">auto</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Auto tooltip&quot;</span>&gt;</span>Auto<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;above&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;label[above]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;label[right]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;below&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;label[below]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;left&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;label[left]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;label[auto]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <h3 id="tooltip-transition-styles">Tooltip transition styles</h3>
+            <p>The default tooltip transition is <code>fade</code>. To make tooltips display with a different transition style, use the <code>transition-style</code> attribute. Note: the transition style should be used rationally with tooltip position.</p>
+
+            <div class="pandora-code-viewer" id="pid-224">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;navigation&quot;&gt;
+  &lt;label fade tooltip=&quot;Fade&quot;&gt;Fade&lt;/label&gt;
+  &lt;label zoom tooltip=&quot;Zoom&quot;&gt;Zoom&lt;/label&gt;
+  &lt;label slide-down tooltip=&quot;Slide down&quot;&gt;Slide Down&lt;/label&gt;
+  &lt;label slide-up tooltip=&quot;Slide up&quot;&gt;Slide Up&lt;/label&gt;
+  &lt;label slide-left tooltip=&quot;Slide left&quot;&gt;Slide Left&lt;/label&gt;
+  &lt;label slide-right tooltip=&quot;Slide right&quot;&gt;Slide Right&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;navigation&quot;&gt;
+  &lt;label slide-right-up tooltip=&quot;Slide right up&quot;&gt;Slide Right Up&lt;/label&gt;
+  &lt;label slide-right-down tooltip=&quot;Slide right down&quot;&gt;Slide Right Down&lt;/label&gt;
+  &lt;label slide-left-up tooltip=&quot;Slide left up&quot;&gt;Slide Left Up&lt;/label&gt;
+  &lt;label slide-left-down tooltip=&quot;Slide left down&quot;&gt;Slide Left Down&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip transition-style=&quot;fade&quot; selector=&quot;.navigation label[fade]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;zoom&quot; selector=&quot;.navigation label[zoom]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-down&quot; position=&quot;below&quot; selector=&quot;.navigation label[slide-down]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-up&quot; position=&quot;above&quot; selector=&quot;.navigation label[slide-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right-up&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right-down&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right-down]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left-up&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left-down&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left-down]&quot;&gt;&lt;/ef-tooltip&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.navigation {
+  padding: 20px 0px;
+}
+
+.navigation&gt;* {
+  margin-right: 30px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;fade&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[fade]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;zoom&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[zoom]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-down&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;below&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-down]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-up&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;above&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-up]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-left&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;left&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-left]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-right&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-right]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-right-up&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-right-up]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-right-down&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-right-down]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-left-up&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;left&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-left-up]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide-left-down&quot;</span> <span class="hljs-attr">position</span>=<span class="hljs-string">&quot;left&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation label[slide-left-down]&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <h3 id="custom-content">Custom content</h3>
+            <p>Custom content can be added to a tooltip instead of just text.</p>
+
+            <div class="pandora-code-viewer" id="pid-225">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;navigation&quot; style=&quot;padding: 40px 0;&quot;&gt;
+  &lt;ef-button&gt;Hover Me&lt;/ef-button&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip selector=&quot;.navigation ef-button&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;GOOGL.O&lt;/th&gt;
+        &lt;th&gt;NFLX.O&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;color: green&quot;&gt;$1,030.45 (+0.2949%)&lt;/td&gt;
+        &lt;td style=&quot;color: red&quot;&gt;$266.98 (-1.3378%)&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/ef-tooltip&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;navigation&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span>&gt;</span>Hover Me<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.navigation ef-button&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">table</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">thead</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>GOOGL.O<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">th</span>&gt;</span>NFLX.O<span class="hljs-tag">&lt;/<span class="hljs-name">th</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">thead</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">tbody</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">tr</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: green&quot;</span>&gt;</span>$1,030.45 (+0.2949%)<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">td</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;color: red&quot;</span>&gt;</span>$266.98 (-1.3378%)<span class="hljs-tag">&lt;/<span class="hljs-name">td</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">tr</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">tbody</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">table</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <h3 id="custom-rendering">Custom rendering</h3>
+            <p>Use custom rendering to display HTML content in a tooltip. The content passed to the renderer function needs to be an HTMLElement object.</p>
+            <blockquote>
+              <p>Note: If <code>title</code> attribute is provided; or custom content of tooltip is specified, <code>renderer</code> will be ignored.</p>
+            </blockquote>
+
+            <div class="pandora-code-viewer" id="pid-226">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div style=&quot;padding: 60px 0;&quot;&gt;
+  &lt;label class=&quot;symbol&quot; id=&quot;google&quot;&gt;GOOGL.O&lt;/label&gt;
+  &lt;label class=&quot;symbol&quot; id=&quot;facebook&quot;&gt;FB.O&lt;/label&gt;
+  &lt;label class=&quot;symbol&quot; id=&quot;netflix&quot;&gt;NFLX.O&lt;/label&gt;
+&lt;/div&gt;
+&lt;ef-tooltip id=&quot;symbol-tooltip&quot; selector=&quot;.symbol&quot;&gt;&lt;/ef-tooltip&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var tooltip = document.getElementById(&apos;symbol-tooltip&apos;);
+tooltip.renderer = function(target) {
+  var ret = document.createElement(&apos;div&apos;);
+  var title = document.createElement(&apos;div&apos;);
+  title.style.fontWeight = &apos;bold&apos;;
+  title.style.paddingBottom = &apos;3px&apos;;
+  var price = document.createElement(&apos;div&apos;);
+  ret.appendChild(title);
+  ret.appendChild(price);
+
+  switch (target.id) {
+    case &apos;google&apos;:
+      title.innerText = &apos;Alphabet Inc&apos;;
+      price.innerText = &apos;$1,030.45 (+0.2949%)&apos;;
+      price.style.color = &apos;green&apos;;
+      break;
+    case &apos;facebook&apos;:
+      title.innerText = &apos;Facebook Inc&apos;;
+      price.innerText = &apos;$132.43 (+0.6689%)&apos;;
+      price.style.color = &apos;green&apos;;
+      break;
+    case &apos;netflix&apos;:
+      title.innerText = &apos;Netflix Inc&apos;;
+      price.innerText = &apos;$266.98 (-1.3378%)&apos;;
+      price.style.color = &apos;red&apos;;
+      break;
+    default:
+      ret = null;
+      break;
+  }
+  return ret;
+}</pre>
+                  <pre class="pandora-tab-view tab-css">.symbol {
+  margin-right: 30px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;symbol&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;google&quot;</span>&gt;</span>GOOGL.O<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;symbol&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;facebook&quot;</span>&gt;</span>FB.O<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;symbol&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;netflix&quot;</span>&gt;</span>NFLX.O<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;symbol-tooltip&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;.symbol&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <pre><code>&lt;script&gt;
+    <span class="hljs-keyword">var</span> tooltip = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;symbol-tooltip&apos;</span>);
+    tooltip.renderer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target</span>) </span>{
+        <span class="hljs-keyword">var</span> ret = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        <span class="hljs-keyword">var</span> title = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        title.style.fontWeight = <span class="hljs-string">&apos;bold&apos;</span>;
+        title.style.paddingBottom = <span class="hljs-string">&apos;3px&apos;</span>;
+        <span class="hljs-keyword">var</span> price = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+        ret.appendChild(title);
+        ret.appendChild(price);
+
+        <span class="hljs-keyword">switch</span>(target.id) {
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;google&apos;</span>:
+                title.innerText = <span class="hljs-string">&apos;Alphabet Inc&apos;</span>;
+                price.innerText = <span class="hljs-string">&apos;$1,030.45 (+0.2949%)&apos;</span>;
+                price.style.color = <span class="hljs-string">&apos;green&apos;</span>;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;facebook&apos;</span>:
+                title.innerText = <span class="hljs-string">&apos;Facebook Inc&apos;</span>;
+                price.innerText = <span class="hljs-string">&apos;$132.43 (+0.6689%)&apos;</span>;
+                price.style.color = <span class="hljs-string">&apos;green&apos;</span>;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-string">&apos;netflix&apos;</span>:
+                title.innerText = <span class="hljs-string">&apos;Netflix Inc&apos;</span>;
+                price.innerText = <span class="hljs-string">&apos;$266.98 (-1.3378%)&apos;</span>;
+                price.style.color = <span class="hljs-string">&apos;red&apos;</span>;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>:
+                ret = <span class="hljs-literal">null</span>;
+                <span class="hljs-keyword">break</span>;
+        }
+        <span class="hljs-keyword">return</span> ret;
+    }
+&lt;/script&gt;</code></pre>
+            <p>A custom renderer can also be applied to only show tooltips when the text is too long and does not fit the container.</p>
+            <pre><code><span class="hljs-selector-class">.item</span> {
+  <span class="hljs-attribute">overflow</span>: hidden;
+  <span class="hljs-attribute">text-overflow</span>: ellipsis;
+  <span class="hljs-attribute">white-space</span>: nowrap;
+}</code></pre>
+            <pre><code><span class="hljs-keyword">var</span> tooltip = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;item-tooltip&apos;</span>);
+
+tooltip.renderer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target</span>) </span>{
+  <span class="hljs-keyword">if</span> (target.scrollWidth - target.clientWidth === <span class="hljs-number">0</span>) {
+    <span class="hljs-keyword">return</span> <span class="hljs-literal">null</span>;
+  }
+  <span class="hljs-comment">// return itself as content of tooltip</span>
+  <span class="hljs-keyword">return</span> target;
+};</code></pre>
+            <h3 id="conditioning-tooltip">Conditioning tooltip</h3>
+            <p>Use custom condition to trigger a tooltip only when a condition is met.</p>
+
+            <div class="pandora-code-viewer" id="pid-227">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div style=&quot;padding: 30px 0;&quot;&gt;
+  &lt;ef-text-field style=&quot;width:400px&quot; id=&quot;amount&quot; tooltip=&quot;Value must be number and at least 100&quot; placeholder=&quot;Input amount. Tooltip will show when input invalid.&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-tooltip id=&quot;amount-tooltip&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var input = document.getElementById(&apos;amount&apos;);
+var tooltip = document.getElementById(&apos;amount-tooltip&apos;);
+var isValid = function(val) {
+  return isNaN(parseInt(val, 10)) || parseInt(val, 10) &lt; 100;
+};
+
+input.addEventListener(&apos;value-changed&apos;, function() {
+  input.error = isValid(input.value);
+});
+
+tooltip.condition = function(target, paths) {
+  return target === input &amp;&amp; isValid(target.value);
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;amount&quot;</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Value must be number and at least 100&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Input amount. Tooltip will show when input invalid.&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;amount-tooltip&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> input = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;amount&apos;</span>);
+<span class="hljs-keyword">var</span> tooltip = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;amount-tooltip&apos;</span>);
+<span class="hljs-keyword">var</span> isValid = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">val</span>) </span>{
+  <span class="hljs-keyword">return</span> <span class="hljs-built_in">isNaN</span>(<span class="hljs-built_in">parseInt</span>(val, <span class="hljs-number">10</span>)) || <span class="hljs-built_in">parseInt</span>(val, <span class="hljs-number">10</span>) &lt; <span class="hljs-number">100</span>;
+};
+
+input.addEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+  input.error = isValid(input.value);
+});
+
+tooltip.condition = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">target, paths</span>) </span>{
+  <span class="hljs-keyword">return</span> target === input &amp;&amp; isValid(target.value);
+};</code></pre>
+            <h2 id="default-tooltip">Default tooltip</h2>
+            <p>It is recommended to have only one instance of tooltip per page. A default tooltip element is always included when the developer adds <code>ef-tooltip</code> to an application.</p>
+            <p>Use <code>addTooltipCondition</code> and <code>removeTooltipCondition</code> to reuse the default tooltip:</p>
+            <pre><code><span class="hljs-keyword">import</span> { addTooltipCondition, removeTooltipCondition } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@refinitiv-ui/tooltip&apos;</span>;
+
+<span class="hljs-comment">// Show tooltip for elements that have &quot;ref&quot; attribute</span>
+<span class="hljs-keyword">const</span> condition = <span class="hljs-function"><span class="hljs-params">target</span> =&gt;</span> target.hasAttribute(<span class="hljs-string">&apos;ref&apos;</span>);
+
+<span class="hljs-comment">// Show tooltip content</span>
+<span class="hljs-keyword">const</span> render = <span class="hljs-function"><span class="hljs-params">target</span> =&gt;</span> <span class="hljs-string">`My reference is: <span class="hljs-subst">${target.getAttribute(<span class="hljs-string">&apos;ref&apos;</span>)}</span>`</span>;
+
+addTooltipCondition(condition, render);
+
+<span class="hljs-comment">// Do not forget to remove tooltip condition once not required to avoid memory leaks</span>
+removeTooltipCondition(condition);</code></pre>
+            <h3 id="overflow-tooltip">Overflow tooltip</h3>
+            <p>Overflow tooltip reuses the concept of <em>Default tooltip</em> to display a tooltip when text overflows:</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  <span class="hljs-selector-class">.overflow</span> {
+    <span class="hljs-attribute">white-space</span>: nowrap;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">20px</span>;
+    <span class="hljs-attribute">overflow</span>: hidden;
+    <span class="hljs-attribute">text-overflow</span>: ellipsis;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;overflow&quot;</span>&gt;</span>Very long text with overflow<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">import</span> { registerOverflowTooltip } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@refinitiv-ui/tooltip&apos;</span>;
+<span class="hljs-keyword">const</span> overflowElement = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;.overflow&apos;</span>);
+registerOverflowTooltip(overflowElement);</code></pre>
+            <h2 id="time-delay">Time Delay</h2>
+            <p>A timer to show or hide a tooltip can be customized using the <code>--show-delay</code> and <code>--hide-delay</code> CSS variables.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variables Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--show-delay</td>
+                  <td>Time to show tooltip when mouse hovers, in milliseconds</td>
+                </tr>
+                <tr>
+                  <td>--hide-delay</td>
+                  <td>Time to hide tooltip when mouse leaves, in milliseconds</td>
+                </tr>
+              </tbody>
+            </table>
+            <blockquote>
+              <p>Note: setting these variables to small values can cause performance issues.</p>
+            </blockquote>
+
+            <div class="pandora-code-viewer" id="pid-228">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div style=&quot;padding: 30px 0;&quot;&gt;
+  &lt;label id=&quot;delay-label&quot; tooltip=&quot;Hello! I will hide within 2 seconds.&quot;&gt;Hover me. and wait for 3 second&lt;/label&gt;
+  &lt;ef-tooltip class=&quot;delay&quot; selector=&quot;#delay-label&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.delay {
+  --show-delay: 3000ms;
+  --hide-delay: 2000ms;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-selector-class">.delay</span> {
+  --show-delay: <span class="hljs-number">3000ms</span>;
+  --hide-delay: <span class="hljs-number">2000ms</span>;
+}</code></pre>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">label</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;delay-label&quot;</span> <span class="hljs-attr">tooltip</span>=<span class="hljs-string">&quot;Hello! 2 seconds, I will hide.&quot;</span>&gt;</span>Hover me. and wait 3 second<span class="hljs-tag">&lt;/<span class="hljs-name">label</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tooltip</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;delay&quot;</span> <span class="hljs-attr">selector</span>=<span class="hljs-string">&quot;#delay-label&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tooltip</span>&gt;</span></code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">selector</div>
+                <div class="desc">CSS selector to match the tooltip</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;auto&quot; | &quot;above&quot; | &quot;right&quot; | &quot;below&quot; | &quot;left&quot;</div>
+                <div class="name">position</div>
+                <div class="desc">The position of the tooltip. Use the following values:
+                  `auto` (default) - display based on mouse enter coordinates
+                  `above` - display above the element
+                  `right` - display to the right of the element
+                  `below` - display beneath the element
+                  `left` - display to the left of the element</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TooltipTransitionStyle</div>
+                <div class="name">transition-style</div>
+                <div class="desc">Set the transition style.
+                  Value can be `fade`, `zoom`, `slide-down`, `slide-up`, `slide-right`,
+                  `slide-left`, `slide-right-down`, `slide-right-up`, `slide-left-down`, `slide-left-up`, or null in case of no transition</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">selector</div>
+                <div class="desc">CSS selector to match the tooltip</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TooltipCondition</div>
+                <div class="name">condition</div>
+                <div class="desc">Provide a function to test against the target.
+                  Return `true` if the target matches</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TooltipRenderer</div>
+                <div class="name">renderer</div>
+                <div class="desc">A renderer to define tooltip internal content.
+                  Return undefined, `String`, `HTMLElement` or `DocumentFragment`.
+                  If the content is not present, tooltip will not be displayed</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;auto&quot; | &quot;above&quot; | &quot;right&quot; | &quot;below&quot; | &quot;left&quot;</div>
+                <div class="name">position</div>
+                <div class="desc">The position of the tooltip. Use the following values:
+                  `auto` (default) - display based on mouse enter coordinates
+                  `above` - display above the element
+                  `right` - display to the right of the element
+                  `below` - display beneath the element
+                  `left` - display to the left of the element</div>
+                <div class="value">&quot;auto&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TooltipTransitionStyle</div>
+                <div class="name">transitionStyle</div>
+                <div class="desc">Set the transition style.
+                  Value can be `fade`, `zoom`, `slide-down`, `slide-up`, `slide-right`,
+                  `slide-left`, `slide-right-down`, `slide-right-up`, `slide-left-down`, `slide-left-up`, or null in case of no transition</div>
+                <div class="value">&quot;fade&quot;</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

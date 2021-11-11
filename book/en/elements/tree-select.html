@@ -1,0 +1,715 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Tree Select</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/tree-select.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li selected><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/tree-select;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="tree-select">Tree Select</h1>
+
+            <div class="pandora-code-viewer" id="pid-144">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;div class=&quot;wrapper&quot;&gt;
+    &lt;ef-tree-select opened&gt;&lt;/ef-tree-select&gt;
+  &lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-tree-select&apos;);
+el.data = [{
+  &apos;value&apos;: &apos;AFR&apos;,
+  &apos;label&apos;: &apos;Africa&apos;,
+  &apos;selected&apos;: false,
+  &apos;expanded&apos;: true,
+  &apos;items&apos;: [{
+    &apos;value&apos;: &apos;DZA&apos;,
+    &apos;label&apos;: &apos;Algeria&apos;,
+    &apos;selected&apos;: false,
+    &apos;expanded&apos;: true,
+    &apos;items&apos;: [{
+      &apos;value&apos;: &apos;ADR&apos;,
+      &apos;label&apos;: &apos;Adrar&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }, {
+      &apos;value&apos;: &apos;TAM&apos;,
+      &apos;label&apos;: &apos;Tamanghasset&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }, {
+      &apos;value&apos;: &apos;GUE&apos;,
+      &apos;label&apos;: &apos;Guelma&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }]
+  }, {
+    &apos;value&apos;: &apos;AGO&apos;,
+    &apos;label&apos;: &apos;Angola&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }, {
+    &apos;value&apos;: &apos;BEN&apos;,
+    &apos;label&apos;: &apos;Benin&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }, {
+    &apos;value&apos;: &apos;BWA&apos;,
+    &apos;label&apos;: &apos;Botswana&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }]
+}];
+setTimeout(function() { el.opened = true; }, 1000);</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>Tree Select provides an interface for displaying, navigating and selecting items from a nested data structure.</p>
+            <h2 id="basic-usage">Basic usage</h2>
+            <p>Tree Select is designed to work with multiple items and as such has a commit model. A selection is made using the interface and then committed, or cancelled. The result of the committed selection can be accessed using the <code>values</code> property. This is an array of selected item values.</p>
+
+            <div class="pandora-code-viewer" id="pid-145">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-tree-select opened&gt;&lt;/ef-tree-select&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-tree-select&apos;);
+el.data = [{
+  &apos;value&apos;: &apos;AFR&apos;,
+  &apos;label&apos;: &apos;Africa&apos;,
+  &apos;selected&apos;: false,
+  &apos;items&apos;: [{
+    &apos;value&apos;: &apos;DZA&apos;,
+    &apos;label&apos;: &apos;Algeria&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: [{
+      &apos;value&apos;: &apos;ADR&apos;,
+      &apos;label&apos;: &apos;Adrar&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }, {
+      &apos;value&apos;: &apos;TAM&apos;,
+      &apos;label&apos;: &apos;Tamanghasset&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }, {
+      &apos;value&apos;: &apos;GUE&apos;,
+      &apos;label&apos;: &apos;Guelma&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }]
+  }, {
+    &apos;value&apos;: &apos;AGO&apos;,
+    &apos;label&apos;: &apos;Angola&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }, {
+    &apos;value&apos;: &apos;BEN&apos;,
+    &apos;label&apos;: &apos;Benin&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }, {
+    &apos;value&apos;: &apos;BWA&apos;,
+    &apos;label&apos;: &apos;Botswana&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }]
+}];</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>The <code>data</code> property of the <code>ef-tree-select</code> uses the <code>TreeSelectData</code> interface which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>selected</td>
+                  <td>boolean</td>
+                  <td>Selection state of the item</td>
+                </tr>
+                <tr>
+                  <td>expanded</td>
+                  <td>boolean</td>
+                  <td>Expanded state of child items</td>
+                </tr>
+                <tr>
+                  <td>items</td>
+                  <td>array</td>
+                  <td>Child items collection</td>
+                </tr>
+                <tr>
+                  <td>readonly</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be readonly</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="pills">Pills</h2>
+            <p>Optionally, Tree Select can display selected items as pills by adding the <code>show-pills</code> attribute. Items can also be de-selected by removing the pill.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tree-select</span> <span class="hljs-attr">show-pills</span> <span class="hljs-attr">opened</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tree-select</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-tree-select&apos;</span>);
+el.data = [{
+            <span class="hljs-string">&apos;value&apos;</span>: <span class="hljs-string">&apos;AFR&apos;</span>,
+            <span class="hljs-string">&apos;label&apos;</span>: <span class="hljs-string">&apos;Africa&apos;</span>,
+            <span class="hljs-string">&apos;selected&apos;</span>: <span class="hljs-literal">false</span>,
+            <span class="hljs-string">&apos;items&apos;</span>: [{
+              <span class="hljs-string">&apos;value&apos;</span>: <span class="hljs-string">&apos;DZA&apos;</span>,
+              <span class="hljs-string">&apos;label&apos;</span>: <span class="hljs-string">&apos;Algeria&apos;</span>,
+              <span class="hljs-string">&apos;selected&apos;</span>: <span class="hljs-literal">true</span>,
+              <span class="hljs-string">&apos;items&apos;</span>: [{
+                <span class="hljs-string">&apos;value&apos;</span>: <span class="hljs-string">&apos;ADR&apos;</span>,
+                <span class="hljs-string">&apos;label&apos;</span>: <span class="hljs-string">&apos;Adrar&apos;</span>,
+                <span class="hljs-string">&apos;selected&apos;</span>: <span class="hljs-literal">false</span>,
+                <span class="hljs-string">&apos;items&apos;</span>: []
+              }]
+            }, {
+              <span class="hljs-string">&apos;value&apos;</span>: <span class="hljs-string">&apos;AGO&apos;</span>,
+              <span class="hljs-string">&apos;label&apos;</span>: <span class="hljs-string">&apos;Angola&apos;</span>,
+              <span class="hljs-string">&apos;selected&apos;</span>: <span class="hljs-literal">false</span>,
+              <span class="hljs-string">&apos;items&apos;</span>: []
+            }]
+          }];</code></pre>
+            <blockquote>
+              <p>If the number of selected items is likely to be large, pills may not be a good choice for display or performance.</p>
+            </blockquote>
+            <h2 id="filtering">Filtering</h2>
+            <p>Tree select has built in text filtering and selection editing.</p>
+            <p>By clicking the <code>Selected</code> button, Tree Select allows the items to be filtered by selected state, and that subset to be operated on in isolation from the main item list.</p>
+            <p>For custom filtering, Tree Select provides an identical interface as Combo Box. You provide a predicate function that tests an item. Please consult the <a href="combo-box.html">Combo Box docs</a> for details on how to construct a compatible filter.</p>
+            <h2 id="ui-controls">UI Controls</h2>
+            <p>Tree Select has several controls.</p>
+
+            <div class="pandora-code-viewer" id="pid-146">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-tree-select opened&gt;&lt;/ef-tree-select&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-tree-select&apos;);
+el.data = [{
+  &apos;value&apos;: &apos;AFR&apos;,
+  &apos;label&apos;: &apos;Africa&apos;,
+  &apos;selected&apos;: false,
+  &apos;items&apos;: [{
+    &apos;value&apos;: &apos;DZA&apos;,
+    &apos;label&apos;: &apos;Algeria&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: [{
+      &apos;value&apos;: &apos;ADR&apos;,
+      &apos;label&apos;: &apos;Adrar&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }, {
+      &apos;value&apos;: &apos;TAM&apos;,
+      &apos;label&apos;: &apos;Tamanghasset&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }, {
+      &apos;value&apos;: &apos;GUE&apos;,
+      &apos;label&apos;: &apos;Guelma&apos;,
+      &apos;selected&apos;: false,
+      &apos;items&apos;: []
+    }]
+  }, {
+    &apos;value&apos;: &apos;AGO&apos;,
+    &apos;label&apos;: &apos;Angola&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }, {
+    &apos;value&apos;: &apos;BEN&apos;,
+    &apos;label&apos;: &apos;Benin&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }, {
+    &apos;value&apos;: &apos;BWA&apos;,
+    &apos;label&apos;: &apos;Botswana&apos;,
+    &apos;selected&apos;: false,
+    &apos;items&apos;: []
+  }]
+}];</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><strong>Full and Selected</strong></p>
+            <p>These controls will filter the list by selected state.</p>
+            <p><strong>Select All/Deselect</strong></p>
+            <p>This is a toggle control which will change the selected state of all items accordingly.</p>
+            <p><strong>Collapse All/Expand All</strong></p>
+            <p>This is a toggle control which will change the expanded state of all items accordingly.</p>
+            <p><strong>Done</strong></p>
+            <p>This control will save the current selection, and result of the firing of the <code>value-changed</code> event.</p>
+            <p><strong>Cancel</strong></p>
+            <p>This control will abort any current selection changes and go back to the tree state when first opened.</p>
+            <h2 id="customize-size">Customize size</h2>
+            <p>The theme manages the size of popup panel, but can be overridden by using CSS variables.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variables Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--list-max-width</td>
+                  <td>Max width of popup panel</td>
+                </tr>
+                <tr>
+                  <td>--list-max-height</td>
+                  <td>Max height of selection tree</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-relation</div>
+                <div class="desc">Breaks the relationship when multiple
+                  selection mode is enabled</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">show-pills</div>
+                <div class="desc">Should the control show pills</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Set dropdown to open</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Set placeholder text</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">filterCount</div>
+                <div class="desc">Tracks the number of filter matches
+
+                  <p>Only needed if internal filtering is unused</p>
+                </div>
+                <div class="value">0</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noRelation</div>
+                <div class="desc">Breaks the relationship when multiple<br>selection mode is enabled</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">showPills</div>
+                <div class="desc">Should the control show pills</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Returns a values collection of the currently<br>selected item values</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TreeSelectRenderer</div>
+                <div class="name">renderer</div>
+                <div class="desc">Renderer used to render tree item elements</div>
+                <div class="value">&quot;new TreeSelectRenderer(this)&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Set dropdown to open</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Set placeholder text</div>
+              </div>
+              <div class="api-item">
+                <div class="type">TreeSelectData[]</div>
+                <div class="name">data</div>
+                <div class="desc">Data object to be used for creating tree</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">confirm</div>
+                <div class="desc">Fired when selection is confirmed</div>
+              </div>
+              <div class="api-item">
+                <div class="name">cancel</div>
+                <div class="desc">Fired when selection is cancelled</div>
+              </div>
+              <div class="api-item">
+                <div class="name">query-changed</div>
+                <div class="desc">Fired when query in input box changed</div>
+              </div>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Fired when value of control changed</div>
+              </div>
+              <div class="api-item">
+                <div class="name">opened-changed</div>
+                <div class="desc">Fires when opened state changes</div>
+              </div>
+            </div>
+            <p></p>
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

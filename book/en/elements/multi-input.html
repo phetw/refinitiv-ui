@@ -1,0 +1,753 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Multi Input</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/multi-input.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li selected><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/multi-input;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="multi-input">Multi Input</h1>
+
+            <div class="pandora-code-viewer" id="pid-97">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-multi-input id=&quot;fruits&quot; placeholder=&quot;Enter text here&quot;&gt;&lt;/ef-multi-input&gt;
+&lt;ef-multi-input id=&quot;cats&quot; pills-only&gt;&lt;/ef-multi-input&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.getElementById(&apos;fruits&apos;);
+var fruits = [
+  { id: &apos;1&apos;, value: &apos;banana&apos;, label: &apos;Banana&apos; },
+  { id: &apos;2&apos;, value: &apos;orange&apos;, label: &apos;Orange&apos; },
+  { id: &apos;3&apos;, value: &apos;grapes&apos;, label: &apos;Grapes&apos; }
+];
+el.data = fruits;
+
+var catEl = document.getElementById(&apos;cats&apos;);
+var cats = [
+  { label: &apos;Tiger&apos; }, { label: &apos;Raven&apos; }, { label: &apos;Olive&apos; }, { label: &apos;Pearl&apos; }, { label: &apos;Dusky&apos; }, { label: &apos;Luna&apos; }, { label: &apos;Minna&apos; }, { label: &apos;Dice&apos; }, { label: &apos;Dixie&apos; }, { label: &apos;Oreo&apos; }, { label: &apos;Ash&apos; }, { label: &apos;Taffy&apos; }, { label: &apos;Soot&apos; }, { label: &apos;Orca&apos; }, { label: &apos;Chess&apos; }, { label: &apos;Panther&apos; }, { label: &apos;Sana&apos; }, { label: &apos;Esme&apos; }
+];
+catEl.data = cats;</pre>
+                  <pre class="pandora-tab-view tab-css">#fruits {
+  margin-bottom: 20px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-multi-input</code> is an input field control that displays multiple items of data as an individual pill. Users can add new pills by using the keyboard, or remove any pills from the control.</p>
+            <h2 id="basic-usage">Basic usage</h2>
+            <p><code>ef-multi-input</code> can be created and the <code>data</code> property used to set an initial list of pills.</p>
+
+            <div class="pandora-code-viewer" id="pid-98">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-multi-input placeholder=&quot;Enter text here&quot;&gt;&lt;/ef-multi-input&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-multi-input&apos;);
+var fruits = [
+  { id: &apos;1&apos;, value: &apos;banana&apos;, label: &apos;Banana&apos; },
+  { id: &apos;2&apos;, value: &apos;orange&apos;, label: &apos;Orange&apos; },
+  { id: &apos;3&apos;, value: &apos;grapes&apos;, label: &apos;Grapes&apos; }
+];
+el.data = fruits;</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-multi-input</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Enter text here&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-multi-input</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-multi-input&apos;</span>);
+  <span class="hljs-keyword">var</span> fruits = [
+    { <span class="hljs-attr">id</span>: <span class="hljs-string">&apos;1&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;banana&apos;</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Banana&apos;</span> },
+    { <span class="hljs-attr">id</span>: <span class="hljs-string">&apos;2&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;orange&apos;</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Orange&apos;</span> },
+    { <span class="hljs-attr">id</span>: <span class="hljs-string">&apos;3&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;grapes&apos;</span>, <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Grapes&apos;</span> }
+  ];
+el.data = fruits;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <p>By default, users are allowed to type any value in a text field and it will be created as a new pill when users press the enter key. You can disable the text field input using the <code>pills-only</code> attribute or set <code>pillsOnly</code> using the API property.</p>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>The <code>data</code> is an array of the object use the <code>MultiInputData</code> interface for its data items which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>id</td>
+                  <td>string</td>
+                  <td>Item&apos;s unique id (optional)</td>
+                </tr>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>readonly</td>
+                  <td>boolean</td>
+                  <td>Hide clear icon of pill but still able to remove by keyboard</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>The <code>data</code> property is only used for initializing <code>ef-multi-input</code>. It&apos;s immutable and used for keeping a reference to a source array of objects. The value of <code>data</code> won&apos;t be changed when using the add or remove pills API.</p>
+            <h2 id="getting-values">Getting values</h2>
+            <p>The value of the input text field can be accessed using <code>value</code>. To get a list of pills in the input, use the <code>values</code> property - it will return an array of the <code>value</code> properties of every pill.</p>
+
+            <div class="pandora-code-viewer" id="pid-99">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-multi-input readonly&gt;&lt;/ef-multi-input&gt;
+&lt;div style=&quot;margin-top: 5px;&quot;&gt;Values: &lt;span id=&quot;result-values&quot;&gt;&lt;/span&gt;&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-multi-input&apos;);
+var result = document.getElementById(&apos;result-values&apos;);
+
+window.customElements.whenDefined(&apos;ef-button&apos;).then(function() {
+  var fruits = [
+    { id: &apos;1&apos;, value: &apos;banana&apos;, label: &apos;Banana&apos; },
+    { id: &apos;2&apos;, value: &apos;orange&apos;, label: &apos;Orange&apos; },
+    { id: &apos;3&apos;, value: &apos;grapes&apos;, label: &apos;Grapes&apos; }
+  ];
+  el.data = fruits;
+  result.innerHTML = JSON.stringify(el.values);
+})</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-multi-input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;multiInput&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-multi-input</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;multiInput&apos;</span>);
+<span class="hljs-built_in">console</span>.log(el.values); <span class="hljs-comment">// array of value of each pills</span></code></pre>
+            <h2 id="add-new-items">Add new items</h2>
+            <p>You can add new items to <code>ef-multi-input</code> using an API. To add a new pill, use the <code>add</code> method by passing <a href="#multidataitem">MultiDataItem</a> as a parameter.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-multi-input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;multi-input&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-multi-input</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElemetnById(<span class="hljs-string">&apos;multi-input&apos;</span>);
+<span class="hljs-keyword">var</span> ret = el.add({
+  <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;newItemValue&apos;</span>,
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;New Item&apos;</span>
+});
+
+<span class="hljs-built_in">console</span>.log(ret); <span class="hljs-comment">// newly added item or null if new item is invalid</span></code></pre>
+            <p><code>ef-multi-input</code> provides the <code>item-added</code> event to listen for when users add a new item to the control by pressing the enter key on their keyboard. In the event object, you can access <code>item</code> for an item object that is newly added and <code>items</code> for an array of items currently shown in the control.</p>
+            <p>For example, if a user types <code>Mango</code> and presses the enter key in <code>ef-multi-input</code>.</p>
+            <pre><code>el.addEventListener(<span class="hljs-string">&apos;item-added&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-built_in">console</span>.log(e.detail.item) <span class="hljs-comment">// Mango object.</span>
+  <span class="hljs-built_in">console</span>.log(e.detail.items) <span class="hljs-comment">// Array of item in control before mango is added.</span>
+});</code></pre>
+            <p>The event can be cancelled so you can add custom logic to prevent some items from being added to the control.</p>
+            <pre><code>el.addEventListener(<span class="hljs-string">&apos;item-added&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) =&gt; </span>{
+  <span class="hljs-keyword">if</span> (e.detail.item.value === <span class="hljs-string">&apos;Mango&apos;</span>) {
+    e.preventDefault(); <span class="hljs-comment">// Prevent  Mango to be added to the list</span>
+  } <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// Anything else can be added</span>
+  }
+});</code></pre>
+            <h2 id="remove-items">Remove Items</h2>
+            <p>Items in <code>ef-multi-input</code> can be removed using an API. You can remove only the last item, remove an item by the index of the pill, or remove all items that match a given value. See the API section below for more details.</p>
+            <p>You can listen to the <code>item-removed</code> event, which is fired when users remove any item using their keyboard, or by clicking the clear icon on a pill. In the event object, you can access <code>item</code> for the object of the item removed and <code>items</code> for an array of items currently shown in the control.</p>
+
+            <div class="pandora-code-viewer" id="pid-100">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-multi-input placeholder=&quot;Enter text here&quot;&gt;&lt;/ef-multi-input&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-multi-input&apos;);
+var fruits = [
+  { id: &apos;1&apos;, value: &apos;banana&apos;, label: &apos;Banana&apos; },
+  { id: &apos;2&apos;, value: &apos;orange&apos;, label: &apos;Orange&apos; },
+  { id: &apos;3&apos;, value: &apos;grapes&apos;, label: &apos;Grapes&apos; }
+];
+el.data = fruits;
+el.addEventListener(&apos;item-removed&apos;, (e) =&gt; {
+  var item = e.detail.item;
+  el.value = item.label;
+});</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="text-field-value-changed">Text Field value changed</h2>
+            <p>When users type or change the value in the text field, the <code>value-changed</code> event will be triggered. The value of the text field is accessed using <code>value</code> in the event object.</p>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">pills-only</div>
+                <div class="desc">Hide text input box</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">icon</div>
+                <div class="desc">Specify icon to display inside input box</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder text to display in input box</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">maxlength</div>
+                <div class="desc">Set character max limit</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">minlength</div>
+                <div class="desc">Set character min limit</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Hides text field and clear icon from all pills</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Current value of text field</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Array of item&apos;s values ( readonly )</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">pillsOnly</div>
+                <div class="desc">Hide text input box</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">icon</div>
+                <div class="desc">Specify icon to display inside input box</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder text to display in input box</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">maxLength</div>
+                <div class="desc">Set character max limit</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">minLength</div>
+                <div class="desc">Set character min limit</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">selectionStart</div>
+                <div class="desc">Selection start index</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">selectionEnd</div>
+                <div class="desc">Selection end index</div>
+              </div>
+              <div class="api-item">
+                <div class="type">MultiInputData | null</div>
+                <div class="name">data</div>
+                <div class="desc">The data object, used to render the list.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Hides text field and clear icon from all pills</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Current value of text field</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">removeByValue(value)</div>
+                <div class="desc">Removes the item by the value and returns array of removed items</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">value</div>
+                    <div class="type"></div>
+                    <div class="desc">Value of item to remove</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">add(item)</div>
+                <div class="desc">Add a new item to the input. Return newly added object or null if added invalid object.</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">item</div>
+                    <div class="type">MultiInputDataItem</div>
+                    <div class="desc">to add. Object must have at least value and label</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">removeLastItem()</div>
+                <div class="desc">Removes last item. Returns item that removed or null if list was empty</div>
+              </div>
+              <div class="api-item">
+                <div class="name">removeByIndex(index)</div>
+                <div class="desc">Removes pill by index. Returns item that removed or null if list was empty</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">index</div>
+                    <div class="type"></div>
+                    <div class="desc">of pill to be removed</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">setSelectionRange(startSelection,endSelection)</div>
+                <div class="desc">Set the selection range</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">startSelection</div>
+                    <div class="type"></div>
+                    <div class="desc">Start of selection</div>
+                  </div>
+                  <div class="param">
+                    <div class="name">endSelection</div>
+                    <div class="type"></div>
+                    <div class="desc">End of the selection</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">select()</div>
+                <div class="desc">Select the contents of input</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Fired when new value of text field is changed.
+                  Property `detail.value` will be the new value.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">error-changed</div>
+                <div class="desc">Dispatched when error state changes.
+                  Property `detail.error` is error from validation.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">item-added</div>
+                <div class="desc">Fired when new pill is added.
+                  Property `detail.item` is new added pill.
+                  Property `detail.items` is new list of all pills.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">item-removed</div>
+                <div class="desc">Fired when item is removed.
+                  Property `detail.item` is pill that removed.
+                  Property `detail.items` is new list of all pills.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">item-error</div>
+                <div class="desc">Fired when item that attempt to add is invalid.
+                  Property `detail.item` is item with an error.
+                  Property `detail.items` a current list of pills.</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

@@ -1,0 +1,589 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Sidebar Layout</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/sidebar-layout.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li selected><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/sidebar-layout;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="sidebar-layout">Sidebar Layout</h1>
+
+            <div class="pandora-code-viewer" id="pid-208">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Sidebar Layout&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing&gt;Menus&lt;/ef-panel&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing&gt;This is awesome.&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-sidebar-layout {
+  height: 200px;
+}
+
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #dfe2e8;
+}
+
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 90px 0;
+  background-color: #f1f1f1;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-sidebar-layout</code> provides an app layout with a sidebar. There are four sections where a component can be slotted in.</p>
+            <ul>
+              <li>Sidebar header</li>
+              <li>Sidebar content</li>
+              <li>Main header</li>
+              <li>Main content</li>
+            </ul>
+            <p>The header slots can be omitted. Also, the component will automatically provide a vertical scrollbar if content is too long.</p>
+            <h3 id="using-sidebar-layout">Using sidebar layout</h3>
+            <p><code>ef-sidebar-layout</code> is a layout, it is up to the developer to slot any contents into it. Typically, <code>ef-sidebar-layout</code> should be used together with <code>ef-header</code> for header slots, and <code>ef-panel</code> for content. Components that are used inside the layout must be imported by the app.</p>
+
+            <div class="pandora-code-viewer" id="pid-209">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Sidebar Layout&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing class=&quot;sidebar-content&quot;&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;Main Header&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing class=&quot;main-content&quot;&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-sidebar-layout {
+  height: 200px;
+}
+
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 70px 0;
+}
+
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 70px 0;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-sidebar-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;sidebar-header&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Sidebar Header<span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;sidebar-content&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>Sidebar Content<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-header&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Main Header<span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-content&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>Main Content<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-sidebar-layout</span>&gt;</span></code></pre>
+            <h3 id="add-toolbar-commands">Add toolbar commands</h3>
+            <p>Menus on header could be implemented by using slots of <code>ef-header</code>.</p>
+
+            <div class="pandora-code-viewer" id="pid-210">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Title&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;settings&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;share&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-sidebar-layout {
+  height: 200px;
+}
+
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}
+
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-sidebar-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;sidebar-header&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;sidebar-content&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>Sidebar Content<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-header&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">transparent</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;settings&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">transparent</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;share&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-content&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>Main Content<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-sidebar-layout</span>&gt;</span></code></pre>
+            <h3 id="toggled-sidebar">Toggled sidebar</h3>
+            <p>Sidebar can be hidden by adding the <code>collapsed</code> attribute. A toggle button to collapse the sidebar can be implemented by code.</p>
+
+            <div class="pandora-code-viewer" id="pid-211">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-sidebar-layout id=&quot;layout&quot;&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Title&lt;/ef-header&gt;
+  &lt;ef-panel spacing slot=&quot;sidebar-content&quot;&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;
+    &lt;ef-button transparent slot=&quot;left&quot; id=&quot;toggleBtn&quot; icon=&quot;leftpanel-open&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;settings&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-header&gt;
+  &lt;ef-panel spacing slot=&quot;main-content&quot;&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var layout = document.getElementById(&apos;layout&apos;);
+var toggleBtn = document.getElementById(&apos;toggleBtn&apos;);
+toggleBtn.addEventListener(&apos;click&apos;, function() {
+  layout.collapsed = !layout.collapsed;
+  toggleBtn.setAttribute(&apos;icon&apos;, layout.collapsed ? &apos;leftpanel-closed&apos; : &apos;leftpanel-open&apos;);
+});</pre>
+                  <pre class="pandora-tab-view tab-css">ef-sidebar-layout {
+  height: 200px;
+}
+
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}
+
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-sidebar-layout</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;layout&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;sidebar-header&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Title<span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">spacing</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;sidebar-content&quot;</span>&gt;</span>Sidebar Content<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-header&quot;</span> <span class="hljs-attr">level</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">transparent</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;left&quot;</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;toggleBtn&quot;</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;leftpanel-open&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;right&quot;</span> <span class="hljs-attr">transparent</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;settings&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">spacing</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;main-content&quot;</span>&gt;</span>Main Content<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-sidebar-layout</span>&gt;</span>
+
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">var</span> layout = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;layout&apos;</span>);
+  <span class="hljs-keyword">var</span> toggleBtn = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;toggleBtn&apos;</span>);
+  toggleBtn.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    layout.collapsed = !layout.collapsed;
+    toggleBtn.setAttribute(<span class="hljs-string">&apos;icon&apos;</span>, layout.collapsed ? <span class="hljs-string">&apos;leftpanel-closed&apos;</span> : <span class="hljs-string">&apos;leftpanel-open&apos;</span>);
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>Slots</h2>
+              <div class="api-item no-border">
+                <div class="name">sidebar-header</div>
+                <div class="desc">Sidebar header.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">sidebar-content</div>
+                <div class="desc">Content of sidebar.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">main-header</div>
+                <div class="desc">Main header.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">main-content</div>
+                <div class="desc">Content of main section.</div>
+              </div>
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">sidebar-width</div>
+                <div class="desc">Set the width of the sidebar. The value could be in both px or %, e.g. 300px, 30%</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">collapsed</div>
+                <div class="desc">Set to hide sidebar</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;left&quot; | &quot;right&quot;</div>
+                <div class="name">sidebar-position</div>
+                <div class="desc">Set sidebar position to left or right</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">sidebarWidth</div>
+                <div class="desc">Set the width of the sidebar. The value could be in both px or %, e.g. 300px, 30%</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">collapsed</div>
+                <div class="desc">Set to hide sidebar</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;left&quot; | &quot;right&quot;</div>
+                <div class="name">sidebarPosition</div>
+                <div class="desc">Set sidebar position to left or right</div>
+                <div class="value">&quot;left&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="name">sidebar</div>
+                <div class="desc">Property to get sidebar</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

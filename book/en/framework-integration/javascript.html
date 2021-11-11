@@ -1,0 +1,562 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Vanilla</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="framework-integration/javascript.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li selected><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <h1 id="without-a-framework">Without a framework</h1>
+            <p>EF elements are Web Component. They can be used with JavaScript frameworks or without a framework (vanilla JavaScript). This guideline provides how you can use EF elements without a framework, either with bundling tool or without bundling tool.</p>
+            <h2 id="without-bundling">Without bundling</h2>
+            <p>It&apos;s the simplest and the quickest way for creating a quick standalone demo and getting started with EF. However, without any extra tools it will only support browsers that natively support JavaScript module syntax. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules" target="_blank">[see list]</a>.</p>
+            <p>EF elements are shipped as ES6 module. To use EF elements without a JavaScript framework, simply include a script with <code>type=module</code> into your HTML template.</p>
+            <p>The following tutorial will guide you through creating a simple login page using EF.</p>
+            <h3 id="initialize-your-project">Initialize your project</h3>
+            <p>Create a new project folder.</p>
+            <pre><code>mkdir project-demo
+cd project-demo</code></pre>
+            <p>Use <code>npm init</code> command to initialize the project. It will create <code>package.json</code> file which contains application information and its dependencies.</p>
+            <pre><code>npm init</code></pre>
+            <h3 id="install-ef-dependencies">Install EF dependencies</h3>
+            <p>Install element and theme packages using npm.</p>
+            <pre><code>npm i @refinitiv-ui/elements
+npm i @refinitiv-ui/halo-theme</code></pre>
+            <h3 id="project-setup">Project setup</h3>
+            <h4 id="initialize-html-template">Initialize HTML template</h4>
+            <p>Create file <code>index.html</code> with a typical HTML template.</p>
+            <pre><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">&quot;X-UA-Compatible&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;ie=edge&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>A Simple HTML<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+            <h4 id="import-component-and-theme-modules">Import component and theme modules</h4>
+            <p>Create a script <code>type=&quot;module&quot;</code> tag that imports EF dependencies, then include it to <code>index.html</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;module&quot;</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field&apos;</span>;
+
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/halo-theme/dark/imports/native-elements&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button/themes/halo/dark&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel/themes/halo/dark&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&apos;</span>;
+  <span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&apos;</span>;
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <h4 id="create-a-login-page">Create a login page</h4>
+            <p>Now, we can start adding elements, styling and logics into <code>index.html</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  ef-panel {
+    <span class="hljs-attribute">display</span>: flex;
+    <span class="hljs-attribute">flex-direction</span>: column;
+    <span class="hljs-attribute">align-items</span>: center;
+    <span class="hljs-attribute">width</span>: <span class="hljs-number">450px</span>;
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100%</span>;
+    <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span> auto;
+    <span class="hljs-attribute">border</span>: solid <span class="hljs-number">1px</span> <span class="hljs-number">#e1e1e1</span>;
+  }
+
+  <span class="hljs-selector-tag">h1</span> {
+    <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">40px</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">spacing</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Username&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-password-field</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Password&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-password-field</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">disabled</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-keyword">const</span> username = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-text-field&quot;</span>);
+  <span class="hljs-keyword">const</span> password = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-password-field&quot;</span>);
+  <span class="hljs-keyword">const</span> loginButton = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-button&quot;</span>);
+
+  <span class="hljs-keyword">const</span> onTextChanges = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-keyword">if</span> (username.value.length === <span class="hljs-number">0</span> || password.value.length === <span class="hljs-number">0</span>) {
+      loginButton.disabled = <span class="hljs-literal">true</span>;
+    } <span class="hljs-keyword">else</span> {
+      loginButton.disabled = <span class="hljs-literal">false</span>;
+    }
+  };
+
+  username.addEventListener(<span class="hljs-string">&quot;value-changed&quot;</span>, onTextChanges);
+  password.addEventListener(<span class="hljs-string">&quot;value-changed&quot;</span>, onTextChanges);
+
+  loginButton.addEventListener(<span class="hljs-string">&quot;tap&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+    <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;h1&quot;</span>).textContent = <span class="hljs-string">&quot;Done!&quot;</span>;
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <h3 id="serving-application">Serving application</h3>
+            <p>In order to correctly serve <strong>bare modules</strong>, we need a tool that rewrites the path. For the simplicity, we are going to use <a href="https://github.com/open-wc/es-dev-server" target="_blank">es-dev-server</a></p>
+            <blockquote>
+              <p>In the browser, import must get either a relative or absolute URL. Modules without any path are called &#x201C;bare&#x201D; modules.</p>
+            </blockquote>
+            <p>At root directory in your sample application, run this command to serve the app.</p>
+            <pre><code>npx es-dev-server --node-resolve --watch</code></pre>
+            <div class="pandora-code-viewer" id="pid-310">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-panel spacing&gt;
+  &lt;h1&gt;Hello!&lt;/h1&gt;
+  &lt;ef-text-field placeholder=&quot;Username&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-password-field placeholder=&quot;Password&quot;&gt;&lt;/ef-password-field&gt;
+  &lt;div&gt;
+    &lt;ef-button disabled&gt;Login&lt;/ef-button&gt;
+    &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-panel&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const username = document.querySelector(&apos;ef-text-field&apos;);
+const password = document.querySelector(&apos;ef-password-field&apos;);
+const loginButton = document.querySelector(&apos;ef-button&apos;);
+
+const onTextChanges = function() {
+  if (username.value.length === 0 || password.value.length === 0) {
+    loginButton.disabled = true;
+  } else {
+    loginButton.disabled = false;
+  }
+};
+
+username.addEventListener(&apos;value-changed&apos;, onTextChanges);
+password.addEventListener(&apos;value-changed&apos;, onTextChanges);
+
+loginButton.addEventListener(&apos;tap&apos;, function() {
+  document.querySelector(&apos;h1&apos;).textContent = &apos;Done!&apos;;
+});</pre>
+                  <pre class="pandora-tab-view tab-css">ef-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 100%;
+  margin: 40px auto;
+}
+
+ef-button {
+  margin: 15px 5px;
+}
+
+h1 {
+  margin-top: 40px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../bundles/halo-light-theme.js" type="script">
+            </div>
+            <h2 id="with-bundling">With bundling</h2>
+            <p>On this part of tutorial, you are going to take a step further and look into setting up bundle configuration. In this example, you will build your application to support legacy browsers which are not neither support ES6 nor Web Component.</p>
+            <p>We are going to use <code>webpack</code> as it is one of the most popular bundling tool. However, setup of the other bundling tools would be fundamentally similar.</p>
+            <h3 id="installing-the-tools">Installing the tools</h3>
+            <h4 id="webpack">Webpack</h4>
+            <p><code>webpack</code> is going to resolve modules import path, process and pack them into production-ready files. While <code>webpack-dev-server</code> will serves a webpack app and updates the browser on changes.</p>
+            <pre><code>npm i -D webpack@4 webpack-cli webpack-dev-server</code></pre>
+            <h4 id="babel">Babel</h4>
+            <p><code>babel</code> will transpile modern JavaScript syntax (<code>es6</code> or newer) into <code>es5</code> which also works on older browsers. However, the bundle size will be larger and so it will have significant impact on the performance. <code>babel</code> relies on <code>@babel/preset-env</code> which will read a provided list of target browsers and compile accordingly.</p>
+            <p><code>@babel/plugin-transform-runtime</code> is a plugin that allows the re-use of Babel&apos;s injected helper code to optimize bundle size. This is used along with <code>@babel/runtime</code>, a runtime dependency. <a href="https://babeljs.io/docs/en/babel-plugin-transform-runtime" target="_blank">more</a></p>
+            <pre><code>npm install -D babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime</code></pre>
+            <pre><code>npm install @babel/runtime</code></pre>
+            <h4 id="core-js">core-js</h4>
+            <p><code>core-js</code> a module that provides polyfills for es6 and newer. It&apos;s required to use with <code>babel</code>.</p>
+            <pre><code>npm i core-js@3</code></pre>
+            <h3 id="project-setup">Project setup</h3>
+            <p>In <code>src</code> folder, create <code>index.js</code> and then import EF elements, themes and polyfills.</p>
+            <pre><code><span class="hljs-comment">// Polyfills</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/polyfills/minimal&apos;</span>;
+
+<span class="hljs-comment">// Components</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field&apos;</span>;
+
+<span class="hljs-comment">// Themes</span>
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/halo-theme/dark/imports/native-elements&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&apos;</span>;</code></pre>
+            <p>Then at the root directory of the project, create <code>index.html</code> with following content.</p>
+            <pre><code><span class="hljs-meta">&lt;!DOCTYPE <span class="hljs-meta-keyword">html</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">&quot;en&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">&quot;UTF-8&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">&quot;viewport&quot;</span> <span class="hljs-attr">content</span>=<span class="hljs-string">&quot;width=device-width, initial-scale=1.0&quot;</span> /&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Webpack sample<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">&quot;./dist/index.js&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;panel&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>Hello!<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Username&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ef-password-field</span>
+        <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;input&quot;</span>
+        <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Password&quot;</span>
+      &gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-password-field</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;btn-container&quot;</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">cta</span> <span class="hljs-attr">disabled</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+      <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+      <span class="hljs-keyword">const</span> username = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-text-field&quot;</span>);
+      <span class="hljs-keyword">const</span> password = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-password-field&quot;</span>);
+      <span class="hljs-keyword">const</span> loginButton = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-button&quot;</span>);
+
+      <span class="hljs-keyword">const</span> onTextChanges = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-keyword">if</span> (username.value.length === <span class="hljs-number">0</span> || password.value.length === <span class="hljs-number">0</span>) {
+          loginButton.disabled = <span class="hljs-literal">true</span>;
+        } <span class="hljs-keyword">else</span> {
+          loginButton.disabled = <span class="hljs-literal">false</span>;
+        }
+      };
+
+      username.addEventListener(<span class="hljs-string">&quot;value-changed&quot;</span>, onTextChanges);
+      password.addEventListener(<span class="hljs-string">&quot;value-changed&quot;</span>, onTextChanges);
+
+      loginButton.addEventListener(<span class="hljs-string">&quot;tap&quot;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{
+        <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;h1&quot;</span>).textContent = <span class="hljs-string">&quot;Done!&quot;</span>;
+      });
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+      <span class="hljs-selector-class">.panel</span> {
+        <span class="hljs-attribute">display</span>: flex;
+        <span class="hljs-attribute">flex-direction</span>: column;
+        <span class="hljs-attribute">align-items</span>: center;
+        <span class="hljs-attribute">width</span>: <span class="hljs-number">400px</span>;
+        <span class="hljs-attribute">height</span>: <span class="hljs-number">300px</span>;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">10em</span> auto;
+      }
+      <span class="hljs-selector-class">.input</span> {
+        <span class="hljs-attribute">margin-top</span>: <span class="hljs-number">8px</span>;
+      }
+      <span class="hljs-selector-class">.btn-container</span> {
+        <span class="hljs-attribute">display</span>: flex;
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">12px</span> <span class="hljs-number">0</span>;
+      }
+      <span class="hljs-selector-class">.btn-container</span> ef-<span class="hljs-selector-tag">button</span> {
+        <span class="hljs-attribute">margin</span>: <span class="hljs-number">0</span> <span class="hljs-number">8px</span>;
+      }
+    </span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span></code></pre>
+            <h3 id="configurations">Configurations</h3>
+            <p>Create a file name <code>webpack.config.js</code> at the project root and paste the following configuration.</p>
+            <p>What this configuration does is setting <code>webpack</code> to bundle and transpile a <code>./src/index.js</code> and output it to <code>./dist/index.js</code>. It will also look for files with extension of <code>.mjs</code> and <code>.js</code> in the folders that specified in <code>include</code> section to transpile it down to ES5 by using babel (by default, babel will not transpile any folders in node_modules).</p>
+            <p>Note that you may need to update list of folders in the <code>include</code> section as some dependencies might has started to ship the module with ES6 instead of ES5.</p>
+            <pre><code><span class="hljs-keyword">const</span> path = <span class="hljs-built_in">require</span>(<span class="hljs-string">&quot;path&quot;</span>);
+
+<span class="hljs-built_in">module</span>.exports = {
+  <span class="hljs-attr">entry</span>: <span class="hljs-string">&quot;./src/index.js&quot;</span>,
+  <span class="hljs-attr">output</span>: {
+    <span class="hljs-attr">filename</span>: <span class="hljs-string">&quot;index.js&quot;</span>,
+    <span class="hljs-attr">path</span>: path.resolve(__dirname, <span class="hljs-string">&quot;dist&quot;</span>),
+  },
+  <span class="hljs-attr">module</span>: {
+    <span class="hljs-attr">rules</span>: [
+      {
+        <span class="hljs-attr">test</span>: <span class="hljs-regexp">/\.m?js$/</span>,
+        include: [
+          path.resolve(__dirname, <span class="hljs-string">&apos;node_modules/@refinitiv-ui&apos;</span>),
+          path.resolve(__dirname, <span class="hljs-string">&apos;node_modules/@webcomponents&apos;</span>),
+          path.resolve(__dirname, <span class="hljs-string">&apos;node_modules/lit-element&apos;</span>),
+          path.resolve(__dirname, <span class="hljs-string">&apos;node_modules/lit-html&apos;</span>),
+          path.resolve(__dirname, <span class="hljs-string">&apos;node_modules/d3-interpolate&apos;</span>)
+        ],
+        <span class="hljs-attr">use</span>: {
+          <span class="hljs-attr">loader</span>: <span class="hljs-string">&quot;babel-loader&quot;</span>,
+          <span class="hljs-attr">options</span>: {
+            <span class="hljs-attr">presets</span>: [
+              [
+                <span class="hljs-string">&quot;@babel/preset-env&quot;</span>,
+                {
+                  <span class="hljs-attr">corejs</span>: <span class="hljs-number">3</span>,
+                  <span class="hljs-attr">useBuiltIns</span>: <span class="hljs-string">&quot;usage&quot;</span>,
+                },
+              ],
+            ],
+            <span class="hljs-attr">plugins</span>: [<span class="hljs-string">&quot;@babel/plugin-transform-runtime&quot;</span>],
+          },
+        },
+      },
+    ],
+  },
+};</code></pre>
+            <p>Create a file name <code>.browserslistrc</code> with the following content at the application root directory. This is the list of target browsers that we want our application to work on, it will be read by <code>babel</code>.</p>
+            <pre><code>ie &gt;= 11
+Firefox &gt;= 63
+Chrome &gt;= 61
+Safari &gt;= 11</code></pre>
+            <p>Add scripts to <code>package.json</code>.</p>
+            <pre><code><span class="hljs-string">&quot;scripts&quot;</span>: {
+  <span class="hljs-attr">&quot;start&quot;</span>: <span class="hljs-string">&quot;webpack-cli serve --compress --host 0.0.0.0 --mode production&quot;</span>,
+  <span class="hljs-attr">&quot;build&quot;</span>: <span class="hljs-string">&quot;webpack --config webpack.config.js --mode production&quot;</span>
+}</code></pre>
+            <p>Finally, run <code>npm run build</code> and then <code>npm start</code>.</p>
+            <p>You should be able to access the application at <a href="http://localhost:8080/" target="_blank">http://localhost:8080/</a></p>
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

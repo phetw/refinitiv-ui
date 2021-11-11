@@ -1,0 +1,415 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>React</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="framework-integration/react.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li selected><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <div style="float:right">
+              <a href="https://reactjs.org/" target="_blank">reactjs.org</a>
+            </div>
+
+            <h1 id="react-guide">React Guide</h1>
+            <blockquote>
+              <p>This guideline uses create-react-app, React v17.0.2 and Yarn v1.22.10.</p>
+            </blockquote>
+            <p>Install yarn.</p>
+            <pre><code>npm install -g yarn</code></pre>
+            <h2 id="initialize-your-project">Initialize your project</h2>
+            <p>To create a new app, you may choose one of the following methods:</p>
+            <h3 id="npx">npx</h3>
+            <pre><code>npx create-react-app my-app</code></pre>
+            <h3 id="yarn">yarn</h3>
+            <pre><code>yarn create react-app my-app</code></pre>
+            <p>It will create a directory called <code>my-app</code> inside the current folder. Inside that directory, it will generate the initial project structure and install the required dependencies.</p>
+            <p>Serve your app to check if the project is created correctly.</p>
+            <pre><code><span class="hljs-built_in">cd</span> my-app
+yarn start</code></pre>
+            <h2 id="install-ef-elements-and-themes">Install EF elements and themes</h2>
+            <p>Installs elements and themes.</p>
+            <pre><code>yarn add @refinitiv-ui/elements
+yarn add @refinitiv-ui/halo-theme</code></pre>
+            <p>Import elements that you want to use and theme in <code>src/index.js</code>. You can also import EF components and themes anywhere in react components but for the simplicity we&apos;ll import all at once.</p>
+            <pre><code><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/loader&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field&apos;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/halo-theme/dark/imports/native-elements&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/loader/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&apos;</span>;</code></pre>
+            <p>Use EF elements to create a simple login page. Replace the content in <code>src/App.js</code> with the following code.</p>
+            <pre><code><span class="hljs-keyword">import</span> React, { useState } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;react&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;./App.css&apos;</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> [title, setTitle] = useState(<span class="hljs-string">&apos;Hello!&apos;</span>);
+  <span class="hljs-keyword">const</span> [loading, setLoading] = useState(<span class="hljs-literal">false</span>);
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">login</span>(<span class="hljs-params"></span>) </span>{
+    setLoading(<span class="hljs-literal">true</span>);
+
+    <span class="hljs-built_in">setTimeout</span>(<span class="hljs-function">() =&gt;</span> {
+      setTitle(<span class="hljs-string">&apos;Done!&apos;</span>);
+      setLoading(<span class="hljs-literal">false</span>);
+    }, <span class="hljs-number">2000</span>);
+  }
+
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;login-page&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>
+      {loading ? (
+        <span class="hljs-tag">&lt;<span class="hljs-name">ef-loader</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-loader</span>&gt;</span>
+      ) : (
+        <span class="hljs-tag">&lt;&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{title}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&apos;Username&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">ef-password-field</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&apos;Password&apos;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-password-field</span>&gt;</span>
+          <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">onClick</span>=<span class="hljs-string">{login}</span>&gt;</span>Login<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+            <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+          <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+        <span class="hljs-tag">&lt;/&gt;</span></span>
+      )}
+    &lt;/ef-panel&gt;
+  );
+}
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> App;</code></pre>
+            <p>And in <code>src/App.css</code></p>
+            <pre><code><span class="hljs-selector-id">#login-page</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">450px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span> auto;
+}
+
+<span class="hljs-selector-id">#button-group</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> <span class="hljs-number">0</span>;
+}</code></pre>
+            <p>Finally, starting your app and it should automatically open <code>http://localhost:3000/</code> on your default browser.</p>
+            <pre><code>yarn start</code></pre>
+            <h2 id="using-web-components-in-react">Using web components in React</h2>
+            <p>Web components can be used in React just like any other HTML elements. However, there are a few differences to note.</p>
+            <h3 id="class-vs-classname">class vs className</h3>
+            <p>Web component uses <code>class</code> attribute instead of <code>className</code>.</p>
+            <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">Panel</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">return</span> (
+    <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;container&quot;</span>&gt;</span>
+      ...
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span></span>
+  );
+}</code></pre>
+            <h3 id="attributes">Attributes</h3>
+            <h4 id="boolean">Boolean</h4>
+            <p>Boolean attributes such as <code>disabled</code>, <code>readonly</code>, <code>checked</code> are set by the presence of the attribute itself, not the value. To represent a <code>false</code> value in JSX, set the attribute&apos;s value to <code>undefined</code> or <code>null</code> or simply remove the attribute. This behavior is the same as <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes" target="_blank">HTML specifications</a>.</p>
+            <p>Regardless of the value, the following code will <strong>disable</strong> the <code>ef-text-field</code>.</p>
+            <pre><code>&lt;ef-text-field disabled&gt;&lt;/ef-text-field&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;true&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">&quot;false&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">{true}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></span>
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">{false}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></span></code></pre>
+            <p>The following will omit <code>disabled</code> attribute and <strong>enable</strong> <code>ef-text-field</code>.</p>
+            <pre><code>&lt;ef-text-field&gt;&lt;/ef-text-field&gt;
+<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">disabled</span>=<span class="hljs-string">{undefined}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></span></code></pre>
+            <h4 id="array-and-object">Array and Object</h4>
+            <p>React only allows <strong>primitive data</strong> to be passed through attributes. For <code>Array</code> and <code>Object</code>, you can either pass data through element&apos;s property or use <code>JSON.stringify()</code> to parse the data before passing to attribute.</p>
+            <pre><code>&lt;ef-sparkline data={<span class="hljs-built_in">JSON</span>.stringify([-<span class="hljs-number">2</span>, -<span class="hljs-number">3</span>, <span class="hljs-number">4</span>])}&gt;&lt;/ef-sparkline&gt;</code></pre>
+            <p>or</p>
+            <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">SparklineChart</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> chartRef = React.useRef();
+  React.useLayoutEffect(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">if</span> (chartRef.current) {
+      chartRef.current.data = [-<span class="hljs-number">2</span>, -<span class="hljs-number">3</span>, <span class="hljs-number">4</span>];
+    }
+  }, [chartRef]);
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-sparkline</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{chartRef}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-sparkline</span>&gt;</span></span>;
+}</code></pre>
+            <h3 id="events">Events</h3>
+            <p>Use <code>ref</code> to access and store DOM element, then add an event-listener inside <code>useLayoutEffect</code> which fires synchronously after the DOM mutation (or <code>componentDidMount</code> in class component). Finally, don&apos;t forget to unsubscribe from event-listener when component unmounts.</p>
+            <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">App</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">const</span> textFieldRef = React.useRef();
+  <span class="hljs-keyword">const</span> [value, setValue] = React.useState(<span class="hljs-string">&apos;&apos;</span>);
+
+  React.useLayoutEffect(<span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">const</span> handleChange = <span class="hljs-function">(<span class="hljs-params">event</span>) =&gt;</span> {
+      setValue(event.detail.value);
+    };
+
+    <span class="hljs-keyword">const</span> { current } = textFieldRef;
+
+    <span class="hljs-keyword">if</span> (current) {
+      current.value = value; <span class="hljs-comment">// update element&apos;s value</span>
+      current.addEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, handleChange);
+    }
+
+    <span class="hljs-keyword">return</span> <span class="hljs-function">() =&gt;</span> current.removeEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, handleChange); <span class="hljs-comment">// unsubscribe</span>
+  }, [value, textFieldRef]);
+
+  <span class="hljs-keyword">return</span> <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">ref</span>=<span class="hljs-string">{textFieldRef}</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></span>;
+}</code></pre>
+            <h2 id="develop-the-application-on-ie11-or-legacy-browsers-">Develop the application on IE11 (or legacy browsers)</h2>
+            <p>Legacy browser does not support Web Component and ES2015.</p>
+            <p>By default <code>create-react-app</code> does not provide the polyfills. You will have to configure your application to include all necessary polyfills so your app can work on legacy browsers. Polyfills should load at earliest, imports the polyfills at the very top of <code>src\index.js</code> and followed by elements and themes.</p>
+            <pre><code>yarn add react-app-polyfill
+yarn add @refinitiv-ui/polyfills</code></pre>
+            <p><code>@refinitiv-ui/polyfills/minimal</code> provides polyfills for custom components without any polyfills for ES2015 features so you can use it with <a href="https://www.npmjs.com/package/react-app-polyfill" target="_blank">react-app-polyfill</a>.</p>
+            <p>For more details about react-app-polyfill, see <a href="https://github.com/facebook/create-react-app/tree/master/packages/react-app-polyfill" target="_blank">here</a>.</p>
+            <p>Import them before EF polyfills.</p>
+            <pre><code><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;react-app-polyfill/ie11&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/polyfills/minimal&apos;</span>;</code></pre>
+            <p>Once you&apos;ve included the polyfills, it&apos;s still not working when you open your app, <code>http://localhost:3000/</code>, on <code>IE11</code>. This is because development environment is set to run in modern browsers as it&apos;s easier for developers to debug.</p>
+            <p>To run a development server on IE11, open <code>package.json</code> and add <code>IE 11</code> to <code>development</code> section at <code>broswerslist</code> configuration.</p>
+            <pre><code>  &quot;browserslist&quot;: {
+    &quot;production&quot;: [
+      &quot;&gt;0.2%&quot;,
+      &quot;not dead&quot;,
+      &quot;not op_mini all&quot;
+    ],
+    &quot;development&quot;: [
+      &quot;last 1 chrome version&quot;,
+      &quot;last 1 firefox version&quot;,
+      &quot;last 1 safari version&quot;,
+<span class="hljs-addition">+     &quot;IE 11&quot;</span>
+    ]
+  }</code></pre>
+            <p>For production build, the configuration already supports <code>IE11</code>. You can see the list of browsers it covers by running command:</p>
+            <pre><code>npx browserslist</code></pre>
+            <p>You&apos;ll see that IE11 is already included the list. You can update the configuration to be suitable with browsers that your app needs to support. For more detail, see <a href="https://github.com/browserslist/browserslist" target="_blank">browserslist</a>.</p>
+            <p>That&apos;s all for now. Contact us at <a href="mailto:RefinitivUIDev@refinitiv.com" target="_top">RefinitivUIDev@refinitiv.com</a>, if you need any extra help!</p>
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

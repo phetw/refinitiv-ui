@@ -1,0 +1,663 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Rating</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/rating.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li selected><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/rating;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="rating">Rating</h1>
+
+            <div class="pandora-code-viewer" id="pid-283">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-rating value=&quot;2&quot;&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;4&quot; interactive&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;7.5&quot; max=&quot;10&quot;&gt;&lt;/ef-rating&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-rating {
+  margin-right: 25px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-rating</code> is a star visualization component that is typically used for ranking.</p>
+            <h3 id="basic-usage">Basic usage</h3>
+            <p>By default, <code>ef-rating</code> is displayed with no stars selected. Setting <code>value</code> selects/highlights stars.</p>
+
+            <div class="pandora-code-viewer" id="pid-284">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-rating&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;2&quot;&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;3.5&quot;&gt;&lt;/ef-rating&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-rating {
+  margin-right: 25px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-rating</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-rating</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-rating</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-rating</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-rating</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3.5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-rating</span>&gt;</span></code></pre>
+            <h3 id="customize-number-of-stars-and-size">Customize number of stars and size</h3>
+            <p>The maximum number of stars can be overridden by setting <code>max</code>.</p>
+
+            <div class="pandora-code-viewer" id="pid-285">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-rating max=&quot;10&quot;&gt;&lt;/ef-rating&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-rating</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-rating</span>&gt;</span></code></pre>
+            <p>The size of the stars can be changed using standard CSS styles.</p>
+
+            <div class="pandora-code-viewer" id="pid-286">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-rating id=&quot;custom&quot; value=&quot;2.5&quot;&gt;&lt;/ef-rating&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">#custom {
+  font-size: 30px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-selector-id">#custom</span> {
+  <span class="hljs-attribute">font-size</span>:<span class="hljs-number">30px</span>;
+}</code></pre>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-rating</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2.5&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-rating</span>&gt;</span></code></pre>
+            <h3 id="interactive-rating">Interactive Rating</h3>
+            <p>By default users cannot change the value of <code>ef-rating</code>. Specifying <code>interactive</code> makes it possible for users to change the value.</p>
+
+            <div class="pandora-code-viewer" id="pid-287">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-rating id=&quot;rateRestaurant&quot; max=&quot;10&quot; value=&quot;7&quot; interactive&gt;&lt;/ef-rating&gt;
+&lt;pre id=&quot;result&quot;&gt;&lt;/pre&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var customRating = document.getElementById(&apos;rateRestaurant&apos;);
+customRating.addEventListener(&apos;value-changed&apos;, function(e) {
+  document.getElementById(&apos;result&apos;).textContent = &apos;You have selected: &apos; + e.detail.value;
+});</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-rating</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;7&quot;</span> <span class="hljs-attr">interactive</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-rating</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;result&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">let</span> customRating = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;rateRestaurant&apos;</span>);
+customRating.addEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span>  {
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;result&apos;</span>).textContent = <span class="hljs-string">&apos;You have selected: &apos;</span> + e.detail.value;
+});</code></pre>
+            <h3 id="clear-rating-by-users-interaction">Clear rating by users interaction</h3>
+            <p>A rating can be cleared after user interaction sets <code>value</code>.</p>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-rating&apos;</span>);
+<span class="hljs-keyword">var</span> previousValue = el.value;
+
+el.addEventListener(<span class="hljs-string">&apos;tap&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+
+  <span class="hljs-keyword">if</span> ((el.value === previousValue)) {
+    el.value = <span class="hljs-string">&apos;0&apos;</span>;
+  }
+
+  previousValue = el.value
+});</code></pre>
+            <h3 id="dynamic-rating">Dynamic Rating</h3>
+            <p>In many scenarios, <code>ef-rating</code> is dynamically generated based on input data. This can be easily achieved within <code>ef-grid</code> with a custom renderer.</p>
+
+            <div class="pandora-code-viewer" id="pid-288">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-grid id=&quot;custom&quot; height=&quot;208px&quot;&gt;&lt;/ef-grid&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var grid = document.getElementById(&apos;custom&apos;);
+grid.config = {
+  columns: [{
+      id: &apos;c1&apos;,
+      title: &apos;Restaurant Name&apos;,
+      field: &apos;restaurantName&apos;
+    },
+    {
+      id: &apos;c2&apos;,
+      title: &apos;Rating&apos;,
+      field: &apos;averageRating&apos;,
+      formatter: {
+        render: function() {},
+        bind: function(rowIndex, columnIndex, value, cell, columnDef, dataRow, dataTable) {
+          var rating = cell.getContent();
+          if (!rating) {
+            rating = document.createElement(&apos;ef-rating&apos;);
+          }
+          rating.value = value;
+          cell.setContent(rating);
+        }
+      }
+    }
+  ],
+  dataModel: {
+    fields: [&apos;restaurantName&apos;, &apos;averageRating&apos;],
+    format: &apos;rows&apos;,
+    data: [{
+        restaurantName: &apos;Fancy Burgers&apos;,
+        averageRating: &apos;4.8&apos;
+      },
+      {
+        restaurantName: &apos;Under The Bridge&apos;,
+        averageRating: &apos;0.5&apos;
+      },
+      {
+        restaurantName: &apos;Large Pizzas&apos;,
+        averageRating: &apos;4&apos;
+      },
+      {
+        restaurantName: &apos;Evening Dreams&apos;,
+        averageRating: &apos;3&apos;
+      },
+      {
+        restaurantName: &apos;Fish Paradise&apos;,
+        averageRating: &apos;3.2&apos;
+      }
+    ]
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-grid</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;custom&quot;</span> <span class="hljs-attr">height</span>=<span class="hljs-string">&quot;208px&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-grid</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">let</span> grid = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;custom&apos;</span>);
+grid.config = {
+  <span class="hljs-attr">columns</span>: [
+    {
+      <span class="hljs-attr">id</span>: <span class="hljs-string">&apos;c1&apos;</span>,
+      <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Restaurant Name&apos;</span>,
+      <span class="hljs-attr">field</span>: <span class="hljs-string">&apos;restaurantName&apos;</span>
+    },
+    {
+      <span class="hljs-attr">id</span>: <span class="hljs-string">&apos;c2&apos;</span>,
+      <span class="hljs-attr">title</span>: <span class="hljs-string">&apos;Rating&apos;</span>,
+      <span class="hljs-attr">field</span>: <span class="hljs-string">&apos;averageRating&apos;</span>,
+      <span class="hljs-attr">formatter</span>: {
+        <span class="hljs-attr">render</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params"></span>) </span>{ },
+        <span class="hljs-attr">bind</span>: <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">rowIndex, columnIndex, value, cell, columnDef, dataRow, dataTable</span>) </span>{
+          <span class="hljs-keyword">var</span> rating = cell.getContent();
+          <span class="hljs-keyword">if</span> (!rating) {
+            rating = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;ef-rating&apos;</span>);
+          }
+          rating.value = value;
+          cell.setContent(rating);
+        }
+      }
+    }
+  ],
+  <span class="hljs-attr">dataModel</span>: {
+    <span class="hljs-attr">fields</span>: [<span class="hljs-string">&apos;restaurantName&apos;</span>, <span class="hljs-string">&apos;averageRating&apos;</span>],
+    <span class="hljs-attr">format</span>: <span class="hljs-string">&apos;rows&apos;</span>,
+    <span class="hljs-attr">data</span>: [
+      { <span class="hljs-attr">restaurantName</span>: <span class="hljs-string">&apos;Fancy Burgers&apos;</span>, <span class="hljs-attr">averageRating</span>: <span class="hljs-string">&apos;4.8&apos;</span> },
+      { <span class="hljs-attr">restaurantName</span>: <span class="hljs-string">&apos;Under The Bridge&apos;</span>, <span class="hljs-attr">averageRating</span>: <span class="hljs-string">&apos;0.5&apos;</span> },
+      { <span class="hljs-attr">restaurantName</span>: <span class="hljs-string">&apos;Large Pizzas&apos;</span>, <span class="hljs-attr">averageRating</span>: <span class="hljs-string">&apos;4&apos;</span> },
+      { <span class="hljs-attr">restaurantName</span>: <span class="hljs-string">&apos;Evening Dreams&apos;</span>, <span class="hljs-attr">averageRating</span>: <span class="hljs-string">&apos;3&apos;</span> },
+      { <span class="hljs-attr">restaurantName</span>: <span class="hljs-string">&apos;Fish Paradise&apos;</span>, <span class="hljs-attr">averageRating</span>: <span class="hljs-string">&apos;3.2&apos;</span> } ]
+  }
+};</code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">interactive</div>
+                <div class="desc">Make it possible to interact with rating control and change the value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">max</div>
+                <div class="desc">Set number of total stars</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Set number of selected stars. Value can be any number between 0 and `max`.
+                  Decimal values are calculated to empty star (0 - .25); half-star (.25 - .75) and full star (.75 - 1)</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">interactive</div>
+                <div class="desc">Make it possible to interact with rating control and change the value</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">max</div>
+                <div class="desc">Set number of total stars</div>
+                <div class="value">&quot;5&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Set number of selected stars. Value can be any number between 0 and `max`.
+                  Decimal values are calculated to empty star (0 - .25); half-star (.25 - .75) and full star (.75 - 1)</div>
+                <div class="value">&quot;0&quot;</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Fired when the `value` changes.</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

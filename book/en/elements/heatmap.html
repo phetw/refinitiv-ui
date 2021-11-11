@@ -1,0 +1,1265 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Heatmap</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/heatmap.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li selected><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/heatmap;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="heatmap">Heatmap</h1>
+
+            <div class="pandora-code-viewer" id="pid-252">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap style=&quot;width: 80%;&quot;&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateData = function(r, c) {
+  var rows = Array(r);
+  for (var i = 0; i &lt; rows.length; i++) {
+    var columns = Array(c);
+    for (var ii = 0; ii &lt; columns.length; ii++) {
+      var shift = (i * ii) / (c * r);
+      var value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift) * 1;
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&apos;2019&apos;, &apos;2018&apos;, &apos;2017&apos;, &apos;2016&apos;, &apos;2015&apos;, &apos;2014&apos;, &apos;2013&apos;, &apos;2012&apos;, &apos;2011&apos;, &apos;2010&apos;, &apos;2009&apos;, &apos;2008&apos;, &apos;2007&apos;]
+  },
+  xAxis: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;, &apos;August&apos;, &apos;September&apos;, &apos;October&apos;, &apos;November&apos;, &apos;December&apos;],
+    shortLabels: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;]
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-heatmap</code> is a graphical representation of data where the individual values contained in a matrix are represented as colors.</p>
+            <h2 id="basic-usage">Basic Usage</h2>
+            <p>To initialize the heatmap, pass a configuration object to the <code>config</code> property. Heatmap uses <code>mid-point</code> and a cell&apos;s <code>value</code> to determine the colors of cells.</p>
+            <p>The default values of min, mid and max points are -1, 0 and 1, respectively.</p>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+el.config = {
+  <span class="hljs-attr">data</span>: [
+    [{ <span class="hljs-attr">value</span>: <span class="hljs-number">0.1</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">0.2</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">0.3</span> }],
+    [{ <span class="hljs-attr">value</span>: <span class="hljs-number">0.4</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">0.5</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">0.6</span> }],
+    [{ <span class="hljs-attr">value</span>: <span class="hljs-number">0.7</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">0.8</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">0.9</span> }],
+    [{ <span class="hljs-attr">value</span>: <span class="hljs-number">1.0</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">1.1</span> }, { <span class="hljs-attr">value</span>: <span class="hljs-number">1.2</span> }],
+  ],
+};</code></pre>
+            <h4 id="config">Config</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Type</th>
+                  <th>Required</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>data</td>
+                  <td><code>Cell</code>[][]</td>
+                  <td>&#x2713;</td>
+                  <td>rows[ columns[<a href="#cell-s-configuration">Cell</a>] ]</td>
+                </tr>
+                <tr>
+                  <td>yAxis</td>
+                  <td><code>YAxis</code></td>
+                  <td>&#x2717;</td>
+                  <td>Configuration for <a href="#y-axis-s-configuration">Y-Axis</a></td>
+                </tr>
+                <tr>
+                  <td>xAxis</td>
+                  <td><code>XAxis</code></td>
+                  <td>&#x2717;</td>
+                  <td>Configuration for <a href="#x-axis-s-configuration">X-Axis</a></td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="min-max-and-mid-data-point">Min, max and mid data point</h2>
+            <p>You can configure min, mid and max points to match your data format using the <code>min-point</code>, <code>mid-point</code> and <code>max-point</code> attributes.</p>
+            <p>The example below shows how to configure the heatmap when data is ranged between 250 and 800 and the mid point is 600.</p>
+
+            <div class="pandora-code-viewer" id="pid-253">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap min-point=&quot;250&quot; mid-point=&quot;600&quot; max-point=&quot;800&quot; axis-hidden&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateSequentialData = function(start, count, step) {
+  var rows = [];
+  var columns = [];
+  for (var i = 0; i &lt; count; i++) {
+    columns.push({ value: start + step * i });
+  }
+  rows.push(columns);
+  return rows;
+};
+el.config = {
+  data: generateSequentialData(250, 15, 39.286),
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-heatmap {
+  height: 35px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-heatmap</span>
+  <span class="hljs-attr">min-point</span>=<span class="hljs-string">&quot;250&quot;</span>
+  <span class="hljs-attr">mid-point</span>=<span class="hljs-string">&quot;600&quot;</span>
+  <span class="hljs-attr">max-point</span>=<span class="hljs-string">&quot;800&quot;</span>
+&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-heatmap</span>&gt;</span></code></pre>
+            <h2 id="cell-appearances">Cell appearances</h2>
+            <p>A Heatmap cell&apos;s appearance derives from data in <code>config</code>. However, a certain degree of customization and features addition is allowed for each individual cell.</p>
+            <h3 id="cell-header">Cell header</h3>
+            <p>Besides a cell&apos;s label, there is also a cell header property which is <strong>bolder</strong> and always positioned on top of the label.</p>
+
+            <div class="pandora-code-viewer" id="pid-254">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+el.config = {
+  data: [
+    [
+      { header: &quot;IBM&quot;, value: 0.4 },
+      { header: &quot;APPL&quot;, value: 0.52 },
+      { header: &quot;AMZN&quot;, value: -0.3 }
+    ],
+    [
+      { header: &quot;T&quot;, value: -0.4 },
+      { header: &quot;NFLX&quot;, value: 0.5 },
+      { header: &quot;GM&quot;, value: -1.6 }
+    ],
+    [
+      { header: &quot;FB&quot;, value: 0.17 },
+      { header: &quot;VXUS&quot;, value: -2.8 },
+      { header: &quot;GOOGL&quot;, value: 3.9 }
+    ]
+  ]
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+el.config = {
+  <span class="hljs-attr">data</span>: [
+    [
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;IBM&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">0.4</span> },
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;APPL&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">0.52</span> },
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;AMZN&quot;</span>, <span class="hljs-attr">value</span>: -<span class="hljs-number">0.3</span> },
+    ],
+    [
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;T&quot;</span>, <span class="hljs-attr">value</span>: -<span class="hljs-number">0.4</span> },
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;NFLX&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">0.5</span> },
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;GM&quot;</span>, <span class="hljs-attr">value</span>: -<span class="hljs-number">1.6</span> },
+    ],
+    [
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;FB&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">0.17</span> },
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;VXUS&quot;</span>, <span class="hljs-attr">value</span>: -<span class="hljs-number">2.8</span> },
+      { <span class="hljs-attr">header</span>: <span class="hljs-string">&quot;GOOGL&quot;</span>, <span class="hljs-attr">value</span>: <span class="hljs-number">3.9</span> },
+    ],
+  ],
+};</code></pre>
+            <h3 id="cell-color-blending">Cell color blending</h3>
+            <p>Color blending mode mixes the max and min colors with the canvas&apos;s background color, resulting in more natural, gradient-like cell colors.</p>
+
+            <div class="pandora-code-viewer" id="pid-255">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap axis-hidden blend&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateSequentialData = function(start, count, step) {
+  var rows = [];
+  var columns = [];
+  for (var i = 0; i &lt; count; i++) {
+    columns.push({ value: start + step * i });
+  }
+  rows.push(columns);
+  return rows;
+};
+el.config = {
+  data: generateSequentialData(-1, 21, 0.1),
+};
+el.renderCallback = function(cell) {
+  return { foregroundColor: &apos;#f0f0f0&apos; }
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-heatmap {
+  height: 35px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-heatmap</span> <span class="hljs-attr">blend</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-heatmap</span>&gt;</span></code></pre>
+            <p>Apply custom cell&apos;s font color to improve contrast.</p>
+            <pre><code><span class="hljs-keyword">const</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+el.renderCallback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cell</span>) </span>{
+  <span class="hljs-keyword">return</span> { <span class="hljs-attr">foregroundColor</span>: <span class="hljs-string">&quot;#f0f0f0&quot;</span> };
+};</code></pre>
+            <h3 id="custom-cell-colors">Custom cell colors</h3>
+            <p>Default colors are provided by the theme but they can be overridden using CSS.</p>
+
+            <div class="pandora-code-viewer" id="pid-256">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap axis-hidden&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateSequentialData = function(start, count, step) {
+  var rows = [];
+  var columns = [];
+  for (var i = 0; i &lt; count; i++) {
+    columns.push({ value: start + step * i });
+  }
+  rows.push(columns);
+  return rows;
+};
+el.config = {
+  data: generateSequentialData(-1, 21, 0.1),
+};</pre>
+                  <pre class="pandora-tab-view tab-css">ef-heatmap {
+  height: 35px;
+  --above-point-color: #3399ff;
+  --below-point-color: #ff3399;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">style</span>&gt;</span><span class="css">
+  ef-heatmap {
+    --above-point-<span class="hljs-attribute">color</span>: <span class="hljs-number">#3399ff</span>;
+    --below-point-<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff3399</span>;
+  }
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">style</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-heatmap</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-heatmap</span>&gt;</span></code></pre>
+            <h3 id="css-variables">CSS variables</h3>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variable Names</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--spacing</td>
+                  <td>Margin around a cell in pixels</td>
+                </tr>
+                <tr>
+                  <td>--above-point-color</td>
+                  <td>Color at the maximum point</td>
+                </tr>
+                <tr>
+                  <td>--below-point-color</td>
+                  <td>Color at the minimum point</td>
+                </tr>
+              </tbody>
+            </table>
+            <h3 id="custom-cell-rendering">Custom cell rendering</h3>
+            <p>Heatmap accepts a custom rendering function via the <code>renderCallback</code> property to override <code>label</code>, <code>backgroundColor</code> and <code>foregroundColor</code> for each cell.</p>
+            <p>The following cell information is also available:</p>
+            <ul>
+              <li><code>x</code> : x coordinates of the cell on canvas</li>
+              <li><code>y</code> : y coordinates of the cell on canvas</li>
+              <li><code>colIndex</code> : column position of the cell (index starts at 0)</li>
+              <li><code>rowIndex</code> : row position of the cell (index starts at 0)</li>
+            </ul>
+
+            <div class="pandora-code-viewer" id="pid-257">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateData = function(r, c) {
+  var rows = Array(r);
+  for (var i = 0; i &lt; rows.length; i++) {
+    var columns = Array(c);
+    for (var ii = 0; ii &lt; columns.length; ii++) {
+      var shift = (i * ii) / (c * r);
+      var value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&apos;2019&apos;, &apos;2018&apos;, &apos;2017&apos;, &apos;2016&apos;, &apos;2015&apos;, &apos;2014&apos;, &apos;2013&apos;, &apos;2012&apos;, &apos;2011&apos;, &apos;2010&apos;, &apos;2009&apos;, &apos;2008&apos;, &apos;2007&apos;, &apos;2006&apos;, &apos;2005&apos;]
+  },
+  xAxis: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;, &apos;August&apos;, &apos;September&apos;, &apos;October&apos;, &apos;November&apos;, &apos;December&apos;],
+    shortLabels: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;]
+  }
+};
+el.renderCallback = function(cell) {
+  var isDiagonalLine = cell.colIndex === cell.rowIndex;
+  if (isDiagonalLine) {
+    return {
+      label: &apos;&apos;,
+      backgroundColor: &apos;transparent&apos;
+    }
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+el.renderCallback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">cell</span>) </span>{
+  <span class="hljs-keyword">var</span> isDiagonalLine = cell.colIndex === cell.rowIndex;
+
+  <span class="hljs-keyword">if</span> (isDiagonalLine) {
+    <span class="hljs-keyword">return</span> {
+      <span class="hljs-attr">label</span>: <span class="hljs-string">&quot;&quot;</span>,
+      <span class="hljs-attr">backgroundColor</span>: <span class="hljs-string">&quot;transparent&quot;</span>,
+    };
+  }
+};</code></pre>
+            <h4 id="cell-s-configuration">Cell&apos;s configuration</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>value</td>
+                  <td><code>number</code></td>
+                  <td>Cell&apos;s value</td>
+                </tr>
+                <tr>
+                  <td>header</td>
+                  <td><code>string</code></td>
+                  <td>Cell&apos;s header</td>
+                </tr>
+                <tr>
+                  <td>label</td>
+                  <td><code>string</code></td>
+                  <td>Cell&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>foregroundColor</td>
+                  <td><code>string</code> of valid color (<code>hex</code>, <code>rgb</code>)</td>
+                  <td>Cell&apos;s label color</td>
+                </tr>
+                <tr>
+                  <td>backgroundColor</td>
+                  <td><code>string</code> of valid color (<code>hex</code>, <code>rgb</code>)</td>
+                  <td>Cell&apos;s background color</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="axes-position">Axes position</h2>
+            <p>Each axis has 2 different positioning options. X-axis can be at <code>top</code> or <code>bottom</code> and Y-axis can be at <code>left</code> or <code>right</code>.</p>
+
+            <div class="pandora-code-viewer" id="pid-258">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateData = function(r, c) {
+  var rows = Array(r);
+  for (var i = 0; i &lt; rows.length; i++) {
+    var columns = Array(c);
+    for (var ii = 0; ii &lt; columns.length; ii++) {
+      var shift = (i * ii) / (c * r);
+      var value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    position: &apos;right&apos;,
+    labels: [&apos;2019&apos;, &apos;2018&apos;, &apos;2017&apos;, &apos;2016&apos;, &apos;2015&apos;, &apos;2014&apos;, &apos;2013&apos;, &apos;2012&apos;, &apos;2011&apos;, &apos;2010&apos;, &apos;2009&apos;, &apos;2008&apos;, &apos;2007&apos;, &apos;2006&apos;, &apos;2005&apos;]
+  },
+  xAxis: {
+    position: &apos;bottom&apos;,
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;, &apos;August&apos;, &apos;September&apos;, &apos;October&apos;, &apos;November&apos;, &apos;December&apos;],
+    shortLabels: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;]
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>  <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+  el.config = {
+    <span class="hljs-attr">yAxis</span>: {
+      <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;right&quot;</span>,
+      <span class="hljs-attr">labels</span>: [...]
+    },
+    <span class="hljs-attr">xAxis</span>: {
+      <span class="hljs-attr">position</span>: <span class="hljs-string">&quot;bottom&quot;</span>,
+      <span class="hljs-attr">labels</span>: [...],
+    }
+  };</code></pre>
+            <h4 id="y-axis-s-configuration">Y-Axis&apos;s configuration</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>labels</td>
+                  <td><code>string</code>[]</td>
+                  <td>Y-axis labels</td>
+                </tr>
+                <tr>
+                  <td>position</td>
+                  <td><code>left</code> or <code>right</code></td>
+                  <td>Y-axis orientation relative to the heatmap</td>
+                </tr>
+              </tbody>
+            </table>
+            <h4 id="x-axis-s-configuration">X-Axis&apos;s configuration</h4>
+            <table>
+              <thead>
+                <tr>
+                  <th>Properties</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>labels</td>
+                  <td><code>string</code>[]</td>
+                  <td>X-axis labels</td>
+                </tr>
+                <tr>
+                  <td>shortLabels</td>
+                  <td><code>string</code>[]</td>
+                  <td>X-axis short labels for smaller screens</td>
+                </tr>
+                <tr>
+                  <td>position</td>
+                  <td><code>top</code> or <code>bottom</code></td>
+                  <td>X-axis orientation relative to the heatmap</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="using-tooltip">Using tooltip</h2>
+            <p>To render a tooltip on cell hover, pass a tooltip render function that returns HTML elements using the <code>tooltipCallback</code> property.</p>
+
+            <div class="pandora-code-viewer" id="pid-259">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">  &lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-heatmap&apos;);
+var generateData = function(r, c) {
+  var rows = Array(r);
+  for (var i = 0; i &lt; rows.length; i++) {
+    var columns = Array(c);
+    for (var ii = 0; ii &lt; columns.length; ii++) {
+      var shift = (i * ii) / (c * r);
+      var value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+el.tooltipCallback = function(cell) {
+  var tooltip = document.createElement(&apos;div&apos;);
+  var template = &quot;&lt;div style=&apos;font-weight: bold&apos;&gt;Actual value:&lt;/div&gt;&lt;div style=&apos;color:&quot; + cell.color + &quot;&apos;&gt;&quot; + cell.value + &quot;&lt;/div&gt;&quot;;
+  tooltip.innerHTML = template;
+  return tooltip;
+};
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&apos;2019&apos;, &apos;2018&apos;, &apos;2017&apos;, &apos;2016&apos;, &apos;2015&apos;, &apos;2014&apos;, &apos;2013&apos;, &apos;2012&apos;, &apos;2011&apos;, &apos;2010&apos;, &apos;2009&apos;, &apos;2008&apos;, &apos;2007&apos;, &apos;2006&apos;, &apos;2005&apos;]
+  },
+  xAxis: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;, &apos;August&apos;, &apos;September&apos;, &apos;October&apos;, &apos;November&apos;, &apos;December&apos;],
+    shortLabels: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;]
+  }
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>  <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+  el.tooltipCallback = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">cell</span>) </span>{
+    <span class="hljs-keyword">var</span> tooltip = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&quot;div&quot;</span>);
+    <span class="hljs-keyword">var</span> template = <span class="hljs-string">`
+          &lt;div style=&quot;font-weight: bold&quot;&gt;Actual value:&lt;/div&gt;
+          &lt;div style=&quot;color:<span class="hljs-subst">${cell.color}</span>&quot;&gt;<span class="hljs-subst">${cell.value}</span>&lt;/div&gt;
+        `</span>;
+    tooltip.innerHTML = template;
+    <span class="hljs-keyword">return</span> tooltip;
+  };
+  el.config = {...};</code></pre>
+            <h2 id="handling-click-events">Handling click events</h2>
+            <p><code>ef-heatmap</code> provides an API to allow user to get cell&apos;s information form a native mouse events such as <code>click</code>, <code>dblclick</code>, <code>contextmenu</code>, etc. Calling <code>getCellDataAtEvent</code> and passing an <code>event</code> to the method will return a data of interactive cell.</p>
+
+            <div class="pandora-code-viewer" id="pid-260">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item value=&quot;menu1&quot;&gt;Menu 1&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;menu2&quot; disabled&gt;Menu 2&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;show-cell-data&quot;&gt;Show Cell Data&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-dialog id=&quot;dlg&quot; header=&quot;Heatmap Cell&quot;&gt;&lt;/ef-dialog&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const isIE = (/Trident/g).test(navigator.userAgent);
+var el = document.querySelector(&apos;ef-heatmap&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+var dlg = document.getElementById(&apos;dlg&apos;);
+let popupTemplate;
+var generateData = function(row, col) {
+  var rows = Array(row);
+  for (var i = 0; i &lt; rows.length; i++) {
+    var columns = Array(col);
+    for (var ii = 0; ii &lt; columns.length; ii++) {
+      var shift = (i * ii) / (col * row);
+      var value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&apos;2019&apos;, &apos;2018&apos;, &apos;2017&apos;, &apos;2016&apos;, &apos;2015&apos;, &apos;2014&apos;, &apos;2013&apos;, &apos;2012&apos;, &apos;2011&apos;, &apos;2010&apos;, &apos;2009&apos;, &apos;2008&apos;, &apos;2007&apos;, &apos;2006&apos;, &apos;2005&apos;]
+  },
+  xAxis: {
+    labels: [&apos;January&apos;, &apos;February&apos;, &apos;March&apos;, &apos;April&apos;, &apos;May&apos;, &apos;June&apos;, &apos;July&apos;, &apos;August&apos;, &apos;September&apos;, &apos;October&apos;, &apos;November&apos;, &apos;December&apos;],
+    shortLabels: [&apos;JAN&apos;, &apos;FEB&apos;, &apos;MAR&apos;, &apos;APR&apos;, &apos;MAY&apos;, &apos;JUN&apos;, &apos;JUL&apos;, &apos;AUG&apos;, &apos;SEP&apos;, &apos;OCT&apos;, &apos;NOV&apos;, &apos;DEC&apos;]
+  }
+};
+
+const handleContextMenu = function(event) {
+  const cell = el.getCellDataAtEvent(event);
+  if (cell) {
+    event.preventDefault();
+    popupTemplate = &quot;&lt;span&gt;Value: &quot; + cell.value + &quot;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Row index: &quot; + cell.rowIndex + &quot;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Column index: &quot; + cell.colIndex + &quot;&lt;/span&gt;&quot;;
+    menu.opened = true;
+    menu.x = event.clientX;
+    menu.y = event.clientY;
+  }
+};
+
+if (!isIE) {
+  el.addEventListener(&apos;contextmenu&apos;, handleContextMenu);
+} else {
+  document.oncontextmenu = handleContextMenu;
+}
+
+menu.addEventListener(&apos;item-trigger&apos;, function(event) {
+  var value = event.detail.value;
+  if (value === &apos;show-cell-data&apos;) {
+    dlg.innerHTML = popupTemplate;
+    dlg.opened = true;
+    menu.opened = false;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-heatmap</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-heatmap</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;menu1&quot;</span>&gt;</span>Menu 1<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;menu2&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>Menu 2<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;divider&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;show-cell-data&quot;</span> &gt;</span>Show Cell Data<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>      
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dlg&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;Heatmap Cell&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&quot;ef-heatmap&quot;</span>);
+<span class="hljs-keyword">var</span> menu = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;menu&apos;</span>);
+<span class="hljs-keyword">var</span> dlg = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;dlg&apos;</span>);
+<span class="hljs-keyword">let</span> popupTemplate;        
+el.addEventListener(<span class="hljs-string">&apos;contextmenu&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">const</span> cell = el.getCellDataAtEvent(event);
+    <span class="hljs-keyword">if</span> (cell) {
+      event.preventDefault();
+      popupTemplate = <span class="hljs-string">`
+          &lt;span&gt;Value: <span class="hljs-subst">${cell.value}</span>&lt;/span&gt;&lt;br&gt;
+          &lt;span&gt;Row index: <span class="hljs-subst">${cell.rowIndex}</span>&lt;/span&gt;&lt;br&gt;
+          &lt;span&gt;Column index: <span class="hljs-subst">${cell.colIndex}</span>&lt;/span&gt;
+      `</span>;
+      menu.opened = <span class="hljs-literal">true</span>;
+      menu.x = event.clientX;
+      menu.y = event.clientY;
+    }
+});
+
+menu.addEventListener(<span class="hljs-string">&apos;item-trigger&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+    <span class="hljs-keyword">var</span> value = event.detail.value;
+    <span class="hljs-keyword">if</span> (value === <span class="hljs-string">&apos;show-cell-data&apos;</span>) {
+      dlg.innerHTML = popupTemplate;
+      dlg.opened = <span class="hljs-literal">true</span>;
+      menu.opened = <span class="hljs-literal">false</span>;
+    }
+});
+
+el.config = {...};</code></pre>
+            <blockquote>
+              <p>Note: On IE11 or legacy browsers, <code>contextmenu</code> event via addEventListener is not support on Web components: <a href="https://github.com/webcomponents/polyfills/issues/176" target="_blank">https://github.com/webcomponents/polyfills/issues/176</a>. As a workaround, you can use <code>document.oncontextmenu</code> to handle the event.</p>
+            </blockquote>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">HeatmapConfig</div>
+                <div class="name">config</div>
+                <div class="desc">Heatmap configuration options.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">label-width</div>
+                <div class="desc">Number of maximum label width that cell can paint in pixel.
+                  e.g. label-width: 30px; cell label hides when text length reaches 30px.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">label-hidden</div>
+                <div class="desc">Hide all labels in the cells</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">axis-hidden</div>
+                <div class="desc">Hide all axes</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">min-point</div>
+                <div class="desc">Minimum point of the cell coloring</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">mid-point</div>
+                <div class="desc">Middle point of the cell coloring</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">max-point</div>
+                <div class="desc">Maximum point of the cell coloring</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">blend</div>
+                <div class="desc">Enable cell color blending</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">saturation</div>
+                <div class="desc">Cell minimum color saturation, value can be from 0 - 1</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">HeatmapConfig</div>
+                <div class="name">config</div>
+                <div class="desc">Heatmap configuration options.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">labelWidth</div>
+                <div class="desc">Number of maximum label width that cell can paint in pixel.
+                  e.g. label-width: 30px; cell label hides when text length reaches 30px.</div>
+                <div class="value">0</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">labelHidden</div>
+                <div class="desc">Hide all labels in the cells</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">axisHidden</div>
+                <div class="desc">Hide all axes</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">minPoint</div>
+                <div class="desc">Minimum point of the cell coloring</div>
+                <div class="value">-1</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">midPoint</div>
+                <div class="desc">Middle point of the cell coloring</div>
+                <div class="value">0</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">maxPoint</div>
+                <div class="desc">Maximum point of the cell coloring</div>
+                <div class="value">1</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">blend</div>
+                <div class="desc">Enable cell color blending</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">saturation</div>
+                <div class="desc">Cell minimum color saturation, value can be from 0 - 1</div>
+                <div class="value">0.4</div>
+              </div>
+              <div class="api-item">
+                <div class="type">HeatmapTooltipCallback</div>
+                <div class="name">tooltipCallback</div>
+                <div class="desc">A callback function that allows tooltip rendering on cell hover</div>
+              </div>
+              <div class="api-item">
+                <div class="type">HeatmapRenderCallback</div>
+                <div class="name">renderCallback</div>
+                <div class="desc">Render callback function use for custom cell properties.
+                  Accepts custom label, foreground and background color</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">getCellDataAtEvent(event)</div>
+                <div class="desc">Returns data of interactive cell</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">MouseEvent</div>
+                    <div class="desc">an event that occur while the user interacting with element</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

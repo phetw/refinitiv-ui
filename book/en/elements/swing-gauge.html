@@ -1,0 +1,689 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Swing Gauge</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/swing-gauge.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li selected><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/swing-gauge;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="swing-gauge">Swing Gauge</h1>
+
+            <div class="pandora-code-viewer" id="pid-294">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-swing-gauge primary-value=&quot;29&quot; primary-label=&quot;Private&quot; secondary-value=&quot;95&quot; secondary-label=&quot;Public&quot;&gt;
+&lt;/ef-swing-gauge&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">let value1;
+let value2;
+const min = 20;
+let gauge = document.querySelector(&apos;ef-swing-gauge&apos;);
+
+setInterval(function() {
+  value1 = min + (100 - min * 2) * Math.random();
+  value2 = 100 - value1;
+  gauge.primaryValue = value1;
+  gauge.secondaryValue = value2;
+}, 2000);</pre>
+                  <pre class="pandora-tab-view tab-css">ef-swing-gauge {
+  height: 150px;
+  margin-top: 20px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-swing-gauge</code> is a data visualization element used to display the percentage comparison of two values.</p>
+            <h3 id="set-gauge-value-and-label">Set gauge value and label</h3>
+            <p>Values can be set to the gauge using the <code>primary-value</code> and <code>secondary-value</code> attributes. The percentage values shown in the gauge will be calculated by comparing <code>primary-value</code> and <code>secondary-value</code>. To show labels in the gauge set the text to the <code>primary-label</code> and <code>secondary-label</code> attributes.</p>
+
+            <div class="pandora-code-viewer" id="pid-295">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-swing-gauge primary-value=&quot;30&quot; secondary-value=&quot;70&quot; primary-label=&quot;Private&quot; secondary-label=&quot;Public&quot;&gt;
+&lt;/ef-swing-gauge&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-swing-gauge {
+  height: 150px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-swing-gauge</span>
+  <span class="hljs-attr">primary-value</span>=<span class="hljs-string">&quot;30&quot;</span>
+  <span class="hljs-attr">secondary-value</span>=<span class="hljs-string">&quot;70&quot;</span>
+  <span class="hljs-attr">primary-label</span>=<span class="hljs-string">&quot;Private&quot;</span>
+  <span class="hljs-attr">secondary-label</span>=<span class="hljs-string">&quot;Public&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-swing-gauge</span>&gt;</span></code></pre>
+            <h3 id="legend">Legend</h3>
+            <p>To show any legends in the gauge you can set the text to <code>primary-legend</code> and <code>secondary-legend</code> attributes. Legends will show on top of the gauge.</p>
+
+            <div class="pandora-code-viewer" id="pid-296">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-swing-gauge primary-value=&quot;550&quot; secondary-value=&quot;770&quot; primary-label=&quot;Private&quot; secondary-label=&quot;Public&quot; primary-legend=&quot;Private companies in United States&quot; secondary-legend=&quot;Public companies in United States&quot;&gt;
+&lt;/ef-swing-gauge&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-swing-gauge</span>
+  <span class="hljs-attr">primary-value</span>=<span class="hljs-string">&quot;550&quot;</span>
+  <span class="hljs-attr">secondary-value</span>=<span class="hljs-string">&quot;770&quot;</span>
+  <span class="hljs-attr">primary-label</span>=<span class="hljs-string">&quot;Private&quot;</span>
+  <span class="hljs-attr">secondary-label</span>=<span class="hljs-string">&quot;Public&quot;</span>
+  <span class="hljs-attr">primary-legend</span>=<span class="hljs-string">&quot;Private companies in United States&quot;</span>
+  <span class="hljs-attr">secondary-legend</span>=<span class="hljs-string">&quot;Public companies in United States&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-swing-gauge</span>&gt;</span></code></pre>
+            <h3 id="sizing">Sizing</h3>
+            <p>Swing Gauge has default size but you can customize <code>width</code> or <code>height</code> by using CSS.</p>
+
+            <div class="pandora-code-viewer" id="pid-297">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div&gt;
+  &lt;ef-swing-gauge small-gauge primary-value=&quot;30&quot; secondary-value=&quot;70&quot; primary-label=&quot;Private&quot; secondary-label=&quot;Public&quot;&gt;
+  &lt;/ef-swing-gauge&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-swing-gauge {
+  height: 100px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>&lt;style&gt;
+  ef-swing-gauge {
+    <span class="hljs-attribute">height</span>: <span class="hljs-number">100px</span>;
+  }
+&lt;/style&gt;</code></pre>
+            <h3 id="customize-value-format">Customize value format</h3>
+            <p>The value that shows on Swing Gauge can be custom via the <code>valueFormatter</code> property. The first parameter will be the percentage that calculates by the input value. The second parameter will be the raw value of your input.</p>
+
+            <div class="pandora-code-viewer" id="pid-298">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-swing-gauge id=&quot;customValueFormat&quot; primary-value=&quot;15&quot; secondary-value=&quot;69&quot; primary-label=&quot;Private&quot; secondary-label=&quot;Public&quot;&gt;&lt;/ef-swing-gauge&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">const el = document.getElementById(&apos;customValueFormat&apos;);
+el.valueFormatter = function(value, rawValue) {
+  return value.toFixed(0) + &apos;%&apos;;
+};</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>const el = document.getElementById(&apos;customValueFormat&apos;);
+el.valueFormatter = function (value, rawValue) { 
+  return value.toFixed(0) + &apos;%&apos;&apos;;
+};</code></pre>
+            <h3 id="customize-colors-and-center-line">Customize colors and center line</h3>
+            <p>Colors and center line of Swing Gauge are managed by theme but can be overridden by using CSS variables.</p>
+
+            <div class="pandora-code-viewer" id="pid-299">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-swing-gauge custom-color primary-label=&quot;Private&quot; secondary-label=&quot;Public&quot; primary-value=&quot;40&quot; secondary-value=&quot;60&quot;&gt;
+&lt;/ef-swing-gauge&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-swing-gauge[custom-color] {
+  --primary-color: #ff9933;
+  --secondary-color: #9933ff;
+  --border-color: transparent;
+  --center-line: dashed;
+  --center-line-color: #42f48c;
+  --center-line-opacity: 1;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>&lt;style&gt;
+  ef-swing-gauge<span class="hljs-selector-attr">[custom-color]</span> {
+    --primary-<span class="hljs-attribute">color</span>: <span class="hljs-number">#ff9933</span>;
+    --secondary-<span class="hljs-attribute">color</span>: <span class="hljs-number">#9933ff</span>;
+    --<span class="hljs-attribute">border-color</span>: transparent;
+    --center-line: dashed;
+    --center-line-<span class="hljs-attribute">color</span>: <span class="hljs-number">#42f48c</span>;
+    --center-line-<span class="hljs-attribute">opacity</span>: <span class="hljs-number">1</span>;
+  }
+&lt;/style&gt;</code></pre>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-swing-gauge</span>
+  <span class="hljs-attr">custom-color</span>
+  <span class="hljs-attr">primary-label</span>=<span class="hljs-string">&quot;Private&quot;</span>
+  <span class="hljs-attr">secondary-label</span>=<span class="hljs-string">&quot;Public&quot;</span>
+  <span class="hljs-attr">primary-value</span>=<span class="hljs-string">&quot;40&quot;</span>
+  <span class="hljs-attr">secondary-value</span>=<span class="hljs-string">&quot;60&quot;</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-swing-gauge</span>&gt;</span></code></pre>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variables Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--primary-color</td>
+                  <td>Color of primary gauge</td>
+                </tr>
+                <tr>
+                  <td>--secondary-color</td>
+                  <td>Color of secondary gauge</td>
+                </tr>
+                <tr>
+                  <td>--border-color</td>
+                  <td>Color of border</td>
+                </tr>
+                <tr>
+                  <td>--center-line</td>
+                  <td>Style of center line (solid, dotted, dashed or none)</td>
+                </tr>
+                <tr>
+                  <td>--center-line-color</td>
+                  <td>Color of center line</td>
+                </tr>
+                <tr>
+                  <td>--center-line-opacity</td>
+                  <td>Opacity/Transparency of center line</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">primary-value</div>
+                <div class="desc">Primary value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">primary-label</div>
+                <div class="desc">Primary label</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">secondary-value</div>
+                <div class="desc">Secondary value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">secondary-label</div>
+                <div class="desc">Secondary label</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">duration</div>
+                <div class="desc">Animation duration in milliseconds</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">primary-legend</div>
+                <div class="desc">Primary value legend</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">secondary-legend</div>
+                <div class="desc">Secondary value legend</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">primaryValue</div>
+                <div class="desc">Primary value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">primaryLabel</div>
+                <div class="desc">Primary label</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">secondaryValue</div>
+                <div class="desc">Secondary value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">secondaryLabel</div>
+                <div class="desc">Secondary label</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">duration</div>
+                <div class="desc">Animation duration in milliseconds</div>
+                <div class="value">1000</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">primaryLegend</div>
+                <div class="desc">Primary value legend</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">secondaryLegend</div>
+                <div class="desc">Secondary value legend</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="name">valueFormatter</div>
+                <div class="desc">Custome value formatter</div>
+                <div class="value">&quot;defaultValueFormatter&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="name">canvasSize</div>
+                <div class="desc">Getter size of component</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

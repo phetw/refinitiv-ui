@@ -1,0 +1,815 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Tab</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/tab.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li selected><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/tab;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="tab">Tab</h1>
+
+            <div class="pandora-code-viewer" id="pid-27">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;tab-container&quot;&gt;
+  &lt;ef-tab label=&quot;Tab&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Icon Tab&quot; icon=&quot;chart-area&quot; active&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Icon Tab&quot; icon=&quot;chart-area&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Active Tab&quot; active&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Disabled Tab&quot; disabled&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Icon Tab&quot; icon=&quot;chart-area&quot; disabled&gt;&lt;/ef-tab&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.tab-container {
+  display: flex;
+}
+
+ef-tab {
+  margin-right: 3px;
+  min-width: 90px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>A basic building block of tab navigation controls.</p>
+            <h2 id="basic-usage">Basic usage</h2>
+            <p><code>ef-tab</code> is used for creating an individual tab item. It&apos;s purposely built as a building block, so you should consider using it with <a href="./tab-bar.html">Tab Bar</a> to create standard tab navigation controls.</p>
+
+            <div class="pandora-code-viewer" id="pid-28">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab label=&quot;Tab1&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab2&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab3&quot;&gt;&lt;/ef-tab&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span></code></pre>
+            <h2 id="label">Label</h2>
+            <p><code>ef-tab</code> provides <code>label</code> and <code>sub-label</code> attributes for displaying hierarchical text. If the width of <code>label</code> and <code>sub-label</code> is longer than the <code>ef-tab</code> width, both automatically truncate with ellipsis.</p>
+
+            <div class="pandora-code-viewer" id="pid-29">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab label=&quot;Label&quot; sub-label=&quot;Secondary info&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Label Two&quot; sub-label=&quot;A long secondary info&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Label&quot; sub-label=&quot;A long secondary info&quot;&gt;&lt;/ef-tab&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Label&quot;</span> <span class="hljs-attr">sub-label</span>=<span class="hljs-string">&quot;Secondary info&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Label Two&quot;</span> <span class="hljs-attr">sub-label</span>=<span class="hljs-string">&quot;A long secondary info&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100px;&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;A Very Long Label&quot;</span> <span class="hljs-attr">sub-label</span>=<span class="hljs-string">&quot;A long secondary info&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span></code></pre>
+            <p>Both label and sub-label will not display if <code>ef-tab</code> has children.</p>
+
+            <div class="pandora-code-viewer" id="pid-30">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab label=&quot;Tab1&quot; sub-label=&quot;Secondary long text&quot;&gt;
+  Custom Content
+  &lt;span class=&quot;suffix&quot;&gt;EXCLUSIVE&lt;/span&gt;
+&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab2&quot; sub-label=&quot;Secondary long text&quot; clears&gt;
+  Custom Content With Clears
+  &lt;sup class=&quot;suffix&quot;&gt;EXCLUSIVE&lt;/sup&gt;
+&lt;/ef-tab&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.suffix {
+  color: #334BFF;
+}
+
+ef-tab:hover .suffix {
+  color: #FFE999;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab1&quot;</span> <span class="hljs-attr">sub-label</span>=<span class="hljs-string">&quot;Secondary long text&quot;</span>&gt;</span>
+ Custom Content
+ <span class="hljs-tag">&lt;<span class="hljs-name">span</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;suffix&quot;</span>&gt;</span>EXCLUSIVE<span class="hljs-tag">&lt;/<span class="hljs-name">span</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab2&quot;</span> <span class="hljs-attr">sub-label</span>=<span class="hljs-string">&quot;Secondary long text&quot;</span> <span class="hljs-attr">clears</span>&gt;</span>
+ Custom Content With Clears
+ <span class="hljs-tag">&lt;<span class="hljs-name">sup</span> <span class="hljs-attr">class</span>=<span class="hljs-string">&quot;suffix&quot;</span>&gt;</span>EXCLUSIVE<span class="hljs-tag">&lt;/<span class="hljs-name">sup</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span></code></pre>
+            <h2 id="line-clamp">Line Clamp</h2>
+            <p>Uses <code>lineClamp = &quot;0&quot;</code> to change from ellipsis to middle truncation.</p>
+
+            <div class="pandora-code-viewer" id="pid-31">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Label&quot; sub-label=&quot;Secondary info Beneath&quot; line-clamp=&quot;0&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Long Long Label&quot; line-clamp=&quot;2&quot;&gt;&lt;/ef-tab&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100px;&quot;</span> <span class="hljs-attr">line-clamp</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;A Very Long Label&quot;</span> <span class="hljs-attr">sub-label</span>=<span class="hljs-string">&quot;Secondary info Beneath&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 100px;&quot;</span> <span class="hljs-attr">line-clamp</span>=<span class="hljs-string">&quot;2&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;A Very Long Long Long Label&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span></code></pre>
+            <p>Also <code>line-clamp</code> can limit the maximum number of lines that the text can display. The text automatically truncates with ellipsis when its length is larger than the width provided.</p>
+            <p>This feature will be omitted if it&apos;s used with <code>line-clamp=&quot;0&quot;</code> or <code>sub-label</code></p>
+
+            <div class="pandora-code-viewer" id="pid-32">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab style=&quot;max-width: 80px;&quot; label=&quot;A Very Long Primary Label&quot; line-clamp=&quot;2&quot;&gt;&lt;/ef-tab&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;max-width: 80px;&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;A Very Long Primary Label&quot;</span> <span class="hljs-attr">line-clamp</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span></code></pre>
+            <h2 id="icon">Icon</h2>
+            <p>An inline icon can be set to display inside each tab using the <code>icon</code> attribute.</p>
+
+            <div class="pandora-code-viewer" id="pid-33">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab icon=&quot;dividend&quot; label=&quot;Dividend&quot;&gt;&lt;/ef-tab&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">icon</span>=<span class="hljs-string">&quot;dividend&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Dividend&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span></code></pre>
+            <h2 id="tab-with-clear-button">Tab with clear button</h2>
+            <p>Tab can display a clear button (a small cross icon) using the <code>clears</code> attribute. To show a clear button on hover only, use <code>clears-on-hover</code>, instead.</p>
+            <p>You can add a <code>clear</code> event listener to the tab to know when the clear button is clicked.</p>
+
+            <div class="pandora-code-viewer" id="pid-34">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-tab clears label=&quot;Clears tab&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab clears-on-hover label=&quot;Clears on hover tab&quot;&gt;&lt;/ef-tab&gt;
+&lt;pre id=&quot;clearsLog&quot;&gt;&lt;/pre&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">document.querySelectorAll(&apos;ef-tab&apos;).forEach((tab) =&gt; {
+  tab.addEventListener(&apos;clear&apos;, (e) =&gt; {
+    document.getElementById(&apos;clearsLog&apos;).textContent = `${e.detail.label} is on cleared`;
+  });
+});</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">clears</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Clears tab&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">clears-on-hover</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Clears on hover tab&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;clearsLog&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">script</span>&gt;</span><span class="javascript">
+  <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&apos;ef-tab&apos;</span>).forEach(<span class="hljs-function">(<span class="hljs-params">tab</span>) =&gt;</span> {
+    tab.addEventListener(<span class="hljs-string">&apos;clear&apos;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+      <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;clearsLog&apos;</span>).textContent = <span class="hljs-string">`<span class="hljs-subst">${e.detail.label}</span> is on cleared`</span>;
+    });
+  });
+</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span></code></pre>
+            <h2 id="active-tab-and-events">Active tab and events</h2>
+            <p><code>ef-tab</code> provides an <code>active</code> attribute/property to set the active state. You can add a <code>tap</code> event listener to each <code>ef-tab</code> and then define the actions you need to perform.<br>The <code>tap</code> event is similar to the <code>click</code> event, but will work for both desktop and touch devices.</p>
+
+            <div class="pandora-code-viewer" id="pid-35">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div style=&quot;display: flex;&quot;&gt;
+  &lt;ef-tab id=&quot;tab1&quot; active label=&quot;Tab 1&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab2&quot; label=&quot;Tab 2&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab3&quot; label=&quot;Tab 3&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab3&quot; label=&quot;Tab 4&quot;&gt;&lt;/ef-tab&gt;
+&lt;/div&gt;
+&lt;pre id=&quot;event&quot;&gt;&lt;/pre&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var tabs = document.querySelectorAll(&apos;ef-tab&apos;);
+for (var i = 0; i &lt; tabs.length; i++) {
+  tabs[i].addEventListener(&apos;tap&apos;, function(e) {
+    for (var x = 0; x &lt; tabs.length; x++) {
+      tabs[x].active = false;
+    }
+    document.getElementById(&apos;event&apos;).textContent = e.target.label + &apos; is clicked&apos;;
+    e.target.active = true;
+  })
+}</pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;display: flex;&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab1&quot;</span> <span class="hljs-attr">active</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab 1&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab2&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab 2&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab3&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab 3&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-tab</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;tab3&quot;</span> <span class="hljs-attr">label</span>=<span class="hljs-string">&quot;Tab 4&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-tab</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">pre</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;event&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">pre</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">const</span> tabs = <span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&apos;ef-tab&apos;</span>);
+
+<span class="hljs-comment">/* reset all tabs to inactive */</span>
+<span class="hljs-keyword">const</span> resetActive = <span class="hljs-function">() =&gt;</span> {
+  tabs.forEach(<span class="hljs-function">(<span class="hljs-params">tab</span>) =&gt;</span> tab.active = <span class="hljs-literal">false</span>);
+}
+
+tabs.forEach(<span class="hljs-function">(<span class="hljs-params">tab</span>) =&gt;</span> {
+  tab.addEventListener(<span class="hljs-string">&apos;tap&apos;</span>, <span class="hljs-function">(<span class="hljs-params">e</span>) =&gt;</span> {
+    resetActive();
+    <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;event&apos;</span>).textContent = e.target.label + <span class="hljs-string">&apos; is clicked&apos;</span>;
+    e.target.active = <span class="hljs-literal">true</span>;
+  });
+});</code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">icon</div>
+                <div class="desc">Specify icon name to display in tab</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">label</div>
+                <div class="desc">Specify tab&apos;s label text</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">sub-label</div>
+                <div class="desc">Specify tab&apos;s sub-label text</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">active</div>
+                <div class="desc">Specify tab&apos;s active status</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">clears</div>
+                <div class="desc">Set tab to clearable</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">line-clamp</div>
+                <div class="desc">Limit the number of lines before truncating</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">clears-on-hover</div>
+                <div class="desc">Set tab to clearable on hover</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">icon</div>
+                <div class="desc">Specify icon name to display in tab</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">label</div>
+                <div class="desc">Specify tab&apos;s label text</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">subLabel</div>
+                <div class="desc">Specify tab&apos;s sub-label text</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">active</div>
+                <div class="desc">Specify tab&apos;s active status</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">clears</div>
+                <div class="desc">Set tab to clearable</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">lineClamp</div>
+                <div class="desc">Limit the number of lines before truncating</div>
+                <div class="value">1</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">clearsOnHover</div>
+                <div class="desc">Set tab to clearable on hover</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">clear</div>
+                <div class="desc">Dispatched when click on cross button occurs</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

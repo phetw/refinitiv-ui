@@ -1,0 +1,928 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Select</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/select.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li selected><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/select;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="select">Select</h1>
+
+            <div class="pandora-code-viewer" id="pid-119">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Pick item...&quot; opened&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot;&gt;Honey &amp;amp; Walnut&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+  &lt;ef-select placeholder=&quot;Disabled...&quot; disabled&gt;&lt;/ef-select&gt;
+  &lt;ef-select placeholder=&quot;Default selected...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item selected value=&quot;3&quot;&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot;&gt;Honey &amp;amp; Walnut&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+  &lt;ef-select disabled&gt;
+    &lt;ef-item selected&gt;Lemonade&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 250px;
+  padding: 0 3px;
+}
+
+ef-select {
+  margin-right: 5px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="basic-usage">Basic Usage</h2>
+            <p><code>ef-select</code> expands upon the native <code>select</code> element, providing a fully themeable dropdown element.</p>
+            <p>Choices can be defined using <code>ef-item</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-select</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Cola<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>Lemonade<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>Orange Juice<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;4&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>Apple Juice<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span>Iced Tea<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-select</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-120">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Orange Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Iced Tea&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 155px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>The <code>data</code> property of the <code>ef-select</code> use the <code>SelectData</code> interface for its data items which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>selected</td>
+                  <td>boolean</td>
+                  <td>Selection state of the item</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>string</td>
+                  <td>Type of item. Value can be <code>text</code>, <code>header</code>, <code>divider</code></td>
+                </tr>
+                <tr>
+                  <td>subLabel</td>
+                  <td>string</td>
+                  <td>The text beneath the label</td>
+                </tr>
+                <tr>
+                  <td>readonly</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be readonly</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="categorize-into-groups">Categorize into groups</h2>
+            <p>Groups are also defined using <code>ef-item</code>. The only difference is that we add a <code>type=&quot;header&quot;</code> attribute onto the element.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-select</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>Drinks<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span>&gt;</span>Cola<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;2&quot;</span>&gt;</span>Lemonade<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;3&quot;</span>&gt;</span>Water<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>Ice Cream<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;4&quot;</span>&gt;</span>Vanilla<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span>&gt;</span>Chocolate<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;6&quot;</span>&gt;</span>Strawberry<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;7&quot;</span>&gt;</span>Raspberry<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-select</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-121">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot;&gt;Strawberry&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 250px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="adding-a-placeholder">Adding a placeholder</h2>
+            <p>Once you have your choices and groups defined, you can then add placeholder text to help users understand what the list contains and what their choice is for.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-select</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Choose your refreshment...&quot;</span>&gt;</span>
+  ...</code></pre>
+            <div class="pandora-code-viewer" id="pid-122">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Orange Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Iced Tea&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 155px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="selecting-a-default-option">Selecting a default option</h2>
+            <p>You may wish to set an initial selected value. This can be achieved by adding a <code>selected</code> attribute to the option you would like to have selected by default.</p>
+            <p>Only one option can be selected at a time.</p>
+            <pre><code>...
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">selected</span>&gt;</span>Water<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+...</code></pre>
+            <div class="pandora-code-viewer" id="pid-123">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot; selected&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;14&quot;&gt;Strawberry&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;15&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 225px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="disabling-an-option">Disabling an option</h2>
+            <p>Options can be disabled by adding a <code>disabled</code> attribute to the options you wish to disable.</p>
+            <pre><code>...
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">disabled</span>&gt;</span>Iced Tea<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">disabled</span>&gt;</span>Water<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+...</code></pre>
+            <div class="pandora-code-viewer" id="pid-124">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot; disabled&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot; disabled&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;8&quot;&gt;Chocolate&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 200px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="configuring-options-using-data-object">Configuring options using data object</h2>
+            <p>Depending on your usage, you may wish to configure <code>ef-select</code> using its <code>data</code> object.</p>
+            <p>Here is a simple configuration object:</p>
+            <pre><code>[
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Drinks&apos;</span>,
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;header&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Tea&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;tea&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Beer&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;beer&apos;</span>,
+    <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Ice Cream&apos;</span>,
+    <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;header&apos;</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Vanilla&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;vanilla&apos;</span>,
+    <span class="hljs-attr">disabled</span>: <span class="hljs-literal">true</span>
+  },
+  {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Strawberry&apos;</span>,
+    <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;Strawberry&apos;</span>
+  }
+]</code></pre>
+            <p>You can set this configuration object onto the <code>data</code> property of <code>ef-select</code>.</p>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-select&apos;</span>);
+el.data = myConfigurationObject;</code></pre>
+            <div class="pandora-code-viewer" id="pid-125">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select&gt;&lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var el = document.querySelector(&apos;ef-select&apos;);
+el.data = [{
+    label: &apos;Drinks&apos;,
+    type: &apos;header&apos;
+  },
+  {
+    label: &apos;Tea&apos;,
+    value: &apos;tea&apos;
+  },
+  {
+    label: &apos;Beer&apos;,
+    value: &apos;beer&apos;,
+    selected: true
+  },
+  {
+    label: &apos;Ice Cream&apos;,
+    type: &apos;header&apos;
+  },
+  {
+    label: &apos;Vanilla&apos;,
+    value: &apos;vanilla&apos;,
+    disabled: true
+  },
+  {
+    label: &apos;Strawberry&apos;,
+    value: &apos;Strawberry&apos;
+  }
+];</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 180px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="restricting-list-height">Restricting list height</h2>
+            <p>The <code>max-height</code> of the list can be restricted using the <code>--list-max-height</code> property.</p>
+            <pre><code>ef-select {
+  --list-<span class="hljs-attribute">max-height</span>: <span class="hljs-number">100px</span>;
+}</code></pre>
+            <div class="pandora-code-viewer" id="pid-126">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot; disabled&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot; disabled&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;8&quot;&gt;Chocolate&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 130px;
+  padding: 0 3px;
+}
+
+ef-select {
+  --list-max-height: 100px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="css-variables">CSS Variables</h2>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--list-max-height</td>
+                  <td>Maximum height of the drop-down list</td>
+                </tr>
+                <tr>
+                  <td>--list-max-width</td>
+                  <td>Maximum width of the drop-down list</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder to display when no value is set</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Toggles the opened state of the list</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">label</div>
+                <div class="desc">Current text content of the selected value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder to display when no value is set</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Toggles the opened state of the list</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">SelectData | null</div>
+                <div class="name">data</div>
+                <div class="desc">Construct the menu from data object. Cannot be used with slotted content</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Value of the element</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Fired when the value property changes.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">opened-changed</div>
+                <div class="desc">Fired when the opened property changes.</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

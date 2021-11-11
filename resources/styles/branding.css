@@ -1,0 +1,56 @@
+pandora-book.branding .header{
+    background-color: #001EFF;
+    color: #DCEEFB;
+}
+
+pandora-book.branding > .book-icon {
+    background-image: url(../images/refinitiv-white.png);
+}
+
+pandora-book.branding .header h1 a {
+    padding-left: 10px;
+}
+
+pandora-book.branding .header input {
+    background: white;
+    color: #424242;
+}
+
+pandora-book.branding .hamburger-inner,
+pandora-book.branding .hamburger-inner:after,
+pandora-book.branding .hamburger-inner:before {
+    background-color: #DCEEFB;
+}
+
+pandora-book.branding .sidebar-header {
+    background-color: #001EFF;
+}
+
+pandora-book.branding .results-header {
+    background-color: #001EFF;
+}
+
+pandora-book.branding .arrow-icon {
+    color: white;
+    border-color: white;
+}
+
+pandora-book.branding .results-header .search-wrapper::before {
+    border-color: white;
+}
+pandora-book.branding .results-header .search-wrapper::after {
+    background-color: white;
+}
+
+@media screen and (max-width: 960px) {
+    pandora-book.branding .header .search-wrapper::before {
+        border-color: white;
+    }
+    pandora-book.branding .header .search-wrapper::after {
+        background-color: white;
+    }
+    pandora-book.branding .header h1 a {
+        padding-left: 0;
+    }
+}
+

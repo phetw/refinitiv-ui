@@ -1,0 +1,1032 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Layout</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/layout.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li selected><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/layout;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="layout">Layout</h1>
+
+            <div class="pandora-code-viewer" id="pid-189">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout id=&quot;wrapper&quot; debug flex container&gt;
+  &lt;ef-layout debug id=&quot;header&quot; noflex&gt;HEADER&lt;/ef-layout&gt;
+  &lt;ef-layout id=&quot;content&quot; flex nowrap&gt;
+    &lt;ef-layout debug id=&quot;left&quot;&gt;&lt;/ef-layout&gt;
+    &lt;ef-layout debug id=&quot;right&quot;&gt;&lt;/ef-layout&gt;
+  &lt;/ef-layout&gt;
+  &lt;ef-layout debug id=&quot;footer&quot; noflex&gt;FOOTER&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">customElements.whenDefined(&apos;ef-layout&apos;).then(function() {
+  var left = document.querySelector(&apos;#left&apos;);
+  var right = document.querySelector(&apos;#right&apos;);
+  left.addEventListener(&apos;resize&apos;, function(e) {
+    left.textContent = e.detail.width.toFixed(2) + &apos;px&apos;;
+  });
+  right.addEventListener(&apos;resize&apos;, function(e) {
+    right.textContent = e.detail.width.toFixed(2) + &apos;px&apos;;
+  });
+});</pre>
+                  <pre class="pandora-tab-view tab-css">@keyframes resize {
+  from {
+    width: 10%;
+  }
+
+  to {
+    width: 30%;
+  }
+}
+
+#wrapper {
+  height: 120px;
+  color: #9ea8f4;
+}
+
+#header,
+#footer {
+  padding: 3px 7px;
+}
+
+#header,
+#footer,
+#content {
+  width: 100%;
+}
+
+#left,
+#right {
+  width: 20%;
+  text-align: center;
+  font-size: 40px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+#left {
+  animation: resize ease-in-out 2s alternate infinite;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-layout</code> is a layout element designed to handle core layouts for Element Framework components and applications.</p>
+            <p>By default, <code>ef-layout</code> is like any other block element, very much like a <code>div</code>. Therefore, additional attributes and child elements must be used in order to create layouts.</p>
+            <h3 id="horizontal-alignment">Horizontal Alignment</h3>
+            <p>Items can be arranged horizontally by specifying the <code>flex</code> attribute on a container.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>LEFT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>RIGHT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-190">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex class=&quot;outer&quot;&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;LEFT&lt;/ef-layout&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;RIGHT&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="vertical-alignment">Vertical Alignment</h3>
+            <p>Items can be arranged vertically by specifying both the <code>flex</code> and <code>container</code> attributes on the container.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span> <span class="hljs-attr">container</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>TOP<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>BOTTOM<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-191">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex container class=&quot;outer&quot;&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;TOP&lt;/ef-layout&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;BOTTOM&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="no-wrap">No Wrap</h3>
+            <p>By default, items will be wrapped to a new row if there is not enough space to fit them. However, you can prevent items from wrapping by specifying the <code>nowrap</code> attribute on the container.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span> <span class="hljs-attr">nowrap</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;150px&quot;</span>&gt;</span>LEFT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>CENTER<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;150px&quot;</span>&gt;</span>RIGHT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-192">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex nowrap class=&quot;outer&quot;&gt;
+  &lt;ef-layout size=&quot;150px&quot; class=&quot;inner&quot;&gt;LEFT&lt;/ef-layout&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;CENTER&lt;/ef-layout&gt;
+  &lt;ef-layout size=&quot;150px&quot; class=&quot;inner&quot;&gt;RIGHT&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+  height: 180px;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="item-attributes">Item attributes</h2>
+            <p>Defining the behavior of items is important for creating a responsive layout in an application.</p>
+            <h3 id="basis">basis</h3>
+            <p>The <code>basis</code> attribute is used as a rough guide for the container to set the size of items. You can define a basis value in percentages (e.g. 50%) or pixels (e.g. 150px).</p>
+            <p>This property does not place an exact size on the element - instead it is more of a ratio among each of the children. For example, the sample layout below will try to keep each item size 1:2:1.</p>
+            <p>Whenever the size of the container cannot accommodate all items in the same row, the last item will be wrapped to a new row and the size of items in the same row will be recalculated. In the example, when the row is wrapped, the items in the first row should have a ratio of 1:2.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">basis</span>=<span class="hljs-string">&quot;150px&quot;</span>&gt;</span>LEFT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">basis</span>=<span class="hljs-string">&quot;300px&quot;</span>&gt;</span>CENTER<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">basis</span>=<span class="hljs-string">&quot;150px&quot;</span>&gt;</span>RIGHT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-193">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex class=&quot;outer&quot;&gt;
+  &lt;ef-layout basis=&quot;150px&quot; class=&quot;inner&quot;&gt;LEFT&lt;/ef-layout&gt;
+  &lt;ef-layout basis=&quot;300px&quot; class=&quot;inner&quot;&gt;CENTER&lt;/ef-layout&gt;
+  &lt;ef-layout basis=&quot;150px&quot; class=&quot;inner&quot;&gt;RIGHT&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">@keyframes resize {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 300px;
+  }
+}
+
+.outer {
+  animation: resize 10s ease-in-out alternate infinite;
+  background-color: #d0d4db;
+  padding: 10px;
+  overflow: hidden;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="size">Size</h3>
+            <p>The <code>size</code> attribute is used when you want an item with a fixed size. This attribute is mostly used when applications need to fix the size of a layout. For example, the demo below shows two sidebars, each fixed at 150px. The middle item will then fill the rest of the available space.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;150px&quot;</span>&gt;</span>LEFT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>CENTER<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">size</span>=<span class="hljs-string">&quot;150px&quot;</span>&gt;</span>RIGHT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-194">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex class=&quot;outer&quot;&gt;
+  &lt;ef-layout size=&quot;150px&quot; class=&quot;inner&quot;&gt;LEFT&lt;/ef-layout&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;CENTER&lt;/ef-layout&gt;
+  &lt;ef-layout size=&quot;150px&quot; class=&quot;inner&quot;&gt;RIGHT&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+  overflow: hidden;
+  height: 180px;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+  min-height: 30px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="break-points">Break points</h3>
+            <p>A break point is when the container has been resized to a certain width or height and the items in the application rearrange to accommodate the new size.</p>
+            <p>You could use <code>min-width</code> to control a break point when an application should wrap items to a new row. In a flexible layout, items will try to fill up all available space. If an item cannot shrink to be smaller than the <code>min-width</code> the container will try to wrap the item (unless the <code>nowrap</code> attribute is set).</p>
+            <p>The <code>min-height</code> could be used in a similar way for vertical layouts.</p>
+            <p>In this example, the LEFT and RIGHT items will be laid up 1:3. Watch as the RIGHT item wraps when there is not enough space left on the first row.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">basis</span>=<span class="hljs-string">&quot;75px&quot;</span>&gt;</span>LEFT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">basis</span>=<span class="hljs-string">&quot;225px&quot;</span> <span class="hljs-attr">min-width</span>=<span class="hljs-string">&quot;250px&quot;</span>&gt;</span>RIGHT<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-195">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex class=&quot;outer&quot;&gt;
+  &lt;ef-layout basis=&quot;75px&quot; class=&quot;inner&quot;&gt;LEFT&lt;/ef-layout&gt;
+  &lt;ef-layout basis=&quot;225px&quot; min-width=&quot;250px&quot; class=&quot;inner&quot;&gt;RIGHT&lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">@keyframes resize {
+  from {
+    width: 100%;
+  }
+
+  to {
+    width: 300px;
+  }
+}
+
+.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+  overflow: hidden;
+  height: 140px;
+  margin-bottom: 30px;
+  animation: resize 10s ease-in-out alternate infinite;
+  margin: 0 auto;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="additional-options">Additional options</h2>
+            <h3 id="debug">Debug</h3>
+            <p>The <code>debug</code> attribute makes ef-layout display a thin border. This is useful to visualize the current structure of your layout on the screen.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">debug</span> <span class="hljs-attr">container</span> <span class="hljs-attr">flex</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>HEADER<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">container</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 1<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+        <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 2<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 3<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-196">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout debug container flex class=&quot;outer&quot;&gt;
+  &lt;ef-layout class=&quot;inner&quot;&gt;HEADER&lt;/ef-layout&gt;
+  &lt;ef-layout flex class=&quot;inner&quot;&gt;
+    &lt;ef-layout container class=&quot;inner&quot;&gt;
+      &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 1&lt;/ef-layout&gt;
+      &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 2&lt;/ef-layout&gt;
+    &lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 3&lt;/ef-layout&gt;
+  &lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+  overflow: hidden;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="scrollable">Scrollable</h3>
+            <p>The <code>scrollable</code> attribute can be specified on the container. This makes the container show a scrollbar when there is not enough space to display all items.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">container</span> <span class="hljs-attr">flex</span> <span class="hljs-attr">max-height</span>=<span class="hljs-string">&quot;155px&quot;</span> <span class="hljs-attr">scrollable</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 1<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 2<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 3<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 4<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 5<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 6<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 7<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span> <span class="hljs-attr">flex</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-layout</span>&gt;</span>ITEM 8<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-layout</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-197">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-layout flex&gt;
+  &lt;ef-layout container flex class=&quot;outer&quot; max-height=&quot;155px&quot; scrollable&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 1&lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 2&lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 3&lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 4&lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 5&lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 6&lt;/ef-layout&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 7&lt;/ef-layout&gt;
+  &lt;/ef-layout&gt;
+  &lt;ef-layout flex class=&quot;outer&quot;&gt;
+    &lt;ef-layout class=&quot;inner&quot;&gt;ITEM 8&lt;/ef-layout&gt;
+  &lt;/ef-layout&gt;
+&lt;/ef-layout&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.outer {
+  background-color: #d0d4db;
+  padding: 10px;
+}
+
+.inner {
+  background-color: #e4e8ed;
+  margin: 10px;
+  padding: 10px;
+  min-height: 35px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">debug</div>
+                <div class="desc">Displays debug lines.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">flex</div>
+                <div class="desc">Tells the element to display flex,
+                  displaying children in a row wrap layout.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">container</div>
+                <div class="desc">Tells the element to display as a container,
+                  displaying children in a vertical nowrap layout.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noflex</div>
+                <div class="desc">Prevents the element from being flexible,
+                  when inside of another flex layout.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">nowrap</div>
+                <div class="desc">Prevents wrapping flex items,
+                  when the parent isn&apos;t a container.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">scrollable</div>
+                <div class="desc">Makes the element a scrollable viewport.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">size</div>
+                <div class="desc">Sets the fixed size of the element.
+                  Value could be pixel, percents or auto.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">basis</div>
+                <div class="desc">Sets the rough size of the element based on other siblings and content.
+                  Value could be pixel, percents or auto.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">min-width</div>
+                <div class="desc">Allows the width to shrink below its contents.
+                  Also prevents the width from shrinking past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">min-height</div>
+                <div class="desc">Allows the height to shrink below its contents.
+                  Also prevents the height from shrinking past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">max-width</div>
+                <div class="desc">Prevents the width from expanding past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">max-height</div>
+                <div class="desc">Prevents the height from expanding past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">debug</div>
+                <div class="desc">Displays debug lines.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">flex</div>
+                <div class="desc">Tells the element to display flex,
+                  displaying children in a row wrap layout.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">container</div>
+                <div class="desc">Tells the element to display as a container,
+                  displaying children in a vertical nowrap layout.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noflex</div>
+                <div class="desc">Prevents the element from being flexible,
+                  when inside of another flex layout.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">nowrap</div>
+                <div class="desc">Prevents wrapping flex items,
+                  when the parent isn&apos;t a container.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">scrollable</div>
+                <div class="desc">Makes the element a scrollable viewport.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">size</div>
+                <div class="desc">Sets the fixed size of the element.
+                  Value could be pixel, percents or auto.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">basis</div>
+                <div class="desc">Sets the rough size of the element based on other siblings and content.
+                  Value could be pixel, percents or auto.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">minWidth</div>
+                <div class="desc">Allows the width to shrink below its contents.
+                  Also prevents the width from shrinking past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">minHeight</div>
+                <div class="desc">Allows the height to shrink below its contents.
+                  Also prevents the height from shrinking past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">maxWidth</div>
+                <div class="desc">Prevents the width from expanding past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">maxHeight</div>
+                <div class="desc">Prevents the height from expanding past a certain point.
+                  Value could be pixel, percents or _empty_.</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">resize</div>
+                <div class="desc">Fired when the element&apos;s size changes.</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

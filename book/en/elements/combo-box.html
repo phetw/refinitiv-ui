@@ -1,0 +1,1129 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Combo Box</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/combo-box.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li selected><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/combo-box;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="combo-box">Combo Box</h1>
+
+            <div class="pandora-code-viewer" id="pid-73">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box opened&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboBox = document.querySelector(&apos;ef-combo-box&apos;);
+
+comboBox.data = [
+  { label: &apos;EMEA&apos;, type: &apos;header&apos; },
+  { label: &apos;France&apos;, value: &apos;fr&apos; },
+  { label: &apos;Russian Federation&apos;, value: &apos;ru&apos; },
+  { label: &apos;Spain&apos;, value: &apos;es&apos; },
+  { label: &apos;United Kingdom&apos;, value: &apos;gb&apos;, selected: true },
+  { label: &apos;APAC&apos;, type: &apos;header&apos; },
+  { label: &apos;China&apos;, value: &apos;ch&apos; },
+  { label: &apos;Australia&apos;, value: &apos;au&apos; },
+  { label: &apos;India&apos;, value: &apos;in&apos; },
+  { label: &apos;Thailand&apos;, value: &apos;th&apos; },
+  { label: &apos;AMERS&apos;, type: &apos;header&apos; },
+  { label: &apos;Canada&apos;, value: &apos;ca&apos; },
+  { label: &apos;United States&apos;, value: &apos;us&apos; },
+  { label: &apos;Brazil&apos;, value: &apos;br&apos; },
+  { label: &apos;Argentina&apos;, value: &apos;ar&apos; }
+];</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-combo-box</code> displays a text input and an associated pop-up element that helps users set a value.</p>
+            <h2 id="basic-usage">Basic usage</h2>
+            <p>The <code>ef-combo-box</code> uses the <code>data</code> property that follow <a href="#data-property-interface">ComboBoxData</a> interface.</p>
+
+            <div class="pandora-code-viewer" id="pid-74">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboBox = document.querySelector(&apos;ef-combo-box&apos;);
+comboBox.data = [
+  { label: &apos;EMEA&apos;, type: &apos;header&apos; },
+  { label: &apos;France&apos;, value: &apos;fr&apos; },
+  { label: &apos;Russian Federation&apos;, value: &apos;ru&apos; },
+  { label: &apos;Spain&apos;, value: &apos;es&apos; },
+  { label: &apos;United Kingdom&apos;, value: &apos;gb&apos;, selected: true },
+  { label: &apos;APAC&apos;, type: &apos;header&apos; },
+  { label: &apos;China&apos;, value: &apos;ch&apos; },
+  { label: &apos;Australia&apos;, value: &apos;au&apos; },
+  { label: &apos;India&apos;, value: &apos;in&apos; },
+  { label: &apos;Thailand&apos;, value: &apos;th&apos; },
+  { label: &apos;AMERS&apos;, type: &apos;header&apos; },
+  { label: &apos;Canada&apos;, value: &apos;ca&apos; },
+  { label: &apos;United States&apos;, value: &apos;us&apos; },
+  { label: &apos;Brazil&apos;, value: &apos;br&apos; },
+  { label: &apos;Argentina&apos;, value: &apos;ar&apos; }
+];</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-combo-box</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-combo-box</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">const</span> comboBox = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-combo-box&apos;</span>);
+comboBox.data = [
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;EMEA&apos;</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;header&apos;</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;France&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;fr&apos;</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;United Kingdom&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;gb&apos;</span>, <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span> }
+  <span class="hljs-comment">// ...</span>
+];</code></pre>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>The <code>ef-combo-box</code> uses the <code>ComboBoxData</code> interface for its data items which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>selected</td>
+                  <td>boolean</td>
+                  <td>Selection state of the item</td>
+                </tr>
+                <tr>
+                  <td>readonly</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be readonly</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="value">Value</h2>
+            <p>When an item is selected, the item&apos;s <code>value</code> property will become Combo Box&apos;s new <code>value</code>.</p>
+            <p>Value can be set using the <code>selected</code> property or by programmatically setting the Combo Box <code>value</code> property.</p>
+            <pre><code>comboBox.data = [
+  <span class="hljs-comment">// ...</span>
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;United Kingdom&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;gb&apos;</span>, <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span> }
+  <span class="hljs-comment">// ...</span>
+];</code></pre>
+            <pre><code>comboBox.value = <span class="hljs-string">&apos;gb&apos;</span>;</code></pre>
+            <h2 id="values">Values</h2>
+            <p>When Combo Box is in <code>multiple</code> mode it uses the <code>values</code> property to return multiple values.</p>
+            <p>Values can be set using the <code>selected</code> property or by programmatically setting the Combo Box <code>values</code> property.</p>
+            <pre><code>comboBox.data = [
+  <span class="hljs-comment">// ...</span>
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;United Kingdom&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;gb&apos;</span>, <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span> },
+  { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Thailand&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;th&apos;</span>, <span class="hljs-attr">selected</span>: <span class="hljs-literal">true</span> }
+  <span class="hljs-comment">// ...</span>
+];</code></pre>
+            <pre><code>comboBox.values = [<span class="hljs-string">&apos;gb&apos;</span>, <span class="hljs-string">&apos;th&apos;</span>];</code></pre>
+            <blockquote>
+              <p>Combo Box can only select data it already has.</p>
+            </blockquote>
+            <h2 id="free-text-mode">Free Text mode</h2>
+            <p>Set <code>free-text</code> to allow Combo Box to contain any arbitrary value. This mode is designed to cover a search input with suggestions scenario.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-combo-box</span> <span class="hljs-attr">free-text</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-combo-box</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-75">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box free-text&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboBox = document.querySelector(&apos;ef-combo-box&apos;);
+comboBox.data = [
+  { label: &apos;EMEA&apos;, type: &apos;header&apos; },
+  { label: &apos;France&apos;, value: &apos;France&apos; },
+  { label: &apos;Russian Federation&apos;, value: &apos;Russian Federation&apos; },
+  { label: &apos;Spain&apos;, value: &apos;Spain&apos; },
+  { label: &apos;United Kingdom&apos;, value: &apos;United Kingdom&apos; },
+  { label: &apos;APAC&apos;, type: &apos;header&apos; },
+  { label: &apos;China&apos;, value: &apos;China&apos; },
+  { label: &apos;Australia&apos;, value: &apos;Australia&apos; },
+  { label: &apos;India&apos;, value: &apos;India&apos; },
+  { label: &apos;Thailand&apos;, value: &apos;Thailand&apos; },
+  { label: &apos;AMERS&apos;, type: &apos;header&apos; },
+  { label: &apos;Canada&apos;, value: &apos;Canada&apos; },
+  { label: &apos;United States&apos;, value: &apos;United States&apos; },
+  { label: &apos;Brazil&apos;, value: &apos;Brazil&apos; },
+  { label: &apos;Argentina&apos;, value: &apos;Argentina&apos; }
+];</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="filtering">Filtering</h2>
+            <p>Default filtering is applied on the data <code>label</code> property. Filtering happens when the user modifies the input text.</p>
+            <p>The developer may wish to do their own filtering by implementing the <code>filter</code> property.</p>
+            <p>A typical example is to apply filter on multiple data properties (e.g. <code>label</code> and <code>value</code> as in the example below).</p>
+            <pre><code><span class="hljs-comment">// Make a scoped re-usable filter for performance</span>
+<span class="hljs-keyword">const</span> customFilter = <span class="hljs-function">(<span class="hljs-params">comboBox</span>) =&gt;</span> {
+  <span class="hljs-keyword">let</span> query = <span class="hljs-string">&apos;&apos;</span>; <span class="hljs-comment">// reference query string for validating queryRegExp cache state</span>
+  <span class="hljs-keyword">let</span> queryRegExp; <span class="hljs-comment">// cache RegExp</span>
+
+  <span class="hljs-comment">// Get current RegExp, or renew if out of date</span>
+  <span class="hljs-comment">// this is fetched on demand by filter/renderer</span>
+  <span class="hljs-comment">// only created once per query</span>
+  <span class="hljs-keyword">const</span> getRegularExpressionOfQuery = <span class="hljs-function">() =&gt;</span> {
+    <span class="hljs-keyword">if</span> (comboBox.query !== query || !queryRegExp) {
+      query = comboBox.query || <span class="hljs-string">&apos;&apos;</span>;
+      queryRegExp = <span class="hljs-keyword">new</span> <span class="hljs-built_in">RegExp</span>(query.replace(<span class="hljs-regexp">/(\W)/g</span>, <span class="hljs-string">&apos;\\$1&apos;</span>), <span class="hljs-string">&apos;i&apos;</span>);
+    }
+    <span class="hljs-keyword">return</span> queryRegExp;
+  };
+
+  <span class="hljs-comment">// return scoped custom filter</span>
+  <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">item</span>) =&gt;</span> {
+    <span class="hljs-keyword">const</span> regex = getRegularExpressionOfQuery();
+      <span class="hljs-comment">// test on value or label</span>
+      <span class="hljs-keyword">const</span> result = query === item.value || regex.test(item.label);
+      regex.lastIndex = <span class="hljs-number">0</span>; <span class="hljs-comment">// do not forget to reset last index</span>
+      <span class="hljs-keyword">return</span> result;
+    };
+};
+
+comboBox.filter = customFilter(comboBox);</code></pre>
+            <div class="pandora-code-viewer" id="pid-76">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box placeholder=&quot;Type &amp;quot;th&amp;quot; or &amp;quot;Thailand&amp;quot;&quot;&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboBox = document.querySelector(&apos;ef-combo-box&apos;);
+comboBox.data = [
+  { label: &apos;EMEA&apos;, type: &apos;header&apos; },
+  { label: &apos;France&apos;, value: &apos;fr&apos; },
+  { label: &apos;Russian Federation&apos;, value: &apos;ru&apos; },
+  { label: &apos;Spain&apos;, value: &apos;es&apos; },
+  { label: &apos;United Kingdom&apos;, value: &apos;gb&apos; },
+  { label: &apos;APAC&apos;, type: &apos;header&apos; },
+  { label: &apos;China&apos;, value: &apos;ch&apos; },
+  { label: &apos;Australia&apos;, value: &apos;au&apos; },
+  { label: &apos;India&apos;, value: &apos;in&apos; },
+  { label: &apos;Thailand&apos;, value: &apos;th&apos; },
+  { label: &apos;AMERS&apos;, type: &apos;header&apos; },
+  { label: &apos;Canada&apos;, value: &apos;ca&apos; },
+  { label: &apos;United States&apos;, value: &apos;us&apos; },
+  { label: &apos;Brazil&apos;, value: &apos;br&apos; },
+  { label: &apos;Argentina&apos;, value: &apos;ar&apos; }
+];
+var customFilter = function(comboBox) {
+  var query = &apos;&apos;;
+  var queryRegExp;
+  var getRegularExpressionOfQuery = function() {
+    if (comboBox.query !== query || !queryRegExp) {
+      query = comboBox.query || &apos;&apos;;
+      queryRegExp = new RegExp(query.replace(/(\W)/g, &apos;\\$1&apos;), &apos;i&apos;);
+    }
+    return queryRegExp;
+  };
+  return function(item) {
+    var regex = getRegularExpressionOfQuery();
+    var result = query === item.value || regex.test(item.label);
+    regex.lastIndex = 0; // do not forget to reset last index
+    return result;
+  };
+};
+
+comboBox.filter = customFilter(comboBox);</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <blockquote>
+              <p>Regardless of filter configuration Combo Box always treats <code>type: &apos;header&apos;</code> items as group headers, which persist as long as at least one item within the group is visible.</p>
+            </blockquote>
+            <h2 id="asynchronous-filtering">Asynchronous filtering</h2>
+            <p>The component&apos;s built-in filter can only be used with pre-loaded data. However, you can still implement Asynchronous filtering by following these simple steps.</p>
+            <p>First, you need to remove the default filter:</p>
+            <pre><code>comboBox.filter = <span class="hljs-literal">null</span>;</code></pre>
+            <p>If the Combo Box value is set, you must ensure that the corresponding data item is <strong>always</strong> present.</p>
+            <pre><code><span class="hljs-keyword">if</span> (comboBox.value) {
+  comboBox.data = fetch(<span class="hljs-string">`/give-me-data?v=<span class="hljs-subst">${comboBox.value}</span>`</span>);
+}</code></pre>
+            <p>To avoid excessive calls to the server you may want to set <code>query-debounce-rate</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-combo-box</span> <span class="hljs-attr">query-debounce-rate</span>=<span class="hljs-string">&quot;200&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-combo-box</span>&gt;</span></code></pre>
+            <p>Finally, listen for the <code>query-changed</code> event to make calls to the server and set the <code>data</code> property. Combo Box moves itself to the <em>loading</em> state.</p>
+            <pre><code>combo.addEventListener(<span class="hljs-string">&apos;query-changed&apos;</span>, <span class="hljs-keyword">async</span> () =&gt; {
+  comboBox.data = fetch(<span class="hljs-string">`/give-me-data?q=<span class="hljs-subst">${comboBox.query}</span>&amp;v=<span class="hljs-subst">${comboBox.value}</span>`</span>);
+});</code></pre>
+            <p>In the example below we mimic asynchronous filtering with <em>setTimeout</em>.</p>
+
+            <div class="pandora-code-viewer" id="pid-77">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box value=&quot;gb&quot; query-debounce-rate=&quot;200&quot;&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">// A collection of data our search is based on
+var data = [
+  { label: &apos;France&apos;, value: &apos;fr&apos; },
+  { label: &apos;Russian Federation&apos;, value: &apos;ru&apos; },
+  { label: &apos;Spain&apos;, value: &apos;es&apos; },
+  { label: &apos;United Kingdom&apos;, value: &apos;gb&apos; },
+  { label: &apos;China&apos;, value: &apos;ch&apos; },
+  { label: &apos;Australia&apos;, value: &apos;au&apos; },
+  { label: &apos;India&apos;, value: &apos;in&apos; },
+  { label: &apos;Thailand&apos;, value: &apos;th&apos; },
+  { label: &apos;Canada&apos;, value: &apos;ca&apos; },
+  { label: &apos;United States&apos;, value: &apos;us&apos; },
+  { label: &apos;Brazil&apos;, value: &apos;br&apos; },
+  { label: &apos;Argentina&apos;, value: &apos;ar&apos; }
+];
+
+var comboBox = document.querySelector(&apos;ef-combo-box&apos;);
+
+// You **must** reset the default filter
+comboBox.filter = null;
+
+// A function to make request. In real life scenario it may wrap fetch
+var request = function(query, value) {
+  var regex = new RegExp(query.replace(/(\W)/g, &apos;\\$1&apos;), &apos;i&apos;);
+
+  // Always keep a promise to let Combo Box know that the data is loading
+  return new Promise(function(resolve) {
+    var filterData = [];
+    if (query || value) {
+      for (var i = 0; i &lt; data.length; i += 1) {
+        var item = data[i];
+        // Include element itself
+        // Mark value hidden if it does not match search query
+        if (value &amp;&amp; item.value === value) {
+          filterData.push(Object.assign({}, item, {
+            selected: true,
+            hidden: query ? !regex.test(item.label) : false
+          }));
+          regex.lastIndex = 0;
+          continue;
+        }
+
+        if (query &amp;&amp; regex.test(item.label)) {
+          filterData.push(item);
+          regex.lastIndex = 0;
+        }
+      }
+    }
+    setTimeout(function() {
+      resolve(filterData);
+    }, 500);
+  });
+}
+
+// Populate self with the initial value
+comboBox.data = request(&apos;&apos;, &apos;gb&apos;);
+
+// Listen for query change event and make the request
+comboBox.addEventListener(&apos;query-changed&apos;, function(event) {
+  comboBox.data = request(comboBox.query, comboBox.value);
+});</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="custom-renderer">Custom renderer</h2>
+            <p>Combo Box supports custom rendering by providing a renderer function to the <code>renderer</code> property. The renderer receives a data item, Collection Composer and previously mapped item elements (if any), and must return an <code>HTMLElement</code>.</p>
+            <p>The preferred approach is to extend the <code>DefaultRender</code> that comes with Combo Box. The default renderer uses <a href="./item.html">Item</a> elements, and supports highlighted, selected, disabled, hidden and readonly states.</p>
+            <pre><code><span class="hljs-keyword">import</span> { DefaultRenderer } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;../lib/ef-combo-box&apos;</span>;
+
+<span class="hljs-comment">// Create a re-useable renderer that shows Flags next to the country</span>
+<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">FlagRender</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">DefaultRenderer</span> </span>{
+  <span class="hljs-title">constructor</span> (<span class="hljs-params">comboBox</span>) {
+    <span class="hljs-comment">// Keep the reference to the default renderer</span>
+    <span class="hljs-keyword">const</span> defaultRenderer = <span class="hljs-built_in">super</span>(comboBox);
+    <span class="hljs-comment">// store reference to flag for easy access.</span>
+    <span class="hljs-comment">// Use WeakMap to not care about memory leaks</span>
+    <span class="hljs-keyword">const</span> flagMap = <span class="hljs-keyword">new</span> <span class="hljs-built_in">WeakMap</span>();
+
+    <span class="hljs-comment">// Return the closure</span>
+    <span class="hljs-keyword">return</span> <span class="hljs-function">(<span class="hljs-params">item, composer, element</span>) =&gt;</span> {
+      element = defaultRenderer(item, composer, element);
+      <span class="hljs-keyword">const</span> type = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;type&apos;</span>);
+      <span class="hljs-keyword">let</span> flagElement = flagMap.get(element);
+      <span class="hljs-keyword">if</span> (!flagElement &amp;&amp; (!type || type === <span class="hljs-string">&apos;text&apos;</span>)) {
+        <span class="hljs-comment">// Text items</span>
+        flagElement = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;ef-flag&apos;</span>);
+        flagElement.slot = <span class="hljs-string">&apos;left&apos;</span>; <span class="hljs-comment">// use ef-item slotted content</span>
+        element.appendChild(flagElement);
+        flagMap.set(element, flagElement);
+      }
+      <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (flagElement &amp;&amp; type &amp;&amp; type !== <span class="hljs-string">&apos;text&apos;</span>) {
+        <span class="hljs-comment">// Header items, which should not have a flag</span>
+        <span class="hljs-comment">// Make sure that flag element is removed</span>
+        flagElement.parentNode.removeChild(flagElement);
+        flagElement.remove(element, flagElement);
+        flagElement = <span class="hljs-literal">null</span>;
+      }
+
+      <span class="hljs-comment">// Make sure that you can re-use the same element with new data item</span>
+      <span class="hljs-keyword">if</span> (flagElement) {
+        flagElement.flag = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;value&apos;</span>);
+      }
+
+      <span class="hljs-keyword">return</span> element;
+    };
+  }
+}
+comboBox.renderer = <span class="hljs-keyword">new</span> FlagRender(comboBox);</code></pre>
+            <p>As an alternative you can provide your own renderer. If you go that route, you must ensure that, at a minimum, the highlighted, selected and hidden states are covered.</p>
+            <pre><code>comboBox.renderer = <span class="hljs-function">(<span class="hljs-params">item, composer, element</span>) =&gt;</span> {
+  <span class="hljs-comment">// Make sure to re-use the same element for increased performance</span>
+  <span class="hljs-keyword">if</span> (!element) {
+    element = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+    element.style.setProperty(<span class="hljs-string">&apos;margin&apos;</span>, <span class="hljs-string">&apos;5px 10px&apos;</span>);
+    element.style.setProperty(<span class="hljs-string">&apos;padding&apos;</span>, <span class="hljs-string">&apos;5px 0&apos;</span>);
+  }
+
+  <span class="hljs-comment">// All item properties are read using the Collection Composer</span>
+  <span class="hljs-keyword">const</span> type = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;type&apos;</span>);
+  <span class="hljs-keyword">const</span> label = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;label&apos;</span>);
+  <span class="hljs-keyword">const</span> selected = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;selected&apos;</span>) === <span class="hljs-literal">true</span>;
+  <span class="hljs-keyword">const</span> highlighted = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;highlighted&apos;</span>) === <span class="hljs-literal">true</span>;
+  <span class="hljs-keyword">const</span> hidden = composer.getItemPropertyValue(item, <span class="hljs-string">&apos;hidden&apos;</span>) === <span class="hljs-literal">true</span>;
+
+  <span class="hljs-comment">// Style the element accordingly</span>
+  element.style.setProperty(<span class="hljs-string">&apos;display&apos;</span>, hidden ? <span class="hljs-string">&apos;none&apos;</span>: <span class="hljs-string">&apos;block&apos;</span>);
+  element.textContent = label;
+
+  <span class="hljs-keyword">let</span> colour = <span class="hljs-string">&apos;grey&apos;</span>;
+  <span class="hljs-keyword">if</span> (type === <span class="hljs-string">&apos;header&apos;</span>) {
+    colour = <span class="hljs-string">&apos;red&apos;</span>;
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (highlighted) {
+    colour = <span class="hljs-string">&apos;green&apos;</span>;
+  }
+  <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (selected) {
+    colour = <span class="hljs-string">&apos;blue&apos;</span>;
+  }
+
+  element.style.setProperty(<span class="hljs-string">&apos;color&apos;</span>, colour);
+
+  <span class="hljs-keyword">return</span> element;
+};</code></pre>
+            <div class="pandora-code-viewer" id="pid-78">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box opened&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var comboBox = document.querySelector(&apos;ef-combo-box&apos;);
+
+comboBox.data = [
+  { label: &apos;EMEA&apos;, type: &apos;header&apos; },
+  { label: &apos;France&apos;, value: &apos;fr&apos; },
+  { label: &apos;Russian Federation&apos;, value: &apos;ru&apos; },
+  { label: &apos;Spain&apos;, value: &apos;es&apos; },
+  { label: &apos;United Kingdom&apos;, value: &apos;gb&apos;, selected: true },
+  { label: &apos;APAC&apos;, type: &apos;header&apos; },
+  { label: &apos;China&apos;, value: &apos;ch&apos; },
+  { label: &apos;Australia&apos;, value: &apos;au&apos; },
+  { label: &apos;India&apos;, value: &apos;in&apos; },
+  { label: &apos;Thailand&apos;, value: &apos;th&apos; },
+  { label: &apos;AMERS&apos;, type: &apos;header&apos; },
+  { label: &apos;Canada&apos;, value: &apos;ca&apos; },
+  { label: &apos;United States&apos;, value: &apos;us&apos; },
+  { label: &apos;Brazil&apos;, value: &apos;br&apos; },
+  { label: &apos;Argentina&apos;, value: &apos;ar&apos; }
+];
+
+// Use ES5 syntax here for compatibility
+// If possible, use ESM import and classes instead:
+// import { DefaultRenderer } from &apos;../lib/ef-combo-box&apos;;
+// class FlagRender extends DefaultRenderer { /* ... */ }
+var createFlagRender = function(context) {
+  // Keep the reference to the default renderer
+  var defaultRenderer = context.renderer;
+
+  // store reference to flag for easy access.
+  // Use WeakMap to not care about memory leaks
+  var flagMap = new WeakMap();
+
+  // Return the closure
+  return function(item, composer, element) {
+    element = defaultRenderer(item, composer, element);
+    var type = composer.getItemPropertyValue(item, &apos;type&apos;);
+    var flagElement = flagMap.get(element);
+    if (!flagElement &amp;&amp; (!type || type === &apos;text&apos;)) {
+      // Text items
+      flagElement = document.createElement(&apos;ef-flag&apos;);
+      flagElement.slot = &apos;left&apos;;
+      element.appendChild(flagElement);
+      flagMap.set(element, flagElement);
+    } else if (flagElement &amp;&amp; type &amp;&amp; type !== &apos;text&apos;) {
+      // Header items, which should not have a flag
+      // Make sure that flag element is removed
+      flagElement.parentNode.removeChild(flagElement);
+      flagMap.remove(element, flagElement);
+      flagElement = null;
+    }
+
+    // Make sure that you can re-use the same element with new data item
+    if (flagElement) {
+      flagElement.flag = composer.getItemPropertyValue(item, &apos;value&apos;);
+    }
+
+    return element;
+  };
+};
+
+var setRenderer = function() {
+  comboBox.renderer = createFlagRender(comboBox);
+};
+
+if (customElements.get(&apos;ef-combo-box&apos;)) {
+  setRenderer();
+} else {
+  customElements.whenDefined(&apos;ef-combo-box&apos;).then(setRenderer);
+}</pre>
+                  <pre class="pandora-tab-view tab-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h2 id="customize-popup-panel-size">Customize popup panel size</h2>
+            <p>By default the popup width is equivalent to the input box. However, it can be overridden using CSS.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variable Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--list-max-width</td>
+                  <td>Max width of popup list</td>
+                </tr>
+                <tr>
+                  <td>--list-max-height</td>
+                  <td>Max height of popup list</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">multiple</div>
+                <div class="desc">Multiple selection mode</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Track opened state of popup</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder for input field</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">clears</div>
+                <div class="desc">Show clears button</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">free-text</div>
+                <div class="desc">Allow to enter any value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">query-debounce-rate</div>
+                <div class="desc">Control query rate, defaults to 0</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Returns the first selected item value.
+                  Use `values` when multiple selection mode is enabled.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Set readonly state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">name</div>
+                <div class="desc">Set name of the element</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">ComboBoxFilter&lt;T&gt; | null</div>
+                <div class="name">filter</div>
+                <div class="desc">Custom filter for static data
+                  Set this to null when data is filtered externally, eg XHR</div>
+                <div class="value">&quot;defaultFilter&lt;T&gt;(this)&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">ComboBoxRenderer</div>
+                <div class="name">renderer</div>
+                <div class="desc">Renderer used to render list item elements</div>
+                <div class="value">&quot;new ComboBoxRenderer(this)&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">multiple</div>
+                <div class="desc">Multiple selection mode</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Track opened state of popup</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Placeholder for input field</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">clears</div>
+                <div class="desc">Show clears button</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">freeText</div>
+                <div class="desc">Allow to enter any value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set state to error</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set state to warning</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">queryDebounceRate</div>
+                <div class="desc">Control query rate, defaults to 0</div>
+              </div>
+              <div class="api-item">
+                <div class="type">ComboBoxData&lt;T&gt;</div>
+                <div class="name">data</div>
+                <div class="desc">Data array to be displayed</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Returns the first selected item value.
+                  Use `values` when multiple selection mode is enabled.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Returns a values collection of the currently
+                  selected item values</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">query</div>
+                <div class="desc">Query string applied to combo-box
+                  Set via internal text-field input</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">label</div>
+                <div class="desc">Label of selected value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Set readonly state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">name</div>
+                <div class="desc">Set name of the element</div>
+                <div class="value">&quot;&apos;&apos;&quot;</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Dispatched when value changes</div>
+              </div>
+              <div class="api-item">
+                <div class="name">query-changed</div>
+                <div class="desc">Dispatched when query changes</div>
+              </div>
+              <div class="api-item">
+                <div class="name">opened-changed</div>
+                <div class="desc">Dispatched when opened state changes</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

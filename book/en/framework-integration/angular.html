@@ -1,0 +1,476 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Angular</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="framework-integration/angular.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li selected><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <div style="float:right">
+              <a href="https://angular.io/" target="_blank">angular.io</a>
+            </div>
+
+            <h1 id="angular-guide">Angular Guide</h1>
+            <blockquote>
+              <p>This guideline uses Angular&apos;s seed project and Angular CLI v12.0.5</p>
+            </blockquote>
+            <p>Install Angular CLI.</p>
+            <pre><code>npm install -g @angular/cli</code></pre>
+            <h2 id="initialize-your-project">Initialize your project</h2>
+            <p>Create new Angular application using the <code>ng new</code> command.</p>
+            <pre><code>ng new my-app &amp;&amp; <span class="hljs-built_in">cd</span> my-app</code></pre>
+            <p>Once your app has been created you should be able to serve your application.</p>
+            <pre><code>npm start</code></pre>
+            <h2 id="using-web-components-in-angular">Using web components in Angular</h2>
+            <p>First off we need to import the <code>CUSTOM_ELEMENTS_SCHEMA</code> from <code>@angular/core</code> and inject it into the <code>schemas</code> property of our AppModule definition. This property will allow non-Angular elements named with dash case like custom elements to be used in Angular&apos;s template.</p>
+            <p>Make the following changes to <code>./src/app/app.module.ts</code>.</p>
+            <pre><code><span class="hljs-deletion">-import { NgModule } from &apos;@angular/core&apos;;</span>
+<span class="hljs-addition">+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from &apos;@angular/core&apos;;</span>
+ import { BrowserModule } from &apos;@angular/platform-browser&apos;;
+
+ import { AppComponent } from &apos;./app.component&apos;;
+
+ @NgModule({
+   declarations: [
+     AppComponent
+   ],
+   imports: [
+     BrowserModule
+   ],
+   providers: [],
+<span class="hljs-deletion">-  bootstrap: [AppComponent]</span>
+<span class="hljs-addition">+  bootstrap: [AppComponent],</span>
+<span class="hljs-addition">+  schemas: [CUSTOM_ELEMENTS_SCHEMA]</span>
+ })
+
+ export class AppModule { }</code></pre>
+            <h2 id="install-ef-elements">Install EF elements</h2>
+            <p>EF elements need their class definition and theme to be installed before they can be used.</p>
+            <p>Install elements and themes.</p>
+            <pre><code>npm install @refinitiv-ui/elements
+npm install @refinitiv-ui/halo-theme</code></pre>
+            <p>Import the elements and themes into your app, <code>src/app/app.component.ts</code></p>
+            <pre><code><span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/loader&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field&apos;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/halo-theme/dark/imports/native-elements&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/loader/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&apos;</span>;</code></pre>
+            <p>At this stage EF elements should be ready to use!. You can use them like any other native HTML elements.</p>
+            <h2 id="create-a-login-page">Create a login page</h2>
+            <p>We need to use <code>ngDefaultControl</code> directive so Angular&apos;s Forms can be used with custom elements such as <code>ef-text-field</code>.</p>
+            <p>Import <code>ReactiveFormsModule</code> in <code>src/app/app.module.ts</code>.</p>
+            <pre><code> import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from &apos;@angular/core&apos;;
+ import { BrowserModule } from &apos;@angular/platform-browser&apos;;
+<span class="hljs-addition">+import { ReactiveFormsModule } from &apos;@angular/forms&apos;;</span>
+
+...
+...
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
+<span class="hljs-addition">+   ReactiveFormsModule</span>
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})</code></pre>
+            <p>Define the view template by replacing the contents in <code>src/app/app.component.html</code> with the following.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-panel</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;login-page&quot;</span> [<span class="hljs-attr">formGroup</span>]=<span class="hljs-string">&quot;loginForm&quot;</span> <span class="hljs-attr">spacing</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-loader</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">&quot;loading&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-loader</span>&gt;</span>
+
+  <span class="hljs-tag">&lt;<span class="hljs-name">ng-container</span> *<span class="hljs-attr">ngIf</span>=<span class="hljs-string">&quot;!loading&quot;</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">h1</span>&gt;</span>{{ title }}<span class="hljs-tag">&lt;/<span class="hljs-name">h1</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span>
+      <span class="hljs-attr">formControlName</span>=<span class="hljs-string">&quot;username&quot;</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Username&quot;</span>
+      <span class="hljs-attr">ngDefaultControl</span>
+    &gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">ef-password-field</span>
+      <span class="hljs-attr">formControlName</span>=<span class="hljs-string">&quot;password&quot;</span>
+      <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Password&quot;</span>
+      <span class="hljs-attr">ngDefaultControl</span>
+    &gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">ef-password-field</span>&gt;</span>
+    <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;button-group&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> (<span class="hljs-attr">click</span>)=<span class="hljs-string">&quot;login()&quot;</span>
+        [<span class="hljs-attr">disabled</span>]=<span class="hljs-string">&quot;!loginForm.valid&quot;</span>
+      &gt;</span>Login&lt;/ef-button &gt;
+      <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span>&gt;</span>Cancel<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+    <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">ng-container</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-panel</span>&gt;</span></code></pre>
+            <p>Add styling into <code>src/app/app.component.css</code></p>
+            <pre><code><span class="hljs-selector-id">#login-page</span> {
+  <span class="hljs-attribute">display</span>: flex;
+  <span class="hljs-attribute">flex-direction</span>: column;
+  <span class="hljs-attribute">align-items</span>: center;
+  <span class="hljs-attribute">width</span>: <span class="hljs-number">450px</span>;
+  <span class="hljs-attribute">height</span>: <span class="hljs-number">200px</span>;
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">40px</span> auto;
+}
+
+<span class="hljs-selector-id">#button-group</span> {
+  <span class="hljs-attribute">margin</span>: <span class="hljs-number">10px</span> <span class="hljs-number">0</span>;
+}</code></pre>
+            <p>Now, we need to add logic to make login page works by updating <code>src/app/app.component.ts</code>.</p>
+            <pre><code><span class="hljs-keyword">import</span> { Component } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@angular/core&apos;</span>;
+<span class="hljs-keyword">import</span> { timer } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;rxjs&apos;</span>
+<span class="hljs-keyword">import</span> { finalize } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;rxjs/operators&apos;</span>
+<span class="hljs-keyword">import</span> { FormBuilder, Validators, AbstractControl } <span class="hljs-keyword">from</span> <span class="hljs-string">&apos;@angular/forms&apos;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/loader&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field&apos;</span>;
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/halo-theme/dark/imports/native-elements&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/loader/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/button/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/panel/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&apos;</span>;
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&apos;</span>;
+
+<span class="hljs-keyword">const</span> DEFAULT_TITLE = <span class="hljs-string">&apos;Hello!&apos;</span>;
+
+@Component({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&apos;app-root&apos;</span>,
+  <span class="hljs-attr">templateUrl</span>: <span class="hljs-string">&apos;./app.component.html&apos;</span>,
+  <span class="hljs-attr">styleUrls</span>: [<span class="hljs-string">&apos;./app.component.css&apos;</span>]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">AppComponent</span> </span>{
+  public loading: boolean = <span class="hljs-literal">false</span>;
+  public title: string = DEFAULT_TITLE;
+  public loginForm = <span class="hljs-built_in">this</span>.formbuilder.group({
+    <span class="hljs-attr">username</span>: [<span class="hljs-string">&apos;&apos;</span>, Validators.required],
+    <span class="hljs-attr">password</span>: [<span class="hljs-string">&apos;&apos;</span>, Validators.required]
+  });
+
+  <span class="hljs-function"><span class="hljs-title">constructor</span>(<span class="hljs-params">private formbuilder: FormBuilder</span>)</span> { }
+
+  <span class="hljs-keyword">get</span> <span class="hljs-title">username</span>(): <span class="hljs-title">AbstractControl</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.loginForm.value[<span class="hljs-string">&apos;username&apos;</span>];
+  }
+
+  <span class="hljs-keyword">get</span> <span class="hljs-title">password</span>(): <span class="hljs-title">AbstractControl</span> {
+    <span class="hljs-keyword">return</span> <span class="hljs-built_in">this</span>.loginForm.value[<span class="hljs-string">&apos;password&apos;</span>];
+  }
+
+  login(): <span class="hljs-keyword">void</span> {
+    <span class="hljs-built_in">this</span>.loading = <span class="hljs-literal">true</span>;
+
+    timer(<span class="hljs-number">2000</span>).pipe(
+      finalize(<span class="hljs-function">() =&gt;</span> { <span class="hljs-built_in">this</span>.loading = <span class="hljs-literal">false</span> }),
+    ).subscribe(<span class="hljs-function">() =&gt;</span> {
+      <span class="hljs-built_in">this</span>.title = <span class="hljs-string">&apos;Done!&apos;</span>;
+      <span class="hljs-built_in">this</span>.loginForm.reset();
+    })
+  }
+}</code></pre>
+            <p>Serve your application.</p>
+            <pre><code>npm start</code></pre>
+            <h2 id="using-ef-with-angular-s-form">Using EF with Angular&apos;s form</h2>
+            <p>Using third-party form control elements with Angular&apos;s forms API requires <a href="https://angular.io/api/forms/ControlValueAccessor" target="_blank">ControlValueAccessor</a> which acts as a bridge that synchronizes the data between one and another. <code>ControlValueAccessor</code> already covers all the standard native <code>input</code> tags, but not for custom tags like EF components.</p>
+            <p>However, for element such as <code>ef-text-field</code>, <code>coral-search-field</code> and <code>ef-password-field&gt;</code> that has similar behavior to native <code>input[type=text]</code>, you can use <a href="https://angular.io/api/forms/DefaultValueAccessor" target="_blank">DefaultValueAccessor</a> directive (<code>ngDefaultControl</code>).</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">formControlName</span>=<span class="hljs-string">&quot;...&quot;</span> <span class="hljs-attr">ngDefaultControl</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span></code></pre>
+            <p>For elements which need to have its own <code>ControlValueAccessor</code> implementation in order to work correctly. Implementation varies depending on element&apos;s API and use cases.</p>
+            <pre><code><span class="hljs-meta">@Directive</span>({
+  <span class="hljs-attr">selector</span>: <span class="hljs-string">&apos;[ef-number-field]&apos;</span>,
+  <span class="hljs-attr">providers</span>: [
+    {
+      <span class="hljs-attr">provide</span>: NG_VALUE_ACCESSOR,
+      <span class="hljs-attr">useExisting</span>: forwardRef(<span class="hljs-function">() =&gt;</span> NumberFieldValueAccessor),
+      <span class="hljs-attr">multi</span>: <span class="hljs-literal">true</span>
+    }
+  ]
+})
+<span class="hljs-keyword">export</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">NumberFieldValueAccessor</span> <span class="hljs-title">implements</span> <span class="hljs-title">ControlValueAccessor</span> </span>{
+  onChange = <span class="hljs-function">() =&gt;</span> {};
+  onTouched = <span class="hljs-function">() =&gt;</span> {};
+
+  writeValue (value: <span class="hljs-built_in">string</span>): <span class="hljs-built_in">void</span> { ... }
+  registerOnChange (fn: <span class="hljs-built_in">any</span>): <span class="hljs-built_in">void</span> { ... }
+  registerOnTouched (fn: <span class="hljs-built_in">any</span>): <span class="hljs-built_in">void</span> { ... }
+
+  setDisabledState (isDisabled: <span class="hljs-built_in">boolean</span>): <span class="hljs-built_in">void</span> { ... }
+
+  <span class="hljs-comment">// listens to value-changed event from number-field, then update the value</span>
+  <span class="hljs-meta">@HostListener</span>(<span class="hljs-string">&apos;value-changed&apos;</span>, [<span class="hljs-string">&apos;$event.detail&apos;</span>])
+  listenForValueChange ({ value }) {
+    <span class="hljs-built_in">this</span>.value = value;
+  }</code></pre>
+            <h2 id="additional-type-definition">Additional type definition</h2>
+            <p>Some EF elements supports i18N features. It uses <a href="https://formatjs.io/" target="_blank">FormatJS</a> library and some of thier modules are using features that available in new Javascript version. If you see any errors related to @formatjs during project compilation, you may need to add <code>esnext.intl</code> into <code>lib</code> section in <code>tsconfig.json</code> file.</p>
+            <pre><code>&quot;lib&quot;: [
+  &quot;es2018&quot;,
+<span class="hljs-addition">+ &quot;esnext.intl&quot;</span>
+  &quot;dom&quot;
+]</code></pre>
+            <h2 id="polyfills">Polyfills</h2>
+            <p>Legacy browser does not support Web Component. EF polyfills provides polyfills modules that required. </p>
+            <pre><code>npm i @refinitiv-ui/polyfills</code></pre>
+            <p>Import the following into the end of <code>src/polyfills.ts</code>.</p>
+            <pre><code><span class="hljs-comment">/***************************************************************************************************
+ * APPLICATION IMPORTS
+ */</span>
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&apos;@refinitiv-ui/polyfills/minimal&apos;</span>;</code></pre>
+            <p>From Angular 8 onwards, browsers polyfills (<code>core-js</code>) will be automatically handled by <code>Angular</code> build system by using list of target browsers in <code>.browserslistrc</code> configuration. This is the reason why only <strong>minimal</strong> version of <code>@refinitiv-ui/polyfills</code> is needed.</p>
+            <p>In <code>.browserslistrc</code>, updates content for IE11 supports. Adds other browser name and its version that you need to support.</p>
+            <pre><code>&gt; 0.5%
+last 2 versions
+Firefox ESR
+not dead
+<span class="hljs-deletion">- not IE 11 # Angular supports IE 11 only as an opt-in. To opt-in, remove the &apos;not&apos; prefix on this line.</span>
+<span class="hljs-addition">+ IE 11</span></code></pre>
+            <h2 id="serving-application-on-ie11">Serving application on IE11</h2>
+            <p>In Angular 8 or above, a <strong>production</strong> build will create two versions of bundles (<a href="https://blog.angular.io/version-8-of-angular-smaller-bundles-cli-apis-and-alignment-with-the-ecosystem-af0261112a27" target="_blank">differential loading</a>) <code>es2015</code> and <code>es5</code> version. Angular build system will automatically transpile all of the <code>@refinitiv-ui</code> components into <code>es5</code> bundle.</p>
+            <p>Unfortunately, serving application by using <code>ng serve</code> will not use this feature and it will not work on <code>IE</code>.</p>
+            <p>To test on IE, run a production build and use a package like <code>serve</code> or <code>http-server</code> to locally serve the static files.</p>
+            <pre><code>ng build --prod</code></pre>
+            <pre><code>npm i -g serve
+serve dist/my-app</code></pre>
+            <p>That&apos;s all for now. Contact us at <a href="mailto:RefinitivUIDev@refinitiv.com" target="_top">RefinitivUIDev@refinitiv.com</a>, if you need any extra help!</p>
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

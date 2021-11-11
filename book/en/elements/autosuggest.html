@@ -1,0 +1,2239 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Autosuggest</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/autosuggest.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li selected><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/autosuggest;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="autosuggest">Autosuggest</h1>
+
+            <div class="pandora-code-viewer" id="pid-45">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  var re = new RegExp(autoSuggest.constructor.EscapeRegExp(query), &apos;i&apos;);
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return re.test(item.label);
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field,
+ef-autosuggest {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p>Autosuggest shows suggested matches to a user query. It can be attached to a text form control, such as Text Field, Multi Input, etc. Autosuggest supports use cases such as custom rendering, pagination, asynchronous data request and others.</p>
+            <h3 id="basic-usage">Basic usage</h3>
+            <p><a href="#using-autosuggestion">Using autosuggestion</a><br><a href="#data-property-interface">Data property interface</a><br><a href="#grouping-results">Grouping results</a><br><a href="#pagination">Pagination</a><br><a href="#asynchronous-autosuggestion">Asynchronous autosuggestion</a><br><a href="#header-and-footer">Header and footer</a><br><a href="#trigger-request-on-focus">Trigger request on focus</a><br><a href="#popup-position">Popup position</a></p>
+            <h3 id="advanced-usage">Advanced usage</h3>
+            <p><a href="#use-custom-input">Using custom input</a><br><a href="#integrate-with-custom-suggestion-data">Integrate with custom suggestion data</a><br><a href="#custom-renderer">Custom renderer</a><br><a href="#complex-query">Complex query</a><br><a href="#html-renderer">HTML renderer</a></p>
+            <h3 id="appendix">Appendix</h3>
+            <p><a href="#helper-methods">Helper methods</a><br><a href="#glossary">Glossary</a></p>
+            <hr>
+            <h2 id="using-auto-suggestion">Using auto suggestion</h2>
+            <p>To start, attach <code>ef-autosuggest</code> to an input control such as <code>ef-text-field</code> using the <code>attach</code> attribute, which accepts CSS selectors.</p>
+            <blockquote>
+              <p>To attach autosuggest to other input controls, see <a href="#use-custom-input">Use custom input</a>.</p>
+            </blockquote>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-text-field</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;input&quot;</span> <span class="hljs-attr">placeholder</span>=<span class="hljs-string">&quot;Type &apos;e&apos;&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-text-field</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-autosuggest</span> <span class="hljs-attr">attach</span>=<span class="hljs-string">&quot;#input&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-autosuggest</span>&gt;</span></code></pre>
+            <p>Implement the <code>suggestions-fetch-requested</code> event listener to construct suggestion data from a user query. The event will be triggered when the value of the attached control has changed or when keyboard navigation is performed.</p>
+            <p>In the listener function, assign suggestion data to the <code>suggestions</code> property to display it in the popup.</p>
+            <pre><code><span class="hljs-comment">// sample dataset to perform search and process output to show on autosuggest</span>
+<span class="hljs-keyword">var</span> data = [{ <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Cornelius Martin&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Memphis Hoover&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Angela Lloyd&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Emilee Gay&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Selah Richardson&apos;</span> }];
+
+<span class="hljs-keyword">var</span> autoSuggest = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-autosuggest&apos;</span>);
+autoSuggest.addEventListener(<span class="hljs-string">&apos;suggestions-fetch-requested&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-comment">// value from attached input control</span>
+  <span class="hljs-keyword">var</span> query = event.detail.query;
+
+  <span class="hljs-comment">// handle the number of min characters and populate suggestions</span>
+  <span class="hljs-keyword">if</span> (query &amp;&amp; query.length &gt;= <span class="hljs-number">1</span>) {
+    autoSuggest.suggestions = data.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+      <span class="hljs-keyword">return</span> item.label.indexOf(query) !== -<span class="hljs-number">1</span>;
+    });
+  }
+  <span class="hljs-keyword">else</span> {
+    autoSuggest.suggestions = [];
+  }
+});</code></pre>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>Autosuggest natively processes data using the <code>Suggestion</code> type which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>ItemType</td>
+                  <td>Type of item. Value can be <code>text</code>, <code>header</code>, <code>divider</code></td>
+                </tr>
+                <tr>
+                  <td>title</td>
+                  <td>string</td>
+                  <td>The text for the pop-up of item when it&apos;s hover</td>
+                </tr>
+                <tr>
+                  <td>icon</td>
+                  <td>string</td>
+                  <td>Set the icon name from the coral-icon list</td>
+                </tr>
+                <tr>
+                  <td>group</td>
+                  <td>string</td>
+                  <td>Sort data item into the group</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <p>For data not applying the <code>ef-item</code> model, see <a href="#integrate-with-custom-suggestion-data">Integrate custom suggestion data</a>.</p>
+            <p>Autosuggest uses the item <code>label</code> property to display item labels in the popup and highlight matched text.</p>
+            <p>Autosuggest popup is visible only when there is at least one suggestion.</p>
+            <blockquote>
+              <p>See <a href="#custom-renderer">Custom renderer</a> if you need to fully control how data should be displayed on UI.</p>
+            </blockquote>
+
+            <div class="pandora-code-viewer" id="pid-46">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="grouping-results">Grouping results</h3>
+            <p>Autosuggest understands the Item object model, allowing the display of non-selectable headers and dividers. To show a <code>header</code> or <code>divider</code>, specify the type in suggestion items.</p>
+            <pre><code><span class="hljs-keyword">var</span> suggestions = [{ <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Management&apos;</span>, <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;header&apos;</span> },
+                   { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Angela Lloyd&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;angela.lloyd&apos;</span> },
+                   { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Emilee Gay&apos;</span>, <span class="hljs-attr">value</span>: <span class="hljs-string">&apos;emilee.gay&apos;</span> }];</code></pre>
+            <div class="pandora-code-viewer" id="pid-47">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Memphis Hoover&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Angela Lloyd&apos;, group: &apos;Management&apos; },
+  { label: &apos;Emilee Gay&apos;, group: &apos;Management&apos; },
+  { label: &apos;Selah Richardson&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Christina Erickson&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Elaina Welch&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Houston Tran&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Richard Peterson&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Andrew Lin&apos;, group: &apos;Management&apos; },
+  { label: &apos;Isabell Kaiser&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Brent Glass&apos;, group: &apos;Management&apos; },
+  { label: &apos;Martha Jones&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Anton Mcclain&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Jamir Martin&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Kassandra Manning&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Madisyn Mccormick&apos;, group: &apos;Management&apos; },
+  { label: &apos;Anabel Savage&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Tyler Phillips&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Ronan Deleon&apos;, group: &apos;Management&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+
+var groupData = function(data) {
+  var groups = {};
+
+  data.forEach(function(item) {
+    groups[item.group] = groups[item.group] || [];
+    groups[item.group].push(item);
+  });
+
+  var items = [];
+  Object.keys(groups).forEach(function(group) {
+    items.push({
+      type: &apos;header&apos;,
+      label: group
+    });
+
+    items = items.concat(groups[group]);
+  });
+
+  return items;
+};
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? groupData(data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  })) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-keyword">var</span> data = [{ <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Cornelius Martin&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Memphis Hoover&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Contractors&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Angela Lloyd&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Management&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Emilee Gay&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Management&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Selah Richardson&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Christina Erickson&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Application Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Elaina Welch&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Application Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Houston Tran&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Contractors&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Richard Peterson&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Andrew Lin&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Management&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Isabell Kaiser&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Brent Glass&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Management&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Martha Jones&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Application Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Anton Mcclain&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Contractors&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Jamir Martin&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Kassandra Manning&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Madisyn Mccormick&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Management&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Anabel Savage&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Core Team&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Tyler Phillips&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Contractors&apos;</span> },
+            { <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Ronan Deleon&apos;</span>, <span class="hljs-attr">group</span>: <span class="hljs-string">&apos;Management&apos;</span> }];
+<span class="hljs-keyword">var</span> autoSuggest = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-autosuggest&apos;</span>);
+
+<span class="hljs-keyword">var</span> groupData = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">data</span>) </span>{
+  <span class="hljs-keyword">var</span> groups = {};
+
+  data.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">item</span>) </span>{
+    groups[item.group] = groups[item.group] || [];
+    groups[item.group].push(item);
+  });
+
+  <span class="hljs-keyword">var</span> items = [];
+  <span class="hljs-built_in">Object</span>.keys(groups).forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">group</span>) </span>{
+    items.push({
+      <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;header&apos;</span>,
+      <span class="hljs-attr">label</span>: group
+    });
+
+    items = items.concat(groups[group]);
+  });
+
+  <span class="hljs-keyword">return</span> items;
+};
+
+autoSuggest.addEventListener(<span class="hljs-string">&apos;suggestions-fetch-requested&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-keyword">var</span> query = event.detail.query;
+  autoSuggest.suggestions = query ? groupData(data.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+    <span class="hljs-keyword">return</span> item.label.indexOf(query) !== -<span class="hljs-number">1</span>;
+  })) : [];
+});</code></pre>
+            <h3 id="pagination">Pagination</h3>
+            <p>When there are many <code>suggestions</code> items, it is recommended to use pagination. The implementation of this is down to the app developer. A typical approach could be to show best matches or recent items.</p>
+            <p>To implement pagination in autosuggest, set the <code>moreResults</code> property to <code>true</code> when there are additional results to show. This property will display a <strong>Get more results</strong> button at the bottom of the autosuggest UI. Set the property to <code>false</code> when showing the last page.</p>
+            <p>Clicking the <strong>Get more results</strong> button will trigger an <code>suggestions-fetch-requested</code> event with the event parameter <code>event.detail.reason</code> set to <code>more-results</code>.</p>
+            <p>This example implements pagination and limits the result to show five suggestions per page.</p>
+
+            <div class="pandora-code-viewer" id="pid-48">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+
+var currentPage;
+var suggestions;
+var pageSize = 5;
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  var reason = event.detail.reason;
+
+  if (reason === &apos;more-results&apos;) {
+    currentPage += 1;
+  } else {
+    currentPage = 1;
+    suggestions = [];
+  }
+
+  var filteredData = query ?
+    data.filter(function(item) {
+      return item.label.indexOf(query) !== -1;
+    }) :
+    [];
+
+  var page = filteredData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+  autoSuggest.moreResults = filteredData.length &gt; currentPage * pageSize;
+  autoSuggest.suggestions = suggestions = suggestions.concat(page);
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code>autoSuggest.addEventListener(<span class="hljs-string">&apos;suggestions-fetch-requested&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+  <span class="hljs-keyword">var</span> reason = event.detail.reason;
+
+  <span class="hljs-comment">// if this is from &apos;Get more results&apos;, do pagination logic</span>
+  <span class="hljs-keyword">if</span> (reason === <span class="hljs-string">&apos;more-results&apos;</span>) {
+    <span class="hljs-comment">// apply pagination logic</span>
+  }
+  <span class="hljs-comment">// ...</span>
+});</code></pre>
+            <pre><code><span class="hljs-keyword">var</span> currentPage;
+<span class="hljs-keyword">var</span> suggestions;
+<span class="hljs-keyword">var</span> pageSize = <span class="hljs-number">5</span>;
+<span class="hljs-keyword">var</span> autoSuggest = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;ef-autosuggest&apos;</span>);
+
+autoSuggest.addEventListener(<span class="hljs-string">&apos;suggestions-fetch-requested&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-keyword">var</span> query = event.detail.query;
+  <span class="hljs-keyword">var</span> reason = event.detail.reason;
+
+  <span class="hljs-keyword">if</span> (reason === <span class="hljs-string">&apos;more-results&apos;</span>) {
+    currentPage += <span class="hljs-number">1</span>;
+  }
+  <span class="hljs-keyword">else</span> {
+    currentPage = <span class="hljs-number">1</span>;
+    suggestions = [];
+  }
+
+  <span class="hljs-keyword">var</span> filteredData = query ? data.filter(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+        <span class="hljs-keyword">return</span> item.label.indexOf(query) !== -<span class="hljs-number">1</span>;
+      }) : [];
+
+  <span class="hljs-keyword">var</span> page = filteredData.slice((currentPage - <span class="hljs-number">1</span>) * pageSize, currentPage * pageSize);
+
+  autoSuggest.moreResults = filteredData.length &gt; currentPage * pageSize;
+  autoSuggest.suggestions = suggestions = suggestions.concat(page);
+});</code></pre>
+            <h3 id="asynchronous-autosuggestion">Asynchronous autosuggestion</h3>
+            <p>Most data is filtered on the server and the results are sent asynchronously to the client. To implement this in autosuggest, requests and responses can be managed using <code>suggestions-fetch-requested</code>.</p>
+            <p>Optionally, the <code>debounce-rate</code> attribute can reduce the number of server calls, and the <code>loading</code> property can show an animation while waiting for data from the server.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-autosuggest</span> <span class="hljs-attr">debounce-rate</span>=<span class="hljs-string">&quot;500&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-autosuggest</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-comment">// ...</span>
+autoSuggest.addEventListener(<span class="hljs-string">&apos;suggestions-fetch-requested&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  <span class="hljs-keyword">var</span> query = event.detail.query;
+  xhttp.onreadystatechange = <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+    <span class="hljs-comment">// make sure that the data we set is for the last query</span>
+    <span class="hljs-keyword">if</span> (query === autoSuggest.query) {
+      autoSuggest.suggestions = suggestions;
+
+      <span class="hljs-comment">// do not forget to remove the loading mask on response</span>
+      autoSuggest.loading = <span class="hljs-literal">false</span>;
+    }
+  };
+  <span class="hljs-comment">// waiting for data, show the loading mask</span>
+  autoSuggest.loading = <span class="hljs-literal">true</span>;
+  xhttp.send();
+  <span class="hljs-comment">// ...</span>
+});</code></pre>
+            <div class="pandora-code-viewer" id="pid-49">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot; debouncerate=&quot;500&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+
+  // Show loading mask
+  autoSuggest.loading = true;
+
+  window.setTimeout(function() {
+    // Make sure that the data we are setting is for current query
+    if (query === autoSuggest.query) {
+      autoSuggest.suggestions = query ? data.filter(function(item) {
+        return item.label.indexOf(query) !== -1;
+      }) : [];
+      autoSuggest.loading = false;
+    }
+  }, 500);
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="header-and-footer">Header and footer</h3>
+            <p>Header and/or footer can be added to autosuggest by using slots.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-autosuggest</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-header</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>Company Employees<span class="hljs-tag">&lt;/<span class="hljs-name">ef-header</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span>&gt;</span>Did we miss someone?<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-autosuggest</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-50">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;div id=&quot;wrapper&quot;&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;
+    &lt;ef-header slot=&quot;header&quot;&gt;Company Employees&lt;/ef-header&gt;
+    &lt;div slot=&quot;footer&quot; class=&quot;footer&quot;&gt;Did we miss someone?&lt;/div&gt;
+  &lt;/ef-autosuggest&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">#wrapper {
+  height: 490px;
+  padding: 0 10px;
+  background-color: #f3f3f6;
+}
+
+ef-text-field {
+  width: 300px;
+}
+
+.footer {
+  padding: 5px 10px;
+  font-size: 80%;
+  font-style: italic;
+  text-align: right;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="trigger-request-on-focus">Trigger request on focus</h3>
+            <p>Use the <code>request-on-focus</code> attribute to request suggestions when the input is focused.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-autosuggest</span> <span class="hljs-attr">request-on-focus</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-autosuggest</span>&gt;</span></code></pre>
+            <div class="pandora-code-viewer" id="pid-51">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Click here...&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot; request-on-focus&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  }) : data;
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="popup-position">Popup position</h3>
+            <p>By default, the autosuggest popup is positioned below the attached element. You can change its position by setting the <code>positionTarget</code> property. Call <code>refit()</code> if <code>positionTarget</code> has been called after <code>ef-autosuggest</code> has been instantiated.</p>
+            <p>For further position customization, <code>ef-autosuggest</code> supports attributes and properties of <code>ef-overlay</code>.</p>
+            <pre><code>autoSuggest.positionTarget = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;custom-popup-position&apos;</span>);</code></pre>
+            <div class="pandora-code-viewer" id="pid-52">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+  &lt;div id=&quot;custom-popup-position&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+autoSuggest.positionTarget = document.getElementById(&apos;custom-popup-position&apos;);
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}
+
+#custom-popup-position {
+  width: 300px;
+  height: 10px;
+  background-color: #5ca5d8;
+  position: absolute;
+  top: 0;
+  right: 0;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <hr>
+            <h2 id="advanced-usage">Advanced usage</h2>
+            <p>You can customize many aspects of autosuggest to provide a truly unique solution.</p>
+            <h3 id="custom-renderer">Custom renderer</h3>
+            <p>Use the <code>renderer</code> property to assign a function to override default rendering. The function will be called when each suggestion item is rendered and must return an HTML element.</p>
+            <pre><code>autoSuggest.renderer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">suggestion, parameters</span>) </span>{
+  <span class="hljs-keyword">var</span> query = parameters.query;
+  <span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;div&apos;</span>);
+
+  <span class="hljs-comment">// Can implement text highlight based on query here. See `Helper methods section`</span>
+  el.innerText = suggestion.label;
+  <span class="hljs-keyword">return</span> el;
+}</code></pre>
+            <p>If autosuggest is customized and doesn&apos;t use <code>ef-item</code> or a descendant, a <code>highlightable</code> method may be needed to control item highlights and selections, and the <code>item-highlight</code> event may be required to set/remove highlight CSS.</p>
+            <blockquote>
+              <p>Suggestions are always rendered in LightDOM, so normal CSS styling rules are applied.</p>
+            </blockquote>
+            <pre><code>autoSuggest.highlightable = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">suggestion, el</span>) </span>{
+  <span class="hljs-keyword">return</span> suggestion.type !== <span class="hljs-string">&apos;header&apos;</span> &amp;&amp; suggestion.type !== <span class="hljs-string">&apos;divider&apos;</span>;
+}
+
+autoSuggest.addEventListener(<span class="hljs-string">&apos;item-highlight&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  event.preventDefault();
+  <span class="hljs-keyword">var</span> target = event.detail.target;
+  <span class="hljs-keyword">var</span> oldTarget = event.detail.oldTarget;
+
+  <span class="hljs-keyword">if</span> (target) {
+    target.classList.toggle(<span class="hljs-string">&apos;selected&apos;</span>, <span class="hljs-literal">true</span>);
+  }
+
+  <span class="hljs-keyword">if</span> (oldTarget) {
+    oldTarget.classList.toggle(<span class="hljs-string">&apos;selected&apos;</span>, <span class="hljs-literal">false</span>);
+  }
+});</code></pre>
+            <div class="pandora-code-viewer" id="pid-53">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Memphis Hoover&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Angela Lloyd&apos;, group: &apos;Management&apos; },
+  { label: &apos;Emilee Gay&apos;, group: &apos;Management&apos; },
+  { label: &apos;Selah Richardson&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Christina Erickson&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Elaina Welch&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Houston Tran&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Richard Peterson&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Andrew Lin&apos;, group: &apos;Management&apos; },
+  { label: &apos;Isabell Kaiser&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Brent Glass&apos;, group: &apos;Management&apos; },
+  { label: &apos;Martha Jones&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Anton Mcclain&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Jamir Martin&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Kassandra Manning&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Madisyn Mccormick&apos;, group: &apos;Management&apos; },
+  { label: &apos;Anabel Savage&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Tyler Phillips&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Ronan Deleon&apos;, group: &apos;Management&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+
+var getInitials = function(label = &apos;&apos;) {
+  var split = label.split(&apos; &apos;);
+
+  if (split.length) {
+    var initials = split[0][0].toUpperCase();
+    if (split[1]) {
+      initials += split[split.length - 1][0].toUpperCase();
+    }
+
+    return initials;
+  }
+
+  return &apos;&apos;;
+};
+
+autoSuggest.highlightable = function() {
+  // all items are highlightable and selectable
+  return true;
+};
+
+autoSuggest.addEventListener(&apos;item-highlight&apos;, function(event) {
+  event.preventDefault();
+  var target = event.detail.target;
+  var oldTarget = event.detail.oldTarget;
+
+  if (target) {
+    target.classList.toggle(&apos;selected&apos;, true);
+  }
+
+  if (oldTarget) {
+    oldTarget.classList.toggle(&apos;selected&apos;, false);
+  }
+});
+
+autoSuggest.renderer = function(suggestion, parameters) {
+  var query = parameters.query;
+  var el = document.createElement(&apos;div&apos;);
+  el.classList.add(&apos;user-card&apos;);
+
+  var innerHTML = &apos;&apos;;
+
+  innerHTML += &apos;&lt;div class=&quot;user-card__initials&quot;&gt;&apos; + getInitials(suggestion.label) + &apos;&lt;/div&gt;&apos;;
+  innerHTML += &apos;&lt;div class=&quot;user-card__container&quot;&gt;&apos;;
+  innerHTML += &apos;&lt;div class=&quot;user-card__label&quot;&gt;&apos; + autoSuggest.constructor.QueryWordSelect(suggestion.label, query, &apos;&lt;span class=&quot;text-highlighted&quot;&gt;$1&lt;/span&gt;&apos;) + &apos;&lt;/div&gt;&apos;;
+  innerHTML += &apos;&lt;div class=&quot;user-card__group&quot;&gt;Group: &apos; + suggestion.group + &apos;&lt;/div&gt;&apos;;
+  innerHTML += &apos;&lt;/div&gt;&apos;;
+
+  el.innerHTML = innerHTML;
+
+  return el;
+};
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}
+
+.user-card {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  align-items: center;
+}
+
+.user-card:not(:last-child) {
+  border-bottom: 1px solid rgba(238, 118, 0, .6);
+}
+
+.user-card__initials {
+  border-radius: 100%;
+  margin: 0;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  border: 1px solid rgba(238, 118, 0, .6);
+}
+
+.user-card__group {
+  margin-top: 3px;
+  opacity: 0.7;
+  font-size: 70%;
+}
+
+.user-card.selected {
+  background-color: rgba(238, 118, 0, .05);
+}
+
+.user-card .text-highlighted {
+  background-color: rgba(238, 118, 0, .6);
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="integrate-with-custom-suggestion-data">Integrate with custom suggestion data</h3>
+            <p>While autosuggest natively understands the Item object model, it is data agnostic, and can render suggestions with your data object schema. For example, if your suggestion data uses <code>value</code> instead of <code>label</code>, you can do mapping in the <code>renderer</code> function and implement <code>item-select</code> events and a <code>highlightable</code> method.</p>
+            <pre><code>autoSuggest.renderer = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">suggestion, parameters</span>) </span>{
+  <span class="hljs-keyword">var</span> mappedData = {};
+
+  mappedData.label = suggestion.value;
+  mappedData.disabled = suggestion.readonly;
+
+  <span class="hljs-comment">// you can map suggestion to ef-item</span>
+  <span class="hljs-keyword">return</span> autoSuggest.constructor.ItemRenderer(mappedData, parameters);
+}
+
+autoSuggest.addEventListener(<span class="hljs-string">&apos;item-select&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">event</span>) </span>{
+  event.preventDefault();
+  <span class="hljs-keyword">var</span> suggestion = event.detail.suggestion;
+  <span class="hljs-keyword">var</span> query = event.detail.query;
+
+  <span class="hljs-comment">// map the value back to input</span>
+  input.value = suggestion ? suggestion.value : query;
+});
+
+autoSuggest.highlightable = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">suggestion</span>) </span>{
+  <span class="hljs-keyword">return</span> suggestion.readonly !== <span class="hljs-literal">true</span>;
+}</code></pre>
+            <div class="pandora-code-viewer" id="pid-54">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ value: &apos;Cornelius Martin&apos;, readonly: true },
+  { value: &apos;Memphis Hoover&apos; },
+  { value: &apos;Angela Lloyd&apos; },
+  { value: &apos;Emilee Gay&apos;, readonly: true },
+  { value: &apos;Selah Richardson&apos; },
+  { value: &apos;Christina Erickson&apos; },
+  { value: &apos;Elaina Welch&apos;, readonly: true },
+  { value: &apos;Houston Tran&apos; },
+  { value: &apos;Richard Peterson&apos; },
+  { value: &apos;Andrew Lin&apos;, readonly: true },
+  { value: &apos;Isabell Kaiser&apos; },
+  { value: &apos;Brent Glass&apos; },
+  { value: &apos;Martha Jones&apos;, readonly: true },
+  { value: &apos;Anton Mcclain&apos; },
+  { value: &apos;Jamir Martin&apos; },
+  { value: &apos;Kassandra Manning&apos;, readonly: true },
+  { value: &apos;Madisyn Mccormick&apos; },
+  { value: &apos;Anabel Savage&apos; },
+  { value: &apos;Tyler Phillips&apos;, readonly: true },
+  { value: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+var input = document.getElementById(&apos;input&apos;);
+
+autoSuggest.highlightable = function(suggestion) {
+  return suggestion.readonly !== true;
+};
+
+autoSuggest.addEventListener(&apos;item-select&apos;, function(event) {
+  event.preventDefault();
+  var suggestion = event.detail.suggestion;
+  var query = event.detail.query;
+
+  // Map the value back to input
+  input.value = suggestion ? suggestion.value : query;
+});
+
+autoSuggest.renderer = function(suggestion, parameters) {
+  var mappedData = {};
+  mappedData.label = suggestion.value;
+  mappedData.disabled = suggestion.readonly;
+
+  // you can map suggestion to ef-item
+  return autoSuggest.constructor.ItemRenderer(mappedData, parameters);
+};
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.value.indexOf(query) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+ef-text-field {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="use-custom-input">Use custom input</h3>
+            <p>Autosuggest can be attached to any input component. In fact, it can be attached to any HTML element as long as a constructing query object procedure is provided.</p>
+            <p>For example, to use Multi Input instead of a standard Input: add event listeners to Multi Input in <code>add-attach-target-events</code> and use the <code>remove-attach-target-events</code> event to remove the listeners.</p>
+            <pre><code>autoSuggest.addEventListener(<span class="hljs-string">&apos;add-attach-target-events&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">ev</span>) </span>{
+  ev.preventDefault();
+
+  <span class="hljs-comment">// Add event listeners to the input</span>
+  <span class="hljs-comment">// pipeline that run on input value change</span>
+  multiInput.addEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, autoSuggest.onInputValueChange);
+  <span class="hljs-comment">// pipeline that run on key down</span>
+  multiInput.addEventListener(<span class="hljs-string">&apos;keydown&apos;</span>, autoSuggest.onInputKeyDown);
+  <span class="hljs-comment">// pipeline that run on input focus</span>
+  multiInput.addEventListener(<span class="hljs-string">&apos;focus&apos;</span>, autoSuggest.onInputFocus);
+  <span class="hljs-comment">// pipeline that run on input blur</span>
+  multiInput.addEventListener(<span class="hljs-string">&apos;blur&apos;</span>, autoSuggest.onInputBlur);
+});
+
+autoSuggest.addEventListener(<span class="hljs-string">&apos;remove-attach-target-events&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">ev</span>) </span>{
+  ev.preventDefault();
+
+  <span class="hljs-comment">// Remove event listeners on destroy</span>
+  multiInput.removeEventListener(<span class="hljs-string">&apos;value-changed&apos;</span>, autoSuggest.onInputValueChange);
+  multiInput.removeEventListener(<span class="hljs-string">&apos;keydown&apos;</span>, autoSuggest.onInputKeyDown);
+  multiInput.removeEventListener(<span class="hljs-string">&apos;focus&apos;</span>, autoSuggest.onInputFocus);
+  multiInput.removeEventListener(<span class="hljs-string">&apos;blur&apos;</span>, autoSuggest.onInputBlur);
+});</code></pre>
+            <p>Define the query using the <code>suggestions-query</code> event, and the suggestion selection using the <code>item-select</code> event.</p>
+            <pre><code>autoSuggest.addEventListener(<span class="hljs-string">&apos;suggestions-query&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">ev</span>) </span>{
+  ev.preventDefault();
+
+  <span class="hljs-comment">// The query is populated from `value`</span>
+  autoSuggest.query = multiInput.value;
+});
+
+autoSuggest.addEventListener(<span class="hljs-string">&apos;item-select&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">ev</span>) </span>{
+  ev.preventDefault();
+
+  <span class="hljs-keyword">var</span> suggestion = ev.detail.suggestion;
+  <span class="hljs-keyword">var</span> method = ev.detail.method;
+
+  <span class="hljs-keyword">switch</span> (method) {
+    <span class="hljs-comment">// ...</span>
+  }
+});</code></pre>
+            <div class="pandora-code-viewer" id="pid-55">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-multi-input id=&quot;multi-input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-multi-input&gt;
+  &lt;ef-autosuggest attach=&quot;#multi-input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos; },
+  { label: &apos;Memphis Hoover&apos; },
+  { label: &apos;Angela Lloyd&apos; },
+  { label: &apos;Emilee Gay&apos; },
+  { label: &apos;Selah Richardson&apos; },
+  { label: &apos;Christina Erickson&apos; },
+  { label: &apos;Elaina Welch&apos; },
+  { label: &apos;Houston Tran&apos; },
+  { label: &apos;Richard Peterson&apos; },
+  { label: &apos;Andrew Lin&apos; },
+  { label: &apos;Isabell Kaiser&apos; },
+  { label: &apos;Brent Glass&apos; },
+  { label: &apos;Martha Jones&apos; },
+  { label: &apos;Anton Mcclain&apos; },
+  { label: &apos;Jamir Martin&apos; },
+  { label: &apos;Kassandra Manning&apos; },
+  { label: &apos;Madisyn Mccormick&apos; },
+  { label: &apos;Anabel Savage&apos; },
+  { label: &apos;Tyler Phillips&apos; },
+  { label: &apos;Ronan Deleon&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+var multiInput = document.getElementById(&apos;multi-input&apos;);
+
+multiInput.addEventListener(&apos;item-added&apos;, function(event) {
+  event.preventDefault();
+
+  multiInput.value = &apos;&apos;;
+});
+
+autoSuggest.addEventListener(&apos;add-attach-target-events&apos;, function(ev) {
+  ev.preventDefault();
+
+  // add event listeners to the input. You do not have to implement all
+  // pipeline that run on input value change
+  multiInput.addEventListener(&apos;value-changed&apos;, autoSuggest.onInputValueChange);
+  // pipeline that run on key down
+  multiInput.addEventListener(&apos;keydown&apos;, autoSuggest.onInputKeyDown);
+  // pipeline that run on input focus
+  multiInput.addEventListener(&apos;focus&apos;, autoSuggest.onInputFocus);
+  // pipeline that run on input blur
+  multiInput.addEventListener(&apos;blur&apos;, autoSuggest.onInputBlur);
+});
+
+autoSuggest.addEventListener(&apos;remove-attach-target-events&apos;, function(ev) {
+  ev.preventDefault();
+
+  // do not forget to remove event listeners on destroy
+  multiInput.removeEventListener(&apos;value-changed&apos;, autoSuggest.onInputValueChange);
+  multiInput.removeEventListener(&apos;keydown&apos;, autoSuggest.onInputKeyDown);
+  multiInput.removeEventListener(&apos;focus&apos;, autoSuggest.onInputFocus);
+  multiInput.removeEventListener(&apos;blur&apos;, autoSuggest.onInputBlur);
+});
+
+autoSuggest.addEventListener(&apos;suggestions-query&apos;, function(ev) {
+  ev.preventDefault();
+
+  // If Enter is pressed, add the value stright away
+  if (ev.detail.reason === &apos;enter-pressed&apos; &amp;&amp; multiInput.value) {
+    multiInput.add({
+      value: multiInput.value,
+      label: multiInput.value
+    });
+  }
+
+  // Otherwise call for suggestions
+  autoSuggest.query = multiInput.value;
+});
+
+autoSuggest.addEventListener(&apos;item-select&apos;, function(ev) {
+  ev.preventDefault();
+
+  var suggestion = ev.detail.suggestion;
+  var method = ev.detail.method;
+  var query = ev.detail.query;
+
+  switch (method) {
+    case &apos;click&apos;:
+    case &apos;enter&apos;:
+      multiInput.add({
+        value: suggestion.label,
+        label: suggestion.label
+      });
+
+      multiInput.value = &apos;&apos;;
+      break;
+    case &apos;navigation&apos;:
+      multiInput.value = suggestion.label;
+      break;
+    case &apos;clear&apos;:
+      multiInput.value = &apos;&apos;;
+      break;
+    case &apos;reset&apos;:
+      multiInput.value = query;
+      break;
+    default:
+      // no default
+  }
+});
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter(function(item) {
+    return item.label.indexOf(query) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="complex-query">Complex query</h3>
+            <p>In addition to string-based queries, autosuggest <code>query</code> also supports objects, meaning far more complex and powerful queries can be made. The following example uses a <code>query</code> object based on two input fields.</p>
+
+            <div class="pandora-code-viewer" id="pid-56">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;ef-select id=&quot;group&quot;&gt;
+      &lt;ef-item selected&gt;Core Team&lt;/ef-item&gt;
+      &lt;ef-item&gt;Management&lt;/ef-item&gt;
+      &lt;ef-item&gt;Application Team&lt;/ef-item&gt;
+      &lt;ef-item&gt;Contractors&lt;/ef-item&gt;
+    &lt;/ef-select&gt;
+    &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &amp;apos;e&amp;apos;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;/div&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var data = [{ label: &apos;Cornelius Martin&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Memphis Hoover&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Angela Lloyd&apos;, group: &apos;Management&apos; },
+  { label: &apos;Emilee Gay&apos;, group: &apos;Management&apos; },
+  { label: &apos;Selah Richardson&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Christina Erickson&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Elaina Welch&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Houston Tran&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Richard Peterson&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Andrew Lin&apos;, group: &apos;Management&apos; },
+  { label: &apos;Isabell Kaiser&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Brent Glass&apos;, group: &apos;Management&apos; },
+  { label: &apos;Martha Jones&apos;, group: &apos;Application Team&apos; },
+  { label: &apos;Anton Mcclain&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Jamir Martin&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Kassandra Manning&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Madisyn Mccormick&apos;, group: &apos;Management&apos; },
+  { label: &apos;Anabel Savage&apos;, group: &apos;Core Team&apos; },
+  { label: &apos;Tyler Phillips&apos;, group: &apos;Contractors&apos; },
+  { label: &apos;Ronan Deleon&apos;, group: &apos;Management&apos; }
+];
+var autoSuggest = document.querySelector(&apos;ef-autosuggest&apos;);
+var groupEl = document.getElementById(&apos;group&apos;);
+var inputEl = document.getElementById(&apos;input&apos;);
+
+autoSuggest.addEventListener(&apos;remove-attach-target-events&apos;, function() {
+  // Group change should instantiate inputValueChange as well
+  groupEl.addEventListener(&apos;value-changed&apos;, autoSuggest.onInputValueChange);
+});
+
+autoSuggest.renderer = function(suggestion, query) {
+  // Ensure that text highlight continues to work. Default render expects String
+  var value = query.value;
+  return autoSuggest.constructor.ItemRenderer(suggestion, value);
+};
+
+autoSuggest.addEventListener(&apos;item-select&apos;, function(ev) {
+  var method = ev.detail.method;
+  var query = ev.detail.query;
+
+  // override reset method
+  if (method === &apos;reset&apos;) {
+    inputEl.value = query.value;
+    ev.preventDefault();
+  }
+});
+
+autoSuggest.addEventListener(&apos;suggestions-query&apos;, function(ev) {
+  ev.preventDefault();
+
+  // construct complex query
+  autoSuggest.query = {
+    group: groupEl.value,
+    value: inputEl.value
+  };
+});
+
+autoSuggest.addEventListener(&apos;suggestions-fetch-requested&apos;, function(event) {
+  var query = event.detail.query;
+
+  // get group and value from the query
+  var group = query.group;
+  var value = query.value;
+
+  autoSuggest.suggestions = value &amp;&amp; group ? data.filter(function(item) {
+    return item.group === group &amp;&amp; item.label.indexOf(value) !== -1;
+  }) : [];
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+}
+
+ef-text-field,
+ef-select {
+  width: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="html-renderer">HTML Renderer</h3>
+            <p>In modern frameworks, it may be more practical to render suggestions directly to <code>ef-autosuggest</code>, rather than using the <code>renderer</code> function. You can achieve more consistent code and better performance, thanks to Virtual DOM.</p>
+            <p>Set the <code>html-renderer</code> attribute if you intend to populate suggestions directly.</p>
+            <p>Consider the following example in Vue.js.</p>
+            <pre><code>&lt;script&gt;
+  export default {
+    props: {
+      data: {
+        type: Array,
+        required: true
+      }
+    },
+    data: function () {
+      return {
+        query: &apos;&apos;,
+        suggestions: []
+      };
+    }
+    methods: {
+      highlightText: function(label) {
+        return this.$refs.suggest.constructor.QueryWordSelect(label, this.query);
+      },
+      getSuggestions: function({ detail: { query } }) {
+        this.query = query;
+
+        if (!query) {
+          this.suggestions = this.data;
+        }
+
+        const re = new RegExp(autoSuggest.constructor.EscapeRegExp(query), &apos;i&apos;);
+        this.suggestions = this.data.filter(({ label }) =&gt; re.test(label));
+      },
+      clearSuggestions: function() {
+        this.suggestions = [];
+      },
+      selectSuggestion: function(ev) {
+        const { detail: { method, suggestion } } = ev;
+        if (method === &apos;click&apos; || method === &apos;enter&apos;) {
+          const { value, type } = suggestion;
+          this.$emit(&apos;suggestion-selected&apos;, { value, type });
+        }
+      },
+      mounted: function() {
+        this.$refs.suggest.attach = this.$refs.input;
+      }
+    }
+  };
+&lt;/script&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;ef-text-field ref=&quot;input&quot;&gt;&lt;/ef-text-field&gt;
+    &lt;ef-autosuggest
+      ref=&quot;suggest&quot;
+      html-renderer
+      :suggestions.prop=&quot;this.suggestions&quot;
+      @item-select=&quot;selectSuggestion&quot;
+      @suggestions-clear-requested.prevent=&quot;clearSuggestions&quot;
+      @suggestions-fetch-requested=&quot;getSuggestions&quot;&gt;
+      &lt;ef-item
+        v-for=&quot;(suggestion) in this.suggestions&quot;
+        :key=&quot;suggestion.id&quot;
+        v-html=&quot;highlightText(suggestion.label)&quot;&gt;&lt;/ef-item&gt;
+    &lt;/ef-autosuggest&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</code></pre>
+            <blockquote>
+              <p>Suggestions must be passed to <code>ef-autosuggest</code>. <code>ef-autosuggest.suggestions</code> must match the rendered element exactly, i.e. <code>ef-autosuggest.suggestions[0]</code> is identical to the first rendered element.</p>
+            </blockquote>
+            <h2 id="helper-methods">Helper methods</h2>
+            <p>Autosuggest provides some static helper methods.<br>You can use them through class name, <code>Autosuggest.&lt;HELPER_METHOD_NAME&gt;()</code> or the property of the constructor: <code>this.constructor.&lt;HELPER_METHOD_NAME&gt;()</code>.</p>
+            <hr>
+
+            <h3 id="escaperegexp-text-">EscapeRegExp (text)</h3>
+            <p>Remove forbidden characters from the given string</p>
+            <p><strong><small>Parameters:</small></strong></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>text</code></td>
+                  <td>string</td>
+                  <td>String to process</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong><small>Return:</small></strong> <code>String</code><br>String with forbidden characters removed</p>
+            <hr>
+
+            <h3 id="querywordselect-text-query-pattern-optional-">QueryWordSelect (text, query, pattern (optional))</h3>
+            <p>Replace all matched query words with an HTML string</p>
+            <p><strong><small>Parameters:</small></strong></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>text</code></td>
+                  <td>string</td>
+                  <td>String to process</td>
+                </tr>
+                <tr>
+                  <td><code>query</code></td>
+                  <td>string</td>
+                  <td>Word to match in the given string</td>
+                </tr>
+                <tr>
+                  <td><code>pattern</code> <small>(Optional)</small></td>
+                  <td>string</td>
+                  <td>HTML string to use instead of the default, which is <code>&lt;span class=&quot;highlighted&quot;&gt;$1&lt;/span&gt;</code></td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong><small>Return:</small></strong> <code>String</code><br>String with matching text processed by <code>pattern</code></p>
+            <hr>
+
+            <h3 id="itemrenderer-suggestion-query-">ItemRenderer (suggestion, query)</h3>
+            <p>Construct the <code>ef-item</code> element from the suggestion object using one-to-one mapping.</p>
+            <p><strong><small>Parameters:</small></strong></p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>suggestion</code></td>
+                  <td>object</td>
+                  <td>Suggestion item object</td>
+                </tr>
+                <tr>
+                  <td><code>query</code></td>
+                  <td>string</td>
+                  <td>Query word</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong><small>Return:</small></strong> <code>ef-item</code><br>Item element</p>
+            <hr>
+
+
+            <h2 id="glossary">Glossary</h2>
+            <p><strong>Query</strong></p>
+            <p>Object used to perform suggestions searching, and typically used to highlight the matched text on the suggestion item. In most scenarios, a query is text entered into an input box but the query can be an object to support more complex searching, see <a href="#complex-query">Complex Query</a>.</p>
+            <p><strong>Value</strong></p>
+            <p>Object that is displayed in the input box. In most cases, the value is the input text.</p>
+            <p><strong>Reason</strong></p>
+            <p>Additional information when autosuggest is going to fetch the data. It indicates why autosuggest wants to update the suggestions list. <code>reason</code> can be used to control the behavior of autosuggestion, such as implementing paging.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Reason</th>
+                  <th align="left">Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">value-changed</td>
+                  <td align="left">Input value has changed.</td>
+                </tr>
+                <tr>
+                  <td align="left">input-focus</td>
+                  <td align="left"><code>request-on-focus</code> is set and the input has received focus.</td>
+                </tr>
+                <tr>
+                  <td align="left">suggestions-revealed</td>
+                  <td align="left">Autosuggest popup is hidden and users pressed <kbd>Up</kbd> or <kbd>Down</kbd> key to open suggestions.</td>
+                </tr>
+                <tr>
+                  <td align="left">enter-pressed</td>
+                  <td align="left">Autosuggest is hidden and user pressed <kbd>Enter</kbd> key to open suggestions</td>
+                </tr>
+                <tr>
+                  <td align="left">escape-pressed</td>
+                  <td align="left">Autosuggest is hidden, the input has value and users pressed <kbd>Escape</kbd>. Can be used when suggestions are shown for empty value.</td>
+                </tr>
+                <tr>
+                  <td align="left">more-results</td>
+                  <td align="left"><code>more-results</code> is set and users clicked on <strong>Get More Results</strong>.</td>
+                </tr>
+              </tbody>
+            </table>
+            <p><strong>Method</strong></p>
+            <p>Additional information when the user selects a suggestion item. <code>method</code> represents how the suggestion has been selected. The developer can control the reaction on different selection methods.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th align="left">Method</th>
+                  <th align="left">Description</th>
+                  <th align="left">Default Action</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td align="left">click</td>
+                  <td align="left">The user clicked on suggestion.</td>
+                  <td align="left">Update input value from clicked suggestion and close auto suggest.</td>
+                </tr>
+                <tr>
+                  <td align="left">enter</td>
+                  <td align="left">The user pressed <kbd>Enter</kbd>.</td>
+                  <td align="left">Update input value from selected/first suggestion and close auto suggest.</td>
+                </tr>
+                <tr>
+                  <td align="left">navigation</td>
+                  <td align="left">The user pressed <kbd>Up</kbd> or <kbd>Down</kbd>.</td>
+                  <td align="left">Update input value.</td>
+                </tr>
+                <tr>
+                  <td align="left">reset</td>
+                  <td align="left">The user pressed <kbd>Escape</kbd>.</td>
+                  <td align="left">Reset input value if set using <strong>navigation</strong> and close auto suggest.</td>
+                </tr>
+                <tr>
+                  <td align="left">clear</td>
+                  <td align="left">The user pressed <kbd>Escape</kbd> when auto suggest popup is closed.</td>
+                  <td align="left">Clear the input value.</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="slots">Slots</h2>
+            <p>Slot is a placeholder inside a component that you can fill with your own content. This component provides slot for the following.</p>
+            <p><strong>header</strong><br>Header slot.</p>
+            <p><strong>footer</strong><br>Footer slot.</p>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">AutosuggestTargetElement | string | null</div>
+                <div class="name">attach</div>
+                <div class="desc">An HTML Element or CSS selector</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">request-on-focus</div>
+                <div class="desc">Request suggestions when attach target is focused</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">more-results</div>
+                <div class="desc">If set to true display &apos;Has more results&apos; item</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">more-search-text</div>
+                <div class="desc">Custom text for More Search</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">loading</div>
+                <div class="desc">If set to true show loading mask</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">debounce-rate</div>
+                <div class="desc">Debounce rate in ms of the filter as a number.
+                  Used to throttle the filter rate so as not to trigger unneeded filtering</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">html-renderer</div>
+                <div class="desc">If set to true, the render function is not called. Instead the wrapper element
+                  should populate and destroy suggestion elements. Rendering items manually
+                  may have performance benefits in frameworks that use virtual DOM (such as `Vue`, `React`, `hyperHTML` and others)</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Auto suggest popup&apos;s open state</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">AutosuggestTargetElement | string | null</div>
+                <div class="name">attach</div>
+                <div class="desc">An HTML Element or CSS selector</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">requestOnFocus</div>
+                <div class="desc">Request suggestions when attach target is focused</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">moreResults</div>
+                <div class="desc">If set to true display &apos;Has more results&apos; item</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">moreSearchText</div>
+                <div class="desc">Custom text for More Search</div>
+                <div class="value">&quot;defaultMoreSearchText&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">loading</div>
+                <div class="desc">If set to true show loading mask</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">AutosuggestQuery | null</div>
+                <div class="name">query</div>
+                <div class="desc">An object that represents a query from attach target</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">debounceRate</div>
+                <div class="desc">Debounce rate in ms of the filter as a number.
+                  Used to throttle the filter rate so as not to trigger unneeded filtering</div>
+                <div class="value">&quot;100&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">AutosuggestRenderer</div>
+                <div class="name">renderer</div>
+                <div class="desc">A renderer applied to suggestion.
+                  By default a render maps data to item attributes</div>
+                <div class="value">&quot;itemRenderer&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">AutosuggestHighlightable</div>
+                <div class="name">highlightable</div>
+                <div class="desc">A function that is applied to every suggestion during the render process
+                  to say whether the item can be highlighted and selected. Only items that return true are considered.
+                  By default the function checks for `item` `highlightable` property.</div>
+                <div class="value">&quot;itemHighlightable&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">AutosuggestItem[]</div>
+                <div class="name">suggestions</div>
+                <div class="desc">A list of suggestion items</div>
+                <div class="value">[]</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">htmlRenderer</div>
+                <div class="desc">If set to true, the render function is not called. Instead the wrapper element
+                  should populate and destroy suggestion elements. Rendering items manually
+                  may have performance benefits in frameworks that use virtual DOM (such as `Vue`, `React`, `hyperHTML` and others)</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Auto suggest popup&apos;s open state</div>
+                <div class="value">false</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">onInputValueChange(event)</div>
+                <div class="desc">Run when attach target value changes.</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">Event</div>
+                    <div class="desc">by default `value-changed` event is listened</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">onInputBlur(event)</div>
+                <div class="desc">Run when input has lost focus</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">FocusEvent</div>
+                    <div class="desc">by default `blur` event is listened</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">onInputFocus(event)</div>
+                <div class="desc">Run when input received focus</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">FocusEvent</div>
+                    <div class="desc">by default `focus` event is listened</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">onInputKeyDown(event)</div>
+                <div class="desc">Run when input key down event has happened</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">KeyboardEvent</div>
+                    <div class="desc">by default `keydown` event is listened</div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">refit()</div>
+                <div class="desc">Set the width</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">item-highlight</div>
+                <div class="desc">Fired when an item gets highlighted or highlight is removed</div>
+              </div>
+              <div class="api-item">
+                <div class="name">add-attach-target-events</div>
+                <div class="desc">Fired when attach has been set</div>
+              </div>
+              <div class="api-item">
+                <div class="name">remove-attach-target-events</div>
+                <div class="desc">Fired when attach has been removed</div>
+              </div>
+              <div class="api-item">
+                <div class="name">item-select</div>
+                <div class="desc">Fired when an item gets selected</div>
+              </div>
+              <div class="api-item">
+                <div class="name">suggestions-fetch-requested</div>
+                <div class="desc">Fired when auto suggest requests the data</div>
+              </div>
+              <div class="api-item">
+                <div class="name">suggestions-clear-requested</div>
+                <div class="desc">Fired when auto suggest requests to clear the data. If used in reactive application, prevent default and set suggestions to []</div>
+              </div>
+              <div class="api-item">
+                <div class="name">suggestions-query</div>
+                <div class="desc">Fired when input value has changed and the query must be set</div>
+              </div>
+              <div class="api-item">
+                <div class="name">suggestions-changed</div>
+                <div class="desc">Fired when suggestions changed</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

@@ -1,0 +1,647 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Dialog</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/dialog.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li selected><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/dialog;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="dialog">Dialog</h1>
+
+            <div class="pandora-code-viewer" id="pid-182">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot; draggable opened&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.querySelector(&amp;apos;#d1&amp;apos;).opened = true;&quot;&gt;Open Dialog&lt;/ef-button&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-dialog</code> is a popup window designed to contain and display any HTML content. It provides modal and dragging functionality, and also allows custom footers and control buttons to be included.</p>
+            <h3 id="basic-usage">Basic usage</h3>
+            <p>Dialog can easily be launched by adding the <code>opened</code> property. If you want the dialog to open by default, include the <code>opened</code> attribute when you embed <code>ef-dialog</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dlg1&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;System Permissions&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Grant geolocation permissions?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This will allow the application to see your real-time location at any point in time.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> dlg = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;dlg1&apos;</span>);
+<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">showDialog</span>(<span class="hljs-params">open</span>) </span>{
+  dlg.opened = open;
+}</code></pre>
+            <p>The default behavior of <code>ef-dialog</code> is to display at the center of the viewport and to not be draggable. You can enable dragging by adding the <code>draggable</code> attribute or using the property setting.</p>
+
+            <div class="pandora-code-viewer" id="pid-183">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;openDialog(&amp;apos;d1&amp;apos;, true)&quot;&gt;Draggable&lt;/ef-button&gt;
+  &lt;ef-button onclick=&quot;openDialog(&amp;apos;d1&amp;apos;, false)&quot;&gt;Fixed&lt;/ef-button&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">function openDialog(id, dragMode) {
+  var dlg = document.getElementById(id);
+  dlg.draggable = dragMode;
+  dlg.opened = true;
+}</pre>
+                  <pre class="pandora-tab-view tab-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+
+ef-button {
+  margin: 0 5px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;dlg1&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;System Permissions&quot;</span> <span class="hljs-attr">draggable</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Grant geolocation permissions?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This will allow the application to see your real-time location at any point in time.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <h3 id="confirmed-vs-cancelled">Confirmed vs cancelled</h3>
+            <p>You may want to detect if the user has closed the dialog by clicking the OK or Cancel button. You can listen to the <code>opened-changed</code> event and check the value of the <code>confirmed</code> property, which will be set to <code>true</code> if the user clicked the OK button to close the dialog.</p>
+
+            <div class="pandora-code-viewer" id="pid-184">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot; draggable opened&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.getElementById(&amp;apos;d1&amp;apos;).opened = true;&quot;&gt;Open Dialog&lt;/ef-button&gt;
+  &lt;p id=&quot;close-result&quot;&gt;&lt;/p&gt;
+  &lt;p&gt;
+  &lt;/p&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var dlg = document.getElementById(&apos;d1&apos;);
+dlg.addEventListener(&apos;opened-changed&apos;, function(e) {
+  document.getElementById(&apos;close-result&apos;).innerHTML = dlg.confirmed ? &apos;User clicked OK&apos; : &apos;User clicked Cancel&apos;;
+});</pre>
+                  <pre class="pandora-tab-view tab-css">.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;d1&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;System Permissions&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Grant geolocation permissions?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This will allow the application to see your real-time location at any point in time.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> dlg = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;d1&apos;</span>);
+dlg.addEventListener(<span class="hljs-string">&apos;opened-changed&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-keyword">if</span> (dlg.confirmed) {
+    <span class="hljs-comment">// user clicked OK button</span>
+  }
+  <span class="hljs-keyword">else</span> {
+    <span class="hljs-comment">// user clicked Cancel button</span>
+  }
+});</code></pre>
+            <h3 id="customize-footer-content">Customize footer content</h3>
+            <p>The dialog provides default OK and Cancel buttons. To replace those buttons with your own content, assign content to the <code>footer</code> slot.</p>
+
+            <div class="pandora-code-viewer" id="pid-185">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+  &lt;div slot=&quot;footer&quot; style=&quot;padding: 15px 25px;&quot;&gt;
+    &lt;ef-button style=&quot;width:100%&quot; cta onclick=&quot;accept()&quot;&gt;Accept&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.getElementById(&amp;apos;d1&amp;apos;).opened = true;&quot;&gt;Custom Dialog&lt;/ef-button&gt;
+&lt;/div&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">function accept() {
+  document.getElementById(&apos;d1&apos;).opened = false;
+}</pre>
+                  <pre class="pandora-tab-view tab-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;d1&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;System Permissions&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Grant geolocation permissions?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This will allow the application to see your real-time location at any point in time.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">div</span> <span class="hljs-attr">slot</span>=<span class="hljs-string">&quot;footer&quot;</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;padding: 15px 25px;&quot;</span>&gt;</span>
+      <span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;width:100%&quot;</span> <span class="hljs-attr">cta</span> <span class="hljs-attr">onclick</span>=<span class="hljs-string">&quot;accept()&quot;</span>&gt;</span>Accept<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+  <span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">accept</span> (<span class="hljs-params"></span>) </span>{
+  <span class="hljs-comment">// user clicked accept button, close dialog.</span>
+  <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;d1&apos;</span>).opened = <span class="hljs-literal">false</span>;
+}</code></pre>
+            <h3 id="customize-close-behaviors">Customize close behaviors</h3>
+            <p>By default, <code>ef-dialog</code> will only close when the user clicks the OK or Cancel button, or presses the ESC key. However, you can allow the dialog to close when the user clicks outside of the dialog, or prevent the dialog from closing when the ESC key is pressed.</p>
+            <p>To close the dialog when the user clicks outside of the dialog, set the <code>noCancelOnOutsideClick</code> property to <code>false</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;d1&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;System Permissions&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Grant geolocation permissions?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This will allow the application to see your real-time location at any point in time.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;d1&apos;</span>).noCancelOnOutsideClick = <span class="hljs-literal">false</span>;</code></pre>
+            <p>To prevent the dialog from closing on ESC key press, add the <code>no-cancel-on-esc-key</code> attribute to <code>ef-dialog</code>.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-dialog</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;d1&quot;</span> <span class="hljs-attr">header</span>=<span class="hljs-string">&quot;System Permissions&quot;</span> <span class="hljs-attr">no-cancel-on-esc-key</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>Grant geolocation permissions?<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>This will allow the application to see your real-time location at any point in time.<span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-dialog</span>&gt;</span></code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>Slots</h2>
+              <div class="api-item no-border">
+                <div class="name">footer</div>
+                <div class="desc">Hide default OK and Cancel button and replace dialog&apos;s footer with your custom content.</div>
+              </div>
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">header</div>
+                <div class="desc">Set Header/Title of the dialog</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">draggable</div>
+                <div class="desc">Should the dialog be draggable</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Set dialog to open</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">x</div>
+                <div class="desc">Set a specific x coordinate of dialog</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">y</div>
+                <div class="desc">Set a specific y coordinate of dialog</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-cancel-on-esc-key</div>
+                <div class="desc">Prevents dialog to close when user presses ESC key</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">full-screen</div>
+                <div class="desc">Set dialog to full screen</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">position-target</div>
+                <div class="desc">Set position of dialog i.e. `top`, `right`, `left`, `bottom`, `center` or combination of theme e.g. `top right`.</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">header</div>
+                <div class="desc">Set Header/Title of the dialog</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">draggable</div>
+                <div class="desc">Should the dialog be draggable</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noCancelOnOutsideClick</div>
+                <div class="desc">Prevents dialog to close when user clicks outside the dialog.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">Set dialog to open</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noCancelOnEscKey</div>
+                <div class="desc">Prevents dialog to close when user presses ESC key</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">x</div>
+                <div class="desc">Set a specific x coordinate of dialog</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">y</div>
+                <div class="desc">Set a specific y coordinate of dialog</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">fullScreen</div>
+                <div class="desc">Set dialog to full screen</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">positionTarget</div>
+                <div class="desc">Set position of dialog i.e. `top`, `right`, `left`, `bottom`, `center` or combination of theme e.g. `top right`.</div>
+              </div>
+              <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">refit()</div>
+                <div class="desc">Clear all cached values and fit the popup.
+                  Use this function only if maxWidth, maxHeight, minWidth, minHeight, height, width are changed</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">opened-changed</div>
+                <div class="desc">Fired when value of `opened` property is changed. Prevent default to stop default action</div>
+              </div>
+              <div class="api-item">
+                <div class="name">confirm</div>
+                <div class="desc">Fired when dialog is closed by user clicked a default OK button. Prevent default to stop default action</div>
+              </div>
+              <div class="api-item">
+                <div class="name">cancel</div>
+                <div class="desc">Fired when dialog is closed by user clicked a default Cancel button, clicked outside to close dialog or press ESC to close the dialog. Prevent default to stop default action</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

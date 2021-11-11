@@ -1,0 +1,783 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Slider</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/slider.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li selected><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/slider;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="slider">Slider</h1>
+
+            <div class="pandora-code-viewer" id="pid-127">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; value=&quot;45&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider range min=&quot;0&quot; max=&quot;100&quot; from=&quot;25&quot; to=&quot;75&quot; min-range=&quot;1&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; value=&quot;45&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field range min=&quot;0&quot; max=&quot;100&quot; from=&quot;25&quot; to=&quot;75&quot; min-range=&quot;1&quot;&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-slider {
+  width: 50%;
+  margin: 5px 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <h3 id="basic-usage">Basic usage</h3>
+            <p>Sliders allow users to make selections from a range of values. The component&apos;s <code>min</code> and <code>max</code> values set the range. A default value can be set using the <code>value</code> attribute.</p>
+
+            <div class="pandora-code-viewer" id="pid-128">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; value=&quot;60&quot;&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-slider {
+  width: 50%;
+  margin: 5px 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;60&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <p>To get the value of slider, access it using the <code>value</code> property.</p>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;level&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;1&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> el = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;level&apos;</span>);
+el.value; <span class="hljs-comment">// &quot;1&quot;</span></code></pre>
+            <p>You can add an event listener to the element for the <code>value-changed</code> event. The event will be triggered when users change the value of the slider.</p>
+            <h3 id="range-slider">Range slider</h3>
+            <p>Add a <code>range</code> attribute to make the slider support <code>from</code> and <code>to</code> instead of a single value.</p>
+
+            <div class="pandora-code-viewer" id="pid-129">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-slider {
+  width: 50%;
+  margin: 15px 15px;
+}
+
+ef-slider:first-child {
+  margin: 25px 15px 10px 15px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;50&quot;</span> <span class="hljs-attr">range</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <p>In range mode, the control will provide values between <code>from</code> and <code>to</code>. You can use <code>from-changed</code> and <code>to-changed</code> events to get notified when those values are changed.</p>
+            <p>In some use cases, you may need to set a minimum number of values between <code>from</code> and <code>to</code>. For example, you might want users to set at least 10 values in a range. To do that, set <code>min-range</code> to 10.</p>
+
+            <div class="pandora-code-viewer" id="pid-130">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range min-range=&quot;10&quot;&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css"></pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;50&quot;</span> <span class="hljs-attr">range</span> <span class="hljs-attr">min-range</span>=<span class="hljs-string">&quot;10&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <h3 id="input-field">Input Field</h3>
+            <p>Input fields can be set to display on the side of slider. They show the current value of the slider and also allow users to set it with their keyboard.</p>
+
+            <div class="pandora-code-viewer" id="pid-131">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; value=&quot;40&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-slider {
+  width: 50%;
+  margin: 15px 15px;
+}
+
+ef-slider:first-child {
+  margin: 25px 15px 10px 15px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">show-input-field</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;40&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">show-input-field</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;50&quot;</span> <span class="hljs-attr">range</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <h3 id="steps">Steps</h3>
+            <p>The <code>step</code> attribute specifies the size of each increment or decrement on the slider control. By default, the slider will not show step marks but this can be set using <code>show-steps</code>.</p>
+
+            <div class="pandora-code-viewer" id="pid-132">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;ef-slider min=&quot;0&quot; max=&quot;10&quot; value=&quot;5&quot; step=&quot;0.5&quot; show-steps show-input-field&gt;&lt;/ef-slider&gt;
+&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;60&quot; to=&quot;80&quot; step=&quot;20&quot; range show-steps show-input-field&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-slider {
+  width: 50%;
+  margin: 5px 10px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;10&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;5&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;0.5&quot;</span> <span class="hljs-attr">show-steps</span> <span class="hljs-attr">show-input-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">from</span>=<span class="hljs-string">&quot;60&quot;</span> <span class="hljs-attr">to</span>=<span class="hljs-string">&quot;80&quot;</span> <span class="hljs-attr">step</span>=<span class="hljs-string">&quot;20&quot;</span> <span class="hljs-attr">range</span> <span class="hljs-attr">show-steps</span> <span class="hljs-attr">show-input-field</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <h3 id="customize-colors">Customize colors</h3>
+            <p>Colors of slider are managed by the theme but can be overridden using CSS variables.</p>
+
+            <div class="pandora-code-viewer" id="pid-133">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;!-- ELF supports Pride at Refinitiv --&gt;
+&lt;ef-slider id=&quot;red&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;orange&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;80&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;yellow&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;95&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;green&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;90&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;blue&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;80&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;violet&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;&lt;/ef-slider&gt;</pre>
+                  <pre class="pandora-tab-view tab-js"></pre>
+                  <pre class="pandora-tab-view tab-css">ef-slider {
+  max-width: 50%;
+}
+
+#red {
+  --thumb-color: #e40303;
+}
+
+#orange {
+  --thumb-color: #ff8c00;
+}
+
+#yellow {
+  --thumb-color: #ffed00;
+}
+
+#green {
+  --thumb-color: #008026;
+}
+
+#blue {
+  --thumb-color: #004dff;
+}
+
+#violet {
+  --thumb-color: #750787;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <table>
+              <thead>
+                <tr>
+                  <th>CSS Variables Name</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>--track-color</td>
+                  <td>Slider track color</td>
+                </tr>
+                <tr>
+                  <td>--thumb-color</td>
+                  <td>Color of slider thumb and filled track color</td>
+                </tr>
+                <tr>
+                  <td>--step-color</td>
+                  <td>Slider step color</td>
+                </tr>
+                <tr>
+                  <td>--input-field-width</td>
+                  <td>Set input field width</td>
+                </tr>
+              </tbody>
+            </table>
+            <pre><code><span class="hljs-selector-id">#red</span> {
+  --thumb-<span class="hljs-attribute">color</span>:<span class="hljs-number">#e40303</span>;
+}</code></pre>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-slider</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;red&quot;</span> <span class="hljs-attr">min</span>=<span class="hljs-string">&quot;0&quot;</span> <span class="hljs-attr">max</span>=<span class="hljs-string">&quot;100&quot;</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;70&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-slider</span>&gt;</span></code></pre>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">step</div>
+                <div class="desc">Specified size of increment or decrement jump between value.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">min</div>
+                <div class="desc">Set minimum value of slider.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">max</div>
+                <div class="desc">Slider maximum value of slider.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">from</div>
+                <div class="desc">Uses with `range`. Low value of slider in range mode.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">to</div>
+                <div class="desc">Uses with `range`. High value of slider in range mode</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">range</div>
+                <div class="desc">Set slider to range mode. Instead of a single value, slider will provide `from` and `to`.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">show-steps</div>
+                <div class="desc">Show steps marker on slider.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;&quot; | &quot;readonly&quot; | null</div>
+                <div class="name">show-input-field</div>
+                <div class="desc">Show input number field.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">min-range</div>
+                <div class="desc">Uses with `range`. Set minimum allowance value (distance) between `from` and `to`.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Value of slider. Not applicable in range mode.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Set readonly state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">step</div>
+                <div class="desc">Specified size of increment or decrement jump between value.</div>
+                <div class="value">&quot;1&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">min</div>
+                <div class="desc">Set minimum value of slider.</div>
+                <div class="value">&quot;0&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">max</div>
+                <div class="desc">Slider maximum value of slider.</div>
+                <div class="value">&quot;100&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">from</div>
+                <div class="desc">Uses with `range`. Low value of slider in range mode.</div>
+                <div class="value">&quot;0&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">to</div>
+                <div class="desc">Uses with `range`. High value of slider in range mode</div>
+                <div class="value">&quot;100&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">range</div>
+                <div class="desc">Set slider to range mode. Instead of a single value, slider will provide `from` and `to`.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">showSteps</div>
+                <div class="desc">Show steps marker on slider.</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;&quot; | &quot;readonly&quot; | null</div>
+                <div class="name">showInputField</div>
+                <div class="desc">Show input number field.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">minRange</div>
+                <div class="desc">Uses with `range`. Set minimum allowance value (distance) between `from` and `to`.</div>
+                <div class="value">&quot;0&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Value of slider. Not applicable in range mode.</div>
+                <div class="value">&quot;0&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">readonly</div>
+                <div class="desc">Set readonly state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">value-changed</div>
+                <div class="desc">Fired when the `value` changes.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">from-changed</div>
+                <div class="desc">Fired when the `from` changes.</div>
+              </div>
+              <div class="api-item">
+                <div class="name">to-changed</div>
+                <div class="desc">Fired when the `to` changes.</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>

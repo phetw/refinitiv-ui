@@ -1,0 +1,1 @@
+pandora.editor.disable();

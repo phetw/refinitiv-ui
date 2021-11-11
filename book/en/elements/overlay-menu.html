@@ -1,0 +1,1283 @@
+<!doctype html>
+<html pandora>
+
+<head>
+  <title>Overlay Menu</title>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="x-pandora-base" content="../">
+  <meta name="x-pandora-location" content="elements/overlay-menu.html">
+  <link rel="stylesheet" href="../../../resources/styles/book.css">
+  <script defer src="../../../resources/scripts/book.js"></script>
+  <script defer src="../search.index.js"></script>
+  <link rel="stylesheet" href="../../../resources/styles/branding.css">
+  <link rel="icon" href="../../../resources/images/refinitiv-blue.png">
+</head>
+
+<body>
+  <pandora-book class="branding">
+    <div class="backdrop-overlay"></div>
+    <div class="header" no-print>
+      <button class="hamburger-menu">
+        <div class="hamburger-inner"></div>
+      </button>
+      <div class="book-icon" style="background-image:url(&quot;../../../resources/images/refinitiv-white.png&quot;)"></div>
+      <h1><a href="../index.html">Element Framework</a></h1>
+      <div class="search search-wrapper">
+        <input type="search" placeholder="Search...">
+      </div>
+    </div>
+    <div class="content">
+      <div class="sidebar" no-print>
+        <div class="sidebar-header header-container">
+          <button>
+            <div class="arrow-icon left-arrow"></div>
+          </button>
+        </div>
+        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+          <ul>
+            <li parent id="cid-0" collapsible>
+              <div collapser>Getting Started</div>
+              <ul>
+                <li><a href="../start/installation.html">Installation</a></li>
+                <li><a href="../start/browser-support.html">Browser Support</a></li>
+                <li><a href="../start/theming.html">Theming</a></li>
+                <li><a href="../start/roadmap.html">Roadmap</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-1" collapsible collapsed>
+              <div collapser>Core Elements</div>
+              <ul>
+                <li parent>
+                  <div class="sub-header">Actions</div>
+                  <ul>
+                    <li><a href="../elements/button.html">Button</a></li>
+                    <li><a href="../elements/button-bar.html">Button Bar</a></li>
+                    <li><a href="../elements/pagination.html">Pagination</a></li>
+                    <li><a href="../elements/pill.html">Pill</a></li>
+                    <li><a href="../elements/tab.html">Tab</a></li>
+                    <li><a href="../elements/tab-bar.html">Tab Bar</a></li>
+                    <li><a href="../elements/toggle.html">Toggle</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Inputs</div>
+                  <ul>
+                    <li><a href="../elements/autosuggest.html">Autosuggest</a></li>
+                    <li><a href="../elements/calendar.html">Calendar</a></li>
+                    <li><a href="../elements/checkbox.html">Checkbox</a></li>
+                    <li><a href="../elements/color-dialog.html">Color Dialog</a></li>
+                    <li><a href="../elements/combo-box.html">Combo Box</a></li>
+                    <li><a href="../elements/counter.html">Counter</a></li>
+                    <li><a href="../elements/datetime-picker.html">Datetime Picker</a></li>
+                    <li><a href="../elements/email-field.html">Email Field</a></li>
+                    <li><a href="../elements/multi-input.html">Multi Input</a></li>
+                    <li><a href="../elements/number-field.html">Number Field</a></li>
+                    <li><a href="../elements/password-field.html">Password Field</a></li>
+                    <li><a href="../elements/radio-button.html">Radio Button</a></li>
+                    <li><a href="../elements/search-field.html">Search Field</a></li>
+                    <li><a href="../elements/select.html">Select</a></li>
+                    <li><a href="../elements/slider.html">Slider</a></li>
+                    <li><a href="../elements/text-field.html">Text Field</a></li>
+                    <li><a href="../elements/time-picker.html">Time Picker</a></li>
+                    <li><a href="../elements/tree-select.html">Tree Select</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Grouping</div>
+                  <ul>
+                    <li><a href="../elements/accordion.html">Accordion</a></li>
+                    <li><a href="../elements/collapse.html">Collapse</a></li>
+                    <li><a href="../elements/header.html">Header</a></li>
+                    <li><a href="../elements/item.html">Item</a></li>
+                    <li><a href="../elements/list.html">List</a></li>
+                    <li selected><a href="../elements/overlay-menu.html">Overlay Menu</a></li>
+                    <li><a href="../elements/tree.html">Tree</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Containers</div>
+                  <ul>
+                    <li><a href="../elements/card.html">Card</a></li>
+                    <li><a href="../elements/dialog.html">Dialog</a></li>
+                    <li><a href="../elements/label.html">Label</a></li>
+                    <li><a href="../elements/layout.html">Layout</a></li>
+                    <li><a href="../elements/overlay.html">Overlay</a></li>
+                    <li><a href="../elements/panel.html">Panel</a></li>
+                    <li><a href="../elements/sidebar-layout.html">Sidebar Layout</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Feedback</div>
+                  <ul>
+                    <li><a href="../elements/appstate-bar.html">Appstate Bar</a></li>
+                    <li><a href="../elements/loader.html">Loader</a></li>
+                    <li><a href="../elements/notification.html">Notification</a></li>
+                    <li><a href="../elements/tooltip.html">Tooltip</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Data Visualization</div>
+                  <ul>
+                    <li><a href="../elements/canvas.html">Canvas</a></li>
+                    <li><a href="../elements/chart.html">Chart</a></li>
+                    <li><a href="../elements/clock.html">Clock</a></li>
+                    <li><a href="../elements/heatmap.html">Heatmap</a></li>
+                    <li><a href="../elements/interactive-chart.html">Interactive Chart</a></li>
+                    <li><a href="../elements/led-gauge.html">Led Gauge</a></li>
+                    <li><a href="../elements/progress-bar.html">Progress Bar</a></li>
+                    <li><a href="../elements/rating.html">Rating</a></li>
+                    <li><a href="../elements/sparkline.html">Sparkline</a></li>
+                    <li><a href="../elements/swing-gauge.html">Swing Gauge</a></li>
+                    <li><a href="../elements/tornado-chart.html">Tornado Chart</a></li>
+                  </ul>
+                </li>
+                <li parent>
+                  <div class="sub-header">Icons &amp; Flags</div>
+                  <ul>
+                    <li><a href="../elements/flag.html">Flag</a></li>
+                    <li><a href="../elements/icon.html">Icon</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li parent id="cid-2" collapsible collapsed>
+              <div collapser>Build an App</div>
+              <ul>
+                <li><a href="../framework-integration/javascript.html">Vanilla</a></li>
+                <li><a href="../framework-integration/angular.html">Angular</a></li>
+                <li><a href="../framework-integration/react.html">React</a></li>
+                <li><a href="../framework-integration/vue.html">Vue</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-3" collapsible collapsed>
+              <div collapser>Styles and Icons</div>
+              <ul>
+                <li><a href="../styles/typography.html">Typography</a></li>
+                <li><a href="../styles/styling-components.html">Styling Components</a></li>
+                <li><a href="../styles/icons.html">Icons</a></li>
+                <li><a href="../styles/flags.html">Flags</a></li>
+                <li><a href="../styles/movement-colors.html">Movement Colours</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-4" collapsible collapsed>
+              <div collapser>Localization (i18n)</div>
+              <ul>
+                <li><a href="../localization/languages.html">Language Support</a></li>
+                <li><a href="../localization/app-developers.html">App Developers</a></li>
+              </ul>
+            </li>
+            <li parent id="cid-5" collapsible collapsed>
+              <div collapser>More Resources</div>
+              <ul>
+                <li><a href="../more-resources/theme-switching.html">Theme Switching</a></li>
+                <li><a href="../more-resources/collection-composer.html">Data Collection Composer</a></li>
+              </ul>
+            </li>
+          </ul>
+        </pandora-nav>
+      </div>
+      <div class="main">
+        <div class="reader">
+          <pandora-page>
+            <style>
+              .menu-theme-toggle>input[type=checkbox]+div {
+                background-image: url("../resources/images/sun-icon.svg");
+              }
+
+              .menu-theme-toggle>input[type=checkbox]:checked+div {
+                background-image: url("../resources/images/moon-icon.svg");
+              }
+            </style>
+            <script async>
+              // script to hide header element when scroll down
+              function initHideHeader() {
+                var reader = document.querySelector('.reader');
+                reader.addEventListener('scroll', function() {
+                  var header = document.querySelector('#element-header');
+                  if (!header) return;
+                  var lastTop = reader.getAttribute('data-y');
+                  if (reader.scrollTop - lastTop > 0 && reader.scrollTop > 30) {
+                    if (!header.classList.contains('hide')) {
+                      header.classList.add('hide');
+                    }
+                  } else {
+                    if (header.classList.contains('hide')) {
+                      header.classList.remove('hide');
+                    }
+                  }
+                  reader.setAttribute('data-y', reader.scrollTop);
+                })
+              }
+              initHideHeader();
+            </script>
+
+
+            <link rel="stylesheet" href="../resources/styles/element.css">
+            <div id="element-header">
+              <div class="input-wrapper"> <img src="https://cdn.refinitiv.net/public/libs/elf/assets/elf-theme-halo/resources/icons/copy.svg"> <input type="text" readonly value="import @refinitiv-ui/elements/lib/overlay-menu;" onclick="this.select(); document.execCommand(&apos;copy&apos;);"> </div>
+            </div>
+
+            <h1 id="overlay-menu">Overlay Menu</h1>
+
+            <div class="pandora-code-viewer" id="pid-167">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; opened&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;n-america&quot;&gt;N. America&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;latin-america&quot;&gt;Latin America&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Favorites&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;flame&quot;&gt;Thailand&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;dislike-empty&quot; disabled&gt;Unspecified&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;n-america&quot;&gt;
+  &lt;ef-item&gt;Canada&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;latin-america&quot;&gt;
+  &lt;ef-item&gt;Mexico&lt;/ef-item&gt;
+  &lt;ef-item&gt;Brazil&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+menu.positionTarget = button;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 235px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/preview.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <p><code>ef-overlay-menu</code> is an overlay window that supports single-level and multi-level menus. It can be positioned by attaching to other elements, or its vertical and horizontal offset can be adjusted, if needed.</p>
+            <h2 id="basic-menu">Basic Menu</h2>
+            <p>Create <code>ef-overlay-menu</code> with <code>ef-item</code> elements as menu items. Listen for the <code>item-trigger</code> event to identify a clicked item.</p>
+            <p>As the overlay menu is designed to support several use cases (multi-selection, toggle, etc.), the menu will not close when an item is clicked. To open or close the menu, simply set the <code>opened</code> property to true or false, respectively.</p>
+
+            <div class="pandora-code-viewer" id="pid-168">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;France&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+var menuController = menu.parentElement;
+menu.positionTarget = button;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+
+menuController.addEventListener(&apos;item-trigger&apos;, function(e) {
+  var value = e.detail.value;
+  console.log(&apos;You have clicked on: &apos; + value);
+  button.innerHTML = value;
+  menu.opened = false;
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 135px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">cta</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Choose Item<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>EMEA<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;Spain&quot;</span>&gt;</span>Spain<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;France&quot;</span> <span class="hljs-attr">disabled</span>&gt;</span>France<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">value</span>=<span class="hljs-string">&quot;United Kingdom&quot;</span>&gt;</span>United Kingdom<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;button&apos;</span>);
+<span class="hljs-keyword">var</span> menu = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;menu&apos;</span>);
+<span class="hljs-keyword">var</span> menuController = menu.parentElement;
+menu.positionTarget = button;
+
+button.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = <span class="hljs-literal">true</span>;
+  }
+});
+
+menuController.addEventListener(<span class="hljs-string">&apos;item-trigger&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-keyword">var</span> value = e.detail.value;
+  <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;You have clicked on: &apos;</span> + value);
+  button.innerHTML = value;
+  menu.opened = <span class="hljs-literal">false</span>;
+});</code></pre>
+            <blockquote>
+              <p>See Item API document for more detail about <code>ef-item</code> properties</p>
+            </blockquote>
+            <h3 id="nested-menus">Nested menus</h3>
+            <p>Menu and sub-menus are bound together using the <code>for</code> and <code>id</code> attributes of <code>ef-item</code> and the sub-menu. The <code>for</code> attribute must be equal to the <code>id</code> attribute of the related sub-menu in order to bind the menu and submenu together.</p>
+
+            <div class="pandora-code-viewer" id="pid-169">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Nested menus&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;london&quot;&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;london&quot;&gt;
+  &lt;ef-item&gt;London Bridge&lt;/ef-item&gt;
+  &lt;ef-item&gt;Westminster Bridge&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+menu.positionTarget = button;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 225px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>Regions<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;emea&quot;</span>&gt;</span>EMEA<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;apac&quot;</span>&gt;</span>APAC<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;emea&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Spain<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">disabled</span>&gt;</span>France<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;united-kingdom&quot;</span>&gt;</span>United Kingdom<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;united-kingdom&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Cardiff<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Edinburgh<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;london&quot;</span>&gt;</span>London<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;london&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>London Bridge<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Westminster Bridge<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;apac&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>China<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Australia<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span></code></pre>
+            <h3 id="compact-menu">Compact menu</h3>
+            <p>If there is not enough space to fit sub-menus, add the <code>compact</code> attribute. In this mode, sub-menus will be opened on top of the parent menu.</p>
+
+            <div class="pandora-code-viewer" id="pid-170">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Compact menu&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; compact&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot; compact&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot; compact&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;london&quot;&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;london&quot; compact&gt;
+  &lt;ef-item&gt;London Bridge&lt;/ef-item&gt;
+  &lt;ef-item&gt;Westminster Bridge&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot; compact&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+menu.positionTarget = button;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 135px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">compact</span>&gt;</span>
+  ...
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span></code></pre>
+            <h2 id="managing-position-and-user-interaction">Managing position and user interaction</h2>
+            <p><code>ef-overlay-menu</code> inherits properties from <code>ef-overlay</code> and thus supports the same positioning strategies.</p>
+            <p>The developer may specify <code>with-backdrop</code> together with <code>no-cancel-on-outside-click</code> so users must interact with the menu before they can return to the application.</p>
+
+            <div class="pandora-code-viewer" id="pid-171">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; with-backdrop no-cancel-on-outside-click&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;France&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+var menuController = menu.parentElement;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    // position at the top right corner of the button
+    menu.positionTarget = button;
+    menu.position = [&apos;right-start&apos;];
+    menu.opened = true;
+  }
+});
+
+menuController.addEventListener(&apos;item-trigger&apos;, function(e) {
+  menu.opened = false;
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 115px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-button</span> <span class="hljs-attr">cta</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;button&quot;</span>&gt;</span>Choose Item<span class="hljs-tag">&lt;/<span class="hljs-name">ef-button</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span> <span class="hljs-attr">with-backdrop</span> <span class="hljs-attr">no-cancel-on-outside-click</span>&gt;</span>...<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> button = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;button&apos;</span>);
+<span class="hljs-keyword">var</span> menu = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;menu&apos;</span>);
+
+button.addEventListener(<span class="hljs-string">&apos;click&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params"></span>) </span>{
+  <span class="hljs-keyword">if</span> (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    <span class="hljs-comment">// position at the top right corner of the button</span>
+    menu.positionTarget = button;
+    menu.position = [<span class="hljs-string">&apos;right-start&apos;</span>];
+    menu.opened = <span class="hljs-literal">true</span>;
+  }
+});</code></pre>
+            <h2 id="loading-from-data">Loading from data</h2>
+            <p><code>ef-overlay-menu</code> can be populated using the <code>data</code> property. <code>data</code> fields have the same names as properties in <code>ef-item</code>. Use the <code>items</code> collection to create sub-menus.</p>
+            <p>Alternatively, you can set <code>data</code> using a <a href="../more-resources/collection-composer.html">CollectionComposer</a>, which is useful when you need a rich API to manage data externally.</p>
+
+            <div class="pandora-code-viewer" id="pid-172">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+
+menu.data = [{
+  type: &apos;header&apos;,
+  label: &apos;Regions&apos;
+}, {
+  icon: &apos;flame&apos;,
+  label: &apos;EMEA&apos;,
+  items: [{
+    label: &apos;Spain&apos;
+  }, {
+    label: &apos;France&apos;,
+    disabled: true
+  }, {
+    label: &apos;Italy&apos;
+  }, {
+    label: &apos;United Kingdom&apos;
+  }]
+}, {
+  type: &apos;divider&apos;
+}, {
+  label: &apos;APAC&apos;
+}];
+
+menu.positionTarget = button;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 165px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-keyword">var</span> menu = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;menu&apos;</span>);
+
+menu.data = [{
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;header&apos;</span>,
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Regions&apos;</span>
+}, {
+  <span class="hljs-attr">icon</span>: <span class="hljs-string">&apos;flame&apos;</span>,
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;EMEA&apos;</span>,
+  <span class="hljs-attr">items</span>: [{
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Spain&apos;</span>
+  }, {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;France&apos;</span>,
+    <span class="hljs-attr">disabled</span>: <span class="hljs-literal">true</span>
+  }, {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;Italy&apos;</span>
+  }, {
+    <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;United Kingdom&apos;</span>
+  }]
+}, {
+  <span class="hljs-attr">type</span>: <span class="hljs-string">&apos;divider&apos;</span>
+}, {
+  <span class="hljs-attr">label</span>: <span class="hljs-string">&apos;APAC&apos;</span>
+}];</code></pre>
+            <h2 id="data-property-interface">Data property interface</h2>
+            <p>The <code>data</code> property of the <code>ef-overlay-menu</code> use the <code>OverlayMenuData</code> interface for its data items which is described below.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Name</th>
+                  <th>Type</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>label</td>
+                  <td>string</td>
+                  <td>Item&apos;s label</td>
+                </tr>
+                <tr>
+                  <td>value</td>
+                  <td>string</td>
+                  <td>Value of an item</td>
+                </tr>
+                <tr>
+                  <td>type</td>
+                  <td>string</td>
+                  <td>Type of item. Value can be <code>text</code>, <code>header</code>, <code>divider</code></td>
+                </tr>
+                <tr>
+                  <td>icon</td>
+                  <td>string</td>
+                  <td>Set the icon name from the coral-icon list</td>
+                </tr>
+                <tr>
+                  <td>items</td>
+                  <td>array</td>
+                  <td>Child items collection</td>
+                </tr>
+                <tr>
+                  <td>readonly</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be readonly</td>
+                </tr>
+                <tr>
+                  <td>disabled</td>
+                  <td>boolean</td>
+                  <td>Sets the item to be disabled</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 id="managing-selection">Managing selection</h2>
+            <p><code>ef-overlay-menu</code> does not manage the selected state. Instead, the developer decides the selection model by changing the <code>selected</code> attribute on menu items. Furthermore, the developer may use the <code>values</code> getter and setter to manipulate selected items across a menu and all of its sub-menus.</p>
+
+            <div class="pandora-code-viewer" id="pid-173">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;emea&quot; for=&quot;emea&quot; selected&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;apac&quot; for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item value=&quot;spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;france&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;united-kingdom&quot; for=&quot;united-kingdom&quot; selected&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item value=&quot;cardiff&quot;&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;edinburgh&quot;&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;london&quot; selected&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item value=&quot;china&quot;&gt;China&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;australia&quot;&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+var menuController = menu.parentElement;
+menu.positionTarget = button;
+
+var getItemDescendants = function(item) {
+  var descendants = [];
+  while (item) {
+    descendants.unshift(item);
+    item = item.parentElement &amp;&amp; item.parentElement.id ?
+      menuController.querySelector(&apos;ef-item[for=&apos; + item.parentElement.id + &apos;]&apos;) :
+      null;
+  }
+
+  return descendants;
+};
+
+menuController.addEventListener(&apos;item-trigger&apos;, function(e) {
+  var selectedPath = getItemDescendants(e.target);
+  menu.values = selectedPath.map(function(item) {
+    return item.value;
+  });
+});
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 200px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-keyword">var</span> menuController = menu.parentElement;
+
+<span class="hljs-keyword">var</span> getItemDescendants = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+  <span class="hljs-keyword">var</span> descendants = [];
+  <span class="hljs-keyword">while</span> (item) {
+    descendants.unshift(item);
+    item = item.parentElement &amp;&amp; item.parentElement.id
+      ? menuController.querySelector(<span class="hljs-string">&apos;ef-item[for=&apos;</span> + item.parentElement.id + <span class="hljs-string">&apos;]&apos;</span>)
+      : <span class="hljs-literal">null</span>;
+    }
+
+  <span class="hljs-keyword">return</span> descendants;
+};
+
+menuController.addEventListener(<span class="hljs-string">&apos;item-trigger&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
+  <span class="hljs-keyword">var</span> selectedPath = getItemDescendants(e.target);
+  menu.values = selectedPath.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">item</span>) </span>{
+    <span class="hljs-keyword">return</span> item.value;
+  });
+});</code></pre>
+            <h2 id="overlay-transitions">Overlay Transitions</h2>
+            <p><code>ef-overlay-menu</code> supports a number of built-in transitions. To set the transition, use the <code>transition-style</code> attribute.</p>
+
+            <div class="pandora-code-viewer" id="pid-174">
+              <div class="pandora-viewer-container">
+                <div class="pandora-viewer"></div>
+              </div>
+              <div class="pandora-code-menu">
+                <div class="pandora-toolbar">
+                  <ul>
+                    <li class="pandora-tab-selected" data-toggle="tab-html">HTML</li>
+                    <li data-toggle="tab-js">JS</li>
+                    <li data-toggle="tab-css">CSS</li>
+                  </ul>
+                </div>
+                <div class="pandora-command-panels">
+                  <label title="Toggle&#xA0;Theme" class="action-icon-toggle menu-theme-toggle">
+                    <input type="checkbox" name="theme-toggle" value="light" data-on="dark" data-off="light">
+                    <div class="switch"></div>
+
+                  </label>
+
+                  <button class="live-code-btn" title="Show the source">&lt;/&gt;</button>
+                </div>
+              </div>
+              <div class="pandora-code-view">
+                <div class="pandora-tab-container">
+                  <pre class="pandora-tab-view tab-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;With Transitions&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;</pre>
+                  <pre class="pandora-tab-view tab-js">var button = document.getElementById(&apos;button&apos;);
+var menu = document.getElementById(&apos;menu&apos;);
+menu.positionTarget = button;
+
+button.addEventListener(&apos;click&apos;, function() {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});</pre>
+                  <pre class="pandora-tab-view tab-css">section {
+  height: 200px;
+  padding: 0 3px;
+}</pre>
+                  <div class="pandora-console"></div>
+                </div>
+              </div>
+              <link rel="prefetch" href="../resources/scripts/demo.js" type="script">
+              <link rel="prefetch" href="../resources/styles/demo.css" type="style">
+              <link rel="prefetch" href="../resources/scripts/custom-style.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js" type="script">
+              <link rel="prefetch" href="../bundles/components.js.map" type="document">
+              <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
+              <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
+            </div>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;menu&quot;</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">type</span>=<span class="hljs-string">&quot;header&quot;</span>&gt;</span>Regions<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;emea&quot;</span>&gt;</span>EMEA<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;apac&quot;</span>&gt;</span>APAC<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;emea&quot;</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Spain<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">disabled</span>&gt;</span>France<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span> <span class="hljs-attr">for</span>=<span class="hljs-string">&quot;united-kingdom&quot;</span>&gt;</span>United Kingdom<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;united-kingdom&quot;</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Cardiff<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Edinburgh<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>London<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span>
+<span class="hljs-tag">&lt;<span class="hljs-name">ef-overlay-menu</span> <span class="hljs-attr">id</span>=<span class="hljs-string">&quot;apac&quot;</span> <span class="hljs-attr">transition-style</span>=<span class="hljs-string">&quot;slide&quot;</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>China<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+  <span class="hljs-tag">&lt;<span class="hljs-name">ef-item</span>&gt;</span>Australia<span class="hljs-tag">&lt;/<span class="hljs-name">ef-item</span>&gt;</span>
+<span class="hljs-tag">&lt;/<span class="hljs-name">ef-overlay-menu</span>&gt;</span></code></pre>
+            <h2 id="position-against-target">Position against target</h2>
+            <p>Position may contain a single word or a comma separated list to set the priority. Position is not applied if <code>attachTarget</code> is not HTML Element. For instance:</p>
+            <ul>
+              <li><code>[bottom-middle, top-middle]</code> default position is bottom-middle, if cannot fit position top-middle.</li>
+              <li><code>[left, right]</code> the align is not set, set best position on the left or right.</li>
+            </ul>
+            <pre><code>menu.position = [<span class="hljs-string">&apos;bottom-end&apos;</span>, <span class="hljs-string">&apos;bottom-start&apos;</span>, <span class="hljs-string">&apos;right-end&apos;</span>, <span class="hljs-string">&apos;center-middle&apos;</span>];</code></pre>
+            <p>The first part defines <em>position</em>. The optional second part defines <em>align</em>. For instance: <code>bottom</code>, <code>top-start</code>, <code>right-middle</code>.</p>
+            <table>
+              <thead>
+                <tr>
+                  <th>Position</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>top</code></td>
+                  <td>Above target (same as <code>top-start</code>)</td>
+                </tr>
+                <tr>
+                  <td><code>right</code></td>
+                  <td>After target (same as <code>right-middle</code>)</td>
+                </tr>
+                <tr>
+                  <td><code>bottom</code></td>
+                  <td>Below target (same as <code>bottom-start</code>)</td>
+                </tr>
+                <tr>
+                  <td><code>left</code></td>
+                  <td>Before target (same as <code>left-middle</code>)</td>
+                </tr>
+                <tr>
+                  <td><code>center</code></td>
+                  <td>At the center of target (same as <code>center-middle</code>)</td>
+                </tr>
+              </tbody>
+            </table>
+            <table>
+              <thead>
+                <tr>
+                  <th>Align</th>
+                  <th>Description</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><code>start</code></td>
+                  <td>Target is aligned at the start of popup</td>
+                </tr>
+                <tr>
+                  <td><code>middle</code></td>
+                  <td>Target is aligned at the middle of popup</td>
+                </tr>
+                <tr>
+                  <td><code>end</code></td>
+                  <td>Target is aligned at the end of popup</td>
+                </tr>
+              </tbody>
+            </table>
+            <div id="elf-docs-api">
+              <div class="elf-docs-api-break"></div>
+              <h2>API Reference</h2>
+              <h3>Attributes</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">compact</div>
+                <div class="desc">Switch to compact style menu</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">True if the menu is currently displayed</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Returns the first selected item value.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">x</div>
+                <div class="desc">Set a specific x coordinate</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">y</div>
+                <div class="desc">Set a specific y coordinate</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">offset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the vertical or horizontal axis. The offset is applied dynamically depending on the `positionTarget`</div>
+              </div>
+              <div class="api-item">
+                <div class="type">{} | undefined</div>
+                <div class="name">position</div>
+                <div class="desc">Set position and align against the attach target.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">with-backdrop</div>
+                <div class="desc">True to show backdrop</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-cancel-on-esc-key</div>
+                <div class="desc">Set to true to disable canceling the overlay with the ESC key</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-cancel-on-outside-click</div>
+                <div class="desc">Set to true to disable canceling the overlay by clicking outside it</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">lock-position-target</div>
+                <div class="desc">Set to true to lock position target</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">transition-style</div>
+                <div class="desc">Set the transition style</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">horizontal-offset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the horizontal axis. The offset will be applied either to the `left` or `right` depending on the `positionTarget`</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">vertical-offset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the vertical axis. The offset will be applied either to the `top` or `bottom` depending on the `positionTarget`</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">compact</div>
+                <div class="desc">Switch to compact style menu</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string[]</div>
+                <div class="name">values</div>
+                <div class="desc">Array of item&apos;s values</div>
+              </div>
+              <div class="api-item">
+                <div class="name">data</div>
+                <div class="desc">Construct the menu from data object.
+                  Cannot be used with internal content</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">opened</div>
+                <div class="desc">True if the menu is currently displayed</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">withBackdrop</div>
+                <div class="desc">True to show backdrop</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noCancelOnEscKey</div>
+                <div class="desc">Set to true to disable canceling the overlay with the ESC key</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">noCancelOnOutsideClick</div>
+                <div class="desc">Set to true to disable canceling the overlay by clicking outside it</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">lockPositionTarget</div>
+                <div class="desc">Set to true to lock position target</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">HTMLElement|null</div>
+                <div class="name">positionTarget</div>
+                <div class="desc">Position next to the HTML element</div>
+                <div class="value">&quot;null&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string|null</div>
+                <div class="name">transitionStyle</div>
+                <div class="desc">Set the transition style</div>
+                <div class="value">&quot;null&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Returns the first selected item value.</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">x</div>
+                <div class="desc">Set a specific x coordinate</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">y</div>
+                <div class="desc">Set a specific y coordinate</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">horizontalOffset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the horizontal axis. The offset will be applied either to the `left` or `right` depending on the `positionTarget`</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">verticalOffset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the vertical axis. The offset will be applied either to the `top` or `bottom` depending on the `positionTarget`</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">offset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the vertical or horizontal axis. The offset is applied dynamically depending on the `positionTarget`</div>
+              </div>
+              <div class="api-item">
+                <div class="type">{} | undefined</div>
+                <div class="name">position</div>
+                <div class="desc">Set position and align against the attach target.</div>
+              </div>
+              <h3>Events</h3>
+              <div class="api-item">
+                <div class="name">item-trigger</div>
+                <div class="desc">Dispatched when user clicks on item</div>
+              </div>
+              <div class="api-item">
+                <div class="name">opened-changed</div>
+                <div class="desc">Dispatched when when opened attribute changes internally. Prevent default to stop opening/closing pipeline</div>
+              </div>
+            </div>
+
+          </pandora-page>
+        </div>
+      </div>
+      <div class="results">
+        <div class="results-header header-container">
+          <div class="search-container">
+            <div class="search-wrapper">
+              <input placeholder="Type to search...">
+            </div>
+            <button class="clear-input"></button>
+          </div>
+          <button class="close-search">
+            <div class="arrow-icon right-arrow"></div>
+          </button>
+        </div>
+        <div class="results-body"></div>
+        <div class="results-placeholder is-visible"></div>
+      </div>
+    </div>
+  </pandora-book>
+</body>
+
+</html>
