@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="0d20b0cd-7cb7-43f3-b471-ae2efe9af4d6">
+        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -555,8 +555,8 @@ ef-clock {
             <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-clock</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 2vw;&quot;</span> <span class="hljs-attr">am-pm</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-clock</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ef-clock</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 5vw;&quot;</span> <span class="hljs-attr">am-pm</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-clock</span>&gt;</span>
 <span class="hljs-tag">&lt;<span class="hljs-name">ef-clock</span> <span class="hljs-attr">style</span>=<span class="hljs-string">&quot;font-size: 10vw;&quot;</span> <span class="hljs-attr">am-pm</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-clock</span>&gt;</span></code></pre>
-            <h2 id="analogue-beta-">Analogue (Beta)</h2>
-            <p>Analogue display is currently in beta.</p>
+            <h2 id="analogue">Analogue</h2>
+            <p>Set <code>analogue</code> attribute will change digital clock to analogue display. When the size of analogue clock is smaller than the break point, It will switch to a simple clock face.</p>
 
             <div class="pandora-code-viewer" id="pid-251">
               <div class="pandora-viewer-container">
@@ -582,9 +582,25 @@ ef-clock {
               </div>
               <div class="pandora-code-view">
                 <div class="pandora-tab-container">
-                  <pre class="pandora-tab-view tab-html">&lt;ef-clock analogue tick show-seconds&gt;&lt;/ef-clock&gt;</pre>
+                  <pre class="pandora-tab-view tab-html">&lt;div&gt;
+  &lt;ef-clock analogue tick show-seconds am-pm&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock id=&quot;smallSize&quot; analogue tick show-seconds am-pm&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;</pre>
                   <pre class="pandora-tab-view tab-js"></pre>
-                  <pre class="pandora-tab-view tab-css"></pre>
+                  <pre class="pandora-tab-view tab-css">div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+ef-clock {
+  margin: 0px 20px;
+}
+
+#smallSize {
+  width: 64px;
+  height: 64px;
+}</pre>
                   <div class="pandora-console"></div>
                 </div>
               </div>
@@ -596,7 +612,7 @@ ef-clock {
               <link rel="prefetch" href="../resources/scripts/theme-loader.js" type="script">
               <link rel="prefetch" href="../resources/scripts/theme-switcher.js" type="script">
             </div>
-            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-clock</span> <span class="hljs-attr">analogue</span> <span class="hljs-attr">tick</span> <span class="hljs-attr">show-seconds</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-clock</span>&gt;</span></code></pre>
+            <pre><code><span class="hljs-tag">&lt;<span class="hljs-name">ef-clock</span> <span class="hljs-attr">analogue</span> <span class="hljs-attr">tick</span> <span class="hljs-attr">show-seconds</span> <span class="hljs-attr">am-pm</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">ef-clock</span>&gt;</span></code></pre>
             <div id="elf-docs-api">
               <div class="elf-docs-api-break"></div>
               <h2>API Reference</h2>
