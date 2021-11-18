@@ -12,6 +12,7 @@ import { customElement } from '@refinitiv-ui/core/lib/decorators/custom-element.
 import { property } from '@refinitiv-ui/core/lib/decorators/property.js';
 import { state } from '@refinitiv-ui/core/lib/decorators/state.js';
 import { query } from '@refinitiv-ui/core/lib/decorators/query.js';
+import { DirectiveResult } from 'lit/directive.js';
 import { VERSION } from '../version.js';
 import '../button/index.js';
 import '../button-bar/index.js';
@@ -19,10 +20,12 @@ import '../layout/index.js';
 import '../text-field/index.js';
 import type { Button } from '../button';
 import type { TextField } from '../text-field';
+import type { FocusedChangedEvent } from '../events';
 import '@refinitiv-ui/phrasebook/lib/locale/en/pagination.js';
 import { translate, Translate } from '@refinitiv-ui/translate';
 
 const pageDeprecation = new DeprecationNotice('Property `page` is deprecated, use `value` instead.');
+const pageSizeDeprecation = new DeprecationNotice('Property `pageSize ` is deprecated, use `max` instead.');
 const totalItemsDeprecation = new DeprecationNotice('Property `totalItems ` is deprecated, use `max` instead.');
 
 /**
@@ -57,34 +60,134 @@ export class Pagination extends BasicElement {
   }
 
   /**
-   * current page
+   * Current page internal value
+   */
+  private _value = '';
+
+  /**
+   * Get current page value
+   */
+  @property({ type: String })
+  public get value (): string {
+    return this._value;
+  }
+
+  /**
+   * Set current page value
+   * @param {String} value - current page
+   */
+  public set value (value: string) {
+    const newValue = this.validateInteger(value, 'value');
+    const oldValue = this._value;
+    if (oldValue !== newValue) {
+      this._value = newValue;
+    }
+    this.requestUpdate('value', oldValue);
+  }
+
+  /**
+   * Get internal value
+   * @returns number
+   */
+  private get internalValue (): number {
+    return parseInt(this.value, 10) || 1;
+  }
+
+  /**
+   * Max page
+   */
+  protected _max = '';
+
+  /**
+   * Get max page
+   */
+  @property({ type: String })
+  public get max (): string {
+    return this._max;
+  }
+
+  /**
+  * Set max page
+  * @param {String} value max page
+  */
+  public set max (value: string) {
+    const newValue = this.validateInteger(value, 'max');
+    const oldValue = this._max;
+    if (oldValue !== newValue) {
+      this._max = newValue;
+    }
+    this.requestUpdate('max', oldValue);
+  }
+
+  /**
+   * Get internal max
+   * @returns number
+   */
+  private get internalMax (): number {
+    return parseInt(this.max, 10);
+  }
+
+  /**
+   * Current page
    * @deprecated
    * @ignore
    */
   @property({ type: String })
   public get page (): string {
-    return this.value;
-  }
-  /**
-   * @ignore
-   * @param {String} value - Set current page
-   */
-  public set page (value: string) {
-    pageDeprecation.once();
-    this.value = value;
+    return this._value;
   }
 
   /**
    * Set current page
+   * @deprecated
+   * @ignore
+   * @param {String} value - Set current page
    */
-  @property({ type: String })
-  public value = '1';
+  public set page (value: string) {
+    pageDeprecation.show();
+    const newValue = this.validateInteger(value, 'page');
+    const oldValue = this._value;
+    if (oldValue !== newValue) {
+      this._value = newValue;
+    }
+    this.requestUpdate('page', oldValue);
+  }
+
+  /**
+   * Number of item per page internal value
+   */
+  private _pageSize = '10';
 
   /**
    * Number of item per page
+   * @deprecated
+   * @ignore
    */
   @property({ type: String, attribute: 'page-size' })
-  public pageSize = '10';
+  public get pageSize (): string {
+    return this._pageSize;
+  }
+
+  /**
+   * Set number of item per page
+   * @deprecated
+   * @ignore
+   * @param {String} value - number of item per page
+   */
+  public set pageSize (value: string) {
+    pageSizeDeprecation.show();
+    const newValue = this.validateInteger(value, 'page-size');
+    const oldValue = this._pageSize;
+    if (oldValue !== newValue) {
+      this._pageSize = newValue;
+    }
+    this.requestUpdate('pageSize', oldValue);
+  }
+
+  /**
+   * Total items internal value
+   */
+  private _totalItems = '10';
 
   /**
    * Total items
@@ -93,22 +196,23 @@ export class Pagination extends BasicElement {
    */
   @property({ type: String, attribute: 'total-items' })
   public get totalItems (): string {
-    return this.max;
-  }
-  /**
-  * @ignore
-  * @param {String} value - Set total items
-  */
-  public set totalItems (value: string) {
-    totalItemsDeprecation.once();
-    this.max = value;
+    return this._totalItems;
   }
 
   /**
-   * Max
+   * Set total items
+   * @ignore
+   * @param {String} value - total items
    */
-  @property({ type: String })
-  public max = '';
+  public set totalItems (value: string) {
+    totalItemsDeprecation.show();
+    const newValue = this.validateInteger(value, 'total-items');
+    const oldValue = this._totalItems;
+    if (oldValue !== newValue) {
+      this._totalItems = newValue;
+    }
+    this.requestUpdate('totalItems', oldValue);
+  }
 
   /**
    * Set state to disable
@@ -120,36 +224,36 @@ export class Pagination extends BasicElement {
    * Get infinite pagination state
    */
   private get infinitePaginate (): boolean {
-    return !this.max || Number.parseInt(this.max, 10) <= 0;
+    return !this.max && !this.totalItems || this.internalMax <= 0;
   }
 
   /**
-    * Getter for text field as input part
-    */
+   * Getter for text field as input part
+   */
   @query('#input')
   private input!: TextField;
 
   /**
-    * Getter for first button as first part
-    */
+   * Getter for first button as first part
+   */
   @query('#first')
   private firstPageButton!: Button;
 
   /**
-    * Getter for previous button as previous part
-    */
+   * Getter for previous button as previous part
+   */
   @query('#previous')
   private previousPageButton!: Button;
 
   /**
-  * Getter for next button as next part
-  */
+   * Getter for next button as next part
+   */
   @query('#next')
   private nextPageButton!: Button;
 
   /**
-  * Getter for last button as last part
-  */
+   * Getter for last button as last part
+   */
   @query('#last')
   private lastPageButton!: Button;
 
@@ -160,10 +264,25 @@ export class Pagination extends BasicElement {
   protected t!: Translate;
 
   /**
+   * State for check the input focus
+   */
+  @state()
+  private inputFocused = false;
+
+  /**
    * State for check the input is editing
    */
   @state()
   private inputEditing = false;
+
+  protected get inputText ():string | DirectiveResult {
+    if (this.inputFocused) {
+      return this.internalValue;
+    }
+    else {
+      return this.infinitePaginate ? this.t('PAGE', { page: this.internalValue }) : this.t('PAGE_OF', { page: this.internalValue, pageTotal: this.totalPage });
+    }
+  }
 
   /**
    * Invoked whenever the element is updated
@@ -175,16 +294,25 @@ export class Pagination extends BasicElement {
     if (changedProperties.has('disabled')) {
       this.disabledChanged();
     }
+
     if (changedProperties.has('value')) {
-      const previousPage = changedProperties.get('value') as string;
-      this.value = this.validatePage(previousPage, this.value);
       this.updateButtons();
     }
+
+    if (changedProperties.has('max')) {
+      this.maxChanged();
+    }
+
     if (changedProperties.has('pageSize')) {
       this.pageSizeChanged();
     }
-    if (changedProperties.has('max')) {
-      this.maxChanged();
+
+    if (changedProperties.has('totalItems')) {
+      this.totalItemsChanged();
+    }
+
+    if (this.inputFocused && changedProperties.has('inputFocused')) {
+      void this.selectInput();
     }
   }
 
@@ -193,7 +321,11 @@ export class Pagination extends BasicElement {
    * @returns {void}
    */
   private pageSizeChanged (): void {
-    const value = Number.parseInt(this.value, 10);
+    if (this.internalMax >= 1) {
+      return;
+    }
+
+    const value = this.internalValue;
     const pageSize = Number.parseInt(this.pageSize, 10);
 
     // page must have at least 1 item
@@ -211,14 +343,37 @@ export class Pagination extends BasicElement {
    * @returns {void}
    */
   private maxChanged (): void {
-    const value = Number.parseInt(this.value, 10);
-    const max = Number.parseInt(this.max, 10);
-    // handle if someone doesn't know how to count
-    if (max < 1) {
-      this.max = '0';
+    const value = this.internalValue;
+    const max = this.internalMax;
+    // Validate max value
+    if (max <= 0) {
+      this.max = '';
       this.value = '1';
     }
     else if (value > this.totalPage) {
+      this.value = this.totalPage.toString();
+    }
+    this.updateButtons();
+  }
+
+  /**
+   * Handle when total-items property changed
+   * @returns {void}
+   */
+  private totalItemsChanged (): void {
+
+    if (this.internalMax >= 1) {
+      return;
+    }
+
+    const page = this.internalValue;
+    const totalItems = Number.parseInt(this.totalItems, 10);
+    // Validate total items value
+    if (totalItems < 1) {
+      this.totalItems = '';
+      this.value = '1';
+    }
+    else if (page > this.totalPage) {
       this.value = this.totalPage.toString();
     }
     this.updateButtons();
@@ -242,7 +397,7 @@ export class Pagination extends BasicElement {
    * @returns {void}
    */
   private updateButtons (): void {
-    const value = Number.parseInt(this.value, 10);
+    const value = this.internalValue;
     const firstPage = this.disabled || value <= 1;
     const nextPage = this.disabled || value >= this.totalPage;
     const lastPage = nextPage || this.infinitePaginate;
@@ -259,15 +414,19 @@ export class Pagination extends BasicElement {
    * @returns {number} Number of total page
    */
   private get totalPage (): number {
+    const max = this.internalMax;
     const pageSize = Number.parseInt(this.pageSize, 10);
-    const max = Number.parseInt(this.max, 10);
+    const totalItems = Number.parseInt(this.totalItems, 10);
 
-    if (!max) {
+    if (!max && !totalItems) {
       return Infinity;
+    }
+    else if (max >= 1) {
+      return max;
     }
 
     if (pageSize > 0) {
-      const totalPage = Math.ceil(max / pageSize);
+      const totalPage = Math.ceil(totalItems / pageSize);
       return totalPage > 0 ? totalPage : 1;
     }
 
@@ -298,29 +457,13 @@ export class Pagination extends BasicElement {
     return value.toString();
   }
 
-  /**
-   * Handle input page selection when input has a click or focus
-   * @returns {void}
-   */
-  private handleInputPageSelection (): void {
-    this.inputEditing = true;
-    setTimeout(() => {
-      this.input.select();
-    });
-  }
-
-  /**
-   * Handle when input lost focus
-   * @param event Event object
-   * @returns {void}
-   */
-  private onInputBlur (event: {target: HTMLInputElement}): void {
-    const oldPageValue = this.value;
-    this.value = this.validatePage(this.value, event.target.value);
-    this.inputEditing = false;
-
-    if (this.value !== oldPageValue) {
-      this.notifyValueChange();
+  private validateInteger (value: string, propName: string): string {
+    if (value === '' || (/^[1-9]([0-9]+)?$/).test(value)) {
+      return value;
+    }
+    else {
+      new WarningNotice(`${this.localName} : The specified value "${value}" of ${propName} property is not valid, value must be integer and greater than 0 Default value will be used instead.`).show();
+      return '';
     }
   }
 
@@ -331,6 +474,16 @@ export class Pagination extends BasicElement {
    */
   private onInputKeyDown (event: KeyboardEvent): void {
     if (event.key === 'Enter' || event.keyCode === 13) {
+
+      const oldPageValue = this.value;
+      this.value = this.validatePage(this.value, this.input.value);
+      this.input.blur();
+      event.preventDefault();
+      if (this.value !== oldPageValue) {
+        this.notifyValueChange();
+      }
+
+
       /*
       * Issue only in firefox
       * cannot blur() or focus() to this.input
@@ -345,6 +498,15 @@ export class Pagination extends BasicElement {
     }
   }
 
+  private onInputFocusedChanged (event: FocusedChangedEvent): void {
+    this.inputFocused = event.detail.value;
+  }
+
+  async selectInput (): Promise<void> {
+    await this.updateComplete;
+    this.input.select();
+  }
+
   /**
    * Updates page value depending on direction
    * @param direction page value direction
@@ -352,12 +514,11 @@ export class Pagination extends BasicElement {
    * @returns {void}
    */
   private updatePage (direction: 'increment' | 'decrement', event = false): void {
-    const value = parseInt(this.value, 10);
-    const limit = direction === 'increment' ? value < this.totalPage : value > 1;
+    const page = this.internalValue;
+    const limit = direction === 'increment' ? page < this.totalPage : page > 1;
 
     if (limit) {
-      this.value = direction === 'increment' ? (value + 1).toString() : (value - 1).toString();
-
+      this.value = direction === 'increment' ? (page + 1).toString() : (page - 1).toString();
       if (event) {
         this.notifyValueChange();
       }
@@ -433,7 +594,7 @@ export class Pagination extends BasicElement {
    * @returns {void}
    */
   public last (): void {
-    if (!this.max) {
+    if (!this.max && !this.totalItems) {
       new WarningNotice(`${this.localName}: Method "last()" does not support, when the element does not have "max" attribute/property.`).show();
       return;
     }
@@ -456,13 +617,6 @@ export class Pagination extends BasicElement {
    * @return {TemplateResult} Render template
    */
   protected render (): TemplateResult {
-    let inputValue;
-    if (this.inputEditing) {
-      inputValue = this.value;
-    }
-    else {
-      inputValue = this.infinitePaginate ? this.t('PAGE', { page: this.value }) : this.t('PAGE_OF', { page: this.value, pageTotal: this.totalPage });
-    }
     return html`
       <ef-layout part="container" flex nowrap>
         <ef-button-bar part="buttons">
@@ -472,10 +626,9 @@ export class Pagination extends BasicElement {
         <ef-text-field
           id="input"
           part="input"
-          @focus=${this.handleInputPageSelection}
-          @blur="${this.onInputBlur}"
+          @focused-changed="${this.onInputFocusedChanged}"
           @keydown="${this.onInputKeyDown}"
-          .value=${inputValue}
+          .value=${this.inputText}
           no-spinner></ef-text-field>
         <ef-button-bar part="buttons">
           <ef-button id="next" icon="right" @tap="${this.onNextTap}"></ef-button>
