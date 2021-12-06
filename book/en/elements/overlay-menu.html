@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -1093,19 +1093,54 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="desc">True if the menu is currently displayed</div>
               </div>
               <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">with-backdrop</div>
+                <div class="desc">True to show backdrop</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-cancel-on-esc-key</div>
+                <div class="desc">Set to true to disable canceling the overlay with the ESC key</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">no-cancel-on-outside-click</div>
+                <div class="desc">Set to true to disable canceling the overlay by clicking outside it</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">lock-position-target</div>
+                <div class="desc">Set to true to lock position target</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">transition-style</div>
+                <div class="desc">Set the transition style</div>
+              </div>
+              <div class="api-item">
                 <div class="type">string</div>
                 <div class="name">value</div>
                 <div class="desc">Returns the first selected item value.</div>
               </div>
               <div class="api-item">
-                <div class="type">number</div>
+                <div class="type">number | undefined</div>
                 <div class="name">x</div>
                 <div class="desc">Set a specific x coordinate</div>
               </div>
               <div class="api-item">
-                <div class="type">number</div>
+                <div class="type">number | undefined</div>
                 <div class="name">y</div>
                 <div class="desc">Set a specific y coordinate</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">horizontal-offset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the horizontal axis. The offset will be applied either to the `left` or `right` depending on the `positionTarget`</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">vertical-offset</div>
+                <div class="desc">A pixel value that will be added to the position calculated on the vertical axis. The offset will be applied either to the `top` or `bottom` depending on the `positionTarget`</div>
               </div>
               <div class="api-item">
                 <div class="type">number</div>
@@ -1113,7 +1148,7 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="desc">A pixel value that will be added to the position calculated on the vertical or horizontal axis. The offset is applied dynamically depending on the `positionTarget`</div>
               </div>
               <div class="api-item">
-                <div class="type">{} | undefined</div>
+                <div class="type">Position[] | undefined</div>
                 <div class="name">position</div>
                 <div class="desc">Set position and align against the attach target.</div>
               </div>
@@ -1163,8 +1198,10 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="type">string[]</div>
                 <div class="name">values</div>
                 <div class="desc">Array of item&apos;s values</div>
+                <div class="value">[]</div>
               </div>
               <div class="api-item">
+                <div class="type">OverlayMenuData|undefined</div>
                 <div class="name">data</div>
                 <div class="desc">Construct the menu from data object.
                   Cannot be used with internal content</div>
@@ -1200,16 +1237,14 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="value">false</div>
               </div>
               <div class="api-item">
-                <div class="type">HTMLElement|null</div>
+                <div class="type">HTMLElement | null</div>
                 <div class="name">positionTarget</div>
                 <div class="desc">Position next to the HTML element</div>
-                <div class="value">&quot;null&quot;</div>
               </div>
               <div class="api-item">
-                <div class="type">string|null</div>
+                <div class="type">string | null</div>
                 <div class="name">transitionStyle</div>
                 <div class="desc">Set the transition style</div>
-                <div class="value">&quot;null&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">string</div>
@@ -1218,12 +1253,12 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
-                <div class="type">number</div>
+                <div class="type">number | undefined</div>
                 <div class="name">x</div>
                 <div class="desc">Set a specific x coordinate</div>
               </div>
               <div class="api-item">
-                <div class="type">number</div>
+                <div class="type">number | undefined</div>
                 <div class="name">y</div>
                 <div class="desc">Set a specific y coordinate</div>
               </div>
@@ -1231,11 +1266,13 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="type">number</div>
                 <div class="name">horizontalOffset</div>
                 <div class="desc">A pixel value that will be added to the position calculated on the horizontal axis. The offset will be applied either to the `left` or `right` depending on the `positionTarget`</div>
+                <div class="value">0</div>
               </div>
               <div class="api-item">
                 <div class="type">number</div>
                 <div class="name">verticalOffset</div>
                 <div class="desc">A pixel value that will be added to the position calculated on the vertical axis. The offset will be applied either to the `top` or `bottom` depending on the `positionTarget`</div>
+                <div class="value">0</div>
               </div>
               <div class="api-item">
                 <div class="type">number</div>
@@ -1243,7 +1280,7 @@ button.addEventListener(&apos;click&apos;, function() {
                 <div class="desc">A pixel value that will be added to the position calculated on the vertical or horizontal axis. The offset is applied dynamically depending on the `positionTarget`</div>
               </div>
               <div class="api-item">
-                <div class="type">{} | undefined</div>
+                <div class="type">Position[] | undefined</div>
                 <div class="name">position</div>
                 <div class="desc">Set position and align against the attach target.</div>
               </div>

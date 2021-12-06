@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -2008,6 +2008,16 @@ ef-select {
             <p><strong>footer</strong><br>Footer slot.</p>
             <div id="elf-docs-api">
               <div class="elf-docs-api-break"></div>
+              <h2>Slots</h2>
+              <div class="api-item no-border">
+                <div class="name">header</div>
+                <div class="desc">Slot to add custom contents at the top of autosuggest popup</div>
+              </div>
+              <div class="api-item">
+                <div class="name">footer</div>
+                <div class="desc">Slot to add custom contents at the bottom of autosuggest popup</div>
+              </div>
+              <div class="elf-docs-api-break"></div>
               <h2>API Reference</h2>
               <h3>Attributes</h3>
               <div class="api-item">
@@ -2055,6 +2065,16 @@ ef-select {
               </div>
               <h3>Properties</h3>
               <div class="api-item">
+                <div class="type">100</div>
+                <div class="name">defaultDebounceRate (readonly)</div>
+                <div class="value">100</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;More results for {0}&quot;</div>
+                <div class="name">defaultMoreSearchText (readonly)</div>
+                <div class="value">&quot;More results for {0}&quot;</div>
+              </div>
+              <div class="api-item">
                 <div class="type">AutosuggestTargetElement | string | null</div>
                 <div class="name">attach</div>
                 <div class="desc">An HTML Element or CSS selector</div>
@@ -2075,7 +2095,7 @@ ef-select {
                 <div class="type">string</div>
                 <div class="name">moreSearchText</div>
                 <div class="desc">Custom text for More Search</div>
-                <div class="value">&quot;defaultMoreSearchText&quot;</div>
+                <div class="value">&quot;More results for {0}&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>

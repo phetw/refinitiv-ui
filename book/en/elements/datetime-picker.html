@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -704,6 +704,24 @@ document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, 
             <p><strong>left</strong><br>Left slot.</p>
             <div id="elf-docs-api">
               <div class="elf-docs-api-break"></div>
+              <h2>Slots</h2>
+              <div class="api-item no-border">
+                <div class="name">header</div>
+                <div class="desc">Slot to add custom contents at the top of popup</div>
+              </div>
+              <div class="api-item">
+                <div class="name">right</div>
+                <div class="desc">Slot to add custom contents at the right of popup</div>
+              </div>
+              <div class="api-item">
+                <div class="name">footer</div>
+                <div class="desc">Slot to add custom contents at the bottom of popup</div>
+              </div>
+              <div class="api-item">
+                <div class="name">left</div>
+                <div class="desc">Slot to add custom contents at the left of popup</div>
+              </div>
+              <div class="elf-docs-api-break"></div>
               <h2>API Reference</h2>
               <h3>Attributes</h3>
               <div class="api-item">
@@ -831,11 +849,13 @@ document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, 
                 <div class="type">string</div>
                 <div class="name">min</div>
                 <div class="desc">Set minimum date</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">string</div>
                 <div class="name">max</div>
                 <div class="desc">Set maximum date</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -867,18 +887,16 @@ document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, 
                 <div class="value">false</div>
               </div>
               <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">multiple</div>
-              </div>
-              <div class="api-item">
                 <div class="type">string</div>
                 <div class="name">value</div>
                 <div class="desc">Current date time value</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">string[]</div>
                 <div class="name">values</div>
                 <div class="desc">Set multiple selected values</div>
+                <div class="value">[]</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -897,6 +915,7 @@ document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, 
                 <div class="type">string</div>
                 <div class="name">placeholder</div>
                 <div class="desc">Placeholder to display when no value is set</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -940,6 +959,7 @@ document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, 
                 <div class="name">format</div>
                 <div class="desc">Set the datetime format
                   Based on dane-fns datetime formats</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -957,12 +977,14 @@ document.getElementById(&apos;3-months&apos;).addEventListener(&apos;tap&apos;, 
                 <div class="name">view</div>
                 <div class="desc">Set the current calendar view.
                   Accepted format: &apos;yyyy-MM&apos;</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">string[]</div>
                 <div class="name">views</div>
                 <div class="desc">Set the current calendar views for duplex mode
                   Accepted format: &apos;yyyy-MM&apos;</div>
+                <div class="value">[]</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>

@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -1069,22 +1069,27 @@ overlay.focusBoundary = customElement;</code></pre>
                 <div class="desc">True to apply spacing for overlay content</div>
               </div>
               <div class="api-item">
+                <div class="type">TransitionStyle|null|undefined</div>
                 <div class="name">transition-style</div>
                 <div class="desc">Set the transition style</div>
               </div>
               <div class="api-item">
+                <div class="type">number|null|undefined</div>
                 <div class="name">z-index</div>
                 <div class="desc">Set a preferable z-index to override automatically calculated z-index</div>
               </div>
               <div class="api-item">
+                <div class="type">number|null|undefined</div>
                 <div class="name">x</div>
                 <div class="desc">Set a specific x coordinate</div>
               </div>
               <div class="api-item">
+                <div class="type">number|null|undefined</div>
                 <div class="name">y</div>
                 <div class="desc">Set a specific y coordinate</div>
               </div>
               <div class="api-item">
+                <div class="type">PositionTarget|null|undefined</div>
                 <div class="name">position-target</div>
                 <div class="desc">Set the position target as follows:
                   - HTMLElement if overlay is position next to the HTML element
@@ -1194,22 +1199,27 @@ overlay.focusBoundary = customElement;</code></pre>
                 <div class="value">false</div>
               </div>
               <div class="api-item">
+                <div class="type">TransitionStyle|null|undefined</div>
                 <div class="name">transitionStyle</div>
                 <div class="desc">Set the transition style</div>
               </div>
               <div class="api-item">
+                <div class="type">number|null|undefined</div>
                 <div class="name">zIndex</div>
                 <div class="desc">Set a preferable z-index to override automatically calculated z-index</div>
               </div>
               <div class="api-item">
+                <div class="type">number|null|undefined</div>
                 <div class="name">x</div>
                 <div class="desc">Set a specific x coordinate</div>
               </div>
               <div class="api-item">
+                <div class="type">number|null|undefined</div>
                 <div class="name">y</div>
                 <div class="desc">Set a specific y coordinate</div>
               </div>
               <div class="api-item">
+                <div class="type">PositionTarget|null|undefined</div>
                 <div class="name">positionTarget</div>
                 <div class="desc">Set the position target as follows:<p></p>
                   <ul>
@@ -1305,7 +1315,7 @@ overlay.focusBoundary = customElement;</code></pre>
                 </div>
               </div>
               <div class="api-item">
-                <div class="name">positionTargetConfig</div>
+                <div class="name">positionTargetConfig (readonly)</div>
                 <div class="desc">Get position target configuration based on positionTarget and fullScreen properties<br>Used for caching and calculations</div>
               </div>
               <div class="api-item">
@@ -1315,12 +1325,12 @@ overlay.focusBoundary = customElement;</code></pre>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">fullyOpened</div>
+                <div class="name">fullyOpened (readonly)</div>
                 <div class="desc">Returns true if the overlay is opened and animation is not running.<br>Returns false if overlay is closed and animation is not running</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">transitioning</div>
+                <div class="name">transitioning (readonly)</div>
                 <div class="desc">Returns true if overlay is doing opening or closing transition</div>
               </div>
               <h3>Methods</h3>
@@ -1356,6 +1366,9 @@ overlay.focusBoundary = customElement;</code></pre>
               <div class="api-item">
                 <div class="name">opened-changed</div>
                 <div class="desc">Dispatched when when open attribute changes internally. Prevent default to stop opening/closing pipeline</div>
+              </div>
+              <div class="api-item">
+                <div class="name">animationiteration</div>
               </div>
             </div>
             <p></p>

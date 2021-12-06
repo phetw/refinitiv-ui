@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -1002,6 +1002,7 @@ if (customElements.get(&apos;ef-combo-box&apos;)) {
                 <div class="type">boolean</div>
                 <div class="name">multiple</div>
                 <div class="desc">Multiple selection mode</div>
+                <div class="value">false</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -1025,6 +1026,7 @@ if (customElements.get(&apos;ef-combo-box&apos;)) {
                 <div class="type">boolean</div>
                 <div class="name">freeText</div>
                 <div class="desc">Allow to enter any value</div>
+                <div class="value">false</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -1047,18 +1049,21 @@ if (customElements.get(&apos;ef-combo-box&apos;)) {
                 <div class="type">ComboBoxData&lt;T&gt;</div>
                 <div class="name">data</div>
                 <div class="desc">Data array to be displayed</div>
+                <div class="value">[]</div>
               </div>
               <div class="api-item">
                 <div class="type">string</div>
                 <div class="name">value</div>
                 <div class="desc">Returns the first selected item value.
                   Use `values` when multiple selection mode is enabled.</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">string[]</div>
                 <div class="name">values</div>
                 <div class="desc">Returns a values collection of the currently
                   selected item values</div>
+                <div class="value">[]</div>
               </div>
               <div class="api-item">
                 <div class="type">string | null</div>
@@ -1068,8 +1073,9 @@ if (customElements.get(&apos;ef-combo-box&apos;)) {
               </div>
               <div class="api-item">
                 <div class="type">string</div>
-                <div class="name">label</div>
+                <div class="name">label (readonly)</div>
                 <div class="desc">Label of selected value</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -1087,7 +1093,7 @@ if (customElements.get(&apos;ef-combo-box&apos;)) {
                 <div class="type">string</div>
                 <div class="name">name</div>
                 <div class="desc">Set name of the element</div>
-                <div class="value">&quot;&apos;&apos;&quot;</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <h3>Events</h3>
               <div class="api-item">
@@ -1101,6 +1107,9 @@ if (customElements.get(&apos;ef-combo-box&apos;)) {
               <div class="api-item">
                 <div class="name">opened-changed</div>
                 <div class="desc">Dispatched when opened state changes</div>
+              </div>
+              <div class="api-item">
+                <div class="name">animationiteration</div>
               </div>
             </div>
 

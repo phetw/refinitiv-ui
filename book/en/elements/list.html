@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -418,7 +418,7 @@ el.renderer = <span class="hljs-function"><span class="hljs-keyword">function</s
               <h3>Properties</h3>
               <div class="api-item">
                 <div class="type">false</div>
-                <div class="name">delegatesFocus</div>
+                <div class="name">delegatesFocus (readonly)</div>
                 <div class="desc">Element focus delegation.
                   Set to `false` and relies on native focusing.</div>
                 <div class="value">false</div>
@@ -451,12 +451,14 @@ el.renderer = <span class="hljs-function"><span class="hljs-keyword">function</s
                 <div class="name">value</div>
                 <div class="desc">Returns the first selected item value.
                   Use `values` when multiple selection mode is enabled.</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
-                <div class="type">object</div>
+                <div class="type">string[]</div>
                 <div class="name">values</div>
                 <div class="desc">Returns a values collection of the currently
                   selected item values</div>
+                <div class="value">[]</div>
               </div>
               <h3>Methods</h3>
               <div class="api-item">
@@ -476,7 +478,15 @@ el.renderer = <span class="hljs-function"><span class="hljs-keyword">function</s
               </div>
               <div class="api-item">
                 <div class="name">down()</div>
-                <div class="desc">Navigate up through the list items</div>
+                <div class="desc">Navigate down through the list items</div>
+              </div>
+              <div class="api-item">
+                <div class="name">first()</div>
+                <div class="desc">Navigate to first focusable item of the list</div>
+              </div>
+              <div class="api-item">
+                <div class="name">last()</div>
+                <div class="desc">Navigate to first focusable item of the list</div>
               </div>
               <div class="api-item">
                 <div class="name">scrollToItem(item)</div>

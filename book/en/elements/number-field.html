@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -508,11 +508,6 @@ element.addEventListener(<span class="hljs-string">&apos;error-changed&apos;</sp
               <h2>API Reference</h2>
               <h3>Attributes</h3>
               <div class="api-item">
-                <div class="type">string | null</div>
-                <div class="name">placeholder</div>
-                <div class="desc">Set placeholder text</div>
-              </div>
-              <div class="api-item">
                 <div class="type">boolean</div>
                 <div class="name">no-spinner</div>
                 <div class="desc">Set spinner&apos;s visibility</div>
@@ -536,23 +531,18 @@ element.addEventListener(<span class="hljs-string">&apos;error-changed&apos;</sp
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">transparent</div>
-                <div class="desc">Set state to transparent</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
                 <div class="name">error</div>
-                <div class="desc">Set state to error</div>
-              </div>
-              <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">warning</div>
-                <div class="desc">Set state to warning</div>
+                <div class="desc">Set error state</div>
               </div>
               <div class="api-item">
                 <div class="type">string</div>
-                <div class="name">value</div>
-                <div class="desc">The value of the number entered into the input.</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Set placeholder text</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -561,15 +551,20 @@ element.addEventListener(<span class="hljs-string">&apos;error-changed&apos;</sp
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">disabled</div>
-                <div class="desc">Set disabled state</div>
+                <div class="name">transparent</div>
+                <div class="desc">Disables all other states and border/background styles.</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set warning state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">The value of the number entered into the input.</div>
               </div>
               <h3>Properties</h3>
-              <div class="api-item">
-                <div class="type">string | null</div>
-                <div class="name">placeholder</div>
-                <div class="desc">Set placeholder text</div>
-              </div>
               <div class="api-item">
                 <div class="type">boolean</div>
                 <div class="name">noSpinner</div>
@@ -594,32 +589,38 @@ element.addEventListener(<span class="hljs-string">&apos;error-changed&apos;</sp
                   This value must be greater than or equal to the value of the `min` attribute</div>
               </div>
               <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">valueAsNumber (readonly)</div>
+                <div class="desc">Returns the value of the element, interpreted as double number</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">selectionStart</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number | null</div>
+                <div class="name">selectionEnd</div>
+              </div>
+              <div class="api-item">
+                <div class="type">&quot;forward&quot; | &quot;backward&quot; | &quot;none&quot; | null</div>
+                <div class="name">selectionDirection</div>
+              </div>
+              <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">transparent</div>
-                <div class="desc">Set state to transparent</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
                 <div class="value">false</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
                 <div class="name">error</div>
-                <div class="desc">Set state to error</div>
+                <div class="desc">Set error state</div>
                 <div class="value">false</div>
-              </div>
-              <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">warning</div>
-                <div class="desc">Set state to warning</div>
-                <div class="value">false</div>
-              </div>
-              <div class="api-item">
-                <div class="type">number</div>
-                <div class="name">valueAsNumber</div>
-                <div class="desc">Returns the value of the element, interpreted as double number</div>
               </div>
               <div class="api-item">
                 <div class="type">string</div>
-                <div class="name">value</div>
-                <div class="desc">The value of the number entered into the input.</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Set placeholder text</div>
                 <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
@@ -630,11 +631,43 @@ element.addEventListener(<span class="hljs-string">&apos;error-changed&apos;</sp
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">disabled</div>
-                <div class="desc">Set disabled state</div>
+                <div class="name">transparent</div>
+                <div class="desc">Disables all other states and border/background styles.</div>
                 <div class="value">false</div>
               </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set warning state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">The value of the number entered into the input.</div>
+                <div class="value">&quot;&quot;</div>
+              </div>
               <h3>Methods</h3>
+              <div class="api-item">
+                <div class="name">onInputInput(event)</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">InputEvent</div>
+                    <div class="desc"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="api-item">
+                <div class="name">onInputChange(event)</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">event</div>
+                    <div class="type">InputEvent</div>
+                    <div class="desc"></div>
+                  </div>
+                </div>
+              </div>
               <div class="api-item">
                 <div class="name">stepUp(stepIncrement)</div>
                 <div class="desc">Increases the input value by amount of step</div>
@@ -666,8 +699,24 @@ element.addEventListener(<span class="hljs-string">&apos;error-changed&apos;</sp
                 <div class="desc">Validate input. Mark as error if input is invalid</div>
               </div>
               <div class="api-item">
-                <div class="name">select()</div>
-                <div class="desc">Select the contents of input</div>
+                <div class="name">setSelectionRange(startSelection,endSelection,selectionDirection)</div>
+                <div class="params">
+                  <div class="param">
+                    <div class="name">startSelection</div>
+                    <div class="type"></div>
+                    <div class="desc"></div>
+                  </div>
+                  <div class="param">
+                    <div class="name">endSelection</div>
+                    <div class="type"></div>
+                    <div class="desc"></div>
+                  </div>
+                  <div class="param">
+                    <div class="name">selectionDirection</div>
+                    <div class="type">SelectionDirection</div>
+                    <div class="desc"></div>
+                  </div>
+                </div>
               </div>
               <h3>Events</h3>
               <div class="api-item">

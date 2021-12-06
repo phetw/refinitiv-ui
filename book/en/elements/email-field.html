@@ -34,7 +34,7 @@
             <div class="arrow-icon left-arrow"></div>
           </button>
         </div>
-        <pandora-nav id="27321706-e0e8-41c2-9d05-054d085f4013">
+        <pandora-nav id="7debe5fd-cba3-4c8e-bafd-1e7021b3250d">
           <ul>
             <li parent id="cid-0" collapsible>
               <div collapser>Getting Started</div>
@@ -608,49 +608,22 @@ element.addEventListener(<span class="hljs-string">&quot;icon-click&quot;</span>
               <h2>API Reference</h2>
               <h3>Attributes</h3>
               <div class="api-item">
-                <div class="type">string</div>
-                <div class="name">pattern</div>
-                <div class="desc">Set regular expression for input validation</div>
-              </div>
-              <div class="api-item">
-                <div class="type">string</div>
-                <div class="name">placeholder</div>
-                <div class="desc">Set placeholder text</div>
-              </div>
-              <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">error</div>
-                <div class="desc">Set state to error</div>
-              </div>
-              <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">warning</div>
-                <div class="desc">Set state to warning</div>
-              </div>
-              <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">transparent</div>
-                <div class="desc">Disables all other states and border/background styles.
-                  Use with advanced composite elements requiring e.g. multi selection in
-                  combo-box when parent container handles element states.</div>
-              </div>
-              <div class="api-item">
-                <div class="type">number | null</div>
-                <div class="name">maxlength</div>
-                <div class="desc">Set character max limit</div>
-              </div>
-              <div class="api-item">
-                <div class="type">number | null</div>
-                <div class="name">minlength</div>
-                <div class="desc">Set character min limit</div>
-              </div>
-              <div class="api-item">
                 <div class="type">boolean</div>
                 <div class="name">multiple</div>
                 <div class="desc">Set to multiple mode, allows multiple emails in a single input</div>
               </div>
               <div class="api-item">
-                <div class="type">string</div>
+                <div class="type">boolean</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set error state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
                 <div class="name">icon</div>
                 <div class="desc">Specify icon to display in input. Value can be icon name</div>
               </div>
@@ -661,8 +634,8 @@ element.addEventListener(<span class="hljs-string">&quot;icon-click&quot;</span>
               </div>
               <div class="api-item">
                 <div class="type">string</div>
-                <div class="name">value</div>
-                <div class="desc">Input&apos;s value</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Set placeholder text</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
@@ -671,40 +644,62 @@ element.addEventListener(<span class="hljs-string">&quot;icon-click&quot;</span>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">disabled</div>
-                <div class="desc">Set disabled state</div>
-              </div>
-              <h3>Properties</h3>
-              <div class="api-item">
-                <div class="type">string</div>
-                <div class="name">pattern</div>
-                <div class="desc">Set regular expression for input validation</div>
-                <div class="value">&quot;&quot;</div>
-              </div>
-              <div class="api-item">
-                <div class="type">string</div>
-                <div class="name">placeholder</div>
-                <div class="desc">Set placeholder text</div>
-                <div class="value">&quot;&quot;</div>
-              </div>
-              <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">error</div>
-                <div class="desc">Set state to error</div>
-                <div class="value">false</div>
+                <div class="name">transparent</div>
+                <div class="desc">Disables all other states and border/background styles.</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
                 <div class="name">warning</div>
-                <div class="desc">Set state to warning</div>
+                <div class="desc">Set warning state</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Input&apos;s value</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">icon-has-action</div>
+                <div class="desc">Specify when icon need to be clickable</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">maxlength</div>
+                <div class="desc">Set character max limit</div>
+              </div>
+              <div class="api-item">
+                <div class="type">number</div>
+                <div class="name">minlength</div>
+                <div class="desc">Set character min limit</div>
+              </div>
+              <h3>Properties</h3>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">multiple</div>
+                <div class="desc">Set to multiple mode, allows multiple emails in a single input</div>
                 <div class="value">false</div>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">transparent</div>
-                <div class="desc">Disables all other states and border/background styles.
-                  Use with advanced composite elements requiring e.g. multi selection in
-                  combo-box when parent container handles element states.</div>
+                <div class="name">disabled</div>
+                <div class="desc">Set disabled state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">error</div>
+                <div class="desc">Set error state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string | null</div>
+                <div class="name">icon</div>
+                <div class="desc">Specify icon to display in input. Value can be icon name</div>
+              </div>
+              <div class="api-item">
+                <div class="type">boolean</div>
+                <div class="name">iconHasAction</div>
+                <div class="desc">Specify when icon need to be clickable</div>
                 <div class="value">false</div>
               </div>
               <div class="api-item">
@@ -718,27 +713,15 @@ element.addEventListener(<span class="hljs-string">&quot;icon-click&quot;</span>
                 <div class="desc">Set character min limit</div>
               </div>
               <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">multiple</div>
-                <div class="desc">Set to multiple mode, allows multiple emails in a single input</div>
-                <div class="value">false</div>
-              </div>
-              <div class="api-item">
                 <div class="type">string</div>
-                <div class="name">icon</div>
-                <div class="desc">Specify icon to display in input. Value can be icon name</div>
+                <div class="name">pattern</div>
+                <div class="desc">Set regular expression for input validation</div>
                 <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
-                <div class="type">boolean</div>
-                <div class="name">iconHasAction</div>
-                <div class="desc">Specify when icon need to be clickable</div>
-                <div class="value">false</div>
-              </div>
-              <div class="api-item">
                 <div class="type">string</div>
-                <div class="name">value</div>
-                <div class="desc">Input&apos;s value</div>
+                <div class="name">placeholder</div>
+                <div class="desc">Set placeholder text</div>
                 <div class="value">&quot;&quot;</div>
               </div>
               <div class="api-item">
@@ -749,14 +732,21 @@ element.addEventListener(<span class="hljs-string">&quot;icon-click&quot;</span>
               </div>
               <div class="api-item">
                 <div class="type">boolean</div>
-                <div class="name">disabled</div>
-                <div class="desc">Set disabled state</div>
+                <div class="name">transparent</div>
+                <div class="desc">Disables all other states and border/background styles.</div>
                 <div class="value">false</div>
               </div>
-              <h3>Methods</h3>
               <div class="api-item">
-                <div class="name">select()</div>
-                <div class="desc">Select the contents of input</div>
+                <div class="type">boolean</div>
+                <div class="name">warning</div>
+                <div class="desc">Set warning state</div>
+                <div class="value">false</div>
+              </div>
+              <div class="api-item">
+                <div class="type">string</div>
+                <div class="name">value</div>
+                <div class="desc">Input&apos;s value</div>
+                <div class="value">&quot;&quot;</div>
               </div>
               <h3>Events</h3>
               <div class="api-item">
@@ -769,7 +759,7 @@ element.addEventListener(<span class="hljs-string">&quot;icon-click&quot;</span>
               </div>
               <div class="api-item">
                 <div class="name">icon-click</div>
-                <div class="desc">Dispatched only when element has icon-has-action attribute and icon is clicked</div>
+                <div class="desc">Dispatched when icon is clicked</div>
               </div>
             </div>
 
