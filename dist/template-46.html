@@ -1,0 +1,407 @@
+<h1 id="select">Select</h1>
+<code-sandbox hash="d7783f4"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 250px;
+  padding: 0 3px;
+}
+ef-select {
+  margin-right: 5px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Pick item...&quot; opened&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot;&gt;Honey &amp;amp; Walnut&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+  &lt;ef-select placeholder=&quot;Disabled...&quot; disabled&gt;&lt;/ef-select&gt;
+  &lt;ef-select placeholder=&quot;Default selected...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item selected value=&quot;3&quot;&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot;&gt;Honey &amp;amp; Walnut&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+  &lt;ef-select disabled&gt;
+    &lt;ef-item selected&gt;Lemonade&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><h3 id="usage">Usage</h3>
+<p><code>ef-select</code> expands upon the native <code>select</code> element, providing a fully themeable dropdown element.</p>
+<p>Choices can be defined using <code>ef-item</code>.</p>
+<code-sandbox hash="217757f4"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 155px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Orange Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Iced Tea&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-select&gt;
+  &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;3&quot;&gt;Orange Juice&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;5&quot;&gt;Iced Tea&lt;/ef-item&gt;
+&lt;/ef-select&gt;
+</code></pre>
+<h3 id="data-property-interface">Data property interface</h3>
+<p>The <code>data</code> property of the <code>ef-select</code> use the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/select/helpers/types.ts">SelectData</a> interface for its data items.</p>
+<h3 id="categorize-into-groups">Categorize into groups</h3>
+<p>Groups are also defined using <code>ef-item</code>. The only difference is that we add a <code>type=&quot;header&quot;</code> attribute onto the element.</p>
+<code-sandbox hash="f845be3c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 250px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">  &lt;ef-select&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;3&quot;&gt;Water&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;6&quot;&gt;Strawberry&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-select&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;3&quot;&gt;Water&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;4&quot;&gt;Vanilla&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;5&quot;&gt;Chocolate&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;6&quot;&gt;Strawberry&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;7&quot;&gt;Raspberry&lt;/ef-item&gt;
+&lt;/ef-select&gt;
+</code></pre>
+<h3 id="adding-a-placeholder">Adding a placeholder</h3>
+<p>Once you have your choices and groups defined, you can then add placeholder text to help users understand what the list contains and what their choice is for.</p>
+<code-sandbox hash="a4ec097"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 155px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;3&quot;&gt;Orange Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot;&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot;&gt;Iced Tea&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+  ...
+</code></pre>
+<h3 id="selecting-a-default-option">Selecting a default option</h3>
+<p>You may wish to set an initial selected value. This can be achieved by adding a <code>selected</code> attribute to the option you would like to have selected by default.</p>
+<p>Only one option can be selected at a time.</p>
+<code-sandbox hash="25f96571"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 225px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;1&quot;&gt;Cola&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;2&quot;&gt;Lemonade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot; selected&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;14&quot;&gt;Strawberry&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;15&quot;&gt;Raspberry&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">...
+  &lt;ef-item selected&gt;Water&lt;/ef-item&gt;
+...
+</code></pre>
+<h3 id="disabling-an-option">Disabling an option</h3>
+<p>Options can be disabled by adding a <code>disabled</code> attribute to the options you wish to disable.</p>
+<code-sandbox hash="c41b1927"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 200px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot; disabled&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot; disabled&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;8&quot;&gt;Chocolate&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">...
+  &lt;ef-item disabled&gt;Iced Tea&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;Water&lt;/ef-item&gt;
+...
+</code></pre>
+<h3 id="configuring-options-using-data-object">Configuring options using data object</h3>
+<p>Depending on your usage, you may wish to configure <code>ef-select</code> using its <code>data</code> object.</p>
+<code-sandbox hash="3df5bb46"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+const el = document.querySelector(&quot;ef-select&quot;);
+el.data = [
+  {
+    label: &#39;Drinks&#39;,
+    type: &#39;header&#39;
+  },
+  {
+    label: &#39;Tea&#39;,
+    value: &#39;tea&#39;
+  },
+  {
+    label: &#39;Beer&#39;,
+    value: &#39;beer&#39;,
+    selected: true
+  },
+  {
+    label: &#39;Ice Cream&#39;,
+    type: &#39;header&#39;
+  },
+  {
+    label: &#39;Vanilla&#39;,
+    value: &#39;vanilla&#39;,
+    disabled: true
+  },
+  {
+    label: &#39;Strawberry&#39;,
+    value: &#39;Strawberry&#39;
+  }
+];
+</code></pre>
+<pre><code class="language-css">section {
+  height: 180px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select&gt;&lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const el = document.querySelector(&quot;ef-select&quot;);
+el.data = [
+  {
+    label: &#39;Drinks&#39;,
+    type: &#39;header&#39;
+  },
+  {
+    label: &#39;Tea&#39;,
+    value: &#39;tea&#39;
+  },
+  {
+    label: &#39;Beer&#39;,
+    value: &#39;beer&#39;,
+    selected: true
+  },
+  {
+    label: &#39;Ice Cream&#39;,
+    type: &#39;header&#39;
+  },
+  {
+    label: &#39;Vanilla&#39;,
+    value: &#39;vanilla&#39;,
+    disabled: true
+  },
+  {
+    label: &#39;Strawberry&#39;,
+    value: &#39;Strawberry&#39;
+  }
+];
+</code></pre>
+<h3 id="restricting-list-height">Restricting list height</h3>
+<p>The <code>max-height</code> of the list can be restricted using the <code>--list-max-height</code> property.</p>
+<code-sandbox hash="19c5fbdc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;select&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 130px;
+  padding: 0 3px;
+}
+ef-select {
+  --list-max-height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-select placeholder=&quot;Choose your refreshment...&quot;&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Drinks&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;4&quot; disabled&gt;Apple Juice&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;5&quot; disabled&gt;Iced Tea&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;6&quot; disabled&gt;Water&lt;/ef-item&gt;
+    &lt;ef-item type=&quot;header&quot;&gt;Ice Cream&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;7&quot;&gt;Vanilla&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;8&quot;&gt;Chocolate&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">ef-select {
+  --list-max-height: 100px;
+}
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>The max height and width can be overridden by CSS Variables.</p>
+<pre><code class="language-css">ef-select {
+  --list-max-height: 100px;
+  --list-max-width: 70px;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--list-max-height</td>
+<td>Maximum height of the drop-down list</td>
+</tr>
+<tr>
+<td>--list-max-width</td>
+<td>Maximum width of the drop-down list</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>SelectData | null</code></td>
+<td>null</td>
+<td>Construct the menu from data object. Cannot be used with slotted content</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to error</td>
+</tr>
+<tr>
+<td><code>label (readonly)</code></td>
+<td></td>
+<td><code>string</code></td>
+<td></td>
+<td>Current text content of the selected value</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggles the opened state of the list</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Placeholder to display when no value is set</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Value of the element</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to warning</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>opened-changed</code></td>
+<td>Fired when the opened property changes.</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when the value property changes.</td>
+</tr>
+</tbody></table>

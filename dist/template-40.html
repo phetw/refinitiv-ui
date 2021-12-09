@@ -1,0 +1,317 @@
+<h1 id="password-field">Password Field</h1>
+<code-sandbox hash="38581154"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/password-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;password-field&#39;);
+const pw = document.getElementById(&#39;pw&#39;);
+const confirmedPw = document.getElementById(&#39;confirmedPw&#39;);
+const passwordMatchError = document.getElementById(&#39;password-error&#39;);
+const patternError = document.getElementById(&#39;pattern-error&#39;);
+
+passwordMatchError.style.display = &#39;none&#39;;
+patternError.style.display = &#39;none&#39;;
+
+
+confirmedPw.addEventListener(&#39;value-changed&#39;, (e) =&gt; {
+  if (e.detail.value !== pw.value) {
+    passwordMatchError.style.display = &#39;list-item&#39;;
+  }
+  else {
+    passwordMatchError.style.display = &#39;none&#39;;
+  }
+});
+
+confirmedPw.addEventListener(&#39;error-changed&#39;, (e) =&gt; {
+  if (e.detail.value) {
+    patternError.style.display = &#39;list-item&#39;;
+  }
+  else {
+    patternError.style.display = &#39;none&#39;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">ef-panel {
+  max-width: 450px;
+}
+ef-password-field{
+  width: 250px;
+}
+p {
+  margin: 4px 0;
+}
+ul {
+  padding-inline-start: 24px;
+}
+#password-error, #pattern-error {
+  color: #d94255;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel&gt;
+  &lt;ef-header level=&quot;3&quot;&gt;Password Recommendation&lt;/ef-header&gt;
+  &lt;ul&gt;
+    &lt;li&gt;At least 8 characters—the more characters, the better.&lt;/li&gt;
+    &lt;li&gt;At least one uppercase and lowercase letters.&lt;/li&gt;
+    &lt;li&gt;At least one number.&lt;/li&gt;
+    &lt;li&gt;At least one special character.&lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/ef-panel&gt;
+
+&lt;p&gt;Password&lt;/p&gt;
+&lt;ef-password-field id=&quot;pw&quot; pattern=&quot;^(?=.*[A-Z])(?=.*[!@#$&amp;*])(?=.*[0-9])(?=.*[a-z]).{8,}$&quot;&gt;&lt;/ef-password-field&gt;
+&lt;br/&gt;
+&lt;p&gt;Confirm password&lt;/p&gt;
+&lt;ef-password-field id=&quot;confirmedPw&quot; pattern=&quot;^(?=.*[A-Z])(?=.*[!@#$&amp;*])(?=.*[0-9])(?=.*[a-z]).{8,}$&quot;&gt;&lt;/ef-password-field&gt;
+
+&lt;ul id=&quot;error-list&quot;&gt;
+  &lt;li id=&quot;password-error&quot;&gt;Password does not match&lt;/li&gt;
+  &lt;li id=&quot;pattern-error&quot;&gt;Password does not meet criteria&lt;/li&gt;
+&lt;/ul&gt;
+</code></pre>
+</code-sandbox><p><code>ef-password-field</code> is a form control for passwords with a built-in show/hide toggle functionality.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-password-field</code> behaves similarly to the native password input. It has password masking that allows users to securely type their passwords into the input.</p>
+<pre><code class="language-html">&lt;ef-password-field placeholder=&quot;Password ...&quot;&gt;&lt;/ef-password-field&gt;
+</code></pre>
+<h3 id="getting-value">Getting value</h3>
+<p>The value can be accessed through the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;ef-password-field id=&quot;password-input&quot;&gt;&lt;/ef-password-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const passwordInput = document.getElementById(&quot;password-input&quot;);
+console.log(passwordInput.value); // User&#39;s input password
+</code></pre>
+<p>You can also listen for the <code>value-changed</code> event, which triggers whenever the value changes due to user interactions.</p>
+<code-sandbox hash="be364c6b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/password-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;password-field&#39;);
+const element = document.getElementById(&quot;password-input&quot;);
+const valueChangedText = document.getElementById(&#39;value-text&#39;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<pre><code class="language-css">ef-password-filed {
+  width: 172px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-password-field id=&quot;password-input&quot; placeholder=&quot;Type something here ..&quot;&gt;&lt;/ef-password-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-password-field id=&quot;password-input&quot;&gt;&lt;/ef-password-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;password-input&quot;);
+const valueChangedText = document.getElementById(&quot;value-text&quot;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<h3 id="input-validation">Input validation</h3>
+<p>Validation occurs when the constraints are provided and the value changes. If the error state changes, it will dispatch an <code>error-changed</code> event along with the current error state.</p>
+<p>Alternatively, you can access the <code>error</code> property to check if the input is valid or not.</p>
+<h3 id="input-length">Input length</h3>
+<p>The <code>maxlength</code> attribute limits the number of characters that can be typed into the input, and the <code>minlength</code> attribute sets the minimum of characters. <code>ef-password-field</code> will show error styles if a condition is not met.</p>
+<code-sandbox hash="76e2cf98"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/password-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;password-field&#39;);
+const element = document.getElementById(&quot;passwordInput&quot;);
+const errorChangedText = document.getElementById(&#39;error-text&#39;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Password length must be between 8 - 16 characters&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-password-field {
+  width: 200px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-password-field id=&quot;passwordInput&quot; minlength=&quot;8&quot; maxlength=&quot;16&quot; placeholder=&quot;Between 8 to 16 characters&quot;&gt;&lt;/ef-password-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-password-field id=&quot;passwordInput&quot; minlength=&quot;8&quot; maxlength=&quot;16&quot;&gt;&lt;/ef-password-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;passwordInput&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Password length must be between 8 - 16 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="validate-input-using-pattern">Validate input using pattern</h3>
+<p>You can use a regular expression to validate the input value by setting it to the <code>pattern</code> attribute.</p>
+<code-sandbox hash="2c5eec4a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/password-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;password-field&#39;);
+const element = document.getElementById(&quot;password&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Password is too weak.&quot;;
+  } else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-password-field {
+  width: 275px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ul&gt;
+  &lt;li&gt;At least 8 characters—the more characters, the better.&lt;/li&gt;
+  &lt;li&gt;At least one uppercase and lowercase letters.&lt;/li&gt;
+  &lt;li&gt;At least one number.&lt;/li&gt;
+  &lt;li&gt;At least one special character.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ef-password-field id=&quot;password&quot; pattern=&quot;^(?=.*[A-Z])(?=.*[!@#$&amp;*])(?=.*[0-9])(?=.*[a-z]).{8,}$&quot;&gt;&lt;/ef-password-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-password-field id=&quot;password&quot; pattern=&quot;^(?=.*[A-Z])(?=.*[!@#$&amp;*])(?=.*[0-9])(?=.*[a-z]).{8,}$&quot;&gt;&lt;/ef-password-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;password&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Password is too weak.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set error state</td>
+</tr>
+<tr>
+<td><code>maxLength</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character max limit</td>
+</tr>
+<tr>
+<td><code>minLength</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character min limit</td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set regular expression for input validation</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set placeholder text</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disables all other states and border/background styles.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Input&#39;s value</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set warning state</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>renderIcon</code></td>
+<td><code>(): any</code></td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes</td>
+</tr>
+<tr>
+<td><code>icon-click</code></td>
+<td>Dispatched when icon is clicked</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

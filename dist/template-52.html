@@ -1,0 +1,272 @@
+<h1 id="tab">Tab</h1>
+<code-sandbox hash="f02d8800"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-css">.tab-container {
+  display:flex;
+}
+ef-tab {
+  margin-right: 3px;
+  min-width: 90px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;tab-container&quot;&gt;
+  &lt;ef-tab label=&quot;Tab&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Icon Tab&quot; icon=&quot;chart-area&quot; active&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Icon Tab&quot; icon=&quot;chart-area&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Active Tab&quot; active&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Disabled Tab&quot; disabled&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab label=&quot;Icon Tab&quot; icon=&quot;chart-area&quot; disabled&gt;&lt;/ef-tab&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p>A basic building block of tab navigation controls.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-tab</code> is used for creating an individual tab item. It&#39;s purposely built as a building block, so you should consider using it with <a href="./elenments/tab-bar">Tab Bar</a> to create standard tab navigation controls.</p>
+<code-sandbox hash="f0e5b868"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab label=&quot;Tab1&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab2&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab3&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab label=&quot;Tab1&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab2&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab3&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+<h3 id="sub-label">Sub label</h3>
+<p><code>ef-tab</code> provides <code>label</code> and <code>sub-label</code> attributes for displaying hierarchical text. If the width of <code>label</code> and <code>sub-label</code> is longer than the <code>ef-tab</code> width, both automatically truncate with ellipsis.</p>
+<code-sandbox hash="869d2ffd"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab label=&quot;Label&quot; sub-label=&quot;Secondary info&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Label Two&quot; sub-label=&quot;A long secondary info&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Label&quot; sub-label=&quot;A long secondary info&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab label=&quot;Label&quot; sub-label=&quot;Secondary info&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Label Two&quot; sub-label=&quot;A long secondary info&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Label&quot; sub-label=&quot;A long secondary info&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+<p>Both label and sub-label will not display if <code>ef-tab</code> has children.</p>
+<code-sandbox hash="c44946fc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-css">.suffix {
+  color: #334BFF;
+}
+ef-tab:hover .suffix {
+  color: #FFE999;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab label=&quot;Tab1&quot; sub-label=&quot;Secondary long text&quot;&gt;
+  Custom Content
+  &lt;span class=&quot;suffix&quot;&gt;EXCLUSIVE&lt;/span&gt;
+&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab2&quot; sub-label=&quot;Secondary long text&quot; clears&gt;
+  Custom Content With Clears
+  &lt;sup class=&quot;suffix&quot;&gt;EXCLUSIVE&lt;/sup&gt;
+&lt;/ef-tab&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab label=&quot;Tab1&quot; sub-label=&quot;Secondary long text&quot;&gt;
+ Custom Content
+ &lt;span class=&quot;suffix&quot;&gt;EXCLUSIVE&lt;/span&gt;
+&lt;/ef-tab&gt;
+&lt;ef-tab label=&quot;Tab2&quot; sub-label=&quot;Secondary long text&quot; clears&gt;
+ Custom Content With Clears
+ &lt;sup class=&quot;suffix&quot;&gt;EXCLUSIVE&lt;/sup&gt;
+&lt;/ef-tab&gt;
+</code></pre>
+<h3 id="truncate-label-text">Truncate label text</h3>
+<p>Uses <code>lineClamp = &quot;0&quot;</code> to change from ellipsis to middle truncation.</p>
+<code-sandbox hash="d3cf6184"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Label&quot; sub-label=&quot;Secondary info Beneath&quot; line-clamp=&quot;0&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab style=&quot;max-width: 100px;&quot; label=&quot;A Very Long Long Long Label&quot; line-clamp=&quot;2&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab style=&quot;max-width: 100px;&quot; line-clamp=&quot;0&quot; label=&quot;A Very Long Label&quot; sub-label=&quot;Secondary info Beneath&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab style=&quot;max-width: 100px;&quot; line-clamp=&quot;2&quot; label=&quot;A Very Long Long Long Label&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+<p>Also <code>line-clamp</code> can limit the maximum number of lines that the text can display. The text automatically truncates with ellipsis when its length is larger than the width provided.</p>
+<p>This feature will be omitted if it&#39;s used with <code>line-clamp=&quot;0&quot;</code> or <code>sub-label</code></p>
+<code-sandbox hash="86b4391d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab style=&quot;max-width: 80px;&quot; label=&quot;A Very Long Primary Label&quot; line-clamp=&quot;2&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab style=&quot;max-width: 80px;&quot; label=&quot;A Very Long Primary Label&quot; line-clamp=&quot;2&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+<h3 id="tab-with-icon">Tab with icon</h3>
+<p>An inline icon can be set to display inside each tab using the <code>icon</code> attribute.</p>
+<code-sandbox hash="b45ee1d9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab icon=&quot;dividend&quot; label=&quot;Dividend&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab icon=&quot;dividend&quot; label=&quot;Dividend&quot;&gt;&lt;/ef-tab&gt;
+</code></pre>
+<h3 id="tab-with-clear-button">Tab with clear button</h3>
+<p>Tab can display a clear button (a small cross icon) using the <code>clears</code> attribute. To show a clear button on hover only, use <code>clears-on-hover</code>, instead.</p>
+<p>You can add a <code>clear</code> event listener to the tab to know when the clear button is clicked.</p>
+<code-sandbox hash="7a7f104f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+document.querySelectorAll(&#39;ef-tab&#39;).forEach((tab) =&gt; {
+  tab.addEventListener(&#39;clear&#39;, (e) =&gt; {
+    document.getElementById(&#39;clearsLog&#39;).textContent = `${e.detail.label} is on cleared`;
+  });
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-tab clears label=&quot;Clears tab&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab clears-on-hover label=&quot;Clears on hover tab&quot;&gt;&lt;/ef-tab&gt;
+&lt;pre id=&quot;clearsLog&quot;&gt;&lt;/pre&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tab clears label=&quot;Clears tab&quot;&gt;&lt;/ef-tab&gt;
+&lt;ef-tab clears-on-hover label=&quot;Clears on hover tab&quot;&gt;&lt;/ef-tab&gt;
+&lt;pre id=&quot;clearsLog&quot;&gt;&lt;/pre&gt;
+</code></pre>
+<pre><code class="language-javascript">document.querySelectorAll(&#39;ef-tab&#39;).forEach((tab) =&gt; {
+  tab.addEventListener(&#39;clear&#39;, (e) =&gt; {
+    document.getElementById(&#39;clearsLog&#39;).textContent = `${e.detail.label} is on cleared`;
+  });
+});
+</code></pre>
+<h3 id="active-tab-and-events">Active tab and events</h3>
+<p><code>ef-tab</code> provides an <code>active</code> attribute/property to set the active state. You can add a <code>tap</code> event listener to each <code>ef-tab</code> and then define the actions you need to perform.
+The <code>tap</code> event is similar to the <code>click</code> event, but will work for both desktop and touch devices.</p>
+<code-sandbox hash="407431cf"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tab?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tab&#39;);
+const tabs = document.querySelectorAll(&#39;ef-tab&#39;);
+for (let i = 0; i &lt; tabs.length; i++) {
+  tabs[i].addEventListener(&#39;tap&#39;, (e) =&gt; {
+    for (let x = 0; x &lt; tabs.length; x++) {
+      tabs[x].active = false;
+    }
+    document.getElementById(&#39;event&#39;).textContent = `${e.target.label} + is clicked`;
+    e.target.active = true;
+  })
+}
+</code></pre>
+<pre><code class="language-html">&lt;div style=&quot;display: flex;&quot;&gt;
+  &lt;ef-tab id=&quot;tab1&quot; active label=&quot;Tab 1&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab2&quot; label=&quot;Tab 2&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab3&quot; label=&quot;Tab 3&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab3&quot; label=&quot;Tab 4&quot;&gt;&lt;/ef-tab&gt;
+&lt;/div&gt;
+&lt;pre id=&quot;event&quot;&gt;&lt;/pre&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;div style=&quot;display: flex;&quot;&gt;
+  &lt;ef-tab id=&quot;tab1&quot; active label=&quot;Tab 1&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab2&quot; label=&quot;Tab 2&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab3&quot; label=&quot;Tab 3&quot;&gt;&lt;/ef-tab&gt;
+  &lt;ef-tab id=&quot;tab3&quot; label=&quot;Tab 4&quot;&gt;&lt;/ef-tab&gt;
+  &lt;pre id=&quot;event&quot;&gt;&lt;/pre&gt;
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">const tabs = document.querySelectorAll(&#39;ef-tab&#39;);
+
+/* reset all tabs to inactive */
+const resetActive = () =&gt; {
+  tabs.forEach((tab) =&gt; tab.active = false);
+}
+
+tabs.forEach((tab) =&gt; {
+  tab.addEventListener(&#39;tap&#39;, (e) =&gt; {
+    resetActive();
+    document.getElementById(&#39;event&#39;).textContent = `${e.target.label} + is clicked`;
+    e.target.active = true;
+  });
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>active</code></td>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Specify tab&#39;s active status</td>
+</tr>
+<tr>
+<td><code>clears</code></td>
+<td><code>clears</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set tab to clearable</td>
+</tr>
+<tr>
+<td><code>clearsOnHover</code></td>
+<td><code>clears-on-hover</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set tab to clearable on hover</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Specify icon name to display in tab</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Specify tab&#39;s label text</td>
+</tr>
+<tr>
+<td><code>lineClamp</code></td>
+<td><code>line-clamp</code></td>
+<td><code>number</code></td>
+<td>1</td>
+<td>Limit the number of lines before truncating</td>
+</tr>
+<tr>
+<td><code>subLabel</code></td>
+<td><code>sub-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Specify tab&#39;s sub-label text</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clear</code></td>
+<td>Dispatched when click on cross button occurs</td>
+</tr>
+</tbody></table>

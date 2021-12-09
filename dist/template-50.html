@@ -1,0 +1,250 @@
+<h1 id="swing-gauge">Swing Gauge</h1>
+<code-sandbox hash="ee6532b3"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/swing-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;swing-gauge&#39;);
+let value1;
+let value2;
+const min = 20;
+const gauge = document.querySelector(&#39;ef-swing-gauge&#39;);
+
+setInterval(() =&gt; {
+  value1 = min + (100 - min * 2) * Math.random();
+  value2 = 100 - value1;
+  gauge.primaryValue = value1;
+  gauge.secondaryValue = value2;
+}, 2000);
+</code></pre>
+<pre><code class="language-css">ef-swing-gauge {
+  height: 150px;
+  margin-top: 20px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-swing-gauge
+  primary-value=&quot;29&quot;
+  primary-label=&quot;Private&quot;
+  secondary-value=&quot;95&quot;
+  secondary-label=&quot;Public&quot;&gt;
+&lt;/ef-swing-gauge&gt;
+</code></pre>
+</code-sandbox><p><code>ef-swing-gauge</code> is a data visualization element used to display the percentage comparison of two values.</p>
+<h3 id="usage">Usage</h3>
+<p>Values can be set to the gauge using the <code>primary-value</code> and <code>secondary-value</code> attributes. The percentage values shown in the gauge will be calculated by comparing <code>primary-value</code> and <code>secondary-value</code>. To show labels in the gauge, set the text to the  <code>primary-label</code> and <code>secondary-label</code> attributes.</p>
+<code-sandbox hash="cf09666d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/swing-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;swing-gauge&#39;);
+</code></pre>
+<pre><code class="language-css">ef-swing-gauge {
+  height: 150px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-swing-gauge
+  primary-value=&quot;30&quot;
+  secondary-value=&quot;70&quot;
+  primary-label=&quot;Private&quot;
+  secondary-label=&quot;Public&quot;&gt;
+&lt;/ef-swing-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-swing-gauge
+  primary-value=&quot;30&quot;
+  secondary-value=&quot;70&quot;
+  primary-label=&quot;Private&quot;
+  secondary-label=&quot;Public&quot;&gt;
+&lt;/ef-swing-gauge&gt;
+</code></pre>
+<h3 id="legend">Legend</h3>
+<p>To show any legends in the gauge you can set the text to <code>primary-legend</code> and <code>secondary-legend</code> attributes. Legends will show on top of the gauge.</p>
+<code-sandbox hash="4f687708"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/swing-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;swing-gauge&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-swing-gauge
+  primary-value=&quot;550&quot;
+  secondary-value=&quot;770&quot;
+  primary-label=&quot;Private&quot;
+  secondary-label=&quot;Public&quot;
+  primary-legend=&quot;Private companies in United States&quot;
+  secondary-legend=&quot;Public companies in United States&quot;&gt;
+&lt;/ef-swing-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-swing-gauge
+  primary-value=&quot;550&quot;
+  secondary-value=&quot;770&quot;
+  primary-label=&quot;Private&quot;
+  secondary-label=&quot;Public&quot;
+  primary-legend=&quot;Private companies in United States&quot;
+  secondary-legend=&quot;Public companies in United States&quot;&gt;
+&lt;/ef-swing-gauge&gt;
+</code></pre>
+<h3 id="sizing">Sizing</h3>
+<p>Swing Gauge has default size but you can customize <code>width</code> or <code>height</code> by using CSS.</p>
+<code-sandbox hash="2bdd2eee"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/swing-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;swing-gauge&#39;);
+</code></pre>
+<pre><code class="language-css">ef-swing-gauge {
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-swing-gauge
+    small-gauge
+    primary-value=&quot;30&quot;
+    secondary-value=&quot;70&quot;
+    primary-label=&quot;Private&quot;
+    secondary-label=&quot;Public&quot;&gt;
+  &lt;/ef-swing-gauge&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">ef-swing-gauge {
+  height: 100px;
+}
+</code></pre>
+<h3 id="customize-value-format">Customize value format</h3>
+<p>The value that shows on Swing Gauge can be custom via the <code>valueFormatter</code> property. The first parameter will be the percentage that calculates by the input value. The second parameter will be the raw value of your input.</p>
+<code-sandbox hash="46a7af2a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/swing-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;swing-gauge&#39;);
+
+const el = document.getElementById(&#39;customValueFormat&#39;);
+el.valueFormatter = (value, rawValue) =&gt; value.toFixed(0) + &#39;%&#39;;
+</code></pre>
+<pre><code class="language-html">&lt;ef-swing-gauge id=&quot;customValueFormat&quot; primary-value=&quot;15&quot; secondary-value=&quot;69&quot; primary-label=&quot;Private&quot; secondary-label=&quot;Public&quot;&gt;&lt;/ef-swing-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const el = document.getElementById(&#39;customValueFormat&#39;);
+el.valueFormatter = (value, rawValue) =&gt; value.toFixed(0) + &#39;%&#39;;
+};
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>Colors and center line of Swing Gauge are managed by theme but can be overridden by using CSS variables.</p>
+<code-sandbox hash="21b4efed"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/swing-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;swing-gauge&#39;);
+</code></pre>
+<pre><code class="language-css">ef-swing-gauge[custom-color] {
+  --primary-color: #ff9933;
+  --secondary-color: #9933ff;
+  --border-color: transparent;
+  --center-line: dashed;
+  --center-line-color: #42f48c;
+  --center-line-opacity: 1;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-swing-gauge
+  custom-color
+  primary-label=&quot;Private&quot;
+  secondary-label=&quot;Public&quot;
+  primary-value=&quot;40&quot;
+  secondary-value=&quot;60&quot;&gt;
+&lt;/ef-swing-gauge&gt;
+</code></pre>
+</code-sandbox><table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--primary-color</td>
+<td>Color of primary gauge</td>
+</tr>
+<tr>
+<td>--secondary-color</td>
+<td>Color of secondary gauge</td>
+</tr>
+<tr>
+<td>--border-color</td>
+<td>Color of border</td>
+</tr>
+<tr>
+<td>--center-line</td>
+<td>Style of center line (solid, dotted, dashed or none)</td>
+</tr>
+<tr>
+<td>--center-line-color</td>
+<td>Color of center line</td>
+</tr>
+<tr>
+<td>--center-line-opacity</td>
+<td>Opacity/Transparency of center line</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>canvasSize (readonly)</code></td>
+<td></td>
+<td><code>SwingGaugeCanvasSize</code></td>
+<td></td>
+<td>Getter size of component</td>
+</tr>
+<tr>
+<td><code>duration</code></td>
+<td><code>duration</code></td>
+<td><code>number</code></td>
+<td>1000</td>
+<td>Animation duration in milliseconds</td>
+</tr>
+<tr>
+<td><code>primaryLabel</code></td>
+<td><code>primary-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Primary label</td>
+</tr>
+<tr>
+<td><code>primaryLegend</code></td>
+<td><code>primary-legend</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Primary value legend</td>
+</tr>
+<tr>
+<td><code>primaryValue</code></td>
+<td><code>primary-value</code></td>
+<td><code>number</code></td>
+<td></td>
+<td>Primary value</td>
+</tr>
+<tr>
+<td><code>secondaryLabel</code></td>
+<td><code>secondary-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Secondary label</td>
+</tr>
+<tr>
+<td><code>secondaryLegend</code></td>
+<td><code>secondary-legend</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Secondary value legend</td>
+</tr>
+<tr>
+<td><code>secondaryValue</code></td>
+<td><code>secondary-value</code></td>
+<td><code>number</code></td>
+<td></td>
+<td>Secondary value</td>
+</tr>
+<tr>
+<td><code>valueFormatter</code></td>
+<td></td>
+<td><code>SwingGaugeValueFormatter</code></td>
+<td>&quot;defaultValueFormatter&quot;</td>
+<td>Custom value formatter</td>
+</tr>
+</tbody></table>

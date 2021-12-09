@@ -1,0 +1,116 @@
+<h1 id="header">Header</h1>
+<code-sandbox hash="3f4d4816"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;header&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;Header Level 1&lt;/ef-header&gt;
+&lt;ef-header level=&quot;2&quot;&gt;Header Level 2&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;Header Level 3&lt;/ef-header&gt;
+</code></pre>
+</code-sandbox><p>Header is used to identify and separate different sections of a page. Headers help to organize the page content into a sensible hierarchy and improve the user experience.</p>
+<h3 id="usage">Usage</h3>
+<p>Content in <code>ef-header</code> will be displayed as a title.</p>
+<pre><code class="language-html">&lt;ef-header&gt;Header Title&lt;/ef-header&gt;
+</code></pre>
+<h3 id="levels">Levels</h3>
+<p>A level can be set in <code>ef-header</code> to improve data hierarchy. Styling of levels is managed by the theme.</p>
+<code-sandbox hash="3f4d4816"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;header&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;Header Level 1&lt;/ef-header&gt;
+&lt;ef-header level=&quot;2&quot;&gt;Header Level 2&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;Header Level 3&lt;/ef-header&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;Header Level 1&lt;/ef-header&gt;
+&lt;ef-header level=&quot;2&quot;&gt;Header Level 2&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;Header Level 3&lt;/ef-header&gt;
+</code></pre>
+<h3 id="including-links-in-headers">Including links in headers</h3>
+<p>You can create a header with linking by using an HTML link tag inside the header content.</p>
+<code-sandbox hash="b1b32cfe"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;header&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;&lt;a href=&quot;#&quot;&gt;Header Level Link 1&lt;/a&gt;&lt;/ef-header&gt;
+&lt;ef-header level=&quot;2&quot;&gt;&lt;a href=&quot;#&quot;&gt;Header Level Link 2&lt;/a&gt;&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;&lt;a href=&quot;#&quot;&gt;Header Level Link 3&lt;/a&gt;&lt;/ef-header&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;&lt;a href=&quot;#&quot;&gt;Header Level Link 1&lt;/a&gt;&lt;/ef-header&gt;
+&lt;ef-header level=&quot;2&quot;&gt;&lt;a href=&quot;#&quot;&gt;Header Level Link 2&lt;/a&gt;&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;&lt;a href=&quot;#&quot;&gt;Header Level Link 3&lt;/a&gt;&lt;/ef-header&gt;
+</code></pre>
+<h3 id="slotting-content">Slotting content</h3>
+<p>You can include a component in a header by assigning the component to a slot.</p>
+<code-sandbox hash="4b4c0c6c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;header&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/checkbox?min&#39;;
+halo(&#39;button&#39;);
+halo(&#39;checkbox&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;Header Level 1
+  &lt;ef-button slot=&quot;left&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+  &lt;ef-checkbox slot=&quot;right&quot; checked&gt;Option&lt;/ef-checkbox&gt;
+&lt;/ef-header&gt;
+  &lt;ef-header level=&quot;2&quot;&gt;Header Level 2
+  &lt;ef-checkbox slot=&quot;right&quot; checked&gt;Option&lt;/ef-checkbox&gt;
+&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;Header Level 3
+  &lt;ef-button slot=&quot;right&quot; icon=&quot;filter&quot; transparent&gt;&lt;/ef-button&gt;
+  &lt;ef-checkbox slot=&quot;right&quot; checked&gt;Option&lt;/ef-checkbox&gt;
+&lt;/ef-header&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-header level=&quot;1&quot;&gt;Header Level 1
+  &lt;ef-button slot=&quot;left&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+  &lt;ef-checkbox slot=&quot;right&quot; checked&gt;Option&lt;/ef-checkbox&gt;
+&lt;/ef-header&gt;
+&lt;ef-header level=&quot;2&quot;&gt;Header Level 2
+  &lt;ef-checkbox slot=&quot;right&quot; checked&gt;Option&lt;/ef-checkbox&gt;
+&lt;/ef-header&gt;
+&lt;ef-header level=&quot;3&quot;&gt;Header Level 3
+  &lt;ef-button slot=&quot;right&quot; icon=&quot;filter&quot; transparent&gt;&lt;/ef-button&gt;
+  &lt;ef-checkbox slot=&quot;right&quot; checked&gt;Option&lt;/ef-checkbox&gt;
+&lt;/ef-header&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>level</code></td>
+<td><code>level</code></td>
+<td><code>&quot;1&quot; | &quot;2&quot; | &quot;3&quot;</code></td>
+<td>&quot;2&quot;</td>
+<td>Use level styling from theme</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>left</code></td>
+<td>Slot to add custom contents to the left side of header e.g. ef-icon, ef-checkbox</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>Slot to add custom contents to the right side of header e.g. ef-icon, ef-checkbox</td>
+</tr>
+</tbody></table>

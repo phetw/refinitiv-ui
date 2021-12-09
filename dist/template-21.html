@@ -1,0 +1,318 @@
+<h1 id="email-field">Email Field</h1>
+<code-sandbox hash="e6e0b36c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/email-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;email-field&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+halo(&#39;panel&#39;);
+</code></pre>
+<pre><code class="language-css">ef-panel {
+  max-width: 450px;
+}
+ef-email-field{
+  width: 250px;
+}
+p {
+  margin-bottom: 4px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;p&gt;Email&lt;/p&gt;
+  &lt;ef-email-field placeholder=&quot;Business email address&quot; icon=&quot;email&quot;&gt;&lt;/ef-email-field&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+</code-sandbox><p><code>ef-email-field</code> is a form control to confidently obtain an email input from users.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-email-field</code> has similar behaviors to the native email input type.</p>
+<pre><code class="language-html">&lt;ef-email-field placeholder=&quot;Business email address&quot;&gt;&lt;/ef-email-field&gt;
+</code></pre>
+<h3 id="getting-value">Getting value</h3>
+<p>The field&#39;s value can be accessed directly using the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;ef-email-field id=&quot;email-input&quot; value=&quot;awesome@tmail.com&quot;&gt;&lt;/ef-email-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const emailInput = document.getElementById(&quot;email-input&quot;);
+console.log(emailInput.value); // &quot;awesome@tmail.com&quot;
+</code></pre>
+<p>You can also listen for the <code>value-changed</code> event that triggers when the value changes due to user interactions.</p>
+<code-sandbox hash="e2bcab43"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/email-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;email-field&#39;);
+const element = document.getElementById(&quot;input&quot;);
+const valueChangedText = document.getElementById(&#39;value-text&#39;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; valueChangedText.innerHTML = e.detail.value);
+</code></pre>
+<pre><code class="language-html">&lt;ef-email-field id=&quot;input&quot; placeholder=&quot;Type an email ...&quot;&gt;&lt;/ef-email-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const element = document.querySelector(&quot;ef-email-field&quot;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  console.log(e.detail.value);
+});
+</code></pre>
+<h3 id="input-validation">Input validation</h3>
+<p>Validation occurs when the constraints are provided and the value changes. If the error state changes, it will dispatch the <code>error-changed</code> event along with the current error state.</p>
+<p>Alternatively, you can check the <code>error</code> property to confirm if the input is valid.</p>
+<h3 id="input-length">Input length</h3>
+<p>The <code>maxlength</code> attribute limits the number of characters that users can type into the input and the <code>minlength</code> attribute is used to set the minimum of characters required. <code>ef-email-field</code> will show error styles if the condition is not met.</p>
+<code-sandbox hash="d98e3ceb"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/email-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;email-field&#39;);
+const element = document.getElementById(&quot;email-input&quot;);
+const errorChangedText = document.getElementById(&#39;error-text&#39;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+    if (e.detail.value) {
+      errorChangedText.innerHTML = &quot;Must be in standard email format with between 8-14 characters.&quot;;
+    }
+    else {
+      errorChangedText.innerHTML = &quot;&quot;;
+    }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-email-field {
+  width: 275px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-email-field id=&quot;email-input&quot; minlength=&quot;8&quot; maxlength=&quot;14&quot; placeholder=&quot;Length between 8 to 14 characters&quot;&gt;&lt;/ef-email-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-email-field id=&quot;email-input&quot; minlength=&quot;8&quot; maxlength=&quot;14&quot;&gt;&lt;/ef-email-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;email-input&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Must be in standard email format with between 8-14 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="validate-input-using-pattern">Validate input using pattern</h3>
+<p>You can use a regular expression to validate the input value by adding the <code>pattern</code> attribute.</p>
+<code-sandbox hash="14ec04ba"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/email-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;email-field&#39;);
+const element = document.getElementById(&quot;email&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Email must end with &#39;@mail.com&#39;.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-email-field {
+  width: 275px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-email-field id=&quot;email&quot; pattern=&quot;.+@mail.com&quot; placeholder=&quot;Type email ending with &#39;@mail.com&#39;&quot;&gt;&lt;/ef-email-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-email-field id=&quot;email&quot; pattern=&quot;.+@mail.com&quot;&gt;&lt;/ef-email-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;email&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Email must end with &#39;@mail.com&#39;.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="show-icon">Show icon</h3>
+<p>An inline icon can be displayed inside the input using <code>icon</code>.</p>
+<pre><code class="language-html">&lt;ef-email-field icon=&quot;individual&quot;&gt;&lt;/ef-email-field&gt;
+</code></pre>
+<p>An icon can become actionable by adding the <code>icon-has-action</code> attribute to the element, and <code>ef-email-field</code> will fire the <code>icon-click</code> event when a user clicks on the icon. You can add an event listener to this event to execute your code.</p>
+<code-sandbox hash="699103cf"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/email-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;email-field&#39;);
+const element = document.getElementById(&#39;email-list-input&#39;);
+const emailList = document.getElementById(&#39;email-added&#39;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+
+element.addEventListener(&#39;icon-click&#39;, (e) =&gt; {
+  if (!element.error &amp;&amp; element.value.length &gt; 0) {
+    emailList.innerHTML = element.value + &quot; is added.&quot;;
+  }
+});
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Invalid email format.&quot;;
+    emailList.innerHTML = &quot;&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-email-field {
+  width: 275px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-email-field id=&quot;email-list-input&quot; placeholder=&quot;Type email and then click the icon ...&quot; icon=&quot;msgr-adduser&quot; icon-has-action pattern=&quot;^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$&quot;&gt;&lt;/ef-email-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+&lt;p id=&quot;email-added&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-email-field
+  id=&quot;email-list-input&quot;
+  icon=&quot;msgr-adduser&quot;
+  pattern=&quot;^([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5})$&quot;
+  icon-has-action
+&gt;&lt;/ef-email-field&gt;
+&lt;p id=&quot;email-added&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;email-list-input&quot;);
+const emailList = document.getElementById(&quot;email-added&quot;);
+
+element.addEventListener(&quot;icon-click&quot;, (e) =&gt; {
+  if (!element.error &amp;&amp; element.value.length &gt; 0) {
+    emailList.innerHTML = element.value + &quot; is added.&quot;;
+  }
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set error state</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Specify icon to display in input. Value can be icon name</td>
+</tr>
+<tr>
+<td><code>iconHasAction</code></td>
+<td><code>icon-has-action</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Specify when icon need to be clickable</td>
+</tr>
+<tr>
+<td><code>maxLength</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character max limit</td>
+</tr>
+<tr>
+<td><code>minLength</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character min limit</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td><code>multiple</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to multiple mode, allows multiple emails in a single input</td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set regular expression for input validation</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set placeholder text</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disables all other states and border/background styles.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Input&#39;s value</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set warning state</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes</td>
+</tr>
+<tr>
+<td><code>icon-click</code></td>
+<td>Dispatched when icon is clicked</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,229 @@
+<h1 id="color-dialog">Color Dialog</h1>
+<code-sandbox hash="d0dcc00e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/color-dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;color-dialog&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+document.getElementById(&#39;button&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+  let dlg = document.getElementById(&#39;d1&#39;);
+  dlg.opened = true;
+});
+</code></pre>
+<pre><code class="language-css">.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-color-dialog id=&quot;d1&quot; opened&gt;&lt;/ef-color-dialog&gt;
+&lt;div class=&quot;dialog-container&quot;&gt;
+  &lt;ef-button id=&quot;button&quot;&gt;Open Color Dialog&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-color-dialog</code> allows users to select any color. You can set the value as a hex color code (short hex is also supported) or as Red/Green/Blue (0 - 255). Users can choose a color directly from a pallete UI or via input boxes in the dialog.</p>
+<h3 id="usage">Usage</h3>
+<p>Color dialog can be opened and closed just like any popup window, by setting the attribute/property <code>opened</code>.</p>
+<pre><code class="language-html">&lt;ef-color-dialog opened id=&quot;colorDialog&quot;&gt;&lt;/ef-color-dialog&gt;
+</code></pre>
+<h3 id="preset-default-value">Preset default value</h3>
+<p>Color Dialog also accepts an initial color value. To set the default value, use the <code>value</code> attribute.</p>
+<code-sandbox hash="5e5a503b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/color-dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;color-dialog&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+document.getElementById(&#39;button&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+  let dlg = document.getElementById(&#39;d1&#39;);
+  dlg.opened = true;
+});
+</code></pre>
+<pre><code class="language-css">.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-color-dialog id=&quot;d1&quot; opened value=&quot;#9966ff&quot;&gt;&lt;/ef-color-dialog&gt;
+&lt;div class=&quot;dialog-container&quot;&gt;
+  &lt;ef-button id=&quot;button&quot;&gt;Open Color Dialog&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-color-dialog value=&quot;#9966ff&quot;&gt;&lt;/ef-color-dialog&gt;
+</code></pre>
+<h3 id="no-color-option">&#39;No Color&#39; option</h3>
+<p>In some circumstances, it might be necessary for the component to allow a user to select &quot;no color.&quot; This option can be activated using the <code>allow-nocolor</code> property/attribute.  </p>
+<p>When users select &quot;no color&quot; from the UI, the color dialog sets the attribute/property <code>value</code> to <code>null</code>.</p>
+<code-sandbox hash="9a5f48a6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/color-dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;color-dialog&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+document.getElementById(&#39;button&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+  let dlg = document.getElementById(&#39;d1&#39;);
+  dlg.opened = true;
+});
+</code></pre>
+<pre><code class="language-css">.dialog-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-color-dialog id=&quot;d1&quot; opened allow-nocolor&gt;&lt;/ef-color-dialog&gt;
+&lt;div class=&quot;dialog-container&quot;&gt;
+  &lt;ef-button id=&quot;button&quot;&gt;Open Color Dialog&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-color-dialog allow-nocolor&gt;&lt;/ef-color-dialog&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>allowNocolor</code></td>
+<td><code>allow-nocolor</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set the palettes to activate no-color option</td>
+</tr>
+<tr>
+<td><code>blue</code></td>
+<td><code>blue</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Blue value from 0 to 255</td>
+</tr>
+<tr>
+<td><code>draggable</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td>true</td>
+<td>False to make the dialog not draggable.</td>
+</tr>
+<tr>
+<td><code>green</code></td>
+<td><code>green</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Green value from 0 to 255</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>header</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set Header/Title of the color dialog</td>
+</tr>
+<tr>
+<td><code>hex</code></td>
+<td><code>hex</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Value of hex without # sign, supports both 3-digits shorthand hex and regular 6-digits hex</td>
+</tr>
+<tr>
+<td><code>noCancelOnEscKey</code></td>
+<td><code>no-cancel-on-esc-key</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Prevents dialog to close when user presses ESC key</td>
+</tr>
+<tr>
+<td><code>noCancelOnOutsideClick</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td>true</td>
+<td>Prevents dialog to close when user clicks outside the dialog.</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set dialog to open</td>
+</tr>
+<tr>
+<td><code>positionTarget</code></td>
+<td><code>position-target</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set position of dialog i.e. <code>top</code>, <code>right</code>, <code>left</code>, <code>bottom</code>, <code>center</code> or combination of theme e.g. <code>top right</code>.</td>
+</tr>
+<tr>
+<td><code>red</code></td>
+<td><code>red</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Red value from 0 to 255</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Value of selected color from color dialog will be written here as hex value<br />e.g. &quot;#00f&quot; or &quot;#0000ff&quot;</td>
+</tr>
+<tr>
+<td><code>withBackdrop</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td>true</td>
+<td>False to hide backdrop.</td>
+</tr>
+<tr>
+<td><code>withShadow</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td>true</td>
+<td>False to remove shadow for dialog component.</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td><code>x</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set a specific x coordinate of dialog</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td><code>y</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set a specific y coordinate of dialog</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>opened-changed</code></td>
+<td>Fired when the <code>opened</code> property changes.</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when the <code>value</code> property changes.</td>
+</tr>
+</tbody></table>

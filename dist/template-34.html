@@ -1,0 +1,160 @@
+<h1 id="notification">Notification</h1>
+<code-sandbox hash="d0296875"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/notification?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;notification&#39;);
+
+let el;
+const createNotification = () =&gt; {
+  el = document.createElement(&#39;ef-notification&#39;);
+  el.innerText = &#39;Notifcation received at &#39; + new Date().toLocaleTimeString();
+  el.addEventListener(&#39;dismiss&#39;, createNotification, { once: true });
+  document.body.appendChild(el);
+  el.updateStyles({
+    &#39;--background-color&#39;: &#39;hsl(&#39; + Math.random() * 360 + &#39;, 50%, 50%)&#39;
+  });
+};
+createNotification();
+</code></pre>
+</code-sandbox><p>The notification bar is used to show informative content when something happens in the application.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-notification</code> provides an out-of-the-box set of notification methods to use within an application.</p>
+<p>These methods work in a similar way to those provided by <code>window.console</code>.</p>
+<pre><code class="language-javascript">import { info, confirm, warn, error } from &#39;@refinitiv-ui/notification/lib/helpers&#39;;
+
+// Show an info notification
+info(&#39;Info Notification&#39;);
+
+// Show a confirmation notification
+confirm(&#39;Confirmation Notification&#39;, 3000/* Show for 3 seconds */);
+
+// Show a warning notification
+warn(&#39;Warning Notification&#39;, 5000/* Show for 5 seconds */);
+
+// Show an error notification
+error(&#39;Error Notification&#39;, Infinity/* Show until user dismisses */);
+</code></pre>
+<h3 id="inserting-html">Inserting HTML</h3>
+<p>When using the notification methods provided by the module, you can gain access to the created element using the returned result.</p>
+<pre><code class="language-javascript">import { info } from &#39;@refinitiv-ui/notification&#39;;
+
+const notification = info(&#39;Info Notification&#39;);
+
+notification.innerHTML = &#39;Hello &lt;strong&gt;World&lt;/strong&gt;!&#39;;
+</code></pre>
+<h3 id="using-a-custom-background-color">Using a custom background color</h3>
+<p>Custom background colors can be set using the <code>--background-color</code> variable.</p>
+<code-sandbox hash="67469e09"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/notification?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;notification&#39;);
+</code></pre>
+<pre><code class="language-css">ef-notification {
+  --background-color: #3344ff;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-notification&gt;I&#39;m a custom color!&lt;/ef-notification&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">ef-notification {
+  --background-color: #3344ff;
+}
+</code></pre>
+<h3 id="custom-use-of-notifications">Custom use of notifications</h3>
+<p>This element can be used natively, like any other element. Using notifications this way requires you to manage and position the element correctly within your application.</p>
+<code-sandbox hash="c1819a11"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/notification?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;notification&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-notification&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+&lt;ef-notification confirm&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+&lt;ef-notification warning&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+&lt;ef-notification error&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-notification&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+&lt;ef-notification confirm&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+&lt;ef-notification warning&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+&lt;ef-notification error&gt;Hello Everyone! 👋&lt;/ef-notification&gt;
+</code></pre>
+<h3 id="application-error-notifications">Application Error Notifications</h3>
+<p>During development, when the application is running on localhost or 127.0.0.1, application errors will be shown as a notification. This is to aid development and highlight any errors that may occur, so that they can be addressed before the application is deployed. These error messages will not be shown when your application is hosted in a non-dev environment.</p>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>collapsed</code></td>
+<td><code>collapsed</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggles the collapsed state.</td>
+</tr>
+<tr>
+<td><code>confirm</code></td>
+<td><code>confirm</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Notification style: Confirm</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Notification style: Error</td>
+</tr>
+<tr>
+<td><code>message</code></td>
+<td><code>message</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>The message to show in the notification.</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Notification style: Warning</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>dismiss</code></td>
+<td><code>(): void</code></td>
+<td>Dismisses the notification, firing a <code>dismiss</code> event and collapsing the notification.</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>collapsed</code></td>
+<td>Dispatched when notification is collapsed</td>
+</tr>
+<tr>
+<td><code>dismiss</code></td>
+<td>Dispatched when notification is dismissed</td>
+</tr>
+</tbody></table>

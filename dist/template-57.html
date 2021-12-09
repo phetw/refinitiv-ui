@@ -1,0 +1,444 @@
+<h1 id="tooltip">Tooltip</h1>
+<code-sandbox hash="b7376c5a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;div style=&quot;padding: 20px 0;&quot;&gt;
+  &lt;ef-button cta title=&quot;Sweet! Here is tooltip text.&quot;&gt;Hover Me&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p>Tooltip displays information when the user hovers over an item.</p>
+<h3 id="usage">Usage</h3>
+<p>Import the <code>ef-tooltip</code> component and use the <code>title</code> attribute, just like with a standard tooltip.</p>
+<code-sandbox hash="c3400f0d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+</code></pre>
+<pre><code class="language-css">.wrapper {
+    padding: 40px 0;
+    display: flex;
+    align-items: center;
+}
+.wrapper &gt; *:not(:last-child) {
+    margin-right: 30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+    &lt;abbr title=&quot;Don&#39;t Forget To Be Awesome&quot;&gt;DFTBA&lt;/abbr&gt;
+    &lt;abbr title=&quot;May The Force Be With You&quot;&gt;MTFBWY&lt;/abbr&gt;
+    &lt;abbr title=&quot;Element Framework&quot;&gt;EF&lt;/abbr&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;abbr title=&quot;Don&#39;t Forget To Be Awesome&quot;&gt;DFTBA&lt;/abbr&gt;
+&lt;abbr title=&quot;May The Force Be With You&quot;&gt;MTFBWY&lt;/abbr&gt;
+&lt;abbr title=&quot;Element Framework&quot;&gt;EF&lt;/abbr&gt;
+</code></pre>
+<aside class="info"><p><code>ef-tooltip</code> overrides the default title attribute behavior of the browser</p>
+</aside><h3 id="selector">Selector</h3>
+<p><code>ef-tooltip</code> can be used for advanced use cases, such as specifying a position for tooltips, custom rendering, or displaying a tooltip only when certain conditions are met.</p>
+<p>To customize the behavior of <code>ef-tooltip</code>, use <code>selector</code> to specify the CSS selector for the elemens and <code>tooltip</code> to specify the text content of the tooltip.</p>
+<code-sandbox hash="e951db84"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;navigation&quot; style=&quot;padding: 40px 0;&quot;&gt;
+    &lt;ef-button tooltip=&quot;Hooray!&quot;&gt;Hover Me&lt;/ef-button&gt;
+    &lt;!-- Tooltip will not show on this button as tooltip nor title is defined --&gt;
+    &lt;ef-button&gt;No Tooltip&lt;/ef-button&gt;
+&lt;/div&gt;
+&lt;/div&gt;
+&lt;ef-tooltip selector=&quot;.navigation ef-button&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;div class=&quot;navigation&quot;&gt;
+  &lt;ef-button tooltip=&quot;Hooray!&quot;&gt;Hover Me&lt;/ef-button&gt;
+  &lt;!-- Tooltip will not show on this button as tooltip nor title is defined --&gt;
+  &lt;ef-button&gt;No Tooltip&lt;/ef-button&gt;
+&lt;/div&gt;
+&lt;ef-tooltip selector=&quot;.navigation ef-button&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+<h3 id="positioning-tooltips">Positioning tooltips</h3>
+<p>By default, the tooltip position is based on the pointer coordinates (<code>auto</code>). However, the tooltip can be configured to display <code>above</code>, <code>below</code>, <code>left</code>, or <code>right</code> of the element.</p>
+<code-sandbox hash="9c44724b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+</code></pre>
+<pre><code class="language-css">.navigation &gt; * {
+    margin-right: 30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;navigation&quot; style=&quot;padding: 40px 0;&quot;&gt;
+  &lt;label above tooltip=&quot;Above tooltip&quot;&gt;Above&lt;/label&gt;
+  &lt;label below tooltip=&quot;Below tooltip&quot;&gt;Below&lt;/label&gt;
+  &lt;label left tooltip=&quot;Left tooltip&quot;&gt;Left&lt;/label&gt;
+  &lt;label right tooltip=&quot;Right tooltip&quot;&gt;Right&lt;/label&gt;
+  &lt;label auto tooltip=&quot;Auto tooltip&quot;&gt;Auto&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip position=&quot;above&quot; selector=&quot;.navigation label[above]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;right&quot; selector=&quot;.navigation label[right]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;below&quot; selector=&quot;.navigation label[below]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;left&quot; selector=&quot;.navigation label[left]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip selector=&quot;.navigation label[auto]&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;label above tooltip=&quot;Above tooltip&quot;&gt;Above&lt;/label&gt;
+&lt;label below tooltip=&quot;Below tooltip&quot;&gt;Below&lt;/label&gt;
+&lt;label left tooltip=&quot;Left tooltip&quot;&gt;Left&lt;/label&gt;
+&lt;label right tooltip=&quot;Right tooltip&quot;&gt;Right&lt;/label&gt;
+&lt;label auto tooltip=&quot;Auto tooltip&quot;&gt;Auto&lt;/label&gt;
+
+&lt;ef-tooltip position=&quot;above&quot; selector=&quot;label[above]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;right&quot; selector=&quot;label[right]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;below&quot; selector=&quot;label[below]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip position=&quot;left&quot; selector=&quot;label[left]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip selector=&quot;label[auto]&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+<h3 id="tooltip-transition-styles">Tooltip transition styles</h3>
+<p>The default tooltip transition is <code>fade</code>. To make tooltips display with a different transition style, use the <code>transition-style</code> attribute. Note: the transition style should be used rationally with tooltip position.</p>
+<code-sandbox hash="c277611d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+</code></pre>
+<pre><code class="language-css">.navigation {
+  padding: 20px 0px;
+}
+.navigation &gt; * {
+    margin-right: 30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;navigation&quot;&gt;
+  &lt;label fade tooltip=&quot;Fade&quot;&gt;Fade&lt;/label&gt;
+  &lt;label zoom tooltip=&quot;Zoom&quot;&gt;Zoom&lt;/label&gt;
+  &lt;label slide-down tooltip=&quot;Slide down&quot;&gt;Slide Down&lt;/label&gt;
+  &lt;label slide-up tooltip=&quot;Slide up&quot;&gt;Slide Up&lt;/label&gt;
+  &lt;label slide-left tooltip=&quot;Slide left&quot;&gt;Slide Left&lt;/label&gt;
+  &lt;label slide-right tooltip=&quot;Slide right&quot;&gt;Slide Right&lt;/label&gt;
+&lt;/div&gt;
+&lt;div class=&quot;navigation&quot;&gt;
+  &lt;label slide-right-up tooltip=&quot;Slide right up&quot;&gt;Slide Right Up&lt;/label&gt;
+  &lt;label slide-right-down tooltip=&quot;Slide right down&quot;&gt;Slide Right Down&lt;/label&gt;
+  &lt;label slide-left-up tooltip=&quot;Slide left up&quot;&gt;Slide Left Up&lt;/label&gt;
+  &lt;label slide-left-down tooltip=&quot;Slide left down&quot;&gt;Slide Left Down&lt;/label&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip transition-style=&quot;fade&quot; selector=&quot;.navigation label[fade]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;zoom&quot; selector=&quot;.navigation label[zoom]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-down&quot; position=&quot;below&quot; selector=&quot;.navigation label[slide-down]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-up&quot; position=&quot;above&quot; selector=&quot;.navigation label[slide-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right-up&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right-down&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right-down]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left-up&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left-down&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left-down]&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tooltip transition-style=&quot;fade&quot; selector=&quot;.navigation label[fade]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;zoom&quot; selector=&quot;.navigation label[zoom]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-down&quot; position=&quot;below&quot; selector=&quot;.navigation label[slide-down]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-up&quot; position=&quot;above&quot; selector=&quot;.navigation label[slide-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right-up&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-right-down&quot; position=&quot;right&quot; selector=&quot;.navigation label[slide-right-down]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left-up&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left-up]&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;ef-tooltip transition-style=&quot;slide-left-down&quot; position=&quot;left&quot; selector=&quot;.navigation label[slide-left-down]&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+<h3 id="custom-content">Custom content</h3>
+<p>Custom content can be added to a tooltip instead of just text.</p>
+<code-sandbox hash="275a7f2d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;navigation&quot; style=&quot;padding: 40px 0;&quot;&gt;
+    &lt;ef-button&gt;Hover Me&lt;/ef-button&gt;
+&lt;/div&gt;
+
+&lt;ef-tooltip selector=&quot;.navigation ef-button&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;GOOGL.O&lt;/th&gt;
+        &lt;th&gt;NFLX.O&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;color: green&quot;&gt;£1,030.45 (+0.2949%)&lt;/td&gt;
+        &lt;td style=&quot;color: red&quot;&gt;£266.98 (-1.3378%)&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/ef-tooltip&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;div class=&quot;navigation&quot;&gt;
+    &lt;ef-button&gt;Hover Me&lt;/ef-button&gt;
+&lt;/div&gt;
+&lt;ef-tooltip selector=&quot;.navigation ef-button&quot;&gt;
+  &lt;table&gt;
+    &lt;thead&gt;
+      &lt;tr&gt;
+        &lt;th&gt;GOOGL.O&lt;/th&gt;
+        &lt;th&gt;NFLX.O&lt;/th&gt;
+      &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+      &lt;tr&gt;
+        &lt;td style=&quot;color: green&quot;&gt;£1,030.45 (+0.2949%)&lt;/td&gt;
+        &lt;td style=&quot;color: red&quot;&gt;£266.98 (-1.3378%)&lt;/td&gt;
+      &lt;/tr&gt;
+    &lt;/tbody&gt;
+  &lt;/table&gt;
+&lt;/ef-tooltip&gt;
+</code></pre>
+<h3 id="custom-rendering">Custom rendering</h3>
+<p>Use custom rendering to display HTML content in a tooltip. The content passed to the renderer function needs to be an HTMLElement object.</p>
+<aside class="warning"><p>If <code>title</code> attribute is provided; or custom content of tooltip is specified, <code>renderer</code> will be ignored.</p>
+</aside><code-sandbox hash="a00f6852"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+const tooltip = document.getElementById(&#39;symbol-tooltip&#39;);
+tooltip.renderer = (target) =&gt; {
+  const ret = document.createElement(&#39;div&#39;);
+  const title = document.createElement(&#39;div&#39;);
+  title.style.fontWeight = &#39;bold&#39;;
+  title.style.paddingBottom = &#39;3px&#39;;
+  const price = document.createElement(&#39;div&#39;);
+  ret.appendChild(title);
+  ret.appendChild(price);
+
+  switch(target.id) {
+    case &#39;google&#39;:
+      title.innerText = &#39;Alphabet Inc&#39;;
+      price.innerText = &#39;£1,030.45 (+0.3%)&#39;;
+      price.style.color = &#39;green&#39;;
+      break;
+    case &#39;facebook&#39;:
+      title.innerText = &#39;Facebook Inc&#39;;
+      price.innerText = &#39;£132.43 (+0.6%)&#39;;
+      price.style.color = &#39;green&#39;;
+      break;
+    case &#39;netflix&#39;:
+      title.innerText = &#39;Netflix Inc&#39;;
+      price.innerText = &#39;£266.98 (-1.3%)&#39;;
+      price.style.color = &#39;red&#39;;
+      break;
+    default:
+      ret = null;
+      break;
+  }
+  return ret;
+}
+</code></pre>
+<pre><code class="language-css">.symbol {
+    margin-right: 30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div style=&quot;padding: 60px 0;&quot;&gt;
+  &lt;label class=&quot;symbol&quot; id=&quot;google&quot;&gt;GOOGL.O&lt;/label&gt;
+  &lt;label class=&quot;symbol&quot; id=&quot;facebook&quot;&gt;FB.O&lt;/label&gt;
+  &lt;label class=&quot;symbol&quot; id=&quot;netflix&quot;&gt;NFLX.O&lt;/label&gt;
+&lt;/div&gt;
+&lt;ef-tooltip id=&quot;symbol-tooltip&quot; selector=&quot;.symbol&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;label class=&quot;symbol&quot; id=&quot;google&quot;&gt;GOOGL.O&lt;/label&gt;
+&lt;label class=&quot;symbol&quot; id=&quot;facebook&quot;&gt;FB.O&lt;/label&gt;
+&lt;label class=&quot;symbol&quot; id=&quot;netflix&quot;&gt;NFLX.O&lt;/label&gt;
+&lt;ef-tooltip id=&quot;symbol-tooltip&quot; selector=&quot;.symbol&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+<pre><code class="language-javascript">const tooltip = document.getElementById(&#39;symbol-tooltip&#39;);
+tooltip.renderer = (target) =&gt; {
+  const ret = document.createElement(&#39;div&#39;);
+  const title = document.createElement(&#39;div&#39;);
+  title.style.fontWeight = &#39;bold&#39;;
+  title.style.paddingBottom = &#39;3px&#39;;
+  const price = document.createElement(&#39;div&#39;);
+  ret.appendChild(title);
+  ret.appendChild(price);
+
+  switch(target.id) {
+    case &#39;google&#39;:
+      title.innerText = &#39;Alphabet Inc&#39;;
+      price.innerText = &#39;£1,030.45 (+0.2949%)&#39;;
+      price.style.color = &#39;green&#39;;
+      break;
+    case &#39;facebook&#39;:
+      title.innerText = &#39;Facebook Inc&#39;;
+      price.innerText = &#39;£132.43 (+0.6689%)&#39;;
+      price.style.color = &#39;green&#39;;
+      break;
+    case &#39;netflix&#39;:
+      title.innerText = &#39;Netflix Inc&#39;;
+      price.innerText = &#39;£266.98 (-1.3378%)&#39;;
+      price.style.color = &#39;red&#39;;
+      break;
+    default:
+      ret = null;
+      break;
+  }
+  return ret;
+}
+</code></pre>
+<p>A custom renderer can also be applied to only show tooltips when the text is too long and does not fit the container.</p>
+<pre><code class="language-css">.item {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+</code></pre>
+<pre><code class="language-javascript">const tooltip = document.getElementById(&#39;item-tooltip&#39;);
+
+tooltip.renderer = (target) =&gt; {
+  if (target.scrollWidth - target.clientWidth === 0) {
+    return null;
+  }
+  // return itself as content of tooltip
+  return target;
+};
+</code></pre>
+<h3 id="conditioning-tooltip">Conditioning tooltip</h3>
+<p>Use custom condition to trigger a tooltip only when a condition is met.</p>
+<code-sandbox hash="d338b76a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tooltip?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tooltip&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const input = document.getElementById(&#39;amount&#39;);
+const tooltip = document.getElementById(&#39;amount-tooltip&#39;);
+const isValid = (val) =&gt; isNaN(parseInt(val, 10)) || parseInt(val, 10) &lt; 100;
+
+input.addEventListener(&#39;value-changed&#39;, () =&gt; {
+  input.error = isValid(input.value);
+});
+
+tooltip.condition = (target, paths) =&gt; target === input &amp;&amp; isValid(target.value);
+</code></pre>
+<pre><code class="language-html">&lt;div style=&quot;padding: 30px 0;&quot;&gt;
+  &lt;ef-text-field style=&quot;width:400px&quot; id=&quot;amount&quot; tooltip=&quot;Value must be number and at least 100&quot; placeholder=&quot;Input amount. Tooltip will show when input invalid.&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-tooltip id=&quot;amount-tooltip&quot;&gt;&lt;/ef-tooltip&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-text-field id=&quot;amount&quot; tooltip=&quot;Value must be number and at least 100&quot; placeholder=&quot;Input amount. Tooltip will show when input invalid.&quot;&gt;&lt;/ef-text-field&gt;
+&lt;ef-tooltip id=&quot;amount-tooltip&quot;&gt;&lt;/ef-tooltip&gt;
+</code></pre>
+<pre><code class="language-javascript">const input = document.getElementById(&#39;amount&#39;);
+const tooltip = document.getElementById(&#39;amount-tooltip&#39;);
+const isValid = (val) =&gt; isNaN(parseInt(val, 10)) || parseInt(val, 10) &lt; 100;
+
+input.addEventListener(&#39;value-changed&#39;, () =&gt; {
+  input.error = isValid(input.value);
+});
+
+tooltip.condition = (target, paths) =&gt; target === input &amp;&amp; isValid(target.value);
+};
+</code></pre>
+<h3 id="default-tooltip">Default tooltip</h3>
+<p>It is recommended to have only one instance of tooltip per page. A default tooltip element is always included when the developer adds <code>ef-tooltip</code> to an application.</p>
+<p>Use <code>addTooltipCondition</code> and <code>removeTooltipCondition</code> to reuse the default tooltip:</p>
+<pre><code class="language-javascript">import { addTooltipCondition, removeTooltipCondition } from &#39;@refinitiv-ui/tooltip&#39;;
+
+// Show tooltip for elements that have &quot;ref&quot; attribute
+const condition = target =&gt; target.hasAttribute(&#39;ref&#39;);
+
+// Show tooltip content
+const render = target =&gt; `My reference is: £{target.getAttribute(&#39;ref&#39;)}`;
+
+addTooltipCondition(condition, render);
+
+// Do not forget to remove tooltip condition once not required to avoid memory leaks
+removeTooltipCondition(condition);
+</code></pre>
+<h3 id="overflow-tooltip">Overflow tooltip</h3>
+<p>Overflow tooltip reuses the concept of <em>Default tooltip</em> to display a tooltip when text overflows:</p>
+<pre><code class="language-css">.overflow {
+  white-space: nowrap;
+  width: 20px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;overflow&quot;&gt;Very long text with overflow&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">import { registerOverflowTooltip } from &#39;@refinitiv-ui/tooltip&#39;;
+const overflowElement = document.querySelector(&#39;.overflow&#39;);
+registerOverflowTooltip(overflowElement);
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>A timer to show or hide a tooltip can be customized using the <code>--show-delay</code> and <code>--hide-delay</code> CSS variables.</p>
+<aside class="warning"><p>setting these variables to small values can cause performance issues.</p>
+</aside><pre><code class="language-css">.delay {
+  --show-delay: 3000ms;
+  --hide-delay: 2000ms;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--show-delay</td>
+<td>Time to show tooltip when mouse hovers, in milliseconds</td>
+</tr>
+<tr>
+<td>--hide-delay</td>
+<td>Time to hide tooltip when mouse leaves, in milliseconds</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>condition</code></td>
+<td></td>
+<td><code>TooltipCondition</code></td>
+<td></td>
+<td>Provide a function to test against the target.<br />Return <code>true</code> if the target matches</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>position</code></td>
+<td><code>&quot;auto&quot; | &quot;above&quot; | &quot;right&quot; | &quot;below&quot; | &quot;left&quot;</code></td>
+<td>&quot;auto&quot;</td>
+<td>The position of the tooltip. Use the following values:<br /><code>auto</code> (default) - display based on mouse enter coordinates<br /><code>above</code> - display above the element<br /><code>right</code> - display to the right of the element<br /><code>below</code> - display beneath the element<br /><code>left</code> - display to the left of the element</td>
+</tr>
+<tr>
+<td><code>renderer</code></td>
+<td></td>
+<td><code>TooltipRenderer</code></td>
+<td></td>
+<td>A renderer to define tooltip internal content.<br />Return undefined, <code>String</code>, <code>HTMLElement</code> or <code>DocumentFragment</code>.<br />If the content is not present, tooltip will not be displayed</td>
+</tr>
+<tr>
+<td><code>selector</code></td>
+<td><code>selector</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>CSS selector to match the tooltip</td>
+</tr>
+<tr>
+<td><code>transitionStyle</code></td>
+<td><code>transition-style</code></td>
+<td><code>TooltipTransitionStyle</code></td>
+<td>&quot;fade&quot;</td>
+<td>Set the transition style.<br />Value can be <code>fade</code>, <code>zoom</code>, <code>slide-down</code>, <code>slide-up</code>, <code>slide-right</code>,<br /><code>slide-left</code>, <code>slide-right-down</code>, <code>slide-right-up</code>, <code>slide-left-down</code>, <code>slide-left-up</code>, or null in case of no transition</td>
+</tr>
+</tbody></table>

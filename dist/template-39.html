@@ -1,0 +1,94 @@
+<h1 id="panel">Panel</h1>
+<code-sandbox hash="a029c5fb"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;panel&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;h3&gt;Section&lt;/h3&gt;
+  &lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.&lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+</code-sandbox><p><code>ef-panel</code> is a container for components. It provides a standard background color and padding, depending on the theme.</p>
+<h3 id="creating-a-panel">Creating a panel</h3>
+<p><code>ef-panel</code> can be used as a generic container for housing any components.</p>
+<pre><code class="language-html">&lt;ef-panel&gt;
+  &lt;h3&gt;Section&lt;/h3&gt;
+  &lt;p&gt;Leverage agile frameworks to provide a robust synopsis
+     for high level overviews. Iterative approaches to corporate 
+     strategy foster collaborative thinking to further the overall 
+     value proposition.&lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+<h3 id="add-spacing">Add spacing</h3>
+<p>Default padding is managed by the theme and can be set to <code>ef-panel</code> using the <code>spacing</code> attribute.</p>
+<code-sandbox hash="a029c5fb"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;panel&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;h3&gt;Section&lt;/h3&gt;
+  &lt;p&gt;Leverage agile frameworks to provide a robust synopsis for high level overviews. Iterative approaches to corporate strategy foster collaborative thinking to further the overall value proposition.&lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+</code-sandbox><h3 id="customizing-panel-style">Customizing panel style</h3>
+<p><code>ef-panel</code> can be styled similarly to <code>div</code>. For example, background color and other styles can be changed using a CSS class.</p>
+<code-sandbox hash="385e0182"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;panel&#39;);
+</code></pre>
+<pre><code class="language-css">.primary-section {
+  padding: 14px 20px;
+  background-color: #001eff;
+  color: #ffffff;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel class=&quot;primary-section&quot;&gt;
+  &lt;h3&gt;# New Normal&lt;/h3&gt;
+  &lt;p&gt;New Normal is a term in business and economics that refers to financial conditions following the financial crisis of 2007-2008, the aftermath of the 2008–2012 global recession, and the COVID-19 pandemic. &lt;a style=&quot;color:white; text-decoration:underline;&quot; href=&quot;https://en.wikipedia.org/wiki/New_Normal_(business)&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">.primary-section {
+  padding: 14px 20px;
+  background-color: #001eff;
+  color: #ffffff;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel class=&quot;primary-section&quot;&gt;
+  &lt;h3&gt;# New Normal&lt;/h3&gt;
+  &lt;p&gt;New Normal is a term in business and economics that refers to financial 
+    conditions following the financial crisis of 2007-2008, the aftermath of 
+    the 2008–2012 global recession, and the COVID-19 pandemic. 
+    &lt;a style=&quot;color:white; text-decoration:underline;&quot; 
+    href=&quot;https://en.wikipedia.org/wiki/New_Normal_(business)&quot;&gt;Wikipedia&lt;/a&gt;&lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>spacing</code></td>
+<td><code>spacing</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Apply default padding from theme</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set panel background to transparent</td>
+</tr>
+</tbody></table>

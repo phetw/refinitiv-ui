@@ -1,0 +1,205 @@
+<h1 id="led-gauge">LED Gauge</h1>
+<code-sandbox hash="c6dfc9ea"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/led-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;led-gauge&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-led-gauge top-label=&quot;Sector Avg.&quot; bottom-label=&quot;Current Price&quot; top-value=&quot;-75&quot; bottom-value=&quot;75&quot;&gt;&lt;/ef-led-gauge&gt;
+&lt;ef-led-gauge top-label=&quot;50.25&quot; top-value=&quot;-30&quot; range-label=&quot;Daily Range&quot; range=&quot;[-80, -30]&quot;&gt;&lt;/ef-led-gauge&gt;
+&lt;ef-led-gauge zero=&quot;left&quot; neutral-color top-label=&quot;150.50&quot; top-value=&quot;50&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+</code-sandbox><p>An LED gauge is used to show one or two values in an LED-like horizontal bar visualization. It is suited to display values where users can see and compare information such as industry average values, or 52-week high and 52-week low values.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-led-gauge</code> shows data in a scale of -100.00 to +100.00, with a mid-point of 0.00. By default, scales are divided equally and represented by 5 different colors -- Negative, Low-negative, Neutral, Low-positive, and Positive.</p>
+<code-sandbox hash="12e19319"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/led-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;led-gauge&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-led-gauge top-label=&quot;0.00&quot; top-value=&quot;0.00&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-led-gauge top-label=&quot;0.00&quot; top-value=&quot;0.00&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+<p>To use <code>ef-led-gauge</code>, data has to be normalized to a -100.00 to +100.00 scale.</p>
+<p>For example, to show data of 36.00 where the highest value is 60.00 and the lowest value is 90.00, the data needs to be normalized and set to <code>ef-led-gauge</code> as below.</p>
+<table>
+<thead>
+<tr>
+<th>Raw value</th>
+<th>LED gauge value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>60.00</td>
+<td>-100.00</td>
+</tr>
+<tr>
+<td>36.00</td>
+<td>-60.00</td>
+</tr>
+<tr>
+<td>90.00</td>
+<td>+100.00</td>
+</tr>
+</tbody></table>
+<code-sandbox hash="e6aa5557"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/led-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;led-gauge&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-led-gauge top-label=&quot;36.00&quot; top-value=&quot;-60.00&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-led-gauge top-label=&quot;36.00&quot; top-value=&quot;-60.00&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+<h3 id="mono-color">Mono color</h3>
+<p><code>ef-led-gauge</code> can be wet to use only one color by adding the attribute <code>neutral-color</code>.</p>
+<code-sandbox hash="8e756672"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/led-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;led-gauge&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-led-gauge neutral-color top-label=&quot;36.00&quot; top-value=&quot;-60.00&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-led-gauge neutral-color top-label=&quot;36.00&quot; top-value=&quot;-60.00&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+<h3 id="showing-range-bar">Showing range bar</h3>
+<p>Range bar mode can be used to show a range bar within the LED gauge. When Range bar mode is used, <code>ef-led-gauge</code> will automatically switch to using mono color.</p>
+<p>The size of the range bar can be set using the <code>range</code> attribute where the values of range need to be normalized to the 100.00 to +100.00 scale.</p>
+<p>To display a text label beneath the range bar, add the <code>range-label</code> attribute.</p>
+<code-sandbox hash="a3758e1f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/led-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;led-gauge&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-led-gauge neutral-color top-label=&quot;36.00&quot; top-value=&quot;-60.00&quot; range=&quot;[-70,-20]&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-led-gauge neutral-color top-label=&quot;36.00&quot; top-value=&quot;-60.00&quot; range=&quot;[-70,-20]&quot;&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>The colors of the LED gauge are managed by the theme but can be overridden using CSS variables.</p>
+<code-sandbox hash="d98d9991"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/led-gauge?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;led-gauge&#39;);
+</code></pre>
+<pre><code class="language-css">ef-led-gauge {
+  --center-right-segment-color: rgba(60, 60, 200, 0.65);
+  --right-segment-color: rgba(60, 60, 200, 1);
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-led-gauge red-blue-scale&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+</code-sandbox><table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--top-selected-color</td>
+<td>Color of top-value bar</td>
+</tr>
+<tr>
+<td>--clash-color</td>
+<td>Color of bar when top-value and bottom-value are the same</td>
+</tr>
+<tr>
+<td>--bottom-selected-color</td>
+<td>Color of bottom-value bar</td>
+</tr>
+<tr>
+<td>--range-color</td>
+<td>Color of range bar</td>
+</tr>
+<tr>
+<td>--neutral-color</td>
+<td>Bars color in mono color mode</td>
+</tr>
+<tr>
+<td>--left-segment-color</td>
+<td>Bars color of most left segment</td>
+</tr>
+<tr>
+<td>--center-left-segment-color</td>
+<td>Bars color of center left segment</td>
+</tr>
+<tr>
+<td>--center-segment-color</td>
+<td>Bars color of center segment</td>
+</tr>
+<tr>
+<td>--center-right-segment-color</td>
+<td>Bars color of center right segment</td>
+</tr>
+<tr>
+<td>--right-segment-color</td>
+<td>Bars color of most right segment</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>bottomLabel</code></td>
+<td><code>bottom-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Label to be displayed in the bottom legend</td>
+</tr>
+<tr>
+<td><code>bottomValue</code></td>
+<td><code>bottom-value</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Value of bar for bottom legend position<br />Value can be -100 to 100</td>
+</tr>
+<tr>
+<td><code>neutralColor</code></td>
+<td><code>neutral-color</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Turn off background color and use grey</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td><code>range</code></td>
+<td><code>number[]</code></td>
+<td>[]</td>
+<td>Value of range. eg [-20, 70]</td>
+</tr>
+<tr>
+<td><code>rangeLabel</code></td>
+<td><code>range-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Label to be displayed in the bottom legend<br />when a range is displayed<br />and no bottom text is already set.</td>
+</tr>
+<tr>
+<td><code>topLabel</code></td>
+<td><code>top-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Label to be displayed in the top legend</td>
+</tr>
+<tr>
+<td><code>topValue</code></td>
+<td><code>top-value</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Value of bar for top legend position<br />Value can be -100 to 100</td>
+</tr>
+<tr>
+<td><code>zero</code></td>
+<td><code>zero</code></td>
+<td><code>string</code></td>
+<td>&quot;center&quot;</td>
+<td>Sets the zero scale position. [center, left, right]</td>
+</tr>
+</tbody></table>

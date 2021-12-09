@@ -1,0 +1,748 @@
+<h1 id="overlay-menu">Overlay Menu</h1>
+<code-sandbox hash="2459137b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 235px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; opened&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;n-america&quot;&gt;N. America&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;latin-america&quot;&gt;Latin America&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Favorites&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;flame&quot;&gt;Thailand&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;dislike-empty&quot; disabled&gt;Unspecified&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;n-america&quot;&gt;
+  &lt;ef-item&gt;Canada&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;latin-america&quot;&gt;
+  &lt;ef-item&gt;Mexico&lt;/ef-item&gt;
+  &lt;ef-item&gt;Brazil&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><p><code>ef-overlay-menu</code> is an overlay window that supports single-level and multi-level menus. It can be positioned by attaching to other elements, or its vertical and horizontal offset can be adjusted, if needed.</p>
+<h3 id="usage">Usage</h3>
+<p>Create <code>ef-overlay-menu</code> with <code>ef-item</code> elements as menu items. Listen for the <code>item-trigger</code> event to identify a clicked item.</p>
+<p>As the overlay menu is designed to support several use cases (multi-selection, toggle, etc.), the menu will not close when an item is clicked. To open or close the menu, simply set the <code>opened</code> property to true or false, respectively.</p>
+<code-sandbox hash="3e11b2ec"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+const menuController = menu.parentElement;
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+
+menuController.addEventListener(&#39;item-trigger&#39;, (e) =&gt; {
+  const value = e.detail.value;
+  console.log(&#39;You have clicked on: &#39; + value);
+  button.innerHTML = value;
+  menu.opened = false;
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 135px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;France&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;France&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+<pre><code class="language-javascript">const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+const menuController = menu.parentElement;
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+
+menuController.addEventListener(&#39;item-trigger&#39;, (e) =&gt; {
+  const value = e.detail.value;
+  console.log(&#39;You have clicked on: &#39; + value);
+  button.innerHTML = value;
+  menu.opened = false;
+});
+</code></pre>
+<aside class="info"><p>See Item API document for more detail about <code>ef-item</code> properties</p>
+</aside><h3 id="nested-menus">Nested menus</h3>
+<p>Menu and sub-menus are bound together using the <code>for</code> and <code>id</code> attributes of <code>ef-item</code> and the sub-menu. The <code>for</code> attribute must be equal to the <code>id</code> attribute of the related sub-menu in order to bind the menu and submenu together.</p>
+<code-sandbox hash="72a6a52b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 225px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Nested menus&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;london&quot;&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;london&quot;&gt;
+  &lt;ef-item&gt;London Bridge&lt;/ef-item&gt;
+  &lt;ef-item&gt;Westminster Bridge&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;london&quot;&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;london&quot;&gt;
+  &lt;ef-item&gt;London Bridge&lt;/ef-item&gt;
+  &lt;ef-item&gt;Westminster Bridge&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+<h3 id="compact-menu">Compact menu</h3>
+<p>If there is not enough space to fit sub-menus, add the <code>compact</code> attribute. In this mode, sub-menus will be opened on top of the parent menu.</p>
+<code-sandbox hash="46cf3317"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 135px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Compact menu&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; compact&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot; compact&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot; compact&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;london&quot;&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;london&quot; compact&gt;
+  &lt;ef-item&gt;London Bridge&lt;/ef-item&gt;
+  &lt;ef-item&gt;Westminster Bridge&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot; compact&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-overlay-menu compact&gt;
+  ...
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+<h3 id="managing-position-and-user-interaction">Managing position and user interaction</h3>
+<p><code>ef-overlay-menu</code> inherits properties from <code>ef-overlay</code> and thus supports the same positioning strategies.</p>
+<p>The developer may specify <code>with-backdrop</code> together with <code>no-cancel-on-outside-click</code> so users must interact with the menu before they can return to the application.</p>
+<code-sandbox hash="2b72de09"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+const menuController = menu.parentElement;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    // position at the top right corner of the button
+    menu.positionTarget = button;
+    menu.position = [&#39;right-start&#39;];
+    menu.opened = true;
+  }
+});
+
+menuController.addEventListener(&#39;item-trigger&#39;, (e) =&gt; {
+  menu.opened = false;
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 115px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; with-backdrop no-cancel-on-outside-click&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;France&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;United Kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; with-backdrop no-cancel-on-outside-click&gt;...&lt;/ef-overlay-menu&gt;
+</code></pre>
+<pre><code class="language-javascript">const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    // position at the top right corner of the button
+    menu.positionTarget = button;
+    menu.position = [&#39;right-start&#39;];
+    menu.opened = true;
+  }
+});
+</code></pre>
+<h3 id="loading-from-data">Loading from data</h3>
+<p><code>ef-overlay-menu</code> can be populated using the <code>data</code> property. <code>data</code> fields have the same names as properties in <code>ef-item</code>. Use the <code>items</code> collection to create sub-menus.</p>
+<p>Alternatively, you can set <code>data</code> using a <a href="./resources/collection-composer">CollectionComposer</a>, which is useful when you need a rich API to manage data externally.</p>
+<code-sandbox hash="876b4ce3"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+
+menu.data = [{
+  type: &#39;header&#39;,
+  label: &#39;Regions&#39;
+}, {
+  icon: &#39;flame&#39;,
+  label: &#39;EMEA&#39;,
+  items: [{
+      label: &#39;Spain&#39;
+  }, {
+      label: &#39;France&#39;,
+      disabled: true
+  }, {
+      label: &#39;Italy&#39;
+  }, {
+      label: &#39;United Kingdom&#39;
+  }]
+}, {
+  type: &#39;divider&#39;
+}, {
+  label: &#39;APAC&#39;
+}];
+
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 165px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-overlay-menu id=&quot;menu&quot;&gt;&lt;/ef-overlay-menu&gt;
+</code></pre>
+<pre><code class="language-javascript">const menu = document.getElementById(&#39;menu&#39;);
+
+menu.data = [{
+  type: &#39;header&#39;,
+  label: &#39;Regions&#39;
+}, {
+  icon: &#39;flame&#39;,
+  label: &#39;EMEA&#39;,
+  items: [{
+    label: &#39;Spain&#39;
+  }, {
+    label: &#39;France&#39;,
+    disabled: true
+  }, {
+    label: &#39;Italy&#39;
+  }, {
+    label: &#39;United Kingdom&#39;
+  }]
+}, {
+  type: &#39;divider&#39;
+}, {
+  label: &#39;APAC&#39;
+}];
+</code></pre>
+<h3 id="data-property-interface">Data property interface</h3>
+<p>The <code>data</code> property of the <code>ef-overlay-menu</code> use the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/overlay-menu/helpers/types.ts">OverlayMenuData</a> interface for its data items.</p>
+<h3 id="managing-selection">Managing selection</h3>
+<p><code>ef-overlay-menu</code> does not manage the selected state. Instead, the developer decides the selection model by changing the <code>selected</code> attribute on menu items. Furthermore, the developer may use the <code>values</code> getter and setter to manipulate selected items across a menu and all of its sub-menus.</p>
+<code-sandbox hash="bf695325"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+const menuController = menu.parentElement;
+menu.positionTarget = button;
+
+const getItemDescendants = (item) =&gt; {
+  let descendants = [];
+  while (item) {
+    descendants.unshift(item);
+    item = item.parentElement &amp;&amp; item.parentElement.id
+      ? menuController.querySelector(&#39;ef-item[for=&#39; + item.parentElement.id + &#39;]&#39;)
+      : null;
+    }
+
+  return descendants;
+};
+
+menuController.addEventListener(&#39;item-trigger&#39;, (e) =&gt; {
+  const selectedPath = getItemDescendants(e.target);
+  menu.values = selectedPath.map((item) =&gt; {
+    return item.value;
+  });
+});
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 200px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;Choose Item&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;emea&quot; for=&quot;emea&quot; selected&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;apac&quot; for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot;&gt;
+  &lt;ef-item value=&quot;spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;france&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;united-kingdom&quot; for=&quot;united-kingdom&quot; selected&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot;&gt;
+  &lt;ef-item value=&quot;cardiff&quot;&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;edinburgh&quot;&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;london&quot; selected&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot;&gt;
+  &lt;ef-item value=&quot;china&quot;&gt;China&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;australia&quot;&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const menuController = menu.parentElement;
+
+const getItemDescendants = (item) =&gt; {
+  let descendants = [];
+  while (item) {
+    descendants.unshift(item);
+    item = item.parentElement &amp;&amp; item.parentElement.id
+      ? menuController.querySelector(&#39;ef-item[for=&#39; + item.parentElement.id + &#39;]&#39;)
+      : null;
+    }
+
+  return descendants;
+};
+
+menuController.addEventListener(&#39;item-trigger&#39;, (e) =&gt; {
+  const selectedPath = getItemDescendants(e.target);
+  menu.values = selectedPath.map((item) =&gt; {
+    return item.value;
+  });
+});
+</code></pre>
+<h3 id="overlay-transitions">Overlay transitions</h3>
+<p><code>ef-overlay-menu</code> supports a number of built-in transitions. To set the transition, use the <code>transition-style</code> attribute.</p>
+<code-sandbox hash="30368781"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay-menu&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+const button = document.getElementById(&#39;button&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+menu.positionTarget = button;
+
+button.addEventListener(&#39;click&#39;, () =&gt; {
+  if (!menu.fullyOpened &amp;&amp; !menu.transitioning) {
+    menu.opened = true;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 200px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-button cta id=&quot;button&quot;&gt;With Transitions&lt;/ef-button&gt;
+&lt;/section&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-overlay-menu id=&quot;menu&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Regions&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;emea&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;apac&quot;&gt;APAC&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;emea&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item for=&quot;united-kingdom&quot;&gt;United Kingdom&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;united-kingdom&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;Cardiff&lt;/ef-item&gt;
+  &lt;ef-item&gt;Edinburgh&lt;/ef-item&gt;
+  &lt;ef-item&gt;London&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+&lt;ef-overlay-menu id=&quot;apac&quot; transition-style=&quot;slide&quot;&gt;
+  &lt;ef-item&gt;China&lt;/ef-item&gt;
+  &lt;ef-item&gt;Australia&lt;/ef-item&gt;
+&lt;/ef-overlay-menu&gt;
+</code></pre>
+<h3 id="position-against-target">Position against target</h3>
+<p>Position may contain a single word or a comma separated list to set the priority. Position is not applied if <code>attachTarget</code> is not HTML Element. For instance:</p>
+<ul>
+<li><code>[bottom-middle, top-middle]</code>  default position is bottom-middle, if cannot fit position top-middle.</li>
+<li><code>[left, right]</code> the align is not set, set best position on the left or right.</li>
+</ul>
+<pre><code class="language-javascript">menu.position = [&#39;bottom-end&#39;, &#39;bottom-start&#39;, &#39;right-end&#39;, &#39;center-middle&#39;];
+</code></pre>
+<p>The first part defines <em>position</em>. The optional second part defines <em>align</em>. For instance: <code>bottom</code>, <code>top-start</code>, <code>right-middle</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>top</code></td>
+<td>Above target (same as <code>top-start</code>)</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>After target (same as <code>right-middle</code>)</td>
+</tr>
+<tr>
+<td><code>bottom</code></td>
+<td>Below target (same as <code>bottom-start</code>)</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>Before target (same as <code>left-middle</code>)</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>At the center of target (same as <code>center-middle</code>)</td>
+</tr>
+</tbody></table>
+<br>
+
+<table>
+<thead>
+<tr>
+<th>Align</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>start</code></td>
+<td>Target is aligned at the start of popup</td>
+</tr>
+<tr>
+<td><code>middle</code></td>
+<td>Target is aligned at the middle of popup</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Target is aligned at the end of popup</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>compact</code></td>
+<td><code>compact</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Switch to compact style menu</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>OverlayMenuData|undefined</code></td>
+<td></td>
+<td>Construct the menu from data object.<br />Cannot be used with internal content</td>
+</tr>
+<tr>
+<td><code>horizontalOffset</code></td>
+<td><code>horizontal-offset</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>A pixel value that will be added to the position calculated on the horizontal axis. The offset will be applied either to the <code>left</code> or <code>right</code> depending on the <code>positionTarget</code></td>
+</tr>
+<tr>
+<td><code>lockPositionTarget</code></td>
+<td><code>lock-position-target</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to lock position target</td>
+</tr>
+<tr>
+<td><code>noCancelOnEscKey</code></td>
+<td><code>no-cancel-on-esc-key</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to disable canceling the overlay with the ESC key</td>
+</tr>
+<tr>
+<td><code>noCancelOnOutsideClick</code></td>
+<td><code>no-cancel-on-outside-click</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to disable canceling the overlay by clicking outside it</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>offset</code></td>
+<td><code>number</code></td>
+<td></td>
+<td>A pixel value that will be added to the position calculated on the vertical or horizontal axis. The offset is applied dynamically depending on the <code>positionTarget</code></td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True if the menu is currently displayed</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>position</code></td>
+<td><code>Position[] | undefined</code></td>
+<td></td>
+<td>Set position and align against the attach target.</td>
+</tr>
+<tr>
+<td><code>positionTarget</code></td>
+<td></td>
+<td><code>HTMLElement | null</code></td>
+<td>null</td>
+<td>Position next to the HTML element</td>
+</tr>
+<tr>
+<td><code>transitionStyle</code></td>
+<td><code>transition-style</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set the transition style</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Returns the first selected item value.</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Array of item&#39;s values</td>
+</tr>
+<tr>
+<td><code>verticalOffset</code></td>
+<td><code>vertical-offset</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>A pixel value that will be added to the position calculated on the vertical axis. The offset will be applied either to the <code>top</code> or <code>bottom</code> depending on the <code>positionTarget</code></td>
+</tr>
+<tr>
+<td><code>withBackdrop</code></td>
+<td><code>with-backdrop</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to show backdrop</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td><code>x</code></td>
+<td><code>number | undefined</code></td>
+<td></td>
+<td>Set a specific x coordinate</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td><code>y</code></td>
+<td><code>number | undefined</code></td>
+<td></td>
+<td>Set a specific y coordinate</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>item-trigger</code></td>
+<td>Dispatched when user clicks on item</td>
+</tr>
+<tr>
+<td><code>opened-changed</code></td>
+<td>Dispatched when when opened attribute changes internally. Prevent default to stop opening/closing pipeline</td>
+</tr>
+</tbody></table>

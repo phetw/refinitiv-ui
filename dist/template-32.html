@@ -1,0 +1,31 @@
+<h1 id="loader">Loader</h1>
+<code-sandbox hash="46ce916e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/loader?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;loader&#39;);
+</code></pre>
+<pre><code class="language-css">.container {
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-loader&gt;&lt;/ef-loader&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-loader</code> is an animated graphical component used to show that an app is performing an action in the background, such as downloading content.</p>
+<h3 id="usage">Usage</h3>
+<p>Add <code>ef-loader</code> into your document, and the animation will begin. When the loader is no longer needed, hide it with <code>display: none</code>.</p>
+<aside class="info"><p>If the loader is only used once, it can be also be removed from the DOM.</p>
+</aside><code-sandbox hash="3cd9fa9c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/loader?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;loader&#39;);
+</code></pre>
+<pre><code class="language-css">.item {
+  position: relative;
+  height: 50px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;item&quot;&gt;&lt;ef-loader&gt;&lt;/ef-loader&gt;&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-loader&gt;&lt;/ef-loader&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">

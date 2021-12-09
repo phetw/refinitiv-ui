@@ -1,0 +1,117 @@
+<h1 id="radio-button">Radio Button</h1>
+<code-sandbox hash="a21f59ac"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/radio-button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;radio-button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-radio-button name=&quot;group&quot; checked&gt;Option A&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;group&quot;&gt;Option B&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;group&quot;&gt;Option C&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;group&quot; style=&quot;width: 60px; padding: 20px 0;&quot;&gt;Fixed width&lt;/ef-radio-button&gt;
+</code></pre>
+</code-sandbox><p><code>ef-radio-button</code> is a form control for selecting one option from many options within the same group.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-radio-button</code> is a simple radio button that similar to the type radio of native input.</p>
+<pre><code class="language-html">&lt;ef-radio-button&gt;Sushi&lt;/ef-radio-button&gt;
+&lt;ef-radio-button checked&gt;Steak&lt;/ef-radio-button&gt;
+&lt;ef-radio-button&gt;Noodle&lt;/ef-radio-button&gt;
+</code></pre>
+<h3 id="grouping-radio-buttons">Grouping radio buttons</h3>
+<p>More than one <code>ef-radio-button</code> can be grouped by setting the same value to the <code>name</code> attribute. Once an item in a group is checked, the user cannot uncheck a radio group unless the value is set through a property or attribute.</p>
+<code-sandbox hash="f827cc23"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/radio-button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;radio-button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-radio-button name=&quot;dairy&quot; checked&gt;Skimmed Milk&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;dairy&quot;&gt;Whole Milk&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;dairy&quot;&gt;Soya&lt;/ef-radio-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-radio-button name=&quot;dairy&quot; checked&gt;Skimmed Milk&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;dairy&quot;&gt;Whole Milk&lt;/ef-radio-button&gt;
+&lt;ef-radio-button name=&quot;dairy&quot;&gt;Soya&lt;/ef-radio-button&gt;
+</code></pre>
+<h3 id="disabled-and-readonly">Disabled and readonly</h3>
+<p><code>ef-radio-button</code> can be set to be disabled or readonly using the <code>disabled</code> or <code>readonly</code> attributes.</p>
+<code-sandbox hash="7c428618"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/radio-button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;radio-button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-radio-button checked&gt;Default&lt;/ef-radio-button&gt;
+&lt;ef-radio-button disabled checked&gt;Disabled&lt;/ef-radio-button&gt;
+&lt;ef-radio-button readonly checked&gt;Readonly&lt;/ef-radio-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-radio-button checked&gt;Default&lt;/ef-radio-button&gt;
+&lt;ef-radio-button disabled checked&gt;Disabled&lt;/ef-radio-button&gt;
+&lt;ef-radio-button readonly&gt;Readonly&lt;/ef-radio-button&gt;
+</code></pre>
+<h3 id="handle-check-value-changed">Handle check value changed</h3>
+<p><code>checked-changed</code> is the <strong>only</strong> event fired by <code>ef-radio-button</code>. It is dispatched whenever the state has been changed by user interaction, such as a click, tap or keyboard event.</p>
+<pre><code class="language-javascript">radioButtonGroup.addEventListener(&#39;checked-changed&#39;, (e) =&gt; {
+  if (e.target.checked) {
+    // console.log(e.target.id);
+  }
+}, true);
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checked</code></td>
+<td><code>checked</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Radio button checked state</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Group multiple radio buttons by assigning the same name</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Value of the radio button</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checked-changed</code></td>
+<td>Fired when the <code>checked</code> property changes.</td>
+</tr>
+</tbody></table>

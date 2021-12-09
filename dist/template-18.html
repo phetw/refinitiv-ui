@@ -1,0 +1,141 @@
+<h1 id="counter">Counter</h1>
+<code-sandbox hash="2055ebb7"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/counter?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;counter&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-counter value=&quot;20&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;100&quot; value=&quot;150&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;1999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;1000&quot; value=&quot;1999&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+</code-sandbox><p><code>ef-counter</code> is a badge component which can be used to show a number of selected items.</p>
+<h3 id="usage">Usage</h3>
+<p>The number that displays on the counter can be set via the <code>value</code> attribute/property. If <code>value</code> is unset, negative or not a string number, it will display &#39;0&#39;. Any decimal value will be truncated e.g. &#39;9.9&#39; will be converted to &#39;9&#39;.</p>
+<code-sandbox hash="17c82974"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/counter?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;counter&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-counter&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9.9&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;XYZ&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;-10&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-counter&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9.9&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;XYZ&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;-10&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+<h3 id="set-maximum-value">Set maximum value</h3>
+<p>Use the <code>max</code> attribute/property to limit the value displayed. The counter will display the maximum value with a plus sign suffix <code>+</code> when <code>value</code> is greater than <code>max</code>.</p>
+<p>If <code>max</code> is unset, negative or not a string number, it will reset to the default and the counter will not apply the max to its value. If <code>max</code> is set with a decimal, it will be truncated e.g. &#39;99.9&#39; will be converted to &#39;99&#39;.</p>
+<code-sandbox hash="35e84740"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/counter?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;counter&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-counter value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;99.9&quot; value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;XYZ&quot; value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;-99&quot; value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;199&quot; value=&quot;200&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-counter value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;99.9&quot; value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;XYZ&quot; value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;-99&quot; value=&quot;100&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;199&quot; value=&quot;200&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+<h3 id="compact-notation">Compact notation</h3>
+<p><code>ef-counter</code> supports compact notation to minimize large number formats. Numbers greater than 999 will be formatted as abbreviated numbers.</p>
+<code-sandbox hash="397d94b1"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/counter?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;counter&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-counter value=&quot;9999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999999999999&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-counter value=&quot;9999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;9999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;99999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter value=&quot;999999999999999&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+<p>Compact notation also work with the <code>max</code> attribute.</p>
+<code-sandbox hash="9006db91"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/counter?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;counter&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-counter max=&quot;9000&quot; value=&quot;9999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000&quot; value=&quot;99999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000&quot; value=&quot;999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;9000000&quot; value=&quot;9999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000000&quot; value=&quot;99999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000000&quot; value=&quot;999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;9000000000&quot; value=&quot;9999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000000000&quot; value=&quot;99999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000000000&quot; value=&quot;999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;9000000000000&quot; value=&quot;9999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000000000000&quot; value=&quot;99999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000000000000&quot; value=&quot;999999999999999&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-counter max=&quot;9000&quot; value=&quot;9999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000&quot; value=&quot;99999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000&quot; value=&quot;999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;9000000&quot; value=&quot;9999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000000&quot; value=&quot;99999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000000&quot; value=&quot;999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;9000000000&quot; value=&quot;9999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000000000&quot; value=&quot;99999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000000000&quot; value=&quot;999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;9000000000000&quot; value=&quot;9999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;90000000000000&quot; value=&quot;99999999999999&quot;&gt;&lt;/ef-counter&gt;
+&lt;ef-counter max=&quot;900000000000000&quot; value=&quot;999999999999999&quot;&gt;&lt;/ef-counter&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>max</code></td>
+<td><code>max</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set maximum counter value.<br />This value will be displayed with suffix <code>+</code> if count value is larger than max.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>The value of counter as string number</td>
+</tr>
+</tbody></table>

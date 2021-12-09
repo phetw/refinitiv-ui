@@ -1,0 +1,121 @@
+<h1 id="checkbox">Checkbox</h1>
+<code-sandbox hash="b76b09fe"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/checkbox?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;checkbox&#39;);
+</code></pre>
+<pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: column;
+}
+ef-checkbox {
+  margin-left: 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-checkbox&gt;Unchecked&lt;/ef-checkbox&gt;
+  &lt;ef-checkbox checked&gt;Checked&lt;/ef-checkbox&gt;
+  &lt;ef-checkbox indeterminate&gt;Partially checked&lt;/ef-checkbox&gt;
+  &lt;ef-checkbox style=&quot;width: 80px;&quot;&gt;Fixed width&lt;/ef-checkbox&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-checkbox</code> is a form control for selecting one or several options. States of check box can be checked, unchecked, and indeterminate.</p>
+<h3 id="usage">Usage</h3>
+<p>Checkbox can be set to the checked state by adding the <code>checked</code> attribute. You can also use the attrribute to determine the current state of a checkbox. The indeterminate state can only be set by code, not by user interaction.</p>
+<code-sandbox hash="880ad616"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/checkbox?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;checkbox&#39;);
+</code></pre>
+<pre><code class="language-css">ef-checkbox {
+  margin-left: 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-checkbox&gt;Unchecked&lt;/ef-checkbox&gt;
+&lt;ef-checkbox checked&gt;Checked&lt;/ef-checkbox&gt;
+&lt;ef-checkbox indeterminate&gt;Partially checked&lt;/ef-checkbox&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-checkbox&gt;Unchecked&lt;/ef-checkbox&gt;
+&lt;ef-checkbox checked&gt;Checked&lt;/ef-checkbox&gt;
+&lt;ef-checkbox indeterminate&gt;Partially checked&lt;/ef-checkbox&gt;
+</code></pre>
+<h3 id="disabled-and-readonly">Disabled and readonly</h3>
+<p><code>ef-checkbox</code> can be set to disabled or readonly by using the associated attributes.</p>
+<code-sandbox hash="439cd718"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/checkbox?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;checkbox&#39;);
+</code></pre>
+<pre><code class="language-css">ef-checkbox {
+  margin-left: 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-checkbox checked&gt;Default&lt;/ef-checkbox&gt;
+&lt;ef-checkbox disabled checked&gt;Disabled&lt;/ef-checkbox&gt;
+&lt;ef-checkbox readonly checked&gt;Readonly&lt;/ef-checkbox&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-checkbox checked&gt;Default&lt;/ef-checkbox&gt;
+&lt;ef-checkbox disabled checked&gt;Disabled&lt;/ef-checkbox&gt;
+&lt;ef-checkbox readonly checked&gt;Readonly&lt;/ef-checkbox&gt;
+</code></pre>
+<h3 id="handle-when-check-state-changed">Handle when check state changed</h3>
+<p>The <code>checked-changed</code> event can be used to recognize when the state of a checkbox has been changed. In code, the event can also check if the state is set to <code>checked</code> or <code>indeterminate</code> by querying the associated property.</p>
+<pre><code class="language-javascript">const checkbox = document.getElementById(&quot;Checkbox&quot;);
+checkbox.addEventListener(&#39;checked-changed&#39;, (e) =&gt; {
+  // console.log(e.target.checked)
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checked</code></td>
+<td><code>checked</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Value of checkbox</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>indeterminate</code></td>
+<td><code>indeterminate</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to indeterminate</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checked-changed</code></td>
+<td>Fired when the <code>checked</code> property changes.</td>
+</tr>
+</tbody></table>

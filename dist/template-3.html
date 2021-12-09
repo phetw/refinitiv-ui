@@ -1,0 +1,81 @@
+<h1 id="data-collection-composer">Data Collection Composer</h1>
+<p>The Collection Composer is an API wrapper for data objects that conforms to the <a href="#collectionitem">CollectionItem</a> interface. This wrapper enables a fast and consistent approach to manipulating flat and nested data within elements, without affecting the original data object.</p>
+<p>All elements with <code>data</code> properties use a Collection Composer to manage their data internally. These elements apply the generic <a href="#dataitem">DataItem</a> interface. Some elements may even support being controlled using an external composer.</p>
+<h3 id="installation">Installation</h3>
+<p>This module is available as part of <code>@refinitiv-ui/utils</code>.</p>
+<pre><code class="language-shell">npm i @refinitiv-ui/utils
+</code></pre>
+<h3 id="usage">Usage</h3>
+<p>The module can be imported like any of the elements.</p>
+<pre><code class="language-ts">import { CollectionComposer, CollectionItem } from &#39;@refinitiv-ui/utils&#39;;
+
+// Custom data interface
+interface MyData extends CollectionItem {
+  src: string;
+  type: string;
+}
+
+// Create data array
+const data: MyData[] = [{
+  src: &#39;media.refinitiv.com/video1.webm&#39;,
+  type: &#39;video/webm&#39;
+},
+{
+  src: &#39;media.refinitiv.com/video1.mp4&#39;,
+  type: &#39;video/mp4&#39;
+}];
+
+// Initialize composer, using the data array
+const composer = new CollectionComposer(data);
+
+// Use composer to return useful data
+const modernMedia = composer.queryItemsByPropertyValue(&#39;type&#39;, &#39;video/webm&#39;);
+</code></pre>
+<h3 id="collectionitem"><code>CollectionItem</code></h3>
+<p>This interface is the minimum requirement for data passed to a Collection Composer.</p>
+<pre><code class="language-ts">interface CollectionItem {
+  /**
+   * Child items collection.
+   * Used for nested data structures.
+   */
+  items?: this[];
+}
+</code></pre>
+<h3 id="dataitem"><code>DataItem</code></h3>
+<p>This is the common interface to extend for elements with <code>data</code> properties.</p>
+<pre><code class="language-ts">interface DataItem extends CollectionItem {
+  /**
+   * Value of the data item.
+   * This is usually the value which is returned,
+   * when the item is selected.
+   */
+  value?: string;
+  /**
+   * Whether to show or hide
+   * the item from the renderer.
+   */
+  hidden?: boolean;
+  /**
+   * Sets the item to be readonly.
+   * Read only items cannot be selected by a user.
+   */
+  readonly?: boolean;
+  /**
+   * Sets the highlight state of the item.
+   * This is usually used for navigating over items,
+   * without affecting focus, or, highlighting a multiple selection.
+   */
+  highlighted?: boolean;
+  /**
+   * Sets the selection state of the item.
+   * This is usually used for returning selected values.
+   */
+  selected?: boolean;
+  /**
+   * Sets the item to be disabled.
+   * This completely prevents the
+   * item from being interacted with.
+   */
+  disabled?: boolean;
+}
+</code></pre>

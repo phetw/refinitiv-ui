@@ -1,0 +1,153 @@
+<h1 id="rating">Rating</h1>
+<code-sandbox hash="3728b633"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/rating?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;rating&#39;);
+</code></pre>
+<pre><code class="language-css">ef-rating {
+  margin-right: 25px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-rating value=&quot;2&quot;&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;4&quot; interactive&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;7.5&quot; max=&quot;10&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+</code-sandbox><p><code>ef-rating</code> is a star visualization component that is typically used for ranking.</p>
+<h3 id="usage">Usage</h3>
+<p>By default, <code>ef-rating</code> is displayed with no stars selected. Setting <code>value</code> selects/highlights stars.</p>
+<code-sandbox hash="549cad35"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/rating?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;rating&#39;);
+</code></pre>
+<pre><code class="language-css">ef-rating {
+  margin-right: 25px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-rating&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;2&quot;&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;3.5&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-rating&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;2&quot;&gt;&lt;/ef-rating&gt;
+&lt;ef-rating value=&quot;3.5&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+<h3 id="customize-number-of-stars-and-size">Customize number of stars and size</h3>
+<p>The maximum number of stars can be overridden by setting <code>max</code>.</p>
+<code-sandbox hash="efa566bc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/rating?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;rating&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-rating max=&quot;10&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-rating max=&quot;10&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+<p>The size of the stars can be changed using standard CSS styles.</p>
+<code-sandbox hash="f8f0be26"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/rating?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;rating&#39;);
+</code></pre>
+<pre><code class="language-css">#custom {
+  font-size:30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-rating id=&quot;custom&quot; value=&quot;2.5&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">#custom {
+  font-size:30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-rating id=&quot;custom&quot; value=&quot;2.5&quot;&gt;&lt;/ef-rating&gt;
+</code></pre>
+<h3 id="interactive-rating">Interactive rating</h3>
+<p>By default users cannot change the value of <code>ef-rating</code>. Specifying <code>interactive</code> makes it possible for users to change the value.</p>
+<code-sandbox hash="446ad615"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/rating?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;rating&#39;);
+
+const customRating = document.getElementById(&#39;rateRestaurant&#39;);
+let previousValue = customRating.value;
+
+// clear existing rating if users tap the same rating
+customRating.addEventListener(&#39;tap&#39;, () =&gt; {
+  if ((customRating.value === previousValue)) {
+    customRating.value = &#39;0&#39;;
+    document.getElementById(&#39;result&#39;).textContent = &#39;&#39;;
+  }
+  previousValue = customRating.value
+});
+
+customRating.addEventListener(&#39;value-changed&#39;, (event) =&gt; {
+  document.getElementById(&#39;result&#39;).textContent = &#39;You have selected: &#39; + event.detail.value;
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-rating id=&quot;rateRestaurant&quot; max=&quot;10&quot; value=&quot;7&quot; interactive&gt;&lt;/ef-rating&gt;
+&lt;pre id=&quot;result&quot;&gt;&lt;/pre&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-rating max=&quot;10&quot; value=&quot;7&quot; interactive&gt;&lt;/ef-rating&gt;
+&lt;pre id=&quot;result&quot;&gt;&lt;/pre&gt;
+</code></pre>
+<pre><code class="language-javascript">const customRating = document.getElementById(&#39;rateRestaurant&#39;);
+let previousValue = el.value;
+
+// clear existing rating if users tap the same rating
+customRating.addEventListener(&#39;tap&#39;, () =&gt; {
+  if ((customRating.value === previousValue)) {
+    customRating.value = &#39;0&#39;;
+    document.getElementById(&#39;result&#39;).textContent = &#39;&#39;;
+  }
+  previousValue = customRating.value
+});
+
+customRating.addEventListener(&#39;value-changed&#39;, (event) =&gt;  {
+  document.getElementById(&#39;result&#39;).textContent = &#39;You have selected: &#39; + event.detail.value;
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>interactive</code></td>
+<td><code>interactive</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Make it possible to interact with rating control and change the value</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>max</code></td>
+<td><code>string</code></td>
+<td>&quot;5&quot;</td>
+<td>Set number of total stars</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;0&quot;</td>
+<td>Set number of selected stars. Value can be any number between 0 and <code>max</code>.<br />Decimal values are calculated to empty star (0 - .25); half-star (.25 - .75) and full star (.75 - 1)</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>value-changed</code></td>
+<td>Fired when the <code>value</code> changes.</td>
+</tr>
+</tbody></table>

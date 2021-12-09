@@ -1,0 +1,147 @@
+<h1 id="appstate-bar">Appstate Bar</h1>
+<code-sandbox hash="8b5d560b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/appstate-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;appstate-bar&#39;);
+</code></pre>
+<pre><code class="language-css">#wrapper {
+  padding: 1px;
+}
+ef-appstate-bar {
+  margin-bottom: 10px;
+}
+[slot=&quot;right&quot;] {
+  display: flex;
+  align-items: center;
+}
+[slot=&quot;right&quot;] ef-icon {
+  padding-right: 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
+  &lt;ef-appstate-bar heading=&quot;Preview&quot;&gt;This is a preview version.
+    &lt;a alt href=&quot;#&quot;&gt;What&#39;s changing?&lt;/a&gt;
+  &lt;/ef-appstate-bar&gt;
+  &lt;ef-appstate-bar heading=&quot;IN DEVELOPMENT&quot; state=&quot;info&quot;&gt;Internal use only.
+    &lt;a alt href=&quot;#&quot; slot=&quot;right&quot;&gt;
+      &lt;ef-icon icon=&quot;present&quot;&gt;&lt;/ef-icon&gt;Send us feedback&lt;/a&gt;
+  &lt;/ef-appstate-bar&gt;
+  &lt;ef-appstate-bar heading=&quot;New&quot; state=&quot;highlight&quot;&gt;Welcome to new version.
+    &lt;a alt href=&quot;#&quot;&gt;What&#39;s new?&lt;/a&gt;
+    &lt;a alt href=&quot;#&quot; slot=&quot;right&quot;&gt;
+      &lt;ef-icon icon=&quot;help&quot;&gt;&lt;/ef-icon&gt;Help&lt;/a&gt;
+  &lt;/ef-appstate-bar&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-appstate-bar</code> is used to display status or other information at the top of an application. App State Bar comes with pre-defined colors in the theme.</p>
+<h3 id="usage">Usage</h3>
+<p>Styles for App State Bar content can be set using the <code>state</code> attribute/property. The App State Bar&#39;s heading can be set via the <code>heading</code> attribute/property.</p>
+<pre><code class="language-html">&lt;ef-appstate-bar heading=&quot;Heading&quot;&gt;
+  Here is your content message.
+&lt;/ef-appstate-bar&gt;
+
+&lt;ef-appstate-bar heading=&quot;Info&quot; state=&quot;info&quot;&gt;
+  Set attribute as state = &quot;info&quot;.
+&lt;/ef-appstate-bar&gt;
+
+&lt;ef-appstate-bar heading=&quot;Highlight&quot; state=&quot;highlight&quot;&gt;
+  Set attribute as state = &quot;highlight&quot;.
+&lt;/ef-appstate-bar&gt;
+</code></pre>
+<h3 id="right-slot">Right slot</h3>
+<p>The App State Bar provides a slot to display content at the right of bar. The slot can contain any kind of content e.g. normal text, links, or icons.</p>
+<code-sandbox hash="d921b45e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/appstate-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;appstate-bar&#39;);
+</code></pre>
+<pre><code class="language-css">#wrapper {
+  padding: 1px;
+}
+[slot=&quot;right&quot;] {
+  display: flex;
+  align-items: center;
+}
+[slot=&quot;right&quot;] ef-icon {
+  padding-right: 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
+  &lt;ef-appstate-bar heading=&quot;Sample&quot; state=&quot;highlight&quot;&gt;
+    see on the right of bar
+    &lt;a alt href=&quot;#&quot; slot=&quot;right&quot;&gt;
+      &lt;ef-icon icon=&quot;like-empty&quot;&gt;&lt;/ef-icon&gt;This is the Right slot&lt;/a&gt;
+  &lt;/ef-appstate-bar&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">#wrapper {
+  padding: 1px;
+}
+[slot=&quot;right&quot;] {
+  display: flex;
+  align-items: center;
+}
+[slot=&quot;right&quot;] ef-icon {
+  padding-right: 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-appstate-bar heading=&quot;Sample&quot; state=&quot;highlight&quot;&gt;
+  See on the right of bar.
+  &lt;a alt href=&quot;#&quot; slot=&quot;right&quot;&gt;
+    &lt;ef-icon icon=&quot;like-empty&quot;&gt;&lt;/ef-icon&gt;This is the Right slot&lt;/a&gt;
+&lt;/ef-appstate-bar&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>heading</code></td>
+<td><code>heading</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Text to display in heading section.</td>
+</tr>
+<tr>
+<td><code>state</code></td>
+<td><code>state</code></td>
+<td><code>&quot;info&quot; | &quot;highlight&quot; | null</code></td>
+<td>null</td>
+<td>(optional) Type of state bar. Supported value are <code>info</code>, <code>highlight</code>.</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clear</code></td>
+<td>fired when clear button is clicked</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>right</code></td>
+<td>place custom content on the right of bar.</td>
+</tr>
+</tbody></table>

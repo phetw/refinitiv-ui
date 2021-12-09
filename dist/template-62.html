@@ -1,0 +1,307 @@
+<h1 id="without-a-framework">Without a framework</h1>
+<p>EF elements are Web Component. They can be used with JavaScript frameworks or without a framework (vanilla JavaScript). This guideline provides how you can use EF elements without a framework, either with bundling tool or without bundling tool.</p>
+<h2 id="without-bundling">Without bundling</h2>
+<p>It&#39;s the simplest and the quickest way for creating a quick standalone demo and getting started with EF. However, without any extra tools it will only support browsers that natively support JavaScript module syntax. <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">[see list]</a>.</p>
+<p>EF elements are shipped as ES6 module. To use EF elements without a JavaScript framework, simply include a script with <code>type=module</code> into your HTML template.</p>
+<p>The following tutorial will guide you through creating a simple login page using EF.</p>
+<h3 id="initialize-your-project">Initialize your project</h3>
+<p>Create a new project folder.</p>
+<pre><code class="language-shell">mkdir project-demo
+cd project-demo
+</code></pre>
+<p>Use <code>npm init</code> command to initialize the project. It will create <code>package.json</code> file which contains application information and its dependencies.</p>
+<pre><code class="language-shell">npm init
+</code></pre>
+<h3 id="install-ef-dependencies">Install EF dependencies</h3>
+<p>Install element and theme packages using npm.</p>
+<pre><code class="language-shell">npm i @refinitiv-ui/elements
+npm i @refinitiv-ui/halo-theme
+</code></pre>
+<h3 id="project-setup">Project setup</h3>
+<h4 id="initialize-html-template">Initialize HTML template</h4>
+<p>Create file <code>index.html</code> with a typical HTML template.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot; /&gt;
+    &lt;title&gt;A Simple HTML&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h4 id="import-component-and-theme-modules">Import component and theme modules</h4>
+<p>Create a script <code>type=&quot;module&quot;</code> tag that imports EF dependencies, then include it to <code>index.html</code>.</p>
+<pre><code class="language-html">&lt;script type=&quot;module&quot;&gt;
+  import &#39;@refinitiv-ui/elements/lib/button&#39;;
+  import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+  import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
+  import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
+
+  import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+  import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
+  import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+  import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
+  import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+&lt;/script&gt;
+</code></pre>
+<h4 id="create-a-login-page">Create a login page</h4>
+<p>Now, we can start adding elements, styling and logics into <code>index.html</code>.</p>
+<pre><code class="language-html">&lt;style&gt;
+  ef-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 100%;
+    margin: 40px auto;
+    border: solid 1px #e1e1e1;
+  }
+
+  h1 {
+    margin-top: 40px;
+  }
+&lt;/style&gt;
+&lt;ef-panel spacing&gt;
+  &lt;h1&gt;Hello!&lt;/h1&gt;
+  &lt;ef-text-field placeholder=&quot;Username&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-password-field placeholder=&quot;Password&quot;&gt;&lt;/ef-password-field&gt;
+  &lt;div&gt;
+    &lt;ef-button disabled&gt;Login&lt;/ef-button&gt;
+    &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-panel&gt;
+&lt;script&gt;
+  const username = document.querySelector(&quot;ef-text-field&quot;);
+  const password = document.querySelector(&quot;ef-password-field&quot;);
+  const loginButton = document.querySelector(&quot;ef-button&quot;);
+
+  const onTextChanges = function () {
+    if (username.value.length === 0 || password.value.length === 0) {
+      loginButton.disabled = true;
+    } else {
+      loginButton.disabled = false;
+    }
+  };
+
+  username.addEventListener(&quot;value-changed&quot;, onTextChanges);
+  password.addEventListener(&quot;value-changed&quot;, onTextChanges);
+
+  loginButton.addEventListener(&quot;tap&quot;, function () {
+    document.querySelector(&quot;h1&quot;).textContent = &quot;Done!&quot;;
+  });
+&lt;/script&gt;
+</code></pre>
+<h3 id="serving-application">Serving application</h3>
+<p>In order to correctly serve <strong>bare modules</strong>, we need a tool that rewrites the path. For the simplicity, we are going to use <a href="https://github.com/open-wc/es-dev-server">es-dev-server</a></p>
+<aside class="info"><p>In the browser, import must get either a relative or absolute URL. Modules without any path are called “bare” modules.</p>
+</aside><p>At root directory in your sample application, run this command to serve the app.</p>
+<pre><code class="language-bash">npx es-dev-server --node-resolve --watch
+</code></pre>
+<pre><code class="language-live(preview,components,halo-theme-light)">&lt;style&gt;
+  ef-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 450px;
+    height: 100%;
+    margin: 40px auto;
+  }
+
+  ef-button {
+    margin: 15px 5px;
+  }
+
+  h1 {
+    margin-top: 40px;
+  }
+&lt;/style&gt;
+&lt;ef-panel spacing&gt;
+  &lt;h1&gt;Hello!&lt;/h1&gt;
+  &lt;ef-text-field placeholder=&quot;Username&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-password-field placeholder=&quot;Password&quot;&gt;&lt;/ef-password-field&gt;
+  &lt;div&gt;
+    &lt;ef-button disabled&gt;Login&lt;/ef-button&gt;
+    &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-panel&gt;
+&lt;script&gt;
+  const username = document.querySelector(&#39;ef-text-field&#39;);
+  const password = document.querySelector(&#39;ef-password-field&#39;);
+  const loginButton = document.querySelector(&#39;ef-button&#39;);
+
+  const onTextChanges = function () {
+    if (username.value.length === 0 || password.value.length === 0) {
+      loginButton.disabled = true;
+    } else {
+      loginButton.disabled = false;
+    }
+  };
+
+  username.addEventListener(&#39;value-changed&#39;, onTextChanges);
+  password.addEventListener(&#39;value-changed&#39;, onTextChanges);
+
+  loginButton.addEventListener(&#39;tap&#39;, function () {
+    document.querySelector(&#39;h1&#39;).textContent = &#39;Done!&#39;;
+  });
+&lt;/script&gt;
+</code></pre>
+<h2 id="with-bundling">With bundling</h2>
+<p>On this part of tutorial, you are going to take a step further and look into setting up bundle configuration. In this example, you will build your application to support legacy browsers which are not neither support ES6 nor Web Component.</p>
+<p>We are going to use <code>webpack</code> as it is one of the most popular bundling tool. However, setup of the other bundling tools would be fundamentally similar.</p>
+<h3 id="installing-the-tools">Installing the tools</h3>
+<h4 id="webpack">Webpack</h4>
+<p><code>webpack</code> is going to resolve modules import path, process and pack them into production-ready files. While <code>webpack-dev-server</code> will serves a webpack app and updates the browser on changes.</p>
+<pre><code class="language-sh">npm i -D webpack@4 webpack-cli webpack-dev-server
+</code></pre>
+<h4 id="babel">Babel</h4>
+<p><code>babel</code> will transpile modern JavaScript syntax (<code>es6</code> or newer) into <code>es5</code> which also works on older browsers. However, the bundle size will be larger and so it will have significant impact on the performance. <code>babel</code> relies on <code>@babel/preset-env</code> which will read a provided list of target browsers and compile accordingly.</p>
+<p><code>@babel/plugin-transform-runtime</code> is a plugin that allows the re-use of Babel&#39;s injected helper code to optimize bundle size. This is used along with <code>@babel/runtime</code>, a runtime dependency. <a href="https://babeljs.io/docs/en/babel-plugin-transform-runtime">more</a></p>
+<pre><code class="language-sh">npm install -D babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime
+</code></pre>
+<pre><code class="language-sh">npm install @babel/runtime
+</code></pre>
+<h4 id="core-js">core-js</h4>
+<p><code>core-js</code> a module that provides polyfills for es6 and newer. It&#39;s required to use with <code>babel</code>.</p>
+<pre><code class="language-sh">npm i core-js@3
+</code></pre>
+<h3 id="project-setup-1">Project setup</h3>
+<p>In <code>src</code> folder, create <code>index.js</code> and then import EF elements, themes and polyfills.</p>
+<pre><code class="language-javascript">// Polyfills
+import &#39;@refinitiv-ui/polyfills/minimal&#39;;
+
+// Components
+import &#39;@refinitiv-ui/elements/lib/button&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
+
+// Themes
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+</code></pre>
+<p>Then at the root directory of the project, create <code>index.html</code> with following content.</p>
+<pre><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+  &lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot; /&gt;
+    &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+    &lt;title&gt;Webpack sample&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;script src=&quot;./dist/index.js&quot;&gt;&lt;/script&gt;
+    &lt;ef-panel class=&quot;panel&quot; spacing&gt;
+      &lt;h1&gt;Hello!&lt;/h1&gt;
+      &lt;ef-text-field class=&quot;input&quot; placeholder=&quot;Username&quot;&gt;&lt;/ef-text-field&gt;
+      &lt;ef-password-field
+        class=&quot;input&quot;
+        placeholder=&quot;Password&quot;
+      &gt;&lt;/ef-password-field&gt;
+      &lt;div class=&quot;btn-container&quot;&gt;
+        &lt;ef-button cta disabled&gt;Login&lt;/ef-button&gt;
+        &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+      &lt;/div&gt;
+    &lt;/ef-panel&gt;
+    &lt;script&gt;
+      const username = document.querySelector(&quot;ef-text-field&quot;);
+      const password = document.querySelector(&quot;ef-password-field&quot;);
+      const loginButton = document.querySelector(&quot;ef-button&quot;);
+
+      const onTextChanges = function () {
+        if (username.value.length === 0 || password.value.length === 0) {
+          loginButton.disabled = true;
+        } else {
+          loginButton.disabled = false;
+        }
+      };
+
+      username.addEventListener(&quot;value-changed&quot;, onTextChanges);
+      password.addEventListener(&quot;value-changed&quot;, onTextChanges);
+
+      loginButton.addEventListener(&quot;tap&quot;, function () {
+        document.querySelector(&quot;h1&quot;).textContent = &quot;Done!&quot;;
+      });
+    &lt;/script&gt;
+    &lt;style&gt;
+      .panel {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 400px;
+        height: 300px;
+        margin: 10em auto;
+      }
+      .input {
+        margin-top: 8px;
+      }
+      .btn-container {
+        display: flex;
+        margin: 12px 0;
+      }
+      .btn-container ef-button {
+        margin: 0 8px;
+      }
+    &lt;/style&gt;
+  &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+<h3 id="configurations">Configurations</h3>
+<p>Create a file name <code>webpack.config.js</code> at the project root and paste the following configuration.</p>
+<p>What this configuration does is setting <code>webpack</code> to bundle and transpile a <code>./src/index.js</code> and output it to <code>./dist/index.js</code>. It will also look for files with extension of <code>.mjs</code> and <code>.js</code> in the folders that specified in <code>include</code> section to transpile it down to ES5 by using babel (by default, babel will not transpile any folders in node_modules).</p>
+<p>Note that you may need to update list of folders in the <code>include</code> section as some dependencies might has started to ship the module with ES6 instead of ES5.</p>
+<pre><code class="language-javascript">const path = require(&quot;path&quot;);
+
+module.exports = {
+  entry: &quot;./src/index.js&quot;,
+  output: {
+    filename: &quot;index.js&quot;,
+    path: path.resolve(__dirname, &quot;dist&quot;),
+  },
+  module: {
+    rules: [
+      {
+        test: /\.m?js$/,
+        include: [
+          path.resolve(__dirname, &#39;node_modules/@refinitiv-ui&#39;),
+          path.resolve(__dirname, &#39;node_modules/@webcomponents&#39;),
+          path.resolve(__dirname, &#39;node_modules/lit-element&#39;),
+          path.resolve(__dirname, &#39;node_modules/lit-html&#39;),
+          path.resolve(__dirname, &#39;node_modules/d3-interpolate&#39;)
+        ],
+        use: {
+          loader: &quot;babel-loader&quot;,
+          options: {
+            presets: [
+              [
+                &quot;@babel/preset-env&quot;,
+                {
+                  corejs: 3,
+                  useBuiltIns: &quot;usage&quot;,
+                },
+              ],
+            ],
+            plugins: [&quot;@babel/plugin-transform-runtime&quot;],
+          },
+        },
+      },
+    ],
+  },
+};
+</code></pre>
+<p>Create a file name <code>.browserslistrc</code> with the following content at the application root directory. This is the list of target browsers that we want our application to work on, it will be read by <code>babel</code>.</p>
+<pre><code class="language-sh">Firefox &gt;= 63
+Chrome &gt;= 61
+Safari &gt;= 11
+</code></pre>
+<p>Add scripts to <code>package.json</code>.</p>
+<pre><code class="language-json">&quot;scripts&quot;: {
+  &quot;start&quot;: &quot;webpack-cli serve --compress --host 0.0.0.0 --mode production&quot;,
+  &quot;build&quot;: &quot;webpack --config webpack.config.js --mode production&quot;
+}
+</code></pre>
+<p>Finally, run <code>npm run build</code> and then <code>npm start</code>.</p>
+<p>You should be able to access the application at <a href="http://localhost:8080/">http://localhost:8080/</a></p>

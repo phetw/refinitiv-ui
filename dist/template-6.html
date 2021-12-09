@@ -1,0 +1,1508 @@
+<h1 id="autosuggest">Autosuggest</h1>
+<code-sandbox hash="f0ebbd62"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  let query = event.detail.query;
+  let re = new RegExp(autoSuggest.constructor.EscapeRegExp(query), &#39;i&#39;);
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; re.test(item.label)) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field, ef-autosuggest {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><p>Autosuggest shows suggested matches to a user query. It can be attached to a text form control, such as Text Field, Multi Input, etc. Autosuggest supports use cases such as custom rendering, pagination, asynchronous data request and others.</p>
+<h2 id="usage">Usage</h2>
+<p>To start, attach <code>ef-autosuggest</code> to an input control such as <code>ef-text-field</code> using the <code>attach</code> attribute, which accepts CSS selectors.</p>
+<aside class="info"><p>To attach autosuggest to other input controls, see <a href="./elements/autosuggest#use-custom-input">Use custom input</a>.</p>
+</aside><pre><code class="language-html">&lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+&lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+</code></pre>
+<p>Implement the <code>suggestions-fetch-requested</code> event listener to construct suggestion data from a user query. The event will be triggered when the value of the attached control has changed or when keyboard navigation is performed.</p>
+<p>In the listener function, assign suggestion data to the <code>suggestions</code> property to display it in the popup.</p>
+<pre><code class="language-javascript">// sample dataset to perform search and process output to show on autosuggest
+const data = [{ label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; }];
+
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  // value from attached input control
+  const query = event.detail.query;
+
+  // handle the number of min characters and populate suggestions
+  if (query &amp;&amp; query.length &gt;= 1) {
+    autoSuggest.suggestions = data.filter((item) =&gt; item.label.indexOf(query) !== -1);
+  }
+  else {
+    autoSuggest.suggestions = [];
+  }
+});
+</code></pre>
+<h3 id="data-property-interface">Data property interface</h3>
+<p>Autosuggest natively processes data using the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/autosuggest/helpers/types.ts">Suggestion</a> type. For data not applying the <code>ef-item</code> model, see <a href="./elements/autosuggest#integrate-with-custom-suggestion-data">Integrate custom suggestion data</a>.</p>
+<p>Autosuggest uses the item <code>label</code> property to display item labels in the popup and highlight matched text. Autosuggest popup is visible only when there is at least one suggestion.</p>
+<aside class="info"><p>See <a href="./elements/autosuggest#custom-renderer">Custom renderer</a> if you need to fully control how data should be displayed on UI.</p>
+</aside><code-sandbox hash="c52d1f25"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><h3 id="grouping-results">Grouping results</h3>
+<p>Autosuggest understands the Item object model, allowing the display of non-selectable headers and dividers. To show a <code>header</code> or <code>divider</code>, specify the type in suggestion items.</p>
+<code-sandbox hash="5df88366"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [{ label: &#39;Cornelius Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Memphis Hoover&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Angela Lloyd&#39;, group: &#39;Management&#39; },
+  { label: &#39;Emilee Gay&#39;, group: &#39;Management&#39; },
+  { label: &#39;Selah Richardson&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Christina Erickson&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Elaina Welch&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Houston Tran&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Richard Peterson&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Andrew Lin&#39;, group: &#39;Management&#39; },
+  { label: &#39;Isabell Kaiser&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Brent Glass&#39;, group: &#39;Management&#39; },
+  { label: &#39;Martha Jones&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Anton Mcclain&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Jamir Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Kassandra Manning&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Madisyn Mccormick&#39;, group: &#39;Management&#39; },
+  { label: &#39;Anabel Savage&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Tyler Phillips&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Ronan Deleon&#39;, group: &#39;Management&#39; }];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+
+const groupData = (data) =&gt; {
+  let groups = {};
+
+  data.forEach((item) =&gt; {
+    groups[item.group] = groups[item.group] || [];
+    groups[item.group].push(item);
+  });
+
+  let items = [];
+  Object.keys(groups).forEach((group) =&gt; {
+    items.push({
+      type: &#39;header&#39;,
+      label: group
+    });
+
+    items = items.concat(groups[group]);
+  });
+
+  return items;
+};
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? groupData(data.filter((item) =&gt; item.label.indexOf(query) !== -1)) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const data = [
+  { label: &#39;Cornelius Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Memphis Hoover&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Angela Lloyd&#39;, group: &#39;Management&#39; },
+  // ...
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+
+const groupData = (data) =&gt; {
+  let groups = {};
+
+  data.forEach((item) =&gt; {
+    groups[item.group] = groups[item.group] || [];
+    groups[item.group].push(item);
+  });
+
+  let items = [];
+  Object.keys(groups).forEach((group) =&gt; {
+    items.push({
+      type: &#39;header&#39;,
+      label: group
+    });
+
+    items = items.concat(groups[group]);
+  });
+
+  return items;
+};
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? groupData(data.filter((item) =&gt; item.label.indexOf(query) !== -1)) : [];
+});
+</code></pre>
+<h3 id="pagination">Pagination</h3>
+<p>When there are many <code>suggestions</code> items, it is recommended to use pagination. The implementation of this is down to the app developer. A typical approach could be to show best matches or recent items.</p>
+<p>To implement pagination in autosuggest, set the <code>moreResults</code> property to <code>true</code> when there are additional results to show. This property will display a <strong>Get more results</strong> button at the bottom of the autosuggest UI. Set the property to <code>false</code> when showing the last page.</p>
+<p>Clicking the <strong>Get more results</strong> button will trigger an <code>suggestions-fetch-requested</code> event with the event parameter <code>event.detail.reason</code> set to <code>more-results</code>.</p>
+<p>This example implements pagination and limits the result to show five suggestions per page.</p>
+<code-sandbox hash="2d5ba77f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+
+let currentPage;
+let suggestions;
+let pageSize = 5;
+let autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  const reason = event.detail.reason;
+
+  if (reason === &#39;more-results&#39;) {
+      currentPage += 1;
+  }
+  else {
+      currentPage = 1;
+      suggestions = [];
+  }
+
+  const filteredData = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+
+  const page = filteredData.slice((currentPage - 1) * pageSize, currentPage * pageSize);
+
+  autoSuggest.moreResults = filteredData.length &gt; currentPage * pageSize;
+  autoSuggest.suggestions = suggestions = suggestions.concat(page);
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  // ...
+  const reason = event.detail.reason;
+
+  // if this is from &#39;Get more results&#39;, do pagination logic
+  if (reason === &#39;more-results&#39;) {
+    // apply pagination logic
+  }
+  // ...
+});
+</code></pre>
+<h3 id="asynchronous-autosuggestion">Asynchronous autosuggestion</h3>
+<p>Most data is filtered on the server and the results are sent asynchronously to the client. To implement this in autosuggest, requests and responses can be managed using <code>suggestions-fetch-requested</code>.</p>
+<p>Optionally, the <code>debounce-rate</code> attribute can reduce the number of server calls, and the <code>loading</code> property can show an animation while waiting for data from the server.</p>
+<code-sandbox hash="ee675e0b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+
+  // Show loading mask
+  autoSuggest.loading = true;
+
+  window.setTimeout(() =&gt; {
+    // Make sure that the data we are setting is for current query
+    if (query === autoSuggest.query) {
+      autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+      autoSuggest.loading = false;
+    }
+  }, 500);
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot; debounceRate=&quot;500&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-autosuggest debounce-rate=&quot;500&quot;&gt;&lt;/ef-autosuggest&gt;
+</code></pre>
+<pre><code class="language-javascript">// ...
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  xhttp.onreadystatechange = () =&gt; {
+    // make sure that the data we set is for the last query
+    if (query === autoSuggest.query) {
+      autoSuggest.suggestions = suggestions;
+
+      // do not forget to remove the loading mask on response
+      autoSuggest.loading = false;
+    }
+  };
+  // waiting for data, show the loading mask
+  autoSuggest.loading = true;
+  xhttp.send();
+  // ...
+});
+</code></pre>
+<h3 id="header-and-footer">Header and footer</h3>
+<p>Header and/or footer can be added to autosuggest by using slots.</p>
+<code-sandbox hash="eaaf3f0e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+halo(&#39;text-field&#39;);
+halo(&#39;header&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">#wrapper {
+  height: 490px;
+  padding: 0 10px;
+  background-color: #f3f3f6;
+}
+ef-text-field {
+  width: 300px;
+}
+.footer {
+  padding: 5px 10px;
+  font-size: 80%;
+  font-style: italic;
+  text-align: right;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;
+    &lt;ef-header slot=&quot;header&quot;&gt;Company Employees&lt;/ef-header&gt;
+    &lt;div slot=&quot;footer&quot; class=&quot;footer&quot;&gt;Did we miss someone?&lt;/div&gt;
+  &lt;/ef-autosuggest&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-autosuggest&gt;
+  &lt;ef-header slot=&quot;header&quot;&gt;Company Employees&lt;/ef-header&gt;
+  &lt;div slot=&quot;footer&quot;&gt;Did we miss someone?&lt;/div&gt;
+&lt;/ef-autosuggest&gt;
+</code></pre>
+<h3 id="trigger-request-on-focus">Trigger request on focus</h3>
+<p>Use the <code>request-on-focus</code> attribute to request suggestions when the input is focused.</p>
+<code-sandbox hash="dd70cc08"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : data;
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Click here...&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot; request-on-focus&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-autosuggest request-on-focus&gt;&lt;/ef-autosuggest&gt;
+</code></pre>
+<h3 id="popup-position">Popup position</h3>
+<p>By default, the autosuggest popup is positioned below the attached element. You can change its position by setting the <code>positionTarget</code> property. Call <code>refit()</code> if <code>positionTarget</code> has been called after <code>ef-autosuggest</code> has been instantiated.</p>
+<p>For further position customization, <code>ef-autosuggest</code> supports attributes and properties of <code>ef-overlay</code>.</p>
+<code-sandbox hash="55a15ec7"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+autoSuggest.positionTarget = document.getElementById(&#39;custom-popup-position&#39;);
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+#custom-popup-position {
+  width: 300px;
+  height: 10px;
+  background-color: #5ca5d8;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+  &lt;div id=&quot;custom-popup-position&quot;&gt;&lt;/div&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">autoSuggest.positionTarget = document.getElementById(&#39;custom-popup-position&#39;);
+</code></pre>
+<hr>
+<h2 id="advanced-usage">Advanced usage</h2>
+<p>You can customize many aspects of autosuggest to provide a truly unique solution.</p>
+<h3 id="custom-renderer">Custom renderer</h3>
+<p>Use the <code>renderer</code> property to assign a function to override default rendering. The function will be called when each suggestion item is rendered and must return an HTML element.</p>
+<pre><code class="language-javascript">autoSuggest.renderer = (suggestion, parameters) =&gt; {
+  const query = parameters.query;
+  const el = document.createElement(&#39;div&#39;);
+
+  // Can implement text highlight based on query here. See `Helper methods section`
+  el.innerText = suggestion.label;
+  return el;
+}
+</code></pre>
+<p>If autosuggest is customized and doesn&#39;t use <code>ef-item</code> or a descendant, a <code>highlightable</code> method may be needed to control item highlights and selections, and the <code>item-highlight</code> event may be required to set/remove highlight CSS.</p>
+<aside class="important"><p>Suggestions are always rendered in LightDOM, so normal CSS styling rules are applied.</p>
+</aside><code-sandbox hash="ba09e038"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Memphis Hoover&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Angela Lloyd&#39;, group: &#39;Management&#39; },
+  { label: &#39;Emilee Gay&#39;, group: &#39;Management&#39; },
+  { label: &#39;Selah Richardson&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Christina Erickson&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Elaina Welch&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Houston Tran&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Richard Peterson&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Andrew Lin&#39;, group: &#39;Management&#39; },
+  { label: &#39;Isabell Kaiser&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Brent Glass&#39;, group: &#39;Management&#39; },
+  { label: &#39;Martha Jones&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Anton Mcclain&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Jamir Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Kassandra Manning&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Madisyn Mccormick&#39;, group: &#39;Management&#39; },
+  { label: &#39;Anabel Savage&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Tyler Phillips&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Ronan Deleon&#39;, group: &#39;Management&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+const getInitials = (label = &#39;&#39;) =&gt; {
+  const split = label.split(&#39; &#39;);
+
+  if (split.length) {
+    let initials = split[0][0].toUpperCase();
+    if (split[1]) {
+      initials += split[split.length - 1][0].toUpperCase();
+    }
+
+    return initials;
+  }
+
+  return &#39;&#39;;
+};
+
+autoSuggest.highlightable = () =&gt; {
+  // all items are highlightable and selectable
+  return true;
+};
+
+autoSuggest.addEventListener(&#39;item-highlight&#39;, (event) =&gt; {
+  event.preventDefault();
+  const target = event.detail.target;
+  const oldTarget = event.detail.oldTarget;
+
+  if (target) {
+    target.classList.toggle(&#39;selected&#39;, true);
+  }
+
+  if (oldTarget) {
+    oldTarget.classList.toggle(&#39;selected&#39;, false);
+  }
+});
+
+autoSuggest.renderer = (suggestion, parameters) =&gt; {
+  const query = parameters.query;
+  const el = document.createElement(&#39;div&#39;);
+  el.classList.add(&#39;user-card&#39;);
+
+  let innerHTML = &#39;&#39;;
+
+  innerHTML += `&lt;div class=&quot;user-card__initials&quot;&gt; ${getInitials(suggestion.label)} &lt;/div&gt;`;
+  innerHTML += `&lt;div class=&quot;user-card__container&quot;&gt;`;
+  innerHTML += `&lt;div class=&quot;user-card__label&quot;&gt; ${autoSuggest.constructor.QueryWordSelect(suggestion.label, query, &#39;&lt;span class=&quot;text-highlighted&quot;&gt;$1&lt;/span&gt;&#39;)} &lt;/div&gt;`;
+  innerHTML += `&lt;div class=&quot;user-card__group&quot;&gt;Group: ${suggestion.group}&lt;/div&gt;`;
+  innerHTML += `&lt;/div&gt;`;
+
+  el.innerHTML = innerHTML;
+
+  return el;
+};
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+.user-card {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  align-items: center;
+}
+.user-card:not(:last-child) {
+  border-bottom: 1px solid rgba(238, 118, 0, .6);
+}
+.user-card__initials {
+  border-radius: 100%;
+  margin: 0;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  width: 40px;
+  margin-right: 10px;
+  border: 1px solid rgba(238, 118, 0, .6);
+}
+.user-card__group {
+  margin-top: 3px;
+  opacity: 0.7;
+  font-size: 70%;
+}
+.user-card.selected {
+  background-color: rgba(238, 118, 0, .05);
+}
+.user-card .text-highlighted {
+  background-color: rgba(238, 118, 0, .6);
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">autoSuggest.highlightable = (suggestion, el) =&gt; {
+  return suggestion.type !== &#39;header&#39; &amp;&amp; suggestion.type !== &#39;divider&#39;;
+}
+
+autoSuggest.addEventListener(&#39;item-highlight&#39;, (event) =&gt; {
+  event.preventDefault();
+  const target = event.detail.target;
+  const oldTarget = event.detail.oldTarget;
+
+  if (target) {
+    target.classList.toggle(&#39;selected&#39;, true);
+  }
+
+  if (oldTarget) {
+    oldTarget.classList.toggle(&#39;selected&#39;, false);
+  }
+});
+</code></pre>
+<h3 id="integrate-with-custom-suggestion-data">Integrate with custom suggestion data</h3>
+<p>While autosuggest natively understands the Item object model, it is data agnostic, and can render suggestions with your data object schema. For example, if your suggestion data uses <code>value</code> instead of <code>label</code>, you can do mapping in the <code>renderer</code> function and implement <code>item-select</code> events and a <code>highlightable</code> method.</p>
+<code-sandbox hash="2d79eb71"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+const data = [
+  { value: &#39;Cornelius Martin&#39;, readonly: true },
+  { value: &#39;Memphis Hoover&#39; },
+  { value: &#39;Angela Lloyd&#39; },
+  { value: &#39;Emilee Gay&#39;, readonly: true },
+  { value: &#39;Selah Richardson&#39; },
+  { value: &#39;Christina Erickson&#39; },
+  { value: &#39;Elaina Welch&#39;, readonly: true },
+  { value: &#39;Houston Tran&#39; },
+  { value: &#39;Richard Peterson&#39; },
+  { value: &#39;Andrew Lin&#39;, readonly: true },
+  { value: &#39;Isabell Kaiser&#39; },
+  { value: &#39;Brent Glass&#39; },
+  { value: &#39;Martha Jones&#39;, readonly: true },
+  { value: &#39;Anton Mcclain&#39; },
+  { value: &#39;Jamir Martin&#39; },
+  { value: &#39;Kassandra Manning&#39;, readonly: true },
+  { value: &#39;Madisyn Mccormick&#39; },
+  { value: &#39;Anabel Savage&#39; },
+  { value: &#39;Tyler Phillips&#39;, readonly: true },
+  { value: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+const input = document.getElementById(&#39;input&#39;);
+
+autoSuggest.highlightable = (suggestion) =&gt; suggestion.readonly !== true ;
+
+autoSuggest.addEventListener(&#39;item-select&#39;, (event) =&gt; {
+  event.preventDefault();
+  const suggestion = event.detail.suggestion;
+  const query = event.detail.query;
+
+  // Map the value back to input
+  input.value = suggestion ? suggestion.value : query;
+});
+
+autoSuggest.renderer = (suggestion, parameters) =&gt; {
+  let mappedData = {};
+  mappedData.label = suggestion.value;
+  mappedData.disabled = suggestion.readonly;
+
+  // you can map suggestion to ef-item
+  return autoSuggest.constructor.ItemRenderer(mappedData, parameters);
+};
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.value.indexOf(query) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+ef-text-field {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">autoSuggest.renderer = (suggestion, parameters) =&gt; {
+  let mappedData = {};
+
+  mappedData.label = suggestion.value;
+  mappedData.disabled = suggestion.readonly;
+
+  // you can map suggestion to ef-item
+  return autoSuggest.constructor.ItemRenderer(mappedData, parameters);
+}
+
+autoSuggest.addEventListener(&#39;item-select&#39;, (event) =&gt; {
+  event.preventDefault();
+  const suggestion = event.detail.suggestion;
+  const query = event.detail.query;
+
+  // map the value back to input
+  input.value = suggestion ? suggestion.value : query;
+});
+
+autoSuggest.highlightable = (suggestion) =&gt; suggestion.readonly !== true;
+</code></pre>
+<h3 id="use-custom-input">Use custom input</h3>
+<p>Autosuggest can be attached to any input component. In fact, it can be attached to any HTML element as long as a constructing query object procedure is provided.</p>
+<p>For example, to use Multi Input instead of a standard Input: add event listeners to Multi Input in <code>add-attach-target-events</code> and use the <code>remove-attach-target-events</code> event to remove the listeners.</p>
+<pre><code class="language-javascript">autoSuggest.addEventListener(&#39;add-attach-target-events&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // Add event listeners to the input
+  // pipeline that run on input value change
+  multiInput.addEventListener(&#39;value-changed&#39;, autoSuggest.onInputValueChange);
+  // pipeline that run on key down
+  multiInput.addEventListener(&#39;keydown&#39;, autoSuggest.onInputKeyDown);
+  // pipeline that run on input focus
+  multiInput.addEventListener(&#39;focus&#39;, autoSuggest.onInputFocus);
+  // pipeline that run on input blur
+  multiInput.addEventListener(&#39;blur&#39;, autoSuggest.onInputBlur);
+});
+
+autoSuggest.addEventListener(&#39;remove-attach-target-events&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // Remove event listeners on destroy
+  multiInput.removeEventListener(&#39;value-changed&#39;, autoSuggest.onInputValueChange);
+  multiInput.removeEventListener(&#39;keydown&#39;, autoSuggest.onInputKeyDown);
+  multiInput.removeEventListener(&#39;focus&#39;, autoSuggest.onInputFocus);
+  multiInput.removeEventListener(&#39;blur&#39;, autoSuggest.onInputBlur);
+});
+</code></pre>
+<p>Define the query using the <code>suggestions-query</code> event, and the suggestion selection using the <code>item-select</code> event.</p>
+<pre><code class="language-javascript">autoSuggest.addEventListener(&#39;suggestions-query&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // The query is populated from `value`
+  autoSuggest.query = multiInput.value;
+});
+
+autoSuggest.addEventListener(&#39;item-select&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  const suggestion = ev.detail.suggestion;
+  const method = ev.detail.method;
+
+  switch (method) {
+    // ...
+  }
+});
+</code></pre>
+<code-sandbox hash="6e002a22"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/multi-input?min&#39;;
+halo(&#39;multi-input&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39; },
+  { label: &#39;Memphis Hoover&#39; },
+  { label: &#39;Angela Lloyd&#39; },
+  { label: &#39;Emilee Gay&#39; },
+  { label: &#39;Selah Richardson&#39; },
+  { label: &#39;Christina Erickson&#39; },
+  { label: &#39;Elaina Welch&#39; },
+  { label: &#39;Houston Tran&#39; },
+  { label: &#39;Richard Peterson&#39; },
+  { label: &#39;Andrew Lin&#39; },
+  { label: &#39;Isabell Kaiser&#39; },
+  { label: &#39;Brent Glass&#39; },
+  { label: &#39;Martha Jones&#39; },
+  { label: &#39;Anton Mcclain&#39; },
+  { label: &#39;Jamir Martin&#39; },
+  { label: &#39;Kassandra Manning&#39; },
+  { label: &#39;Madisyn Mccormick&#39; },
+  { label: &#39;Anabel Savage&#39; },
+  { label: &#39;Tyler Phillips&#39; },
+  { label: &#39;Ronan Deleon&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+const multiInput = document.getElementById(&#39;multi-input&#39;);
+
+multiInput.addEventListener(&#39;item-added&#39;, (event) =&gt; {
+  event.preventDefault();
+
+  multiInput.value = &#39;&#39;;
+});
+
+autoSuggest.addEventListener(&#39;add-attach-target-events&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // add event listeners to the input. You do not have to implement all
+  // pipeline that run on input value change
+  multiInput.addEventListener(&#39;value-changed&#39;, autoSuggest.onInputValueChange);
+  // pipeline that run on key down
+  multiInput.addEventListener(&#39;keydown&#39;, autoSuggest.onInputKeyDown);
+  // pipeline that run on input focus
+  multiInput.addEventListener(&#39;focus&#39;, autoSuggest.onInputFocus);
+  // pipeline that run on input blur
+  multiInput.addEventListener(&#39;blur&#39;, autoSuggest.onInputBlur);
+});
+
+autoSuggest.addEventListener(&#39;remove-attach-target-events&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // do not forget to remove event listeners on destroy
+  multiInput.removeEventListener(&#39;value-changed&#39;, autoSuggest.onInputValueChange);
+  multiInput.removeEventListener(&#39;keydown&#39;, autoSuggest.onInputKeyDown);
+  multiInput.removeEventListener(&#39;focus&#39;, autoSuggest.onInputFocus);
+  multiInput.removeEventListener(&#39;blur&#39;, autoSuggest.onInputBlur);
+});
+
+autoSuggest.addEventListener(&#39;suggestions-query&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // If Enter is pressed, add the value stright away
+  if (ev.detail.reason === &#39;enter-pressed&#39; &amp;&amp; multiInput.value) {
+    multiInput.add({
+      value: multiInput.value,
+      label: multiInput.value
+    });
+  }
+
+  // Otherwise call for suggestions
+  autoSuggest.query = multiInput.value;
+});
+
+autoSuggest.addEventListener(&#39;item-select&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  const suggestion = ev.detail.suggestion;
+  const method = ev.detail.method;
+  const query = ev.detail.query;
+
+  switch (method) {
+    case &#39;click&#39;:
+    case &#39;enter&#39;:
+      multiInput.add({
+        value: suggestion.label,
+        label: suggestion.label
+      });
+
+      multiInput.value = &#39;&#39;;
+      break;
+    case &#39;navigation&#39;:
+      multiInput.value = suggestion.label;
+      break;
+    case &#39;clear&#39;:
+      multiInput.value = &#39;&#39;;
+      break;
+    case &#39;reset&#39;:
+      multiInput.value = query;
+      break;
+    default:
+      // no default
+  }
+});
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+  autoSuggest.suggestions = query ? data.filter((item) =&gt; item.label.indexOf(query) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-multi-input id=&quot;multi-input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-multi-input&gt;
+  &lt;ef-autosuggest attach=&quot;#multi-input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><h3 id="complex-query">Complex query</h3>
+<p>In addition to string-based queries, autosuggest <code>query</code> also supports objects, meaning far more complex and powerful queries can be made. The following example uses a <code>query</code> object based on two input fields.</p>
+<code-sandbox hash="cc3732cc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/autosuggest?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;autosuggest&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+halo(&#39;text-field&#39;);
+halo(&#39;select&#39;);
+const data = [
+  { label: &#39;Cornelius Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Memphis Hoover&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Angela Lloyd&#39;, group: &#39;Management&#39; },
+  { label: &#39;Emilee Gay&#39;, group: &#39;Management&#39; },
+  { label: &#39;Selah Richardson&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Christina Erickson&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Elaina Welch&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Houston Tran&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Richard Peterson&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Andrew Lin&#39;, group: &#39;Management&#39; },
+  { label: &#39;Isabell Kaiser&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Brent Glass&#39;, group: &#39;Management&#39; },
+  { label: &#39;Martha Jones&#39;, group: &#39;Application Team&#39; },
+  { label: &#39;Anton Mcclain&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Jamir Martin&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Kassandra Manning&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Madisyn Mccormick&#39;, group: &#39;Management&#39; },
+  { label: &#39;Anabel Savage&#39;, group: &#39;Core Team&#39; },
+  { label: &#39;Tyler Phillips&#39;, group: &#39;Contractors&#39; },
+  { label: &#39;Ronan Deleon&#39;, group: &#39;Management&#39; }
+];
+const autoSuggest = document.querySelector(&#39;ef-autosuggest&#39;);
+const groupEl = document.getElementById(&#39;group&#39;);
+const inputEl = document.getElementById(&#39;input&#39;);
+
+autoSuggest.addEventListener(&#39;remove-attach-target-events&#39;, () =&gt; {
+  // Group change should instantiate inputValueChange as well
+  groupEl.addEventListener(&#39;value-changed&#39;, autoSuggest.onInputValueChange);
+});
+
+autoSuggest.renderer = (suggestion, query) =&gt; {
+  // Ensure that text highlight continues to work. Default render expects String
+  const value = query.value;
+  return autoSuggest.constructor.ItemRenderer(suggestion, value);
+};
+
+autoSuggest.addEventListener(&#39;item-select&#39;, (ev) =&gt; {
+  const method = ev.detail.method;
+  const query = ev.detail.query;
+
+  // override reset method
+  if (method === &#39;reset&#39;) {
+    inputEl.value = query.value;
+    ev.preventDefault();
+  }
+});
+
+autoSuggest.addEventListener(&#39;suggestions-query&#39;, (ev) =&gt; {
+  ev.preventDefault();
+
+  // construct complex query
+  autoSuggest.query = {
+    group: groupEl.value,
+    value: inputEl.value
+  };
+});
+
+autoSuggest.addEventListener(&#39;suggestions-fetch-requested&#39;, (event) =&gt; {
+  const query = event.detail.query;
+
+  // get group and value from the query
+  const group = query.group;
+  const value = query.value;
+  autoSuggest.suggestions = value &amp;&amp; group ? data.filter((item) =&gt; item.group === group &amp;&amp; item.label.indexOf(value) !== -1) : [];
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 380px;
+  padding: 0 3px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+}
+ef-text-field, ef-select {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;div class=&quot;container&quot;&gt;
+    &lt;ef-select id=&quot;group&quot;&gt;
+      &lt;ef-item selected&gt;Core Team&lt;/ef-item&gt;
+      &lt;ef-item&gt;Management&lt;/ef-item&gt;
+      &lt;ef-item&gt;Application Team&lt;/ef-item&gt;
+      &lt;ef-item&gt;Contractors&lt;/ef-item&gt;
+    &lt;/ef-select&gt;
+    &lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type &#39;e&#39;&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;/div&gt;
+  &lt;ef-autosuggest attach=&quot;#input&quot;&gt;&lt;/ef-autosuggest&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><h3 id="html-renderer">HTML Renderer</h3>
+<p>In modern frameworks, it may be more practical to render suggestions directly to <code>ef-autosuggest</code>, rather than using the <code>renderer</code> function. You can achieve more consistent code and better performance, thanks to Virtual DOM.</p>
+<p>Set the <code>html-renderer</code> attribute if you intend to populate suggestions directly.</p>
+<p>Consider the following example in Vue.js.</p>
+<pre><code class="language-html">&lt;script&gt;
+  export default {
+    props: {
+      data: {
+        type: Array,
+        required: true
+      }
+    },
+    data: () =&gt; {
+      return {
+        query: &#39;&#39;,
+        suggestions: []
+      };
+    }
+    methods: {
+      highlightText: (label) =&gt; this.$refs.suggest.constructor.QueryWordSelect(label, this.query);
+      },
+      getSuggestions: ({ detail: { query } }) =&gt; {
+        this.query = query;
+
+        if (!query) {
+          this.suggestions = this.data;
+        }
+
+        const re = new RegExp(autoSuggest.constructor.EscapeRegExp(query), &#39;i&#39;);
+        this.suggestions = this.data.filter(({ label }) =&gt; re.test(label));
+      },
+      clearSuggestions: () =&gt; {
+        this.suggestions = [];
+      },
+      selectSuggestion: (ev) =&gt; {
+        const { detail: { method, suggestion } } = ev;
+        if (method === &#39;click&#39; || method === &#39;enter&#39;) {
+          const { value, type } = suggestion;
+          this.$emit(&#39;suggestion-selected&#39;, { value, type });
+        }
+      },
+      mounted: () =&gt; {
+        this.$refs.suggest.attach = this.$refs.input;
+      }
+    }
+  };
+&lt;/script&gt;
+&lt;template&gt;
+  &lt;div&gt;
+    &lt;ef-text-field ref=&quot;input&quot;&gt;&lt;/ef-text-field&gt;
+    &lt;ef-autosuggest
+      ref=&quot;suggest&quot;
+      html-renderer
+      :suggestions.prop=&quot;this.suggestions&quot;
+      @item-select=&quot;selectSuggestion&quot;
+      @suggestions-clear-requested.prevent=&quot;clearSuggestions&quot;
+      @suggestions-fetch-requested=&quot;getSuggestions&quot;&gt;
+      &lt;ef-item
+        v-for=&quot;(suggestion) in this.suggestions&quot;
+        :key=&quot;suggestion.id&quot;
+        v-html=&quot;highlightText(suggestion.label)&quot;&gt;&lt;/ef-item&gt;
+    &lt;/ef-autosuggest&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+</code></pre>
+<aside class="important"><p>Suggestions must be passed to <code>ef-autosuggest</code>. <code>ef-autosuggest.suggestions</code> must match the rendered element exactly, i.e. <code>ef-autosuggest.suggestions[0]</code> is identical to the first rendered element.</p>
+</aside><h2 id="helper-methods">Helper methods</h2>
+<p>Autosuggest provides some static helper methods.
+You can use them through class name, <code>Autosuggest.&lt;HELPER_METHOD_NAME&gt;()</code> or the property of the constructor: <code>this.constructor.&lt;HELPER_METHOD_NAME&gt;()</code>.</p>
+<hr>
+
+<h3 id="escaperegexp-text">EscapeRegExp (text)</h3>
+<p>Remove forbidden characters from the given string.</p>
+<p><strong><small>Parameters:</small></strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>text</code></td>
+<td>string</td>
+<td>String to process</td>
+</tr>
+</tbody></table>
+<p><strong><small>Return:</small></strong> <code>String</code>
+String with forbidden characters removed.</p>
+<hr>
+
+<h3 id="querywordselect-text-query-pattern-optional">QueryWordSelect (text, query, pattern (optional))</h3>
+<p>Replace all matched query words with an HTML string.</p>
+<p><strong><small>Parameters:</small></strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>text</code></td>
+<td>string</td>
+<td>String to process</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td>string</td>
+<td>Word to match in the given string</td>
+</tr>
+<tr>
+<td><code>pattern</code> <small>(Optional)</small></td>
+<td>string</td>
+<td>HTML string to use instead of the default, which is <code>&lt;span class=&quot;highlighted&quot;&gt;$1&lt;/span&gt;</code></td>
+</tr>
+</tbody></table>
+<p><strong><small>Return:</small></strong> <code>String</code>
+String with matching text processed by <code>pattern</code></p>
+<hr>
+
+<h3 id="itemrenderer-suggestion-query">ItemRenderer (suggestion, query)</h3>
+<p>Construct the <code>ef-item</code> element from the suggestion object using one-to-one mapping.</p>
+<p><strong><small>Parameters:</small></strong></p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>suggestion</code></td>
+<td>object</td>
+<td>Suggestion item object</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td>string</td>
+<td>Query word</td>
+</tr>
+</tbody></table>
+<p><strong><small>Return:</small></strong> <code>ef-item</code>
+Item element</p>
+<hr>
+
+
+<h2 id="glossary">Glossary</h2>
+<p><strong>Query</strong></p>
+<p>Object used to perform suggestions searching, and typically used to highlight the matched text on the suggestion item. In most scenarios, a query is text entered into an input box but the query can be an object to support more complex searching, see <a href="./elements/autosuggest#complex-query">Complex Query</a>.</p>
+<p><strong>Value</strong></p>
+<p>Object that is displayed in the input box. In most cases, the value is the input text.</p>
+<p><strong>Reason</strong></p>
+<p>Additional information when autosuggest is going to fetch the data. It indicates why autosuggest wants to update the suggestions list. <code>reason</code> can be used to control the behavior of autosuggestion, such as implementing paging.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Reason</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">value-changed</td>
+<td align="left">Input value has changed.</td>
+</tr>
+<tr>
+<td align="left">input-focus</td>
+<td align="left"><code>request-on-focus</code> is set and the input has received focus.</td>
+</tr>
+<tr>
+<td align="left">suggestions-revealed</td>
+<td align="left">Autosuggest popup is hidden and users pressed <kbd>Up</kbd> or <kbd>Down</kbd> key to open suggestions.</td>
+</tr>
+<tr>
+<td align="left">enter-pressed</td>
+<td align="left">Autosuggest is hidden and user pressed <kbd>Enter</kbd> key to open suggestions</td>
+</tr>
+<tr>
+<td align="left">escape-pressed</td>
+<td align="left">Autosuggest is hidden, the input has value and users pressed <kbd>Escape</kbd>. Can be used when suggestions are shown for empty value.</td>
+</tr>
+<tr>
+<td align="left">more-results</td>
+<td align="left"><code>more-results</code> is set and users clicked on <strong>Get More Results</strong>.</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><strong>User Selected Method</strong></p>
+<p>Additional information when the user selects a suggestion item. <code>item-select</code> event provide <code>method</code> in <code>event.detail</code> which represents how the suggestion has been selected. The developer can control the reaction on different selection methods.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Method</th>
+<th align="left">Description</th>
+<th align="left">Default Action</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">click</td>
+<td align="left">The user clicked on suggestion.</td>
+<td align="left">Update input value from clicked suggestion and close auto suggest.</td>
+</tr>
+<tr>
+<td align="left">enter</td>
+<td align="left">The user pressed <kbd>Enter</kbd>.</td>
+<td align="left">Update input value from selected/first suggestion and close auto suggest.</td>
+</tr>
+<tr>
+<td align="left">navigation</td>
+<td align="left">The user pressed <kbd>Up</kbd> or <kbd>Down</kbd>.</td>
+<td align="left">Update input value.</td>
+</tr>
+<tr>
+<td align="left">reset</td>
+<td align="left">The user pressed <kbd>Escape</kbd>.</td>
+<td align="left">Reset input value if set using <strong>navigation</strong> and close auto suggest.</td>
+</tr>
+<tr>
+<td align="left">clear</td>
+<td align="left">The user pressed <kbd>Escape</kbd> when auto suggest popup is closed.</td>
+<td align="left">Clear the input value.</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>attach</code></td>
+<td><code>attach</code></td>
+<td><code>AutosuggestTargetElement | string | null</code></td>
+<td>null</td>
+<td>An HTML Element or CSS selector</td>
+</tr>
+<tr>
+<td><code>debounceRate</code></td>
+<td><code>debounce-rate</code></td>
+<td><code>number</code></td>
+<td>&quot;100&quot;</td>
+<td>Debounce rate in ms of the filter as a number.<br />Used to throttle the filter rate so as not to trigger unneeded filtering</td>
+</tr>
+<tr>
+<td><code>highlightable</code></td>
+<td></td>
+<td><code>AutosuggestHighlightable</code></td>
+<td>&quot;itemHighlightable&quot;</td>
+<td>A function that is applied to every suggestion during the render process<br />to say whether the item can be highlighted and selected. Only items that return true are considered.<br />By default the function checks for <code>item</code> <code>highlightable</code> property.</td>
+</tr>
+<tr>
+<td><code>htmlRenderer</code></td>
+<td><code>html-renderer</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>If set to true, the render function is not called. Instead the wrapper element<br />should populate and destroy suggestion elements. Rendering items manually<br />may have performance benefits in frameworks that use virtual DOM (such as <code>Vue</code>, <code>React</code>, <code>hyperHTML</code> and others)</td>
+</tr>
+<tr>
+<td><code>loading</code></td>
+<td><code>loading</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>If set to true show loading mask</td>
+</tr>
+<tr>
+<td><code>moreResults</code></td>
+<td><code>more-results</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>If set to true display &#39;Has more results&#39; item</td>
+</tr>
+<tr>
+<td><code>moreSearchText</code></td>
+<td><code>more-search-text</code></td>
+<td><code>string</code></td>
+<td>&quot;More results for {0}&quot;</td>
+<td>Custom text for More Search</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Auto suggest popup&#39;s open state</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td></td>
+<td><code>AutosuggestQuery | null</code></td>
+<td>null</td>
+<td>An object that represents a query from attach target</td>
+</tr>
+<tr>
+<td><code>renderer</code></td>
+<td></td>
+<td><code>AutosuggestRenderer</code></td>
+<td>&quot;itemRenderer&quot;</td>
+<td>A renderer applied to suggestion.<br />By default a render maps data to item attributes</td>
+</tr>
+<tr>
+<td><code>requestOnFocus</code></td>
+<td><code>request-on-focus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Request suggestions when attach target is focused</td>
+</tr>
+<tr>
+<td><code>suggestions</code></td>
+<td></td>
+<td><code>AutosuggestItem[]</code></td>
+<td>[]</td>
+<td>A list of suggestion items</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>onInputBlur</code></td>
+<td><code>(event: any): void</code></td>
+<td>Run when input has lost focus<br /><br /><strong>event</strong>: by default <code>blur</code> event is listened</td>
+</tr>
+<tr>
+<td><code>onInputFocus</code></td>
+<td><code>(event: any): void</code></td>
+<td>Run when input received focus<br /><br /><strong>event</strong>: by default <code>focus</code> event is listened</td>
+</tr>
+<tr>
+<td><code>onInputKeyDown</code></td>
+<td><code>(event: any): void</code></td>
+<td>Run when input key down event has happened<br /><br /><strong>event</strong>: by default <code>keydown</code> event is listened</td>
+</tr>
+<tr>
+<td><code>onInputValueChange</code></td>
+<td><code>(event: any): void</code></td>
+<td>Run when attach target value changes.<br /><br /><strong>event</strong>: by default <code>value-changed</code> event is listened</td>
+</tr>
+<tr>
+<td><code>refit</code></td>
+<td><code>(): void</code></td>
+<td>Set the width</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>add-attach-target-events</code></td>
+<td>Fired when attach has been set</td>
+</tr>
+<tr>
+<td><code>item-highlight</code></td>
+<td>Fired when an item gets highlighted or highlight is removed</td>
+</tr>
+<tr>
+<td><code>item-select</code></td>
+<td>Fired when an item gets selected</td>
+</tr>
+<tr>
+<td><code>remove-attach-target-events</code></td>
+<td>Fired when attach has been removed</td>
+</tr>
+<tr>
+<td><code>suggestions-changed</code></td>
+<td>Fired when suggestions changed</td>
+</tr>
+<tr>
+<td><code>suggestions-clear-requested</code></td>
+<td>Fired when auto suggest requests to clear the data. If used in reactive application, prevent default and set suggestions to []</td>
+</tr>
+<tr>
+<td><code>suggestions-fetch-requested</code></td>
+<td>Fired when auto suggest requests the data</td>
+</tr>
+<tr>
+<td><code>suggestions-query</code></td>
+<td>Fired when input value has changed and the query must be set</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>footer</code></td>
+<td>Slot to add custom contents at the bottom of autosuggest popup</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td>Slot to add custom contents at the top of autosuggest popup</td>
+</tr>
+</tbody></table>

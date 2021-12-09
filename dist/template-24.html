@@ -1,0 +1,730 @@
+<h1 id="heatmap">Heatmap</h1>
+<code-sandbox hash="c5f61ced"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+
+const generateData = (r, c) =&gt; {
+  let rows = Array(r);
+  for (let i = 0; i &lt; rows.length; i++) {
+    let columns = Array(c);
+    for (let ii = 0; ii &lt; columns.length; ii++) {
+      const shift = (i * ii) / (c * r);
+      const value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift) * 1;
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&#39;2019&#39;, &#39;2018&#39;, &#39;2017&#39;, &#39;2016&#39;, &#39;2015&#39;, &#39;2014&#39;, &#39;2013&#39;, &#39;2012&#39;, &#39;2011&#39;, &#39;2010&#39;, &#39;2009&#39;, &#39;2008&#39;, &#39;2007&#39;]
+  },
+  xAxis: {
+    labels: [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;, &#39;December&#39;],
+    shortLabels: [&#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;]
+  }
+};
+</code></pre>
+<pre><code class="language-css">ef-heatmap {
+  width: 80%;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><p><code>ef-heatmap</code> is a graphical representation of data where the individual values contained in a matrix are represented as colors.</p>
+<h3 id="usage">Usage</h3>
+<p>To initialize the heatmap, pass a configuration object to the <code>config</code> property. Heatmap uses <code>mid-point</code> and a cell&#39;s <code>value</code> to determine the colors of cells.</p>
+<p>The default values of min, mid and max points are -1, 0 and 1, respectively.</p>
+<pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+
+el.config = {
+  data: [
+    [{ value: 0.1 }, { value: 0.2 }, { value: 0.3 }],
+    [{ value: 0.4 }, { value: 0.5 }, { value: 0.6 }],
+    [{ value: 0.7 }, { value: 0.8 }, { value: 0.9 }],
+    [{ value: 1.0 }, { value: 1.1 }, { value: 1.2 }],
+  ],
+};
+</code></pre>
+<h3 id="config">Config</h3>
+<table>
+<thead>
+<tr>
+<th>Properties</th>
+<th>Type</th>
+<th align="center">Required</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>data</td>
+<td><code>Cell</code>[ ][ ]</td>
+<td align="center">✓</td>
+<td>rows[columns[<a href="./elements/heatmap#cells-configuration">&lt; Cell &gt;</a>]]</td>
+</tr>
+<tr>
+<td>yAxis</td>
+<td><code>YAxis</code></td>
+<td align="center">✗</td>
+<td>Configuration for <a href="./elements/heatmap#y-axiss-configuration">Y-Axis</a></td>
+</tr>
+<tr>
+<td>xAxis</td>
+<td><code>XAxis</code></td>
+<td align="center">✗</td>
+<td>Configuration for <a href="./elements/heatmap#x-axiss-configuration">X-Axis</a></td>
+</tr>
+</tbody></table>
+<h3 id="min-max-and-mid-data-point">Min, max and mid data point</h3>
+<p>You can configure min, mid and max points to match your data format using the <code>min-point</code>, <code>mid-point</code> and <code>max-point</code> attributes.</p>
+<p>The example below shows how to configure the heatmap when data is ranged between 250 and 800 and the mid point is 600.</p>
+<code-sandbox hash="2f3c064c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+const generateSequentialData = (start, count, step) =&gt; {
+  let rows = [];
+  let columns = [];
+  for (let i = 0; i &lt; count; i++) {
+    columns.push({ value: start + step * i });
+  }
+  rows.push(columns);
+  return rows;
+};
+el.config = {
+  data: generateSequentialData(250, 15, 39.286),
+};
+</code></pre>
+<pre><code class="language-css">ef-heatmap {
+    height: 35px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap min-point=&quot;250&quot; mid-point=&quot;600&quot; max-point=&quot;800&quot; axis-hidden&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-heatmap
+  min-point=&quot;250&quot;
+  mid-point=&quot;600&quot;
+  max-point=&quot;800&quot;
+&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+<h3 id="cell-appearances">Cell appearances</h3>
+<p>A Heatmap cell&#39;s appearance derives from data in <code>config</code>. However, a certain degree of customization and features addition is allowed for each individual cell.</p>
+<h3 id="cell-header">Cell header</h3>
+<p>Besides a cell&#39;s label, there is also a cell header property which is <strong>bolder</strong> and always positioned on top of the label.</p>
+<code-sandbox hash="d0b0f9ad"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+el.config = {
+  data: [
+    [
+      { header: &quot;IBM&quot;, value: 0.4 },
+      { header: &quot;APPL&quot;, value: 0.52 },
+      { header: &quot;AMZN&quot;, value: -0.3 }
+    ],
+    [
+      { header: &quot;T&quot;, value: -0.4 },
+      { header: &quot;NFLX&quot;, value: 0.5 },
+      { header: &quot;GM&quot;, value: -1.6 }
+    ],
+    [
+      { header: &quot;FB&quot;, value: 0.17 },
+      { header: &quot;VXUS&quot;, value: -2.8 },
+      { header: &quot;GOOGL&quot;, value: 3.9 }
+    ]
+  ]
+};
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+
+el.config = {
+  data: [
+    [
+      { header: &quot;IBM&quot;, value: 0.4 },
+      { header: &quot;APPL&quot;, value: 0.52 },
+      { header: &quot;AMZN&quot;, value: -0.3 },
+    ],
+    [
+      { header: &quot;T&quot;, value: -0.4 },
+      { header: &quot;NFLX&quot;, value: 0.5 },
+      { header: &quot;GM&quot;, value: -1.6 },
+    ],
+    [
+      { header: &quot;FB&quot;, value: 0.17 },
+      { header: &quot;VXUS&quot;, value: -2.8 },
+      { header: &quot;GOOGL&quot;, value: 3.9 },
+    ],
+  ],
+};
+</code></pre>
+<h3 id="cell-color-blending">Cell color blending</h3>
+<p>Color blending mode mixes the max and min colors with the canvas&#39;s background color, resulting in more natural, gradient-like cell colors.</p>
+<code-sandbox hash="4bfa0664"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+
+const generateSequentialData = (start, count, step) =&gt; {
+  let rows = [];
+  let columns = [];
+  for (let i = 0; i &lt; count; i++) {
+      columns.push({ value: start + step * i });
+  }
+  rows.push(columns);
+  return rows;
+};
+
+el.config = {
+  data: generateSequentialData(-1, 21, 0.1),
+};
+
+el.renderCallback = (cell) =&gt; { foregroundColor: &#39;#f0f0f0&#39; };
+</code></pre>
+<pre><code class="language-css">ef-heatmap {
+  height: 35px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap axis-hidden blend&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-heatmap blend&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+<p>Apply custom cell&#39;s font color to improve contrast.</p>
+<pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+el.renderCallback = (cell) =&gt; { foregroundColor: &quot;#f0f0f0&quot; };
+</code></pre>
+<h3 id="custom-cell-rendering">Custom cell rendering</h3>
+<p>Heatmap accepts a custom rendering function via the <code>renderCallback</code> property to override <code>label</code>, <code>backgroundColor</code> and <code>foregroundColor</code> for each cell.</p>
+<p>The following cell information is also available:</p>
+<ul>
+<li><code>x</code> : x coordinates of the cell on canvas</li>
+<li><code>y</code> : y coordinates of the cell on canvas</li>
+<li><code>colIndex</code> : column position of the cell (index starts at 0)</li>
+<li><code>rowIndex</code> : row position of the cell (index starts at 0)</li>
+</ul>
+<code-sandbox hash="dc752595"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+const generateData = (r, c) =&gt; {
+  let rows = Array(r);
+  for (let i = 0; i &lt; rows.length; i++) {
+    let columns = Array(c);
+    for (let ii = 0; ii &lt; columns.length; ii++) {
+      const shift = (i * ii) / (c * r);
+      const value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+          value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&#39;2019&#39;, &#39;2018&#39;, &#39;2017&#39;, &#39;2016&#39;, &#39;2015&#39;, &#39;2014&#39;, &#39;2013&#39;, &#39;2012&#39;, &#39;2011&#39;, &#39;2010&#39;, &#39;2009&#39;, &#39;2008&#39;, &#39;2007&#39;, &#39;2006&#39;, &#39;2005&#39;]
+  },
+  xAxis: {
+    labels: [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;, &#39;December&#39;],
+    shortLabels: [&#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;]
+  }
+};
+
+el.renderCallback = (cell) =&gt; {
+  const isDiagonalLine = cell.colIndex === cell.rowIndex;
+  if (isDiagonalLine) {
+    return {
+      label: &#39;&#39;,
+      backgroundColor: &#39;transparent&#39;
+    }
+  }
+};
+</code></pre>
+<pre><code class="language-html">  &lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+
+el.renderCallback = (cell) =&gt; {
+  const isDiagonalLine = cell.colIndex === cell.rowIndex;
+
+  if (isDiagonalLine) {
+    return {
+      label: &quot;&quot;,
+      backgroundColor: &quot;transparent&quot;,
+    };
+  }
+};
+</code></pre>
+<h3 id="cells-configuration">Cell&#39;s configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Properties</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>value</td>
+<td><code>number</code></td>
+<td>Cell&#39;s value</td>
+</tr>
+<tr>
+<td>header</td>
+<td><code>string</code></td>
+<td>Cell&#39;s header</td>
+</tr>
+<tr>
+<td>label</td>
+<td><code>string</code></td>
+<td>Cell&#39;s label</td>
+</tr>
+<tr>
+<td>foregroundColor</td>
+<td><code>string</code> of valid color (<code>hex</code>, <code>rgb</code>)</td>
+<td>Cell&#39;s label color</td>
+</tr>
+<tr>
+<td>backgroundColor</td>
+<td><code>string</code> of valid color (<code>hex</code>, <code>rgb</code>)</td>
+<td>Cell&#39;s background color</td>
+</tr>
+</tbody></table>
+<h3 id="axes-position">Axes position</h3>
+<p>Each axis has 2 different positioning options. X-axis can be at <code>top</code> or <code>bottom</code> and Y-axis can be at <code>left</code> or <code>right</code>.</p>
+<code-sandbox hash="6b7ffd75"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+const generateData = (r, c) =&gt; {
+  let rows = Array(r);
+  for (let i = 0; i &lt; rows.length; i++) {
+    let columns = Array(c);
+    for (let ii = 0; ii &lt; columns.length; ii++) {
+      const shift = (i * ii) / (c * r);
+      const value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+
+el.config = {
+    data: generateData(12, 12),
+    yAxis: {
+      position: &#39;right&#39;,
+      labels: [&#39;2019&#39;, &#39;2018&#39;, &#39;2017&#39;, &#39;2016&#39;, &#39;2015&#39;, &#39;2014&#39;, &#39;2013&#39;, &#39;2012&#39;, &#39;2011&#39;, &#39;2010&#39;, &#39;2009&#39;, &#39;2008&#39;, &#39;2007&#39;, &#39;2006&#39;, &#39;2005&#39;]
+    },
+    xAxis: {
+      position: &#39;bottom&#39;,
+      labels: [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;, &#39;December&#39;],
+      shortLabels: [&#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;]
+    }
+};
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+
+el.config = {
+  yAxis: {
+    position: &quot;right&quot;,
+    labels: [...]
+  },
+  xAxis: {
+    position: &quot;bottom&quot;,
+    labels: [...],
+  }
+};
+</code></pre>
+<h3 id="y-axiss-configuration">Y-Axis&#39;s configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Properties</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>labels</td>
+<td><code>string</code>[ ]</td>
+<td>Y-axis labels</td>
+</tr>
+<tr>
+<td>position</td>
+<td><code>left</code> or <code>right</code></td>
+<td>Y-axis orientation relative to the heatmap</td>
+</tr>
+</tbody></table>
+<h3 id="x-axiss-configuration">X-Axis&#39;s configuration</h3>
+<table>
+<thead>
+<tr>
+<th>Properties</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>labels</td>
+<td><code>string</code>[ ]</td>
+<td>X-axis labels</td>
+</tr>
+<tr>
+<td>shortLabels</td>
+<td><code>string</code>[ ]</td>
+<td>X-axis short labels for smaller screens</td>
+</tr>
+<tr>
+<td>position</td>
+<td><code>top</code> or <code>bottom</code></td>
+<td>X-axis orientation relative to the heatmap</td>
+</tr>
+</tbody></table>
+<h3 id="using-tooltip">Using tooltip</h3>
+<p>To render a tooltip on cell hover, pass a tooltip render function that returns HTML elements using the <code>tooltipCallback</code> property.</p>
+<code-sandbox hash="a6b7156e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+const generateData = (r, c) =&gt; {
+  let rows = Array(r);
+  for (let i = 0; i &lt; rows.length; i++) {
+    let columns = Array(c);
+    for (let ii = 0; ii &lt; columns.length; ii++) {
+      const shift = (i * ii) / (c * r);
+      const value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+
+el.tooltipCallback = (cell) =&gt; {
+  const tooltip = document.createElement(&#39;div&#39;);
+  const template = &quot;&lt;div style=&#39;font-weight: bold&#39;&gt;Actual value:&lt;/div&gt;&lt;div style=&#39;color:&quot;+ cell.color +&quot;&#39;&gt;&quot; + cell.value + &quot;&lt;/div&gt;&quot;;
+  tooltip.innerHTML = template;
+  return tooltip;
+};
+
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&#39;2019&#39;, &#39;2018&#39;, &#39;2017&#39;, &#39;2016&#39;, &#39;2015&#39;, &#39;2014&#39;, &#39;2013&#39;, &#39;2012&#39;, &#39;2011&#39;, &#39;2010&#39;, &#39;2009&#39;, &#39;2008&#39;, &#39;2007&#39;, &#39;2006&#39;, &#39;2005&#39;]
+  },
+  xAxis: {
+    labels: [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;, &#39;December&#39;],
+    shortLabels: [&#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;]
+  }
+};
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+
+el.tooltipCallback = (cell) =&gt; {
+  const tooltip = document.createElement(&quot;div&quot;);
+  const template = `
+    &lt;div style=&quot;font-weight: bold&quot;&gt;Actual value:&lt;/div&gt;
+    &lt;div style=&quot;color:${cell.color}&quot;&gt;${cell.value}&lt;/div&gt;
+  `;
+  tooltip.innerHTML = template;
+  return tooltip;
+};
+el.config = {...};
+</code></pre>
+<h3 id="handling-click-events">Handling click events</h3>
+<p><code>ef-heatmap</code> provides an API to allow user to get cell&#39;s information form a native mouse events such as <code>click</code>, <code>dblclick</code>, <code>contextmenu</code>, etc. Calling <code>getCellDataAtEvent</code> and passing an <code>event</code> to the method will return a data of interactive cell.</p>
+<code-sandbox hash="14acd4aa"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay-menu?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/dialog?min&#39;;
+halo(&#39;overlay-menu&#39;);
+halo(&#39;dialog&#39;);
+
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+const dlg = document.getElementById(&#39;dlg&#39;);
+let popupTemplate;
+
+const generateData = (row, col) =&gt; {
+  let rows = Array(row);
+  for (let i = 0; i &lt; rows.length; i++) {
+    let columns = Array(col);
+    for (let ii = 0; ii &lt; columns.length; ii++) {
+      const shift = (i * ii) / (col * row);
+      const value = -1 + shift + (Math.random() / 2 + 0.5 * shift) * (2 - shift);
+
+      columns[ii] = {
+        value: value
+      };
+    }
+    rows[i] = columns;
+  }
+  return rows;
+};
+
+el.config = {
+  data: generateData(12, 12),
+  yAxis: {
+    labels: [&#39;2019&#39;, &#39;2018&#39;, &#39;2017&#39;, &#39;2016&#39;, &#39;2015&#39;, &#39;2014&#39;, &#39;2013&#39;, &#39;2012&#39;, &#39;2011&#39;, &#39;2010&#39;, &#39;2009&#39;, &#39;2008&#39;, &#39;2007&#39;, &#39;2006&#39;, &#39;2005&#39;]
+  },
+  xAxis: {
+    labels: [&#39;January&#39;, &#39;February&#39;, &#39;March&#39;, &#39;April&#39;, &#39;May&#39;, &#39;June&#39;, &#39;July&#39;, &#39;August&#39;, &#39;September&#39;, &#39;October&#39;, &#39;November&#39;, &#39;December&#39;],
+    shortLabels: [&#39;JAN&#39;, &#39;FEB&#39;, &#39;MAR&#39;, &#39;APR&#39;, &#39;MAY&#39;, &#39;JUN&#39;, &#39;JUL&#39;, &#39;AUG&#39;, &#39;SEP&#39;, &#39;OCT&#39;, &#39;NOV&#39;, &#39;DEC&#39;]
+  }
+};
+
+const handleContextMenu = (event) =&gt; {
+  const cell = el.getCellDataAtEvent(event);
+  if (cell) {
+    event.preventDefault();
+    popupTemplate = &quot;&lt;span&gt;Value: &quot;+ cell.value +&quot;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Row index: &quot;+ cell.rowIndex + &quot;&lt;/span&gt;&lt;br&gt;&lt;span&gt;Column index: &quot;+ cell.colIndex + &quot;&lt;/span&gt;&quot;;
+    menu.opened = true;
+    menu.x = event.clientX;
+    menu.y = event.clientY;
+  }
+};
+
+el.addEventListener(&#39;contextmenu&#39;, handleContextMenu);
+
+menu.addEventListener(&#39;item-trigger&#39;, (event) =&gt; {
+  const value = event.detail.value;
+  if (value === &#39;show-cell-data&#39;) {
+    dlg.innerHTML = popupTemplate;
+    dlg.opened = true;
+    menu.opened = false;
+  }
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item value=&quot;menu1&quot;&gt;Menu 1&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;menu2&quot; disabled&gt;Menu 2&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;show-cell-data&quot; &gt;Show Cell Data&lt;/ef-item&gt;      
+&lt;/ef-overlay-menu&gt;
+&lt;ef-dialog id=&quot;dlg&quot; header=&quot;Heatmap Cell&quot;&gt;&lt;/ef-dialog&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-heatmap&gt;&lt;/ef-heatmap&gt;
+&lt;ef-overlay-menu id=&quot;menu&quot;&gt;
+  &lt;ef-item value=&quot;menu1&quot;&gt;Menu 1&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;menu2&quot; disabled&gt;Menu 2&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;show-cell-data&quot; &gt;Show Cell Data&lt;/ef-item&gt;      
+&lt;/ef-overlay-menu&gt;
+&lt;ef-dialog id=&quot;dlg&quot; header=&quot;Heatmap Cell&quot;&gt;&lt;/ef-dialog&gt;
+</code></pre>
+<pre><code class="language-javascript">const el = document.querySelector(&quot;ef-heatmap&quot;);
+const menu = document.getElementById(&#39;menu&#39;);
+const dlg = document.getElementById(&#39;dlg&#39;);
+let popupTemplate;
+
+el.addEventListener(&#39;contextmenu&#39;, (event) =&gt; {
+    const cell = el.getCellDataAtEvent(event);
+    if (cell) {
+      event.preventDefault();
+      popupTemplate = `
+          &lt;span&gt;Value: ${cell.value}&lt;/span&gt;&lt;br&gt;
+          &lt;span&gt;Row index: ${cell.rowIndex}&lt;/span&gt;&lt;br&gt;
+          &lt;span&gt;Column index: ${cell.colIndex}&lt;/span&gt;
+      `;
+      menu.opened = true;
+      menu.x = event.clientX;
+      menu.y = event.clientY;
+    }
+});
+
+menu.addEventListener(&#39;item-trigger&#39;, (event) =&gt; {
+    const value = event.detail.value;
+    if (value === &#39;show-cell-data&#39;) {
+      dlg.innerHTML = popupTemplate;
+      dlg.opened = true;
+      menu.opened = false;
+    }
+});
+
+el.config = {...};
+</code></pre>
+<h3 id="css-variables">CSS variables</h3>
+<p>The spaceing around cell and cell color can be customized using CSS variables.</p>
+<code-sandbox hash="6fce136a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/heatmap?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;heatmap&#39;);
+const el = document.querySelector(&#39;ef-heatmap&#39;);
+const generateSequentialData = (start, count, step) =&gt; {
+    let rows = [];
+    let columns = [];
+    for (let i = 0; i &lt; count; i++) {
+        columns.push({ value: start + step * i });
+    }
+    rows.push(columns);
+    return rows;
+};
+el.config = {
+    data: generateSequentialData(-1, 21, 0.1),
+};
+</code></pre>
+<pre><code class="language-html">&lt;ef-heatmap axis-hidden&gt;&lt;/ef-heatmap&gt;
+</code></pre>
+<pre><code class="language-css">ef-heatmap {
+  height: 35px;
+  --above-point-color: #3399ff;
+  --below-point-color: #ff3399;
+}
+</code></pre>
+</code-sandbox><table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--spacing</td>
+<td>Margin around a cell in pixels</td>
+</tr>
+<tr>
+<td>--above-point-color</td>
+<td>Color at the maximum point</td>
+</tr>
+<tr>
+<td>--below-point-color</td>
+<td>Color at the minimum point</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>axisHidden</code></td>
+<td><code>axis-hidden</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Hide all axes</td>
+</tr>
+<tr>
+<td><code>blend</code></td>
+<td><code>blend</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Enable cell color blending</td>
+</tr>
+<tr>
+<td><code>config</code></td>
+<td><code>config</code></td>
+<td><code>HeatmapConfig</code></td>
+<td>null</td>
+<td>Heatmap configuration options.</td>
+</tr>
+<tr>
+<td><code>labelHidden</code></td>
+<td><code>label-hidden</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Hide all labels in the cells</td>
+</tr>
+<tr>
+<td><code>labelWidth</code></td>
+<td><code>label-width</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>Number of maximum label width that cell can paint in pixel.<br />e.g. label-width: 30px; cell label hides when text length reaches 30px.</td>
+</tr>
+<tr>
+<td><code>maxPoint</code></td>
+<td><code>max-point</code></td>
+<td><code>number</code></td>
+<td>1</td>
+<td>Maximum point of the cell coloring</td>
+</tr>
+<tr>
+<td><code>midPoint</code></td>
+<td><code>mid-point</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>Middle point of the cell coloring</td>
+</tr>
+<tr>
+<td><code>minPoint</code></td>
+<td><code>min-point</code></td>
+<td><code>number</code></td>
+<td>-1</td>
+<td>Minimum point of the cell coloring</td>
+</tr>
+<tr>
+<td><code>renderCallback</code></td>
+<td></td>
+<td><code>HeatmapRenderCallback</code></td>
+<td></td>
+<td>Render callback function use for custom cell properties.<br />Accepts custom label, foreground and background color</td>
+</tr>
+<tr>
+<td><code>saturation</code></td>
+<td><code>saturation</code></td>
+<td><code>number</code></td>
+<td>0.4</td>
+<td>Cell minimum color saturation, value can be from 0 - 1</td>
+</tr>
+<tr>
+<td><code>tooltipCallback</code></td>
+<td></td>
+<td><code>HeatmapTooltipCallback</code></td>
+<td></td>
+<td>A callback function that allows tooltip rendering on cell hover</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>getCellDataAtEvent</code></td>
+<td><code>(event: any): any</code></td>
+<td>Returns data of interactive cell<br /><br /><strong>event</strong>: an event that occur while the user interacting with element</td>
+</tr>
+</tbody></table>

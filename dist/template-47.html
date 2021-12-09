@@ -1,0 +1,234 @@
+<h1 id="sidebar-layout">Sidebar Layout</h1>
+<code-sandbox hash="7dcf4d0e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sidebar-layout?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sidebar-layout&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sidebar-layout {
+  height: 200px;
+}
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 50px 0;
+  background-color: #dfe2e8;
+}
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 90px 0;
+  background-color: #f1f1f1;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Sidebar Layout&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing&gt;Menus&lt;/ef-panel&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing&gt;This is awesome.&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+</code-sandbox><p><code>ef-sidebar-layout</code> provides an app layout with a sidebar. There are four sections where a component can be slotted in.</p>
+<ul>
+<li>Sidebar header</li>
+<li>Sidebar content</li>
+<li>Main header</li>
+<li>Main content</li>
+</ul>
+<p>The header slots can be omitted. Also, the component will automatically provide a vertical scrollbar if content is too long.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-sidebar-layout</code> is a layout, it is up to the developer to slot any contents into it. Typically, <code>ef-sidebar-layout</code> should be used together with <code>ef-header</code> for header slots, and <code>ef-panel</code> for content. Components that are used inside the layout must be imported by the app.</p>
+<code-sandbox hash="7cc1c3"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sidebar-layout?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sidebar-layout&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+halo(&#39;header&#39;);
+halo(&#39;panel&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sidebar-layout {
+  height: 200px;
+}
+
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 70px 0;
+}
+
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 70px 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Sidebar Layout&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing class=&quot;sidebar-content&quot;&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;Main Header&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing class=&quot;main-content&quot;&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Sidebar Header&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;Main Header&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+<h3 id="add-toolbar-commands">Add toolbar commands</h3>
+<p>Menus on header could be implemented by using slots of <code>ef-header</code>.</p>
+<code-sandbox hash="2ba37337"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sidebar-layout?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sidebar-layout&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;header&#39;);
+halo(&#39;panel&#39;);
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sidebar-layout {
+  height: 200px;
+}
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Title&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;settings&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;share&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-sidebar-layout&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Title&lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;sidebar-content&quot; spacing&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;settings&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;share&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-header&gt;
+  &lt;ef-panel slot=&quot;main-content&quot; spacing&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+<h3 id="toggled-sidebar">Toggled sidebar</h3>
+<p>Sidebar can be hidden by adding the <code>collapsed</code> attribute. A toggle button to collapse the sidebar can be implemented by code.</p>
+<code-sandbox hash="bf31dd56"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sidebar-layout?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sidebar-layout&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/header?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;header&#39;);
+halo(&#39;panel&#39;);
+halo(&#39;button&#39;);
+const layout = document.getElementById(&#39;layout&#39;);
+const toggleBtn = document.getElementById(&#39;toggleBtn&#39;);
+toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
+  layout.collapsed = !layout.collapsed;
+  toggleBtn.setAttribute(&#39;icon&#39;, layout.collapsed ? &#39;leftpanel-closed&#39; : &#39;leftpanel-open&#39;);
+});
+</code></pre>
+<pre><code class="language-css">ef-sidebar-layout {
+  height: 200px;
+}
+[slot=&quot;sidebar-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}
+[slot=&quot;main-content&quot;] {
+  text-align: center;
+  padding: 60px 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sidebar-layout id=&quot;layout&quot;&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Title&lt;/ef-header&gt;
+  &lt;ef-panel spacing slot=&quot;sidebar-content&quot;&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;
+    &lt;ef-button transparent slot=&quot;left&quot; id=&quot;toggleBtn&quot; icon=&quot;leftpanel-open&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;settings&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-header&gt;
+  &lt;ef-panel spacing slot=&quot;main-content&quot;&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-sidebar-layout id=&quot;layout&quot;&gt;
+  &lt;ef-header slot=&quot;sidebar-header&quot; level=&quot;1&quot;&gt;Title&lt;/ef-header&gt;
+  &lt;ef-panel spacing slot=&quot;sidebar-content&quot;&gt;Sidebar Content&lt;/ef-panel&gt;
+  &lt;ef-header slot=&quot;main-header&quot; level=&quot;1&quot;&gt;
+    &lt;ef-button transparent slot=&quot;left&quot; id=&quot;toggleBtn&quot; icon=&quot;leftpanel-open&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button slot=&quot;right&quot; transparent icon=&quot;settings&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-header&gt;
+  &lt;ef-panel spacing slot=&quot;main-content&quot;&gt;Main Content&lt;/ef-panel&gt;
+&lt;/ef-sidebar-layout&gt;
+</code></pre>
+<pre><code class="language-javascript">const layout = document.getElementById(&#39;layout&#39;);
+const toggleBtn = document.getElementById(&#39;toggleBtn&#39;);
+toggleBtn.addEventListener(&#39;click&#39;, () =&gt; {
+  layout.collapsed = !layout.collapsed;
+  toggleBtn.setAttribute(&#39;icon&#39;, layout.collapsed ? &#39;leftpanel-closed&#39; : &#39;leftpanel-open&#39;);
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>collapsed</code></td>
+<td><code>collapsed</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to hide sidebar</td>
+</tr>
+<tr>
+<td><code>sidebarPosition</code></td>
+<td><code>sidebar-position</code></td>
+<td><code>&quot;left&quot; | &quot;right&quot;</code></td>
+<td>&quot;left&quot;</td>
+<td>Set sidebar position to left or right</td>
+</tr>
+<tr>
+<td><code>sidebarWidth</code></td>
+<td><code>sidebar-width</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set the width of the sidebar. The value could be in both px or %, e.g. 300px, 30%</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>main-content</code></td>
+<td>Content of main section.</td>
+</tr>
+<tr>
+<td><code>main-header</code></td>
+<td>Main header.</td>
+</tr>
+<tr>
+<td><code>sidebar-content</code></td>
+<td>Content of sidebar.</td>
+</tr>
+<tr>
+<td><code>sidebar-header</code></td>
+<td>Sidebar header.</td>
+</tr>
+</tbody></table>

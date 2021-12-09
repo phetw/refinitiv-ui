@@ -1,0 +1,459 @@
+<h1 id="flag">Flag</h1>
+<code-sandbox hash="af55f5e7"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/flag?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;flag&#39;);
+</code></pre>
+<pre><code class="language-css">ef-flag {
+  font-size: 4em;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-flag flag=&quot;us&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag flag=&quot;gb&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag flag=&quot;jp&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag flag=&quot;th&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/flags/bo.svg&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/flags/pe.svg&quot;&gt;&lt;/ef-flag&gt;
+</code></pre>
+</code-sandbox><p><code>ef-flag</code> provides a collection of country flags.</p>
+<h3 id="usage">Usage</h3>
+<p>You can set a flag&#39;s code via the <code>flag</code> attribute to display the flag. Alternatively, instead of using the <code>flag</code> attribute, you can manually provide the url of an svg flag using the <code>src</code> attribute.</p>
+<pre><code class="language-html">&lt;ef-flag flag=&quot;br&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag flag=&quot;ar&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag flag=&quot;co&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/flags/bo.svg&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/flags/pe.svg&quot;&gt;&lt;/ef-flag&gt;
+</code></pre>
+<h3 id="changing-size">Changing size</h3>
+<p>Flags are displayed in 4:3 aspect ratio. Flag size can be set using <code>font-size</code>.</p>
+<pre><code class="language-css">&lt;style&gt;
+.small {
+  font-size: 1em;
+}
+.medium {
+  font-size: 2em;
+}
+.large {
+  font-size: 60px;
+}
+&lt;/style&gt;
+</code></pre>
+<pre><code class="language-html">&lt;ef-flag class=&quot;small&quot; flag=&quot;gb&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag class=&quot;medium&quot; flag=&quot;gb&quot;&gt;&lt;/ef-flag&gt;
+&lt;ef-flag class=&quot;large&quot; flag=&quot;gb&quot;&gt;&lt;/ef-flag&gt;
+</code></pre>
+<h3 id="preloading">Preloading</h3>
+<p><code>ef-flag</code> has the helper function to preload a set of flags. It could help to load flags faster if you have a known set of flags for use in the app. It accepts both flag name or svg location, either single flag or multiple.</p>
+<p>Preload of flags will be deferred until the first <code>ef-flag</code> component created.</p>
+<pre><code class="language-javascript">import { preload } from &quot;@refinitiv-ui/elements/lib/flag&quot;;
+
+preload(&quot;us&quot;);
+preload(&quot;au&quot;, &quot;nz&quot;);
+preload(
+  &quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/flags/au.svg&quot;,
+  &quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/flags/nz.svg&quot;,
+);
+</code></pre>
+<h3 id="flag-list">Flag list</h3>
+<p>Below is a list of available flags in the Halo theme. You can use them with the <code>ef-flag</code>.</p>
+<code-sandbox hash="5c16561d"><pre><code class="language-css">.item {
+  width: 96px;
+  text-align: center;
+  margin: 7px;
+  border: solid 1px #aaa;
+  padding-top: 20px;
+}
+.item:hover {
+  transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: #dddfe4;
+}
+.flag-name {
+  font-size: 13px;
+  border-top: solid 1px #aaa;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+.flag-fullname {
+  padding: 5px;
+  font-size: 13px;
+  height: 50px;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.no-content {
+  justify-content: center;
+  align-items: center;
+  color: #8a8a96;
+  background-color: #fdfdfd;
+}
+ef-flag {
+  font-size: 30px;
+}
+#loader-content {
+  display: flex;
+  flex-wrap: wrap;
+}
+#loader-content .item {
+  height: 73px;
+  width: 73px;
+  margin: 3px;
+  background-color: #f3f3f3;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;loader-content&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/flag?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;flag&#39;);
+
+const FLAG_URL = &#39;https://cdn.refinitiv.com/public/libs/elf/info.json&#39;;
+const content = document.getElementById(&#39;content&#39;);
+const theme = &#39;halo&#39;;
+const flagFullname = {
+  &quot;af&quot;: &quot;Afghanistan&quot;,
+  &quot;ax&quot;: &quot;Åland Islands&quot;,
+  &quot;al&quot;: &quot;Albania&quot;,
+  &quot;dz&quot;: &quot;Algeria&quot;,
+  &quot;as&quot;: &quot;American Samoa&quot;,
+  &quot;ad&quot;: &quot;Andorra&quot;,
+  &quot;ao&quot;: &quot;Angola&quot;,
+  &quot;ai&quot;: &quot;Anguilla&quot;,
+  &quot;aq&quot;: &quot;Antarctica&quot;,
+  &quot;ag&quot;: &quot;Antigua and Barbuda&quot;,
+  &quot;ar&quot;: &quot;Argentina&quot;,
+  &quot;am&quot;: &quot;Armenia&quot;,
+  &quot;aw&quot;: &quot;Aruba&quot;,
+  &quot;au&quot;: &quot;Australia&quot;,
+  &quot;at&quot;: &quot;Austria&quot;,
+  &quot;az&quot;: &quot;Azerbaijan&quot;,
+  &quot;bs&quot;: &quot;Bahamas&quot;,
+  &quot;bh&quot;: &quot;Bahrain&quot;,
+  &quot;bd&quot;: &quot;Bangladesh&quot;,
+  &quot;bb&quot;: &quot;Barbados&quot;,
+  &quot;by&quot;: &quot;Belarus&quot;,
+  &quot;be&quot;: &quot;Belgium&quot;,
+  &quot;bz&quot;: &quot;Belize&quot;,
+  &quot;bj&quot;: &quot;Benin&quot;,
+  &quot;bm&quot;: &quot;Bermuda&quot;,
+  &quot;bt&quot;: &quot;Bhutan&quot;,
+  &quot;bo&quot;: &quot;Bolivia&quot;,
+  &quot;bq&quot;: &quot;Bonaire, Sint Eustatius and Saba&quot;,
+  &quot;ba&quot;: &quot;Bosnia and Herzegovina&quot;,
+  &quot;bw&quot;: &quot;Botswana&quot;,
+  &quot;bv&quot;: &quot;Bouvet Island&quot;,
+  &quot;br&quot;: &quot;Brazil&quot;,
+  &quot;io&quot;: &quot;British Indian Ocean Territory&quot;,
+  &quot;bn&quot;: &quot;Brunei Darussalam&quot;,
+  &quot;bg&quot;: &quot;Bulgaria&quot;,
+  &quot;bf&quot;: &quot;Burkina Faso&quot;,
+  &quot;bi&quot;: &quot;Burundi&quot;,
+  &quot;cv&quot;: &quot;Cabo Verde&quot;,
+  &quot;kh&quot;: &quot;Cambodia&quot;,
+  &quot;cm&quot;: &quot;Cameroon&quot;,
+  &quot;ca&quot;: &quot;Canada&quot;,
+  &quot;ky&quot;: &quot;Cayman Islands&quot;,
+  &quot;cf&quot;: &quot;Central African Republic&quot;,
+  &quot;td&quot;: &quot;Chad&quot;,
+  &quot;cl&quot;: &quot;Chile&quot;,
+  &quot;cn&quot;: &quot;China&quot;,
+  &quot;cx&quot;: &quot;Christmas Island&quot;,
+  &quot;cc&quot;: &quot;Cocos (Keeling) Islands&quot;,
+  &quot;co&quot;: &quot;Colombia&quot;,
+  &quot;km&quot;: &quot;Comoros&quot;,
+  &quot;cd&quot;: &quot;DR Congo&quot;,
+  &quot;cg&quot;: &quot;Congo&quot;,
+  &quot;ck&quot;: &quot;Cook Islands&quot;,
+  &quot;cr&quot;: &quot;Costa Rica&quot;,
+  &quot;ci&quot;: &quot;Côte d&#39;Ivoire&quot;,
+  &quot;hr&quot;: &quot;Croatia&quot;,
+  &quot;cu&quot;: &quot;Cuba&quot;,
+  &quot;cw&quot;: &quot;Curaçao&quot;,
+  &quot;cy&quot;: &quot;Cyprus&quot;,
+  &quot;cz&quot;: &quot;Czechia&quot;,
+  &quot;dk&quot;: &quot;Denmark&quot;,
+  &quot;dj&quot;: &quot;Djibouti&quot;,
+  &quot;dm&quot;: &quot;Dominica&quot;,
+  &quot;do&quot;: &quot;Dominican Republic&quot;,
+  &quot;ec&quot;: &quot;Ecuador&quot;,
+  &quot;eg&quot;: &quot;Egypt&quot;,
+  &quot;sv&quot;: &quot;El Salvador&quot;,
+  &quot;gq&quot;: &quot;Equatorial Guinea&quot;,
+  &quot;er&quot;: &quot;Eritrea&quot;,
+  &quot;ee&quot;: &quot;Estonia&quot;,
+  &quot;et&quot;: &quot;Ethiopia&quot;,
+  &quot;eu&quot;: &quot;European Union&quot;,
+  &quot;fk&quot;: &quot;Falkland Islands [Malvinas]&quot;,
+  &quot;fo&quot;: &quot;Faroe Islands&quot;,
+  &quot;fj&quot;: &quot;Fiji&quot;,
+  &quot;fi&quot;: &quot;Finland&quot;,
+  &quot;fr&quot;: &quot;France&quot;,
+  &quot;gf&quot;: &quot;French Guiana&quot;,
+  &quot;pf&quot;: &quot;French Polynesia&quot;,
+  &quot;tf&quot;: &quot;French Southern Territories&quot;,
+  &quot;ga&quot;: &quot;Gabon&quot;,
+  &quot;gm&quot;: &quot;Gambia&quot;,
+  &quot;ge&quot;: &quot;Georgia&quot;,
+  &quot;de&quot;: &quot;Germany&quot;,
+  &quot;gh&quot;: &quot;Ghana&quot;,
+  &quot;gi&quot;: &quot;Gibraltar&quot;,
+  &quot;gr&quot;: &quot;Greece&quot;,
+  &quot;gl&quot;: &quot;Greenland&quot;,
+  &quot;gd&quot;: &quot;Grenada&quot;,
+  &quot;gp&quot;: &quot;Guadeloupe&quot;,
+  &quot;gu&quot;: &quot;Guam&quot;,
+  &quot;gt&quot;: &quot;Guatemala&quot;,
+  &quot;gg&quot;: &quot;Guernsey&quot;,
+  &quot;gn&quot;: &quot;Guinea&quot;,
+  &quot;gw&quot;: &quot;Guinea-Bissau&quot;,
+  &quot;gy&quot;: &quot;Guyana&quot;,
+  &quot;ht&quot;: &quot;Haiti&quot;,
+  &quot;hm&quot;: &quot;Heard Island and McDonald Islands&quot;,
+  &quot;va&quot;: &quot;Holy See&quot;,
+  &quot;hn&quot;: &quot;Honduras&quot;,
+  &quot;hk&quot;: &quot;Hong Kong&quot;,
+  &quot;hu&quot;: &quot;Hungary&quot;,
+  &quot;is&quot;: &quot;Iceland&quot;,
+  &quot;in&quot;: &quot;India&quot;,
+  &quot;id&quot;: &quot;Indonesia&quot;,
+  &quot;ir&quot;: &quot;Iran&quot;,
+  &quot;iq&quot;: &quot;Iraq&quot;,
+  &quot;ie&quot;: &quot;Ireland&quot;,
+  &quot;im&quot;: &quot;Isle of Man&quot;,
+  &quot;il&quot;: &quot;Israel&quot;,
+  &quot;it&quot;: &quot;Italy&quot;,
+  &quot;jm&quot;: &quot;Jamaica&quot;,
+  &quot;jp&quot;: &quot;Japan&quot;,
+  &quot;je&quot;: &quot;Jersey&quot;,
+  &quot;jo&quot;: &quot;Jordan&quot;,
+  &quot;kz&quot;: &quot;Kazakhstan&quot;,
+  &quot;ke&quot;: &quot;Kenya&quot;,
+  &quot;ki&quot;: &quot;Kiribati&quot;,
+  &quot;kp&quot;: &quot;North Korea&quot;,
+  &quot;kr&quot;: &quot;South Korea&quot;,
+  &quot;kw&quot;: &quot;Kuwait&quot;,
+  &quot;kg&quot;: &quot;Kyrgyzstan&quot;,
+  &quot;la&quot;: &quot;Laos&quot;,
+  &quot;lv&quot;: &quot;Latvia&quot;,
+  &quot;lb&quot;: &quot;Lebanon&quot;,
+  &quot;ls&quot;: &quot;Lesotho&quot;,
+  &quot;lr&quot;: &quot;Liberia&quot;,
+  &quot;ly&quot;: &quot;Libya&quot;,
+  &quot;li&quot;: &quot;Liechtenstein&quot;,
+  &quot;lt&quot;: &quot;Lithuania&quot;,
+  &quot;lu&quot;: &quot;Luxembourg&quot;,
+  &quot;mo&quot;: &quot;Macao&quot;,
+  &quot;mk&quot;: &quot;Macedonia&quot;,
+  &quot;mg&quot;: &quot;Madagascar&quot;,
+  &quot;mw&quot;: &quot;Malawi&quot;,
+  &quot;my&quot;: &quot;Malaysia&quot;,
+  &quot;mv&quot;: &quot;Maldives&quot;,
+  &quot;ml&quot;: &quot;Mali&quot;,
+  &quot;mt&quot;: &quot;Malta&quot;,
+  &quot;mh&quot;: &quot;Marshall Islands&quot;,
+  &quot;mq&quot;: &quot;Martinique&quot;,
+  &quot;mr&quot;: &quot;Mauritania&quot;,
+  &quot;mu&quot;: &quot;Mauritius&quot;,
+  &quot;yt&quot;: &quot;Mayotte&quot;,
+  &quot;mx&quot;: &quot;Mexico&quot;,
+  &quot;fm&quot;: &quot;Micronesia&quot;,
+  &quot;md&quot;: &quot;Moldova&quot;,
+  &quot;mc&quot;: &quot;Monaco&quot;,
+  &quot;mn&quot;: &quot;Mongolia&quot;,
+  &quot;me&quot;: &quot;Montenegro&quot;,
+  &quot;ms&quot;: &quot;Montserrat&quot;,
+  &quot;ma&quot;: &quot;Morocco&quot;,
+  &quot;mz&quot;: &quot;Mozambique&quot;,
+  &quot;mm&quot;: &quot;Myanmar&quot;,
+  &quot;na&quot;: &quot;Namibia&quot;,
+  &quot;nr&quot;: &quot;Nauru&quot;,
+  &quot;np&quot;: &quot;Nepal&quot;,
+  &quot;nl&quot;: &quot;Netherlands&quot;,
+  &quot;nc&quot;: &quot;New Caledonia&quot;,
+  &quot;nz&quot;: &quot;New Zealand&quot;,
+  &quot;ni&quot;: &quot;Nicaragua&quot;,
+  &quot;ne&quot;: &quot;Niger&quot;,
+  &quot;ng&quot;: &quot;Nigeria&quot;,
+  &quot;nu&quot;: &quot;Niue&quot;,
+  &quot;nf&quot;: &quot;Norfolk Island&quot;,
+  &quot;mp&quot;: &quot;Northern Mariana Islands&quot;,
+  &quot;no&quot;: &quot;Norway&quot;,
+  &quot;om&quot;: &quot;Oman&quot;,
+  &quot;pk&quot;: &quot;Pakistan&quot;,
+  &quot;pw&quot;: &quot;Palau&quot;,
+  &quot;ps&quot;: &quot;Palestine&quot;,
+  &quot;pa&quot;: &quot;Panama&quot;,
+  &quot;pg&quot;: &quot;Papua New Guinea&quot;,
+  &quot;py&quot;: &quot;Paraguay&quot;,
+  &quot;pe&quot;: &quot;Peru&quot;,
+  &quot;ph&quot;: &quot;Philippines&quot;,
+  &quot;pn&quot;: &quot;Pitcairn&quot;,
+  &quot;pl&quot;: &quot;Poland&quot;,
+  &quot;pt&quot;: &quot;Portugal&quot;,
+  &quot;pr&quot;: &quot;Puerto Rico&quot;,
+  &quot;qa&quot;: &quot;Qatar&quot;,
+  &quot;re&quot;: &quot;Réunion&quot;,
+  &quot;ro&quot;: &quot;Romania&quot;,
+  &quot;ru&quot;: &quot;Russia&quot;,
+  &quot;rw&quot;: &quot;Rwanda&quot;,
+  &quot;bl&quot;: &quot;Saint Barthélemy&quot;,
+  &quot;sh&quot;: &quot;Saint Helena, Ascension and Tristan da Cunha&quot;,
+  &quot;kn&quot;: &quot;Saint Kitts and Nevis&quot;,
+  &quot;lc&quot;: &quot;Saint Lucia&quot;,
+  &quot;mf&quot;: &quot;Saint Martin (French part)&quot;,
+  &quot;pm&quot;: &quot;Saint Pierre and Miquelon&quot;,
+  &quot;vc&quot;: &quot;Saint Vincent and the Grenadines&quot;,
+  &quot;ws&quot;: &quot;Samoa&quot;,
+  &quot;sm&quot;: &quot;San Marino&quot;,
+  &quot;st&quot;: &quot;Sao Tome and Principe&quot;,
+  &quot;sa&quot;: &quot;Saudi Arabia&quot;,
+  &quot;gb-sct&quot;: &quot;Scotland&quot;,
+  &quot;sn&quot;: &quot;Senegal&quot;,
+  &quot;rs&quot;: &quot;Serbia&quot;,
+  &quot;sc&quot;: &quot;Seychelles&quot;,
+  &quot;sl&quot;: &quot;Sierra Leone&quot;,
+  &quot;sg&quot;: &quot;Singapore&quot;,
+  &quot;sx&quot;: &quot;Sint Maarten (Dutch part)&quot;,
+  &quot;sk&quot;: &quot;Slovakia&quot;,
+  &quot;si&quot;: &quot;Slovenia&quot;,
+  &quot;sb&quot;: &quot;Solomon Islands&quot;,
+  &quot;so&quot;: &quot;Somalia&quot;,
+  &quot;za&quot;: &quot;South Africa&quot;,
+  &quot;gs&quot;: &quot;South Georgia and the South Sandwich Islands&quot;,
+  &quot;ss&quot;: &quot;South Sudan&quot;,
+  &quot;es&quot;: &quot;Spain&quot;,
+  &quot;lk&quot;: &quot;Sri Lanka&quot;,
+  &quot;sd&quot;: &quot;Sudan&quot;,
+  &quot;sr&quot;: &quot;Suriname&quot;,
+  &quot;sj&quot;: &quot;Svalbard and Jan Mayen&quot;,
+  &quot;sz&quot;: &quot;Swaziland&quot;,
+  &quot;se&quot;: &quot;Sweden&quot;,
+  &quot;ch&quot;: &quot;Switzerland&quot;,
+  &quot;sy&quot;: &quot;Syria&quot;,
+  &quot;tw&quot;: &quot;Taiwan&quot;,
+  &quot;tj&quot;: &quot;Tajikistan&quot;,
+  &quot;tz&quot;: &quot;Tanzania&quot;,
+  &quot;th&quot;: &quot;Thailand&quot;,
+  &quot;tl&quot;: &quot;Timor-Leste&quot;,
+  &quot;tg&quot;: &quot;Togo&quot;,
+  &quot;tk&quot;: &quot;Tokelau&quot;,
+  &quot;to&quot;: &quot;Tonga&quot;,
+  &quot;tt&quot;: &quot;Trinidad and Tobago&quot;,
+  &quot;tn&quot;: &quot;Tunisia&quot;,
+  &quot;tr&quot;: &quot;Turkey&quot;,
+  &quot;tm&quot;: &quot;Turkmenistan&quot;,
+  &quot;tc&quot;: &quot;Turks and Caicos Islands&quot;,
+  &quot;tv&quot;: &quot;Tuvalu&quot;,
+  &quot;ug&quot;: &quot;Uganda&quot;,
+  &quot;ua&quot;: &quot;Ukraine&quot;,
+  &quot;ae&quot;: &quot;United Arab Emirates&quot;,
+  &quot;gb&quot;: &quot;United Kingdom&quot;,
+  &quot;un&quot;: &quot;United Nations&quot;,
+  &quot;um&quot;: &quot;United States Minor Outlying Islands&quot;,
+  &quot;us&quot;: &quot;United States of America&quot;,
+  &quot;uy&quot;: &quot;Uruguay&quot;,
+  &quot;uz&quot;: &quot;Uzbekistan&quot;,
+  &quot;vu&quot;: &quot;Vanuatu&quot;,
+  &quot;ve&quot;: &quot;Venezuela&quot;,
+  &quot;vn&quot;: &quot;Viet Nam&quot;,
+  &quot;vg&quot;: &quot;Virgin Islands (British)&quot;,
+  &quot;vi&quot;: &quot;Virgin Islands (U.S.)&quot;,
+  &quot;gb-wls&quot;: &quot;Wales&quot;,
+  &quot;wf&quot;: &quot;Wallis and Futuna&quot;,
+  &quot;eh&quot;: &quot;Western Sahara&quot;,
+  &quot;ye&quot;: &quot;Yemen&quot;,
+  &quot;zm&quot;: &quot;Zambia&quot;,
+  &quot;zw&quot;: &quot;Zimbabwe&quot;,
+  &quot;es-ca&quot;: &quot;Senyera (Catalonia)&quot;,
+  &quot;es-ga&quot;: &quot;Galicia&quot;,
+  &quot;gb-eng&quot;: &quot;England&quot;,
+  &quot;gb-nir&quot;: &quot;Northern Ireland&quot;,
+  &quot;xk&quot;: &quot;Palau&quot;
+};
+
+const displayFlags = data =&gt; {
+  let flagList = [];
+
+  if (data) {
+    if (!data || !data[theme] || !data[theme].flag || !data[theme].flag.length) {
+      content.classList.add(&#39;no-content&#39;);
+      content.innerHTML = &#39;No flag to display&#39;;
+    }
+    else {
+      flagList = data[theme].flag;
+    }
+  }
+
+  for (let i = 0; i &lt; flagList.length; i += 1) {
+    const name = flagList[i].name;
+    const item = document.createElement(&#39;div&#39;);
+    item.classList.add(&#39;item&#39;);
+
+    const flag = document.createElement(&#39;ef-flag&#39;);
+    flag.setAttribute(&#39;flag&#39;, name);
+
+    const flagName = document.createElement(&#39;div&#39;);
+    flagName.classList.add(&#39;flag-name&#39;);
+    flagName.textContent = name;
+
+    const fullname = document.createElement(&#39;div&#39;);
+    fullname.classList.add(&#39;flag-fullname&#39;);
+    fullname.textContent = flagFullname[name] || &quot;&quot;;
+
+    item.appendChild(flag);
+    item.appendChild(fullname);
+    item.appendChild(flagName);
+
+    content.appendChild(item);
+  }
+
+  const loader = document.getElementById(&#39;loader-content&#39;);
+  loader.parentNode.removeChild(loader);
+}
+
+const displayLoader = () =&gt; {
+  const loader = document.getElementById(&#39;loader-content&#39;);
+  for (let i = 0; i &lt; 54; i += 1) {
+    const item = document.createElement(&#39;div&#39;);
+    item.classList.add(&#39;item&#39;);
+    loader.appendChild(item);
+  }
+}
+
+displayLoader();
+await fetch(FLAG_URL)
+  .then(response =&gt; response.json())
+  .then(data =&gt; displayFlags(data));
+</code></pre>
+</code-sandbox><link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>flag</code></td>
+<td><code>flag</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Name of a known flag to render.</td>
+</tr>
+<tr>
+<td><code>src</code></td>
+<td><code>src</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Src location of an svg flag.</td>
+</tr>
+</tbody></table>

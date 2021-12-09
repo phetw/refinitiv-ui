@@ -1,0 +1,37 @@
+<h1 id="typography">Typography</h1>
+<p>In accordance with Refinitiv&#39;s Halo Design System, the default font in your application should be Proxima Nova Fin, which is automatically applied when you import native styles from EF themes.</p>
+<aside class="warning"><p>The font &quot;Proxima Nova Fin&quot; shall only be used within Refinitiv products or services. The copyright owner must approve any use of such font outside of Refinitiv products or services, which may be subject to a fee. Please see <a href="https://www.fontspring.com/lic/fontspring/webfont#license_text">https://www.fontspring.com/lic/fontspring/webfont#license_text</a></p>
+</aside><aside class="fail"><p>Font styles in Halo theme are only Regular, Semi Bold and Bold. Do not use &#39;Itatic&#39; style due to the license on Proxima Nova Fin font.</p>
+</aside><code-sandbox hash="5eebeb45"><pre><code class="language-css">.semibold {
+  font-weight: 500;
+}
+.bold {
+  font-weight: 600;
+}
+.fonts {
+  font-size: 24px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;h6&gt;Proxima Nova Fin Regular (400)&lt;/h6&gt;
+&lt;div class=&quot;fonts&quot;&gt;
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+0 1 2 3 4 5 6 7 8 9
+&lt;/div&gt;
+&lt;h6&gt;Proxima Nova Fin Semibold (500)&lt;/h6&gt;
+&lt;div class=&quot;fonts semibold&quot;&gt;
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+0 1 2 3 4 5 6 7 8 9
+&lt;/div&gt;
+&lt;h6&gt;Proxima Nova Fin Bold (600)&lt;/h6&gt;
+&lt;div class=&quot;fonts bold&quot;&gt;
+A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+0 1 2 3 4 5 6 7 8 9
+&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">import { halo } from &#39;/theme-loader.js&#39;;
+halo();
+</code></pre>
+</code-sandbox>

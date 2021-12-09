@@ -1,0 +1,199 @@
+<h1 id="canvas">Canvas</h1>
+<code-sandbox hash="de425106"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/canvas?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;canvas&#39;);
+
+const canvas = document.querySelector(&#39;ef-canvas&#39;);
+
+let x;
+let y;
+let tShift;
+let amplitude;
+let frequency;
+let tStart = performance.now();
+let frameId;
+
+const loop = (t) =&gt; {
+
+  cancelAnimationFrame(frameId);
+
+  const ctx = canvas.getContext(&#39;2d&#39;);
+  const style = getComputedStyle(canvas);
+
+  tShift = (t - tStart) / 1000;
+  amplitude = canvas.height * 0.8;
+  frequency = 15 / canvas.width;
+  frequency = frequency &lt; 0.02 ? 0.02 : frequency &gt; 0.03 ? 0.03 : frequency;
+  ctx.lineWidth = 7;
+  ctx.lineJoin = &#39;round&#39;;
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  ctx.beginPath();
+  ctx.strokeStyle = &#39;hsl(&#39; + (tShift + 2) * 10 + &#39;, 100%, 50%)&#39;;
+  for (x = -ctx.lineWidth; x &lt; canvas.width + ctx.lineWidth * 2; x++) {
+    y = (Math.sin(x * frequency + tShift) * amplitude / 2
+        + canvas.height / 2 * 0.8) + canvas.height * 0.1; // 10% offset
+    if (x === -ctx.lineWidth) {
+      ctx.moveTo(x, x % 2 ? canvas.height : y);
+    }
+    ctx.lineTo(x, y);
+  }
+  ctx.stroke();
+
+  ctx.fillStyle = style.getPropertyValue(&#39;color&#39;);
+  ctx.font = style.getPropertyValue(&#39;font-size&#39;) + &#39; &#39; + style.getPropertyValue(&#39;font-family&#39;);
+  ctx.fillText(canvas.tagName, canvas.width / 2 - ctx.measureText(canvas.tagName).width / 2, canvas.height / 2 + 30);
+
+  frameId = window.requestAnimationFrame(loop);
+}
+
+canvas.addEventListener(&#39;resize&#39;, () =&gt; {
+  loop(performance.now());
+});
+</code></pre>
+<pre><code class="language-css">ef-canvas {
+  height: 200px;
+  width: 100%;
+  font-size: 60px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-canvas&gt;&lt;/ef-canvas&gt;
+</code></pre>
+</code-sandbox><h3 id="usage">Usage</h3>
+<p><code>ef-canvas</code> works like the normal <code>HTML5 Canvas</code> element. To use it, you must first get its context.</p>
+<aside class="important"><p>Unlike the normal canvas, <code>ef-canvas</code> only supports <code>CanvasRenderingContext2D</code>, and therefore instantly provides a context object for you to use.</p>
+</aside><pre><code class="language-html">&lt;ef-canvas&gt;&lt;/ef-canvas&gt;
+</code></pre>
+<pre><code class="language-javascript">const canvas = document.querySelector(&#39;ef-canvas&#39;);
+const ctx = canvas.ctx || canvas.context || canvas.getContext(&#39;2d&#39;); // All valid
+
+const draw = () =&gt; {
+  ctx.fillStyle = &#39;#888&#39;;
+  ctx.fillRect(10, 10, 100, 100);
+}
+
+// Draw on resize
+canvas.addEventListener(&#39;resize&#39;, draw);
+</code></pre>
+<h3 id="styling">Styling</h3>
+<p><code>ef-canvas</code> starts out like any other block element, in that it fills its container width and has a default height of <code>0px</code>. In order to be able to see anything, we must set its size. To do this, we just use CSS.</p>
+<aside class="info"><p>There is no need for setting the <code>width</code> and <code>height</code> attributes on the element*.</p>
+</aside><pre><code class="language-css">ef-canvas {
+  width: 600px;
+  height: 250px;
+}
+</code></pre>
+<h3 id="animation-loop">Animation loop</h3>
+<p><code>ef-canvas</code> provides an automatic animation loop. This loop can either be enabled constantly or only when the canvas needs to be modified/animated.</p>
+<p>To use the animation loop, just set the <code>autoloop</code> attribute and listen to the <code>frame</code> event.</p>
+<pre><code class="language-html">&lt;ef-canvas autoloop&gt;&lt;/ef-canvas&gt;
+</code></pre>
+<pre><code class="language-javascript">  const canvas = document.querySelector(&#39;ef-canvas&#39;);
+  const ctx = canvas.ctx || canvas.context || canvas.getContext(&#39;2d&#39;); // All valid
+
+  let x;
+  let y;
+  let factor;
+
+  const draw = (e) =&gt; {
+
+    // Clear the canvas
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    // Do some drawing
+    factor = e.detail.timestamp / 100 % 100 / 100;
+    x = factor * canvas.width - 100 + 100 * factor;
+    y = canvas.height / 2;
+    ctx.fillStyle = &#39;#888&#39;;
+    ctx.fillRect(x, y - 50, 100, 100);
+
+  }
+
+  // Draw on every animation frame
+  canvas.addEventListener(&#39;frame&#39;, draw);
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>autoloop</code></td>
+<td><code>autoloop</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Starts an automatic animation loop.<br />Enabling the frame event.</td>
+</tr>
+<tr>
+<td><code>canvas (readonly)</code></td>
+<td></td>
+<td><code>HTMLCanvasElement</code></td>
+<td></td>
+<td>Html canvas element</td>
+</tr>
+<tr>
+<td><code>context (readonly)</code></td>
+<td></td>
+<td><code>CanvasRenderingContext2D | null</code></td>
+<td></td>
+<td>The 2 dimensional context of the canvas, used for drawing</td>
+</tr>
+<tr>
+<td><code>ctx (readonly)</code></td>
+<td></td>
+<td><code>CanvasRenderingContext2D | null</code></td>
+<td></td>
+<td>Alias of context</td>
+</tr>
+<tr>
+<td><code>height</code></td>
+<td></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>Height of canvas</td>
+</tr>
+<tr>
+<td><code>width</code></td>
+<td></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>Width of canvas</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>getContext</code></td>
+<td><code>(mode: string): string</code></td>
+<td>Return context of canvas,<br />support only 2D mode<br /><br /><strong>mode</strong>: mode of canvas&#39;s context</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>frame</code></td>
+<td>dispatched when next Frame event occurs when autoloop is set to true</td>
+</tr>
+</tbody></table>

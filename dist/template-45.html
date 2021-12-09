@@ -1,0 +1,304 @@
+<h1 id="search-field">Search Field</h1>
+<code-sandbox hash="e7b970c0"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/search-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;search-field&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-search-field placeholder=&quot;Search keywords ...&quot;&gt;&lt;/ef-search-field&gt;
+</code></pre>
+</code-sandbox><p><code>ef-search-field</code> is a form control input designed to receive search query input from users.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-search-field</code> has identical behavior to native text input and <code>ef-text-field</code>, except that the icon isn&#39;t customizable.</p>
+<pre><code class="language-html">&lt;ef-search-field placeholder=&quot;Type a keyword to search ...&quot;&gt;&lt;/ef-search-field&gt;
+</code></pre>
+<h3 id="getting-value">Getting value</h3>
+<p>The value can be accessed using the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;ef-search-field id=&quot;search-input&quot; value=&quot;keywords&quot;&gt;&lt;/ef-search-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const searchInput = document.getElementById(&quot;search-input&quot;);
+console.log(searchInput.value); // &quot;keywords&quot;
+</code></pre>
+<p>You can also listen to the <code>value-changed</code> event, which triggers whenever user interactions change the value.</p>
+<code-sandbox hash="a0e3e981"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/search-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;search-field&#39;);
+const element = document.getElementById(&quot;input&quot;);
+const valueChangedText = document.getElementById(&quot;value-text&quot;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-search-field id=&quot;input&quot; placeholder=&quot;Type something here ..&quot;&gt;&lt;/ef-search-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-search-field id=&quot;input&quot;&gt;&lt;/ef-search-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;input&quot;);
+const valueChangedText = document.getElementById(&quot;value-text&quot;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<h3 id="input-validation">Input validation</h3>
+<p>Validation occurs when constraints are provided and the value changes. If the error state changes, it will dispatch the <code>error-changed</code> event along with the current error state.</p>
+<p>Alternatively, the <code>error</code> property can be checked to confirm if the input is valid or not.</p>
+<h3 id="input-length">Input length</h3>
+<p>The <code>maxlength</code> attribute limits the number of characters that users can enter and the <code>minlength</code> attribute sets the minimum number of characters required. <code>ef-search-field</code> will show error styles if a condition is not met.</p>
+<code-sandbox hash="220e3fc4"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/search-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;search-field&#39;);
+const element = document.getElementById(&quot;search-input&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Value length must be between 2 - 4 characters&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-search-field {
+  width: 200px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-search-field id=&quot;search-input&quot; minlength=&quot;2&quot; maxlength=&quot;4&quot; placeholder=&quot;Between 2 to 4 characters&quot;&gt;&lt;/ef-search-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-search-field id=&quot;search-input&quot; minlength=&quot;2&quot; maxlength=&quot;4&quot;&gt;&lt;/ef-search-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;search-input&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Value length must be between 2 - 4 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="validate-value-using-pattern">Validate value using pattern</h3>
+<p>You can use a regular expression to validate the input value by setting it to the <code>pattern</code> attribute.</p>
+<code-sandbox hash="e1cffda"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/search-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;search-field&#39;);
+const element = document.getElementById(&quot;search-pattern&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Value must be uppercase letters and has 2 - 5 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-search-field {
+  width: 80px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;p&gt;Uppercase letters and 2-5 characters&lt;/p&gt;
+&lt;ef-search-field id=&quot;search-pattern&quot; pattern=&quot;[A-Z]{2,5}&quot; placeholder=&quot;TRI&quot;&gt;&lt;/ef-search-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-search-field id=&quot;search-pattern&quot; pattern=&quot;[A-Z]{2,5}&quot;&gt;&lt;/ef-search-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;search-pattern&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Value must be uppercase letters and has 2 - 5 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="icon-action">Icon action</h3>
+<p>The search icon can become actionable by adding the <code>icon-has-action</code> attribute to the element, so that <code>ef-search-field</code> will fire an <code>icon-click</code> event when a user clicks on the icon. You can add an event listener to this event to execute your code.</p>
+<code-sandbox hash="f528ff31"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/search-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;search-field&#39;);
+const element = document.getElementById(&quot;icon-action&quot;);
+const result = document.getElementById(&quot;result&quot;);
+
+element.addEventListener(&quot;icon-click&quot;, (e) =&gt; {
+  result.innerHTML = &quot;icon is clicked&quot;;
+});
+</code></pre>
+<pre><code class="language-css">p {
+  margin: 8px 0;
+}
+ef-search-field {
+  width: 200px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-search-field id=&quot;icon-action&quot; placeholder=&quot;Try clicking at the icon...&quot; icon-has-action&gt;&lt;/ef-search-field&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-search-field id=&quot;icon-action&quot; placeholder=&quot;Try clicking at the icon...&quot; icon-has-action&gt;&lt;/ef-search-field&gt;
+&lt;p id=&quot;result&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;icon-action&quot;);
+const result = document.getElementById(&quot;result&quot;);
+
+element.addEventListener(&quot;icon-click&quot;, (e) =&gt; {
+  result.innerHTML = &quot;icon is clicked&quot;;
+});
+</code></pre>
+<h3 id="search-on-keypress">Search on keypress</h3>
+<p>By listening to the <code>keyup</code> event, you can add a search action when the user presses a certain key.</p>
+<pre><code class="language-javascript">const searchInput = document.querySelector(&quot;ef-search-field&quot;);
+searchInput.addEventListener(&quot;keyup&quot;, (e) =&gt; {
+  // keyCode 13 is the &quot;Enter&quot; key
+  if (e.keyCode === 13) {
+    // Calls search API
+  }
+});
+</code></pre>
+<h3 id="search-on-type">Search on type</h3>
+<p>Search on type or search autocomplete can be implemented by adding a search action to the <code>value-changed</code> event. However, if the user types too quickly it can put a heavy load on the server and search results could prove to be irrelevant. It is a recommended practice to use either <strong>debounce</strong> or <strong>throttle</strong> to limit the times the application calls for expensive operations like API requests.</p>
+<pre><code class="language-javascript">const searchInput = document.querySelector(&quot;ef-search-field&quot;);
+searchInput.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+    debounce(search(e.detail.value), 1500) // debounce search() for 1.5 seconds
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set error state</td>
+</tr>
+<tr>
+<td><code>iconHasAction</code></td>
+<td><code>icon-has-action</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Specify when icon need to be clickable</td>
+</tr>
+<tr>
+<td><code>maxLength</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character max limit</td>
+</tr>
+<tr>
+<td><code>minLength</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character min limit</td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set regular expression for input validation</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set placeholder text</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disables all other states and border/background styles.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Input&#39;s value</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set warning state</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>renderIcon</code></td>
+<td><code>(): any</code></td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes</td>
+</tr>
+<tr>
+<td><code>icon-click</code></td>
+<td>Dispatched when icon is clicked</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

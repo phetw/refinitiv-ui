@@ -1,0 +1,275 @@
+<h1 id="tornado-chart">Tornado Chart</h1>
+<code-sandbox hash="e2fb909e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tornado-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tornado-chart&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-tornado-chart primary=&quot;7+ hours&quot; secondary=&quot;less than 7 hours&quot;&gt;
+  &lt;ef-tornado-item primary-value=&quot;61&quot; primary-label=&quot;61%&quot; secondary-value=&quot;39&quot; secondary-label=&quot;39%&quot;&gt;India&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;35&quot; primary-label=&quot;35%&quot; secondary-value=&quot;65&quot; secondary-label=&quot;65%&quot;&gt;China&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;28&quot; primary-label=&quot;28%&quot; secondary-value=&quot;72&quot; secondary-label=&quot;72%&quot;&gt;Thailand&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;25&quot; primary-label=&quot;25%&quot; secondary-value=&quot;75&quot; secondary-label=&quot;75%&quot;
+    highlighted&gt;Global Average&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;22&quot; primary-label=&quot;22%&quot; secondary-value=&quot;78&quot; secondary-label=&quot;78%&quot;&gt;United
+    States&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;10&quot; primary-label=&quot;10%&quot; secondary-value=&quot;90&quot; secondary-label=&quot;90%&quot;&gt;Britain&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;5&quot; primary-label=&quot;5%&quot; secondary-value=&quot;95&quot; secondary-label=&quot;95%&quot;&gt;Finland&lt;/ef-tornado-item&gt;
+&lt;/ef-tornado-chart&gt;
+</code></pre>
+</code-sandbox><p><code>ef-tornado-chart</code> visually represents differences or similarities between values. It provides options to add a chart header, add a footer or highlight items.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-tornado-chart</code> is a collection of bars defined by <code>ef-tornado-item</code>. Each item comprises a primary bar and a secondary bar.</p>
+<p><code>ef-tornado-item</code> supports the attributes below.</p>
+<table>
+<thead>
+<tr>
+<th>Tornado Item Attributes</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>primary-value</td>
+<td>Value of primary bar, 0-100</td>
+</tr>
+<tr>
+<td>primary-label</td>
+<td>Text to show on primary bar</td>
+</tr>
+<tr>
+<td>secondary-value</td>
+<td>Value of secondary bar, 0-100</td>
+</tr>
+<tr>
+<td>secondary-label</td>
+<td>Text to show on secondary bar</td>
+</tr>
+</tbody></table>
+<pre><code class="language-html">&lt;ef-tornado-chart primary=&quot;7+ hours&quot; secondary=&quot;less than 7 hours&quot;&gt;
+  &lt;ef-tornado-item
+    primary-value=&quot;61&quot;
+    primary-label=&quot;61%&quot;
+    secondary-value=&quot;39&quot;
+    secondary-label=&quot;39%&quot;
+    &gt;India&lt;/ef-tornado-item
+  &gt;
+  &lt;ef-tornado-item
+    primary-value=&quot;35&quot;
+    primary-label=&quot;35%&quot;
+    secondary-value=&quot;65&quot;
+    secondary-label=&quot;65%&quot;
+    &gt;China&lt;/ef-tornado-item
+  &gt;
+  &lt;ef-tornado-item
+    primary-value=&quot;5&quot;
+    primary-label=&quot;5%&quot;
+    secondary-value=&quot;95&quot;
+    secondary-label=&quot;95%&quot;
+    &gt;Finland&lt;/ef-tornado-item
+  &gt;
+&lt;/ef-tornado-chart&gt;
+</code></pre>
+<h3 id="highlighted-items">Highlighted items</h3>
+<p>You can add the <code>highlighted</code> attribute to <code>ef-tornado-item</code> or set <code>highlighted</code> property to <code>true</code> to apply the highlighted style.</p>
+<pre><code class="language-html">&lt;ef-tornado-item
+  primary-value=&quot;25&quot;
+  primary-label=&quot;25%&quot;
+  secondary-value=&quot;75&quot;
+  secondary-label=&quot;75%&quot;
+  highlighted
+&gt;Global Average&lt;/ef-tornado-item&gt;
+</code></pre>
+<h3 id="header-and-footer">Header and footer</h3>
+<p>Any HTML content can be added to the header and footer section of the chart using the <code>header</code> and <code>footer</code> slot, respectively.</p>
+<code-sandbox hash="ed0edcef"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tornado-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tornado-chart&#39;);
+</code></pre>
+<pre><code class="language-css">  ef-tornado-chart {
+    padding-top: 30px;
+  }
+  [slot=header] {
+    margin-bottom: 15px;
+  }
+  [slot=header] p {
+    margin: 0;
+  }
+  [slot=footer],
+  [slot=header] .sub-title {
+    font-size: 12px;
+  }
+  [slot=footer] {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 15px;
+  }
+  [slot=footer] &gt; * {
+    margin-right: 10px;
+    margin-bottom: 5px;
+  }
+</code></pre>
+<pre><code class="language-html">&lt;ef-tornado-chart primary=&quot;7+ hours&quot; secondary=&quot;less than 7 hours&quot;&gt;
+  &lt;ef-tornado-item primary-value=&quot;61&quot; primary-label=&quot;61%&quot; secondary-value=&quot;39&quot; secondary-label=&quot;39%&quot;&gt;India&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;35&quot; primary-label=&quot;35%&quot; secondary-value=&quot;65&quot; secondary-label=&quot;65%&quot;&gt;China&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;28&quot; primary-label=&quot;28%&quot; secondary-value=&quot;72&quot; secondary-label=&quot;72%&quot;&gt;Singapore&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;25&quot; primary-label=&quot;25%&quot; secondary-value=&quot;75&quot; secondary-label=&quot;75%&quot;
+    highlighted&gt;Global Average&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;22&quot; primary-label=&quot;22%&quot; secondary-value=&quot;78&quot; secondary-label=&quot;78%&quot;&gt;United
+    States&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;10&quot; primary-label=&quot;10%&quot; secondary-value=&quot;90&quot; secondary-label=&quot;90%&quot;&gt;Britain&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;5&quot; primary-label=&quot;5%&quot; secondary-value=&quot;95&quot; secondary-label=&quot;95%&quot;&gt;Finland&lt;/ef-tornado-item&gt;
+  &lt;div slot=&quot;header&quot;&gt;
+    &lt;h3&gt;In loco parentis&lt;/h3&gt;
+    &lt;p&gt;How much time do you spend on average helping your child academically with their education* per week?&lt;/p&gt;
+    &lt;p class=&quot;sub-title&quot;&gt;December 2017&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div slot=&quot;footer&quot;&gt;
+    &lt;p&gt;Source: The Varkey Foundation&lt;/p&gt;
+    &lt;p&gt;*Reading to them or helping with homework&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ef-tornado-chart&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tornado-chart&gt;
+  &lt;ef-tornado-item&gt;...&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item&gt;...&lt;/ef-tornado-item&gt;
+  ...
+  &lt;ef-tornado-item&gt;...&lt;/ef-tornado-item&gt;
+  &lt;div slot=&quot;header&quot;&gt;
+    &lt;h3&gt;In loco parentis&lt;/h3&gt;
+    &lt;p&gt;
+      How much time do you spend on average helping your child academically with
+      their education* per week?
+    &lt;/p&gt;
+    &lt;p class=&quot;sub-title&quot;&gt;December 2017&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;div slot=&quot;footer&quot;&gt;
+    &lt;p&gt;Source: The Varkey Foundation&lt;/p&gt;
+    &lt;p&gt;*Reading to them or helping with homework&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/ef-tornado-chart&gt;
+</code></pre>
+<h3 id="responsiveness">Responsiveness</h3>
+<p>Tornado chart has a default breakpoint value, specified in the theme file, to reflow the layout to a vertical style when it is too small. You can override the value by using css variable, <code>--responsive-width</code>.</p>
+<code-sandbox hash="65540048"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tornado-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tornado-chart&#39;);
+</code></pre>
+<pre><code class="language-css">[responsive] {
+  --responsive-width: 400;
+  width: 380px;
+}
+
+ef-tornado-chart {
+  padding-top: 30px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-tornado-chart responsive primary=&quot;7+ hours&quot; secondary=&quot;less than 7 hours&quot;&gt;
+  &lt;ef-tornado-item primary-value=&quot;61&quot; primary-label=&quot;61%&quot; secondary-value=&quot;39&quot; secondary-label=&quot;39%&quot;&gt;India&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;35&quot; primary-label=&quot;35%&quot; secondary-value=&quot;65&quot; secondary-label=&quot;65%&quot;&gt;China&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;28&quot; primary-label=&quot;28%&quot; secondary-value=&quot;72&quot; secondary-label=&quot;72%&quot;&gt;Singapore&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;25&quot; primary-label=&quot;25%&quot; secondary-value=&quot;75&quot; secondary-label=&quot;75%&quot;
+    highlighted class=&quot;highlight-color&quot;&gt;Global Average&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;22&quot; primary-label=&quot;22%&quot; secondary-value=&quot;78&quot; secondary-label=&quot;78%&quot;&gt;United
+    States&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;10&quot; primary-label=&quot;10%&quot; secondary-value=&quot;90&quot; secondary-label=&quot;90%&quot;&gt;Britain&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;5&quot; primary-label=&quot;5%&quot; secondary-value=&quot;95&quot; secondary-label=&quot;95%&quot;&gt;Finland&lt;/ef-tornado-item&gt;
+&lt;/ef-tornado-chart&gt;
+</code></pre>
+</code-sandbox><h3 id="css-variables">CSS Variables</h3>
+<p>Colors of the chart can be customized using CSS variables; <code>--primary-color</code> for primary bars and <code>--secondary-color</code> for secondary bars.</p>
+<p>The variables can be set at the <code>ef-tornado-chart</code> level and will be inherited by any <code>ef-tornado-item</code>. However, the variable can be set at the <code>ef-tornado-item</code> level, as well.</p>
+<code-sandbox hash="2d15446"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tornado-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tornado-chart&#39;);
+</code></pre>
+<pre><code class="language-css">ef-tornado-chart.custom-color {
+  padding-top: 30px;
+  --primary-color: #bf5f82;
+  --secondary-color: #f48fb1;
+  --responsive-width: 400;
+}
+
+ef-tornado-item.highlight-color {
+  --primary-color: #a00037;
+  --secondary-color: #d81b60;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-tornado-chart class=&quot;custom-color&quot; primary=&quot;7+ hours&quot; secondary=&quot;less than 7 hours&quot;&gt;
+  &lt;ef-tornado-item primary-value=&quot;61&quot; primary-label=&quot;61%&quot; secondary-value=&quot;39&quot; secondary-label=&quot;39%&quot;&gt;India&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;35&quot; primary-label=&quot;35%&quot; secondary-value=&quot;65&quot; secondary-label=&quot;65%&quot;&gt;China&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;28&quot; primary-label=&quot;28%&quot; secondary-value=&quot;72&quot; secondary-label=&quot;72%&quot;&gt;Singapore&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;25&quot; primary-label=&quot;25%&quot; secondary-value=&quot;75&quot; secondary-label=&quot;75%&quot;
+    highlighted class=&quot;highlight-color&quot;&gt;Global Average&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;22&quot; primary-label=&quot;22%&quot; secondary-value=&quot;78&quot; secondary-label=&quot;78%&quot;&gt;United
+    States&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;10&quot; primary-label=&quot;10%&quot; secondary-value=&quot;90&quot; secondary-label=&quot;90%&quot;&gt;Britain&lt;/ef-tornado-item&gt;
+  &lt;ef-tornado-item primary-value=&quot;5&quot; primary-label=&quot;5%&quot; secondary-value=&quot;95&quot; secondary-label=&quot;95%&quot;&gt;Finland&lt;/ef-tornado-item&gt;
+&lt;/ef-tornado-chart&gt;
+</code></pre>
+</code-sandbox><table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--responsive-width</td>
+<td>Override the theme&#39;s breakpoint value to show vertical chart style, e.g. 400</td>
+</tr>
+<tr>
+<td>--primary-color</td>
+<td>Custom primary bar color</td>
+</tr>
+<tr>
+<td>--secondary-color</td>
+<td>Custom secondary bar color</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>primary</code></td>
+<td><code>primary</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Primary bar chart legend text</td>
+</tr>
+<tr>
+<td><code>secondary</code></td>
+<td><code>secondary</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Secondary bar chart legend text</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>footer</code></td>
+<td>Any HTML contents to display at chart footer section</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td>Any HTML contents to display at chart header section</td>
+</tr>
+</tbody></table>

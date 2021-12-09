@@ -1,0 +1,320 @@
+<h1 id="multi-input">Multi Input</h1>
+<code-sandbox hash="c806bce6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/multi-input?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;multi-input&#39;);
+const el = document.getElementById(&#39;fruits&#39;);
+const fruits = [
+  { id: &#39;1&#39;, value: &#39;banana&#39;, label: &#39;Banana&#39; },
+  { id: &#39;2&#39;, value: &#39;orange&#39;, label: &#39;Orange&#39; },
+  { id: &#39;3&#39;, value: &#39;grapes&#39;, label: &#39;Grapes&#39; }
+];
+el.data = fruits;
+
+const catEl = document.getElementById(&#39;cats&#39;);
+const cats = [
+  { label: &#39;Tiger&#39; },
+  { label: &#39;Raven&#39; },
+  { label: &#39;Olive&#39; },
+  { label: &#39;Pearl&#39; },
+  { label: &#39;Dusky&#39; },
+  { label: &#39;Luna&#39; },
+  { label: &#39;Minna&#39; },
+  { label: &#39;Dice&#39; },
+  { label: &#39;Dixie&#39; },
+  { label: &#39;Oreo&#39; },
+  { label: &#39;Ash&#39; },
+  { label: &#39;Taffy&#39; },
+  { label: &#39;Soot&#39; },
+  { label: &#39;Orca&#39; },
+  { label: &#39;Chess&#39; },
+  { label: &#39;Panther&#39; },
+  { label: &#39;Sana&#39; },
+  { label: &#39;Esme&#39; }
+];
+catEl.data = cats;
+</code></pre>
+<pre><code class="language-css">#fruits {
+  margin-bottom: 20px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-multi-input id=&quot;fruits&quot; placeholder=&quot;Enter text here&quot;&gt;&lt;/ef-multi-input&gt;
+&lt;ef-multi-input id=&quot;cats&quot; pills-only&gt;&lt;/ef-multi-input&gt;
+</code></pre>
+</code-sandbox><p><code>ef-multi-input</code> is an input field control that displays multiple items of data as an individual pill. Users can add new pills by using the keyboard, or remove any pills from the control.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-multi-input</code> can be created and the <code>data</code> property used to set an initial list of pills.</p>
+<pre><code class="language-javascript">const el = document.querySelector(&#39;ef-multi-input&#39;);
+const fruits = [
+  { id: &#39;1&#39;, value: &#39;banana&#39;, label: &#39;Banana&#39; },
+  { id: &#39;2&#39;, value: &#39;orange&#39;, label: &#39;Orange&#39; },
+  { id: &#39;3&#39;, value: &#39;grapes&#39;, label: &#39;Grapes&#39; }
+];
+el.data = fruits;
+</code></pre>
+<p>By default, users are allowed to type any value in a text field and it will be created as a new pill when users press the enter key. You can disable the text field input using the <code>pills-only</code> attribute or set <code>pillsOnly</code> using the API property.</p>
+<h3 id="data-property-interface">Data property interface</h3>
+<p>The <code>data</code> is an array of the object use the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/multi-input/helpers/types.ts">MultiInputData</a> interface for its data items.</p>
+<p>The <code>data</code> property is only used for initializing <code>ef-multi-input</code>. It&#39;s immutable and used for keeping a reference to a source array of objects. The value of <code>data</code> won&#39;t be changed when using the add or remove pills API.</p>
+<h3 id="getting-values">Getting values</h3>
+<p>The value of the input text field can be accessed using <code>value</code>. To get a list of pills in the input, use the <code>values</code> property - it will return an array of the <code>value</code> properties of every pill.</p>
+<code-sandbox hash="d724d754"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/multi-input?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;multi-input&#39;);
+const el = document.querySelector(&#39;ef-multi-input&#39;);
+const result = document.getElementById(&#39;result-values&#39;);
+
+window.customElements.whenDefined(&#39;ef-button&#39;).then(() =&gt; {
+  const fruits = [
+    { id: &#39;1&#39;, value: &#39;banana&#39;, label: &#39;Banana&#39; },
+    { id: &#39;2&#39;, value: &#39;orange&#39;, label: &#39;Orange&#39; },
+    { id: &#39;3&#39;, value: &#39;grapes&#39;, label: &#39;Grapes&#39; }
+  ];
+  el.data = fruits;
+  result.innerHTML = JSON.stringify(el.values);
+})
+</code></pre>
+<pre><code class="language-css">div {
+  margin-top: 5px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-multi-input readonly&gt;&lt;/ef-multi-input&gt;
+&lt;div&gt;Values: &lt;span id=&quot;result-values&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-multi-input id=&quot;multiInput&quot;&gt;&lt;/ef-multi-input&gt;
+</code></pre>
+<pre><code class="language-javascript">const el = document.getElementById(&#39;multiInput&#39;);
+console.log(el.values); // array of value of each pills
+</code></pre>
+<h3 id="add-new-items">Add new items</h3>
+<p>You can add new items to <code>ef-multi-input</code> using an API. To add a new pill, use the <code>add</code> method by passing <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/multi-input/helpers/types.ts">MultiDataItem</a> as a parameter.</p>
+<pre><code class="language-html">&lt;ef-multi-input id=&quot;multi-input&quot;&gt;&lt;/ef-multi-input&gt;
+</code></pre>
+<pre><code class="language-javascript">const el = document.getElemetnById(&#39;multi-input&#39;);
+const ret = el.add({
+  value: &#39;newItemValue&#39;,
+  label: &#39;New Item&#39;
+});
+
+console.log(ret); // newly added item or null if new item is invalid
+</code></pre>
+<p><code>ef-multi-input</code> provides the <code>item-added</code> event to listen for when users add a new item to the control by pressing the enter key on their keyboard. In the event object, you can access <code>item</code> for an item object that is newly added and <code>items</code> for an array of items currently shown in the control.</p>
+<p>For example, if a user types <code>Mango</code> and presses the enter key in <code>ef-multi-input</code>.</p>
+<pre><code class="language-javascript">el.addEventListener(&#39;item-added&#39;, (e) =&gt; {
+  console.log(e.detail.item) // Mango object.
+  console.log(e.detail.items) // Array of item in control before mango is added.
+});
+</code></pre>
+<p>The event can be cancelled so you can add custom logic to prevent some items from being added to the control.</p>
+<pre><code class="language-javascript">el.addEventListener(&#39;item-added&#39;, (e) =&gt; {
+  if (e.detail.item.value === &#39;Mango&#39;) {
+    e.preventDefault(); // Prevent  Mango to be added to the list
+  } else {
+    // Anything else can be added
+  }
+});
+</code></pre>
+<h3 id="remove-items">Remove Items</h3>
+<p>Items in <code>ef-multi-input</code> can be removed using an API. You can remove only the last item, remove an item by the index of the pill, or remove all items that match a given value. See the API section below for more details.</p>
+<p>You can listen to the <code>item-removed</code> event, which is fired when users remove any item using their keyboard, or by clicking the clear icon on a pill. In the event object, you can access <code>item</code> for the object of the item removed and <code>items</code> for an array of items currently shown in the control.</p>
+<code-sandbox hash="d95db467"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/multi-input?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;multi-input&#39;);
+const el = document.querySelector(&#39;ef-multi-input&#39;);
+const fruits = [
+  { id: &#39;1&#39;, value: &#39;banana&#39;, label: &#39;Banana&#39; },
+  { id: &#39;2&#39;, value: &#39;orange&#39;, label: &#39;Orange&#39; },
+  { id: &#39;3&#39;, value: &#39;grapes&#39;, label: &#39;Grapes&#39; }
+];
+el.data = fruits;
+el.addEventListener(&#39;item-removed&#39;, (e) =&gt; {
+  const item = e.detail.item;
+  el.value = item.label;
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-multi-input placeholder=&quot;Enter text here&quot;&gt;&lt;/ef-multi-input&gt;
+</code></pre>
+</code-sandbox><h3 id="text-field-value-changed">Text Field value changed</h3>
+<p>When users type or change the value in the text field, the <code>value-changed</code> event will be triggered. The value of the text field is accessed using <code>value</code> in the event object.</p>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>MultiInputData | null</code></td>
+<td>null</td>
+<td>The data object, used to render the list.</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to error</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Specify icon to display inside input box</td>
+</tr>
+<tr>
+<td><code>maxLength</code></td>
+<td><code>maxlength</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character max limit</td>
+</tr>
+<tr>
+<td><code>minLength</code></td>
+<td><code>minlength</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character min limit</td>
+</tr>
+<tr>
+<td><code>pillsOnly</code></td>
+<td><code>pills-only</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Hide text input box</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Placeholder text to display in input box</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Hides text field and clear icon from all pills</td>
+</tr>
+<tr>
+<td><code>selectionEnd</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Selection end index</td>
+</tr>
+<tr>
+<td><code>selectionStart</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Selection start index</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Current value of text field</td>
+</tr>
+<tr>
+<td><code>values (readonly)</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Array of item&#39;s values ( readonly )</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to warning</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>add</code></td>
+<td><code>(item: any): MultiInputDataItem | null</code></td>
+<td>Add a new item to the input. Return newly added object or null if added invalid object.<br /><br /><strong>item</strong>: to add. Object must have at least value and label</td>
+</tr>
+<tr>
+<td><code>removeByIndex</code></td>
+<td><code>(index: number): MultiInputDataItem | null</code></td>
+<td>Removes pill by index. Returns item that removed or null if list was empty<br /><br /><strong>index</strong>: of pill to be removed</td>
+</tr>
+<tr>
+<td><code>removeByValue</code></td>
+<td><code>(value: string): string</code></td>
+<td>Removes the item by the value and returns array of removed items<br /><br /><strong>value</strong>: Value of item to remove</td>
+</tr>
+<tr>
+<td><code>removeLastItem</code></td>
+<td><code>(): MultiInputDataItem | null</code></td>
+<td>Removes last item. Returns item that removed or null if list was empty</td>
+</tr>
+<tr>
+<td><code>select</code></td>
+<td><code>(): void</code></td>
+<td>Select the contents of input</td>
+</tr>
+<tr>
+<td><code>setSelectionRange</code></td>
+<td><code>(startSelection: number, endSelection: number): void</code></td>
+<td>Set the selection range<br /><br /><strong>startSelection</strong>: Start of selection<br /><strong>endSelection</strong>: End of the selection</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes.<br />Property <code>detail.error</code> is error from validation.</td>
+</tr>
+<tr>
+<td><code>item-added</code></td>
+<td>Fired when new pill is added.<br />Property <code>detail.item</code> is new added pill.<br />Property <code>detail.items</code> is new list of all pills.</td>
+</tr>
+<tr>
+<td><code>item-error</code></td>
+<td>Fired when item that attempt to add is invalid.<br />Property <code>detail.item</code> is item with an error.<br />Property <code>detail.items</code> a current list of pills.</td>
+</tr>
+<tr>
+<td><code>item-removed</code></td>
+<td>Fired when item is removed.<br />Property <code>detail.item</code> is pill that removed.<br />Property <code>detail.items</code> is new list of all pills.</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when new value of text field is changed.<br />Property <code>detail.value</code> will be the new value.</td>
+</tr>
+</tbody></table>

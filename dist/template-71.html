@@ -1,0 +1,22 @@
+<h1 id="styling-components">Styling Components</h1>
+<p>EF elements are built with using <a href="https://developer.mozilla.org/en-US/docs/Web/Web_Components/Using_shadow_DOM">Shadow DOM</a>. Shadow DOM encapsulates internal styles and component structures so they don&#39;t leak out, or get interfered with by application-level styles.</p>
+<p>While component&#39;s internal styles are protected, applications can override any styles that are available at host scope by using the normal CSS selector.</p>
+<pre><code class="language-html">&lt;ef-email-field class=&quot;login-input&quot;&gt;&lt;/ef-email-field&gt;
+&lt;ef-password-field class=&quot;login-input&quot;&gt;&lt;/ef-password-field&gt;
+</code></pre>
+<pre><code class="language-css">.login-input {
+  width: 150px;
+  margin-bottom: 5px;
+}
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>Some EF elements provide <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties">CSS Variables</a> which allows application to modify its internal styles without hacking into Shadow DOM. CSS Variables are also used to style canvas components. Available CSS variables are in API document of each component.</p>
+<pre><code class="language-html">&lt;ef-led-gauge red-blue-scale&gt;&lt;/ef-led-gauge&gt;
+</code></pre>
+<pre><code class="language-css">ef-led-gauge[red-blue-scale] {
+  --center-right-segment-color: rgba(60, 60, 200, 0.65);
+  --right-segment-color: rgba(60, 60, 200, 1);
+}
+</code></pre>
+<aside class="warning"><p>For Single Page Applications, the <code>&lt;shady-css-scoped&gt;</code> tag must be placed at the root of the application i.e. <code>index.html</code>.</p>
+</aside>

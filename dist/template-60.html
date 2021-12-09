@@ -1,0 +1,381 @@
+<h1 id="tree">Tree</h1>
+<code-sandbox hash="748497ee"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree&#39;);
+const tree = document.querySelector(&#39;ef-tree&#39;);
+tree.data = [{
+  label: &#39;Group 1&#39;,
+  expanded: true,
+  items: [{
+    label: &#39;Item 1.1&#39;,
+    value: &#39;1.1&#39;
+  },
+  {
+    label: &#39;Item 1.2&#39;,
+    value: &#39;1.2&#39;
+  },
+  {
+    label: &#39;Item 1.3&#39;,
+    value: &#39;1.3&#39;,
+    selected: true
+  }]
+},
+{
+  label: &#39;Group 2&#39;,
+  items: [{
+    label: &#39;Item 2.1&#39;,
+    value: &#39;2.1&#39;
+  },
+  {
+    label: &#39;Item 2.2&#39;,
+    value: &#39;2.2&#39;
+  },
+  {
+    label: &#39;Item 2.3&#39;,
+    value: &#39;2.3&#39;
+  }]
+}]
+</code></pre>
+<pre><code class="language-html">&lt;ef-tree&gt;&lt;/ef-tree&gt;
+</code></pre>
+</code-sandbox><p>Displays a nested data structure as a tree menu. Useful for navigating grouped/categorized data.</p>
+<h3 id="usage">Usage</h3>
+<p>The data of <code>ef-tree</code> can be set by passing an array of objects to the element&#39;s <code>data</code> property.</p>
+<pre><code class="language-html">&lt;ef-tree&gt;&lt;/ef-tree&gt;
+</code></pre>
+<pre><code class="language-javascript">const tree = document.querySelector(&#39;ef-tree&#39;);
+tree.data = [{
+  label: &#39;Group 1&#39;,
+  expanded: true,
+  items: [{
+    label: &#39;Item 1.1&#39;,
+    value: &#39;1.1&#39;
+  },
+  {
+    label: &#39;Item 1.2&#39;,
+    value: &#39;1.2&#39;
+  },
+  {
+    label: &#39;Item 1.3&#39;,
+    value: &#39;1.3&#39;,
+    selected: true
+  }]
+},
+{
+  label: &#39;Group 2&#39;,
+  items: [{
+    label: &#39;Item 2.1&#39;,
+    value: &#39;2.1&#39;
+  },
+  {
+    label: &#39;Item 2.2&#39;,
+    value: &#39;2.2&#39;
+  },
+  {
+    label: &#39;Item 2.3&#39;,
+    value: &#39;2.3&#39;
+  }]
+}]
+</code></pre>
+<h3 id="tree-item-with-icon">Tree item with icon</h3>
+<p>Icon can be set to show on each node in tree by using icon key in item object. You can pass icon name, url of icon svg file or empty string.</p>
+<code-sandbox hash="6b1d51ec"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree&#39;);
+const basicTree = document.getElementById(&#39;basic&#39;);
+const multipleTree = document.getElementById(&#39;multiple&#39;);
+basicTree.data = [
+  {
+    label: &#39;Request 5 Rank 1: custom leage table&#39;,
+    icon: &#39;list&#39;,
+    selected: true,
+    expanded: true,
+    items: [{
+        label: &#39;Req. 5 Rnk. 1 Dr.Req. 1: Goldman Sachs &amp; Co&#39;,
+        value: &#39;1.1&#39;,
+        icon: &#39;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&#39;
+      },
+      {
+        label: &#39;Req. 5 Rnk. 1 Dr.Req. 2: Allen &amp; Co Inc&#39;,
+        value: &#39;1.2&#39;,
+        icon: &#39;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&#39;
+      }]
+  },
+  {
+    label: &#39;Session Details&#39;,
+    icon: &#39;sendfeed&#39;,
+  }
+];
+multipleTree.data = [
+  {
+    label: &#39;Request 5 Rank 1: custom leage table&#39;,
+    icon: &#39;list&#39;,
+    selected: true,
+    expanded: true,
+    items: [{
+      label: &#39;Req. 5 Rnk. 1 Dr.Req. 1: Goldman Sachs &amp; Co&#39;,
+      value: &#39;1.1&#39;,
+      icon: &#39;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&#39;
+    },
+    {
+      label: &#39;Req. 5 Rnk. 1 Dr.Req. 2: Allen &amp; Co Inc&#39;,
+      value: &#39;1.2&#39;,
+      icon: &#39;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&#39;
+    }]
+  },
+  {
+    label: &#39;Session Details&#39;,
+    icon: &#39;sendfeed&#39;,
+  }
+];
+</code></pre>
+<pre><code class="language-css">.container {
+  display: flex;
+}
+ef-tree {
+  margin-right: 20px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-tree id=&quot;basic&quot;&gt;&lt;/ef-tree&gt;
+  &lt;ef-tree multiple id=&quot;multiple&quot;&gt;&lt;/ef-tree&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tree&gt;&lt;/ef-tree&gt;
+</code></pre>
+<pre><code class="language-javascript">const tree = document.querySelector(&#39;ef-tree&#39;);
+tree.data = [
+  {
+    label: &#39;Request 5 Rank 1: custom leage table&#39;,
+    icon: &#39;list&#39;,
+    selected: true,
+    expanded: true,
+    items: [{
+      label: &#39;Req. 5 Rnk. 1 Dr.Req. 1: Goldman Sachs &amp; Co&#39;,
+      value: &#39;1.1&#39;,
+      icon: &#39;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&#39;
+    },
+    {
+      label: &#39;Req. 5 Rnk. 1 Dr.Req. 2: Allen &amp; Co Inc&#39;,
+      value: &#39;1.2&#39;,
+      icon: &#39;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/grid.svg&#39;
+    }]
+  },
+  {
+    label: &#39;Session Details&#39;,
+    icon: &#39;sendfeed&#39;,
+  }
+];
+</code></pre>
+<h3 id="data-property-interface">Data property interface</h3>
+<p>The <code>data </code> property that passes through the <code>ef-tree</code> uses the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/tree/helpers/types.ts">TreeData</a> interface for its data items.</p>
+<h3 id="multiple-selection">Multiple selection</h3>
+<p>Tree uses single selection mode by default. Use the <code>multiple</code> attribute if you need multiple selections.</p>
+<code-sandbox hash="3d6b108"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree&#39;);
+const tree = document.querySelector(&#39;ef-tree&#39;);
+tree.data = [
+  {
+    label: &#39;Group 1&#39;,
+    items: [{
+      label: &#39;Item 1.1&#39;,
+      value: &#39;1.1&#39;
+    },
+    {
+      label: &#39;Item 1.2&#39;,
+      value: &#39;1.2&#39;
+    },
+    {
+      label: &#39;Item 1.3&#39;,
+      value: &#39;1.3&#39;,
+      selected: true
+    }]
+  },
+  {
+    label: &#39;Group 2&#39;,
+    items: [{
+      label: &#39;Item 2.1&#39;,
+      value: &#39;2.1&#39;
+    },
+    {
+      label: &#39;Item 2.2&#39;,
+      value: &#39;2.2&#39;
+    },
+    {
+      label: &#39;Item 2.3&#39;,
+      value: &#39;2.3&#39;
+    }]
+  }
+];
+</code></pre>
+<pre><code class="language-html">&lt;ef-tree multiple&gt;&lt;/ef-tree&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tree multiple&gt;&lt;/ef-tree&gt;
+</code></pre>
+<h3 id="turn-off-parentchild-relationship">Turn off parent/child relationship</h3>
+<p>For multiple selection mode, Tree manages the relationship between parent and child items. Use the <code>no-relation</code> attribute to turn this feature off.</p>
+<code-sandbox hash="1d339942"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree&#39;);
+const tree = document.querySelector(&#39;ef-tree&#39;);
+tree.data = [
+  {
+    label: &#39;Group 1&#39;,
+    items: [{
+      label: &#39;Item 1.1&#39;,
+      value: &#39;1.1&#39;
+    },
+    {
+      label: &#39;Item 1.2&#39;,
+      value: &#39;1.2&#39;
+    },
+    {
+      label: &#39;Item 1.3&#39;,
+      value: &#39;1.3&#39;,
+      selected: true
+    }]
+  },
+  {
+    label: &#39;Group 2&#39;,
+    items: [{
+      label: &#39;Item 2.1&#39;,
+      value: &#39;2.1&#39;
+    },
+    {
+      label: &#39;Item 2.2&#39;,
+      value: &#39;2.2&#39;
+    },
+    {
+      label: &#39;Item 2.3&#39;,
+      value: &#39;2.3&#39;
+    }]
+  }
+];
+</code></pre>
+<pre><code class="language-html">&lt;ef-tree multiple no-relation&gt;&lt;/ef-tree&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tree multiple no-relation&gt;&lt;/ef-tree&gt;
+</code></pre>
+<h3 id="tree-values-and-events">Tree value(s) and events</h3>
+<p>Use the <code>value-changed</code> event to know when the user has changed any selection in Tree. Tree provides <code>value</code> and <code>values</code> properties for accessing selected item(s).</p>
+<p>Typically, you can just use the <code>values</code> property, as it will work for both multiple and single selection mode. With single selection mode, <code>value</code> represents a single value, whereas in multiple selection mode, it will store the first value of the <code>values</code> array.</p>
+<pre><code class="language-javascript">const tree = document.querySelector(&#39;ef-tree&#39;);
+
+tree.addEventListener(&#39;value-changed&#39;, (e) =&gt; {
+  console.log(e.detail); // value that users changed
+  console.log(tree.values); // access selected items
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>TreeData&lt;T&gt;</code></td>
+<td></td>
+<td>Data object to be used for creating tree</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td><code>multiple</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Allows multiple items to be selected</td>
+</tr>
+<tr>
+<td><code>noRelation</code></td>
+<td><code>no-relation</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Breaks the relationship when multiple<br />selection mode is enabled</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td><code>query</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Query string applied to tree</td>
+</tr>
+<tr>
+<td><code>renderer</code></td>
+<td></td>
+<td><code>TreeRenderer</code></td>
+<td>&quot;new TreeRenderer(this)&quot;</td>
+<td>Renderer used for generating tree items</td>
+</tr>
+<tr>
+<td><code>stateless</code></td>
+<td><code>stateless</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disable selections</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Selected items in tree</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checkAll</code></td>
+<td><code>(): void</code></td>
+<td>Checks all editable items</td>
+</tr>
+<tr>
+<td><code>collapseAll</code></td>
+<td><code>(): void</code></td>
+<td>Collapses all groups</td>
+</tr>
+<tr>
+<td><code>expandAll</code></td>
+<td><code>(): void</code></td>
+<td>Expands all groups</td>
+</tr>
+<tr>
+<td><code>uncheckAll</code></td>
+<td><code>(): void</code></td>
+<td>Unchecks all editable items</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>expanded-changed</code></td>
+<td>Fired when an item&#39;s expanded state has changed.</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when the users changed selection item.</td>
+</tr>
+</tbody></table>

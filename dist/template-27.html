@@ -1,0 +1,464 @@
+<h1 id="item">Item</h1>
+<code-sandbox hash="795a2e75"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/item?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;item&#39;);
+</code></pre>
+<pre><code class="language-css">ef-item {
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-item type=&quot;header&quot;&gt;Menu&lt;/ef-item&gt;
+&lt;ef-item icon=&quot;home&quot;&gt;Home&lt;/ef-item&gt;
+&lt;ef-item icon=&quot;directory&quot;&gt;Contacts&lt;/ef-item&gt;
+&lt;ef-item icon=&quot;calendar&quot;&gt;Calendar&lt;/ef-item&gt;
+&lt;ef-item icon=&quot;briefcase&quot; disabled&gt;Briefcase&lt;/ef-item&gt;
+&lt;ef-item type=&quot;header&quot;&gt;Advanced&lt;/ef-item&gt;
+&lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+&lt;ef-item icon=&quot;compass&quot;&gt;Sneak Peeks&lt;/ef-item&gt;
+&lt;ef-item icon=&quot;dashboard&quot;&gt;Dashboard&lt;/ef-item&gt;
+</code></pre>
+</code-sandbox><p><code>ef-item</code> is generally used as a basic building block to compose complex custom elements. Additionally it can be used by applications to create simple menus or navigation panels.</p>
+<h3 id="usage">Usage</h3>
+<p>Use <code>ef-item</code> to create an individual list item. It provides features such as types and icons to simplify building menu controls.</p>
+<code-sandbox hash="a20f7aa0"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/item?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;item&#39;);
+const menu = document.getElementById(&quot;menu&quot;);
+let selectedElement;
+menu.addEventListener(&quot;tap&quot;, (e) =&gt; {
+  const target = e.target;
+  if (!target.highlightable) {
+    return;
+  }
+  if (selectedElement) {
+    selectedElement.selected = false;
+  }
+  selectedElement = target;
+  selectedElement.selected = true;
+  document.getElementById(&quot;selected&quot;).label = selectedElement.value + &quot; is clicked!&quot;;
+});
+menu.addEventListener(&#39;mouseover&#39;, (event) =&gt; {
+  event.target.highlighted = true;
+});
+menu.addEventListener(&#39;mouseout&#39;, (event) =&gt; {
+  event.target.highlighted = false;
+});
+</code></pre>
+<pre><code class="language-css">#menu {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+#selected {
+  margin: 10px 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Edit&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;undo&quot; value=&quot;undo&quot;&gt;Undo&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;redo&quot; value=&quot;redo&quot; disabled&gt;Redo&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;cut&quot; value=&quot;cut&quot;&gt;Cut&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;copy&quot; value=&quot;copy&quot;&gt;Copy&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;paste&quot; value=&quot;paste&quot;&gt;Paste&lt;/ef-item&gt;
+&lt;/div&gt;
+
+&lt;ef-item id=&quot;selected&quot; disabled label=&quot;Try to click menu above&quot;&gt;&lt;/ef-item&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;div id=&quot;menu&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;Edit&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;undo&quot; value=&quot;undo&quot;&gt;Undo&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;redo&quot; value=&quot;redo&quot; disabled&gt;Redo&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;cut&quot; value=&quot;cut&quot;&gt;Cut&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;copy&quot; value=&quot;copy&quot;&gt;Copy&lt;/ef-item&gt;
+  &lt;ef-item icon=&quot;paste&quot; value=&quot;paste&quot;&gt;Paste&lt;/ef-item&gt;
+&lt;/div&gt;
+</code></pre>
+<p><code>ef-item</code> provides styles for the focus, highlighted and selected states. However, only the focus state is managed by <code>ef-item</code> itself. The highlight and selection models should be managed by the external component by setting the <code>highlighted</code> and <code>selected</code> states, respectively.</p>
+<pre><code class="language-javascript">menu.addEventListener(&quot;tap&quot;, (e) =&gt; {
+  const target = e.target;
+  // skip if users click on disabled or divider
+  if (!target.highlightable) {
+    return;
+  }
+  // deselected item that currently selected
+  if (selectedElement) {
+    selectedElement.selected = false;
+  }
+  // set selected flag to clicked item
+  selectedElement = target;
+  selectedElement.selected = true;
+});
+
+menu.addEventListener(&#39;mouseover&#39;, (event) =&gt; {
+  event.target.highlighted = true;
+});
+
+menu.addEventListener(&#39;mouseout&#39;, (event) =&gt; {
+  event.target.highlighted = false;
+});
+</code></pre>
+<h3 id="using-labels">Using labels</h3>
+<p><code>ef-item</code> provides <code>label</code> and <code>sub-label</code> attributes to set the label property as a simplified instance of the content.</p>
+<code-sandbox hash="3bb031c6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/item?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;item&#39;);
+const menu = document.getElementById(&quot;menu&quot;);
+menu.addEventListener(&#39;mouseover&#39;, (event) =&gt; {
+  event.target.highlighted = true;
+});
+menu.addEventListener(&#39;mouseout&#39;, (event) =&gt; {
+  event.target.highlighted = false;
+});
+</code></pre>
+<pre><code class="language-css">#menu {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;menu&quot;&gt;
+  &lt;ef-item label=&quot;Team Members&quot; icon=&quot;directory&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item label=&quot;Cornelius Martin&quot; sub-label=&quot;Position: Software Engineer&quot; icon=&quot;individual&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item label=&quot;Angela Lloyd&quot; sub-label=&quot;Position: Development Manager&quot; icon=&quot;individual&quot; &gt;&lt;/ef-item&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;div id=&quot;menu&quot;&gt;
+  &lt;ef-item label=&quot;Team Members&quot; icon=&quot;directory&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item label=&quot;Cornelius Martin&quot; sub-label=&quot;Position: Software Engineer&quot; icon=&quot;individual&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item label=&quot;Angela Lloyd&quot; sub-label=&quot;Position: Development Manager&quot; icon=&quot;individual&quot; &gt;&lt;/ef-item&gt;
+&lt;/div&gt;
+</code></pre>
+<p>Both <code>label</code> and <code>sub-label</code> are not displayed if <code>ef-item</code> has children.</p>
+<pre><code class="language-html">&lt;ef-item label=&quot;This text will not be displayed&quot; sub-label=&quot;This text will not be displayed&quot;&gt;
+  This text will be displayed
+&lt;/ef-item&gt;
+</code></pre>
+<h3 id="using-slots">Using slots</h3>
+<p>Custom content can be added using slots. <code>ef-item</code> provides bopth <code>left</code> and <code>right</code> slots.</p>
+<code-sandbox hash="7d86d60"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/item?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;item&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/checkbox?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;checkbox&#39;);
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-css">#todo {
+  display: flex;
+  flex-direction: column;
+  width: 550px;
+  margin: 10px 0;
+}
+
+ef-button {
+  margin: 0;
+}
+
+.notes {
+  color: #b7b7b7;
+  margin-right: 10px;
+}
+
+ef-item[focused] ef-checkbox {
+  color:white;
+}
+
+ef-item[focused] .notes {
+  color: white;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;todo&quot;&gt;
+&lt;ef-item&gt;
+  &lt;ef-checkbox&gt;Carrots&lt;/ef-checkbox&gt;
+  &lt;div class=&quot;notes&quot; slot=&quot;right&quot;&gt;Small bag&lt;/div&gt;
+  &lt;ef-button toggles icon=&quot;trash&quot; slot=&quot;right&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-item&gt;
+&lt;ef-item&gt;
+  &lt;ef-checkbox&gt;Chocolates&lt;/ef-checkbox&gt;
+  &lt;div class=&quot;notes&quot; slot=&quot;right&quot;&gt;For Otis&lt;/div&gt;
+  &lt;ef-button toggles icon=&quot;trash&quot; slot=&quot;right&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-item&gt;
+&lt;ef-item&gt;
+  &lt;ef-checkbox&gt;Pumpkins&lt;/ef-checkbox&gt;
+  &lt;div class=&quot;notes&quot; slot=&quot;right&quot;&gt;Halloween!&lt;/div&gt;
+  &lt;ef-button toggles icon=&quot;trash&quot; slot=&quot;right&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-item&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-item&gt;
+  &lt;ef-checkbox&gt;Carrots&lt;/ef-checkbox&gt;
+  &lt;div class=&quot;notes&quot; slot=&quot;right&quot;&gt;Small bag&lt;/div&gt;
+  &lt;ef-button toggles icon=&quot;trash&quot; slot=&quot;right&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-item&gt;
+</code></pre>
+<h3 id="advanced-usage">Advanced usage</h3>
+<p><code>ef-item</code> can be used to create menu elements. You should implement your own highlight and selection models.</p>
+<code-sandbox hash="8447f1b0"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/item?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;item&#39;);
+const menu = document.getElementById(&#39;menu&#39;);
+let selectedEl;
+
+// Get highlighted item
+const getHighlighted = () =&gt; { menu.querySelector(&#39;ef-item[highlighted]&#39;) };
+
+// Get all items that can be highlighted
+const getHighlightableEls = () =&gt; {
+  return Array.prototype.slice.call(menu.querySelectorAll(&#39;ef-item&#39;))
+    .filter((item) =&gt; item.highlightable);
+};
+
+const highlight = (el) =&gt; {
+  const highlightedEl = getHighlighted();
+  if (highlightedEl === el) {
+    return true;
+  }
+  if (!el.highlightable) {
+    return false;
+  }
+
+  if (highlightedEl) {
+    highlightedEl.highlighted = false;
+  }
+
+  el.highlighted = true;
+};
+
+// Highlight next or previous item
+const highlightNextFocusableItem = (event, dir) =&gt; {
+  event.stopPropagation();
+  event.preventDefault();
+
+  const highlightableEls = getHighlightableEls();
+  const highlightedEl = getHighlighted();
+
+  if (dir === 1) {
+    newHighlighted = highlightableEls[highlightableEls.indexOf(highlightedEl) + 1] || highlightableEls[0];
+  }
+  else if (dir === -1) {
+    newHighlighted = highlightableEls[highlightableEls.indexOf(highlightedEl) - 1] || highlightableEls[highlightableEls.length - 1];
+  }
+
+  if (newHighlighted) {
+    highlight(newHighlighted);
+    newHighlighted.focus();
+  }
+};
+
+const select = (item) =&gt; {
+  if (selectedEl) {
+    selectedEl.selected = false;
+  }
+  selectedEl = item;
+  item.selected = true;
+  document.getElementById(&#39;selected&#39;).innerHTML = item.value + &#39; is selected!&#39;;
+};
+
+menu.addEventListener(&#39;keydown&#39;, (event) =&gt; {
+  switch (event.key) {
+    case &#39;Down&#39;:
+    case &#39;ArrowDown&#39;:
+    case &#39;Tab&#39;:
+      highlightNextFocusableItem(event, 1);
+      break;
+    case &#39;Up&#39;:
+    case &#39;ArrowUp&#39;:
+      highlightNextFocusableItem(event, -1);
+      break;
+    case &#39;Enter&#39;:
+      getHighlighted().focus();
+      getHighlighted() &amp;&amp; getHighlighted().click();
+      break;
+    default:
+    // no default
+  }
+});
+
+menu.addEventListener(&#39;mouseover&#39;, (event) =&gt; {
+  menu.focus();
+  highlight(event.target);
+});
+
+menu.addEventListener(&#39;mouseout&#39;, (event) =&gt; {
+  if (event.target.highlighted) {
+    event.target.highlighted = false;
+  }
+});
+
+menu.addEventListener(&#39;tap&#39;, (event) =&gt; {
+  if (event.target.highlightable) {
+    highlight(event.target);
+    select(event.target);
+  }
+});
+</code></pre>
+<pre><code class="language-css">#menu {
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  outline: none;
+}
+#selected {
+  margin: 10px 0;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;menu&quot; tabindex=&quot;0&quot;&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;EMEA&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Spain&quot;&gt;Spain&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;France&quot; disabled&gt;France&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Italy&quot;&gt;Italy&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;header&quot;&gt;ASIA&lt;/ef-item&gt;
+  &lt;ef-item type=&quot;divider&quot;&gt;&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;Japan&quot;&gt;Japan&lt;/ef-item&gt;
+  &lt;ef-item value=&quot;China&quot;&gt;China&lt;/ef-item&gt;
+&lt;/div&gt;
+&lt;div id=&quot;selected&quot;&gt;Try to click and use keyboard to navigate the menu&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const menu = document.getElementById(&#39;menu&#39;);
+
+// Get highlighted item
+const getHighlighted = () =&gt; {
+  return menu.querySelector(&#39;ef-item[highlighted]&#39;);
+};
+
+// Get all items that can be highlighted
+const getHighlightableEls = () =&gt; {
+  return Array.prototype.slice.call(menu.querySelectorAll(&#39;ef-item&#39;))
+    .filter((item) =&gt; item.highlightable);
+};
+
+menu.addEventListener(&#39;keydown&#39;, (event) =&gt; {
+  // Implement keyboard navigation model
+});
+
+menu.addEventListener(&#39;mouseover&#39;, (event) =&gt; {
+  // Implement highlight model
+});
+
+menu.addEventListener(&#39;mouseout&#39;, (event) =&gt; {
+  // Implement remove highlight model
+});
+
+menu.addEventListener(&#39;tap&#39;, (event) =&gt; {
+  // Implement selection model
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state.</td>
+</tr>
+<tr>
+<td><code>for</code></td>
+<td><code>for</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Specifies which element an item is bound to</td>
+</tr>
+<tr>
+<td><code>highlightable (readonly)</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td></td>
+<td>Return true if the item can be highlighted. True if not disabled and type is Text</td>
+</tr>
+<tr>
+<td><code>highlighted</code></td>
+<td><code>highlighted</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Highlight the item</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set the icon name from the ef-icon list</td>
+</tr>
+<tr>
+<td><code>isTruncated (readonly)</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td></td>
+<td>Getter returning if the label is truncated</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>label</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>The text for the label indicating the meaning of the item.<br />By having both <code>label</code> and content, <code>label</code> always takes priority</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td><code>multiple</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Is the item part of a multiple selection</td>
+</tr>
+<tr>
+<td><code>selected</code></td>
+<td><code>selected</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Indicates that the item is selected</td>
+</tr>
+<tr>
+<td><code>subLabel</code></td>
+<td><code>sub-label</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>The<code>subLabel</code> property represents the text beneath the label.</td>
+</tr>
+<tr>
+<td><code>type</code></td>
+<td><code>type</code></td>
+<td><code>ItemType | null</code></td>
+<td>null</td>
+<td>If defined value can be <code>text</code>, <code>header</code> or <code>divider</code></td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>The content of this attribute represents the value of the item.</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>left</code></td>
+<td>Used to render the content on the left of the label.</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>Used to render the content on the right of the label.</td>
+</tr>
+</tbody></table>

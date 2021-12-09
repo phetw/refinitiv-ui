@@ -1,0 +1,273 @@
+<h1 id="dialog">Dialog</h1>
+<code-sandbox hash="4b7fae9d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;dialog&#39;);
+</code></pre>
+<pre><code class="language-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot; opened&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.querySelector(&#39;#d1&#39;).opened = true;&quot;&gt;Open Dialog&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-dialog</code> is a popup window designed to contain and display any HTML content. It provides modal and dragging functionality, and also allows custom footers and control buttons to be included.</p>
+<h3 id="usage">Usage</h3>
+<p>Dialog can easily be launched by adding the <code>opened</code> property. If you want the dialog to open by default, include the <code>opened</code> attribute when you embed <code>ef-dialog</code>.</p>
+<pre><code class="language-html">&lt;ef-dialog id=&quot;dlg1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+</code></pre>
+<pre><code class="language-javascript">const dlg = document.getElementById(&#39;dlg1&#39;);
+dlg.opened = true;
+</code></pre>
+<p>The default behavior of <code>ef-dialog</code> is to display at the center of the viewport and to not be draggable. You can enable dragging by adding the <code>draggable</code> attribute or using the property setting.</p>
+<code-sandbox hash="9623bc40"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;dialog&#39;);
+</code></pre>
+<pre><code class="language-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot; draggable opened&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.querySelector(&#39;#d1&#39;).opened = true;&quot;&gt;Open Dialog&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-dialog id=&quot;dlg1&quot; header=&quot;System Permissions&quot; draggable&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+</code></pre>
+<h3 id="confirmed-vs-cancelled">Confirmed vs cancelled</h3>
+<p>You may want to detect if the user has closed the dialog by clicking the OK or Cancel button. You can listen to the <code>opened-changed</code> event and check the value of the <code>confirmed</code> property, which will be set to <code>true</code> if the user clicked the OK button to close the dialog.</p>
+<code-sandbox hash="35e1cb07"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;dialog&#39;);
+const dlg = document.getElementById(&#39;d1&#39;);
+dlg.addEventListener(&#39;opened-changed&#39;, () =&gt; {
+  document.getElementById(&#39;close-result&#39;).innerHTML = dlg.confirmed ? &#39;User clicked OK&#39; : &#39;User clicked Cancel&#39;;
+});
+</code></pre>
+<pre><code class="language-css">.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot; draggable opened&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.getElementById(&#39;d1&#39;).opened = true;&quot;&gt;Open Dialog&lt;/ef-button&gt;
+  &lt;p id=&quot;close-result&quot;&gt;&lt;p&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+</code></pre>
+<pre><code class="language-javascript">const dlg = document.getElementById(&#39;d1&#39;);
+dlg.addEventListener(&#39;opened-changed&#39;, () =&gt; {
+  if (dlg.confirmed) {
+    // user clicked OK button
+  }
+  else {
+    // user clicked Cancel button
+  }
+});
+</code></pre>
+<h3 id="customize-footer-content">Customize footer content</h3>
+<p>The dialog provides default OK and Cancel buttons. To replace those buttons with your own content, assign content to the <code>footer</code> slot.</p>
+<code-sandbox hash="5e17188f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/dialog?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;dialog&#39;);
+</code></pre>
+<pre><code class="language-css">.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+  &lt;div slot=&quot;footer&quot; style=&quot;padding: 15px 25px;&quot;&gt;
+    &lt;ef-button style=&quot;width:100%&quot; cta onclick=&quot;document.getElementById(&#39;d1&#39;).opened = false;&quot;&gt;Accept&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-dialog&gt;
+&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button onclick=&quot;document.getElementById(&#39;d1&#39;).opened = true;&quot;&gt;Custom Dialog&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+  &lt;div slot=&quot;footer&quot; style=&quot;padding: 15px 25px;&quot;&gt;
+      &lt;ef-button style=&quot;width:100%&quot; cta onclick=&quot;document.getElementById(&#39;d1&#39;).opened = false;&quot;&gt;Accept&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-dialog&gt;
+</code></pre>
+<h3 id="customize-close-behaviors">Customize close behaviors</h3>
+<p>By default, <code>ef-dialog</code> will only close when the user clicks the OK or Cancel button, or presses the ESC key. However, you can allow the dialog to close when the user clicks outside of the dialog, or prevent the dialog from closing when the ESC key is pressed.</p>
+<p>To close the dialog when the user clicks outside of the dialog, set the <code>noCancelOnOutsideClick</code> property to <code>false</code>.</p>
+<pre><code class="language-html">&lt;ef-dialog id=&quot;d1&quot; header=&quot;System Permissions&quot;&gt;
+  &lt;p&gt;Grant geolocation permissions?&lt;/p&gt;
+  &lt;p&gt;This will allow the application to see your real-time location at any point in time.&lt;/p&gt;
+&lt;/ef-dialog&gt;
+</code></pre>
+<pre><code class="language-javascript">document.getElementById(&#39;d1&#39;).noCancelOnOutsideClick = false;
+</code></pre>
+<p>To prevent the dialog from closing on ESC key press, add the <code>no-cancel-on-esc-key</code> attribute to <code>ef-dialog</code>.</p>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>draggable</code></td>
+<td><code>draggable</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Should the dialog be draggable</td>
+</tr>
+<tr>
+<td><code>fullScreen</code></td>
+<td><code>full-screen</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set dialog to full screen</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>header</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set Header/Title of the dialog</td>
+</tr>
+<tr>
+<td><code>noCancelOnEscKey</code></td>
+<td><code>no-cancel-on-esc-key</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Prevents dialog to close when user presses ESC key</td>
+</tr>
+<tr>
+<td><code>noCancelOnOutsideClick</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td>true</td>
+<td>Prevents dialog to close when user clicks outside the dialog.</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set dialog to open</td>
+</tr>
+<tr>
+<td><code>positionTarget</code></td>
+<td><code>position-target</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set position of dialog i.e. <code>top</code>, <code>right</code>, <code>left</code>, <code>bottom</code>, <code>center</code> or combination of theme e.g. <code>top right</code>.</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td><code>x</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set a specific x coordinate of dialog</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td><code>y</code></td>
+<td><code>string | undefined</code></td>
+<td></td>
+<td>Set a specific y coordinate of dialog</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>refit</code></td>
+<td><code>(): void</code></td>
+<td>Clear all cached values and fit the popup.<br />Use this function only if maxWidth, maxHeight, minWidth, minHeight, height, width are changed</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cancel</code></td>
+<td>Fired when dialog is closed by user clicked a default Cancel button, clicked outside to close dialog or press ESC to close the dialog. Prevent default to stop default action</td>
+</tr>
+<tr>
+<td><code>confirm</code></td>
+<td>Fired when dialog is closed by user clicked a default OK button. Prevent default to stop default action</td>
+</tr>
+<tr>
+<td><code>opened-changed</code></td>
+<td>Fired when value of <code>opened</code> property is changed. Prevent default to stop default action</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>footer</code></td>
+<td>Hide default OK and Cancel button and replace dialog&#39;s footer with your custom content.</td>
+</tr>
+</tbody></table>

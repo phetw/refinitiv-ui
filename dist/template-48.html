@@ -1,0 +1,273 @@
+<h1 id="slider">Slider</h1>
+<code-sandbox hash="8c5b8bd3"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/slider?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;slider&#39;);
+</code></pre>
+<pre><code class="language-css">ef-slider{
+  width:50%;
+  margin:5px 10px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; value=&quot;45&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider range min=&quot;0&quot; max=&quot;100&quot; from=&quot;25&quot; to=&quot;75&quot; min-range=&quot;1&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; value=&quot;45&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field range min=&quot;0&quot; max=&quot;100&quot; from=&quot;25&quot; to=&quot;75&quot;  min-range=&quot;1&quot;&gt;&lt;/ef-slider&gt;
+</code></pre>
+</code-sandbox><h3 id="usage">Usage</h3>
+<p>Sliders allow users to make selections from a range of values. The component&#39;s <code>min</code> and <code>max</code> values set the range. A default value can be set using the <code>value</code> attribute.</p>
+<pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; value=&quot;60&quot;&gt;&lt;/ef-slider&gt;
+</code></pre>
+<h3 id="getting-value">Getting value</h3>
+<p>To get the value of slider, access it using the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;ef-slider id=&quot;level&quot; value=&quot;1&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;&lt;/ef-slider&gt;
+</code></pre>
+<pre><code class="language-javascript">const el = document.getElementById(&quot;level&quot;);
+console.log(el.value); // &quot;1&quot;
+</code></pre>
+<p>You can add an event listener to the element for the <code>value-changed</code> event. The event will be triggered when users change the value of the slider.</p>
+<h3 id="range-slider">Range slider</h3>
+<p>Add a <code>range</code> attribute to make the slider support <code>from</code> and <code>to</code> instead of a single value.</p>
+<code-sandbox hash="14fe2692"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/slider?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;slider&#39;);
+</code></pre>
+<pre><code class="language-css">ef-slider{
+  width:50%;
+  margin:15px 15px;
+}
+ef-slider:first-child{
+  margin:25px 15px 10px 15px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range&gt;&lt;/ef-slider&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range&gt;&lt;/ef-slider&gt;
+</code></pre>
+<p>In range mode, the control will provide values between <code>from</code> and <code>to</code>. You can use <code>from-changed</code> and <code>to-changed</code> events to get notified when those values are changed.</p>
+<p>In some use cases, you may need to set a minimum number of values between <code>from</code> and <code>to</code>. For example, you might want users to set at least 10 values in a range. To do that, set <code>min-range</code> to 10.</p>
+<code-sandbox hash="99234219"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/slider?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;slider&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range min-range=&quot;10&quot;&gt;&lt;/ef-slider&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range min-range=&quot;10&quot;&gt;&lt;/ef-slider&gt;
+</code></pre>
+<h3 id="show-input-field">Show input field</h3>
+<p>Input fields can be set to display on the side of slider. They show the current value of the slider and also allow users to set it with their keyboard.</p>
+<code-sandbox hash="872fd3da"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/slider?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;slider&#39;);
+</code></pre>
+<pre><code class="language-css">ef-slider{
+  width:50%;
+  margin:15px 15px;
+}
+ef-slider:first-child{
+  margin:25px 15px 10px 15px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; value=&quot;40&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range&gt;&lt;/ef-slider&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; value=&quot;40&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider show-input-field min=&quot;0&quot; max=&quot;100&quot; from=&quot;10&quot; to=&quot;50&quot; range&gt;&lt;/ef-slider&gt;
+</code></pre>
+<h3 id="set-steps">Set steps</h3>
+<p>The <code>step</code> attribute specifies the size of each increment or decrement on the slider control. By default, the slider will not show step marks but this can be set using <code>show-steps</code>.</p>
+<code-sandbox hash="ada04555"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/slider?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;slider&#39;);
+</code></pre>
+<pre><code class="language-css">ef-slider{
+  width:50%;
+  margin:5px 10px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;10&quot; value=&quot;5&quot; step=&quot;0.5&quot; show-steps show-input-field&gt;&lt;/ef-slider&gt;
+&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;60&quot; to=&quot;80&quot; step=&quot;20&quot; range show-steps show-input-field&gt;&lt;/ef-slider&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-slider min=&quot;0&quot; max=&quot;10&quot; value=&quot;5&quot; step=&quot;0.5&quot; show-steps show-input-field&gt;&lt;/ef-slider&gt;
+&lt;ef-slider min=&quot;0&quot; max=&quot;100&quot; from=&quot;60&quot; to=&quot;80&quot; step=&quot;20&quot; range show-steps show-input-field&gt;&lt;/ef-slider&gt;
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>Colors of slider are managed by the theme but can be overridden using CSS variables.</p>
+<code-sandbox hash="421d7c02"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/slider?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;slider&#39;);
+</code></pre>
+<pre><code class="language-css">ef-slider {
+  max-width: 50%;
+}
+#red {
+  --thumb-color:#e40303;
+}
+#orange {
+  --thumb-color:#ff8c00;
+}
+#yellow {
+  --thumb-color:#ffed00;
+}
+#green {
+  --thumb-color:#008026;
+}
+#blue {
+  --thumb-color:#004dff;
+}
+#violet {
+  --thumb-color:#750787;
+}
+</code></pre>
+<pre><code class="language-html">&lt;!-- ELF supports Pride at Refinitiv --&gt;
+&lt;ef-slider id=&quot;red&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;orange&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;80&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;yellow&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;95&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;green&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;90&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;blue&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;80&quot;&gt;&lt;/ef-slider&gt;
+&lt;ef-slider id=&quot;violet&quot; min=&quot;0&quot; max=&quot;100&quot; value=&quot;70&quot;&gt;&lt;/ef-slider&gt;
+</code></pre>
+</code-sandbox><table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--track-color</td>
+<td>Slider track color</td>
+</tr>
+<tr>
+<td>--thumb-color</td>
+<td>Color of slider thumb and filled track color</td>
+</tr>
+<tr>
+<td>--step-color</td>
+<td>Slider step color</td>
+</tr>
+<tr>
+<td>--input-field-width</td>
+<td>Set input field width</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>from</code></td>
+<td><code>from</code></td>
+<td><code>string</code></td>
+<td>&quot;0&quot;</td>
+<td>Uses with <code>range</code>. Low value of slider in range mode.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>max</code></td>
+<td><code>string</code></td>
+<td>&quot;100&quot;</td>
+<td>Slider maximum value of slider.</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>min</code></td>
+<td><code>string</code></td>
+<td>&quot;0&quot;</td>
+<td>Set minimum value of slider.</td>
+</tr>
+<tr>
+<td><code>minRange</code></td>
+<td><code>min-range</code></td>
+<td><code>string</code></td>
+<td>&quot;0&quot;</td>
+<td>Uses with <code>range</code>. Set minimum allowance value (distance) between <code>from</code> and <code>to</code>.</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td><code>range</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set slider to range mode. Instead of a single value, slider will provide <code>from</code> and <code>to</code>.</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>showInputField</code></td>
+<td><code>show-input-field</code></td>
+<td><code>&quot;&quot; | &quot;readonly&quot; | null</code></td>
+<td>null</td>
+<td>Show input number field.</td>
+</tr>
+<tr>
+<td><code>showSteps</code></td>
+<td><code>show-steps</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Show steps marker on slider.</td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>step</code></td>
+<td><code>string</code></td>
+<td>&quot;1&quot;</td>
+<td>Specified size of increment or decrement jump between value.</td>
+</tr>
+<tr>
+<td><code>to</code></td>
+<td><code>to</code></td>
+<td><code>string</code></td>
+<td>&quot;100&quot;</td>
+<td>Uses with <code>range</code>. High value of slider in range mode</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;0&quot;</td>
+<td>Value of slider. Not applicable in range mode.</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>from-changed</code></td>
+<td>Fired when the <code>from</code> changes.</td>
+</tr>
+<tr>
+<td><code>to-changed</code></td>
+<td>Fired when the <code>to</code> changes.</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when the <code>value</code> changes.</td>
+</tr>
+</tbody></table>

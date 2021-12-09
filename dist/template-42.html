@@ -1,0 +1,208 @@
+<h1 id="progress-bar">Progress Bar</h1>
+<code-sandbox hash="a948b980"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/progress-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;progress-bar&#39;);
+
+let val;
+let bar;
+const bars = document.body.querySelectorAll(&#39;ef-progress-bar&#39;);
+let i = 0;
+let shift = 0;
+const max = bars.length;
+setInterval(() =&gt; {
+  val = 100 / max * ((i + shift) % max + 1);
+  bar = bars[i++ % max];
+  bar.value = val;
+  if (i % max === 0) {
+    shift++;
+  }
+}, 333);
+</code></pre>
+<pre><code class="language-css">.red {
+  color: #F44336;
+}
+.pink {
+  color: #E91E63;
+}
+.purple {
+  color: #9C27B0;
+}
+.indigo {
+  color: #3F51B5;
+}
+.navy {
+  color: #334e96;
+}
+ef-progress-bar {
+  margin-bottom: 10px;
+  max-width: 600px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar class=&quot;red&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar class=&quot;pink&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar class=&quot;purple&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar class=&quot;indigo&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar class=&quot;navy&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+</code-sandbox><p><code>ef-progress-bar</code> is a simple visualization to display a single bar. It accepts a value between 0-100 and uses it as a percentage to fill the bar.</p>
+<h3 id="set-bar-length">Set bar length</h3>
+<p>The length of the bar can be set using the <code>value</code> attribute, which can be any decimal number between 0 and 100.</p>
+<code-sandbox hash="c1567674"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/progress-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;progress-bar&#39;);
+</code></pre>
+<pre><code class="language-css">ef-progress-bar {
+  margin-bottom: 10px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;100&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;75&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;50&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;25&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-progress-bar value=&quot;100&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;75&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;50&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;25&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+<h3 id="show-label">Show label</h3>
+<p>You can set the <code>label</code> attribute to display text at the end of a bar. To prevent a label from going outside of a container, apply the <code>margin-right</code> attribute.</p>
+<pre><code class="language-css">ef-progress-bar {
+  margin-right: 45px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;100&quot; label=&quot;100&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+<code-sandbox hash="2faade7d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/progress-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;progress-bar&#39;);
+</code></pre>
+<pre><code class="language-css">ef-progress-bar {
+  margin-top: 10px;
+  margin-right: 45px;
+  margin-bottom: 45px
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;100&quot; label=&quot;100&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+</code-sandbox><h3 id="customize-height-and-color">Customize height and color</h3>
+<p>Bar color and height have default values from the theme, but you can override them using CSS.</p>
+<code-sandbox hash="4d0acb55"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/progress-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;progress-bar&#39;);
+</code></pre>
+<pre><code class="language-css">ef-progress-bar {
+  height: 16px;
+}
+.highlighted {
+  color: #000000;
+}
+ef-progress-bar {
+  margin-right: 45px;
+  margin-bottom: 10px
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;20&quot; label=&quot;Potato Croquettes&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;50&quot; label=&quot;Hamburger&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar class=&quot;highlighted&quot; value=&quot;70&quot; label=&quot;Sushi&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;35&quot; label=&quot;Toast&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">ef-progress-bar {
+  height: 16px;
+}
+.highlighted {
+  color: #000000;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;20&quot; label=&quot;Potato Croquettes&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;50&quot; label=&quot;Hamburger&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar class=&quot;highlighted&quot; value=&quot;70&quot; label=&quot;Sushi&quot;&gt;&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;65&quot; label=&quot;Toast&quot;&gt;&lt;/ef-progress-bar&gt;
+</code></pre>
+<h3 id="label-slot">Label slot</h3>
+<p>The <code>label</code> attribute supports only text. You can use slot to include any content e.g. icons or customize your label colour.</p>
+<p>You may have to add some CSS to your content, to ensure that it looks nice.</p>
+<code-sandbox hash="438b7bd6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/progress-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;progress-bar&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/icon?min&#39;;
+halo(&#39;icon&#39;);
+</code></pre>
+<pre><code class="language-css">ef-progress-bar {
+  margin-top: 5px;
+  margin-bottom: 10px;
+}
+ef-progress-bar .thumb {
+  position: absolute;
+  top: -8px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;85&quot;&gt;
+  &lt;ef-icon class=&quot;thumb&quot; slot=&quot;label&quot; icon=&quot;like-empty&quot;&gt;&lt;/ef-icon&gt;
+&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;15&quot;&gt;
+  &lt;ef-icon class=&quot;thumb&quot; slot=&quot;label&quot; icon=&quot;dislike-empty&quot;&gt;&lt;/ef-icon&gt;
+&lt;/ef-progress-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">ef-progress-bar .thumb {
+  position: absolute;
+  top: -8px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-progress-bar value=&quot;85&quot;&gt;
+  &lt;ef-icon class=&quot;thumb&quot; slot=&quot;label&quot; icon=&quot;like-empty&quot;&gt;&lt;/ef-icon&gt;
+&lt;/ef-progress-bar&gt;
+&lt;ef-progress-bar value=&quot;15&quot;&gt;
+  &lt;ef-icon class=&quot;thumb&quot; slot=&quot;label&quot; icon=&quot;dislike-empty&quot;&gt;&lt;/ef-icon&gt;
+&lt;/ef-progress-bar&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>alignment</code></td>
+<td><code>alignment</code></td>
+<td><code>string</code></td>
+<td>&quot;left&quot;</td>
+<td>The alignment of the bar.<br />The bar can either start from the <code>left</code> or <code>right</code>.</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>The current label to be displayed next to the bar.<br />This is affixed to the end of the bar, so make sure to cater for this.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;100&quot;</td>
+<td>The current value of the bar.<br />This can range from <code>0-100</code> and<br />will be represented as a percentage bar</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>label</code></td>
+<td>Overrides the label property and places custom content. Useful for modifying the color, or, adding icons.</td>
+</tr>
+</tbody></table>

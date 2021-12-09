@@ -1,0 +1,91 @@
+<div style="float:right">
+  <a href="https://vuejs.org/" target="_blank">vuejs.org</a>
+</div>
+
+<h1 id="vue-guide">Vue Guide</h1>
+<aside class="info"><p>This guideline uses Vue 3 and Vue CLI v4.5.13</p>
+</aside><p>Install Vue CLI.</p>
+<pre><code class="language-sh">npm install -g @vue/cli
+</code></pre>
+<h2 id="initialize-your-project">Initialize your project</h2>
+<p>Create your new Vue application using the <code>vue create</code> command.</p>
+<pre><code class="language-sh">vue create my-app
+</code></pre>
+<p>Once your application has been created and configured using the command line prompts, you should be able to serve the application.</p>
+<pre><code class="language-sh">yarn serve
+</code></pre>
+<h2 id="install-elf-elements-and-themes">Install ELF elements and themes</h2>
+<p>Install EF elements and themes.</p>
+<pre><code class="language-sh">yarn add @refinitiv-ui/elements
+yarn add @refinitiv-ui/halo-theme
+</code></pre>
+<p>Import elements that you want to use and themes in <code>src/main.js</code>.</p>
+<pre><code class="language-javascript">import &#39;@refinitiv-ui/elements/lib/loader&#39;;
+import &#39;@refinitiv-ui/elements/lib/button&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
+
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/loader/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+</code></pre>
+<p>Components can be used like any other native <code>HTMLElement</code>. Try replacing content in <code>src/App.vue</code> with the code below.</p>
+<pre><code class="language-html">&lt;template&gt;
+  &lt;ef-panel id=&quot;login-page&quot; spacing&gt;
+    &lt;ef-loader v-if=&quot;loading&quot;&gt;&lt;/ef-loader&gt;
+    &lt;template v-else&gt;
+      &lt;h1&gt;{{ title }}&lt;/h1&gt;
+      &lt;ef-text-field placeholder=&quot;Username&quot;&gt;&lt;/ef-text-field&gt;
+      &lt;ef-password-field placeholder=&quot;Password&quot;&gt;&lt;/ef-password-field&gt;
+      &lt;div id=&quot;button-group&quot;&gt;
+        &lt;ef-button v-on:click=&quot;login&quot;&gt;Login&lt;/ef-button&gt;
+        &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+      &lt;/div&gt;
+    &lt;/template&gt;
+  &lt;/ef-panel&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  name: &#39;app&#39;,
+  data: function() {
+    return {
+      title: &#39;Hello!&#39;,
+      loading: false,
+    };
+  },
+  methods: {
+    login: function() {
+      this.loading = true;
+
+      setTimeout(() =&gt; {
+        this.title = &#39;Done!&#39;;
+        this.loading = false;
+      }, 3000);
+    },
+  },
+};
+&lt;/script&gt;
+
+&lt;style&gt;
+#login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 200px;
+  margin: 40px auto;
+}
+
+#button-group {
+  margin: 10px 0;
+}
+&lt;/style&gt;
+</code></pre>
+<p>Finally, try starting your app and it should be available to access through <code>http://localhost:8080/</code>.</p>
+<pre><code class="language-sh">yarn serve
+</code></pre>

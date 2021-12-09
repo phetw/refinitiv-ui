@@ -1,0 +1,190 @@
+<h1 id="accordion">Accordion</h1>
+<code-sandbox hash="3ca9adab"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/accordion?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;accordion&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-accordion&gt;
+  &lt;ef-collapse spacing header=&quot;SpaceX Dragon&quot;&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse expanded spacing header=&quot;Falcon 9&quot;&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse spacing header=&quot;Falcon Heavy&quot;&gt;
+    You know, being a test pilot isn&#39;t always the healthiest business in the world.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+</code-sandbox><p><code>ef-accordion</code> is used to display a group of <code>ef-collapse</code> controls. By default, only one item at a time can be expanded, but this behavior can be customized to allow multiple expanded item.</p>
+<h3 id="usage">Usage</h3>
+<p>Accordions can be created by using <code>ef-collapse</code> inside <code>ef-accordion</code>.</p>
+<pre><code class="language-html">&lt;ef-accordion&gt;
+  &lt;ef-collapse spacing header=&quot;SpaceX Dragon&quot;&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse spacing header=&quot;Falcon 9&quot;&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse spacing header=&quot;Falcon Heavy&quot;&gt;
+    You know, being a test pilot isn&#39;t always the healthiest business in the world.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+<p>By default, only one item at a time can be expanded. Adding the <code>auto-collapse-disabled</code> attribute will allow each item to expand independently.</p>
+<code-sandbox hash="fdc249d4"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/accordion?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;accordion&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-accordion auto-collapse-disabled&gt;
+  &lt;ef-collapse header=&quot;SpaceX Dragon&quot;&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse header=&quot;Falcon 9&quot;&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-accordion auto-collapse-disabled&gt;
+  &lt;ef-collapse header=&quot;SpaceX Dragon&quot;&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse header=&quot;Falcon 9&quot;&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+<h3 id="initial-expanding-state-and-content-spacing">Initial expanding state and content spacing.</h3>
+<p>To set an item in the accordion to expand in its initial state, set the <code>expanded</code> attribute to <code>ef-collapse</code>. If you add the <code>spacing</code> attribute to <code>ef-accordion</code> then default padding will be applied to the content section of every collapse item.</p>
+<code-sandbox hash="637dc6c6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/accordion?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;accordion&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-accordion spacing&gt;
+  &lt;ef-collapse header=&quot;SpaceX Dragon&quot;&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse expanded header=&quot;Falcon 9&quot;&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-accordion spacing&gt;
+  &lt;ef-collapse header=&quot;SpaceX Dragon&quot;&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+  &lt;ef-collapse expanded header=&quot;Falcon 9&quot;&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+<h3 id="using-slot">Using slot</h3>
+<p>Other features of <code>ef-collapse</code> can still be used e.g. slots.</p>
+<code-sandbox hash="98445d8a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/accordion?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;accordion&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/checkbox?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;checkbox&#39;);
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-css">ef-accordion {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+ef-collapse &gt; ef-checkbox {
+  margin-right: 5px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-accordion&gt;
+  &lt;ef-collapse header=&quot;SpaceX Dragon&quot;&gt;
+    &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+    &lt;div slot=&quot;header-right&quot;&gt;8&lt;/div&gt;
+    &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+
+  &lt;ef-collapse header=&quot;Falcon 9&quot;&gt;
+    &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+    &lt;div slot=&quot;header-right&quot;&gt;10&lt;/div&gt;
+    &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+
+  &lt;ef-collapse header=&quot;Falcon Heavy&quot;&gt;
+    &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+    &lt;div slot=&quot;header-right&quot;&gt;7&lt;/div&gt;
+    &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+    Dinosaurs are extinct today because they lacked opposable thumbs and the brainpower to build a space program.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-accordion&gt;
+  &lt;ef-collapse header=&quot;SpaceX Dragon&quot;&gt;
+    &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+    &lt;div slot=&quot;header-right&quot;&gt;8&lt;/div&gt;
+    &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+    The Earth was small, light blue, and so touchingly alone, our home that must be defended like a holy relic. The Earth was absolutely round. I believe I never knew what the word round meant until I saw Earth from space.
+  &lt;/ef-collapse&gt;
+
+  &lt;ef-collapse header=&quot;Falcon 9&quot;&gt;
+    &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+    &lt;div slot=&quot;header-right&quot;&gt;10&lt;/div&gt;
+    &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+    We want to explore. We&#39;re curious people. Look back over history, people have put their lives at stake to go out and explore ... We believe in what we&#39;re doing. Now it&#39;s time to go.
+  &lt;/ef-collapse&gt;
+
+  &lt;ef-collapse header=&quot;Falcon Heavy&quot;&gt;
+    &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+    &lt;div slot=&quot;header-right&quot;&gt;7&lt;/div&gt;
+    &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+    Dinosaurs are extinct today because they lacked opposable thumbs and the brainpower to build a space program.
+  &lt;/ef-collapse&gt;
+&lt;/ef-accordion&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>autoCollapseDisabled</code></td>
+<td><code>auto-collapse-disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Allow multiple sections expand at the same time</td>
+</tr>
+<tr>
+<td><code>spacing</code></td>
+<td><code>spacing</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Add spacing to content section in all collapse items</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>header-left</code></td>
+<td>Slot to add custom contents to the left side of header e.g. ef-icon, ef-checkbox</td>
+</tr>
+<tr>
+<td><code>header-right</code></td>
+<td>Slot to add custom contents to the right side of header e.g. ef-icon, ef-checkbox</td>
+</tr>
+</tbody></table>

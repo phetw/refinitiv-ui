@@ -1,0 +1,161 @@
+<div style="float:right">
+  <a href="https://reactjs.org/" target="_blank">reactjs.org</a>
+</div>
+
+<h1 id="react-guide">React Guide</h1>
+<aside class="info"><p>This guideline uses create-react-app, React v17.0.2 and Yarn v1.22.10.</p>
+</aside><p>Install yarn.</p>
+<pre><code class="language-sh">npm install -g yarn
+</code></pre>
+<h2 id="initialize-your-project">Initialize your project</h2>
+<p>To create a new app, you may choose one of the following methods:</p>
+<h3 id="npx">npx</h3>
+<pre><code class="language-sh">npx create-react-app my-app
+</code></pre>
+<h3 id="yarn">yarn</h3>
+<pre><code class="language-sh">yarn create react-app my-app
+</code></pre>
+<p>It will create a directory called <code>my-app</code> inside the current folder. Inside that directory, it will generate the initial project structure and install the required dependencies.</p>
+<p>Serve your app to check if the project is created correctly.</p>
+<pre><code class="language-sh">cd my-app
+yarn start
+</code></pre>
+<h2 id="install-ef-elements-and-themes">Install EF elements and themes</h2>
+<p>Installs elements and themes.</p>
+<pre><code class="language-sh">yarn add @refinitiv-ui/elements
+yarn add @refinitiv-ui/halo-theme
+</code></pre>
+<p>Import elements that you want to use and theme in <code>src/index.js</code>. You can also import EF components and themes anywhere in react components but for the simplicity we&#39;ll import all at once.</p>
+<pre><code class="language-javascript">import &#39;@refinitiv-ui/elements/lib/loader&#39;;
+import &#39;@refinitiv-ui/elements/lib/button&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
+
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/loader/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+</code></pre>
+<p>Use EF elements to create a simple login page. Replace the content in <code>src/App.js</code> with the following code.</p>
+<pre><code class="language-javascript">import React, { useState } from &#39;react&#39;;
+import &#39;./App.css&#39;;
+
+function App() {
+  const [title, setTitle] = useState(&#39;Hello!&#39;);
+  const [loading, setLoading] = useState(false);
+
+  function login() {
+    setLoading(true);
+
+    setTimeout(() =&gt; {
+      setTitle(&#39;Done!&#39;);
+      setLoading(false);
+    }, 2000);
+  }
+
+  return (
+    &lt;ef-panel id=&quot;login-page&quot; spacing&gt;
+      {loading ? (
+        &lt;ef-loader&gt;&lt;/ef-loader&gt;
+      ) : (
+        &lt;&gt;
+          &lt;h1&gt;{title}&lt;/h1&gt;
+          &lt;ef-text-field placeholder=&#39;Username&#39;&gt;&lt;/ef-text-field&gt;
+          &lt;ef-password-field placeholder=&#39;Password&#39;&gt;&lt;/ef-password-field&gt;
+          &lt;div id=&quot;button-group&quot;&gt;
+            &lt;ef-button onClick={login}&gt;Login&lt;/ef-button&gt;
+            &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+          &lt;/div&gt;
+        &lt;/&gt;
+      )}
+    &lt;/ef-panel&gt;
+  );
+}
+
+export default App;
+</code></pre>
+<p>And in <code>src/App.css</code></p>
+<pre><code class="language-css">#login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 200px;
+  margin: 40px auto;
+}
+
+#button-group {
+  margin: 10px 0;
+}
+</code></pre>
+<p>Finally, starting your app and it should automatically open <code>http://localhost:3000/</code> on your default browser.</p>
+<pre><code class="language-sh">yarn start
+</code></pre>
+<h2 id="using-web-components-in-react">Using web components in React</h2>
+<p>Web components can be used in React just like any other HTML elements. However, there are a few differences to note.</p>
+<h3 id="class-vs-classname">class vs className</h3>
+<p>Web component uses <code>class</code> attribute instead of <code>className</code>.</p>
+<pre><code class="language-jsx">function Panel() {
+  return (
+    &lt;ef-panel class=&quot;container&quot;&gt;
+      ...
+    &lt;/ef-panel&gt;
+  );
+}
+</code></pre>
+<h3 id="attributes">Attributes</h3>
+<h4 id="boolean">Boolean</h4>
+<p>Boolean attributes such as <code>disabled</code>, <code>readonly</code>, <code>checked</code> are set by the presence of the attribute itself, not the value. To represent a <code>false</code> value in JSX, set the attribute&#39;s value to <code>undefined</code> or <code>null</code> or simply remove the attribute. This behavior is the same as <a href="https://html.spec.whatwg.org/multipage/common-microsyntaxes.html#boolean-attributes">HTML specifications</a>.</p>
+<p>Regardless of the value, the following code will <strong>disable</strong> the <code>ef-text-field</code>.</p>
+<pre><code class="language-jsx">&lt;ef-text-field disabled&gt;&lt;/ef-text-field&gt;
+&lt;ef-text-field disabled=&quot;true&quot;&gt;&lt;/ef-text-field&gt;
+&lt;ef-text-field disabled=&quot;false&quot;&gt;&lt;/ef-text-field&gt;
+&lt;ef-text-field disabled={true}&gt;&lt;/ef-text-field&gt;
+&lt;ef-text-field disabled={false}&gt;&lt;/ef-text-field&gt;
+</code></pre>
+<p>The following will omit <code>disabled</code> attribute and <strong>enable</strong> <code>ef-text-field</code>.</p>
+<pre><code class="language-jsx">&lt;ef-text-field&gt;&lt;/ef-text-field&gt;
+&lt;ef-text-field disabled={undefined}&gt;&lt;/ef-text-field&gt;
+</code></pre>
+<h4 id="array-and-object">Array and Object</h4>
+<p>React only allows <strong>primitive data</strong> to be passed through attributes. For <code>Array</code> and <code>Object</code>, you can either pass data through element&#39;s property or use <code>JSON.stringify()</code> to parse the data before passing to attribute.</p>
+<pre><code class="language-jsx">&lt;ef-sparkline data={JSON.stringify([-2, -3, 4])}&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+<p>or</p>
+<pre><code class="language-jsx">function SparklineChart() {
+  const chartRef = React.useRef();
+  React.useLayoutEffect(() =&gt; {
+    if (chartRef.current) {
+      chartRef.current.data = [-2, -3, 4];
+    }
+  }, [chartRef]);
+  return &lt;ef-sparkline ref={chartRef}&gt;&lt;/ef-sparkline&gt;;
+}
+</code></pre>
+<h3 id="events">Events</h3>
+<p>Use <code>ref</code> to access and store DOM element, then add an event-listener inside <code>useLayoutEffect</code> which fires synchronously after the DOM mutation (or <code>componentDidMount</code> in class component). Finally, don&#39;t forget to unsubscribe from event-listener when component unmounts.</p>
+<pre><code class="language-jsx">function App() {
+  const textFieldRef = React.useRef();
+  const [value, setValue] = React.useState(&#39;&#39;);
+
+  React.useLayoutEffect(() =&gt; {
+    const handleChange = (event) =&gt; {
+      setValue(event.detail.value);
+    };
+
+    const { current } = textFieldRef;
+
+    if (current) {
+      current.value = value; // update element&#39;s value
+      current.addEventListener(&#39;value-changed&#39;, handleChange);
+    }
+
+    return () =&gt; current.removeEventListener(&#39;value-changed&#39;, handleChange); // unsubscribe
+  }, [value, textFieldRef]);
+
+  return &lt;ef-text-field ref={textFieldRef}&gt;&lt;/ef-text-field&gt;;
+}
+</code></pre>

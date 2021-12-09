@@ -1,0 +1,200 @@
+<h1 id="button-bar">Button Bar</h1>
+<code-sandbox hash="e4510a69"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button-bar&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  display: flex;
+  flex-direction: column;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-button-bar&gt;
+    &lt;ef-button&gt;One&lt;/ef-button&gt;
+    &lt;ef-button&gt;Two&lt;/ef-button&gt;
+    &lt;ef-button&gt;Three&lt;/ef-button&gt;
+    &lt;ef-button&gt;Four&lt;/ef-button&gt;
+    &lt;ef-button&gt;Five&lt;/ef-button&gt;
+  &lt;/ef-button-bar&gt;
+
+  &lt;ef-button-bar managed&gt;
+    &lt;ef-button active toggles&gt;One&lt;/ef-button&gt;
+    &lt;ef-button toggles&gt;Two&lt;/ef-button&gt;
+    &lt;ef-button toggles&gt;Three&lt;/ef-button&gt;
+    &lt;ef-button toggles&gt;Four&lt;/ef-button&gt;
+    &lt;ef-button toggles&gt;Five&lt;/ef-button&gt;
+  &lt;/ef-button-bar&gt;
+
+  &lt;ef-button-bar&gt;
+    &lt;ef-button toggles active icon=&quot;bold&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;italic&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;underline&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button-bar managed&gt;
+      &lt;ef-button toggles active icon=&quot;text-left&quot;&gt;&lt;/ef-button&gt;
+      &lt;ef-button toggles icon=&quot;text-center&quot;&gt;&lt;/ef-button&gt;
+      &lt;ef-button toggles icon=&quot;text-right&quot;&gt;&lt;/ef-button&gt;
+      &lt;ef-button toggles icon=&quot;text-center&quot;&gt;&lt;/ef-button&gt;
+    &lt;/ef-button-bar&gt;
+    &lt;ef-button icon=&quot;increase-indent&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button icon=&quot;decrease-indent&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button icon=&quot;image&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button icon=&quot;print&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-button-bar&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-button-bar</code> is used to display multiple buttons to create a list of commands bar.</p>
+<h3 id="usage">Usage</h3>
+<p>Button Bar can be created by using <code>ef-button</code> as content inside <code>ef-button-bar</code>. You can use it to create a button with an additional menu on the side, or to create different styles of toolbar control.</p>
+<p>The Button Bar control aims to provide a simple array of buttons. You can use it together with Overlay Menu to create a dropdown menu.</p>
+<code-sandbox hash="8e21ee9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button-bar&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button-bar&gt;
+    &lt;ef-button&gt;Reply All&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;down&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button&gt;Reply All&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;down&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+<h3 id="creating-multiple-buttons-toolbar">Creating multiple buttons toolbar</h3>
+<p>You can use Button Bar to create a simple toolbar.</p>
+<code-sandbox hash="e23dd648"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button-bar&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button icon=&quot;skip-to-start&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;play&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;skip-to-end&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-mute&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-decrease&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-increase&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-on&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button icon=&quot;skip-to-start&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;play&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;skip-to-end&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-mute&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-decrease&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-increase&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;sound-on&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+<h3 id="toggle-buttons">Toggle buttons</h3>
+<p>Buttons can be set to a toggled mode by using the <code>toggles</code> attribute. Each button can be toggled independently.</p>
+<code-sandbox hash="dc30cc68"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button-bar&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button toggles icon=&quot;candle-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;chart-line-bar&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;pie-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;grid&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button toggles icon=&quot;candle-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;chart-line-bar&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;pie-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;grid&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+<p>If only one button can be active at a time, add the <code>managed</code> attribute to <code>ef-button-bar</code>.</p>
+<code-sandbox hash="f1e56d6d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button-bar&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button-bar managed&gt;
+  &lt;ef-button toggles icon=&quot;candle-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;chart-line-bar&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;pie-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;grid&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button-bar managed&gt;
+  &lt;ef-button toggles icon=&quot;candle-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;chart-line-bar&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;pie-chart&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;grid&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+<h3 id="mixing-different-styles">Mixing different styles</h3>
+<p><code>ef-button-bar</code> supports more complex use cases, such as including managed buttons along with other types.</p>
+<code-sandbox hash="cd6743d4"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button-bar?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button-bar&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button toggles active icon=&quot;bold&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;italic&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;underline&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button-bar managed&gt;
+    &lt;ef-button toggles active icon=&quot;text-left&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;text-center&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;text-right&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;text-center&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-button-bar&gt;
+  &lt;ef-button icon=&quot;increase-indent&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;decrease-indent&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;image&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;print&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button-bar&gt;
+  &lt;ef-button toggles active icon=&quot;bold&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;italic&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button toggles icon=&quot;underline&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button-bar managed&gt;
+    &lt;ef-button toggles active icon=&quot;text-left&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;text-center&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;text-right&quot;&gt;&lt;/ef-button&gt;
+    &lt;ef-button toggles icon=&quot;text-center&quot;&gt;&lt;/ef-button&gt;
+  &lt;/ef-button-bar&gt;
+  &lt;ef-button icon=&quot;increase-indent&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;decrease-indent&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;image&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button icon=&quot;print&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+<h3 id="handle-users-click-event">Handle users click event</h3>
+<p>To listen to the tap event on the button, add the <code>tap</code> event listener to an individual <code>ef-button</code> or <code>ef-button-bar</code>.</p>
+<pre><code class="language-html">&lt;ef-button-bar id=&quot;button-bar&quot; managed&gt;
+  &lt;ef-button id=&quot;Dislike&quot; icon=&quot;dislike-empty&quot;&gt;&lt;/ef-button&gt;
+  &lt;ef-button id=&quot;Like&quot; icon=&quot;like-empty&quot;&gt;&lt;/ef-button&gt;
+&lt;/ef-button-bar&gt;
+</code></pre>
+<pre><code class="language-javascript">const buttonBar = document.getElementById(&#39;button-bar&#39;);
+buttonBar.addEventListener(&#39;tap&#39;, (e) =&gt; {
+  console.log(e.target.getAttribute(&#39;id&#39;));
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>managed</code></td>
+<td><code>managed</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Manages user interaction, only allowing one toggle button to be active at any one time.</td>
+</tr>
+</tbody></table>

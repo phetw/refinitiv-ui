@@ -1,0 +1,204 @@
+<h1 id="collapse">Collapse</h1>
+<code-sandbox hash="81d64cf1"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/collapse?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;collapse&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-collapse header=&quot;Section 1&quot;&gt;
+  &lt;div style=&quot;padding:10px&quot;&gt;Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.&lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+</code-sandbox><p><code>ef-collapse</code> allows users to hide non-critical information or areas of the screen, maximizing the amount of real estate available to their primary content.</p>
+<h3 id="usage">Usage</h3>
+<p>The <code>ef-collapse</code> can wrap around any html content, be it native html elements such as <code>div</code> or custom components.</p>
+<pre><code class="language-html">&lt;ef-collapse expanded&gt;
+  &lt;div&gt;
+  Macchiato grounds cappuccino brewed cortado beans lungo bar mocha. Flavour, irish bar siphon foam siphon skinny est trifecta.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+<h3 id="set-title">Set title</h3>
+<p>The title of each section can be set using the <code>header</code> attribute.</p>
+<code-sandbox hash="4a704a79"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/collapse?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;collapse&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-collapse header=&quot;Section 1&quot;&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-collapse header=&quot;Section 1&quot;&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+<h3 id="set-section-level">Set section level</h3>
+<p>You can set the <code>level</code> attribute to visualize hierarchical content. Styling each level is managed by the theme.</p>
+<code-sandbox hash="32f67561"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/collapse?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;collapse&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-collapse level=&quot;1&quot; header=&quot;Level 1&quot;&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+&lt;ef-collapse level=&quot;2&quot; header=&quot;Level 2&quot;&gt;
+  &lt;div&gt;
+  Foam, crema pumpkin spice siphon cup aromatic ut turkish plunger pot dark. That macchiato robusta sweet galao blue mountain to go trifecta fair trade.
+&lt;/div&gt;
+&lt;/ef-collapse&gt;
+&lt;ef-collapse level=&quot;3&quot; header=&quot;Level 3&quot;&gt;
+  &lt;div&gt;
+  Macchiato grounds cappuccino brewed cortado beans lungo bar mocha. Flavour, irish bar siphon foam siphon skinny est trifecta.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-collapse level=&quot;1&quot; header=&quot;Level 1&quot;&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+&lt;ef-collapse level=&quot;2&quot; header=&quot;Level 2&quot;&gt;
+  &lt;div&gt;
+  Foam, crema pumpkin spice siphon cup aromatic ut turkish plunger pot dark. That macchiato robusta sweet galao blue mountain to go trifecta fair trade.
+&lt;/div&gt;
+&lt;/ef-collapse&gt;
+&lt;ef-collapse level=&quot;3&quot; header=&quot;Level 3&quot;&gt;
+  &lt;div&gt;
+  Macchiato grounds cappuccino brewed cortado beans lungo bar mocha. Flavour, irish bar siphon foam siphon skinny est trifecta.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+<h3 id="content-spacing">Content spacing</h3>
+<p>Content can be set to use default padding from the theme by adding the <code>spacing</code> attribute.</p>
+<code-sandbox hash="d39bfdb8"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/collapse?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;collapse&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-collapse spacing header=&quot;Section 1&quot;&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-collapse spacing header=&quot;Section 1&quot;&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+<h3 id="custom-header">Custom header</h3>
+<p>The header can contain simple text or components such as checkbox, button. These components can be added using <code>slot</code>.</p>
+<code-sandbox hash="14f2758d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/collapse?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;collapse&#39;);
+</code></pre>
+<pre><code class="language-css">ef-collapse {
+  margin-top: 35px;
+  margin-bottom: 35px;
+}
+ef-collapse &gt; ef-checkbox {
+  margin-right: 5px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-collapse header=&quot;Single Origin Beans&quot;&gt;
+  &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+  &lt;div slot=&quot;header-right&quot; class=&quot;badge&quot;&gt;8&lt;/div&gt;
+  &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-collapse header=&quot;Single Origin Beans&quot;&gt;
+  &lt;ef-checkbox slot=&quot;header-left&quot;&gt;&lt;/ef-checkbox&gt;
+  &lt;div slot=&quot;header-right&quot; class=&quot;badge&quot;&gt;8&lt;/div&gt;
+  &lt;ef-button slot=&quot;header-right&quot; icon=&quot;menu&quot; transparent&gt;&lt;/ef-button&gt;
+  &lt;div&gt;
+  Beans, breve galao froth arabica wings seasonal. Medium, galao redeye single origin brewed rich flavour as crema.
+  &lt;/div&gt;
+&lt;/ef-collapse&gt;
+</code></pre>
+<h3 id="events">Events</h3>
+<p><code>ef-collapse</code> is triggered when the componet is expanded or clicked.</p>
+<pre><code class="language-javascript">collapse.addEventListener(&#39;expanded-changed&#39;, (e) =&gt; {
+  // e.detail.value will give the current expanded state
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>expanded</code></td>
+<td><code>expanded</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to expand the item</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>header</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set text on the header</td>
+</tr>
+<tr>
+<td><code>level</code></td>
+<td><code>level</code></td>
+<td><code>&quot;1&quot; | &quot;2&quot; | &quot;3&quot;</code></td>
+<td>&quot;3&quot;</td>
+<td>Use level styling from theme</td>
+</tr>
+<tr>
+<td><code>spacing</code></td>
+<td><code>spacing</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to apply padding from theme to content section</td>
+</tr>
+</tbody></table>
+<h3 id="events-1">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>expanded-changed</code></td>
+<td>Fired when the <code>expanded</code> property changes.</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>header-left</code></td>
+<td>Slot to add custom contents to the left side of header e.g. ef-icon, ef-checkbox</td>
+</tr>
+<tr>
+<td><code>header-right</code></td>
+<td>Slot to add custom contents to the right side of header e.g. ef-icon, ef-checkbox</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,203 @@
+<h1 id="card">Card</h1>
+<code-sandbox hash="68be5bfc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/card?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;card&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-card style=&quot;margin: 10px&quot; header=&quot;Vlad the vaccinator: Dracula&#39;s castle lures visitors with COVID-19 jabs&quot; footer=&quot;Source: Reuters&quot;&gt;
+  &lt;img style=&quot;width: 100%; height:auto;&quot; src=&quot;https://cloudfront-us-east-2.images.arcpublishing.com/reuters/FCGFMWQNF5MAZHNHQFVP5LUV3M.jpg&quot;&gt;
+  &lt;div style=&quot;padding: 10px 0&quot;&gt;Visitors to Dracula&#39;s castle are more likely to find puncture marks in their arms than their necks this month, after medics set up a COVID-19 vaccination centre at the Transylvanian attraction.&lt;/div&gt;
+&lt;/ef-card&gt;
+</code></pre>
+</code-sandbox><p><code>ef-card</code> is a versatile container that can display content inside the card frame.</p>
+<h3 id="usage">Usage</h3>
+<p>You can wrap any content with <code>ef-card</code>.</p>
+<p>Header and footer can be set by using slotted content or by using <code>header</code> and <code>footer</code> attributes.</p>
+<code-sandbox hash="c4c87a52"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/card?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;card&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-card style=&quot;margin: 10px;&quot; header=&quot;NASA spacecraft starts trip back to Earth after collecting asteroid samples&quot; footer=&quot;Source: Reuters&quot; &gt;
+  &lt;p&gt;A NASA spacecraft, which scientists believe has collected samples from an asteroid, began its two-year journey back to Earth on Monday.&lt;/p&gt;
+  &lt;p&gt;NASA OSIRIS-REx spacecraft is attempting to complete a mission to visit Bennu, a skyscraper-sized asteroid some 200 million miles (320 million km) from Earth, survey the surface, collect samples and deliver them back to Earth.&lt;/p&gt;
+&lt;/ef-card&gt;
+</code></pre>
+</code-sandbox><p>Using slotted content</p>
+<pre><code class="language-html">&lt;ef-card&gt;
+  &lt;span slot=&quot;header&quot;&gt;NASA spacecraft starts trip back to Earth after collecting asteroid samples&lt;/span&gt;
+  &lt;span slot=&quot;footer&quot;&gt;Source: Reuters&lt;/span&gt;
+  &lt;p&gt;A NASA spacecraft, which scientists believe has collected samples from an asteroid, began its two-year journey back to Earth on Monday.&lt;/p&gt;
+  &lt;p&gt;NASA&#39;s OSIRIS-REx spacecraft is attempting to complete a mission to visit Bennu, a skyscraper-sized asteroid some 200 million miles (320 million km) from Earth, survey the surface, collect samples and deliver them back to Earth.&lt;/p&gt;
+&lt;/ef-card&gt;
+</code></pre>
+<p>Using <code>header</code> and <code>footer</code> attributes</p>
+<pre><code class="language-html">&lt;ef-card
+  header=&quot;NASA spacecraft starts trip back to Earth after collecting asteroid samples&quot;
+  footer=&quot;Source: Reuters&quot; &gt;
+  &lt;p&gt;A NASA spacecraft, which scientists believe has collected samples from an asteroid, began its two-year journey back to Earth on Monday.&lt;/p&gt;
+  &lt;p&gt;NASA&#39;s OSIRIS-REx spacecraft is attempting to complete a mission to visit Bennu, a skyscraper-sized asteroid some 200 million miles (320 million km) from Earth, survey the surface, collect samples and deliver them back to Earth.&lt;/p&gt;
+&lt;/ef-card&gt;
+</code></pre>
+<h3 id="card-menu">Card menu</h3>
+<p><code>ef-card</code> can show a menu by passing the <code>data</code> through the property using the <code>config</code> property. The schema of <code>data</code> is the same as (<a href="./elements/overlay-menu">Overlay Menu</a>)</p>
+<p>Use the <code>item-trigger</code> event to detect when users click on any menu item.</p>
+<code-sandbox hash="19118ffc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/card?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;card&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+halo(&#39;interactive-chart&#39;);
+const card = document.getElementById(&#39;card&#39;);
+const chart = document.getElementById(&#39;chart&#39;);
+card.config = {
+  menu: {
+    data: [
+      { label: &#39;Price&#39;, value: &#39;price&#39; },
+      { label: &#39;Percentage&#39;,value: &#39;percent&#39; }
+    ]
+  }
+};
+
+chart.config = {
+  options: {
+    priceScale: {
+      mode: 1
+    }
+  },
+  series: [{
+    symbol: &#39;Tesla&#39;,
+    type: &quot;area&quot;,
+    data: [
+      { time: &quot;2021-12-22&quot;, value: 32.51 },
+      { time: &quot;2021-12-23&quot;, value: 31.11 },
+      { time: &quot;2021-12-24&quot;, value: 27.02 },
+      { time: &quot;2021-12-25&quot;, value: 27.32 },
+      { time: &quot;2021-12-26&quot;, value: 25.17 },
+      { time: &quot;2021-12-27&quot;, value: 28.89 },
+      { time: &quot;2021-12-28&quot;, value: 25.46 },
+      { time: &quot;2021-12-29&quot;, value: 23.92 },
+      { time: &quot;2021-12-30&quot;, value: 22.68 },
+      { time: &quot;2021-12-31&quot;, value: 22.67 }
+    ]
+  },
+  {
+    symbol: &#39;TSLA Futures&#39;,
+    type: &quot;line&quot;,
+    data: [
+      { time: &quot;2021-12-22&quot;, value: 22.51 },
+      { time: &quot;2021-12-23&quot;, value: 11.11 },
+      { time: &quot;2021-12-24&quot;, value: 37.02 },
+      { time: &quot;2021-12-25&quot;, value: 17.32 },
+      { time: &quot;2021-12-26&quot;, value: 5.17 },
+      { time: &quot;2021-12-27&quot;, value: 18.89 },
+      { time: &quot;2021-12-28&quot;, value: 15.46 },
+      { time: &quot;2021-12-29&quot;, value: 13.92 },
+      { time: &quot;2021-12-30&quot;, value: 32.68 },
+      { time: &quot;2021-12-31&quot;, value: 12.67 }
+    ]
+  }]
+}
+
+card.addEventListener(&#39;item-trigger&#39;, (event) =&gt; {
+  const value = event.detail.value;
+  const newConfig = JSON.parse(JSON.stringify(chart.config));
+  newConfig.options.priceScale.mode = value === &#39;percent&#39; ? 2 : 1;
+  chart.config = newConfig;
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-card style=&quot;margin: 10px;&quot; id=&quot;card&quot; header=&quot;Chart&quot;&gt;
+  &lt;ef-interactive-chart id=&quot;chart&quot;&gt;&lt;/ef-interactive-chart&gt;
+&lt;/ef-card&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-card id=&quot;card&quot; header=&quot;Chart&quot;&gt;
+  &lt;ef-interactive-chart id=&quot;chart&quot;&gt;&lt;/ef-interactive-chart&gt;
+&lt;/ef-card&gt;
+</code></pre>
+<pre><code class="language-javascript">const card = document.getElementById(&#39;card&#39;);
+const chart = document.getElementById(&#39;chart&#39;);
+card.config = {
+  menu: {
+    data: [
+      { label: &#39;Price&#39;, value: &#39;price&#39; },
+      { label: &#39;Percentage&#39;,value: &#39;percent&#39; }
+    ]
+  }
+};
+
+chart.config =
+{
+...
+}
+
+card.addEventListener(&#39;item-trigger&#39;, (event) =&gt; {
+  const value = event.detail.value;
+  const newConfig = JSON.parse(JSON.stringify(chart.config));
+  newConfig.options.priceScale.mode = value === &#39;percent&#39; ? 2 : 1;
+  chart.config = newConfig;
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>config</code></td>
+<td></td>
+<td><code>CardConfig</code></td>
+<td>{}</td>
+<td>Set card configurations</td>
+</tr>
+<tr>
+<td><code>footer</code></td>
+<td><code>footer</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set text on the footer</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td><code>header</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set text on the header</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>item-trigger</code></td>
+<td>Fired when card menu is selected.</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>footer</code></td>
+<td>Adds slotted content into the footer of the card.</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td>Adds slotted content into the header of the card.</td>
+</tr>
+</tbody></table>

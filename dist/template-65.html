@@ -1,0 +1,93 @@
+<h1 id="internationalization">Internationalization</h1>
+<p>EF components support localization, including translated messages and formatting. In your app, setting the html <code>lang</code> attribute will trigger that language to be applied to relevant elements.</p>
+<pre><code class="language-html">&lt;html lang=&quot;ja&quot;&gt;
+</code></pre>
+<p>Alternatively, setting the <code>lang</code> attribute directly on elements will have the same effect.</p>
+<aside class="info"><p><code>lang</code> on an element supersedes the html <code>lang</code>, meaning multiple languages can exist on the same page.</p>
+</aside><p>Currently, the following languages are supported:</p>
+<table>
+<thead>
+<tr>
+<th>Language</th>
+<th>lang value</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>English (default)</td>
+<td><code>en</code></td>
+</tr>
+<tr>
+<td>Japanese</td>
+<td><code>ja</code></td>
+</tr>
+<tr>
+<td>German</td>
+<td><code>de</code></td>
+</tr>
+<tr>
+<td>Simplified Chinese</td>
+<td><code>zh</code></td>
+</tr>
+<tr>
+<td>Traditional Chinese</td>
+<td><code>zh-Hant</code></td>
+</tr>
+</tbody></table>
+<p><em>** If an unsupported language is set, English is the default fallback.</em></p>
+<h2 id="regionals">Regionals</h2>
+<p>Adding region country codes will format all numbers and dates accordingly. For region specific languages to be applied, there must be additional region translations for that language.</p>
+<p>If no country code is applied, the browser default is used.</p>
+<h2 id="using-in-your-app">Using in your app</h2>
+<p>EF elements are packaged with English translations only. The application developer must ensure that the additional languages are included, by importing any additional translation files.</p>
+<p>The translation is selected using the following algorithm:</p>
+<ul>
+<li>if the element has the <code>lang</code> attribute defined and a translation exists, select it, otherwise</li>
+<li>if the <code>html</code> root element has the <code>lang</code> attribute defined and a translation exists, select it, otherwise</li>
+<li>if a <code>navigator.language</code> translation exists, select it, otherwise</li>
+<li>use the default English translation</li>
+</ul>
+<p>There are many ways to load translations. Below are typical configurations, but it is up to the developer to pick the most appropriate solution.</p>
+<h3 id="static-imports">Static Imports</h3>
+<p>The simplest way is to include translations in a bundle, for instance:</p>
+<pre><code class="language-js">// # translations.js
+
+// ef-tree-select, Japanese and German locales
+import &#39;@refinitiv-ui/phrasebook/lib/locale/ja/tree-select&#39;;
+import &#39;@refinitiv-ui/phrasebook/lib/locale/de/tree-select&#39;;
+
+// ef-pagination, Simplified and Traditional Chinese locales
+import &#39;@refinitiv-ui/phrasebook/lib/locale/zh/pagination&#39;;
+import &#39;@refinitiv-ui/phrasebook/lib/locale/zh-hant/pagination&#39;;
+</code></pre>
+<p>Including translations in such a way will increase the bundle size, but has the benefit that translations are available immediately on application load.</p>
+<h3 id="dynamic-import">Dynamic Import</h3>
+<p>If your application supports <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/import">dynamic module resolution</a>, you can load translations on demand.  For instance:</p>
+<pre><code class="language-js">import { supportedLocales } from &#39;@formatjs/intl-utils&#39;;
+
+// load language from your app&#39;s service
+App.Settings.Language.read(value =&gt; {
+  // set html lang tag
+  document.documentElement.lang = value;
+  // resolve regional locale into support locale.
+  // for instance: if value === &#39;de-AT&#39;, then locale = &#39;de&#39;
+  const locale = supportedLocales([&#39;ja&#39;, &#39;de&#39;], [value])[0];
+  if (locale) {
+    // use dynamic import. Element will update itself once locale is loaded
+    import(`@refinitiv-ui/phrasebook/lib/locale/${locale}/pagination`);
+  }
+});
+</code></pre>
+<h3 id="from-the-server">From The Server</h3>
+<p>You can store translations as JSON on the app server or CDN. In this case you may want to extract JSON content to upload to the server.</p>
+<pre><code class="language-js">import { supportedLocales } from &#39;@formatjs/intl-utils&#39;;
+import { Phrasebook } from &#39;@refinitiv-ui/phrasebook&#39;;
+
+// resolve locale from HTML lang attribute or navigator language
+const locale = supportedLocales([&#39;ja&#39;, &#39;de&#39;], [document.documentElement.lang || navigator.language])[0];
+
+// fetch locale
+fetch(`static/locale/${locale}/pagination.json`).then(translations =&gt; {
+  // define translation within Phrasebook to be available for EF elements
+  Phrasebook.define(&#39;de&#39;, &#39;ef-pagination&#39;, translations);
+});
+</code></pre>

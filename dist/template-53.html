@@ -1,0 +1,326 @@
+<h1 id="text-field">Text Field</h1>
+<code-sandbox hash="18b2694a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;text-field&#39;);
+</code></pre>
+<pre><code class="language-css">ef-panel {
+  max-width: 450px;
+}
+ef-text-field{
+  width: 250px;
+}
+p {
+  margin-bottom: 4px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;p&gt;First name&lt;/p&gt;
+  &lt;ef-text-field placeholder=&quot;Must be letters and at least 5 characters&quot;  pattern=&quot;[a-zA-Z]{5,}&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;br/&gt;
+  &lt;br/&gt;
+  &lt;p&gt;Last name&lt;/p&gt;
+  &lt;ef-text-field placeholder=&quot;Must be letters and at least 5 characters&quot; pattern=&quot;[a-zA-Z]{5,}&quot;&gt;&lt;/ef-text-field&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+</code-sandbox><p><code>ef-text-field</code> is a form element for text.</p>
+<h3 id="usage">Usage</h3>
+<p>Text field is used to accept text input from users and has similar behaviors to the native text input.</p>
+<pre><code class="language-html">&lt;ef-text-field placeholder=&quot;Type something...&quot;&gt;&lt;/ef-text-field&gt;
+</code></pre>
+<h3 id="getting-value">Getting value</h3>
+<p>The field&#39;s value can be accessed using the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;ef-text-field id=&quot;text-input&quot; value=&quot;Hello World&quot;&gt;&lt;/ef-text-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const textInput = document.getElementById(&quot;text-input&quot;);
+console.log(textInput.value); // &quot;Hello World&quot;
+</code></pre>
+<p>You can also listen for the <code>value-changed</code> event, which triggers when user interactions change the value.</p>
+<code-sandbox hash="7797cc61"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;text-field&#39;);
+const element = document.getElementById(&quot;input&quot;);
+const valueChangedText = document.getElementById(&#39;value-text&#39;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-text-field id=&quot;input&quot; placeholder=&quot;Type something here ..&quot;&gt;&lt;/ef-text-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-text-field id=&quot;input&quot;&gt;&lt;/ef-text-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;input&quot;);
+
+element.addEventListener(&quot;value-changed&quot;, (e) =&gt; {
+  console.log(e.detail.value);
+});
+</code></pre>
+<h3 id="input-validation">Input validation</h3>
+<p>Validation occurs when constraints are provided and the value changes. If the error state changes, it will dispatch an <code>error-changed</code> event along with current error state.</p>
+<p>Alternatively, you can check the <code>error</code> property to confirm if the input is valid or not.</p>
+<h3 id="input-length">Input length</h3>
+<p>The <code>maxlength</code> attribute limits the number of characters that users can type into the input, and the <code>minlength</code> attribute sets the minimum number of characters required. <code>ef-text-field</code> will show error styles if a condition is not met.</p>
+<code-sandbox hash="776153fc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;text-field&#39;);
+const element = document.getElementById(&quot;textInput&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+    if (e.detail.value) {
+      errorChangedText.innerHTML = &quot;Value length must be between 5 -8 characters&quot;;
+    }
+    else {
+      errorChangedText.innerHTML = &quot;&quot;;
+    }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-text-field {
+  width: 200px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-text-field id=&quot;textInput&quot; minlength=&quot;5&quot; maxlength=&quot;8&quot; placeholder=&quot;Between 5 to 8 characters&quot;&gt;&lt;/ef-text-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-text-field minlength=&quot;5&quot; maxlength=&quot;8&quot;&gt;&lt;/ef-text-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;textInput&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Value length must be between 5 -8 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="validate-input-using-pattern">Validate input using pattern</h3>
+<p>You can use a regular expression to validate the input value by setting it with the <code>pattern</code> attribute.</p>
+<code-sandbox hash="b3e6f87c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;text-field&#39;);
+const element = document.getElementById(&quot;nickname&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Nickname must be lowercase letters and 4-8 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<pre><code class="language-css">#error-text {
+  color:#d94255;
+}
+ef-text-field {
+  width: 275px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;Nickname&lt;/div&gt;
+&lt;ef-text-field id=&quot;nickname&quot; pattern=&quot;[a-z]{4,8}&quot; placeholder=&quot;Must be lowercase letters and 4-8 characters&quot;&gt;&lt;/ef-text-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">Nickname: &lt;ef-text-field id=&quot;nickname&quot; pattern=&quot;[a-z]{4,8}&quot;&gt;&lt;/ef-text-field&gt;
+&lt;p id=&quot;error-text&quot;&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;nickname&quot;);
+const errorChangedText = document.getElementById(&quot;error-text&quot;);
+element.addEventListener(&quot;error-changed&quot;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Nickname must be lowercase letters and 4-8 characters.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+});
+</code></pre>
+<h3 id="show-icon">Show icon</h3>
+<p>An inline icon can be set to display inside the input using the <code>icon</code> attribute.</p>
+<code-sandbox hash="b660c5d9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;text-field&#39;);
+</code></pre>
+<pre><code class="language-css">ef-text-field {
+  width: 200px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-text-field icon=&quot;email&quot; placeholder=&quot;We appreciate your feedback!&quot;&gt;&lt;/ef-text-field&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-text-field icon=&quot;email&quot;&gt;&lt;/ef-text-field&gt;
+</code></pre>
+<p>The icon can become actionable by adding the <code>icon-has-action</code> attribute to the element, so that <code>ef-text-field</code> will fire the <code>icon-click</code> event when users click on the icon. You can add an event listener to this event to execute your code.</p>
+<code-sandbox hash="d0f718f6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;text-field&#39;);
+const element = document.getElementById(&quot;feedback&quot;);
+element.addEventListener(&quot;icon-click&quot;, (e) =&gt; {
+  element.value = &quot;&quot;
+  element.placeholder = &quot;Feedback sent. Thanks!&quot;;
+  element.icon = &quot;tick&quot;;
+});
+</code></pre>
+<pre><code class="language-css">ef-text-field {
+  width: 250px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-text-field id=&quot;feedback&quot; placeholder=&quot;Type your feedback and click the icon&quot; icon=&quot;email&quot; icon-has-action&gt;&lt;/ef-text-field&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-text-field
+  id=&quot;feedback&quot;
+  placeholder=&quot;Type your feedback and click the icon&quot;
+  icon=&quot;email&quot;
+  icon-has-action&gt;
+&lt;/ef-text-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&quot;feedback&quot;);
+element.addEventListener(&quot;icon-click&quot;, (e) =&gt; {
+    element.value = &quot;&quot;
+    element.placeholder = &quot;Feedback sent. Thanks!&quot;;
+    element.icon = &quot;tick&quot;;
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set error state</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Specify icon to display in input. Value can be icon name</td>
+</tr>
+<tr>
+<td><code>iconHasAction</code></td>
+<td><code>icon-has-action</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Specify when icon need to be clickable</td>
+</tr>
+<tr>
+<td><code>maxLength</code></td>
+<td><code>maxlength</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character max limit</td>
+</tr>
+<tr>
+<td><code>minLength</code></td>
+<td><code>minlength</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Set character min limit</td>
+</tr>
+<tr>
+<td><code>pattern</code></td>
+<td><code>pattern</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set regular expression for input validation</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set placeholder text</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disables all other states and border/background styles.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Input&#39;s value</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set warning state</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>onInputChange</code></td>
+<td><code>(event: any): void</code></td>
+</tr>
+<tr>
+<td><code>onInputInput</code></td>
+<td><code>(event: any): void</code></td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes</td>
+</tr>
+<tr>
+<td><code>icon-click</code></td>
+<td>Dispatched when icon is clicked</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

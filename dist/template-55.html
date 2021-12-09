@@ -1,0 +1,226 @@
+<h1 id="time-picker">Time Picker</h1>
+<code-sandbox hash="43a95e6b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/time-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;time-picker&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  display: flex;
+}
+ef-time-picker:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-time-picker value=&quot;12:30&quot;&gt;&lt;/ef-time-picker&gt;
+  &lt;ef-time-picker&gt;&lt;/ef-time-picker&gt;
+  &lt;ef-time-picker value=&quot;12:30:17&quot;&gt;&lt;/ef-time-picker&gt;
+  &lt;ef-time-picker value=&quot;12:30&quot; am-pm&gt;&lt;/ef-time-picker&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p>This element allows users to input time and can be adjusted to show either a 12 or 24 hour format.</p>
+<h3 id="usage">Usage</h3>
+<p>A fixed time can be set by configuring attributes/properties.</p>
+<code-sandbox hash="34402360"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/time-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;time-picker&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  display: flex;
+}
+ef-time-picker:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-time-picker&gt;&lt;/ef-time-picker&gt;
+  &lt;ef-time-picker value=&quot;12:30&quot;&gt;&lt;/ef-time-picker&gt;
+  &lt;ef-time-picker hours=&quot;12&quot; minutes=&quot;30&quot;&gt;&lt;/ef-time-picker&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-time-picker&gt;&lt;/ef-time-picker&gt;
+&lt;ef-time-picker value=&quot;12:30&quot;&gt;&lt;/ef-time-picker&gt;
+&lt;ef-time-picker hours=&quot;12&quot; minutes=&quot;30&quot;&gt;&lt;/ef-time-picker&gt;
+</code></pre>
+<aside class="warning"><p>Valid time formats are <code>hh:mm</code> and <code>hh:mm:ss</code>. This component does not support milliseconds.</p>
+</aside><h3 id="setting-current-time">Setting current time</h3>
+<p>You can set the current time using native <code>Date</code> object methods.</p>
+<code-sandbox hash="aad61696"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/time-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;time-picker&#39;);
+const date = new Date();
+const localTimePicker = document.getElementById(&quot;local-time&quot;);
+const utcTimePicker = document.getElementById(&quot;utc-time&quot;);
+
+localTimePicker.hours = date.getHours();
+localTimePicker.minutes = date.getMinutes();
+utcTimePicker.hours = date.getUTCHours();
+utcTimePicker.minutes = date.getUTCMinutes();
+</code></pre>
+<pre><code class="language-css">div {
+  display: flex;
+}
+ef-time-picker:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-time-picker id=&quot;local-time&quot;&gt;&lt;/ef-time-picker&gt;
+  &lt;ef-time-picker id=&quot;utc-time&quot;&gt;&lt;/ef-time-picker&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const date = new Date();
+const localTimePicker = document.getElementById(&quot;local-time&quot;);
+localTimePicker.hours = date.getHours();
+localTimePicker.minutes = date.getMinutes();
+</code></pre>
+<p>Similarly, you can set current time in the UTC timezone.</p>
+<pre><code class="language-javascript">const date = new Date();
+const utcTimePicker = document.getElementById(&quot;utc-time&quot;);
+utcTimePicker.hours = date.getUTCHours();
+utcTimePicker.minutes = date.getUTCMinutes();
+</code></pre>
+<h3 id="combining-time-and-date">Combining time and date</h3>
+<p>Typically, the time value must be combined with a date object in order to use an API. To do this, use methods on the native <code>Date</code> object.</p>
+<pre><code class="language-javascript">const el = document.querySelector(&quot;ef-time-picker&quot;);
+const date = new Date();
+date.setHours(el.hours);
+date.setMinutes(el.minutes);
+date.setSeconds(el.seconds);
+</code></pre>
+<p>This is useful when implementing <code>ef-time-picker</code> with <code>ef-calendar</code>.</p>
+<code-sandbox hash="9962ea06"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/time-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;time-picker&#39;);
+const calendar = document.querySelector(&quot;ef-calendar&quot;);
+const timePicker = document.querySelector(&quot;ef-time-picker&quot;);
+calendar.addEventListener(&quot;value-changed&quot;, () =&gt; {
+  if (calendar.value &amp;&amp; timePicker.value) {
+    const date = new Date(calendar.value);
+    date.setHours(timePicker.hours);
+    date.setMinutes(timePicker.minutes);
+    date.setSeconds(timePicker.seconds);
+    console.log(date.toLocaleString());
+  }
+}, true);
+</code></pre>
+<pre><code class="language-html">&lt;ef-calendar&gt;
+  &lt;ef-time-picker slot=&quot;footer&quot;&gt;&lt;/ef-time-picker&gt;
+&lt;/ef-calendar&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-calendar&gt;
+  &lt;ef-time-picker slot=&quot;footer&quot;&gt;&lt;/ef-time-picker&gt;
+&lt;/ef-calendar&gt;
+</code></pre>
+<pre><code class="language-javascript">const calendar = document.querySelector(&quot;ef-calendar&quot;);
+const timePicker = document.querySelector(&quot;ef-time-picker&quot;);
+
+calendar.addEventListener(&quot;value-changed&quot;, () =&gt; {
+  if (calendar.value &amp;&amp; timePicker.value) {
+    const date = new Date(calendar.value);
+    date.setHours(timePicker.hours);
+    date.setMinutes(timePicker.minutes);
+    date.setSeconds(timePicker.seconds);
+    console.log(date.toLocaleString());
+  }
+}, true);
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>amPm</code></td>
+<td><code>am-pm</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggles 12hr time display</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>hours</code></td>
+<td><code>hours</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Hours time segment in 24hr format</td>
+</tr>
+<tr>
+<td><code>minutes</code></td>
+<td><code>minutes</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Minutes time segment</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>seconds</code></td>
+<td><code>seconds</code></td>
+<td><code>number | null</code></td>
+<td>null</td>
+<td>Seconds time segment</td>
+</tr>
+<tr>
+<td><code>showSeconds</code></td>
+<td><code>show-seconds</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Flag to show seconds time segment in display.<br />Seconds are automatically shown when <code>hh:mm:ss</code> time format is provided as a value.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Value of the element</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>toggle</code></td>
+<td><code>(): void</code></td>
+<td>Toggles the AM/PM state</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

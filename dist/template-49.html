@@ -1,0 +1,169 @@
+<h1 id="sparkline">Sparkline</h1>
+<code-sandbox hash="44708a7c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sparkline?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sparkline&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sparkline {
+  width: 250px;
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sparkline reference-value=&quot;0&quot; data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 6, 4, 5, 0, 3, 2, 3, -1, -4, 2, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+</code-sandbox><p><code>ef-sparkline</code> is a small chart component for quickly representing historical data without axes.</p>
+<h3 id="usage">Usage</h3>
+<p>To create a sparkline, pass data as an array of numbers using the <code>data</code> attribute. The style of the sparkline is managed by the theme, but chart size can be customized using standard CSS.</p>
+<code-sandbox hash="da1f9579"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sparkline?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sparkline&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sparkline {
+  width: 200px;
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sparkline data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 6, 4, 5, 0, 3, 2, 3, -1, -4, 2, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">ef-sparkline {
+  width: 200px;
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sparkline data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 6, 4, 5, 0, 3, 2, 3, -1, -4, 2, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+<h3 id="reference-line">Reference line</h3>
+<p>Sparkline supports adding a reference line. The area above or below the reference line will be filled with different colors. The reference value can be set using the <code>reference-value</code> attribute or the <code>referenceValue</code> property.</p>
+<code-sandbox hash="ad0a22f9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sparkline?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sparkline&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sparkline {
+  width: 200px;
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sparkline reference-value=&quot;0&quot; data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 6, 4, 5, 0, 3, 2, 3, -1, -4, 2, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-sparkline reference-value=&quot;0&quot; data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 6, 4, 5, 0, 3, 2, 3, -1, -4, 2, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+<h3 id="display-previous-data">Display previous data</h3>
+<p>Sparkline can be set to display previous data with an inactive line color. It&#39;s common to use previous data for comparison with the current dataset.</p>
+<p>When <code>previous-data</code> is provided, sparkline will use the value of last point in the dataset as a reference line. It is recommended to not set <code>reference-value</code> when previous data is used.</p>
+<code-sandbox hash="bc597adf"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sparkline?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sparkline&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sparkline {
+  width: 200px;
+  height: 100px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sparkline previous-data=&quot;[-3, -2, 1, 0, 4, 2, -2, 4, 4, 6, -1]&quot; data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-sparkline previous-data=&quot;[-3, -2, 1, 0, 4, 2, -2, 4, 4, 6, -1]&quot; data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+<h3 id="css-variables">CSS Variables</h3>
+<p>Sparkline colors and line width are managed by the theme but can be overridden using CSS variables.</p>
+<code-sandbox hash="ceb3fe21"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/sparkline?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;sparkline&#39;);
+</code></pre>
+<pre><code class="language-css">ef-sparkline[custom-line-color] {
+  width: 200px;
+  height: 100px;
+  --line-color: #D94255;
+  --line-width: 5px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-sparkline custom-line-color data=&quot;[-2, -3, 1, 1, 4, 6, -3, 1, 4, 6, 10, 9, 10, 9, 6, 4, 5, 0, 3, 2, 3, -1, -4, 2, 3, 4, 3, 6]&quot;&gt;&lt;/ef-sparkline&gt;
+</code></pre>
+</code-sandbox><table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--line-color</td>
+<td>Line color</td>
+</tr>
+<tr>
+<td>--line-width</td>
+<td>Line width</td>
+</tr>
+<tr>
+<td>--reference-line-color</td>
+<td>Reference line color</td>
+</tr>
+<tr>
+<td>--previous-line-color</td>
+<td>Previous data line color</td>
+</tr>
+<tr>
+<td>--upper-line-color</td>
+<td>Color of line that is higher than the reference value</td>
+</tr>
+<tr>
+<td>--lower-line-color</td>
+<td>Color of line that is lower than the reference value</td>
+</tr>
+<tr>
+<td>--fill-color-style</td>
+<td>Color style of higher and lower area. (e.g. gradient, solid or none)</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td><code>data</code></td>
+<td><code>number[]</code></td>
+<td>[]</td>
+<td>Chart data as an array of number.</td>
+</tr>
+<tr>
+<td><code>previousData</code></td>
+<td><code>previous-data</code></td>
+<td><code>number[]</code></td>
+<td>[]</td>
+<td>Chart previous data as an array of number.</td>
+</tr>
+<tr>
+<td><code>referenceValue</code></td>
+<td><code>reference-value</code></td>
+<td><code>number | undefined</code></td>
+<td></td>
+<td>Baseline value to show horizontal line (optional)</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data-changed</code></td>
+<td>Fired when data is changed</td>
+</tr>
+<tr>
+<td><code>data-error</code></td>
+<td>Fired when data has error and chart cannot be updated</td>
+</tr>
+</tbody></table>

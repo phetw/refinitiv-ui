@@ -1,0 +1,819 @@
+<h1 id="overlay">Overlay</h1>
+<code-sandbox hash="ea450c65"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+
+const openButton = document.getElementById(&#39;open-overlay&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+openButton.addEventListener(&#39;tap&#39;, () =&gt; {
+  overlay.opened = true;
+});
+</code></pre>
+<pre><code class="language-css">section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+#overlay {
+  height: 200px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-overlay id=&quot;overlay&quot; with-backdrop with-shadow opened&gt;
+  &lt;h3&gt;Hello!&lt;/h3&gt;
+  &lt;p&gt;Click grey area to close this overlay.&lt;/p&gt;
+&lt;/ef-overlay&gt;
+&lt;section&gt;
+  &lt;ef-button cta id=&quot;open-overlay&quot;&gt;Open&lt;/ef-button&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><p><code>ef-overlay</code> is a base modal container for components. It helps create dialogs, tooltips, menus and other elements that should appear on top of the main application window. It is highly configurable, including positioning, attaching to elements, transition styles, backdrops and much more.</p>
+<h3 id="usage">Usage</h3>
+<ul>
+<li><a href="./elements/overlay#position-against-window">Position against window</a></li>
+<li><a href="./elements/overlay#attach-to-target">Attach to target</a></li>
+<li><a href="./elements/overlay#position-against-target">Position against target</a></li>
+<li><a href="./elements/overlay#position-strategy">Position strategy</a></li>
+<li><a href="./elements/overlay#customize-behavior">Customize behavior</a></li>
+</ul>
+<h3 id="advanced-usage">Advanced usage</h3>
+<ul>
+<li><a href="./elements/overlay#advanced-attributes">Advanced attributes</a></li>
+<li><a href="./elements/overlay#control-focus-behavior">Control focus behavior</a></li>
+<li><a href="./elements/overlay#control-focus-behavior">Control focus behavior</a></li>
+</ul>
+<hr>
+<br>
+
+<h3 id="using-overlay">Using overlay</h3>
+<p><code>ef-overlay</code> is typically initiated by a user action. The overlay can be opened by setting the <code>opened</code> property. Remove the property to close the overlay. In addition, the user can close the overlay by clicking outside overlay area or by pressing the ESC key.</p>
+<pre><code class="language-html">&lt;ef-overlay id=&quot;overlay&quot;&gt;Default&lt;/ef-overlay&gt;
+</code></pre>
+<pre><code class="language-javascript">const overlay = document.getElementById(&#39;overlay&#39;);
+overlay.opened = true;
+</code></pre>
+<h3 id="position-against-window">Position against window</h3>
+<p>By default <code>ef-overlay</code> appears at the centre of the window. You can set <code>position-target</code> to change that behavior.</p>
+<table>
+<thead>
+<tr>
+<th>Position Target</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>top</code></td>
+<td>Top side of the screen (same as <code>top center</code> or <code>center top</code>)</td>
+</tr>
+<tr>
+<td><code>top left</code></td>
+<td>Top left corner of the screen (same as <code>left top</code>)</td>
+</tr>
+<tr>
+<td><code>top right</code></td>
+<td>Top right corner of the screen (same as <code>right top</code>)</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>Right side of the screen (same as <code>right center</code> or <code>center right</code>)</td>
+</tr>
+<tr>
+<td><code>bottom</code></td>
+<td>Bottom side of the screen (same as <code>bottom center</code> or <code>center bottom</code>)</td>
+</tr>
+<tr>
+<td><code>bottom left</code></td>
+<td>Bottom left corner of the screen (same as <code>left bottom</code>)</td>
+</tr>
+<tr>
+<td><code>bottom right</code></td>
+<td>Bottom right corner of the screen (same as <code>right bottom</code>)</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>Left side of the screen (same as <code>left center</code> or <code>center left</code>)</td>
+</tr>
+<tr>
+<td><code>center</code> (default)</td>
+<td>Center of the screen (same as <code>center center</code>)</td>
+</tr>
+</tbody></table>
+<br>
+
+<p><code>ef-overlay</code> supports <code>x</code> and <code>y</code> attributes, which define an offset in pixels based on the position target. For instance, if <code>position-target=&quot;top left&quot;</code>, offset is calculated from the top left corner. If <code>position-target=&quot;bottom right&quot;</code>, offset is calculated from the bottom right corner.</p>
+<code-sandbox hash="55271382"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+
+const openButton = document.getElementById(&#39;open-overlay&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+let idx = 0;
+let x;
+let y;
+
+const positions = [&#39;top&#39;, &#39;top left&#39;, &#39;left&#39;, &#39;bottom left&#39;, &#39;bottom&#39;, &#39;bottom right&#39;, &#39;right&#39;, &#39;top right&#39;, &#39;center&#39;];
+
+const setPositionTarget = () =&gt; {
+  if (overlay.opened) {
+    const position = positions[idx];
+    overlay.positionTarget = position;
+
+    x = position === &#39;center&#39; || position === &#39;top&#39; || position === &#39;bottom&#39; ? 0 : 20;
+    y = position === &#39;center&#39; || position === &#39;left&#39; || position === &#39;right&#39; ? 0 : 20;
+
+    overlay.innerHTML = position + &#39;&lt;br&gt;&lt;br&gt;x: &#39; + x + &#39;&lt;br&gt;y: &#39; + y;
+    overlay.x = x;
+    overlay.y = y;
+    overlay.fit();
+    setTimeout(() =&gt; {
+      idx += 1;
+      if (idx &gt;= positions.length) {
+        idx = 0;
+      }
+      setPositionTarget();
+    }, 1000);
+  }
+};
+
+openButton.addEventListener(&#39;tap&#39;, () =&gt; {
+  overlay.opened = true;
+  setPositionTarget();
+});
+</code></pre>
+<pre><code class="language-css">section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+#overlay {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-overlay id=&quot;overlay&quot; with-shadow&gt;&lt;/ef-overlay&gt;
+&lt;section&gt;
+  &lt;ef-button cta id=&quot;open-overlay&quot;&gt;Open&lt;/ef-button&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-overlay position-target=&quot;top right&quot; x=&quot;20&quot; y=&quot;40&quot;&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<h3 id="attach-to-target">Attach to target</h3>
+<p>Overlay can be attached to an element by setting the <code>positionTarget</code> property to an <code>HTMLElment</code> object.</p>
+<code-sandbox hash="eb144f23"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/text-field?min&#39;;
+halo(&#39;text-field&#39;);
+
+const target = document.getElementById(&#39;target&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+
+overlay.positionTarget = target;
+target.addEventListener(&#39;value-changed&#39;, () =&gt; {
+  if (target.value) {
+    overlay.opened = true;
+    overlay.innerHTML = target.value;
+  }
+  else {
+    overlay.opened = false;
+  }
+});
+</code></pre>
+<pre><code class="language-css">section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+#overlay {
+  min-width: 152px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-overlay id=&quot;overlay&quot; spacing no-autofocus with-shadow offset=&quot;4&quot;&gt;&lt;/ef-overlay&gt;
+&lt;section&gt;
+  &lt;ef-text-field id=&quot;target&quot; placeholder=&quot;Type to trigger overlay&quot;&gt;&lt;/ef-text-field&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const target = document.getElementById(&#39;target&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+overlay.positionTarget = target;
+</code></pre>
+<h3 id="position-against-target">Position against target</h3>
+<p>Position strategies are set using the <code>position</code> property. <code>ef-overlay</code> picks the best strategy to show maximum content without overlapping the target element. If none of the position strategies can be used, the overlay may overlap the target element or restrict the overlay size.</p>
+<pre><code class="language-javascript">overlay.position = [&#39;bottom-end&#39;, &#39;bottom-start&#39;, &#39;right-end&#39;, &#39;center-middle&#39;];
+</code></pre>
+<h3 id="position-strategy">Position strategy</h3>
+<p>The first part defines <em>position</em>. The optional second part defines <em>align</em>. For instance: <code>bottom</code>, <code>top-start</code>, <code>right-middle</code>.</p>
+<table>
+<thead>
+<tr>
+<th>Position</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>top</code></td>
+<td>Above target (same as <code>top-start</code>)</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>After target (same as <code>right-middle</code>)</td>
+</tr>
+<tr>
+<td><code>bottom</code></td>
+<td>Below target (same as <code>bottom-start</code>)</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>Before target (same as <code>left-middle</code>)</td>
+</tr>
+<tr>
+<td><code>center</code></td>
+<td>At the center of target (same as <code>center-middle</code>)</td>
+</tr>
+</tbody></table>
+<table>
+<thead>
+<tr>
+<th>Align</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>start</code></td>
+<td>Target is aligned at the start of overlay</td>
+</tr>
+<tr>
+<td><code>middle</code></td>
+<td>Target is aligned at the middle of overlay</td>
+</tr>
+<tr>
+<td><code>end</code></td>
+<td>Target is aligned at the end of overlay</td>
+</tr>
+</tbody></table>
+<code-sandbox hash="b8949ab1"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+
+const openButton = document.getElementById(&#39;open-overlay&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+overlay.positionTarget = openButton;
+
+let idx = 0;
+const positions = [
+  &#39;bottom-end&#39;, &#39;bottom-middle&#39;, &#39;bottom-start&#39;,
+  &#39;right-start&#39;, &#39;right-middle&#39;, &#39;right-end&#39;,
+  &#39;top-start&#39;, &#39;top-middle&#39;, &#39;top-end&#39;,
+  &#39;left-end&#39;, &#39;left-middle&#39;, &#39;left-start&#39;,
+  &#39;center-end&#39;, &#39;center-middle&#39;, &#39;center-start&#39;
+];
+
+const setPosition = () =&gt; {
+  if (overlay.opened) {
+    overlay.position = [positions[idx]];
+    overlay.innerHTML = positions[idx];
+    overlay.fit();
+    setTimeout(() =&gt; {
+      idx += 1;
+      if (idx &gt;= positions.length) {
+        idx = 0;
+      }
+      setPosition();
+    }, 1000);
+  }
+};
+
+openButton.addEventListener(&#39;tap&#39;, () =&gt; {
+  overlay.opened = true;
+  setPosition();
+});
+
+</code></pre>
+<pre><code class="language-css">section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 300px;
+}
+#overlay {
+  height: 100px;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-overlay id=&quot;overlay&quot; lock-position-target with-shadow offset=&quot;4&quot;&gt;&lt;/ef-overlay&gt;
+&lt;section&gt;
+  &lt;ef-button cta id=&quot;open-overlay&quot;&gt;Try It&lt;/ef-button&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><p>Use <code>no-overlap</code> to ensure that the overlay never overlaps the target element. If there is not enough space, the overlay will restrict its size.</p>
+<pre><code class="language-html">&lt;ef-overlay no-overlap&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<p>Use <code>offset</code> to add pixel offset from the target element.</p>
+<pre><code class="language-html">&lt;ef-overlay offset=&quot;4&quot;&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<h3 id="customize-behavior">Customize behavior</h3>
+<p>Behavior of overlay is customized easily by using attributes, e.g. <code>with-shadow</code>, <code>full-screen</code>, <code>with-backdrop</code>, etc.
+You can use <code>transition-style</code> to add a transition.</p>
+<code-sandbox hash="fb30b3d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/overlay?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;overlay&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/select?min&#39;;
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/item?min&#39;;
+halo(&#39;button&#39;);
+halo(&#39;select&#39;);
+halo(&#39;item&#39;);
+
+const openButton = document.getElementById(&#39;open-overlay&#39;);
+const transitionStyle = document.getElementById(&#39;transition&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+
+overlay.attachTarget = transitionStyle;
+openButton.addEventListener(&#39;tap&#39;, () =&gt; {
+  overlay.transitionStyle = transitionStyle.value;
+  overlay.innerHTML = transitionStyle.value;
+  overlay.opened = true;
+});
+</code></pre>
+<pre><code class="language-css">section {
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  height: 200px;
+}
+#overlay {
+  height: 100px;
+  width: 212px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-overlay id=&quot;overlay&quot; with-shadow transition-style=&quot;zoom&quot;&gt;&lt;/ef-overlay&gt;
+&lt;section&gt;
+  &lt;ef-select id=&quot;transition&quot;&gt;
+    &lt;ef-item value=&quot;fade&quot;&gt;fade&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;zoom&quot; selected&gt;zoom&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide&quot;&gt;slide&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-down&quot;&gt;slide-down&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-up&quot;&gt;slide-up&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-right&quot;&gt;slide-right&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-left&quot;&gt;slide-left&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-right-up&quot;&gt;slide-right-up&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-left-up&quot;&gt;slide-left-up&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-right-down&quot;&gt;slide-right-down&lt;/ef-item&gt;
+    &lt;ef-item value=&quot;slide-left-down&quot;&gt;slide-left-down&lt;/ef-item&gt;
+  &lt;/ef-select&gt;
+  &lt;ef-button cta id=&quot;open-overlay&quot;&gt;Open&lt;/ef-button&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-overlay transition-style=&quot;fade&quot;&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>Transition Styles</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>fade</td>
+<td>Fade overlay in</td>
+</tr>
+<tr>
+<td>slide</td>
+<td>Slide overlay from center in</td>
+</tr>
+<tr>
+<td>zoom</td>
+<td>Zoom overlay from center in</td>
+</tr>
+<tr>
+<td>slide-down</td>
+<td>Slide down from top</td>
+</tr>
+<tr>
+<td>slide-up</td>
+<td>Slide up from bottom</td>
+</tr>
+<tr>
+<td>slide-right</td>
+<td>Slide in from right</td>
+</tr>
+<tr>
+<td>slide-left</td>
+<td>Slide in from left</td>
+</tr>
+<tr>
+<td>slide-right-down</td>
+<td>Slide down from the top left to bottom right</td>
+</tr>
+<tr>
+<td>slide-right-up</td>
+<td>Slide up from the bottom left to top right</td>
+</tr>
+<tr>
+<td>slide-left-down</td>
+<td>Slide down from the top right to bottom left</td>
+</tr>
+<tr>
+<td>slide-left-up</td>
+<td>Slide up from the bottom right to top left</td>
+</tr>
+</tbody></table>
+<br>
+
+<h3 id="advanced-usage-1">Advanced Usage</h3>
+<hr>
+<h3 id="applying-exotic-css-properties">Applying exotic CSS properties</h3>
+<p><code>ef-overlay</code> calculates <code>x</code> and <code>y</code> coordinates based on screen dimension and position target (if any). An overlay using <code>position: fixed</code> is removed from the normal document flow and is positioned relative to the initial containing block established by the viewport. The positioning algorithm assumes that overlay, viewport and positionTarget are located within the same coordinate system.</p>
+<p>However, there are exceptions when the positioning algorithm may behave differently, or may not work at all. According to <a href="https://www.w3.org/TR/css-transforms-1/#propdef-transform">CSS Transforms Specs</a>, if <code>transform</code>, <code>perspective</code> or <code>filter</code> properties are set to something other than <code>none</code>, then that ancestor behaves as the containing block. In addition, if the <code>zoom</code> property is set on anything other than the <code>html</code> or <code>body</code> tag, then the coordinate system will be different for different parts of the document, and the overlay may not be positioned correctly.</p>
+<p>While the above is true for most modern browsers, the actual implementation may differ between browsers and versions.</p>
+<p>Below is a brief summary of supported use cases.</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>CSS Property</th>
+<th>Status</th>
+<th>Notes</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>✓</td>
+<td>zoom</td>
+<td>Partial Support</td>
+<td>Property is only supported on <code>html</code> and <code>body</code> elements.</td>
+</tr>
+<tr>
+<td>✓</td>
+<td>filter</td>
+<td>Partial Support</td>
+<td>Overlay position/size is relative to the <em>filter container</em>.<br/><br/>If filter is applied to <code>html</code> element, overlay size is not restricted by window size.</td>
+</tr>
+<tr>
+<td>✓</td>
+<td>transform:translate<br/>transform:translate3d<br/></td>
+<td>Partial Support</td>
+<td>Overlay position/size is relative to the <em>transform container</em>.<br/><br/>If transform is applied to <code>html</code> element, overlay size is not restricted by window size.<br/><br/>Translating z-axis is not supported.</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>transform:rotate<br/>transform:rotate3d</td>
+<td>No Support</td>
+<td>-</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>transform:matrix<br/>transform:matrix3d</td>
+<td>No Support</td>
+<td>-</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>transform:scale<br/>transform:scale3d</td>
+<td>No Support</td>
+<td>-</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>transform:skew</td>
+<td>No Support</td>
+<td>-</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>transform:perspective</td>
+<td>No Support</td>
+<td>-</td>
+</tr>
+<tr>
+<td>✗</td>
+<td>perspective</td>
+<td>No Support</td>
+<td>-</td>
+</tr>
+</tbody></table>
+<h3 id="advanced-attributes">Advanced attributes</h3>
+<p>To create a modal overlay, use the <code>no-cancel-on-outside-click</code>, <code>no-cancel-on-esc-key</code>, and <code>with-backdrop</code> attributes together.</p>
+<pre><code class="language-html">&lt;ef-overlay no-cancel-on-outside-click no-cancel-on-esc-key with-backdrop&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<p>By default <code>ef-overlay</code> automatically sets <em>z-index=103</em>. If there are other absolutely positioned elements not controlled by the Element Framework, you can override the initial value by setting the <code>z-index</code> attribute.</p>
+<pre><code class="language-html">&lt;ef-overlay z-index=&quot;1000&quot;&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<p>By default <code>ef-overlay</code> locks document level interaction. This allows only the content inside the overlay to be scrollable and clickable. To change this behavior, set <code>no-interaction-lock</code>.</p>
+<pre><code class="language-html">&lt;ef-overlay no-interaction-lock&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<p>If the developer needs to keep multiple elements interactive, then the <code>interactiveElements</code> property is used.</p>
+<pre><code class="language-javascript">overlay.interactiveElements = [
+  htmlElement1,
+  htmlElement2
+];
+</code></pre>
+<h3 id="control-focus-behavior">Control focus behavior</h3>
+<p><code>ef-overlay</code> controls the tabbing and focus behavior. When the overlay is opened, only elements inside the overlay can be tabbed through. In addition, the overlay puts the focus on itself when opened.</p>
+<p>Use <code>no-autofocus</code> to stop the overlay from focusing on its content when opened.</p>
+<pre><code class="language-html">&lt;ef-overlay no-autofocus&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<p>When the overlay is attached to a position target element, the user can still interact with the target element. Use <code>lock-position-target</code> to change this default behavior.</p>
+<pre><code class="language-html">&lt;ef-overlay lock-position-target&gt;&lt;/ef-overlay&gt;
+</code></pre>
+<p>When the overlay is open, only the elements inside the overlay can be tabbed through. You can change the default by setting the <code>focusBoundary</code> property.</p>
+<p>In the example below, the focus boundary is kept within <em>custom-element</em>. Even when the overlay is open, the user is still able to focus and tab on <em>ef-text-field</em>.</p>
+<pre><code class="language-html">&lt;custom-element id=&quot;customElement&quot;&gt;
+  &lt;ef-text-field id=&quot;input&quot;&gt;&lt;/ef-text-field&gt;
+  &lt;ef-overlay id=&quot;overlay&quot; no-autofocus&gt;&lt;/ef-overlay&gt;
+&lt;/custom-element&gt;
+</code></pre>
+<pre><code class="language-javascript">const customElement = document.getElementById(&#39;customElement&#39;);
+const input = document.getElementById(&#39;input&#39;);
+const overlay = document.getElementById(&#39;overlay&#39;);
+
+overlay.positionTarget = input;
+overlay.focusBoundary = customElement;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>focusBoundary</code></td>
+<td></td>
+<td></td>
+<td>&quot;this&quot;</td>
+<td>Set focus boundary to restrict tabbing. Default&#39;s overlay itself.<br />If external focus is required, set to null</td>
+</tr>
+<tr>
+<td><code>fullScreen</code></td>
+<td><code>full-screen</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to show overlay in full screen mode</td>
+</tr>
+<tr>
+<td><code>fullyOpened (readonly)</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td></td>
+<td>Returns true if the overlay is opened and animation is not running.<br />Returns false if overlay is closed and animation is not running</td>
+</tr>
+<tr>
+<td><code>horizontalOffset</code></td>
+<td><code>horizontal-offset</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>A pixel value that will be added to the position calculated on the horizontal axis.<br />The offset will be applied either to the <code>left</code> or <code>right</code> depending on the <code>positionTarget</code></td>
+</tr>
+<tr>
+<td><code>interactiveElements</code></td>
+<td></td>
+<td><code>object</code></td>
+<td>[]</td>
+<td>A list of elements, which are active when overlay is opened<br />Valid only if noInteractionLock is false (default)</td>
+</tr>
+<tr>
+<td><code>lockPositionTarget</code></td>
+<td><code>lock-position-target</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to lock position target<br />Valid only if noInteractionLock is false (default)</td>
+</tr>
+<tr>
+<td><code>noAutofocus</code></td>
+<td><code>no-autofocus</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to disable autofocusing the overlay or open</td>
+</tr>
+<tr>
+<td><code>noCancelOnEscKey</code></td>
+<td><code>no-cancel-on-esc-key</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to disable canceling the overlay with the ESC key</td>
+</tr>
+<tr>
+<td><code>noCancelOnOutsideClick</code></td>
+<td><code>no-cancel-on-outside-click</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to true to disable canceling the overlay by clicking outside it</td>
+</tr>
+<tr>
+<td><code>noFocusManagement</code></td>
+<td><code>no-focus-management</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to not apply focus management.<br />The overlay will not limit Tab behaviour or do auto-focusing</td>
+</tr>
+<tr>
+<td><code>noInteractionLock</code></td>
+<td><code>no-interaction-lock</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Stop preventing user interaction when overlay is visible</td>
+</tr>
+<tr>
+<td><code>noOverlap</code></td>
+<td><code>no-overlap</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to not overlap positionTarget</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>offset</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>A pixel value that will be added to the position calculated on the vertical or horizontal axis.<br />The offset is applied dynamically depending on the <code>positionTarget</code></td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True if the overlay is currently displayed</td>
+</tr>
+<tr>
+<td><code>position</code></td>
+<td><code>position</code></td>
+<td><code>{} | undefined</code></td>
+<td></td>
+<td>Set position and align against the attach target.<br />Position may contain a single word or a comma separated list to set the priority.<br />Position is not applied if <code>attachTarget</code> is not HTML Element.<br />For instance: <code>[bottom-middle, top-middle]</code> - default position is bottom-middle, if cannot fit position top-middle;<br />or <code>[left, right]</code> - align is not set, set best position on the left or right<br /><br />Position can be: <code>top</code>, <code>right</code>, <code>bottom</code>, <code>left</code>, <code>center</code><br />Align can be: <code>start</code>, <code>middle</code>, <code>end</code></td>
+</tr>
+<tr>
+<td><code>positionTarget</code></td>
+<td><code>position-target</code></td>
+<td><code>PositionTarget|null|undefined</code></td>
+<td></td>
+<td>Set the position target as follows:<br />- HTMLElement if overlay is position next to the HTML element<br />- String containing <code>top</code>, <code>right</code>, <code>left</code>, <code>bottom</code>, <code>center</code> combinations to position against the screen.<br />For instance: <code>top left</code> - put the overlay at <code>top left</code> point of the screen; <code>bottom</code> - put overlay at <code>bottom center</code> point of the screen</td>
+</tr>
+<tr>
+<td><code>positionTargetConfig (readonly)</code></td>
+<td></td>
+<td></td>
+<td></td>
+<td>Get position target configuration based on positionTarget and fullScreen properties<br />Used for caching and calculations</td>
+</tr>
+<tr>
+<td><code>spacing</code></td>
+<td><code>spacing</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to apply spacing for overlay content</td>
+</tr>
+<tr>
+<td><code>transitionStyle</code></td>
+<td><code>transition-style</code></td>
+<td><code>TransitionStyle|null|undefined</code></td>
+<td></td>
+<td>Set the transition style</td>
+</tr>
+<tr>
+<td><code>transitioning (readonly)</code></td>
+<td></td>
+<td><code>boolean</code></td>
+<td></td>
+<td>Returns true if overlay is doing opening or closing transition</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to make overlay background transparent</td>
+</tr>
+<tr>
+<td><code>verticalOffset</code></td>
+<td><code>vertical-offset</code></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>A pixel value that will be added to the position calculated on the vertical axis.<br />The offset will be applied either to the <code>top</code> or <code>bottom</code> depending on the <code>positionTarget</code></td>
+</tr>
+<tr>
+<td><code>withBackdrop</code></td>
+<td><code>with-backdrop</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to show backdrop</td>
+</tr>
+<tr>
+<td><code>withShadow</code></td>
+<td><code>with-shadow</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>True to add shadow</td>
+</tr>
+<tr>
+<td><code>x</code></td>
+<td><code>x</code></td>
+<td><code>number|null|undefined</code></td>
+<td></td>
+<td>Set a specific x coordinate</td>
+</tr>
+<tr>
+<td><code>y</code></td>
+<td><code>y</code></td>
+<td><code>number|null|undefined</code></td>
+<td></td>
+<td>Set a specific y coordinate</td>
+</tr>
+<tr>
+<td><code>zIndex</code></td>
+<td><code>z-index</code></td>
+<td><code>number|null|undefined</code></td>
+<td></td>
+<td>Set a preferable z-index to override automatically calculated z-index</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clearCached</code></td>
+<td><code>(): void</code></td>
+<td>Clear all cached values.<br />Run when external changes occur to styles to re-calculate position.</td>
+</tr>
+<tr>
+<td><code>fit</code></td>
+<td><code>(): void</code></td>
+<td>Fit the overlay panel</td>
+</tr>
+<tr>
+<td><code>refit</code></td>
+<td><code>(): void</code></td>
+<td>Clear all cached values and fit the overlay.<br />Use this function if any of <code>maxWidth</code>, <code>maxHeight</code>, <code>minWidth</code>, <code>minHeight</code>, <code>height</code> or <code>width</code> changed</td>
+</tr>
+<tr>
+<td><code>toFront</code></td>
+<td><code>(): void</code></td>
+<td>Move overlay to front of other overlays</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>animationiteration</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>closed</code></td>
+<td>Dispatched when overlay becomes invisible and close animation finishes</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td>Dispatched when the overlay becomes visible and the open animation finishes</td>
+</tr>
+<tr>
+<td><code>opened-changed</code></td>
+<td>Dispatched when when open attribute changes internally. Prevent default to stop opening/closing pipeline</td>
+</tr>
+<tr>
+<td><code>refit</code></td>
+<td>Dispatched when refit algorithm finishes calculations</td>
+</tr>
+</tbody></table>

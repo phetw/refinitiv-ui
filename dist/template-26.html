@@ -1,0 +1,1186 @@
+<h1 id="interactive-chart">Interactive Chart</h1>
+<code-sandbox hash="af7ee559"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+let initVal = 20;
+const maxVal = initVal * 2;
+const generateData = (total, start) =&gt; {
+  const startDate = start || new Date();
+  let ret = [];
+  total = total &lt; 0 ? 10 : total;
+  for (let i = 0; i &lt; total; i++) {
+    const volatility = (Math.random() * (4.5) - 2) / 100; // random % volatility
+    const date = start || new Date(startDate.setDate(startDate.getDate() + 1));
+    const openVal = initVal + initVal * volatility;
+    const closeVal = openVal + (openVal * volatility * 1.5);
+    const highVal = openVal &gt; closeVal ? openVal + 0.1 : closeVal + 0.5;
+    const lowVal = openVal &lt; closeVal ? openVal - 0.5 : closeVal - 0.2;
+    initVal = closeVal &gt; maxVal ? closeVal - (closeVal * 0.2) : closeVal;
+    const point = {
+      time: date.getTime() / 1000.0,
+      open: parseFloat(openVal.toFixed(2)),
+      high: parseFloat(highVal.toFixed(2)),
+      low: parseFloat(lowVal.toFixed(2)),
+      close: parseFloat(closeVal.toFixed(2))
+    };
+    ret.push(point);
+  }
+  return ret;
+};
+
+const generateCurrent = (prevDate) =&gt; {
+  const newPoint = generateData(1, prevDate);
+  return newPoint[0] || {};
+};
+
+const chart = document.getElementById(&#39;candle&#39;);
+chart.config = {
+  series: [
+    {
+      type: &#39;candlestick&#39;,
+      data: generateData(100)
+    }
+  ]
+};
+
+setInterval(() =&gt; {
+  const lastIndex = chart.config.series[0].data.length - 1;
+  const time = chart.config.series[0].data[lastIndex].time;
+  let latestTime = time || null;
+  latestTime += 86400; // Update time Next day
+  const prevDate = new Date(latestTime * 1000);
+  const current = generateCurrent(prevDate);
+  chart.config.series[0].data.push(current);
+  chart.seriesList[0].update(current);
+}, 1000);
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;candle&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><p>Interactive Chart is a lightweight chart component that allows you to create different use cases for financial chart. The component uses the <a href="https://github.com/tradingview/lightweight-charts">lightweight-charts</a> library. You can see a demo of different chart types and the APIs of the lightweight chart library via this <a href="https://www.tradingview.com/lightweight-charts/">documentation</a>.</p>
+<h3 id="usage">Usage</h3>
+<p>Chart can be create by passing the configuration and initial dataset using the <code>config</code> property. Interactive chart supports the following chart types. The <code>value</code> must be a number.</p>
+<p>The interactive chart can be draw to various types and each type may need a different dataset.</p>
+<aside class="info"><p>The interactive chart doesn&#39;t support adding trendlines or technical analyses.</p>
+</aside><table>
+<thead>
+<tr>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>line</code></td>
+<td>Line chart</td>
+</tr>
+<tr>
+<td><code>area</code></td>
+<td>Line chart with filled area</td>
+</tr>
+<tr>
+<td><code>bar</code></td>
+<td>OHLC bar chart</td>
+</tr>
+<tr>
+<td><code>candlestick</code></td>
+<td>Candlestick chart</td>
+</tr>
+<tr>
+<td><code>volume</code></td>
+<td>Volume chart</td>
+</tr>
+</tbody></table>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;line&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+<pre><code class="language-javascript">const chart = document.getElementById(&quot;line&quot;);
+chart.config = {
+  series: [
+    {
+      type: &quot;line&quot;,
+      data: [
+        { time: &quot;2018-12-22&quot;, value: 32.51 },
+        { time: &quot;2018-12-23&quot;, value: 31.11 },
+        { time: &quot;2018-12-24&quot;, value: 27.02 },
+        { time: &quot;2018-12-25&quot;, value: 27.32 },
+        { time: &quot;2018-12-26&quot;, value: 25.17 },
+        { time: &quot;2018-12-27&quot;, value: 28.89 },
+        { time: &quot;2018-12-28&quot;, value: 25.46 },
+        { time: &quot;2018-12-29&quot;, value: 23.92 },
+        { time: &quot;2018-12-30&quot;, value: 22.68 },
+        { time: &quot;2018-12-31&quot;, value: 22.67 }
+      ]
+    }
+  ]
+};
+</code></pre>
+<p>Bar and candlestick charts need a different dataset.</p>
+<pre><code class="language-javascript">chart.config = {
+  series: [
+    {
+      type: &quot;bar&quot;,
+      data: [
+        {
+          time: &quot;2018-12-19&quot;,
+          open: 141.77,
+          high: 170.39,
+          low: 120.25,
+          close: 145.72
+        },
+        {
+          time: &quot;2018-12-20&quot;,
+          open: 145.72,
+          high: 147.99,
+          low: 100.11,
+          close: 108.19
+        },
+        {
+          time: &quot;2018-12-21&quot;,
+          open: 108.19,
+          high: 118.43,
+          low: 74.22,
+          close: 75.16
+        },
+        {
+          time: &quot;2018-12-22&quot;,
+          open: 75.16,
+          high: 82.84,
+          low: 36.16,
+          close: 45.72
+        }
+      ]
+    }
+  ]
+};
+</code></pre>
+<h3 id="intraday-charts">Intraday charts</h3>
+<p>Interactive chart supports intraday chart using a UNIX timestamp instead of a date string, as mentioned in the <a href="https://github.com/tradingview/lightweight-charts/blob/b58f2c3e7f539db5baab660bc50842367f5ed4fb/docs/time.md">Lightweight Documentation</a>.</p>
+<p>Also, be sure to enable <code>timeVisible</code> in the configuration. <code>secondVisible</code> is optional.</p>
+<code-sandbox hash="3bd57f6"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chart = document.getElementById(&#39;price&#39;);
+chart.config = {
+  options: {
+    timeScale: {
+      timeVisible: true,
+      secondsVisible: true
+    }
+  },
+  series: [{
+    symbol: &#39;Price&#39;,
+    type: &#39;area&#39;,
+    data: [
+      { time: Date.parse(&#39;2019-04-10T08:40:10&#39;) / 1000, value: 82.90 },
+      { time: Date.parse(&#39;2019-04-10T09:13:11&#39;) / 1000, value: 83.89 },
+      { time: Date.parse(&#39;2019-04-10T10:21:25&#39;) / 1000, value: 81.81 },
+      { time: Date.parse(&#39;2019-04-10T11:43:13&#39;) / 1000, value: 85.39 },
+      { time: Date.parse(&#39;2019-04-11T12:24:20&#39;) / 1000, value: 81.42 },
+      { time: Date.parse(&#39;2019-04-11T13:52:15&#39;) / 1000, value: 83.71 },
+      { time: Date.parse(&#39;2019-04-11T14:11:45&#39;) / 1000, value: 80.11 },
+      { time: Date.parse(&#39;2019-04-11T15:10:12&#39;) / 1000, value: 83.16 },
+      { time: Date.parse(&#39;2019-04-11T16:05:11&#39;) / 1000, value: 80.78 },
+    ]
+  }]
+};
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">chart.config = {
+  options: {
+    timeScale: {
+      timeVisible: true,
+      secondsVisible: true
+    }
+  },
+  series: [{
+    symbol: &#39;Price&#39;,
+    type: &#39;area&#39;,
+    data: [
+      { time: Date.parse(&#39;2019-04-10T08:40:10&#39;) / 1000, value: 82.90 },
+      { time: Date.parse(&#39;2019-04-10T09:13:11&#39;) / 1000, value: 83.89 },
+      { time: Date.parse(&#39;2019-04-10T10:21:25&#39;) / 1000, value: 81.81 },
+      { time: Date.parse(&#39;2019-04-10T11:43:13&#39;) / 1000, value: 85.39 },
+      { time: Date.parse(&#39;2019-04-11T12:24:20&#39;) / 1000, value: 81.42 },
+      { time: Date.parse(&#39;2019-04-11T13:52:15&#39;) / 1000, value: 83.71 },
+      { time: Date.parse(&#39;2019-04-11T14:11:45&#39;) / 1000, value: 80.11 },
+      { time: Date.parse(&#39;2019-04-11T15:10:12&#39;) / 1000, value: 83.16 },
+      { time: Date.parse(&#39;2019-04-11T16:05:11&#39;) / 1000, value: 80.78 },    
+    ]
+  }]
+};
+</code></pre>
+<h3 id="multiple-charts">Multiple charts</h3>
+<p>Chart can display multiple series by passing an array to <code>config.series</code>. For example, a rebasing chart can be created as poer below.</p>
+<code-sandbox hash="3ecfd12d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const generateData = (total, start, init) =&gt; {
+  let initVal = init || 20;
+  const startDate = start || new Date();
+  let ret = [];
+  total = total &lt; 0 ? 10 : total;
+  for (let i = 0; i &lt; total; i++) {
+    const volatility = (Math.random() * (4.5) - 2) / 100; // random % volatility
+    const date = start || new Date(startDate.setDate(startDate.getDate() + 1));
+    const val = initVal + initVal * volatility;
+    initVal = val;
+    const point = {
+      time: date.getTime() / 1000.0,
+      value: parseFloat(val.toFixed(2))
+    };
+    ret.push(point);
+  }
+  return ret;
+};
+
+const chart = document.getElementById(&#39;multi&#39;);
+chart.config = {
+  options: {
+    priceScale: {
+      mode: 2
+    }
+  },
+  series: [
+    {
+      symbol: &#39;GOOGL.O&#39;,
+      type: &#39;area&#39;,
+      data: generateData(100)
+    },
+    {
+      symbol: &#39;AMZN.OQ&#39;,
+      type: &#39;line&#39;,
+      data: generateData(100)
+    },
+    {
+      symbol: &#39;EBAY.OQ&#39;,
+      type: &#39;line&#39;,
+      data: generateData(100)
+    },
+    {
+      symbol: &#39;NFLX.OQ&#39;,
+      type: &#39;line&#39;,
+      data: generateData(100)
+    },
+    {
+      symbol: &#39;BIDU.OQ&#39;,
+      type: &#39;line&#39;,
+      data: generateData(100)
+    },
+    {
+      symbol: &#39;CRTO.OQ&#39;,
+      type: &#39;line&#39;,
+      data: generateData(100)
+    },
+    {
+      symbol: &#39;BABA.N&#39;,
+      type: &#39;line&#39;,
+      data: generateData(100)
+    }
+  ]
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;multi&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">chart.config = {
+  options: {
+    priceScale: {
+      mode: 2
+    }
+  },
+  series: [
+    {
+      symbol: &#39;GOOGL.O&#39;,
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 180.01 },
+        { time: &#39;2019-04-12&#39;, value: 156.63 },
+        { time: &#39;2019-04-13&#39;, value: 166.64 },
+        { time: &#39;2019-04-14&#39;, value: 181.89 },
+        ...
+      ]
+    },
+    {
+      symbol: &#39;AMZN.OQ&#39;,
+      type: &#39;line&#39;,
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 20.31 },
+        { time: &#39;2019-04-12&#39;, value: 30.27 },
+        { time: &#39;2019-04-13&#39;, value: 70.28 },
+        { time: &#39;2019-04-14&#39;, value: 49.29 },
+        ...
+      ]
+    }
+  ]
+};
+</code></pre>
+<h3 id="volume-chart">Volume chart</h3>
+<p>To create a chart with volume, add a volume series and set <code>seriesOptions</code> as follows.</p>
+<code-sandbox hash="82c48d55"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const generateData = (total, start, init) =&gt; {
+  let initVal = init || 20;
+  const startDate = start || new Date();
+  let ret = [];
+  total = total &lt; 0 ? 10 : total;
+  for (let i = 0; i &lt; total; i++) {
+    const volatility = (Math.random() * (20) - 6) / 100; // random % volatility
+    const date = start || new Date(startDate.setDate(startDate.getDate() + 1));
+    const val = initVal + initVal * volatility;
+    initVal = val;
+    const point = {
+      time: date.getTime() / 1000.0,
+      value: parseFloat(val.toFixed(2))
+    };
+    ret.push(point);
+  }
+  return ret;
+};
+
+const chart = document.getElementById(&#39;volume&#39;);
+chart.config = {
+  series: [
+    {
+      symbol: &#39;Price&#39;,
+      type: &#39;area&#39;,
+      data: generateData(70)
+    },
+    {
+      symbol: &#39;Vol&#39;,
+      type: &#39;volume&#39;,
+      seriesOptions : {
+        overlay: true,
+        priceFormat: {
+          type: &#39;volume&#39;
+        },
+        scaleMargins: {
+          top: 0.8,
+          bottom: 0
+        },
+        lineWidth: 3,
+      },
+      data: generateData(70, null, 2000000)
+    }
+  ]
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;volume&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">chart.config = {
+  series: [
+    {
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 180.01 },
+        { time: &#39;2019-04-12&#39;, value: 156.63 },
+        { time: &#39;2019-04-13&#39;, value: 166.64 },
+        { time: &#39;2019-04-14&#39;, value: 181.89 },
+        ...
+      ]
+    },
+    {
+      type: &#39;volume&#39;,
+      seriesOptions : {
+        overlay: true,
+        priceFormat: {
+          type: &#39;volume&#39;
+        },
+        scaleMargins: {
+          top: 0.8,
+          bottom: 0
+        },
+        lineWidth: 3,
+      },
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 204000 },
+        { time: &#39;2019-04-12&#39;, value: 303000 },
+        { time: &#39;2019-04-13&#39;, value: 705000 },
+        { time: &#39;2019-04-14&#39;, value: 498700 },
+        ...
+      ]
+    }
+  ]
+};
+</code></pre>
+<h3 id="seasonality-chart">Seasonality chart</h3>
+<p>A Seasonality chart can be created using multiple series with the same timespan. You can use the APIs to customize the displayed legend, X-Axis label and cross hair vertical label.</p>
+<code-sandbox hash="d0efcef9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const monthCount = {};
+const months = {
+  1: &quot;January&quot;,
+  2: &quot;February&quot;,
+  3: &quot;March&quot;,
+  4: &quot;April&quot;,
+  5: &quot;May&quot;,
+  6: &quot;June&quot;,
+  7: &quot;July&quot;,
+  8: &quot;August&quot;,
+  9: &quot;September&quot;,
+  10: &quot;October&quot;,
+  11: &quot;November&quot;,
+  12: &quot;December&quot;
+}
+const chart = document.getElementById(&#39;seasonality&#39;);
+chart.config = {
+  lastValueVisible: false,
+  options: {
+    timeScale: {
+      tickMarkFormatter: (time, tickMarkType, locale) =&gt; {
+        if(!monthCount[time.month]) {
+          monthCount[time.month] = 1;
+          return months[time.month];
+        }
+        return &quot;&quot;;
+      }
+    },
+    localization: {
+      timeFormatter: (date) =&gt; date.day + &#39; &#39; + months[date.month]
+    }
+  },
+    series: [
+    {
+      symbol: &#39;2011-2020&#39;,
+      symbolName: &#39;Avg. 2011-2020&#39;,
+      lastValueVisible: false,
+      type: &#39;line&#39;,
+      data: [
+        { time: &#39;2020-01-11&#39;, value: 20.31 },
+        { time: &#39;2020-02-12&#39;, value: 30.27 },
+        { time: &#39;2020-03-13&#39;, value: 70.28 },
+        { time: &#39;2020-04-11&#39;, value: 20.31 },
+        { time: &#39;2020-05-12&#39;, value: 30.27 },
+        { time: &#39;2020-06-13&#39;, value: 70.28 },
+        { time: &#39;2020-07-11&#39;, value: 49.29 },
+        { time: &#39;2020-08-12&#39;, value: 20.31 },
+        { time: &#39;2020-09-13&#39;, value: 30.27 },
+        { time: &#39;2020-10-11&#39;, value: 70.28 },
+        { time: &#39;2020-11-12&#39;, value: 49.29 },
+        { time: &#39;2020-12-13&#39;, value: 70.28 },
+      ]
+    },
+    {
+      symbol: &#39;2021&#39;,
+      symbolName: &#39;2021&#39;,
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2020-01-11&#39;, value: 45.01 },
+        { time: &#39;2020-02-12&#39;, value: 60.63 },
+        { time: &#39;2020-03-13&#39;, value: 166.64 },
+        { time: &#39;2020-04-11&#39;, value: 180.01 },
+        { time: &#39;2020-05-12&#39;, value: 156.63 },
+        { time: &#39;2020-06-13&#39;, value: 166.64 },
+        { time: &#39;2020-07-11&#39;, value: 181.89 }
+      ]
+    },
+  ]
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;seasonality&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">const monthCount = {};
+const months = {
+  1: &quot;January&quot;,
+  2: &quot;February&quot;,
+  3: &quot;March&quot;,
+  4: &quot;April&quot;,
+  5: &quot;May&quot;,
+  6: &quot;June&quot;,
+  7: &quot;July&quot;,
+  8: &quot;August&quot;,
+  9: &quot;September&quot;,
+  10: &quot;October&quot;,
+  11: &quot;November&quot;,
+  12: &quot;December&quot;
+}
+const chart = document.getElementById(&#39;seasonality&#39;);
+chart.config = {
+  lastValueVisible: false,
+  options: {
+    timeScale: {
+      tickMarkFormatter: (time, tickMarkType, locale) =&gt; {
+        if(!monthCount[time.month]) {
+          monthCount[time.month] = 1;
+          return months[time.month];
+        }
+        return &quot;&quot;;
+      }
+    },
+    localization: {
+      timeFormatter: (date) =&gt; date.day + &#39; &#39; + months[date.month]
+    }
+  },
+  series: [
+    {
+      symbol: &#39;2011-2020&#39;,
+      symbolName: &#39;Avg. 2011-2020&#39;,
+      lastValueVisible: false,
+      type: &#39;line&#39;,
+      data: [
+        { time: &#39;2020-01-11&#39;, value: 20.31 },
+        { time: &#39;2020-02-12&#39;, value: 30.27 },
+        { time: &#39;2020-03-13&#39;, value: 70.28 },
+        { time: &#39;2020-04-11&#39;, value: 20.31 },
+        { time: &#39;2020-05-12&#39;, value: 30.27 },
+        { time: &#39;2020-06-13&#39;, value: 70.28 },
+        { time: &#39;2020-07-11&#39;, value: 49.29 },
+        { time: &#39;2020-08-12&#39;, value: 20.31 },
+        { time: &#39;2020-09-13&#39;, value: 30.27 },
+        { time: &#39;2020-10-11&#39;, value: 70.28 },
+        { time: &#39;2020-11-12&#39;, value: 49.29 },
+        { time: &#39;2020-12-13&#39;, value: 70.28 },
+      ]
+    },
+    {
+      symbol: &#39;2021&#39;,
+      symbolName: &#39;2021&#39;,
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2020-01-11&#39;, value: 45.01 },
+        { time: &#39;2020-02-12&#39;, value: 60.63 },
+        { time: &#39;2020-03-13&#39;, value: 166.64 },
+        { time: &#39;2020-04-11&#39;, value: 180.01 },
+        { time: &#39;2020-05-12&#39;, value: 156.63 },
+        { time: &#39;2020-06-13&#39;, value: 166.64 },
+        { time: &#39;2020-07-11&#39;, value: 181.89 }
+      ]
+    },
+  ]
+};
+</code></pre>
+<h3 id="setting-chart-options">Setting chart options</h3>
+<p>You can customize chart options either at the <strong>chart level</strong> or <strong>series level</strong>.</p>
+<p>To customize options at the chart level, pass the option to <code>config.options</code>. Learn more about chart options from the <a href="https://github.com/tradingview/lightweight-charts/tree/b58f2c3e7f539db5baab660bc50842367f5ed4fb/docs">Lightweight Chart Customization</a>.</p>
+<p>For example, in the <code>lightweight-charts</code> documents, you can learn to pass options to the chart in order to customize the crosshair.</p>
+<pre><code class="language-json">{
+  crosshair: {
+    vertLine: {
+      color: &quot;#4d4d4d&quot;,
+      width: 0.5,
+      style: 1,
+      visible: true,
+      labelVisible: false,
+    },
+    horzLine: {
+      color: &quot;#4d4d4d&quot;,
+      width: 1.5,
+      style: 0,
+      visible: true,
+      labelVisible: true,
+    },
+    mode: 1,
+  },
+}
+</code></pre>
+<p>In <code>ef-interactive-chart</code>, you will need to pass those options to <code>config.options</code>.</p>
+<pre><code class="language-json">chart.config = {
+  options: {
+    crosshair: {
+      vertLine: {
+        color: &quot;#4d4d4d&quot;,
+        width: 0.5,
+        style: 1,
+        visible: true,
+        labelVisible: false,
+      },
+      horzLine: {
+        color: &quot;#4d4d4d&quot;,
+        width: 1.5,
+        style: 0,
+        visible: true,
+        labelVisible: true,
+      },
+    },
+  }
+};
+</code></pre>
+<code-sandbox hash="b121ffab"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chart = document.getElementById(&#39;price&#39;);
+chart.config = {
+  series: [
+    {
+      symbol: &#39;Price&#39;,
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 180.01 },
+        { time: &#39;2019-04-12&#39;, value: 156.63 },
+        { time: &#39;2019-04-13&#39;, value: 166.64 },
+        { time: &#39;2019-04-14&#39;, value: 181.89 },
+        { time: &#39;2019-04-15&#39;, value: 174.43 },
+        { time: &#39;2019-04-16&#39;, value: 180.01 },
+        { time: &#39;2019-04-17&#39;, value: 196.63 },
+        { time: &#39;2019-04-18&#39;, value: 176.64 },
+        { time: &#39;2019-04-20&#39;, value: 181.89 },
+        { time: &#39;2019-04-21&#39;, value: 190.01 },
+        { time: &#39;2019-04-22&#39;, value: 196.63 },
+        { time: &#39;2019-04-23&#39;, value: 178.64 },
+        { time: &#39;2019-04-24&#39;, value: 141.89 },
+        { time: &#39;2019-04-25&#39;, value: 154.43 },
+        { time: &#39;2019-04-26&#39;, value: 170.01 },
+        { time: &#39;2019-04-27&#39;, value: 196.63 },
+        { time: &#39;2019-04-28&#39;, value: 176.64 },
+        { time: &#39;2019-04-29&#39;, value: 181.89 }
+      ]
+    }
+  ],
+  options: {
+    crosshair: {
+      vertLine: {
+        color: &#39;#4d4d4d&#39;,
+        width: 0.5,
+        style: 1,
+        visible: true,
+        labelVisible: false,
+      },
+      horzLine: {
+        color: &#39;#4d4d4d&#39;,
+        width: 1.5,
+        style: 0,
+        visible: true,
+        labelVisible: true,
+      }
+    }
+  }
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><p>To customize options at the series level, pass the options to each series using <code>seriesOptions</code>. Learn more about chart options from <a href="https://github.com/tradingview/lightweight-charts/blob/b58f2c3e7f539db5baab660bc50842367f5ed4fb/docs/series-basics.md">Lightweight Chart Series Basic</a>.</p>
+<p>For example, in <code>lightweight-chart</code>, you can pass options to set preferred decimal places on the y-axis.</p>
+<pre><code class="language-json">{
+  priceFormat: {
+    precision: 3,
+  },
+}
+</code></pre>
+<p>In <code>ef-interactive-chart</code>, you pass options to <code>seriesOptions</code> in the <code>series</code>.</p>
+<pre><code class="language-javascript">chart.config = {
+  options: { ... },
+  series: [
+  {
+    symbol: &#39;Price&#39;,
+    type: &#39;area&#39;,
+      seriesOptions: {
+        priceFormat: {
+            precision: 3
+        }
+      }
+  }]
+}
+</code></pre>
+<code-sandbox hash="7aab1cf0"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chart = document.getElementById(&#39;price&#39;);
+
+chart.config = {
+  series: [
+    {
+      symbol: &#39;Price&#39;,
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 180.01 },
+        { time: &#39;2019-04-12&#39;, value: 156.63 },
+        { time: &#39;2019-04-13&#39;, value: 166.64 },
+        { time: &#39;2019-04-14&#39;, value: 181.89 },
+        { time: &#39;2019-04-15&#39;, value: 174.43 },
+        { time: &#39;2019-04-16&#39;, value: 180.01 },
+        { time: &#39;2019-04-17&#39;, value: 196.63 },
+        { time: &#39;2019-04-18&#39;, value: 176.64 },
+        { time: &#39;2019-04-20&#39;, value: 181.89 },
+        { time: &#39;2019-04-21&#39;, value: 190.01 },
+        { time: &#39;2019-04-22&#39;, value: 196.63 },
+        { time: &#39;2019-04-23&#39;, value: 178.64 },
+        { time: &#39;2019-04-24&#39;, value: 141.89 },
+        { time: &#39;2019-04-25&#39;, value: 154.43 },
+        { time: &#39;2019-04-26&#39;, value: 170.01 },
+        { time: &#39;2019-04-27&#39;, value: 196.63 },
+        { time: &#39;2019-04-28&#39;, value: 176.64 },
+        { time: &#39;2019-04-29&#39;, value: 181.89 }
+      ],
+      seriesOptions: {
+        priceFormat: {
+            precision: 3
+        }
+      }
+    }
+  ]
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><h3 id="y-axis-placement">Y-Axis placement</h3>
+<p>By default, chart will not display a left-side y-axis and all series will show on the right y-axis of the chart. However, <code>lightweight-chart</code> also provides the option to configure placement of a series to the left, right or both.</p>
+<p>Customizing chart to show data on the left y-axis.</p>
+<pre><code class="language-json">chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: false
+    },
+    leftPriceScale: {
+      visible: true
+    },
+  },
+  series: [{
+    symbol: &#39;Price&#39;,
+    type: &#39;area&#39;,
+    seriesOptions: {
+      priceScaleId: &#39;left&#39;
+    },
+    data: [...]
+  }]
+};
+</code></pre>
+<code-sandbox hash="6048e174"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chart = document.getElementById(&#39;price&#39;);
+
+chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: false
+    },
+    leftPriceScale: {
+      visible: true
+    },
+  },
+  series: [
+    {
+      symbol: &#39;Price&#39;,
+      type: &#39;area&#39;,
+      seriesOptions: {
+        priceScaleId: &#39;left&#39;
+      },
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 180.01 },
+        { time: &#39;2019-04-12&#39;, value: 156.63 },
+        { time: &#39;2019-04-13&#39;, value: 166.64 },
+        { time: &#39;2019-04-14&#39;, value: 181.89 },
+        { time: &#39;2019-04-15&#39;, value: 174.43 },
+        { time: &#39;2019-04-16&#39;, value: 180.01 },
+        { time: &#39;2019-04-17&#39;, value: 196.63 },
+        { time: &#39;2019-04-18&#39;, value: 176.64 },
+        { time: &#39;2019-04-20&#39;, value: 181.89 },
+        { time: &#39;2019-04-21&#39;, value: 190.01 },
+        { time: &#39;2019-04-22&#39;, value: 196.63 },
+        { time: &#39;2019-04-23&#39;, value: 178.64 },
+        { time: &#39;2019-04-24&#39;, value: 141.89 },
+        { time: &#39;2019-04-25&#39;, value: 154.43 },
+        { time: &#39;2019-04-26&#39;, value: 170.01 },
+        { time: &#39;2019-04-27&#39;, value: 196.63 },
+        { time: &#39;2019-04-28&#39;, value: 176.64 },
+        { time: &#39;2019-04-29&#39;, value: 181.89 }
+      ]
+    }
+  ]
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><p>Customizing chart to show data on the left and right sides of the y-axis.</p>
+<pre><code class="language-json">chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: true
+    },
+    leftPriceScale: {
+      visible: true
+    },
+  },
+  series: [{
+    symbol: &#39;IBM.N&#39;,
+    type: &#39;area&#39;,
+    seriesOptions: {
+      priceScaleId: &#39;right&#39;
+    },
+    data: [...]
+  },
+  {
+    symbol: &#39;GOOG.O&#39;,
+    type: &#39;area&#39;,
+    seriesOptions: {
+      priceScaleId: &#39;left&#39;
+    },
+    data: [...]
+  }]
+};
+</code></pre>
+<code-sandbox hash="40bb1b66"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chart = document.getElementById(&#39;price&#39;);
+
+chart.config = {
+  options: {
+    rightPriceScale: {
+      visible: true
+    },
+    leftPriceScale: {
+      visible: true
+    },
+  },
+  series: [
+    {
+      symbol: &#39;IBM.N&#39;,
+      type: &#39;area&#39;,
+      seriesOptions: {
+        priceScaleId: &#39;right&#39;
+      },
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 280.01 },
+        { time: &#39;2019-04-12&#39;, value: 186.63 },
+        { time: &#39;2019-04-13&#39;, value: 366.64 },
+        { time: &#39;2019-04-14&#39;, value: 381.89 },
+        { time: &#39;2019-04-15&#39;, value: 374.43 },
+        { time: &#39;2019-04-16&#39;, value: 240.01 },
+        { time: &#39;2019-04-17&#39;, value: 276.63 },
+        { time: &#39;2019-04-18&#39;, value: 286.64 },
+        { time: &#39;2019-04-20&#39;, value: 301.89 },
+        { time: &#39;2019-04-21&#39;, value: 290.01 },
+        { time: &#39;2019-04-22&#39;, value: 296.63 },
+        { time: &#39;2019-04-23&#39;, value: 278.64 },
+        { time: &#39;2019-04-24&#39;, value: 341.89 },
+        { time: &#39;2019-04-25&#39;, value: 354.43 },
+        { time: &#39;2019-04-26&#39;, value: 370.01 },
+        { time: &#39;2019-04-27&#39;, value: 296.63 },
+        { time: &#39;2019-04-28&#39;, value: 276.64 },
+        { time: &#39;2019-04-29&#39;, value: 181.89 }
+      ]
+    },
+    {
+      symbol: &#39;GOOG.O&#39;,
+      type: &#39;area&#39;,
+      seriesOptions: {
+        priceScaleId: &#39;left&#39;
+      },
+      data: [
+        { time: &#39;2019-04-11&#39;, value: 180.01 },
+        { time: &#39;2019-04-12&#39;, value: 156.63 },
+        { time: &#39;2019-04-13&#39;, value: 166.64 },
+        { time: &#39;2019-04-14&#39;, value: 181.89 },
+        { time: &#39;2019-04-15&#39;, value: 174.43 },
+        { time: &#39;2019-04-16&#39;, value: 180.01 },
+        { time: &#39;2019-04-17&#39;, value: 196.63 },
+        { time: &#39;2019-04-18&#39;, value: 176.64 },
+        { time: &#39;2019-04-20&#39;, value: 181.89 },
+        { time: &#39;2019-04-21&#39;, value: 190.01 },
+        { time: &#39;2019-04-22&#39;, value: 196.63 },
+        { time: &#39;2019-04-23&#39;, value: 178.64 },
+        { time: &#39;2019-04-24&#39;, value: 141.89 },
+        { time: &#39;2019-04-25&#39;, value: 154.43 },
+        { time: &#39;2019-04-26&#39;, value: 170.01 },
+        { time: &#39;2019-04-27&#39;, value: 196.63 },
+        { time: &#39;2019-04-28&#39;, value: 176.64 },
+        { time: &#39;2019-04-29&#39;, value: 181.89 }
+      ]
+    }
+  ]
+};
+</code></pre>
+<pre><code class="language-css">ef-interactive-chart {
+  width: 100%;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;price&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><h3 id="chart-legend">Chart legend</h3>
+<p>The interactive chart provides a default standard legend which displays price and symbol, if available.</p>
+<p>In case you want to preserve the value of <code>symbol</code> and show a custom name on the legend, use <code>symbolName</code> alongside <code>symbol</code>. The chart will use <code>symbolName</code> in the legend, instead.</p>
+<pre><code class="language-javascript">line.config = {
+  series: [
+    {
+      symbol: &#39;APPL.O&#39;,
+      symbolName: &#39;Price&#39;,
+      type: &#39;line&#39;,
+      data: [...]
+    }
+  ]
+};
+</code></pre>
+<p>By default, chart will display a raw value that passes from the data object in the legend. If you want to override the default formatting of the price, you can set your own formatter function to <code>legendPriceFormatter</code> in a series configuration object to override price format on the legend.</p>
+<p>For example, here&#39;s how you can format price to show three decimal places on the legend.</p>
+<pre><code class="language-javascript">chart.config = {
+  series: [
+    {
+      symbol: &#39;AAPL&#39;,
+      legendPriceFormatter: (price) =&gt; &#39;£&#39; + price.toFixed(3),
+      type: &#39;area&#39;,
+      data: [...],
+    }
+  ]
+};
+</code></pre>
+<code-sandbox hash="d634f6d4"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chart = document.getElementById(&#39;legend_formatter&#39;);
+
+chart.config = {
+  series: [
+    {
+      legendPriceFormatter: (price) =&gt; &#39;£&#39; + price.toFixed(3),
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2018-12-22&#39;, value: 32.51 },
+        { time: &#39;2018-12-23&#39;, value: 31.11 },
+        { time: &#39;2018-12-24&#39;, value: 27.02 },
+        { time: &#39;2018-12-25&#39;, value: 27.32 },
+        { time: &#39;2018-12-26&#39;, value: 25.17 },
+        { time: &#39;2018-12-27&#39;, value: 28.89 },
+        { time: &#39;2018-12-28&#39;, value: 25.46 },
+        { time: &#39;2018-12-29&#39;, value: 23.92 },
+        { time: &#39;2018-12-30&#39;, value: 22.68 },
+        { time: &#39;2018-12-31&#39;, value: 22.67 }
+      ],
+      seriesOptions: {
+        priceFormat: {
+          type: &#39;custom&#39;,
+          formatter: (price) =&gt; &#39;£&#39; + price.toFixed(3)
+        }
+      }
+    }
+  ]
+};
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;legend_formatter&quot;&gt;&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><h3 id="custom-legend">Custom legend</h3>
+<p>You can implement your own legend using the <code>legend</code> slot.</p>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;line&quot; legend&gt;
+  &lt;div slot=&quot;legend&quot; id=&quot;chart-legend&quot;&gt;&lt;/div&gt;
+&lt;/ef-interactive-chart&gt;
+</code></pre>
+<pre><code class="language-javascript">const el = document.getElementById(&#39;line&#39;);
+const legend = document.getElementById(&#39;chart-legend&#39;);
+
+el.addEventListener(&#39;initialized&#39;, (e) =&gt; {
+  const chart = e.target.chart; // lightweight chart instance
+  const seriesList = e.target.seriesList;
+  const data = e.target.config.series[0].data;
+
+  chart.subscribeCrosshairMove((param) =&gt; {
+    const price = param.seriesPrices.get(seriesList[0]); // get price at crosshair
+    if (price) {
+      legend.textContent = price; // set price to legend
+      // more legend customization goes here
+    }
+  });
+  // set legend to show latest data when no crosshair
+  legend.textContent = data[data.length - 1].value;
+});
+</code></pre>
+<p>Custom legend can also be used to implement a custom tooltip.</p>
+<code-sandbox hash="b3365a83"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/interactive-chart?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;interactive-chart&#39;);
+
+const chartEl = document.getElementById(&#39;line&#39;);
+
+chartEl.config = {
+  series: [
+    {
+      symbol: &#39;AAPL&#39;,
+      type: &#39;area&#39;,
+      data: [
+        { time: &#39;2018-12-22&#39;, value: 32.51 },
+        { time: &#39;2018-12-23&#39;, value: 31.11 },
+        { time: &#39;2018-12-24&#39;, value: 27.02 },
+        { time: &#39;2018-12-25&#39;, value: 27.32 },
+        { time: &#39;2018-12-26&#39;, value: 25.17 },
+        { time: &#39;2018-12-27&#39;, value: 28.89 },
+        { time: &#39;2018-12-28&#39;, value: 25.46 },
+        { time: &#39;2018-12-29&#39;, value: 23.92 },
+        { time: &#39;2018-12-30&#39;, value: 22.68 },
+        { time: &#39;2018-12-31&#39;, value: 22.67 }
+      ]
+    }
+  ]
+};
+
+chartEl.addEventListener(&#39;initialized&#39;, (event) =&gt; {
+  const chart = event.target.chart;
+  const seriesList = event.target.seriesList;
+  const legend = document.getElementById(&#39;custom-legend&#39;);
+
+  chart.subscribeCrosshairMove((param) =&gt; {
+    if (param.point === undefined || !param.time || param.point.x &lt; 0 || param.point.x &gt; event.target.clientWidth || param.point.y &lt; 0 || param.point.y &gt; event.target.clientHeight) {
+      legend.style.display = &#39;none&#39;;
+    }
+    else {
+      const legendWidth = 60;
+      const legendHeight = 30;
+      const legendMargin = 10;
+      const y = param.point.y;
+      let left = param.point.x + legendMargin;
+      let top = y + legendMargin;
+
+      if (left &gt; event.target.clientWidth - legendWidth) {
+        left = param.point.x - legendMargin - legendWidth;
+      }
+
+      if (top &gt; event.target.clientHeight - legendHeight) {
+        top = y - legendHeight - legendMargin;
+      }
+
+      legend.style.zIndex = 1000;
+      legend.style.left = left + &#39;px&#39;;
+      legend.style.top = top + &#39;px&#39;;
+      legend.style.display = &#39;flex&#39;;
+      legend.style.alignItems = &#39;center&#39;;
+      legend.style.justifyContent = &#39;center&#39;;
+      legend.style.position = &#39;absolute&#39;;
+      legend.style.width = legendWidth + &#39;px&#39;;
+      legend.style.height = legendHeight + &#39;px&#39;;
+      legend.style.backgroundColor = &#39;rgba(255, 255, 255, 0.9)&#39;;
+      legend.style.border = &#39;solid 1px rgb(0,0,0)&#39;;
+      legend.style.color = &#39;rgb(0,0,0)&#39;;
+      legend.textContent = param.seriesPrices.get(seriesList[0]);
+    }
+  });
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-interactive-chart id=&quot;line&quot;&gt;
+  &lt;div slot=&quot;legend&quot; id=&quot;custom-legend&quot;&gt;
+  &lt;/div&gt;
+&lt;/ef-interactive-chart&gt;
+</code></pre>
+</code-sandbox><h3 id="lightweight-charts-instance">Lightweight Charts instance</h3>
+<p>An instance of lightweight chart can be accessed using the <code>chart</code> and <code>seriesList</code> properties.</p>
+<pre><code class="language-javascript">  const el = document.getElementById(&quot;line&quot;);
+  console.log(&#39;instance chart&#39;, el.chart); // instance of lightweight chart
+  console.log(&#39;instance series&#39;, el.seriesList); // array of series instances
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>config</code></td>
+<td><code>config</code></td>
+<td><code>InteractiveChartConfig</code></td>
+<td>null</td>
+<td>Chart configurations for init chart</td>
+</tr>
+<tr>
+<td><code>disabledJumpButton</code></td>
+<td><code>disabled-jump-button</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Hide jump to latest data button</td>
+</tr>
+<tr>
+<td><code>disabledLegend</code></td>
+<td><code>disabled-legend</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Hide legend</td>
+</tr>
+<tr>
+<td><code>legendStyle</code></td>
+<td><code>legend-style</code></td>
+<td><code>&quot;vertical&quot; | &quot;horizontal&quot;</code></td>
+<td>&quot;vertical&quot;</td>
+<td>Set legend style i.e. <code>horizontal</code>, <code>vertical</code>.</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>colors</code></td>
+<td><code>(): object</code></td>
+<td>List of available chart colors from the theme.</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>initialized</code></td>
+<td>Dispatched when chart is initialized</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>legend</code></td>
+<td>Slot to use for implementing custom legend.</td>
+</tr>
+</tbody></table>

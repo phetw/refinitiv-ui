@@ -1,0 +1,225 @@
+<div style="float:right">
+  <a href="https://angular.io/" target="_blank">angular.io</a>
+</div>
+
+<h1 id="angular-guide">Angular Guide</h1>
+<aside class="info"><p>This guideline uses Angular&#39;s seed project and Angular CLI v12.0.5</p>
+</aside><p>Install Angular CLI.</p>
+<pre><code class="language-sh">npm install -g @angular/cli
+</code></pre>
+<h3 id="initialize-your-project">Initialize your project</h3>
+<p>Create new Angular application using the <code>ng new</code> command.</p>
+<pre><code class="language-sh">ng new my-app &amp;&amp; cd my-app
+</code></pre>
+<p>Once your app has been created you should be able to serve your application.</p>
+<pre><code class="language-sh">npm start
+</code></pre>
+<h3 id="using-web-components-in-angular">Using web components in Angular</h3>
+<p>First off we need to import the <code>CUSTOM_ELEMENTS_SCHEMA</code> from <code>@angular/core</code> and inject it into the <code>schemas</code> property of our AppModule definition. This property will allow non-Angular elements named with dash case like custom elements to be used in Angular&#39;s template.</p>
+<p>Make the following changes to <code>./src/app/app.module.ts</code>.</p>
+<pre><code class="language-diff">-import { NgModule } from &#39;@angular/core&#39;;
++import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from &#39;@angular/core&#39;;
+ import { BrowserModule } from &#39;@angular/platform-browser&#39;;
+
+ import { AppComponent } from &#39;./app.component&#39;;
+
+ @NgModule({
+   declarations: [
+     AppComponent
+   ],
+   imports: [
+     BrowserModule
+   ],
+   providers: [],
+-  bootstrap: [AppComponent]
++  bootstrap: [AppComponent],
++  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+ })
+
+ export class AppModule { }
+</code></pre>
+<h3 id="install-ef-elements">Install EF elements</h3>
+<p>EF elements need their class definition and theme to be installed before they can be used.</p>
+<p>Install elements and themes.</p>
+<pre><code class="language-sh">npm install @refinitiv-ui/elements
+npm install @refinitiv-ui/halo-theme
+</code></pre>
+<p>Import the elements and themes into your app, <code>src/app/app.component.ts</code></p>
+<pre><code class="language-javascript">import &#39;@refinitiv-ui/elements/lib/loader&#39;;
+import &#39;@refinitiv-ui/elements/lib/button&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
+
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/loader/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+</code></pre>
+<p>At this stage EF elements should be ready to use!. You can use them like any other native HTML elements.</p>
+<h3 id="create-a-login-page">Create a login page</h3>
+<p>We need to use <code>ngDefaultControl</code> directive so Angular&#39;s Forms can be used with custom elements such as <code>ef-text-field</code>.</p>
+<p>Import <code>ReactiveFormsModule</code> in <code>src/app/app.module.ts</code>.</p>
+<pre><code class="language-diff"> import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from &#39;@angular/core&#39;;
+ import { BrowserModule } from &#39;@angular/platform-browser&#39;;
++import { ReactiveFormsModule } from &#39;@angular/forms&#39;;
+
+...
+...
+
+@NgModule({
+  declarations: [
+    AppComponent
+  ],
+  imports: [
+    BrowserModule,
++   ReactiveFormsModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+})
+</code></pre>
+<p>Define the view template by replacing the contents in <code>src/app/app.component.html</code> with the following.</p>
+<pre><code class="language-html">&lt;ef-panel id=&quot;login-page&quot; [formGroup]=&quot;loginForm&quot; spacing&gt;
+  &lt;ef-loader *ngIf=&quot;loading&quot;&gt;&lt;/ef-loader&gt;
+
+  &lt;ng-container *ngIf=&quot;!loading&quot;&gt;
+    &lt;h1&gt;{{ title }}&lt;/h1&gt;
+    &lt;ef-text-field
+      formControlName=&quot;username&quot;
+      placeholder=&quot;Username&quot;
+      ngDefaultControl
+    &gt;
+    &lt;/ef-text-field&gt;
+    &lt;ef-password-field
+      formControlName=&quot;password&quot;
+      placeholder=&quot;Password&quot;
+      ngDefaultControl
+    &gt;
+    &lt;/ef-password-field&gt;
+    &lt;div id=&quot;button-group&quot;&gt;
+      &lt;ef-button (click)=&quot;login()&quot;
+        [disabled]=&quot;!loginForm.valid&quot;
+      &gt;Login&lt;/ef-button &gt;
+      &lt;ef-button&gt;Cancel&lt;/ef-button&gt;
+    &lt;/div&gt;
+  &lt;/ng-container&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+<p>Add styling into <code>src/app/app.component.css</code></p>
+<pre><code class="language-css">#login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 450px;
+  height: 200px;
+  margin: 40px auto;
+}
+
+#button-group {
+  margin: 10px 0;
+}
+</code></pre>
+<p>Now, we need to add logic to make login page works by updating <code>src/app/app.component.ts</code>.</p>
+<pre><code class="language-javascript">import { Component } from &#39;@angular/core&#39;;
+import { timer } from &#39;rxjs&#39;
+import { finalize } from &#39;rxjs/operators&#39;
+import { FormBuilder, Validators, AbstractControl } from &#39;@angular/forms&#39;;
+
+import &#39;@refinitiv-ui/elements/lib/loader&#39;;
+import &#39;@refinitiv-ui/elements/lib/button&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
+
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/loader/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+
+const DEFAULT_TITLE = &#39;Hello!&#39;;
+
+@Component({
+  selector: &#39;app-root&#39;,
+  templateUrl: &#39;./app.component.html&#39;,
+  styleUrls: [&#39;./app.component.css&#39;]
+})
+export class AppComponent {
+  public loading: boolean = false;
+  public title: string = DEFAULT_TITLE;
+  public loginForm = this.formbuilder.group({
+    username: [&#39;&#39;, Validators.required],
+    password: [&#39;&#39;, Validators.required]
+  });
+
+  constructor(private formbuilder: FormBuilder) { }
+
+  get username(): AbstractControl {
+    return this.loginForm.value[&#39;username&#39;];
+  }
+
+  get password(): AbstractControl {
+    return this.loginForm.value[&#39;password&#39;];
+  }
+
+  login(): void {
+    this.loading = true;
+
+    timer(2000).pipe(
+      finalize(() =&gt; { this.loading = false }),
+    ).subscribe(() =&gt; {
+      this.title = &#39;Done!&#39;;
+      this.loginForm.reset();
+    })
+  }
+}
+</code></pre>
+<p>Serve your application.</p>
+<pre><code class="language-sh">npm start
+</code></pre>
+<h3 id="using-ef-with-angulars-form">Using EF with Angular&#39;s form</h3>
+<p>Using third-party form control elements with Angular&#39;s forms API requires <a href="https://angular.io/api/forms/ControlValueAccessor">ControlValueAccessor</a> which acts as a bridge that synchronizes the data between one and another. <code>ControlValueAccessor</code> already covers all the standard native <code>input</code> tags, but not for custom tags like EF components.</p>
+<p>However, for element such as <code>ef-text-field</code>, <code>coral-search-field</code> and <code>ef-password-field&gt;</code> that has similar behavior to native <code>input[type=text]</code>, you can use <a href="https://angular.io/api/forms/DefaultValueAccessor">DefaultValueAccessor</a> directive (<code>ngDefaultControl</code>).</p>
+<pre><code class="language-html">&lt;ef-text-field formControlName=&quot;...&quot; ngDefaultControl&gt;
+&lt;/ef-text-field&gt;
+</code></pre>
+<p>For elements which need to have its own <code>ControlValueAccessor</code> implementation in order to work correctly. Implementation varies depending on element&#39;s API and use cases.</p>
+<pre><code class="language-ts">@Directive({
+  selector: &#39;[ef-number-field]&#39;,
+  providers: [
+    {
+      provide: NG_VALUE_ACCESSOR,
+      useExisting: forwardRef(() =&gt; NumberFieldValueAccessor),
+      multi: true
+    }
+  ]
+})
+export class NumberFieldValueAccessor implements ControlValueAccessor {
+  onChange = () =&gt; {};
+  onTouched = () =&gt; {};
+
+  writeValue (value: string): void { ... }
+  registerOnChange (fn: any): void { ... }
+  registerOnTouched (fn: any): void { ... }
+
+  setDisabledState (isDisabled: boolean): void { ... }
+
+  // listens to value-changed event from number-field, then update the value
+  @HostListener(&#39;value-changed&#39;, [&#39;$event.detail&#39;])
+  listenForValueChange ({ value }) {
+    this.value = value;
+  }
+</code></pre>
+<h3 id="additional-type-definition">Additional type definition</h3>
+<p>Some EF elements supports i18N features. It uses <a href="https://formatjs.io/">FormatJS</a> library and some of thier modules are using features that available in new Javascript version. If you see any errors related to @formatjs during project compilation, you may need to add <code>esnext.intl</code> into <code>lib</code> section in <code>tsconfig.json</code> file.</p>
+<pre><code class="language-diff">&quot;lib&quot;: [
+  &quot;es2018&quot;,
++ &quot;esnext.intl&quot;
+  &quot;dom&quot;
+]
+</code></pre>

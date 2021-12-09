@@ -1,0 +1,193 @@
+<h1 id="icon">Icon</h1>
+<code-sandbox hash="9686e02d"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/icon?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;icon&#39;);
+</code></pre>
+<pre><code class="language-css">ef-icon {
+  font-size: 24px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-icon icon=&quot;tick&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon icon=&quot;search&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon icon=&quot;word&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon icon=&quot;excel&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon id=&quot;powerpoint&quot; src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/buzz.svg&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon id=&quot;pdf&quot; src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/chart-area.svg&quot;&gt;&lt;/ef-icon&gt;
+</code></pre>
+</code-sandbox><p>Icons are provided as part of a theme. Icons also support pointing to urls of svg files. The size and coloring of icons can be changed using standard CSS.</p>
+<h3 id="usage">Usage</h3>
+<p>You can set an icon&#39;s name using the <code>ef-icon</code> attribute. Alternatively, you can set the url of an svg icon file using the <code>src</code> attribute.</p>
+<pre><code class="language-html">&lt;ef-icon icon=&quot;tick&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon icon=&quot;search&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon icon=&quot;save&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon id=&quot;filter&quot; src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/filter.svg&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon id=&quot;favorites&quot; src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/favorites.svg&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon id=&quot;help&quot; src=&quot;https://cdn.refinitiv.com/public/libs/elf/assets/elf-theme-halo/resources/icons/help.svg&quot;&gt;&lt;/ef-icon&gt;
+</code></pre>
+<h3 id="changing-size-and-color">Changing size and color</h3>
+<p>The size and color of an icon can be changed using standard CSS styling.</p>
+<pre><code class="language-css">[icon=flag-2].small {
+  color: #309054;
+  font-size: 12px;
+}
+[icon=flag-2].medium {
+  color: #309054;
+  font-size: 16px;
+}
+[icon=flag-2].large {
+  color: #309054;
+  font-size: 24px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-icon class=&quot;small&quot; icon=&quot;flag-2&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon class=&quot;medium&quot; icon=&quot;flag-2&quot;&gt;&lt;/ef-icon&gt;
+&lt;ef-icon class=&quot;large&quot; icon=&quot;flag-2&quot;&gt;&lt;/ef-icon&gt;
+</code></pre>
+<h3 id="icon-preloading">Icon preloading</h3>
+<p><code>ef-icon</code> has a helper function to preload a set of icons. Icons can be loaded faster if you have a known set of icons for use in the app.</p>
+<p>Preloading icons will be deferred until the first <code>ef-icon</code> component is created.</p>
+<pre><code class="language-javascript">import { preload } from &#39;@refinitiv-ui/elements/lib/icon&#39;;
+
+// preload function supports both icon name or svg location, either single icon or multiple.
+preload(&#39;eye&#39;);
+preload(&#39;https://cdn.io/eye.svg&#39;);
+preload(&#39;eye&#39;, &#39;heart&#39;, &#39;like&#39;, &#39;arrow-up&#39;);
+preload(
+  &#39;https://cdn.io/eye.svg&#39;,
+  &#39;https://cdn.io/heart.svg&#39;,
+  &#39;https://cdn.io/like.svg&#39;,
+  &#39;https://cdn.io/arrow-up.svg&#39;
+);
+</code></pre>
+<h3 id="icon-list">Icon list</h3>
+<p>Below is a list of available icons in the Halo theme. You can use them with the <code>ef-icon</code> or with elements that provide the <code>icon</code> attribute/property e.g. <code>ef-button</code>.</p>
+<code-sandbox hash="e239f728"><pre><code class="language-css">.item {
+  width: 52px;
+  text-align: center;
+  padding: 7px;
+}
+.item:hover {
+  transition: background-color 0.3s cubic-bezier(0.075, 0.82, 0.165, 1);
+  background-color: #dddfe4;
+}
+.icon-name {
+  padding-top: 5px;
+  font-size: 14px;
+}
+#content {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+}
+.no-content {
+  justify-content: center;
+  align-items: center;
+  color: #8a8a96;
+  background-color: #fdfdfd;
+}
+ef-icon {
+  font-size: 26px;
+}
+#loader-content {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 20px 0;
+}
+#loader-content .item {
+  height: 73px;
+  width: 73px;
+  margin: 3px;
+  background-color: #f3f3f3;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div id=&quot;loader-content&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;content&quot;&gt;&lt;/div&gt;
+</code></pre>
+<pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/icon?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;icon&#39;);
+
+const ICON_URL = &#39;https://cdn.refinitiv.com/public/libs/elf/info.json&#39;;
+const content = document.getElementById(&#39;content&#39;);
+const theme = &#39;halo&#39;;
+
+const displayIcons = data =&gt; {
+  let iconList = [];
+
+  if (data) {
+    if (!data || !data[theme] || !data[theme].icon || !data[theme].icon.length) {
+      content.classList.add(&#39;no-content&#39;);
+      content.innerHTML = &#39;No icon to display&#39;;
+    }
+    else {
+      iconList = data[theme].icon;
+    }
+  }
+
+  for (let i = 0; i &lt; iconList.length; i += 1) {
+    const name = iconList[i].name;
+    const item = document.createElement(&#39;div&#39;);
+    item.classList.add(&#39;item&#39;);
+
+    const icon = document.createElement(&#39;ef-icon&#39;);
+    icon.setAttribute(&#39;icon&#39;, name);
+
+    const iconName = document.createElement(&#39;div&#39;);
+    iconName.classList.add(&#39;icon-name&#39;);
+    iconName.textContent = name;
+
+    item.appendChild(icon);
+    item.appendChild(iconName);
+
+    content.appendChild(item);
+  }
+
+  const loader = document.getElementById(&#39;loader-content&#39;);
+  loader.parentNode.removeChild(loader);
+}
+
+const displayLoader = () =&gt; {
+  const loader = document.getElementById(&#39;loader-content&#39;);
+  for (let i = 0; i &lt; 54; i += 1) {
+    const item = document.createElement(&#39;div&#39;);
+    item.classList.add(&#39;item&#39;);
+    loader.appendChild(item);
+  }
+}
+
+displayLoader();
+
+await fetch(ICON_URL)
+  .then(response =&gt; response.json())
+  .then(data =&gt; displayIcons(data));
+</code></pre>
+</code-sandbox><link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Name of a known icon to render or URL of SVG icon.</td>
+</tr>
+<tr>
+<td><code>src</code></td>
+<td><code>src</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Src location of an svg icon.</td>
+</tr>
+</tbody></table>

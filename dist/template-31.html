@@ -1,0 +1,214 @@
+<h1 id="list">List</h1>
+<code-sandbox hash="1e96f6a2"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/list?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;list&#39;);
+const makeData = () =&gt; {
+  return Array(1000).fill(0).map((_, i) =&gt; {
+    return {
+      type: i % 10 === 0 ? &#39;header&#39; : &#39;item&#39;,
+      label: i % 10 === 0 ? i + &#39;\&#39;s&#39; : &#39;Item number &#39; + i,
+      value: i.toString(),
+      disabled: i % 10 === 7,
+      hidden: i % 10 === 9
+    };
+  });
+};
+document.querySelector(&#39;ef-list&#39;).data = makeData();
+</code></pre>
+<pre><code class="language-css">ef-list {
+  max-height: 200px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-list&gt;&lt;/ef-list&gt;
+</code></pre>
+</code-sandbox><p>Renders a collection of data items and provides single and multiple selection modes.</p>
+<h3 id="usage">Usage</h3>
+<p>The easiest way to populate the list is to pass an array of data items to <code>data</code> property. Items must adhere to the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/utils/src/collection/data-item.ts">DataItem</a> interface.</p>
+<pre><code class="language-javascript">const el = document.querySelector(&#39;ef-list&#39;);
+const data = [
+  { label: &#39;Item One&#39;, value: &#39;1&#39; },
+  { label: &#39;Item Two&#39;, value: &#39;2&#39; },
+  { label: &#39;Item Three&#39;, value: &#39;3&#39; }
+];
+
+el.data = data;
+</code></pre>
+<h3 id="data-property-interface">Data property interface</h3>
+<p>The <code>data</code> property of the <code>ef-list</code> use the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/list/helpers/types.ts">ListData</a> interface for its data items.</p>
+<h3 id="using-a-composer-to-set-and-manage-data">Using a composer to set and manage data</h3>
+<p>Setting data using a <a href="./resources/collection-composer">CollectionComposer</a> can be useful when data needs to be managed externally.</p>
+<pre><code class="language-javascript">import { CollectionComposer } from &#39;@refinitiv-ui/utils&#39;;
+
+const el = document.querySelector(&#39;ef-list&#39;);
+
+const data = [
+  { label: &#39;Item One&#39;, value: &#39;1&#39; },
+  { label: &#39;Item Two&#39;, value: &#39;2&#39; },
+  { label: &#39;Item Three&#39;, value: &#39;3&#39; }
+];
+const composer = new CollectionComposer(data);
+
+el.data = composer;
+</code></pre>
+<h3 id="default-renderer">Default renderer</h3>
+<p>By default, the list renders items using <a href="./elements/item">Item</a> and therefore can be controlled by passing data of type <code>ItemData</code>.</p>
+<h3 id="extending-the-default-renderer">Extending the default renderer</h3>
+<p>Extending the default renderer is the easiest way to display custom content, while retaining all of the default selection states and item types.</p>
+<aside class="important"><p>Renders are currently being upgraded and should only be used for testing purposes.</p>
+</aside><pre><code class="language-javascript">import { List, DefaultRenderer } from &#39;@refinitiv-ui/list&#39;;
+
+const el = document.querySelector(&#39;ef-list&#39;);
+const defaultRenderer = new DefaultRenderer(el);
+
+el.renderer = (item, composer, element) =&gt; {
+  const el = defaultRenderer.apply(this, arguments);
+  // do something extra
+  return el;
+};
+</code></pre>
+<h3 id="creating-a-fully-custom-renderer">Creating a fully custom renderer</h3>
+<p>Creating a fully custom renderer gives you ultimate flexibility, however, you will have to manually handle all of the different item states.</p>
+<pre><code class="language-javascript">const el = document.querySelector(&#39;ef-list&#39;);
+
+el.renderer = (item, composer, element) =&gt; {
+
+  // Reuse/create element for rendering content
+  const el = element || document.createElement(&#39;div&#39;);
+
+  // Setup the element if it hasn&#39;t already been created
+  if (!element) {
+    el.appendChild(document.createElement(&#39;div&#39;)).textContent = item.label;
+    el.appendChild(document.createElement(&#39;ef-sparkline&#39;)).data = getLineData(item.value);
+  }
+
+  // Get element states
+  // These values should be retrieved from the composer, as they can change.
+  const selected = composer.getItemPropertyValue(item, &#39;selected&#39;) === true;
+  const disabled = composer.getItemPropertyValue(item, &#39;disabled&#39;) === true;
+
+  // Update the element states
+  el.selected = selected;
+  el.disabled = disabled;
+
+  return el;
+
+};
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>ListData</code></td>
+<td>null</td>
+<td>The data object, used to render the list.</td>
+</tr>
+<tr>
+<td><code>delegatesFocus (readonly)</code></td>
+<td></td>
+<td><code>false</code></td>
+<td>false</td>
+<td>Element focus delegation.<br />Set to <code>false</code> and relies on native focusing.</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td><code>multiple</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Allow multiple selections</td>
+</tr>
+<tr>
+<td><code>renderer</code></td>
+<td></td>
+<td><code>ListRenderer</code></td>
+<td>&quot;new ListRenderer(this)&quot;</td>
+<td>Renderer used to render list item elements</td>
+</tr>
+<tr>
+<td><code>stateless</code></td>
+<td><code>stateless</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disable selections</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Returns the first selected item value.<br />Use <code>values</code> when multiple selection mode is enabled.</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Returns a values collection of the currently<br />selected item values</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>down</code></td>
+<td><code>(): void</code></td>
+<td>Navigate down through the list items</td>
+</tr>
+<tr>
+<td><code>first</code></td>
+<td><code>(): void</code></td>
+<td>Navigate to first focusable item of the list</td>
+</tr>
+<tr>
+<td><code>last</code></td>
+<td><code>(): void</code></td>
+<td>Navigate to first focusable item of the list</td>
+</tr>
+<tr>
+<td><code>scrollToItem</code></td>
+<td><code>(item: T): void</code></td>
+<td>Scroll to list item element<br /><br /><strong>item</strong>: Data item to scroll to</td>
+</tr>
+<tr>
+<td><code>selectItem</code></td>
+<td><code>(item?: any): boolean</code></td>
+<td>Selects an item in the list<br /><br /><strong>item</strong>: Data Item or Item Element</td>
+</tr>
+<tr>
+<td><code>up</code></td>
+<td><code>(): void</code></td>
+<td>Navigate up through the list items</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

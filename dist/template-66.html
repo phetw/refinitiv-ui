@@ -1,0 +1,38 @@
+<h1 id="browser-support">Browser Support</h1>
+<p>EF elements are built as web components and are natively supported in Chrome, Firefox, Chromium Edge and Safari (including iOS). For browsers without native support, a small polyfill can be applied with little performance overhead.</p>
+<p>CSS styles of elements are prefixed to work across browsers. The elements are published with ES2015 syntax which is already supported in all modern browsers. You will need to transpile element code to ES5 only if you need to support IE11.</p>
+<table>
+<tbody><tr>
+<td align="center"><img src="/resources/images/chrome.png"></img></td>
+<td align="center"><img src="/resources/images/safari.png"></img></td>
+<td align="center"><img src="/resources/images/firefox.png"></img></td>
+<td align="center"><img src="/resources/images/edge.png"></img></td>
+<td align="center"><img src="/resources/images/electron.png"></img></td>
+<td align="center"><img src="/resources/images/ie.png"></img></td>
+</tr>
+<tr>
+<td align="center">Chrome 61+</td>
+<td align="center">Safari 11+</td>
+<td align="center">Firefox 63+</td>
+<td align="center">Edge 79+</td>
+<td align="center">Electron</td>
+<td align="center">IE11*</td>
+</tr></tbody>
+</table>
+<small>* Requires polyfills</small>
+
+<h2 id="ie-support">IE Support</h2>
+<p>In order for EF elements to work on Internet Explorer 11 or browsers that do not support web components natively, a few polyfills are required. EF provides minimal set of polyfills.</p>
+<p>Install polyfills that are curated by EF.</p>
+<pre><code class="language-bash">npm install @refinitiv-ui/polyfills
+</code></pre>
+<p>To use the minimal polyfills in your application, ensure that the polyfills are loaded before any EF elements.</p>
+<pre><code class="language-js">import &#39;@refinitiv-ui/polyfills/minimal&#39;;
+</code></pre>
+<p>When using EF elements without modern Javascript frameworks, polyfills for ES2015 features may not be automatically added by the framework. In that case, you will need more polyfills.</p>
+<p>A more comprehensive set of polyfills can be added.</p>
+<pre><code class="language-js">import &#39;@refinitiv-ui/polyfills&#39;;
+</code></pre>
+<h3 id="transpilation">Transpilation</h3>
+<p>EF elements use features of ES2015 which modern browsers support natively, without having to transpile down to ES5.</p>
+<p>However, in order for EF elements to work on Internet Explorer 11, they have to be transpiled using <a href="https://babeljs.io/">Babel</a>. Modern frameworks commonly use Webpack, which provides a Babel loader for transpiling code.</p>

@@ -1,0 +1,149 @@
+<h1 id="pill">Pill</h1>
+<code-sandbox hash="ff266f8c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pill?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;pill&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-pill&gt;Default&lt;/ef-pill&gt;
+&lt;ef-pill toggles&gt;Toggles&lt;/ef-pill&gt;
+&lt;ef-pill clears&gt;Clear&lt;/ef-pill&gt;
+</code></pre>
+</code-sandbox><p><code>ef-pill</code> is a small button style component which is used to show one or multiple selected items. It is nearly always used to visualize multiple item selections inside UI components.</p>
+<h3 id="usage">Usage</h3>
+<p>You can display a pill with text inside.</p>
+<pre><code class="language-html">&lt;ef-pill&gt;Banana&lt;/ef-pill&gt;
+&lt;ef-pill&gt;Raspberry&lt;/ef-pill&gt;
+&lt;ef-pill&gt;Mango&lt;/ef-pill&gt;
+</code></pre>
+<h3 id="toggle-pills">Toggle pills</h3>
+<p>Toggle pills are used to switch between two states. To create a toggle pill, add the <code>toggles</code> attribute.</p>
+<code-sandbox hash="ee2ecb31"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pill?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;pill&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-pill toggles&gt;Toggles&lt;/ef-pill&gt;
+&lt;ef-pill toggles active&gt;Active Toggles&lt;/ef-pill&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-pill toggles&gt;Toggles&lt;/ef-pill&gt;
+&lt;ef-pill toggles active&gt;Active Toggles&lt;/ef-pill&gt;
+</code></pre>
+<h3 id="pill-with-clear-button">Pill with clear button</h3>
+<p>A pill can display a clear button, or a small cross icon, when the <code>clears</code> attribute is added. You can also add an event listener for when the clear button is clicked.</p>
+<code-sandbox hash="5ef21f63"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pill?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;pill&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-pill&gt;Default&lt;/ef-pill&gt;
+&lt;ef-pill clears&gt;Clears Pill&lt;/ef-pill&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-pill&gt;Default&lt;/ef-pill&gt;
+&lt;ef-pill clears&gt;Clears Pill&lt;/ef-pill&gt;
+</code></pre>
+<h3 id="events">Events</h3>
+<p>To get a notification when the toggle pill state changes, you can add the <code>click</code> event listener to the pill and check the state from the <code>active</code> property.</p>
+<code-sandbox hash="b3e2dc1f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pill?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;pill&#39;);
+const elementsArray = document.querySelectorAll(&#39;ef-pill&#39;);
+for (let i=0; i &lt; elementsArray.length; i++) {
+  elementsArray[i].addEventListener(&#39;click&#39;, (e) =&gt; {
+    document.getElementById(&#39;text&#39;).textContent = `${e.target.id} +  is clicked!`;
+  });
+};
+</code></pre>
+<pre><code class="language-css">.container {
+  display: inline-flex;
+  align-items: center;
+}
+#text {
+  padding-left: 20px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-pill id=&quot;Banana&quot;&gt;Banana&lt;/ef-pill&gt;
+  &lt;ef-pill id=&quot;Raspberry&quot;&gt;Raspberry&lt;/ef-pill&gt;
+  &lt;ef-pill id=&quot;Mango&quot;&gt;Mango&lt;/ef-pill&gt;
+  &lt;span id=&quot;text&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-pill id=&quot;Banana&quot;&gt;Banana&lt;/ef-pill&gt;
+&lt;ef-pill id=&quot;Raspberry&quot;&gt;Raspberry&lt;/ef-pill&gt;
+&lt;ef-pill id=&quot;Mango&quot;&gt;Mango&lt;/ef-pill&gt;
+</code></pre>
+<pre><code class="language-javascript">const elementsArray = document.querySelectorAll(&#39;ef-pill&#39;);
+for (let i=0; i &lt; elementsArray.length; i++) {
+  elementsArray[i].addEventListener(&#39;click&#39;, (e) =&gt; {
+    document.getElementById(&#39;text&#39;).textContent = `${e.target.id} +  is clicked!`;
+  });
+};
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>active</code></td>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Add to pill for active state</td>
+</tr>
+<tr>
+<td><code>clears</code></td>
+<td><code>clears</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set pill to clearable</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>toggles</code></td>
+<td><code>toggles</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set pill to toggle mode</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Value of pill</td>
+</tr>
+</tbody></table>
+<h3 id="events-1">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clear</code></td>
+<td>Dispatched when click on cross button occurs</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,376 @@
+<h1 id="tree-select">Tree Select</h1>
+<code-sandbox hash="bc8a827c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree-select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree-select&#39;);
+const el = document.querySelector(&quot;ef-tree-select&quot;);
+el.data = [{
+  &#39;value&#39;: &#39;AFR&#39;,
+  &#39;label&#39;: &#39;Africa&#39;,
+  &#39;selected&#39;: false,
+  &#39;expanded&#39;: true,
+  &#39;items&#39;: [{
+    &#39;value&#39;: &#39;DZA&#39;,
+    &#39;label&#39;: &#39;Algeria&#39;,
+    &#39;selected&#39;: false,
+    &#39;expanded&#39;: true,
+    &#39;items&#39;: [{
+      &#39;value&#39;: &#39;ADR&#39;,
+      &#39;label&#39;: &#39;Adrar&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;TAM&#39;,
+      &#39;label&#39;: &#39;Tamanghasset&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;GUE&#39;,
+      &#39;label&#39;: &#39;Guelma&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }]
+  }, {
+    &#39;value&#39;: &#39;AGO&#39;,
+    &#39;label&#39;: &#39;Angola&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BEN&#39;,
+    &#39;label&#39;: &#39;Benin&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BWA&#39;,
+    &#39;label&#39;: &#39;Botswana&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }]
+}];
+setTimeout(() =&gt; { el.opened = true; }, 1000);
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-tree-select opened&gt;&lt;/ef-tree-select&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p>Tree Select provides an interface for displaying, navigating and selecting items from a nested data structure.</p>
+<h3 id="usage">Usage</h3>
+<p>Tree Select is designed to work with multiple items and as such has a commit model. A selection is made using the interface and then committed, or cancelled. The result of the committed selection can be accessed using the <code>values</code> property. This is an array of selected item values.</p>
+<code-sandbox hash="714dfade"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree-select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree-select&#39;);
+const el = document.querySelector(&quot;ef-tree-select&quot;);
+el.data = [{
+  &#39;value&#39;: &#39;AFR&#39;,
+  &#39;label&#39;: &#39;Africa&#39;,
+  &#39;selected&#39;: false,
+  &#39;items&#39;: [{
+    &#39;value&#39;: &#39;DZA&#39;,
+    &#39;label&#39;: &#39;Algeria&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: [{
+      &#39;value&#39;: &#39;ADR&#39;,
+      &#39;label&#39;: &#39;Adrar&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;TAM&#39;,
+      &#39;label&#39;: &#39;Tamanghasset&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;GUE&#39;,
+      &#39;label&#39;: &#39;Guelma&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }]
+  }, {
+    &#39;value&#39;: &#39;AGO&#39;,
+    &#39;label&#39;: &#39;Angola&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BEN&#39;,
+    &#39;label&#39;: &#39;Benin&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BWA&#39;,
+    &#39;label&#39;: &#39;Botswana&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }]
+}];
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-tree-select opened&gt;&lt;/ef-tree-select&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p>The <code>data</code> property of the <code>ef-tree-select</code> uses the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/tree-select/helpers/types.ts">TreeSelectData</a> interface for its data items.</p>
+<h3 id="show-pills">Show pills</h3>
+<p>Optionally, Tree Select can display selected items as pills by adding the <code>show-pills</code> attribute. Items can also be de-selected by removing the pill.</p>
+<code-sandbox hash="c3413f8"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree-select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree-select&#39;);
+const el = document.querySelector(&quot;ef-tree-select&quot;);
+el.data = [{
+  &#39;value&#39;: &#39;AFR&#39;,
+  &#39;label&#39;: &#39;Africa&#39;,
+  &#39;selected&#39;: false,
+  &#39;expanded&#39;: true,
+  &#39;items&#39;: [{
+    &#39;value&#39;: &#39;DZA&#39;,
+    &#39;label&#39;: &#39;Algeria&#39;,
+    &#39;selected&#39;: false,
+    &#39;expanded&#39;: true,
+    &#39;items&#39;: [{
+      &#39;value&#39;: &#39;ADR&#39;,
+      &#39;label&#39;: &#39;Adrar&#39;,
+      &#39;selected&#39;: true,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;TAM&#39;,
+      &#39;label&#39;: &#39;Tamanghasset&#39;,
+      &#39;selected&#39;: true,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;GUE&#39;,
+      &#39;label&#39;: &#39;Guelma&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }]
+  }, {
+    &#39;value&#39;: &#39;AGO&#39;,
+    &#39;label&#39;: &#39;Angola&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BEN&#39;,
+    &#39;label&#39;: &#39;Benin&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BWA&#39;,
+    &#39;label&#39;: &#39;Botswana&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }]
+}];
+setTimeout(() =&gt; { el.opened = true; }, 1000);
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-tree-select show-pills opened&gt;&lt;/ef-tree-select&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-tree-select show-pills opened&gt;&lt;/ef-tree-select&gt;
+</code></pre>
+<aside class="warning"><p>If the number of selected items is likely to be large, pills may not be a good choice for display or performance.</p>
+</aside><h3 id="filtering">Filtering</h3>
+<p>Tree select has built in text filtering and selection editing.</p>
+<p>By clicking the <code>Selected</code> button, Tree Select allows the items to be filtered by selected state, and that subset to be operated on in isolation from the main item list.</p>
+<p>For custom filtering, Tree Select provides an identical interface as Combo Box. You provide a predicate function that tests an item. Please consult the <a href="./elements/combo-box">Combo Box docs</a> for details on how to construct a compatible filter.</p>
+<h3 id="ui-controls">UI Controls</h3>
+<p>Tree Select has several controls.</p>
+<code-sandbox hash="714dfade"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/tree-select?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;tree-select&#39;);
+const el = document.querySelector(&quot;ef-tree-select&quot;);
+el.data = [{
+  &#39;value&#39;: &#39;AFR&#39;,
+  &#39;label&#39;: &#39;Africa&#39;,
+  &#39;selected&#39;: false,
+  &#39;items&#39;: [{
+    &#39;value&#39;: &#39;DZA&#39;,
+    &#39;label&#39;: &#39;Algeria&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: [{
+      &#39;value&#39;: &#39;ADR&#39;,
+      &#39;label&#39;: &#39;Adrar&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;TAM&#39;,
+      &#39;label&#39;: &#39;Tamanghasset&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }, {
+      &#39;value&#39;: &#39;GUE&#39;,
+      &#39;label&#39;: &#39;Guelma&#39;,
+      &#39;selected&#39;: false,
+      &#39;items&#39;: []
+    }]
+  }, {
+    &#39;value&#39;: &#39;AGO&#39;,
+    &#39;label&#39;: &#39;Angola&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BEN&#39;,
+    &#39;label&#39;: &#39;Benin&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }, {
+    &#39;value&#39;: &#39;BWA&#39;,
+    &#39;label&#39;: &#39;Botswana&#39;,
+    &#39;selected&#39;: false,
+    &#39;items&#39;: []
+  }]
+}];
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 450px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-tree-select opened&gt;&lt;/ef-tree-select&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><strong>Full and Selected</strong></p>
+<p>These controls will filter the list by selected state.</p>
+<p><strong>Select All/Deselect</strong></p>
+<p>This is a toggle control which will change the selected state of all items accordingly.</p>
+<p><strong>Collapse All/Expand All</strong></p>
+<p>This is a toggle control which will change the expanded state of all items accordingly.</p>
+<p><strong>Done</strong></p>
+<p>This control will save the current selection, and result of the firing of the <code>value-changed</code> event.</p>
+<p><strong>Cancel</strong></p>
+<p>This control will abort any current selection changes and go back to the tree state when first opened.</p>
+<h3 id="css-variables">CSS Variables</h3>
+<p>The theme manages the size of popup panel, but can be overridden by using CSS variables.</p>
+<pre><code class="language-css">ef-select {
+  --list-max-width: 70px;
+  --list-max-height: 120px;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--list-max-width</td>
+<td>Max width of popup panel</td>
+</tr>
+<tr>
+<td>--list-max-height</td>
+<td>Max height of selection tree</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>TreeSelectData[]</code></td>
+<td>[]</td>
+<td>Data object to be used for creating tree</td>
+</tr>
+<tr>
+<td><code>filterCount</code></td>
+<td></td>
+<td><code>number</code></td>
+<td>0</td>
+<td>Tracks the number of filter matches<br /><br />Only needed if internal filtering is unused</td>
+</tr>
+<tr>
+<td><code>noRelation</code></td>
+<td><code>no-relation</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Breaks the relationship when multiple<br />selection mode is enabled</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set dropdown to open</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set placeholder text</td>
+</tr>
+<tr>
+<td><code>renderer</code></td>
+<td></td>
+<td><code>TreeSelectRenderer</code></td>
+<td>&quot;new TreeSelectRenderer(this)&quot;</td>
+<td>Renderer used to render tree item elements</td>
+</tr>
+<tr>
+<td><code>showPills</code></td>
+<td><code>show-pills</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Should the control show pills</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Returns a values collection of the currently<br />selected item values</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>cancel</code></td>
+<td>Fired when selection is cancelled</td>
+</tr>
+<tr>
+<td><code>confirm</code></td>
+<td>Fired when selection is confirmed</td>
+</tr>
+<tr>
+<td><code>opened-changed</code></td>
+<td>Fires when opened state changes</td>
+</tr>
+<tr>
+<td><code>query-changed</code></td>
+<td>Fired when query in input box changed</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when value of control changed</td>
+</tr>
+</tbody></table>

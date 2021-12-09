@@ -1,0 +1,321 @@
+<h1 id="number-field">Number Field</h1>
+<code-sandbox hash="9d737e55"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/number-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;number-field&#39;);
+const curr1 = document.getElementById(&#39;curr1&#39;);
+const cf = document.getElementById(&#39;cf&#39;);
+const out = document.getElementById(&#39;out&#39;);
+
+out.value = (curr1.value * cf.value).toFixed(2);
+curr1.addEventListener(&#39;value-changed&#39;, () =&gt; {
+  out.value = (curr1.value * cf.value).toFixed(2);
+});
+cf.addEventListener(&#39;value-changed&#39;, () =&gt; {
+  out.value = (curr1.value * cf.value).toFixed(2);
+});
+</code></pre>
+<pre><code class="language-css">.label:not(:first-child) {
+  margin-top: 8px;
+}
+.label {
+  margin-bottom: 4px;
+}
+ef-number-field {
+  max-width: 160px;
+  text-align: right;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;div&gt;Pound Sterling (£)&lt;/div&gt;
+  &lt;ef-number-field value=&quot;1000&quot; step=&quot;1&quot; min=&quot;1&quot; id=&quot;curr1&quot;&gt;&lt;/ef-number-field&gt;
+  &lt;div class=&quot;label&quot;&gt;Conversion Rate&lt;/div&gt;
+  &lt;ef-number-field value=&quot;38.62&quot; min=&quot;0&quot; step=&quot;0.01&quot; id=&quot;cf&quot;&gt;&lt;/ef-number-field&gt;
+  &lt;div class=&quot;label&quot;&gt;Thai Baht (฿)&lt;/div&gt;
+  &lt;ef-number-field readonly value=&quot;12000&quot; no-spinner id=&quot;out&quot;&gt;&lt;/ef-number-field&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+</code-sandbox><p><code>ef-number-field</code> is a form control element for numerical values.</p>
+<h3 id="usage">Usage</h3>
+<p>Number field can be used in a similar fashion to the native number input.</p>
+<pre><code class="language-html">&lt;ef-number-field value=&quot;1000&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+<h3 id="getting-value">Getting value</h3>
+<p>Just like the HTML native input, the number field input value is a <code>string</code> which can be accessed via the <code>value</code> property.</p>
+<pre><code class="language-html">&lt;ef-number-field id=&quot;number-input&quot; value=&quot;3&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const numberInput = document.getElementById(&#39;number-input&#39;);
+console.log(numberInput.value); // &quot;3&quot;
+</code></pre>
+<p>You can listen for the <code>value-changed</code> event that is triggered whenever the value changes due to user interactions.</p>
+<code-sandbox hash="58ab8e6b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/number-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;number-field&#39;);
+const element = document.getElementById(&#39;event&#39;);
+const valueChangedText = document.getElementById(&#39;value-text&#39;);
+
+element.addEventListener(&#39;value-changed&#39;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<pre><code class="language-html">&lt;ef-number-field id=&quot;event&quot; placeholder=&quot;Use spinner or type number to change value.&quot;&gt;&lt;/ef-number-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-number-field id=&quot;event&quot;&gt;&lt;/ef-number-field&gt;
+&lt;p&gt;Value: &lt;code id=&quot;value-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&#39;event&#39;);
+const valueChangedText = document.getElementById(&#39;value-text&#39;);
+
+element.addEventListener(&#39;value-changed&#39;, (e) =&gt; {
+  valueChangedText.innerHTML = e.detail.value;
+});
+</code></pre>
+<h3 id="input-validation">Input validation</h3>
+<p>To validate input from users <code>ef-number-field</code> provides similar features to a native input. When a user assigns an invalid input to the control, it will automatically apply an error style to alert the user.</p>
+<aside class="info"><p>Validation of user input of <code>ef-number-field</code> is consistent with a native input. <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/number">See native input</a>.</p>
+</aside><h3 id="set-min-or-max-value">Set min or max value</h3>
+<p>Minimum and maximum values can be set to limit input values when the user interacts. If a value exceeds the min or max set programmatically, the component will change to dipslay an error state.</p>
+<code-sandbox hash="7906d682"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/number-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;number-field&#39;);
+document.getElementById(&#39;mm&#39;).value = &#39;-15&#39;;
+</code></pre>
+<pre><code class="language-html">&lt;ef-number-field placeholder=&quot;Min/Max&quot; min=&quot;-12&quot; max=&quot;16&quot; id=&quot;mm&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-number-field min=&quot;-12&quot; max=&quot;16&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+<h3 id="set-input-step">Set input step</h3>
+<p>The step attribute specifies the interval between valid numbers. For instance, when <code>step=&quot;2&quot;</code>, valid values Would only be even numbers e.g. 2,4,6,8....</p>
+<code-sandbox hash="ca7ba14b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/number-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;number-field&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-number-field placeholder=&quot;Even numbers only&quot; step=&quot;2&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-number-field step=&quot;2&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+<p>Whenever input is invalid, the error attribute will be added to the element. You can use the <code>error</code> property to check if input is currently in the error state.</p>
+<pre><code class="language-html">&lt;ef-number-field id=&quot;number-input&quot; value=&quot;3&quot; max=&quot;2&quot;&gt;&lt;/ef-number-field&gt;
+</code></pre>
+<pre><code class="language-javascript">const numberInput = document.getElementById(&#39;number-input&#39;);
+console.log(numberInput.error); // &quot;true&quot;
+</code></pre>
+<p>You can add the event listener <code>error-changed</code> to the element and it will dispatch whenever the error state changes.</p>
+<code-sandbox hash="d4ff6976"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/number-field?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;number-field&#39;);
+const element = document.getElementById(&#39;input&#39;);
+const errorChangedText = document.getElementById(&#39;error-text&#39;);
+element.value = &quot;-1&quot;
+
+element.addEventListener(&#39;error-changed&#39;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &quot;Value must be between 0 - 10.&quot;;
+  }
+  else {
+    errorChangedText.innerHTML = &quot;&quot;;
+  }
+  });
+</code></pre>
+<pre><code class="language-html">&lt;ef-number-field id=&quot;input&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;&lt;/ef-number-field&gt;
+&lt;p&gt;Error: &lt;code id=&quot;error-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-number-field id=&quot;input&quot; min=&quot;0&quot; max=&quot;10&quot;&gt;&lt;/ef-number-field&gt;
+&lt;p&gt;Error: &lt;code id=&quot;error-text&quot;&gt;&lt;/code&gt;&lt;/p&gt;
+</code></pre>
+<pre><code class="language-javascript">const element = document.getElementById(&#39;input&#39;);
+const errorChangedText = document.getElementById(&#39;error-text&#39;);
+element.value = &#39;-1&#39;;
+
+element.addEventListener(&#39;error-changed&#39;, (e) =&gt; {
+  if (e.detail.value) {
+    errorChangedText.innerHTML = &#39;Value must be between 0 - 10.&#39;;
+  }
+  else {
+    errorChangedText.innerHTML = &#39;&#39;;
+  }
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set error state</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>max</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set maximum value.<br />This value must be greater than or equal to the value of the <code>min</code> attribute</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>min</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set minimum value.<br />This value must be less than or equal to the value of the <code>max</code> attribute</td>
+</tr>
+<tr>
+<td><code>noSpinner</code></td>
+<td><code>no-spinner</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set spinner&#39;s visibility</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set placeholder text</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>selectionDirection</code></td>
+<td></td>
+<td><code>&quot;forward&quot; | &quot;backward&quot; | &quot;none&quot; | null</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>selectionEnd</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>selectionStart</code></td>
+<td></td>
+<td><code>number | null</code></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td><code>step</code></td>
+<td><code>step</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Set step value</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disables all other states and border/background styles.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>The value of the number entered into the input.</td>
+</tr>
+<tr>
+<td><code>valueAsNumber (readonly)</code></td>
+<td></td>
+<td><code>number</code></td>
+<td></td>
+<td>Returns the value of the element, interpreted as double number</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set warning state</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checkValidity</code></td>
+<td><code>(): boolean</code></td>
+<td>Returns true if an input element contains valid data.</td>
+</tr>
+<tr>
+<td><code>onInputChange</code></td>
+<td><code>(event: any): void</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>onInputInput</code></td>
+<td><code>(event: any): void</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>reportValidity</code></td>
+<td><code>(): boolean</code></td>
+<td>Validate input. Mark as error if input is invalid</td>
+</tr>
+<tr>
+<td><code>setSelectionRange</code></td>
+<td><code>(startSelection: number | null, endSelection: number | null, selectionDirection?: &quot;forward&quot; | &quot;backward&quot; | &quot;none&quot; | undefined): void</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>stepDown</code></td>
+<td><code>(stepIncrement?: number | undefined): void</code></td>
+<td>Decreases the input value by amount of step<br /><br /><strong>stepIncrement</strong>: The stepIncrement parameter is a numeric value. If no parameter is passed, stepIncrement defaults to 1.</td>
+</tr>
+<tr>
+<td><code>stepUp</code></td>
+<td><code>(stepIncrement?: number | undefined): void</code></td>
+<td>Increases the input value by amount of step<br /><br /><strong>stepIncrement</strong>: The stepIncrement parameter is a numeric value. If no parameter is passed, stepIncrement defaults to 1.</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

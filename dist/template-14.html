@@ -1,0 +1,276 @@
+<h1 id="clock">Clock</h1>
+<code-sandbox hash="e925f5e0"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  padding: 30px;
+  display: flex;
+}
+ef-clock:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock am-pm&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock show-seconds&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock am-pm show-seconds&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p>Clock component displays a clock with the time in HH:MM:SS format. It can be configured to show any custom time.</p>
+<h3 id="usage">Usage</h3>
+<p>The clock is set to display the time as <code>00:00:00</code> by default. You can configure the component to show the seconds segment, display it in a 12-hour format or tick the clock.</p>
+<code-sandbox hash="a0ad3349"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  padding: 30px;
+  display: flex;
+}
+ef-clock:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock show-seconds&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock show-seconds tick&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock am-pm&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-clock&gt;&lt;/ef-clock&gt;
+&lt;ef-clock show-seconds&gt;&lt;/ef-clock&gt;
+&lt;ef-clock show-seconds tick&gt;&lt;/ef-clock&gt;
+&lt;ef-clock am-pm&gt;&lt;/ef-clock&gt;
+</code></pre>
+<h3 id="custom-initial-time">Custom initial time</h3>
+<p>You can customize the initial time of <code>ef-clock</code> using <code>value</code>.</p>
+<code-sandbox hash="6a22f130"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  padding: 30px;
+  display: flex;
+}
+ef-clock:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock value=&quot;6:5&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock value=&quot;06:05&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock value=&quot;6:05:20&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock value=&quot;06:05:20&quot;&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-clock value=&quot;06:05&quot;&gt;&lt;/ef-clock&gt;
+&lt;ef-clock value=&quot;06:05:20&quot;&gt;&lt;/ef-clock&gt;
+</code></pre>
+<aside class="info"><p>Valid time formats are <code>hh:mm</code> and <code>hh:mm:ss</code>. This component does not support milliseconds.</p>
+</aside><h3 id="offset">Offset</h3>
+<p>You can shift the time displayed by setting the <code>offset</code> attribute in seconds. The clock will display the offset time by calculating <code>value</code> and <code>offset</code> together without affecting the original <code>value</code> data.</p>
+<code-sandbox hash="7bdbc49"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  padding: 30px;
+  display: flex;
+}
+ef-clock:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock offset=&quot;3600&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock offset=&quot;9000&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock offset=&quot;19800&quot;&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-clock offset=&quot;3600&quot;&gt;&lt;/ef-clock&gt;
+&lt;ef-clock offset=&quot;9000&quot;&gt;&lt;/ef-clock&gt;
+&lt;ef-clock offset=&quot;19800&quot;&gt;&lt;/ef-clock&gt;
+</code></pre>
+<h3 id="interactive-mode">Interactive mode</h3>
+<p>Set the <code>interactive</code> attribute of <code>ef-clock</code> to allow users to interact with it. When interactive is set, users can click on clock segments to set the <code>offset</code> values.</p>
+<code-sandbox hash="d0e1b25c"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+halo(&#39;button&#39;);
+
+document.getElementById(&#39;reset&#39;).addEventListener(&#39;click&#39;, () =&gt; {
+  document.getElementById(&#39;clock&#39;).offset = 0;
+});
+</code></pre>
+<pre><code class="language-css">div {
+  padding: 30px;
+  display: flex;
+  align-items: center;
+}
+ef-clock:not(last-child) {
+  margin-right: 40px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock id=&quot;clock&quot; interactive&gt;&lt;/ef-clock&gt;
+  &lt;ef-button id=&quot;reset&quot;&gt;Reset&lt;/ef-button&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-clock interactive&gt;&lt;/ef-clock&gt;
+</code></pre>
+<h3 id="responsive-size">Responsive size</h3>
+<p>Clock size can be responsive if you set the <code>font-size</code> style with viewport units.</p>
+<code-sandbox hash="cc32111"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  display: flex;
+  flex-wrap: nowrap;
+  align-item: center;
+  padding: 30px;
+}
+
+ef-clock {
+  flex-grow: 0.1;
+  margin: 5px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock style=&quot;font-size: 2vw;&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock style=&quot;font-size: 5vw;&quot;&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock style=&quot;font-size: 10vw;&quot;&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-clock style=&quot;font-size: 2vw;&quot; am-pm&gt;&lt;/ef-clock&gt;
+&lt;ef-clock style=&quot;font-size: 5vw;&quot; am-pm&gt;&lt;/ef-clock&gt;
+&lt;ef-clock style=&quot;font-size: 10vw;&quot; am-pm&gt;&lt;/ef-clock&gt;
+</code></pre>
+<h3 id="analogue">Analogue</h3>
+<p>Set <code>analogue</code> attribute will change digital clock to analogue display. When the size of analogue clock is smaller than the break point, It will switch to a simple clock face.</p>
+<code-sandbox hash="2219c025"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/clock?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;clock&#39;);
+</code></pre>
+<pre><code class="language-css">div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 35px 0;
+}
+ef-clock {
+  margin:0px 20px;
+}
+#smallSize {
+  width: 64px;
+  height: 64px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div&gt;
+  &lt;ef-clock analogue tick show-seconds am-pm&gt;&lt;/ef-clock&gt;
+  &lt;ef-clock id=&quot;smallSize&quot; analogue tick show-seconds am-pm&gt;&lt;/ef-clock&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-clock analogue tick show-seconds am-pm&gt;&lt;/ef-clock&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>amPm</code></td>
+<td><code>am-pm</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Display the digital clock in 12hr format.</td>
+</tr>
+<tr>
+<td><code>analogue</code></td>
+<td><code>analogue</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Display clock in analogue style.</td>
+</tr>
+<tr>
+<td><code>interactive</code></td>
+<td><code>interactive</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Enabled interactive mode. Allowing the user to offset the value.</td>
+</tr>
+<tr>
+<td><code>offset</code></td>
+<td><code>offset</code></td>
+<td><code>number</code></td>
+<td></td>
+<td>Get offset value</td>
+</tr>
+<tr>
+<td><code>showSeconds</code></td>
+<td><code>show-seconds</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Display the seconds segment.</td>
+</tr>
+<tr>
+<td><code>tick</code></td>
+<td><code>tick</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggles clock ticking function.</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;00:00:00&quot;</td>
+<td>Get time value in format <code>hh:mm:ss</code></td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>resizedCallback</code></td>
+<td><code>(size: any): void</code></td>
+<td>Called when the element&#39;s dimension have changed<br /><br /><strong>size</strong>: Element size</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>offset-changed</code></td>
+<td>Fired when the the user offsets the clock in <code>interactive</code> mode.</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Fired when the value property changes while ticking.</td>
+</tr>
+</tbody></table>

@@ -1,0 +1,625 @@
+<h1 id="combo-box">Combo Box</h1>
+<code-sandbox hash="61d6757"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/combo-box?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;combo-box&#39;);
+const comboBox = document.querySelector(&#39;ef-combo-box&#39;);
+comboBox.data = [
+  { label: &#39;EMEA&#39;, type: &#39;header&#39; },
+  { label: &#39;France&#39;, value: &#39;fr&#39; },
+  { label: &#39;Russian Federation&#39;, value: &#39;ru&#39; },
+  { label: &#39;Spain&#39;, value: &#39;es&#39; },
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39;, selected: true },
+  { label: &#39;APAC&#39;, type: &#39;header&#39; },
+  { label: &#39;China&#39;, value: &#39;ch&#39; },
+  { label: &#39;Australia&#39;, value: &#39;au&#39; },
+  { label: &#39;India&#39;, value: &#39;in&#39; },
+  { label: &#39;Thailand&#39;, value: &#39;th&#39; },
+  { label: &#39;AMERS&#39;, type: &#39;header&#39; },
+  { label: &#39;Canada&#39;, value: &#39;ca&#39; },
+  { label: &#39;United States&#39;, value: &#39;us&#39; },
+  { label: &#39;Brazil&#39;, value: &#39;br&#39; },
+  { label: &#39;Argentina&#39;, value: &#39;ar&#39; }
+];
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box opened&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-combo-box</code> displays a text input and an associated pop-up element that helps users set a value.</p>
+<h3 id="usage">Usage</h3>
+<p>The <code>ef-combo-box</code> uses the <code>data</code> property that follow <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/combo-box/helpers/types.ts">ComboBoxData</a> interface.</p>
+<pre><code class="language-javascript">const comboBox = document.querySelector(&#39;ef-combo-box&#39;);
+comboBox.data = [
+  { label: &#39;EMEA&#39;, type: &#39;header&#39; },
+  { label: &#39;France&#39;, value: &#39;fr&#39; },
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39;, selected: true }
+  // ...
+];
+</code></pre>
+<p>The <code>ef-combo-box</code> uses the <a href="https://github.com/Refinitiv/refinitiv-ui/blob/develop/packages/elements/src/combo-box/helpers/types.ts">ComboBoxData</a> interface for its data items.</p>
+<h3 id="getting-value-on-single-and-multiple-mode">Getting value on single and multiple mode</h3>
+<p>When an item is selected, the item&#39;s <code>value</code> will set to Combo Box&#39;s <code>value</code>.</p>
+<p>Value can be preset via <code>selected</code> field when set data or by programmatically setting the Combo Box <code>value</code> property.</p>
+<pre><code class="language-javascript">comboBox.data = [
+  // ...
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39;, selected: true }
+  // ...
+];
+</code></pre>
+<pre><code class="language-javascript">comboBox.value = &#39;gb&#39;;
+</code></pre>
+<p>In <code>multiple</code> mode, uses the <code>values</code> property to get selected values.</p>
+<pre><code class="language-javascript">comboBox.data = [
+  // ...
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39;, selected: true },
+  { label: &#39;Thailand&#39;, value: &#39;th&#39;, selected: true }
+  // ...
+];
+</code></pre>
+<pre><code class="language-javascript">comboBox.values = [&#39;gb&#39;, &#39;th&#39;];
+</code></pre>
+<aside class="info"><p>By default, Combo Box allow to set value that available in its data set.</p>
+</aside><h3 id="free-text-mode">Free text mode</h3>
+<p>Set <code>free-text</code> to allow Combo Box to contain any arbitrary value. This mode is designed to cover a search input with suggestions scenario.</p>
+<code-sandbox hash="e90161cb"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/combo-box?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;combo-box&#39;);
+const comboBox = document.querySelector(&#39;ef-combo-box&#39;);
+comboBox.data = [
+  { label: &#39;EMEA&#39;, type: &#39;header&#39; },
+  { label: &#39;France&#39;, value: &#39;France&#39; },
+  { label: &#39;Russian Federation&#39;, value: &#39;Russian Federation&#39; },
+  { label: &#39;Spain&#39;, value: &#39;Spain&#39; },
+  { label: &#39;United Kingdom&#39;, value: &#39;United Kingdom&#39; },
+  { label: &#39;APAC&#39;, type: &#39;header&#39; },
+  { label: &#39;China&#39;, value: &#39;China&#39; },
+  { label: &#39;Australia&#39;, value: &#39;Australia&#39; },
+  { label: &#39;India&#39;, value: &#39;India&#39; },
+  { label: &#39;Thailand&#39;, value: &#39;Thailand&#39; },
+  { label: &#39;AMERS&#39;, type: &#39;header&#39; },
+  { label: &#39;Canada&#39;, value: &#39;Canada&#39; },
+  { label: &#39;United States&#39;, value: &#39;United States&#39; },
+  { label: &#39;Brazil&#39;, value: &#39;Brazil&#39; },
+  { label: &#39;Argentina&#39;, value: &#39;Argentina&#39; }
+];
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box free-text&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-combo-box free-text&gt;&lt;/ef-combo-box&gt;
+</code></pre>
+<h3 id="filtering">Filtering</h3>
+<p>Default filtering is applied on the data <code>label</code> property. Filtering happens when the user modifies the input text.</p>
+<p>The developer may wish to do their own filtering by implementing the <code>filter</code> property.</p>
+<p>A typical example is to apply filter on multiple data properties (e.g. <code>label</code> and <code>value</code> as in the example below).</p>
+<code-sandbox hash="e7d8ed88"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/combo-box?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;combo-box&#39;);
+const comboBox = document.querySelector(&#39;ef-combo-box&#39;);
+comboBox.data = [
+  { label: &#39;EMEA&#39;, type: &#39;header&#39; },
+  { label: &#39;France&#39;, value: &#39;fr&#39; },
+  { label: &#39;Russian Federation&#39;, value: &#39;ru&#39; },
+  { label: &#39;Spain&#39;, value: &#39;es&#39; },
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39; },
+  { label: &#39;APAC&#39;, type: &#39;header&#39; },
+  { label: &#39;China&#39;, value: &#39;ch&#39; },
+  { label: &#39;Australia&#39;, value: &#39;au&#39; },
+  { label: &#39;India&#39;, value: &#39;in&#39; },
+  { label: &#39;Thailand&#39;, value: &#39;th&#39; },
+  { label: &#39;AMERS&#39;, type: &#39;header&#39; },
+  { label: &#39;Canada&#39;, value: &#39;ca&#39; },
+  { label: &#39;United States&#39;, value: &#39;us&#39; },
+  { label: &#39;Brazil&#39;, value: &#39;br&#39; },
+  { label: &#39;Argentina&#39;, value: &#39;ar&#39; }
+];
+const customFilter = (comboBox) =&gt; {
+  let query = &#39;&#39;;
+  let queryRegExp;
+  const getRegularExpressionOfQuery = () =&gt; {
+    if (comboBox.query !== query || !queryRegExp) {
+      query = comboBox.query || &#39;&#39;;
+      queryRegExp = new RegExp(query.replace(/(\W)/g, &#39;\\$1&#39;), &#39;i&#39;);
+    }
+    return queryRegExp;
+  };
+  return (item) =&gt; {
+    const regex = getRegularExpressionOfQuery();
+    const result = query === item.value || regex.test(item.label);
+    regex.lastIndex = 0; // do not forget to reset last index
+    return result;
+  };
+};
+
+comboBox.filter = customFilter(comboBox);
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box placeholder=&quot;Type &amp;quot;th&amp;quot; or &amp;quot;Thailand&amp;quot;&quot;&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-javascript">// Make a scoped re-usable filter for performance
+const customFilter = (comboBox) =&gt; {
+  let query = &#39;&#39;; // reference query string for validating queryRegExp cache state
+  let queryRegExp; // cache RegExp
+
+  // Get current RegExp, or renew if out of date
+  // this is fetched on demand by filter/renderer
+  // only created once per query
+  const getRegularExpressionOfQuery = () =&gt; {
+    if (comboBox.query !== query || !queryRegExp) {
+      query = comboBox.query || &#39;&#39;;
+      queryRegExp = new RegExp(query.replace(/(\W)/g, &#39;\\$1&#39;), &#39;i&#39;);
+    }
+    return queryRegExp;
+  };
+
+  // return scoped custom filter
+  return (item) =&gt; {
+    const regex = getRegularExpressionOfQuery();
+      // test on value or label
+      const result = query === item.value || regex.test(item.label);
+      regex.lastIndex = 0; // do not forget to reset last index
+      return result;
+    };
+};
+
+comboBox.filter = customFilter(comboBox);
+</code></pre>
+<aside class="info"><p>Regardless of filter configuration Combo Box always treats <code>type: &#39;header&#39;</code> items as group headers, which persist as long as at least one item within the group is visible.</p>
+</aside><h3 id="asynchronous-filtering">Asynchronous filtering</h3>
+<p>The component&#39;s built-in filter can only be used with pre-loaded data. However, you can still implement Asynchronous filtering by following these simple steps.</p>
+<p>First, you need to remove the default filter:</p>
+<pre><code class="language-javascript">comboBox.filter = null;
+</code></pre>
+<p>If the Combo Box value is set, you must ensure that the corresponding data item is <strong>always</strong> present.</p>
+<pre><code class="language-javascript">if (comboBox.value) {
+  comboBox.data = fetch(`/give-me-data?v=${comboBox.value}`);
+}
+</code></pre>
+<p>To avoid excessive calls to the server you may want to set <code>query-debounce-rate</code>.</p>
+<pre><code class="language-html">&lt;ef-combo-box query-debounce-rate=&quot;200&quot;&gt;&lt;/ef-combo-box&gt;
+</code></pre>
+<p>Finally, listen for the <code>query-changed</code> event to make calls to the server and set the <code>data</code> property. Combo Box moves itself to the <em>loading</em> state.</p>
+<pre><code class="language-javascript">combo.addEventListener(&#39;query-changed&#39;, async () =&gt; {
+  comboBox.data = fetch(`/give-me-data?q=${comboBox.query}&amp;v=${comboBox.value}`);
+});
+</code></pre>
+<p>In the example below we mimic asynchronous filtering with <em>setTimeout</em>.</p>
+<code-sandbox hash="4332c6d9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/combo-box?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;combo-box&#39;);
+// A collection of data our search is based on
+const data = [
+  { label: &#39;France&#39;, value: &#39;fr&#39; },
+  { label: &#39;Russian Federation&#39;, value: &#39;ru&#39; },
+  { label: &#39;Spain&#39;, value: &#39;es&#39; },
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39; },
+  { label: &#39;China&#39;, value: &#39;ch&#39; },
+  { label: &#39;Australia&#39;, value: &#39;au&#39; },
+  { label: &#39;India&#39;, value: &#39;in&#39; },
+  { label: &#39;Thailand&#39;, value: &#39;th&#39; },
+  { label: &#39;Canada&#39;, value: &#39;ca&#39; },
+  { label: &#39;United States&#39;, value: &#39;us&#39; },
+  { label: &#39;Brazil&#39;, value: &#39;br&#39; },
+  { label: &#39;Argentina&#39;, value: &#39;ar&#39; }
+];
+
+const comboBox = document.querySelector(&#39;ef-combo-box&#39;);
+
+// You **must** reset the default filter
+comboBox.filter = null;
+
+// A function to make request. In real life scenario it may wrap fetch
+const request = (query, value) =&gt; {
+  const regex = new RegExp(query.replace(/(\W)/g, &#39;\\$1&#39;), &#39;i&#39;);
+
+  // Always keep a promise to let Combo Box know that the data is loading
+  return new Promise((resolve) =&gt; {
+    let filterData = [];
+    if (query || value) {
+      for (let i = 0; i &lt; data.length; i += 1) {
+        let item = data[i];
+        // Include element itself
+        // Mark value hidden if it does not match search query
+        if (value &amp;&amp; item.value === value) {
+          filterData.push(Object.assign({}, item, {
+            selected: true,
+            hidden: query ? !regex.test(item.label) : false
+          }));
+          regex.lastIndex = 0;
+          continue;
+        }
+
+        if (query &amp;&amp; regex.test(item.label)) {
+          filterData.push(item);
+          regex.lastIndex = 0;
+        }
+      }
+    }
+    setTimeout(() =&gt; {
+      resolve(filterData);
+    }, 500);
+  });
+}
+
+// Populate self with the initial value
+comboBox.data = request(&#39;&#39;, &#39;gb&#39;);
+
+// Listen for query change event and make the request
+comboBox.addEventListener(&#39;query-changed&#39;, (event) =&gt; {
+  comboBox.data = request(comboBox.query, comboBox.value);
+});
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box value=&quot;gb&quot; query-debounce-rate=&quot;200&quot;&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><h3 id="custom-renderer">Custom renderer</h3>
+<p>Combo Box supports custom rendering by providing a renderer function to the <code>renderer</code> property. The renderer receives a data item, Collection Composer and previously mapped item elements (if any), and must return an <code>HTMLElement</code>.</p>
+<p>The preferred approach is to extend the <code>DefaultRender</code> that comes with Combo Box. The default renderer uses <a href="./elements/item">Item</a> elements, and supports highlighted, selected, disabled, hidden and readonly states.</p>
+<pre><code class="language-javascript">import { DefaultRenderer } from &#39;../lib/ef-combo-box&#39;;
+
+// Create a re-useable renderer that shows Flags next to the country
+class FlagRender extends DefaultRenderer {
+  constructor (comboBox) {
+    // Keep the reference to the default renderer
+    const defaultRenderer = super(comboBox);
+    // store reference to flag for easy access.
+    // Use WeakMap to not care about memory leaks
+    const flagMap = new WeakMap();
+
+    // Return the closure
+    return (item, composer, element) =&gt; {
+      element = defaultRenderer(item, composer, element);
+      const type = composer.getItemPropertyValue(item, &#39;type&#39;);
+      let flagElement = flagMap.get(element);
+      if (!flagElement &amp;&amp; (!type || type === &#39;text&#39;)) {
+        // Text items
+        flagElement = document.createElement(&#39;ef-flag&#39;);
+        flagElement.slot = &#39;left&#39;; // use ef-item slotted content
+        element.appendChild(flagElement);
+        flagMap.set(element, flagElement);
+      }
+      else if (flagElement &amp;&amp; type &amp;&amp; type !== &#39;text&#39;) {
+        // Header items, which should not have a flag
+        // Make sure that flag element is removed
+        flagElement.parentNode.removeChild(flagElement);
+        flagElement.remove(element, flagElement);
+        flagElement = null;
+      }
+
+      // Make sure that you can re-use the same element with new data item
+      if (flagElement) {
+        flagElement.flag = composer.getItemPropertyValue(item, &#39;value&#39;);
+      }
+
+      return element;
+    };
+  }
+}
+comboBox.renderer = new FlagRender(comboBox);
+</code></pre>
+<p>As an alternative you can provide your own renderer. If you go that route, you must ensure that, at a minimum, the highlighted, selected and hidden states are covered.</p>
+<pre><code class="language-javascript">comboBox.renderer = (item, composer, element) =&gt; {
+  // Make sure to re-use the same element for increased performance
+  if (!element) {
+    element = document.createElement(&#39;div&#39;);
+    element.style.setProperty(&#39;margin&#39;, &#39;5px 10px&#39;);
+    element.style.setProperty(&#39;padding&#39;, &#39;5px 0&#39;);
+  }
+
+  // All item properties are read using the Collection Composer
+  const type = composer.getItemPropertyValue(item, &#39;type&#39;);
+  const label = composer.getItemPropertyValue(item, &#39;label&#39;);
+  const selected = composer.getItemPropertyValue(item, &#39;selected&#39;) === true;
+  const highlighted = composer.getItemPropertyValue(item, &#39;highlighted&#39;) === true;
+  const hidden = composer.getItemPropertyValue(item, &#39;hidden&#39;) === true;
+
+  // Style the element accordingly
+  element.style.setProperty(&#39;display&#39;, hidden ? &#39;none&#39;: &#39;block&#39;);
+  element.textContent = label;
+
+  let colour = &#39;grey&#39;;
+  if (type === &#39;header&#39;) {
+    colour = &#39;red&#39;;
+  }
+  else if (highlighted) {
+    colour = &#39;green&#39;;
+  }
+  else if (selected) {
+    colour = &#39;blue&#39;;
+  }
+
+  element.style.setProperty(&#39;color&#39;, colour);
+
+  return element;
+};
+</code></pre>
+<code-sandbox hash="5c93497e"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/combo-box?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;combo-box&#39;);
+const comboBox = document.querySelector(&#39;ef-combo-box&#39;);
+comboBox.data = [
+  { label: &#39;EMEA&#39;, type: &#39;header&#39; },
+  { label: &#39;France&#39;, value: &#39;fr&#39; },
+  { label: &#39;Russian Federation&#39;, value: &#39;ru&#39; },
+  { label: &#39;Spain&#39;, value: &#39;es&#39; },
+  { label: &#39;United Kingdom&#39;, value: &#39;gb&#39;, selected: true },
+  { label: &#39;APAC&#39;, type: &#39;header&#39; },
+  { label: &#39;China&#39;, value: &#39;ch&#39; },
+  { label: &#39;Australia&#39;, value: &#39;au&#39; },
+  { label: &#39;India&#39;, value: &#39;in&#39; },
+  { label: &#39;Thailand&#39;, value: &#39;th&#39; },
+  { label: &#39;AMERS&#39;, type: &#39;header&#39; },
+  { label: &#39;Canada&#39;, value: &#39;ca&#39; },
+  { label: &#39;United States&#39;, value: &#39;us&#39; },
+  { label: &#39;Brazil&#39;, value: &#39;br&#39; },
+  { label: &#39;Argentina&#39;, value: &#39;ar&#39; }
+];
+
+const createFlagRender = (context) =&gt; {
+  // Keep the reference to the default renderer
+  const defaultRenderer = context.renderer;
+
+  // store reference to flag for easy access.
+  // Use WeakMap to not care about memory leaks
+  const flagMap = new WeakMap();
+
+  // Return the closure
+  return (item, composer, element) =&gt; {
+    element = defaultRenderer(item, composer, element);
+    const type = composer.getItemPropertyValue(item, &#39;type&#39;);
+    let flagElement = flagMap.get(element);
+    if (!flagElement &amp;&amp; (!type || type === &#39;text&#39;)) {
+      // Text items
+      flagElement = document.createElement(&#39;ef-flag&#39;);
+      flagElement.slot = &#39;left&#39;;
+      element.appendChild(flagElement);
+      flagMap.set(element, flagElement);
+    }
+    else if (flagElement &amp;&amp; type &amp;&amp; type !== &#39;text&#39;) {
+      // Header items, which should not have a flag
+      // Make sure that flag element is removed
+      flagElement.parentNode.removeChild(flagElement);
+      flagMap.remove(element, flagElement);
+      flagElement = null;
+    }
+
+    // Make sure that you can re-use the same element with new data item
+    if (flagElement) {
+      flagElement.flag = composer.getItemPropertyValue(item, &#39;value&#39;);
+    }
+
+    return element;
+  };
+};
+
+const setRenderer = () =&gt; comboBox.renderer = createFlagRender(comboBox);
+
+if (customElements.get(&#39;ef-combo-box&#39;)) {
+  setRenderer();
+}
+else {
+  customElements.whenDefined(&#39;ef-combo-box&#39;).then(setRenderer);
+}
+</code></pre>
+<pre><code class="language-css">.wrapper {
+  padding: 5px;
+  height: 300px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;wrapper&quot;&gt;
+  &lt;ef-combo-box opened&gt;&lt;/ef-combo-box&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><h3 id="css-variables">CSS Variables</h3>
+<p>By default the popup width is equivalent to the input box. However, it can be overridden using CSS.</p>
+<pre><code class="language-css">ef-combo-box {
+  --list-max-height: 100px;
+  --list-max-width: 70px;
+}
+</code></pre>
+<table>
+<thead>
+<tr>
+<th>CSS Variables Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>--list-max-width</td>
+<td>Max width of popup list</td>
+</tr>
+<tr>
+<td>--list-max-height</td>
+<td>Max height of popup list</td>
+</tr>
+</tbody></table>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>clears</code></td>
+<td><code>clears</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Show clears button</td>
+</tr>
+<tr>
+<td><code>data</code></td>
+<td></td>
+<td><code>ComboBoxData&lt;T&gt;</code></td>
+<td>[]</td>
+<td>Data array to be displayed</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to error</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td></td>
+<td><code>ComboBoxFilter&lt;T&gt; | null</code></td>
+<td>&quot;defaultFilter<T>(this)&quot;</td>
+<td>Custom filter for static data<br />Set this to null when data is filtered externally, eg XHR</td>
+</tr>
+<tr>
+<td><code>freeText</code></td>
+<td><code>free-text</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Allow to enter any value</td>
+</tr>
+<tr>
+<td><code>label (readonly)</code></td>
+<td></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Label of selected value</td>
+</tr>
+<tr>
+<td><code>multiple</code></td>
+<td><code>multiple</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Multiple selection mode</td>
+</tr>
+<tr>
+<td><code>name</code></td>
+<td><code>name</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set name of the element</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Track opened state of popup</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Placeholder for input field</td>
+</tr>
+<tr>
+<td><code>query</code></td>
+<td></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Query string applied to combo-box<br />Set via internal text-field input</td>
+</tr>
+<tr>
+<td><code>queryDebounceRate</code></td>
+<td><code>query-debounce-rate</code></td>
+<td><code>number</code></td>
+<td></td>
+<td>Control query rate, defaults to 0</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>renderer</code></td>
+<td></td>
+<td><code>ComboBoxRenderer</code></td>
+<td>&quot;new ComboBoxRenderer(this)&quot;</td>
+<td>Renderer used to render list item elements</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Returns the first selected item value.<br />Use <code>values</code> when multiple selection mode is enabled.</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Returns a values collection of the currently<br />selected item values</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to warning</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>animationiteration</code></td>
+<td></td>
+</tr>
+<tr>
+<td><code>opened-changed</code></td>
+<td>Dispatched when opened state changes</td>
+</tr>
+<tr>
+<td><code>query-changed</code></td>
+<td>Dispatched when query changes</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+</tbody></table>

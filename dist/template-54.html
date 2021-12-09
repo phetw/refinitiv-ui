@@ -1,0 +1,42 @@
+<h1 id="theme-switching">Theme Switching</h1>
+<p>EF provides packages for elements and themes separately. This decoupling allows more flexibility for applications to implement theme switching.</p>
+<p>The techniques for implementing theme switching can vary, depending on how the application is structured. This guideline shows one approach.</p>
+<p>In this example, we recommend splitting components and themes into different bundle files, so you can load another theme without having to reload the component bundle. That approach will reduce duplicate code in the bundle and keep the overall bundle size in your application smaller.</p>
+<hr>
+<h3 id="1-install-ef-theme">1. Install EF theme</h3>
+<pre><code class="language-sh"> npm install @refinitiv-ui/halo-theme
+</code></pre>
+<h3 id="2-create-theme-entry-point">2. Create theme entry point</h3>
+<p>The Halo theme contains <strong>dark</strong> and <strong>light</strong> variants. Let&#39;s make one entry point for one variant.</p>
+<pre><code class="language-javascript">// theme.dark.js
+
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/lib/header/themes/halo/dark&#39;;
+</code></pre>
+<pre><code class="language-javascript">// theme.light.js
+
+import &#39;@refinitiv-ui/halo-theme/light/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/light&#39;;
+import &#39;@refinitiv-ui/elements/lib/header/themes/halo/light&#39;;
+</code></pre>
+<h3 id="3-create-theme-loader">3. Create theme loader</h3>
+<p>We&#39;ll assume that your application sets the user preferred <code>theme</code> as the theme attribute in the document body. We will use this information to determine which theme entry point the app should load.</p>
+<p>In the same directory, create a theme loader that dynamically imports the theme variant accordingly.</p>
+<pre><code class="language-javascript">// theme-loader.js
+export function loadTheme() {
+  const theme = document.body.getAttribute(&quot;theme&quot;); // value can be `light` or `dark`
+  return import(`./theme.${theme}`); // provided that theme.light.js &amp; theme.dark.js are in the same directory
+}
+</code></pre>
+<h3 id="4-add-theme-loader">4. Add theme loader</h3>
+<p>Your application can add an event listenter to the <code>theme</code> attribute and call <code>onThemeChanges()</code> whenever the value is changed.</p>
+<pre><code class="language-javascript">import &#39;@refinitiv-ui/elements/lib/panel&#39;;
+import &#39;@refinitiv-ui/elements/lib/header&#39;;
+
+import { loadTheme } from &#39;./theme-loader&#39;;
+
+function onThemeChanges() {
+  loadTheme();
+}
+</code></pre>

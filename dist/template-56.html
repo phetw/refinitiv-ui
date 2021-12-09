@@ -1,0 +1,127 @@
+<h1 id="toggle">Toggle</h1>
+<code-sandbox hash="45e4b5c0"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/toggle?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;toggle&#39;);
+</code></pre>
+<pre><code class="language-css">.container {
+  max-width: 200px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+.item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.label {
+  margin-right: 2em;
+}
+ef-toggle {
+  height: 20px;
+  width: 36px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;p class=&quot;item&quot;&gt;
+    &lt;span class=&quot;label&quot;&gt;WiFi&lt;/span&gt;&lt;ef-toggle&gt;&lt;/ef-toggle&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;item&quot;&gt;
+    &lt;span class=&quot;label&quot;&gt;Bluetooth&lt;/span&gt;&lt;ef-toggle checked&gt;&lt;/ef-toggle&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;item&quot;&gt;
+    &lt;span class=&quot;label&quot;&gt;Do not disturb&lt;/span&gt;&lt;ef-toggle&gt;&lt;/ef-toggle&gt;
+  &lt;/p&gt;
+  &lt;p class=&quot;item&quot;&gt;
+    &lt;span class=&quot;label&quot; disabled&gt;Airplane mode&lt;/span&gt;&lt;ef-toggle&gt;&lt;/ef-toggle&gt;
+  &lt;/p&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><p><code>ef-toggle</code> is a form control element that allows users to toggle between two states.</p>
+<h3 id="usage">Usage</h3>
+<p>Toggle can switch between two states when the user taps or through setting the attribute/property <code>checked</code>.</p>
+<pre><code class="language-html">&lt;ef-toggle&gt;&lt;/ef-toggle&gt;
+&lt;ef-toggle checked&gt;&lt;/ef-toggle&gt;
+</code></pre>
+<h3 id="inside-labels">Inside labels</h3>
+<p>Set <code>label</code> and <code>checked-label</code> attributes to display labels inside the toggle in both checked and unchecked state.</p>
+<code-sandbox hash="152b9570"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/toggle?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;toggle&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-toggle label=&quot;OFF&quot; checked-label=&quot;ON&quot;&gt;&lt;/ef-toggle&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-toggle label=&quot;OFF&quot; checked-label=&quot;ON&quot;&gt;&lt;/ef-toggle&gt;
+</code></pre>
+<h3 id="handle-checked-state-change">Handle checked state change</h3>
+<p>Toggle dispatches <code>checked-changed</code> whenever user interaction changes the <code>checked</code> value.</p>
+<pre><code class="language-javascript">toggle.addEventListener(&#39;checked-changed&#39;, (e) =&gt; {
+  // console.log(e.target.checked)
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checked</code></td>
+<td><code>checked</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Value of toggle</td>
+</tr>
+<tr>
+<td><code>checkedLabel</code></td>
+<td><code>checked-label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Label of toggle checked</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>label</code></td>
+<td><code>label</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Label of toggle</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>checked-changed</code></td>
+<td>Fired when the <code>checked</code> property changes.</td>
+</tr>
+</tbody></table>

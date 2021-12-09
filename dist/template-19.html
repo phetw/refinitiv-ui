@@ -1,0 +1,519 @@
+<h1 id="datetime-picker">Datetime Picker</h1>
+<code-sandbox hash="8a3955da"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+[range][timepicker] {
+  width: 400px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker range duplex timepicker opened&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><p><code>ef-datetime-picker</code> allows the user to select a date or date range, and optionally a time, and display the selection in a specific format.</p>
+<h3 id="usage">Usage</h3>
+<p>By default, Datetime Picker only allows the user to select the date. Use the <code>timepicker</code> attribute to allow the user to select both a date and time.</p>
+<p>An initial value for the Datetime Picker can be set using the <code>value</code> attribute/property.</p>
+<code-sandbox hash="4923d15b"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+  document.querySelector(&#39;[timepicker]&#39;).value = &#39;2019-03-20&#39;;
+</code></pre>
+<pre><code class="language-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker value=&quot;2019-03-20&quot; opened&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker timepicker&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-datetime-picker value=&quot;2019-03-20&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker timepicker&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+<pre><code class="language-javascript">datetimePicker.value = &#39;2019-03-20&#39;;
+</code></pre>
+<h3 id="setting-the-date">Setting the date</h3>
+<p>The displayed date is based on <code>format</code> and user language. However, <code>value</code> must be in <code>yyyy-MM-dd</code> format (e.g. &quot;2019-03-20&quot;).
+If <code>timepicker</code> is on, <code>value</code> must be in <code>yyyy-MM-ddTHH:mm</code> or <code>yyyy-MM-ddTHH:mm:ss</code> format (e.g. &quot;2019-03-20T23:40&quot; or &quot;2019-03-20T23:40:59&quot;).</p>
+<aside class="fail"><p>Wrong</p>
+<pre><code class="language-html">&lt;!-- Value must be in &quot;yyyy-MM-dd&quot; format. `format` is only for displayed date --&gt;
+&lt;ef-datetime-picker format=&quot;dd-MM-yyyy&quot; value=&quot;03-20-2019&quot; opened&gt;&lt;/ef-datetime-picker&gt;
+&lt;!-- If `timepicker` is not set you must not pass time information --&gt;
+&lt;ef-datetime-picker value=&quot;2019-03-20T23:40&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;!-- If `timepicker` is set you must pass time information --&gt;
+&lt;ef-datetime-picker timepicker value=&quot;2019-03-20&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;!-- `value`, `min` and `max` must always follow the same format --&gt;
+&lt;ef-datetime-picker timepicker value=&quot;2019-03-20T09:00&quot; min=&quot;2019-03-20&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;!-- The value must not contain any time-zone information --&gt;
+&lt;ef-datetime-picker timepicker value=&quot;2019-03-20T23:40:34Z&quot;&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+</aside><aside class="success"><p>Correct</p>
+<pre><code class="language-html">&lt;ef-datetime-picker value=&quot;2019-03-20&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker timepicker value=&quot;2019-03-20T23:40&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker value=&quot;2019-03-20&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker timepicker value=&quot;2019-03-20T09:00&quot; min=&quot;2019-03-20T00:00&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker timepicker value=&quot;2019-03-20T23:40:34&quot;&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+</aside><aside class="fail"><p>Wrong</p>
+<pre><code class="language-javascript">// Date object is an invalid input
+datetimePicker.value = new Date(2019, 02, 20);
+// `toLocaleString()` is based on current locale and might not give correct results in different regions
+datetimePicker.value = new Date(2019, 02, 20).toLocaleString();
+// `toISOString()` contains time-zone information and cannot be used
+datetimePicker.value = new Date(2019, 02, 20).toISOString();
+</code></pre>
+</aside><aside class="success"><p>Correct</p>
+<pre><code class="language-javascript">datetimePicker.value = &#39;2019-03-20&#39;; /* if `timepicker` is off */
+datetimePicker.value = &#39;2019-03-20T09:00&#39;; /* if `timepicker` is on */
+</code></pre>
+</aside><h3 id="range-select">Range select</h3>
+<p>Use <code>range</code> to switch the Datetime Picker to date range selection mode. By default, <code>range</code> provides a single calendar that allows users to choose start and end dates.</p>
+<p>Datetime Picker provides an optional attribute, <code>duplex</code> and <code>duplex=&quot;split&quot;</code>, where it will popup with 2 calendars.</p>
+<ul>
+<li>Use <code>duplex</code> to show two calendars that are automatically shifted together when users navigate to the next month.</li>
+<li>Use <code>duplex=&quot;split&quot;</code> to show two calendars such that each can be navigated independently.</li>
+</ul>
+<p>An initial range value for Datetime Picker can be set using <code>values</code>.</p>
+<code-sandbox hash="dc69e86f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+document.querySelector(&#39;[timepicker]&#39;).values = [&#39;2019-01-01T12:01&#39;, &#39;2019-01-07T14:54&#39;];
+</code></pre>
+<pre><code class="language-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+[range][timepicker] {
+  width: 400px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker range duplex values=&quot;2019-01-01,2019-01-07&quot; opened&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker range duplex=&quot;split&quot; timepicker&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-datetime-picker range duplex values=&quot;2019-01-01,2019-01-07&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker range duplex=&quot;split&quot; timepicker&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+<pre><code class="language-javascript">datetimePicker.values = [&#39;2019-01-01T12:01&#39;, &#39;2019-01-07T14:54&#39;];
+</code></pre>
+<h3 id="custom-formats">Custom formats</h3>
+<p>Custom date and time formats can be set using <code>format</code> attribute/property. Use <code>show-seconds</code> to allow the user to select second. Use <code>am-pm</code> to switch time picker into AM/PM time format.</p>
+<aside class="info"><p>Format is based on <a href="https://date-fns.org/docs/format">date-fns</a>.</p>
+</aside><code-sandbox hash="cacdb4e2"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+ef-datetime-picker {
+  width: 180px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker format=&quot;do MMMM yyyy&quot; opened&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker format=&quot;yyyy-MM-dd HH:mm:ss&quot; timepicker show-seconds&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker format=&quot;d MMMM yyyy&quot;&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker format=&quot;dd, yyyy, MMMM, h:mm a&quot; timepicker am-pm&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-datetime-picker format=&quot;do MMMM yyyy&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker format=&quot;yyyy-MM-dd HH:mm:ss&quot; timepicker show-seconds&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker format=&quot;d MMMM yyyy&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker format=&quot;dd, yyyy, MMMM, h:mm a&quot; timepicker am-pm&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+<h3 id="defining-min-and-max-values">Defining min and max values</h3>
+<p>You can restrict the available date range by passing in <code>min</code> and <code>max</code> values.</p>
+<aside class="warning"><p>If <code>timepicker</code> is on, <code>min</code> and <code>max</code> must contain time information.</p>
+</aside><code-sandbox hash="12da11c3"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker min=&quot;2015-01-01&quot; max=&quot;2022-12-31&quot; opened&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker timepicker min=&quot;2015-01-01T00:00&quot; max=&quot;2022-12-31T23:59&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-datetime-picker min=&quot;2015-01-01&quot; max=&quot;2022-12-31&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker timepicker min=&quot;2015-01-01T00:00&quot; max=&quot;2022-12-31T23:59&quot;&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+<h3 id="setting-locale">Setting locale</h3>
+<p>Datetime Picker uses system default locale (or US-English if locale is not present). You can change the locale by setting <a href="https://www.w3.org/International/questions/qa-html-language-declarations">lang</a> attribute either globally on <em>document</em> tag or locally.</p>
+<p>The first day of the week is defined by the locale. You can override it by setting <code>first-day-of-week</code>.</p>
+<code-sandbox hash="2d4f30a"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+</code></pre>
+<pre><code class="language-css">section {
+  height: 290px;
+  padding: 0 3px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker lang=&quot;zh&quot; value=&quot;2019-05-21&quot; opened&gt;&lt;/ef-datetime-picker&gt;
+  &lt;ef-datetime-picker first-day-of-week=&quot;3&quot; value=&quot;2019-05-21&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-datetime-picker lang=&quot;zh&quot; value=&quot;2019-05-21&quot;&gt;&lt;/ef-datetime-picker&gt;
+&lt;ef-datetime-picker first-day-of-week=&quot;3&quot; value=&quot;2019-05-21&quot;&gt;&lt;/ef-datetime-picker&gt;
+</code></pre>
+<h3 id="set-content-to-slots">Set content to slots</h3>
+<p>Use slots to add additional content into the Datetime Picker.</p>
+<code-sandbox hash="160ff4dd"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/datetime-picker?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;datetime-picker&#39;);
+const pad = (number, size) =&gt; {
+  let s = String(Math.abs(number));
+  while (s.length &lt; size) {
+    s = &#39;0&#39; + s;
+  }
+  return (number &lt; 0 ? &#39;-&#39; : &#39;&#39;) + s;
+};
+
+const formatToDateTime = (value) =&gt; {
+  value = new Date(value);
+  const year = pad(value.getFullYear(), 4);
+  const month = pad(value.getMonth() + 1, 2);
+  const date = pad(value.getDate(), 2);
+  const hours = pad(value.getHours(), 2);
+  const minutes = pad(value.getMinutes(), 2);
+  const seconds = pad(value.getSeconds(), 2);
+  return year + &#39;-&#39; + month + &#39;-&#39; + date + &#39;T&#39; + hours + &#39;:&#39; + minutes + &#39;:&#39; + seconds;
+};
+
+const toValues = (from, to) =&gt; [formatToDateTime(from), formatToDateTime(to)];
+const rangePicker = document.querySelector(&#39;ef-datetime-picker&#39;);
+document.getElementById(&#39;today&#39;).addEventListener(&#39;tap&#39;, () =&gt; {
+  const to = new Date().setSeconds(0, 0);
+  const from = new Date(to).setHours(0, 0, 0, 0);
+  rangePicker.values = toValues(from, to);
+});
+document.getElementById(&#39;1-week&#39;).addEventListener(&#39;tap&#39;, () =&gt; {
+  const to = new Date().setSeconds(0, 0);
+  const from = new Date(to) - 7 * 24 * 60 * 60 * 1000;
+  rangePicker.values = toValues(from, to);
+});
+document.getElementById(&#39;1-month&#39;).addEventListener(&#39;tap&#39;, () =&gt; {
+  const now = new Date();
+  const to = now.setSeconds(0, 0);
+  const from = new Date(now.getFullYear(), now.getMonth() - 1, now.getDate(), now.getHours(), now.getMinutes());
+  rangePicker.values = toValues(from, to);
+});
+document.getElementById(&#39;3-months&#39;).addEventListener(&#39;tap&#39;, () =&gt; {
+  const now = new Date();
+  const to = now.setSeconds(0, 0);
+  const from = new Date(now.getFullYear(), now.getMonth() - 3, now.getDate(), now.getHours(), now.getMinutes());
+  rangePicker.values = toValues(from, to);
+});
+</code></pre>
+<pre><code class="language-css">section {
+  height: 315px;
+  padding: 0 3px;
+}
+[range][timepicker] {
+  width: 400px;
+}
+.range-nav-bar {
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+.range-nav-bar ef-button {
+  padding: 5px;
+  margin: 5px 0;
+  height: 25px;
+  min-width: 50px;
+  font-size: 75%;
+}
+</code></pre>
+<pre><code class="language-html">&lt;section&gt;
+  &lt;ef-datetime-picker range duplex=&quot;split&quot; timepicker opened&gt;
+    &lt;div slot=&quot;left&quot; class=&quot;range-nav-bar&quot;&gt;
+      &lt;ef-button id=&quot;today&quot;&gt;Today&lt;/ef-button&gt;
+      &lt;ef-button id=&quot;1-week&quot;&gt;1 Week&lt;/ef-button&gt;
+      &lt;ef-button id=&quot;1-month&quot;&gt;1 Month&lt;/ef-button&gt;
+      &lt;ef-button id=&quot;3-months&quot;&gt;3 Months&lt;/ef-button&gt;
+    &lt;/div&gt;
+  &lt;/ef-datetime-picker&gt;
+&lt;/section&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-datetime-picker range duplex=&quot;split&quot; timepicker&gt;
+  &lt;div slot=&quot;left&quot;&gt;
+    &lt;ef-button id=&quot;today&quot;&gt;Today&lt;/ef-button&gt;
+    &lt;ef-button id=&quot;1-week&quot;&gt;1 Week&lt;/ef-button&gt;
+    &lt;ef-button id=&quot;1-month&quot;&gt;1 Month&lt;/ef-button&gt;
+    &lt;ef-button id=&quot;3-months&quot;&gt;3 Months&lt;/ef-button&gt;
+  &lt;/div&gt;
+&lt;/ef-datetime-picker&gt;
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>amPm</code></td>
+<td><code>am-pm</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggles 12hr time display</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set disabled state</td>
+</tr>
+<tr>
+<td><code>duplex</code></td>
+<td><code>duplex</code></td>
+<td><code>&quot;&quot; | &quot;consecutive&quot; | &quot;split&quot;</code></td>
+<td>null</td>
+<td>Display two calendar pickers.</td>
+</tr>
+<tr>
+<td><code>error</code></td>
+<td><code>error</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to error</td>
+</tr>
+<tr>
+<td><code>filter</code></td>
+<td></td>
+<td><code>DatetimePickerFilter | null</code></td>
+<td>null</td>
+<td>Custom filter, used for enabling/disabling certain dates</td>
+</tr>
+<tr>
+<td><code>firstDayOfWeek</code></td>
+<td><code>first-day-of-week</code></td>
+<td><code>number | undefined</code></td>
+<td></td>
+<td>Set the first day of the week.<br />0 - for Sunday, 6 - for Saturday</td>
+</tr>
+<tr>
+<td><code>format</code></td>
+<td><code>format</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set the datetime format<br />Based on dane-fns datetime formats</td>
+</tr>
+<tr>
+<td><code>inputDisabled</code></td>
+<td><code>input-disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disable input part of the picker</td>
+</tr>
+<tr>
+<td><code>inputTriggerDisabled</code></td>
+<td><code>input-trigger-disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Only open picker panel when calendar icon is clicked.<br />Clicking on the input will no longer open the picker.</td>
+</tr>
+<tr>
+<td><code>max</code></td>
+<td><code>max</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set maximum date</td>
+</tr>
+<tr>
+<td><code>min</code></td>
+<td><code>min</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set minimum date</td>
+</tr>
+<tr>
+<td><code>opened</code></td>
+<td><code>opened</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggles the opened state of the list</td>
+</tr>
+<tr>
+<td><code>placeholder</code></td>
+<td><code>placeholder</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Placeholder to display when no value is set</td>
+</tr>
+<tr>
+<td><code>popupDisabled</code></td>
+<td><code>popup-disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Disable the popup</td>
+</tr>
+<tr>
+<td><code>range</code></td>
+<td><code>range</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set to switch to range select mode</td>
+</tr>
+<tr>
+<td><code>readonly</code></td>
+<td><code>readonly</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set readonly state</td>
+</tr>
+<tr>
+<td><code>showSeconds</code></td>
+<td><code>show-seconds</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Flag to show seconds time segment in display.<br />Seconds are automatically shown when <code>hh:mm:ss</code> time format is provided as a value.</td>
+</tr>
+<tr>
+<td><code>timepicker</code></td>
+<td><code>timepicker</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Toggle to display the time picker</td>
+</tr>
+<tr>
+<td><code>value</code></td>
+<td><code>value</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Current date time value</td>
+</tr>
+<tr>
+<td><code>values</code></td>
+<td><code>values</code></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Set multiple selected values</td>
+</tr>
+<tr>
+<td><code>view</code></td>
+<td><code>view</code></td>
+<td><code>string</code></td>
+<td>&quot;&quot;</td>
+<td>Set the current calendar view.<br />Accepted format: &#39;yyyy-MM&#39;</td>
+</tr>
+<tr>
+<td><code>views</code></td>
+<td></td>
+<td><code>string[]</code></td>
+<td>[]</td>
+<td>Set the current calendar views for duplex mode<br />Accepted format: &#39;yyyy-MM&#39;</td>
+</tr>
+<tr>
+<td><code>warning</code></td>
+<td><code>warning</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to warning</td>
+</tr>
+<tr>
+<td><code>weekdaysOnly</code></td>
+<td><code>weekdays-only</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Only enable weekdays</td>
+</tr>
+<tr>
+<td><code>weekendsOnly</code></td>
+<td><code>weekends-only</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Only enable weekends</td>
+</tr>
+</tbody></table>
+<h3 id="methods">Methods</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>validateInput</code></td>
+<td><code>(): void</code></td>
+<td>Validates the input, marking the element as invalid if its value does not meet the validation criteria.</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>error-changed</code></td>
+<td>Dispatched when error state changes</td>
+</tr>
+<tr>
+<td><code>opened-changed</code></td>
+<td>Dispatched when when opened attribute changes internally</td>
+</tr>
+<tr>
+<td><code>value-changed</code></td>
+<td>Dispatched when value changes</td>
+</tr>
+<tr>
+<td><code>view-changed</code></td>
+<td>Dispatched when internal view changes</td>
+</tr>
+</tbody></table>
+<h3 id="slots">Slots</h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>footer</code></td>
+<td>Slot to add custom contents at the bottom of popup</td>
+</tr>
+<tr>
+<td><code>header</code></td>
+<td>Slot to add custom contents at the top of popup</td>
+</tr>
+<tr>
+<td><code>left</code></td>
+<td>Slot to add custom contents at the left of popup</td>
+</tr>
+<tr>
+<td><code>right</code></td>
+<td>Slot to add custom contents at the right of popup</td>
+</tr>
+</tbody></table>

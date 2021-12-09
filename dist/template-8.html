@@ -1,0 +1,219 @@
+<h1 id="button">Button</h1>
+<code-sandbox hash="44bc4deb"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button&gt;Button&lt;/ef-button&gt;
+&lt;ef-button cta &gt;Button&lt;/ef-button&gt;
+&lt;ef-button disabled&gt;Disabled&lt;/ef-button&gt;
+&lt;ef-button toggles active&gt;Toggle&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot;&gt;Button&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot; textpos=&quot;before&quot;&gt;Button&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot;&gt;&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot; transparent&gt;&lt;/ef-button&gt;
+</code></pre>
+</code-sandbox><p>Use <code>ef-button</code> for actions in forms, dialogs, etc. with support for different states and styles.</p>
+<h3 id="usage">Usage</h3>
+<p><code>ef-button</code> can be used similarly to <code>button</code>. Styling and sizing are managed by the theme but can be customized using CSS.</p>
+<code-sandbox hash="45a5f872"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-css">.large {
+  height: 60px;
+  min-width: 140px;
+  font-size: 140%;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-button&gt;Default&lt;/ef-button&gt;
+&lt;ef-button class=&quot;large&quot;&gt;Large&lt;/ef-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">.large {
+  height: 33px;
+  min-width: 100px;
+  font-size: 140%;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-button&gt;Default&lt;/ef-button&gt;
+&lt;ef-button class=&quot;large&quot;&gt;Large&lt;/ef-button&gt;
+</code></pre>
+<h3 id="change-styles-and-types">Change styles and types</h3>
+<p> <code>ef-button</code> provides various styles to use for different scenarios, for example, call-to-action, disabled, toggles. To use a style, add its attribute to the <code>ef-button</code>.</p>
+<code-sandbox hash="f9fbe891"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button&gt;Button&lt;/ef-button&gt;
+&lt;ef-button disabled&gt;Button&lt;/ef-button&gt;
+&lt;ef-button cta&gt;OK&lt;/ef-button&gt;
+&lt;ef-button cta disabled&gt;OK&lt;/ef-button&gt;
+&lt;ef-button toggles&gt;Toggle button&lt;/ef-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button&gt;Button&lt;/ef-button&gt;
+&lt;ef-button disabled&gt;Button&lt;/ef-button&gt;
+&lt;ef-button cta&gt;OK&lt;/ef-button&gt;
+&lt;ef-button cta disabled&gt;OK&lt;/ef-button&gt;
+&lt;ef-button toggles&gt;Toggle button&lt;/ef-button&gt;
+</code></pre>
+<h3 id="inline-icon">Inline icon</h3>
+<p>To show an icon inside <code>ef-button</code>, use the <code>icon</code> attribute. Supported icons depend on the theme and can be seen on the icons page. Text can be configured to display before or after the icon using the <code>textpos</code> attribute.</p>
+<code-sandbox hash="99c05822"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button icon=&quot;tick&quot;&gt;&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot;&gt;Button&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot; textpos=&quot;before&quot;&gt;Button&lt;/ef-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button icon=&quot;tick&quot;&gt;&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot;&gt;Button&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;tick&quot; textpos=&quot;before&quot;&gt;Button&lt;/ef-button&gt;
+</code></pre>
+<h3 id="more-contents-in-button">More contents in button</h3>
+<p>If the button width needs to be fixed, and content requires more than one line, set <code>height: auto;</code> to ensure content displays correctly inside the button.</p>
+<code-sandbox hash="47c764bc"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-css">.lines {
+  height: auto;
+  width: 180px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-button icon=&quot;tick&quot; class=&quot;lines&quot;&gt;Fixed width 180px and more contents in button&lt;/ef-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-css">.lines {
+  height: auto;
+  width: 180px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-button icon=&quot;tick&quot; class=&quot;lines&quot;&gt;Fixed width 180px and more contents in button&lt;/ef-button&gt;
+</code></pre>
+<h3 id="switching-icon-on-mouse-over">Switching icon on mouse over</h3>
+<p><code>ef-button</code> can display an icon for mouse hover by using <code>hover-icon</code> attribute.</p>
+<code-sandbox hash="5238cf11"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+</code></pre>
+<pre><code class="language-html">&lt;ef-button icon=&quot;tick&quot; hover-icon=&quot;cross&quot;&gt;&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;cross&quot; hover-icon=&quot;tick&quot;&gt;&lt;/ef-button&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button icon=&quot;tick&quot; hover-icon=&quot;cross&quot;&gt;&lt;/ef-button&gt;
+&lt;ef-button icon=&quot;cross&quot; hover-icon=&quot;tick&quot;&gt;&lt;/ef-button&gt;
+</code></pre>
+<h3 id="handling-click-events-on-desktop-and-mobile">Handling click events on desktop and mobile</h3>
+<p><code>ef-button</code> provides events that work on both desktop and mobile. Use <code>tap</code> to ensure that the event will work on different platforms.</p>
+<code-sandbox hash="bd1ef2c9"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/button?min&#39;;
+import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;button&#39;);
+const btn = document.getElementById(&#39;button&#39;);
+btn.addEventListener(&#39;tap&#39;, () =&gt; {
+  document.getElementById(&#39;text&#39;).textContent = &#39;Got event tap!&#39;;
+});
+</code></pre>
+<pre><code class="language-css">.container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+#text {
+  padding-left: 10px;
+}
+</code></pre>
+<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
+  &lt;ef-button id=&quot;button&quot;&gt;Tap / Click Me&lt;/ef-button&gt;
+  &lt;span id=&quot;text&quot;&gt;&lt;/span&gt;
+&lt;/div&gt;
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;ef-button id=&quot;button&quot;&gt;Click Me&lt;/ef-button&gt;
+</code></pre>
+<pre><code class="language-javascript">const btn = document.getElementById(&#39;button&#39;);
+btn.addEventListener(&#39;tap&#39;, () =&gt; {
+  document.getElementById(&#39;text&#39;).textContent = &#39;Clicked!&#39;;
+});
+</code></pre>
+<link rel="stylesheet" href="../resources/styles/table-api.css">
+
+<hr>
+<h2 id="api-reference">API Reference</h2>
+<h3 id="properties">Properties</h3>
+<table>
+<thead>
+<tr>
+<th>Property</th>
+<th>Attribute</th>
+<th>Type</th>
+<th>Default</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>active</code></td>
+<td><code>active</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>An active or inactive state, can only be used with toggles property/attribute</td>
+</tr>
+<tr>
+<td><code>cta</code></td>
+<td><code>cta</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to call-to-action</td>
+</tr>
+<tr>
+<td><code>disabled</code></td>
+<td><code>disabled</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Set state to disabled</td>
+</tr>
+<tr>
+<td><code>hoverIcon</code></td>
+<td><code>hover-icon</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Specify icon to display when hovering. Value can be icon name</td>
+</tr>
+<tr>
+<td><code>icon</code></td>
+<td><code>icon</code></td>
+<td><code>string | null</code></td>
+<td>null</td>
+<td>Specify icon to display in button. Value can be icon name</td>
+</tr>
+<tr>
+<td><code>textpos</code></td>
+<td><code>textpos</code></td>
+<td><code>&quot;before&quot; | &quot;after&quot;</code></td>
+<td>&quot;after&quot;</td>
+<td>Customises text alignment when specified alongside <code>icon</code> property<br />Value can be <code>before</code> or <code>after</code></td>
+</tr>
+<tr>
+<td><code>toggles</code></td>
+<td><code>toggles</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Enable or disable ability to be toggled</td>
+</tr>
+<tr>
+<td><code>transparent</code></td>
+<td><code>transparent</code></td>
+<td><code>boolean</code></td>
+<td>false</td>
+<td>Removes background when specified alongside <code>icon</code> property</td>
+</tr>
+</tbody></table>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><code>active-changed</code></td>
+<td>Dispatched on changing <code>active</code> property state by taping on button when property <code>toggles</code> is true.</td>
+</tr>
+</tbody></table>

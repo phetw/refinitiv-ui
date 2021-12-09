@@ -1,0 +1,47 @@
+<h1 id="languages">Languages</h1>
+<p>EF uses the global <code>lang</code> attribute to determine the font-family for different languages and to show localized messages in elements. Supporting languages are English, Deutsch, Japanese, Traditional Chinese and Simplified Chinese.</p>
+<p>For more information about internationalization and how is it applied in different contexts see <a href="/i18n/app-developers">Internationalization</a>.</p>
+<pre><code class="language-html">&lt;html lang=&quot;ja-JP&quot;&gt;
+</code></pre>
+<code-sandbox hash="72b28597"><pre><code class="language-css">body {
+  background: none;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;p&gt;
+    冬が来た。&lt;br&gt;
+    白い樹樹の光を&lt;br&gt;
+    体のうちに蓄積しておいて、&lt;br&gt;
+    夜深く眠る&lt;br&gt;
+  &lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+<pre><code class="language-javascript">import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;panel&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+
+document.documentElement.setAttribute(&#39;lang&#39;, &#39;zh-CN&#39;);
+</code></pre>
+</code-sandbox><pre><code class="language-html">&lt;html lang=&quot;zh-CN&quot;&gt;
+</code></pre>
+<code-sandbox hash="47f6c20e"><pre><code class="language-css">body {
+  background: none;
+}
+</code></pre>
+<pre><code class="language-html">&lt;ef-panel spacing&gt;
+  &lt;p&gt;
+    李绅 《悯农》&lt;br&gt;
+    锄禾日当午&lt;br&gt;
+    汗滴禾下土。&lt;br&gt;
+    谁知盘中餐&lt;br&gt;
+    粒粒皆辛苦。
+  &lt;/p&gt;
+&lt;/ef-panel&gt;
+</code></pre>
+<pre><code class="language-javascript">import { halo } from &#39;/theme-loader.js&#39;;
+halo(&#39;panel&#39;);
+import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/panel?min&#39;;
+
+document.documentElement.setAttribute(&#39;lang&#39;, &#39;zh-CN&#39;);
+</code></pre>
+</code-sandbox>
