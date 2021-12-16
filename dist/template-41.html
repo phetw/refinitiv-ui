@@ -38,44 +38,6 @@ halo(&#39;pill&#39;);
 </code-sandbox><pre><code class="language-html">&lt;ef-pill&gt;Default&lt;/ef-pill&gt;
 &lt;ef-pill clears&gt;Clears Pill&lt;/ef-pill&gt;
 </code></pre>
-<h3 id="events">Events</h3>
-<p>To get a notification when the toggle pill state changes, you can add the <code>click</code> event listener to the pill and check the state from the <code>active</code> property.</p>
-<code-sandbox hash="b3e2dc1f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pill?min&#39;;
-import { halo } from &#39;/theme-loader.js&#39;;
-halo(&#39;pill&#39;);
-const elementsArray = document.querySelectorAll(&#39;ef-pill&#39;);
-for (let i=0; i &lt; elementsArray.length; i++) {
-  elementsArray[i].addEventListener(&#39;click&#39;, (e) =&gt; {
-    document.getElementById(&#39;text&#39;).textContent = `${e.target.id} +  is clicked!`;
-  });
-};
-</code></pre>
-<pre><code class="language-css">.container {
-  display: inline-flex;
-  align-items: center;
-}
-#text {
-  padding-left: 20px;
-}
-</code></pre>
-<pre><code class="language-html">&lt;div class=&quot;container&quot;&gt;
-  &lt;ef-pill id=&quot;Banana&quot;&gt;Banana&lt;/ef-pill&gt;
-  &lt;ef-pill id=&quot;Raspberry&quot;&gt;Raspberry&lt;/ef-pill&gt;
-  &lt;ef-pill id=&quot;Mango&quot;&gt;Mango&lt;/ef-pill&gt;
-  &lt;span id=&quot;text&quot;&gt;&lt;/span&gt;
-&lt;/div&gt;
-</code></pre>
-</code-sandbox><pre><code class="language-html">&lt;ef-pill id=&quot;Banana&quot;&gt;Banana&lt;/ef-pill&gt;
-&lt;ef-pill id=&quot;Raspberry&quot;&gt;Raspberry&lt;/ef-pill&gt;
-&lt;ef-pill id=&quot;Mango&quot;&gt;Mango&lt;/ef-pill&gt;
-</code></pre>
-<pre><code class="language-javascript">const elementsArray = document.querySelectorAll(&#39;ef-pill&#39;);
-for (let i=0; i &lt; elementsArray.length; i++) {
-  elementsArray[i].addEventListener(&#39;click&#39;, (e) =&gt; {
-    document.getElementById(&#39;text&#39;).textContent = `${e.target.id} +  is clicked!`;
-  });
-};
-</code></pre>
 <link rel="stylesheet" href="../resources/styles/table-api.css">
 
 <hr>
@@ -134,7 +96,7 @@ for (let i=0; i &lt; elementsArray.length; i++) {
 <td>Value of pill</td>
 </tr>
 </tbody></table>
-<h3 id="events-1">Events</h3>
+<h3 id="events">Events</h3>
 <table>
 <thead>
 <tr>
