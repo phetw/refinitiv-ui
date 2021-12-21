@@ -8,8 +8,8 @@ const ElementsPackage = 'https://cdn.skypack.dev/@refinitiv-ui/elements';
 const ThemePackage = {
   halo: {
     native: {
-      light: () => `${HaloThemePackage}/light/native-elements?min`,
-      dark: () => `${HaloThemePackage}/dark/native-elements?min`
+      light: () => `${HaloThemePackage}/light/imports/native-elements?min`,
+      dark: () => `${HaloThemePackage}/dark/imports/native-elements?min`
     },
     element: {
       light: (name) => `${ElementsPackage}/${name}/themes/halo/light?min`,

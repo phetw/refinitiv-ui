@@ -1,5 +1,5 @@
 <h1 id="pagination">Pagination</h1>
-<code-sandbox hash="efe2f8af"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pagination?min&#39;;
+<code-sandbox hash="11b89c72"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pagination?min&#39;;
 import { halo } from &#39;/theme-loader.js&#39;;
 halo(&#39;pagination&#39;);
 </code></pre>
@@ -12,69 +12,23 @@ halo(&#39;pagination&#39;);
 }
 </code></pre>
 <pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
-  &lt;ef-pagination page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
+  &lt;ef-pagination&gt;&lt;/ef-pagination&gt;
+  &lt;ef-pagination max=&quot;7&quot;&gt;&lt;/ef-pagination&gt;
 &lt;/div&gt;
 </code></pre>
 </code-sandbox><p><code>ef-pagination</code> is used when content is divided into separate pages to display the page numbers and enable navigation between them. The component should be positioned at the bottom right of the content.</p>
 <h3 id="usage">Usage</h3>
-<p>The pagination component requires the mandatory attributes, <code>page-size</code> and <code>total-items</code>. It will use these to calculate the number of total pages.</p>
-<p>By default, pagination will set the initial page to the first page but you can change that using the <code>page</code> attribute.</p>
-<pre><code class="language-html">&lt;ef-pagination page=&quot;3&quot; page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
+<p>You can use pagination with or without knowing a total pages. Total pages can be set by using attribute/property <code>max</code>. However, if <code>max</code> is not set, users can navigate to until an infinity page.</p>
+<pre><code class="language-html">&lt;ef-pagination&gt;&lt;/ef-pagination&gt;
+&lt;ef-pagination max=&quot;7&quot;&gt;&lt;/ef-pagination&gt;
 </code></pre>
-<h3 id="disabled">Disabled</h3>
-<p>To disable pagination, use the <code>disabled</code> attribute.</p>
-<code-sandbox hash="b435729f"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pagination?min&#39;;
-import { halo } from &#39;/theme-loader.js&#39;;
-halo(&#39;pagination&#39;);
-</code></pre>
-<pre><code class="language-css">#wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
-  margin-right: 100px;
-}
-</code></pre>
-<pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
-  &lt;ef-pagination disabled page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
-&lt;/div&gt;
-</code></pre>
-</code-sandbox><pre><code class="language-html">&lt;ef-pagination disabled page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
-</code></pre>
-<h3 id="responsive-width">Responsive width</h3>
-<p>The page description section will be hidden if the width of the component is less than the break point, defined by the theme. You can override this value using the CSS variable, <code>--responsive-width</code>.</p>
-<p>For example, to hide the page description when the width is less than 400px;</p>
-<code-sandbox hash="f2da3371"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pagination?min&#39;;
-import { halo } from &#39;/theme-loader.js&#39;;
-halo(&#39;pagination&#39;);
-</code></pre>
-<pre><code class="language-css">#wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 120px;
-  margin-right: 100px;
-}
-ef-pagination {
-    width: 390px;
-    ---responsive-width: 400;
-}
-</code></pre>
-<pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
-  &lt;ef-pagination page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
-&lt;/div&gt;
-</code></pre>
-</code-sandbox><pre><code class="language-css">  ef-pagination {
-    ---responsive-width: 400;
-  }
-</code></pre>
-<h3 id="page-changed">Page changed</h3>
-<p>The pagination component will fire <code>page-changed</code> with the value of the new page in <code>e.detail.value</code>.</p>
-<code-sandbox hash="cef33979"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pagination?min&#39;;
+<h3 id="listen-event-when-users-changed-page">Listen event when users changed page</h3>
+<p>The pagination component will fire <code>value-changed</code> with the value of the new page in <code>e.detail.value</code>.</p>
+<code-sandbox hash="98efa9cd"><pre><code class="language-javascript">import &#39;https://cdn.skypack.dev/@refinitiv-ui/elements/pagination?min&#39;;
 import { halo } from &#39;/theme-loader.js&#39;;
 halo(&#39;pagination&#39;);
 const pagination = document.getElementById(&#39;pagination&#39;);
-pagination.addEventListener(&#39;page-changed&#39;, (e) =&gt; {
+pagination.addEventListener(&#39;value-changed&#39;, (e) =&gt; {
   const text = document.getElementById(&#39;text&#39;);
   text.textContent = e.detail.value;
 });
@@ -93,16 +47,16 @@ pagination.addEventListener(&#39;page-changed&#39;, (e) =&gt; {
 }
 </code></pre>
 <pre><code class="language-html">&lt;div id=&quot;wrapper&quot;&gt;
-  &lt;ef-pagination id=&quot;pagination&quot; page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
+  &lt;ef-pagination id=&quot;pagination&quot; max=&quot;30&quot;&gt;&lt;/ef-pagination&gt;
 &lt;/div&gt;
 &lt;div id=&quot;console&quot;&gt;
   Page =&amp;nbsp;&lt;span id=&quot;text&quot;&gt;&lt;/span&gt;
 &lt;/div&gt;
 </code></pre>
-</code-sandbox><pre><code class="language-html">&lt;ef-pagination id=&quot;pagination&quot; page-size=&quot;5&quot; total-items=&quot;32&quot;&gt;&lt;/ef-pagination&gt;
+</code-sandbox><pre><code class="language-html">&lt;ef-pagination id=&quot;pagination&quot; max=&quot;30&quot;&gt;&lt;/ef-pagination&gt;
 </code></pre>
 <pre><code class="language-javascript">const pagination = document.getElementById(&#39;pagination&#39;);
-pagination.addEventListener(&#39;page-changed&#39;, (e) =&gt; console.log(e.detail.value));
+pagination.addEventListener(&#39;value-changed&#39;, (e) =&gt; console.log(e.detail.value));
 </code></pre>
 <link rel="stylesheet" href="../resources/styles/table-api.css">
 
@@ -127,25 +81,18 @@ pagination.addEventListener(&#39;page-changed&#39;, (e) =&gt; console.log(e.deta
 <td>Set state to disable</td>
 </tr>
 <tr>
-<td><code>page</code></td>
-<td><code>page</code></td>
+<td><code>max</code></td>
+<td><code>max</code></td>
 <td><code>string</code></td>
-<td>&quot;1&quot;</td>
-<td>Set current page</td>
+<td></td>
+<td>Max page</td>
 </tr>
 <tr>
-<td><code>pageSize</code></td>
-<td><code>page-size</code></td>
+<td><code>value</code></td>
+<td><code>value</code></td>
 <td><code>string</code></td>
-<td>&quot;10&quot;</td>
-<td>Number of item per page</td>
-</tr>
-<tr>
-<td><code>totalItems</code></td>
-<td><code>total-items</code></td>
-<td><code>string</code></td>
-<td>&quot;10&quot;</td>
-<td>Total items</td>
+<td></td>
+<td>Current page</td>
 </tr>
 </tbody></table>
 <h3 id="methods">Methods</h3>
@@ -187,7 +134,7 @@ pagination.addEventListener(&#39;page-changed&#39;, (e) =&gt; console.log(e.deta
 </tr>
 </thead>
 <tbody><tr>
-<td><code>page-changed</code></td>
-<td>Fired when the <code>page</code> property is changed</td>
+<td><code>value-changed</code></td>
+<td>Fired when the <code>value</code> property is changed</td>
 </tr>
 </tbody></table>

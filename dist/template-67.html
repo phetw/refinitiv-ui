@@ -11,13 +11,16 @@ npm install @refinitiv-ui/halo-theme
 <pre><code class="language-javascript">// import elements
 import &#39;@refinitiv-ui/elements/lib/button&#39;;
 import &#39;@refinitiv-ui/elements/lib/panel&#39;;
-
 // import native styles for typography, css variables, etc.
 import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
-
 // import element&#39;s Halo dark theme
 import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
 import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
+</code></pre>
+<p>If you&#39;re using any modern bundlers e.g. Webpack 5, you can import module by using a shorter path.</p>
+<pre><code class="language-javascript">import &#39;@refinitiv-ui/elements/button&#39;;
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/button/themes/halo/dark&#39;;
 </code></pre>
 <p>Now, you can use the elements in your app.</p>
 <pre><code class="language-css">.content {

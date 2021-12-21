@@ -31,7 +31,7 @@ npm i @refinitiv-ui/halo-theme
   &lt;body&gt;&lt;/body&gt;
 &lt;/html&gt;
 </code></pre>
-<h4 id="import-component-and-theme-modules">Import component and theme modules</h4>
+<h4 id="import-components-and-theme-modules">Import components and theme modules</h4>
 <p>Create a script <code>type=&quot;module&quot;</code> tag that imports EF dependencies, then include it to <code>index.html</code>.</p>
 <pre><code class="language-html">&lt;script type=&quot;module&quot;&gt;
   import &#39;@refinitiv-ui/elements/lib/button&#39;;
@@ -150,39 +150,35 @@ npm i @refinitiv-ui/halo-theme
 <h2 id="with-bundling">With bundling</h2>
 <p>On this part of tutorial, you are going to take a step further and look into setting up bundle configuration. In this example, you will build your application to support legacy browsers which are not neither support ES6 nor Web Component.</p>
 <p>We are going to use <code>webpack</code> as it is one of the most popular bundling tool. However, setup of the other bundling tools would be fundamentally similar.</p>
-<h3 id="installing-the-tools">Installing the tools</h3>
-<h4 id="webpack">Webpack</h4>
 <p><code>webpack</code> is going to resolve modules import path, process and pack them into production-ready files. While <code>webpack-dev-server</code> will serves a webpack app and updates the browser on changes.</p>
 <pre><code class="language-sh">npm i -D webpack@4 webpack-cli webpack-dev-server
 </code></pre>
-<h4 id="babel">Babel</h4>
-<p><code>babel</code> will transpile modern JavaScript syntax (<code>es6</code> or newer) into <code>es5</code> which also works on older browsers. However, the bundle size will be larger and so it will have significant impact on the performance. <code>babel</code> relies on <code>@babel/preset-env</code> which will read a provided list of target browsers and compile accordingly.</p>
-<p><code>@babel/plugin-transform-runtime</code> is a plugin that allows the re-use of Babel&#39;s injected helper code to optimize bundle size. This is used along with <code>@babel/runtime</code>, a runtime dependency. <a href="https://babeljs.io/docs/en/babel-plugin-transform-runtime">more</a></p>
-<pre><code class="language-sh">npm install -D babel-loader @babel/core @babel/preset-env @babel/plugin-transform-runtime
-</code></pre>
-<pre><code class="language-sh">npm install @babel/runtime
-</code></pre>
-<h4 id="core-js">core-js</h4>
-<p><code>core-js</code> a module that provides polyfills for es6 and newer. It&#39;s required to use with <code>babel</code>.</p>
-<pre><code class="language-sh">npm i core-js@3
-</code></pre>
 <h3 id="project-setup-1">Project setup</h3>
-<p>In <code>src</code> folder, create <code>index.js</code> and then import EF elements, themes and polyfills.</p>
-<pre><code class="language-javascript">// Polyfills
-import &#39;@refinitiv-ui/polyfills/minimal&#39;;
-
-// Components
+<p>In <code>src</code> folder, create <code>index.js</code> and then import EF elements.</p>
+<pre><code class="language-javascript">// Components
 import &#39;@refinitiv-ui/elements/lib/button&#39;;
 import &#39;@refinitiv-ui/elements/lib/panel&#39;;
 import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
 import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
-
 // Themes
 import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
 import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
 import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
 import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
 import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+</code></pre>
+<p>If you&#39;re using any modern bundlers e.g. Webpack 5, you can import module by using a shorter path.</p>
+<pre><code class="language-javascript">// Components
+import &#39;@refinitiv-ui/elements/button&#39;;
+import &#39;@refinitiv-ui/elements/panel&#39;;
+import &#39;@refinitiv-ui/elements/text-field&#39;;
+import &#39;@refinitiv-ui/elements/password-field&#39;;
+// Themes
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/password-field/themes/halo/dark&#39;;
 </code></pre>
 <p>Then at the root directory of the project, create <code>index.html</code> with following content.</p>
 <pre><code class="language-html">&lt;!DOCTYPE html&gt;
@@ -271,31 +267,11 @@ module.exports = {
           path.resolve(__dirname, &#39;node_modules/lit-element&#39;),
           path.resolve(__dirname, &#39;node_modules/lit-html&#39;),
           path.resolve(__dirname, &#39;node_modules/d3-interpolate&#39;)
-        ],
-        use: {
-          loader: &quot;babel-loader&quot;,
-          options: {
-            presets: [
-              [
-                &quot;@babel/preset-env&quot;,
-                {
-                  corejs: 3,
-                  useBuiltIns: &quot;usage&quot;,
-                },
-              ],
-            ],
-            plugins: [&quot;@babel/plugin-transform-runtime&quot;],
-          },
-        },
+        ]
       },
     ],
   },
 };
-</code></pre>
-<p>Create a file name <code>.browserslistrc</code> with the following content at the application root directory. This is the list of target browsers that we want our application to work on, it will be read by <code>babel</code>.</p>
-<pre><code class="language-sh">Firefox &gt;= 63
-Chrome &gt;= 61
-Safari &gt;= 11
 </code></pre>
 <p>Add scripts to <code>package.json</code>.</p>
 <pre><code class="language-json">&quot;scripts&quot;: {

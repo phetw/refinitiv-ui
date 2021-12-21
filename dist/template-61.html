@@ -58,6 +58,20 @@ import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
 import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
 import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
 </code></pre>
+<p>If you&#39;re using Angular 13++ or using Webpack 5, you can import module by using a shorter path.</p>
+<pre><code class="language-javascript">import &#39;@refinitiv-ui/elements/loader&#39;;
+import &#39;@refinitiv-ui/elements/button&#39;;
+import &#39;@refinitiv-ui/elements/panel&#39;;
+import &#39;@refinitiv-ui/elements/text-field&#39;;
+import &#39;@refinitiv-ui/elements/password-field&#39;;
+
+import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
+import &#39;@refinitiv-ui/elements/loader/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/button/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/panel/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/text-field/themes/halo/dark&#39;;
+import &#39;@refinitiv-ui/elements/password-field/themes/halo/dark&#39;;
+</code></pre>
 <p>At this stage EF elements should be ready to use!. You can use them like any other native HTML elements.</p>
 <h3 id="create-a-login-page">Create a login page</h3>
 <p>We need to use <code>ngDefaultControl</code> directive so Angular&#39;s Forms can be used with custom elements such as <code>ef-text-field</code>.</p>
@@ -66,6 +80,7 @@ import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
  import { BrowserModule } from &#39;@angular/platform-browser&#39;;
 +import { ReactiveFormsModule } from &#39;@angular/forms&#39;;
 
+...
 ...
 ...
 
@@ -129,18 +144,9 @@ import { timer } from &#39;rxjs&#39;
 import { finalize } from &#39;rxjs/operators&#39;
 import { FormBuilder, Validators, AbstractControl } from &#39;@angular/forms&#39;;
 
-import &#39;@refinitiv-ui/elements/lib/loader&#39;;
-import &#39;@refinitiv-ui/elements/lib/button&#39;;
-import &#39;@refinitiv-ui/elements/lib/panel&#39;;
-import &#39;@refinitiv-ui/elements/lib/text-field&#39;;
-import &#39;@refinitiv-ui/elements/lib/password-field&#39;;
-
-import &#39;@refinitiv-ui/halo-theme/dark/imports/native-elements&#39;;
-import &#39;@refinitiv-ui/elements/lib/loader/themes/halo/dark&#39;;
-import &#39;@refinitiv-ui/elements/lib/button/themes/halo/dark&#39;;
-import &#39;@refinitiv-ui/elements/lib/panel/themes/halo/dark&#39;;
-import &#39;@refinitiv-ui/elements/lib/text-field/themes/halo/dark&#39;;
-import &#39;@refinitiv-ui/elements/lib/password-field/themes/halo/dark&#39;;
+...
+...
+...
 
 const DEFAULT_TITLE = &#39;Hello!&#39;;
 
