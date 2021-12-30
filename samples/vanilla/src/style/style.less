@@ -1,0 +1,63 @@
+@header-height: 36px;
+
+body, .container, ef-interactive-chart {
+  height: 100%;
+}
+// header
+ef-header {
+  height: @header-height;
+  padding: 0 15px;
+}
+.content-header {
+  float: right;
+  display: flex;
+  align-items: center;
+}
+.content-header > * {
+  margin-right: 10px;
+}
+.content-header > *:last-child {
+  margin-right: 0px;
+}
+ef-toggle {
+  width: auto;
+}
+
+// content
+.content-container {
+  display: flex;
+  height: calc(100% - @header-height);
+  .chart-container {
+    width: 100%;
+  }
+}
+ef-tab {
+  width: 100%;
+  min-width: 180px;
+}
+ef-tab-bar {
+  display: inline;
+}
+
+.form-field-label {
+  display: block;
+  margin-bottom: 1px;
+  font-size: @global-text-size + 1px;
+}
+.input-field {
+  width: 100%;
+}
+.form-group {
+  padding-top: 10px;
+}
+.job-input-field {
+  @import '@refinitiv-ui/elemental-theme/src/shared-styles/input.less';
+  .input-defaults;
+  .input-standard(true);
+  .input-field;
+
+  justify-content: space-between;
+  ef-icon {
+    padding: 0px 5px;
+  }
+}

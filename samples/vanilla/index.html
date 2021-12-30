@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Webpack sample</title>
+  </head>
+  <body>
+    <script src="./dist/index.js"></script>
+    <div class="container">
+      <ef-header level="2">
+        <div class="content-header">
+          <span>Theme:</span>
+          <ef-toggle></ef-toggle>
+          <ef-button id="dialog-activator" icon="profile"></ef-button>
+        </div>
+        <ef-dialog header="Profile">
+          <div class="form-group">
+            <label class="form-field-label">Full Name</label>
+            <ef-text-field class="input-field"></ef-text-field>
+          </div>
+          <div class="form-group">
+            <label class="form-field-label">Gender</label>
+            <div id="radio-container" class="radio-button-group">
+              <ef-radio-button name="gender" value="male">Male</ef-radio-button>
+              <ef-radio-button name="gender" value="female">Female</ef-radio-button>
+              <ef-radio-button name="gender" value="not specify">Not specify</ef-radio-button>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="form-field-label">Date of Birth</label>
+            <ef-datetime-picker></ef-datetime-picker>
+          </div>
+          <div class="form-group">
+            <label class="form-field-label">Address</label>
+            <textarea class="input-field" rows="4"></textarea>
+          </div>
+          <div class="form-group">
+            <label class="form-field-label">Email</label>
+            <ef-email-field class="input-field"></ef-email-field>
+          </div>
+          <div class="form-group">
+            <label class="form-field-label">Job Function</label>
+            <div id="menu-activator" class="job-input-field">
+              <span id="job-display"></span>
+              <ef-icon icon="arrow-down-fill"></ef-icon>
+            </div>
+            <ef-overlay-menu id="menu">
+              <ef-item for="saletrade">Sales & Trading</ef-item>
+              <ef-item for="maandcr">M&A and Capital Raising</ef-item>
+              <ef-item for="research">Research / Analysis</ef-item>
+            </ef-overlay-menu>
+            <ef-overlay-menu id="saletrade">
+              <ef-item value="Trader">Trader</ef-item>
+              <ef-item value="Sales">Sales</ef-item>
+              <ef-item value="Broker">Broker</ef-item>
+            </ef-overlay-menu>
+            <ef-overlay-menu id="maandcr">
+              <ef-item value="ECM / DCM - Origination / Syndication">ECM / DCM - Origination / Syndication</ef-item>
+              <ef-item value="M&A / Coverage Banker Senior">M&A / Coverage Banker Senior</ef-item>
+              <ef-item value="M&A / Coverage Banker Junior">M&A / Coverage Banker Junior</ef-item>
+              <ef-item value="Private Equity Venture Capital">Private Equity Venture Capital</ef-item>
+              <ef-item value="">Investment Banking Business Manager</ef-item>
+            </ef-overlay-menu>
+            <ef-overlay-menu id="research">
+              <ef-item value="Research / Market Analyst">Research / Market Analyst</ef-item>
+              <ef-item value="Quant">Quant</ef-item>
+              <ef-item value="Economist">Economist</ef-item>
+              <ef-item value="Investment Strategist">Investment Strategist</ef-item>
+            </ef-overlay-menu>
+          </div>
+          <div class="form-group">
+            <ef-checkbox>I want to receive news and updates via email</ef-checkbox> 
+          </div>
+        </ef-dialog>
+      </ef-header>
+      <div class="content-container">
+        <ef-panel class="sidebar-container" spacing>
+          <ef-tab-bar vertical>
+            <ef-tab label="Line Chart" icon="line-chart"></ef-tab>
+            <ef-tab label="Area Chart" icon="chart-area"></ef-tab>
+            <ef-tab label="Bar Chart" icon="chart-bar"></ef-tab>
+            <ef-tab label="Candlestick Chart" icon="candle-chart"></ef-tab>
+            <ef-tab label="Volume Chart" icon="chart-line-bar"></ef-tab>
+          </ef-tab-bar>
+        </ef-panel>
+        <ef-panel spacing class="chart-container">
+          <ef-interactive-chart></ef-interactive-chart>
+        </ef-panel>
+      </div>
+    </div>
+    
+    <script>
+      const theme = localStorage.getItem('theme');
+      const chartType = localStorage.getItem('chartType') || 'line';
+
+      const head = document.getElementsByTagName('HEAD')[0];
+      const link = document.createElement('link');
+      link.rel = 'stylesheet';
+      link.href = `./dist/style/${theme}.css`;
+      head.appendChild(link); 
+
+      window.onload = function(){
+        const toggle = document.querySelector('ef-toggle');
+        const tabs = document.querySelectorAll('ef-tab');
+        const dialogActivator = document.querySelector('#dialog-activator');
+        const dialog = document.querySelector('ef-dialog');
+        const menuActivator = document.querySelector('#menu-activator');
+        const jobDisplay = document.querySelector('#job-display');
+        const menu = document.querySelector('ef-overlay-menu');
+        const textField = document.querySelector('ef-text-field');
+        const datetimePicker = document.querySelector('ef-datetime-picker');
+        const radioContainer = document.querySelector('#radio-container');
+        const emailField = document.querySelector('ef-email-field');
+        const textArea = document.querySelector('textarea');
+        const checkbox = document.querySelector('ef-checkbox');
+        const lineActivator = document.querySelector('ef-tab[label="Line Chart"]');
+        const areaActivator = document.querySelector('ef-tab[label="Area Chart"]');
+        const barActivator = document.querySelector('ef-tab[label="Bar Chart"]');
+        const candleActivator = document.querySelector('ef-tab[label="Candlestick Chart"]');
+        const chart = document.querySelector('ef-interactive-chart');
+
+        let gender = '';
+        const data = [
+          {
+            "time": Date.parse('2019-04-10T08:40:10') / 1000,
+            "open": 141.77,
+            "high": 170.39,
+            "low": 120.25,
+            "close": 145.72,
+            "value": 145.32
+          },
+          {
+            "time": Date.parse('2019-04-10T09:40:10') / 1000,
+            "open": 145.72,
+            "high": 147.99,
+            "low": 100.11,
+            "close": 108.19,
+            "value": 124.05000000000001
+          },
+          {
+            "time": Date.parse('2019-04-10T10:40:10') / 1000,
+            "open": 108.19,
+            "high": 118.43,
+            "low": 74.22,
+            "close": 75.16,
+            "value": 96.325
+          },
+          {
+            "time": Date.parse('2019-04-10T11:40:10') / 1000,
+            "open": 75.16,
+            "high": 82.84,
+            "low": 36.16,
+            "close": 45.72,
+            "value": 59.5
+          },
+          {
+            "time": Date.parse('2019-04-10T12:40:10') / 1000,
+            "open": 45.72,
+            "high": 120.12,
+            "low": 44.1,
+            "close": 90.5,
+            "value": 82.11
+          },
+          {
+            "time": Date.parse('2019-04-10T13:40:10') / 1000,
+            "open": 90.5,
+            "high": 95.89,
+            "low": 75.58,
+            "close": 105.55,
+            "value": 85.735
+          }
+        ]
+
+        /* reset all tabs to inactive */
+        const resetActive = () => {
+          tabs.forEach((tab) => tab.active = false);
+        }
+
+        chart.config = {
+          options: {
+            timeScale: {
+              timeVisible: true,
+              secondsVisible: true
+            }
+          },
+          series: [{
+            symbol: 'Price',
+            type: chartType,
+            data: data,
+          }]
+        };
+
+        tabs.forEach((tab) => {
+          const type = tab.label.substring(0,tab.label.indexOf(' ')).toLowerCase();
+          if (chartType === type) {
+            tab.active = true;
+          }
+          tab.addEventListener('tap', (e) => {
+            resetActive();
+            e.target.active = true;
+            const chartConfig = {...chart.config};
+            chartConfig.series[0].type = type;
+            chartConfig.series[0].data = data;
+            chart.config = chartConfig;
+
+            localStorage.setItem('chartType', type);
+          });
+        })
+
+        radioContainer.addEventListener('checked-changed', function (e) {
+          if (e.target.checked) {
+            gender = e.target.textContent;
+          }
+        }, true);
+
+        dialogActivator.addEventListener('tap', function () {
+          dialog.opened = !dialog.opened;
+        })
+
+        const getItemDescendants = function(item) {
+          let descendants = [];
+          while (item) {
+            descendants.unshift(item);
+            item = item.parentElement && item.parentElement.id ?
+            menu.parentElement.querySelector('ef-item[for=' + item.parentElement.id + ']') : null;
+          }
+          return descendants;
+        };
+
+        menuActivator.addEventListener('tap', function () {
+          menu.opened = !menu.opened;
+        });
+        menu.positionTarget = menuActivator;
+        menu.parentElement.addEventListener('item-trigger', function (event) {
+          const selectedPath = getItemDescendants(event.target);
+          menu.values = selectedPath.map(function(item) {
+            return item.value;
+          });
+
+          jobDisplay.innerHTML = event.detail.value;
+          menu.opened = false;
+
+        });
+        
+        dialog.addEventListener('confirm', function () {
+          
+          console.log(
+            'name', textField.value,
+            'gender', gender,
+            'birthday', datetimePicker.value,
+            'address', textArea.value,
+            'email', emailField.value,
+            'job', jobDisplay.textContent,
+            'confirm', checkbox.value)
+        });
+
+        // theme switching
+        toggle.label = "dark";
+        toggle.checkedLabel = "light";
+        if (theme === 'light') {
+          toggle.checked = true
+        }
+        toggle.addEventListener('tap', function () {
+          toggle.checked = !toggle.checked;
+          theme === 'light' ? localStorage.setItem('theme','dark') : localStorage.setItem('theme', 'light');
+          window.location.reload();
+        })
+      }
+    </script>
+  </body>
+</html>
