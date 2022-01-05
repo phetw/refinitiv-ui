@@ -88,7 +88,7 @@ export class TreeItem<T extends TreeDataItem = TreeDataItem> extends ControlElem
    * Highlighted state of the item.
    * This is for showing which item is currently being interacted with.
    */
-  @property({ reflect: true, type: Boolean })
+  @property({ type: Boolean, reflect: true })
   public highlighted = false;
 
   /**
