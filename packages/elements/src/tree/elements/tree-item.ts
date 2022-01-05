@@ -158,7 +158,7 @@ export class TreeItem<T extends TreeDataItem = TreeDataItem> extends ControlElem
   }
 
   /**
-   * Handles aria-checked and aria-selected when mode changes
+   * Toggles between `aria-checked` and `aria-selected` when mode changes
    * aria-checked is used for multiple mode due to tri-state support
    * @returns {void}
    **/
